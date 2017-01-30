@@ -1,38 +1,37 @@
 # MobX
 
-* Introduction to MobX
-  * [Why MobX?](README.md)
-  * [The Gist of MobX](intro/overview.md)
-  * [Concepts & Principles](intro/concepts.md)
-* [API overview](refguide/api.md)
+* [MobX 介绍](README.md)
+  * [MobX 要点](intro/overview.md)
+  * [概念与原则](intro/concepts.md)
+* [API概览](refguide/api.md)
   * [observable](refguide/observable.md)
   * [@observable](refguide/observable-decorator.md)
   * [(@)computed](refguide/computed-decorator.md)
   * [autorun](refguide/autorun.md)
   * [(@)observer](refguide/observer-component.md)
   * [action](refguide/action.md)
-* Observable Types
+* Observable类型
   * [objects](refguide/object.md)
   * [arrays](refguide/array.md)
   * [maps](refguide/map.md)
   * [boxed values](refguide/boxed.md)
-* [Understanding what MobX reacts to](best/react.md)
-* [How to (not) use decorators](best/decorators.md)
-* Resources
-  * [Tutorials, videos and blogs](faq/blogs.md)
-  * [Related Projects](faq/related.md)
-  * [Examples projects](faq/examples.md)
-  * [Boilerplates](faq/boilerplates.md)
-  * [Frequently Asked Questions](faq/faq.md)
-* Tips & Tricks
-  * [Common Pitfalls & Best Practices](best/pitfalls.md)
-  * [Defining data stores](best/store.md)
-  * [Writing (async) actions](best/actions.md)
-  * [Optimizing React components](best/react-performance.md)
-  * [DevTools](best/devtools.md)
-  * [ES5 / ES6 / TypeScript syntax](best/syntax.md)
-  * [Stateless Components and Hot Module Reloading](best/stateless-HMR.md)
-* Utility functions
+* [理解 MobX 对什么有反应](best/react.md)
+* [如何(不)使用装饰器](best/decorators.md)
+* 资源
+  * [教程、视频和博客](faq/blogs.md)
+  * [相关项目](faq/related.md)
+  * [案例项目](faq/examples.md)
+  * [样板文件](faq/boilerplates.md)
+  * [常见问题解答](faq/faq.md)
+* 贴士与技巧
+  * [常见陷阱与最佳实践](best/pitfalls.md)
+  * [定义数据存储](best/store.md)
+  * [编写(异步) actions](best/actions.md)
+  * [优化 React 组件](best/react-performance.md)
+  * [开发工具](best/devtools.md)
+  * [ES5 / ES6 / TypeScript 语法](best/syntax.md)
+  * [无状态组件和热加载](best/stateless-HMR.md)
+* 实用函数
   * [autorunAsync](refguide/autorun-async.md)
   * [Atom & Reaction](refguide/extending.md)
   * [createTransformer](refguide/create-transformer.md)
@@ -47,4 +46,4 @@
   * [transaction](refguide/transaction.md)
   * [untracked](refguide/untracked.md)
   * [when](refguide/when.md)
-* [Donate](donating.md)
+* [捐赠](donating.md)
