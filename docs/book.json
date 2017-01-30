@@ -1,5 +1,4 @@
 {
-    "plugins":["github", "ga", "disqus", "edit-link"],
     "pluginsConfig": {
         "github": {
             "url": "https://github.com/mobxjs/mobx"
