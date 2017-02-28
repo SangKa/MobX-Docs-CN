@@ -15,41 +15,40 @@ _简单、可扩展的状态管理_
 ## 入门指南
 
 * [十分钟交互式的 MobX + React 教程](https://mobxjs.github.io/mobx/getting-started.html)
-* [官方文档和 API 概览](https://mobxjs.github.io/mobx/refguide/api.html)
+* [官方文档和API概览](https://mobxjs.github.io/mobx/refguide/api.html)
 * 视频:
-  * [Egghead.io 课程: 在 React 应用中使用 MobX 管理复杂的状态](https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx) - 30m.
-  * [ReactNext 2016: 真实世界的 MobX](https://www.youtube.com/watch?v=Aws40KOx90U) - 40m [slides](https://docs.google.com/presentation/d/1DrI6Hc2xIPTLBkfNH8YczOcPXQTOaCIcDESdyVfG_bE/edit?usp=sharing)
-  * [Practical React with MobX](https://www.youtube.com/watch?v=XGwuM_u7UeQ). In depth introduction and explanation to MobX and React by Matt Ruby on OpenSourceNorth (ES5 only) - 42m.
-  * LearnCode.academy MobX tutorial [Part I: MobX + React is AWESOME (7m)](https://www.youtube.com/watch?v=_q50BXqkAfI) [Part II: Computed Values and Nested/Referenced Observables (12m.)](https://www.youtube.com/watch?v=nYvNqKrl69s)
-  * [Screencast: intro to MobX](https://www.youtube.com/watch?v=K8dr8BMU7-8) - 8m
-  * [Talk: State Management Is Easy, React Amsterdam 2016 conf](https://www.youtube.com/watch?v=ApmSsu3qnf0&feature=youtu.be) ([slides](https://speakerdeck.com/mweststrate/state-management-is-easy-introduction-to-mobx))
-* [Boilerplates and related projects](http://mobxjs.github.io/mobx/faq/boilerplates.html)
-* More tutorials, blogs and videos can be found on the [MobX homepage](http://mobxjs.github.io/mobx/faq/blogs.html)
+  * [Egghead.io 课程: 在 React 应用中使用 MobX 管理复杂的状态](https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx) - 30分钟.
+  * [ReactNext 2016: 真实世界的 MobX](https://www.youtube.com/watch?v=Aws40KOx90U) - 40分钟 [幻灯片](https://docs.google.com/presentation/d/1DrI6Hc2xIPTLBkfNH8YczOcPXQTOaCIcDESdyVfG_bE/edit?usp=sharing)
+  * [React 和 MobX 实战](https://www.youtube.com/watch?v=XGwuM_u7UeQ). OpenSourceNorth 开发者大会上，Matt Ruby 深入介绍和说明如何使用MobX和React(ES5版本) - 42分钟.
+  * LearnCode.academy MobX 教程 [第一部分: MobX + React 太棒了 (7分钟)](https://www.youtube.com/watch?v=_q50BXqkAfI) [第二部分: Computed Values and 嵌套/引用的 Observables (12分钟)](https://www.youtube.com/watch?v=nYvNqKrl69s)
+  * [录播: MobX 介绍](https://www.youtube.com/watch?v=K8dr8BMU7-8) - 8分钟
+  * [访谈: 状态管理很容易 - React Amsterdam 2016 开发者大会](https://www.youtube.com/watch?v=ApmSsu3qnf0&feature=youtu.be) ([幻灯片](https://speakerdeck.com/mweststrate/state-management-is-easy-introduction-to-mobx))
+* [样板文件和相关项目](http://mobxjs.github.io/mobx/faq/boilerplates.html)
+* 更多教程、博客和视频尽在 [MobX 主页](http://mobxjs.github.io/mobx/faq/blogs.html)
 
 
-## Introduction
+## 入门
 
-MobX is a battle tested library that makes state management simple and scalable by transparently applying functional reactive programming (TFRP).
-The philosophy behind MobX is very simple:
+MobX 是一个经过战火洗礼的类库，它通过透明的函数响应式编程(transparently applying functional reactive programming - TFRP)使得状态管理变得简单和可扩展。MobX背后的哲学很简单:
 
-_Anything that can be derived from the application state, should be derived. Automatically._
+_任何源自应用状态的东西都应该自动地获得。_
 
-which includes the UI, data serialization, server communication, etc.
+其中包括UI、数据序列化、服务器通讯，等等。
 
 <img alt="MobX unidirectional flow" src="docs/flow.png" align="center" />
 
-React and MobX together are a powerful combination. React renders the application state by providing mechanisms to translate it into a tree of renderable components. MobX provides the mechanism to store and update the application state that React then uses.
+React 和 MobX 是一对强力组合。React 通过提供机制把应用状态转换为可渲染组件树并对其进行渲染。而MobX提供机制来存储和更新应用状态供 React 使用。
 
-Both React and MobX provide very optimal and unique solutions to common problems in application development. React provides mechanisms to optimally render UI by using a virtual DOM that reduces the number of costly DOM mutations. MobX provides mechanisms to optimally synchronize application state with your React components by using a reactive virtual dependency state graph that is only updated when strictly needed and is never stale.
+对于应用开发中的常见问题，React 和 MobX都提供了最优和独特的解决方案。React 提供了优化UI渲染的机制， 这种机制就是通过使用虚拟DOM来减少昂贵的DOM变化的数量。MobX 提供了优化应用状态与 React 组件同步的机制，这种机制就是使用响应式虚拟依赖状态图表，它只有在真正需要的时候才更新并且永远保持是最新的。
 
-## Core concepts
+## 核心概念
 
-MobX has only a few core concepts. The following snippets can be tried online using [JSFiddle](https://jsfiddle.net/mweststrate/wv3yopo0/) (or [without ES6 and JSX](https://jsfiddle.net/rubyred/55oc981v/)).
+MobX 的核心概念不多。 下面的代码片段可以在 [JSFiddle](https://jsfiddle.net/mweststrate/wv3yopo0/) (或者 [不使用 ES6 和 JSX](https://jsfiddle.net/rubyred/55oc981v/))中在线试用。
 
-### Observable state
+### 可观察的状态(Observable state)
 
-MobX adds observable capabilities to existing data structures like objects, arrays and class instances.
-This can simply be done by annotating your class properties with the [@observable](http://mobxjs.github.io/mobx/refguide/observable-decorator.html) decorator (ES.Next).
+MobX 为现有的数据结构(如对象，数组和类实例)添加了可观察的功能。
+通过使用 [@observable](http://mobxjs.github.io/mobx/refguide/observable-decorator.html) 装饰器(ES.Next)来给你的类属性添加注解就可以简单地完成这一切。
 
 ```javascript
 class Todo {
@@ -59,18 +58,19 @@ class Todo {
 }
 ```
 
-Using `observable` is like turning the properties of an object into a spreadsheet cells.
-But unlike spreadsheets, these values cannot just be primitive values, but also references, objects and arrays.
-You can even [define your own](http://mobxjs.github.io/mobx/refguide/extending.html) observable data sources.
+使用 `observable` 很像把对象的属性变成excel的单元格。
+但和单元格不同的是，这些值不只是原始值，还可以是引用值，比如对象和数组。
+你甚至还可以[自定义](http://mobxjs.github.io/mobx/refguide/extending.html)可观察数据源。
 
-### Intermezzo: Using MobX in ES5, ES6 and ES.next environments
+### 插曲: 在ES5、ES6 和ES.next环境下使用 MobX
 
-If these `@` thingies look alien to you, these are ES.next decorators.
-Using them is entirely optional in MobX. See the [documentation](http://mobxjs.github.io/mobx/best/decorators.html) for details how to either use or avoid them.
-MobX runs on any ES5 environment, but leveraging ES.next features like decorators are the cherry on the pie when using MobX.
-The remainder of this readme uses decorators, but remember, _they are optional_.
+这些 `@` 开头的东西对你来说或许还比较陌生，它们是ES.next装饰器。
+在 MobX 中使用它们完全是可选的。参见[装饰器文档](http://mobxjs.github.io/mobx/best/decorators.html)详细了解如何使用或者避免它们。
+MobX 可以在任何ES5的环境中运行，但是利用像装饰器这样的ES.next的特性是使用 MobX 的最佳选择。
+本自述文件的剩余部分都会使用装饰器，但请牢记，_它们是可选的_。
 
 For example, in good ol' ES5 the above snippet would look like:
+例如，上面一段代码的ES5版本应该是这样:
 
 ```javascript
 function Todo() {
@@ -82,10 +82,10 @@ function Todo() {
 }
 ```
 
-### Computed values
+### 计算值(Computed values)
 
-With MobX you can define values that will be derived automatically when relevant data is modified.
-By using the [`@computed`](http://mobxjs.github.io/mobx/refguide/computed-decorator.html) decorator or by using getter / setter functions when using `(extend)Observable`.
+使用 MobX， 你定义的值可以在相关数据发生变化时自动更新。
+通过使用 [`@computed`](http://mobxjs.github.io/mobx/refguide/computed-decorator.html) 装饰器或者当使用 `(extend)Observable` 时使用 getter / setter 函数。
 
 ```javascript
 class TodoList {
@@ -98,6 +98,8 @@ class TodoList {
 
 MobX will ensure that `unfinishedTodoCount` is updated automatically when a todo is added or when one of the `finished` properties is modified.
 Computations like these can very well be compared with formulas in spreadsheet programs like MS Excel. They update automatically whenever, and only when, needed.
+当添加了一个新的todo或者某个todo的 `finished` 属性发生变化时，MobX 会确保 `unfinishedTodoCount` 自动更新。
+这样的计算可以很好地与电子表格程序中的公式(如MS Excel)进行比较。每当只有在需要它们的时候，它们才会自动更新。
 
 ### Reactions
 
