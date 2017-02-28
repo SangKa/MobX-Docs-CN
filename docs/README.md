@@ -45,7 +45,7 @@ React 和 MobX 是一对强力组合。React 通过提供机制把应用状态�
 
 MobX 的核心概念不多。 下面的代码片段可以在 [JSFiddle](https://jsfiddle.net/mweststrate/wv3yopo0/) (或者 [不使用 ES6 和 JSX](https://jsfiddle.net/rubyred/55oc981v/))中在线试用。
 
-### 可观察的状态(Observable state)
+### Observable state(可观察的状态)
 
 MobX 为现有的数据结构(如对象，数组和类实例)添加了可观察的功能。
 通过使用 [@observable](http://mobxjs.github.io/mobx/refguide/observable-decorator.html) 装饰器(ES.Next)来给你的类属性添加注解就可以简单地完成这一切。
@@ -82,7 +82,7 @@ function Todo() {
 }
 ```
 
-### 计算值(Computed values)
+### Computed values(计算值)
 
 使用 MobX， 你定义的值可以在相关数据发生变化时自动更新。
 通过使用 [`@computed`](http://mobxjs.github.io/mobx/refguide/computed-decorator.html) 装饰器或者当使用 `(extend)Observable` 时使用 getter / setter 函数。
@@ -101,7 +101,7 @@ Computations like these can very well be compared with formulas in spreadsheet p
 当添加了一个新的todo或者某个todo的 `finished` 属性发生变化时，MobX 会确保 `unfinishedTodoCount` 自动更新。
 这样的计算可以很好地与电子表格程序中的公式(如MS Excel)进行比较。每当只有在需要它们的时候，它们才会自动更新。
 
-### Reactions
+### Reactions(反应)
 
 Reactions are similar to a computed value, but instead of producing a new value, a reaction produces a side effect for things like printing to the console, making network requests, incrementally updating the React component tree to patch the DOM, etc.
 In short, reactions bridge [reactive](https://en.wikipedia.org/wiki/Reactive_programming) and [imperative](https://en.wikipedia.org/wiki/Imperative_programming) programming.
