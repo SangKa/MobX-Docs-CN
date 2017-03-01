@@ -96,18 +96,16 @@ class TodoList {
 }
 ```
 
-MobX will ensure that `unfinishedTodoCount` is updated automatically when a todo is added or when one of the `finished` properties is modified.
-Computations like these can very well be compared with formulas in spreadsheet programs like MS Excel. They update automatically whenever, and only when, needed.
 当添加了一个新的todo或者某个todo的 `finished` 属性发生变化时，MobX 会确保 `unfinishedTodoCount` 自动更新。
 这样的计算可以很好地与电子表格程序中的公式(如MS Excel)进行比较。每当只有在需要它们的时候，它们才会自动更新。
 
 ### Reactions(反应)
 
-Reactions are similar to a computed value, but instead of producing a new value, a reaction produces a side effect for things like printing to the console, making network requests, incrementally updating the React component tree to patch the DOM, etc.
-In short, reactions bridge [reactive](https://en.wikipedia.org/wiki/Reactive_programming) and [imperative](https://en.wikipedia.org/wiki/Imperative_programming) programming.
+Reactions 和计算值很像，但它不是产生一个新的值，而是会产生一些副作用，比如打印到控制台、网络请求、递增地更新 React 组件树以修补DOM、等等。
+简而言之，reactions 作为 [响应式编程](https://en.wikipedia.org/wiki/Reactive_programming)和[命令式编程](https://en.wikipedia.org/wiki/Imperative_programming)的桥梁。
 
-#### React components
-If you are using React, you can turn your (stateless function) components into reactive components by simply adding the [`observer`](http://mobxjs.github.io/mobx/refguide/observer-component.html) function / decorator from the `mobx-react` package onto them.
+#### React 组件
+如果你用 React 的话，可以把你的(无状态函数)组件变成响应式组件，方法是在组件上添加 [`observer`](http://mobxjs.github.io/mobx/refguide/observer-component.html) 函数/ 装饰器，`observer` 由 `mobx-react` 包提供。
 
 ```javascript
 import React, {Component} from 'react';
@@ -142,16 +140,15 @@ const store = new TodoList();
 ReactDOM.render(<TodoListView todoList={store} />, document.getElementById('mount'));
 ```
 
-`observer` turns React (function) components into derivations of the data they render.
-When using MobX there are no smart or dumb components.
-All components render smartly but are defined in a dumb manner. MobX will simply make sure the components are always re-rendered whenever needed, but also no more than that. So the `onClick` handler in the above example will force the proper `TodoView` to render, and it will cause the `TodoListView` to render if the number of unfinished tasks has changed.
-However, if you would remove the `Tasks left` line (or put it into a separate component), the `TodoListView` will no longer re-render when ticking a box. You can verify this yourself by changing the [JSFiddle](https://jsfiddle.net/mweststrate/wv3yopo0/).
+`observer` 把 React (函数)组件转换为它们渲染的数据的派生。
+当使用 MobX 时没有所谓的智能和无脑组件。
+所有组件都以巧妙的方式进行渲染，而定义却只需要一种简单无脑的方式。MobX 会简单地确保组件总是在需要时重新渲染，但仅此而已。所以上面例子中的 `onClick` 处理方法会强制对应的 `TodoView` 进行渲染，如果未完成任务的数量(unfinishedTodoCount)已经改变，它将导致 `TodoListView` 进行渲染。
+然而，如果移除 `Tasks left` 这行代码(或者将它放到另一个组件中)，当点击 `checkbox` 的时候 `TodoListView` 不会重新渲染。你可以在 [JSFiddle](https://jsfiddle.net/mweststrate/wv3yopo0/) 中自己动手来验证这点。
 
-#### Custom reactions
-Custom reactions can simply be created using the [`autorun`](http://mobxjs.github.io/mobx/refguide/autorun.html),
-[`autorunAsync`](http://mobxjs.github.io/mobx/refguide/autorun-async.html) or [`when`](http://mobxjs.github.io/mobx/refguide/when.html) functions to fit your specific situations.
+#### 自定义 reactions
+使用[`autorun`](http://mobxjs.github.io/mobx/refguide/autorun.html)、[`autorunAsync`](http://mobxjs.github.io/mobx/refguide/autorun-async.html) 和 [`when`](http://mobxjs.github.io/mobx/refguide/when.html) 函数即可简单的创建自定义 reactions，以满足你的具体场景。
 
-For example the following `autorun` prints a log message each time the amount of `unfinishedTodoCount` changes:
+例如，每当 `unfinishedTodoCount` 的数量发生变化时，下面的 `autorun` 会打印日志消息:
 
 ```javascript
 autorun(() => {
@@ -159,26 +156,27 @@ autorun(() => {
 })
 ```
 
-### What will MobX react to?
+### MobX 对什么有反应?
 
-Why does a new message get printed each time the `unfinishedTodoCount` is changed? The answer is this rule of thumb:
-_MobX reacts to any existing observable property that is read during the execution of a tracked function._
+为什么每次 `unfinishedTodoCount` 变化时都会打印一条新消息？答案就是下面这条经验法则:
+_MobX 会对在执行跟踪函数期间读取的任何现有的可观察属性做出反应_。
 
 For an in-depth explanation about how MobX determines to which observables needs to be reacted, check [understanding what MobX reacts to](https://github.com/mobxjs/mobx/blob/gh-pages/docs/best/react.md)
+想深入了解 MobX 是如何知道需要对哪个可观察属性进行反应，请查阅 [理解 MobX 对什么有反应](https://github.com/mobxjs/mobx/blob/gh-pages/docs/best/react.md)。
 
-### Actions
+### Actions(动作)
 
-Unlike many flux frameworks, MobX is unopinionated about how user events should be handled.
+不同于 flux 系的一些框架，MobX 对于如何处理用户事件是完全开明的。
 
-* This can be done in a Flux like manner.
-* Or by processing events using RxJS.
-* Or by simply handling events in the most straightforward way possible, as demonstrated in the above `onClick` handler.
+* 可以用类似 Flux 的方式完成
+* 或者使用 RxJS 来处理事件
+* 或者用最直观、最简单的方式来处理事件，正如上面演示所用的 `onClick`
 
-In the end it all boils down to: Somehow the state should be updated.
+最后全部归结为: 状态应该以某种方式来更新。
 
-After updating the state `MobX` will take care of the rest in an efficient, glitch-free manner. So simple statements, like below, are enough to automatically update the user interface.
+当状态更新后，`MobX` 会以一种高效且无差错的方式处理好剩下的事情。像下面如此简单的语句，已经足够用来自动更新用户界面了。
 
-There is no technical need for firing events, calling dispatcher or what more. A React component is in the end nothing more than a fancy representation of your state. A derivation that will be managed by MobX.
+从技术上层面来讲，并不需要触发事件、调用分派程序或者类似的工作。归根究底 React 组件只是状态的华丽展示，而状态的派生由 MobX 来管理。
 
 ```javascript
 store.todos.push(
@@ -188,16 +186,16 @@ store.todos.push(
 store.todos[0].finished = true;
 ```
 
-Nonetheless, MobX has an optional built-in concept of [`actions`](https://mobxjs.github.io/mobx/refguide/action.html).
-Use them to your advantage; they will help you to structure your code better and make wise decisions about when and where state should be modified.
+尽管如此，MobX 还是提供了 [`actions`](https://mobxjs.github.io/mobx/refguide/action.html) 这个可选的内置概念。
+使用 `actions` 是有优势的: 它们可以帮助你把代码组织的更好，还能在状态何时何地应该被修改这个问题上帮助你做出明智的决定。
 
-## MobX: Simple and scalable
+## MobX: 简单且可扩展
 
-MobX is one of the least obtrusive libraries you can use for state management. That makes the `MobX` approach not just simple, but very scalable as well:
+MobX 是状态管理类库中侵入性最小的之一。这使得 `MobX`的方法不但简单，而且可扩展性也非常好:
 
-### Using classes and real references
+### 使用类和真正的引用
 
-With MobX you don't need to normalize your data. This makes the library very suitable for very complex domain models (At Mendix for example ~500 different domain classes in a single application).
+使用 MobX 不需要使数据标准化。这使得类库十分适合那些异常复杂的领域模型(以 Mendix 为例: 一个应用中有大约500个领域类)。
 
 ### Referential integrity is guaranteed
 
