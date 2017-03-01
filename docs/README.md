@@ -29,7 +29,7 @@ _简单、可扩展的状态管理_
 
 ## 入门
 
-MobX 是一个经过战火洗礼的类库，它通过透明的函数响应式编程(transparently applying functional reactive programming - TFRP)使得状态管理变得简单和可扩展。MobX背后的哲学很简单:
+MobX 是一个经过战火洗礼的库，它通过透明的函数响应式编程(transparently applying functional reactive programming - TFRP)使得状态管理变得简单和可扩展。MobX背后的哲学很简单:
 
 _任何源自应用状态的东西都应该自动地获得。_
 
@@ -140,7 +140,7 @@ const store = new TodoList();
 ReactDOM.render(<TodoListView todoList={store} />, document.getElementById('mount'));
 ```
 
-`observer` 把 React (函数)组件转换为它们渲染的数据的派生。
+`observer` 把 React (函数)组件转换为它们渲染的数据的推导。
 当使用 MobX 时没有所谓的智能和无脑组件。
 所有组件都以巧妙的方式进行渲染，而定义却只需要一种简单无脑的方式。MobX 会简单地确保组件总是在需要时重新渲染，但仅此而已。所以上面例子中的 `onClick` 处理方法会强制对应的 `TodoView` 进行渲染，如果未完成任务的数量(unfinishedTodoCount)已经改变，它将导致 `TodoListView` 进行渲染。
 然而，如果移除 `Tasks left` 这行代码(或者将它放到另一个组件中)，当点击 `checkbox` 的时候 `TodoListView` 不会重新渲染。你可以在 [JSFiddle](https://jsfiddle.net/mweststrate/wv3yopo0/) 中自己动手来验证这点。
@@ -161,7 +161,6 @@ autorun(() => {
 为什么每次 `unfinishedTodoCount` 变化时都会打印一条新消息？答案就是下面这条经验法则:
 _MobX 会对在执行跟踪函数期间读取的任何现有的可观察属性做出反应_。
 
-For an in-depth explanation about how MobX determines to which observables needs to be reacted, check [understanding what MobX reacts to](https://github.com/mobxjs/mobx/blob/gh-pages/docs/best/react.md)
 想深入了解 MobX 是如何知道需要对哪个可观察属性进行反应，请查阅 [理解 MobX 对什么有反应](https://github.com/mobxjs/mobx/blob/gh-pages/docs/best/react.md)。
 
 ### Actions(动作)
@@ -174,9 +173,9 @@ For an in-depth explanation about how MobX determines to which observables needs
 
 最后全部归结为: 状态应该以某种方式来更新。
 
-当状态更新后，`MobX` 会以一种高效且无差错的方式处理好剩下的事情。像下面如此简单的语句，已经足够用来自动更新用户界面了。
+当状态更新后，`MobX` 会以一种高效且无障碍的方式处理好剩下的事情。像下面如此简单的语句，已经足够用来自动更新用户界面了。
 
-从技术上层面来讲，并不需要触发事件、调用分派程序或者类似的工作。归根究底 React 组件只是状态的华丽展示，而状态的派生由 MobX 来管理。
+从技术上层面来讲，并不需要触发事件、调用分派程序或者类似的工作。归根究底 React 组件只是状态的华丽展示，而状态的推导由 MobX 来管理。
 
 ```javascript
 store.todos.push(
@@ -191,43 +190,44 @@ store.todos[0].finished = true;
 
 ## MobX: 简单且可扩展
 
-MobX 是状态管理类库中侵入性最小的之一。这使得 `MobX`的方法不但简单，而且可扩展性也非常好:
+MobX 是状态管理库中侵入性最小的之一。这使得 `MobX`的方法不但简单，而且可扩展性也非常好:
 
 ### 使用类和真正的引用
 
-使用 MobX 不需要使数据标准化。这使得类库十分适合那些异常复杂的领域模型(以 Mendix 为例: 一个应用中有大约500个领域类)。
+使用 MobX 不需要使数据标准化。这使得库十分适合那些异常复杂的领域模型(以 Mendix 为例: 一个应用中有大约500个领域类)。
 
-### Referential integrity is guaranteed
+### 保证参照完整性
 
 Since data doesn't need to be normalized, and MobX automatically tracks the relations between state and derivations, you get referential integrity for free. Rendering something that is accessed through three levels of indirection?
+因为数据不需要标准化，所以 MobX 会自动跟踪状态和推导之间的关系，你可以免费获得参照完整性。渲染是通过三级间接寻址访问？
 
-No problem, MobX will track them and re-render whenever one of the references changes. As a result staleness bugs are a thing of the past. As a programmer you might forget that changing some data might influence a seemingly unrelated component in a corner case. MobX won't forget.
+没有问题，MobX 会跟踪它们，一旦其中一个引用发生了变化，就会重新渲染。作为回报，陈年的老bug已不复存在。作为一个程序员，你可能会忘记修改一些数据可能会影响到一个角落里看起来毫不相关的组件，但 MobX 不会。
 
-### Simpler actions are easier to maintain
+### 更简单的 actions 更便于维护
 
-As demonstrated above, modifying state when using MobX is very straightforward. You simply write down your intentions. MobX will take care of the rest.
+正如上面所演示的，使用 MobX 修改状态是非常简单的。你只需简单的写出你的目的。MobX 会替你处理好剩下的事情。
 
-### Fine grained observability is efficient
+### 细粒度的可观测性是高效的
 
-MobX builds a graph of all the derivations in your application to find the least number of re-computations that is needed to prevent staleness. "Derive everything" might sound expensive, MobX builds a virtual derivation graph to minimize the number of recomputations needed to keep derivations in sync with the state.
+MobX 构建应用中所有推导的图形，以找到保持最新所需的最少数量的重新计算。“推导一切”或许听上去开销很昂贵，但 MobX 构建虚拟推导图以保持推导与状态同步所需的重计算的数量最小化。
 
-In fact, when testing MobX at Mendix we found out that using this library to track the relations in our code is often a lot more efficient than pushing changes through our application by using handwritten events or "smart" selector based container components.
+事实上，在 Mendix 测试 MobX 时我们发现使用这个库跟踪代码中的关系通常比通过使用手写事件或基于容器组件的“智能”选择器来推送更改更有效率。
 
-The simple reason is that MobX will establish far more fine grained 'listeners' on your data than you would do as a programmer.
+原因简单来说是 MobX 将在你的数据上建立比你作为一个程序员更多的细粒度的“监听器”。
 
-Secondly MobX sees the causality between derivations so it can order them in such a way that no derivation has to run twice or introduces a glitch.
+其次, MobX 看到推导之间的因果关系，因此它可以为推导排序，使得推导不会运行多次或引入缺陷。
 
-How that works? See this [in-depth explanation of MobX](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254).
+想了解这是如何工作的？ 请参见 [深入剖析 MobX](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254)。
 
-### Easy interoperability
+### 易操作性
 
-MobX works with plain javascript structures. Due to its unobtrusiveness it works with most javascript libraries out of the box, without needing MobX specific library flavors.
+MobX 使用原生javascript。由于它的不唐突性，它天生可以和绝大部分javascript库共同使用，而不需要特定的 MobX 风格库。
 
-So you can simply keep using your existing router, data fetching and utility libraries like `react-router`, `director`, `superagent`, `lodash` etc.
+所以你可以继续使用你的路由，数据获取和工具库，比如`react-router`、 `director`、 `superagent`、 `lodash`，等等。
 
-For the same reason you can use it out of the box both server- and client side, in isomorphic applications and with react-native.
+出于同样的原因，你可以在服务器端和客户端使用它，也可以在 react-native 这样的同构应用中使用。
 
-The result of this is that you often need to learn fewer new concepts when using MobX in comparison to other state management solutions.
+结论就是: 相比其它状态管理解决方案，当使用 MobX 时通常只需学习更少的新感念。
 
 ---
 
@@ -236,56 +236,55 @@ The result of this is that you often need to learn fewer new concepts when using
 <center>
 <img src="https://www.mendix.com/styleguide/img/logo-mendix.png" align="center" width="200"/>
 
-__MobX is proudly used in mission critical systems at [Mendix](https://www.mendix.com)__
+<strong>可以自豪的说，MobX 已经在 <a href="https://www.mendix.com">Medix</a> 的任务关键系统中使用 </strong>
 </center>
 
-## Credits
 
-MobX is inspired by reactive programming principles as found in spreadsheets. It is inspired by MVVM frameworks like in MeteorJS tracker, knockout and Vue.js. But MobX brings Transparent Functional Reactive Programming to the next level and provides a stand alone implementation. It implements TFRP in a glitch-free, synchronous, predictable and efficient manner.
+## 信用
 
-A ton of credits for [Mendix](https://github.com/mendix), for providing the flexibility and support to maintain MobX and the chance to prove the philosophy of MobX in a real, complex, performance critical applications.
+MobX 的灵感来自excel表格中的反应式编程原理。同样也受到像 MeteorJS、knockout和Vue.js这样的 MVVM 框架的启发。但是 MobX 把透明的函数响应式编程(Transparent Functional Reactive Programming)提升到了一个更好的水平并且提供了独立的实现。它以一种无障碍、同步、可预见和高效的方式实现了 TFRP。
 
-And finally kudos for all the people that believed in, tried, validated and even [sponsored](https://github.com/mobxjs/mobx/blob/master/sponsors.md) MobX.
+[Mendix](https://github.com/mendix) 积累了大量的信用，为维护 MobX 提供了灵活性和支持，并有机会在显示、复杂、性能关键的应用程序中证明 MobX 的哲学。
 
-## Further resources and documentation
+最终的赞誉属于所有的选择相信、不断尝试、不断验证、乃至[赞助](https://github.com/mobxjs/mobx/blob/master/sponsors.md) MobX 的人们。
 
-* [MobX homepage](http://mobxjs.github.io/mobx/faq/blogs.html)
-* [API overview](http://mobxjs.github.io/mobx/refguide/api.html)
-* [Tutorials, Blogs & Videos](http://mobxjs.github.io/mobx/faq/blogs.html)
-* [Boilerplates](http://mobxjs.github.io/mobx/faq/boilerplates.html)
-* [Related projects](http://mobxjs.github.io/mobx/faq/related.html)
+## 更多资源及文档
 
+* [MobX 主页](http://mobxjs.github.io/mobx/faq/blogs.html)
+* [API概览](http://mobxjs.github.io/mobx/refguide/api.html)
+* [教程、博客和视频](http://mobxjs.github.io/mobx/faq/blogs.html)
+* [样板文件](http://mobxjs.github.io/mobx/faq/boilerplates.html)
+* [相关项目](http://mobxjs.github.io/mobx/faq/related.html)
 
-## What others are saying...
+Working with #mobx is basically a continuous loop of me going “this is way too simple, it definitely won’t work” only to be proven wrong
+## 其它人都在说些什么...
 
-> After using #mobx for lone projects for a few weeks, it feels awesome to introduce it to the team. Time: 1/2, Fun: 2X
+> 在一个独立的项目使用 #mobx 几周后，感觉把它引入到团队中真是太棒了。工作时间减半，快乐加倍。
 
-> Working with #mobx is basically a continuous loop of me going “this is way too simple, it definitely won’t work” only to be proven wrong
+> 使用 #mobx 工作对于来我来说，基本就是不断地证明“这种方式太简单，肯定没有办法正常工作”的想法是错误的过程。
 
-> Try react-mobx with es6 and you will love it so much that you will hug someone.
+> 尝试使用 ES6 版本的 react-mobx 后，你会给它一个热情的拥抱并深深地爱上它。
 
-> I have built big apps with MobX already and comparing to the one before that which was using Redux, it is simpler to read and much easier to reason about.
+> 我已经在大型应用中使用了 MobX，和之前使用的 Redux 相比，它更容易阅读和推导。
 
-> The #mobx is the way I always want things to be! It's really surprising simple and fast! Totally awesome! Don't miss it!
+> #mobx 正是我一直想要的方式！它真的超级简单、超级快！棒极了！千万不要错过！
 
-## Contributing
+## 贡献
 
-* Feel free to send small pull requests. Please discuss new features or big changes in a GitHub issue first.
-* Use `npm test` to run the basic test suite, `npm run coverage` for the test suite with coverage and `npm run perf` for the performance tests.
+* 小的 pull requests 可以随意发起。但是新功能或者重大变更请先在 Github Issues 中讨论。
+* 使用 `npm test` 运行基本测试套件，`npm run coverage` 用来测试套件的覆盖率，`npm run perf` 用来测试性能。
 
-## Bower support
+## Bower 支持
 
-Bower support is available through the infamous unpkg.com:
+可以通过臭名昭着的 unpkg.com 获得 Bower 支持:
 `bower install https://unpkg.com/mobx/bower.zip`
 
-Then use `lib/mobx.umd.js` or `lib/mobx.umd.min.js`
+然后使用文件 `lib/mobx.umd.js` 或者 `lib/mobx.umd.min.js`
 
-## MobX was formerly known as Mobservable.
+## MobX 以前叫做 Mobservable
 
-See the [changelog](https://github.com/mobxjs/mobx/blob/master/CHANGELOG.md#200) for all the details about `mobservable` to `mobx`.
+想了解 `mobservable` 更名为 `mobx` 的所有细节，请参见[变更日志](https://github.com/mobxjs/mobx/blob/master/CHANGELOG.md#200)。
 
-## Donating
+## 捐赠
 
-Was MobX key in making your project a success? Share the victory by using the [donate button](https://mobxjs.github.io/mobx/donate.html)!
-MobX is developed largely in free time, so any ROI is appreciated :-).
-If you leave a name you will be added to the [sponsors](https://github.com/mobxjs/mobx/blob/master/sponsors.md) list :).
+MobX 是使您的项目成功的关键吗？ 使用[捐赠按钮](https://mobxjs.github.io/mobx/donate.html)分享胜利！ MobX 主要利用空闲时间进行开发，所以任何支助都将不胜感激 :-)。 如果你留下一个名字，它将被添加到[赞助商](https://github.com/mobxjs/mobx/blob/master/sponsors.md)列表 :)。
