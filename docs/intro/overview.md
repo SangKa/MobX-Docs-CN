@@ -1,8 +1,8 @@
-# The gist of MobX
+# MobX 要点
 
-So far it all might sound a bit fancy, but making an app reactive using MobX boils down to just these three steps:
+到目前为止，这一切都可能听起来有点花哨，但使用 MobX 将一个应用变成响应式的可归纳为以下三个步骤:
 
-## 1. Define your state and make it observable
+## 1. 定义状态并使其可观察
 
 Store state in any data structure you like; objects, array, classes.
 Cyclic data structures, references, it doesn't matter.
