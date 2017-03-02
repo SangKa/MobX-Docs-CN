@@ -1,42 +1,42 @@
-# Concepts & Principles
+# 概念与原则
 
-## Concepts
+## 概念
 
-MobX distinguishes the following concepts in your application. You saw them in the previous gist, but let's dive into them in a bit more detail.
+MobX 区分了以下几个应用中的概念。 在之前的要点中已经见过了，现在让我们更深入地了解它们。
 
-### 1. State
+### 1. State(状态)
 
-_State_ is the data that drives your application.
-Usually there is _domain specific state_ like a list of todo items and there is _view state_ such as the currently selected element.
-Remember, state is like spreadsheets cells that hold a value.
+**状态** 是驱动应用的数据。
+通常有像待办事项列表这样的**领域特定状态**，还有像当前已选元素的**视图状态**。
+记住，状态就像是有数据的excel表格。
 
-### 2. Derivations
+### 2. Derivations(推导)
 
-_Anything_ that can be derived from the _state_ without any further interaction is a derivation.
-Derivations exist in many forms:
+**任何** 源自**状态**并且不会再有任何进一步的相互作用的东西就是推导。
+推导以多种形式存在:
 
-* The _user interface_.
-* _Derived data_, such as the amount of todos left.
-* _Backend integrations_ like sending changes to the server.
+* **用户界面**
+* **推导数据**，比如剩下的待办事项的数量。
+* **后端集成**，比如把变化发送到服务器端。
 
-MobX distinguishes two kind of derivations:
-* *Computed values*. These are values that can always be derived from the current observable state using a pure function.
-* *Reactions*. Reactions are side effects that need to happen automatically if the state changes. These are needed as a bridge between imperative and reactive programming. Or to make it more clear, they are ultimately needed to achieve I/O.
+MobX 区分了两种类型的推导:
+* **Computed values(计算值)** - 它们是永远可以使用纯函数(pure function)从当前可观察状态中推导出的值。
+* **Reactions(反应)** - Reactions 是当状态改变时需要自动发生的副作用。需要有一个桥梁来连接命令式编程(imperative programming)和响应式编程(reactive programming)。或者说得更明确一些，它们最终都需要实现I / O 操作。
 
-People starting with MobX tend to use reactions too often.
-The golden rule is: if you want to create a value based on the current state, use `computed`.
+刚开始使用 MobX 时，人们倾向于频繁的使用 reactions。
+黄金法则: 如果你想创建一个基于当前状态的值时，请使用 `computed`。
 
-Back to the spreadsheet analogy, formulas are derivations that *compute* a value. But for you as a user to be able to see it on the screen a *reaction* is needed that repaints part of the GUI.
+回到excel表格这个比喻中来，公式是**计算**值的推导。但对于用户来说，能看到屏幕给出的**反应**则需要部分重绘GUI。
 
-### 3. Actions
+### 3. Actions(动作)
 
-An _action_ is any piece of code that changes the _state_. User events, backend data pushes, scheduled events etc.
-An action is like a user that enters a new value in a spreadsheet cell.
+**动作** 是任何改变**状态**的一段代码。用户事件、后端数据推送、预定事件、等等。
+动作类似于用户在excel单元格中输入一个新的值。
 
 Actions can be defined explicitly in MobX to help you to structure code more clearly.
 If MobX is used in *strict mode*, MobX will enforce that no state can be modified outside actions.
 
-## Principles
+## 原则
 
 MobX supports an uni-directional data flow where _actions_ changes the _state_, which in turn updates all affected _views_.
 
