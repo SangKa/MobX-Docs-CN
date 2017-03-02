@@ -255,18 +255,17 @@ MobX 的灵感来自excel表格中的反应式编程原理。同样也受到像 
 * [样板文件](http://mobxjs.github.io/mobx/faq/boilerplates.html)
 * [相关项目](http://mobxjs.github.io/mobx/faq/related.html)
 
-Working with #mobx is basically a continuous loop of me going “this is way too simple, it definitely won’t work” only to be proven wrong
 ## 其它人都在说些什么...
 
-> 在一个独立的项目使用 #mobx 几周后，感觉把它引入到团队中真是太棒了。工作时间减半，快乐加倍。
+> 在一个独立的项目使用 mobx 几周后，感觉把它引入到团队中真是太棒了。工作时间减半，快乐加倍。
 
-> 使用 #mobx 工作对于来我来说，基本就是不断地证明“这种方式太简单，肯定没有办法正常工作”的想法是错误的过程。
+> 使用 mobx 工作对于来我来说，基本就是不断地证明“这种方式太简单，肯定没有办法正常工作”的想法是错误的过程。
 
 > 尝试使用 ES6 版本的 react-mobx 后，你会给它一个热情的拥抱并深深地爱上它。
 
 > 我已经在大型应用中使用了 MobX，和之前使用的 Redux 相比，它更容易阅读和推导。
 
-> #mobx 正是我一直想要的方式！它真的超级简单、超级快！棒极了！千万不要错过！
+> mobx 正是我一直想要的方式！它真的超级简单、超级快！棒极了！千万不要错过！
 
 ## 贡献
 
