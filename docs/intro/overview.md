@@ -49,17 +49,17 @@ React.render(<TimerView appState={appState} />, document.body);
 
 ## 3. 更改状态
 
-The third thing to do is to modify the state.
-That is what your app is all about after all.
-Unlike many other frameworks, MobX doesn't dictate how you do this.
-There are best practices, but the key thing to remember is:
-***MobX helps you do things in a simple straightforward way***.
+第三件要做的事就是更改状态。
+也就是你的应用究竟要做什么。
+不像一些其它框架，MobX 不会命令你如何如何去做。
+这是最佳实践，但关键要记住一点:
+***MobX 帮助你以一种简单直观的方式来完成工作***。
+
+下面的代码每秒都会修改你的数据，而当需要的时候UI会自动更新。
+无论是在**改变**状态的控制器函数中，还是在应该**更新**的视图中，都没有明确的关系定义。
+使用 `observable` 来装饰你的**状态**和**视图**，这足以让 MobX检测所有关系了。
 
 
-The following code will alter your data every second, and the UI will update automatically when needed.
-No explicit relations are defined in either the controller functions that _change_ the state or in the views that should _update_.
-Decorating your _state_ and _views_ with `observable` is enough for MobX to detect all relationships.
-Here are two examples of changing the state:
 
 ```javascript
 appState.resetTimer = action(function reset() {
@@ -71,8 +71,8 @@ setInterval(action(function tick() {
 }), 1000);
 ```
 
-The `action` wrapper is only needed when using MobX in strict mode (by default off).
-It is recommended to use action though as it will help you to better structure applications and expresses the intention of a function to modify state.
-Also it automatically applies transactions for optimal performance.
+只有在严格模式(默认是不启用)下使用 MobX 时才需要 `action` 包装。
+建议使用 action，因为它将帮助你更好地组织应用，并表达出一个函数修改状态的意图。
+它还自动应用事务以获得最佳性能。
 
-Feel free to try this example on [JSFiddle](http://jsfiddle.net/mweststrate/wgbe4guu/) or by cloning the [MobX boilerplate project](https://github.com/mobxjs/mobx-react-boilerplate)
+可以通过 [JSFiddle](http://jsfiddle.net/mweststrate/wgbe4guu/) 或者克隆 [MobX 样板工程](https://github.com/mobxjs/mobx-react-boilerplate) 来随意试用这个示例。
