@@ -62,7 +62,7 @@ class Todo {
 但和单元格不同的是，这些值不只是原始值，还可以是引用值，比如对象和数组。
 你甚至还可以[自定义](http://mobxjs.github.io/mobx/refguide/extending.html)可观察数据源。
 
-### 插曲: 在ES5、ES6 和ES.next环境下使用 MobX
+### 插曲: 在ES5、ES6和ES.next环境下使用 MobX
 
 这些 `@` 开头的东西对你来说或许还比较陌生，它们是ES.next装饰器。
 在 MobX 中使用它们完全是可选的。参见[装饰器文档](http://mobxjs.github.io/mobx/best/decorators.html)详细了解如何使用或者避免它们。
