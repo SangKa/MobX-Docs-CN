@@ -198,7 +198,6 @@ MobX 是状态管理库中侵入性最小的之一。这使得 `MobX`的方法�
 
 ### 保证参照完整性
 
-Since data doesn't need to be normalized, and MobX automatically tracks the relations between state and derivations, you get referential integrity for free. Rendering something that is accessed through three levels of indirection?
 因为数据不需要标准化，所以 MobX 会自动跟踪状态和推导之间的关系，你可以免费获得参照完整性。渲染是通过三级间接寻址访问？
 
 没有问题，MobX 会跟踪它们，一旦其中一个引用发生了变化，就会重新渲染。作为回报，陈年的老bug已不复存在。作为一个程序员，你可能会忘记修改一些数据可能会影响到一个角落里看起来毫不相关的组件，但 MobX 不会。
