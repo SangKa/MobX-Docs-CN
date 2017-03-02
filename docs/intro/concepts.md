@@ -33,27 +33,28 @@ MobX 区分了两种类型的推导:
 **动作** 是任何改变**状态**的一段代码。用户事件、后端数据推送、预定事件、等等。
 动作类似于用户在excel单元格中输入一个新的值。
 
-Actions can be defined explicitly in MobX to help you to structure code more clearly.
-If MobX is used in *strict mode*, MobX will enforce that no state can be modified outside actions.
+在 MobX 中可以显示的定义动作，它可以帮你把代码组织的更清晰。
+如果是在**严格模式**下使用 MobX的话，MobX 会强制只有在动作之中才可以修改状态。
 
 ## 原则
 
-MobX supports an uni-directional data flow where _actions_ changes the _state_, which in turn updates all affected _views_.
+MobX 支持单向数据流，其中**动作**改变**状态**，而状态的改变会更新所有受影响的**视图**。
 
 ![Action, State, View](../images/action-state-view.png)
 
-All _Derivations_ are updated **automatically** and **atomically** when the _state_ changes. As a result it is never possible to observe intermediate values.
+当**状态**改变时，所有的**推导**都会**自动**和**原子级**的更新。因此永远不可能观察到中间值。
 
-All _Derivations_ are updated **synchronously** by default. This means that for example _actions_ can safely inspect a computed value directly after altering the _state_.
+所有**推导**默认都是**同步**更新。这意味着例如**动作**可以在改变**状态**之后直接可以安全地检查计算值。
 
-_Computed values_ are updated **lazily**. Any computed value that is not actively in use will not be updated until it is needed for a side effect (I/O).
-If a view is no longer in use it will be garbage collected automatically.
+**计算值** 是**延迟**更新的。任何不在使用状态的计算值将不会更新，直到需要它进行副作用（I / O）操作时。
+如果视图不再使用，那么它会自动被垃圾回收。
 
-All _Computed values_ should be **pure**. They are not supposed to change _state_.
+所有的**计算值**都应该是**纯净**的。它们不应该用来改变**状态**。
 
-## Illustration
+## 实例
 
 The following listing illustrates the above concepts and principles:
+下面的代码清单举例说明了以上的概念和原则:
 
 ```javascript
 import {observable, autorun} from 'mobx';
@@ -88,4 +89,4 @@ todoStore.todos[0].completed = true;
 
 ```
 
-In the [10 minute introduction to MobX and React](https://mobxjs.github.io/mobx/getting-started.html) you can dive deeper into this example and build a user interface using [React](https://facebook.github.io/react/) around it.
+在[10分钟入门 MobX 和 React](https://mobxjs.github.io/mobx/getting-started.html)中你可以深入本示例并且围绕它使用 [React](https://facebook.github.io/react/) 来构建用户页面。
