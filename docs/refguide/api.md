@@ -185,11 +185,6 @@ Usage:
 [&laquo;详情&raquo;](autorun-async.md)
 
 ### `reaction`
-Usage: `reaction(debugname?, () => data, data => { sideEffect }, fireImmediately = false, delay = 0)`.
-A variation on `autorun` that gives more fine-grained control on which observables that will be tracked.
-It takes two function, the first one is tracked and returns data that is used as input for the second one, the side effect.
-Unlike `autorun` the side effect won't be run initially, and any observables that are accessed while executing the side effect will not be tracked.
-The side effect can be debounced, just like `autorunAsync`. [&laquo;details&raquo;](reaction.md)
 用法: `reaction(debugname?, () => data, data => { sideEffect }, fireImmediately = false, delay = 0)`.
 `reaction` 是 `autorun` 的变种，在如何追踪 observable 方面给予了更细粒度的控制。
 它接收两个函数，第一个是追踪并返回数据，该数据用作第二个函数，也就是副作用的输入。
@@ -222,43 +217,43 @@ _有一些工具函数可以使得 observable 或者  计算值用起来更方�
 
 ### `inject` (`mobx-react` 包)
 
-Higher order component and counterpart of `Provider`. Can be used to pick stores from React's context and pass it as props to the target component. Usage:
+高阶组件和 `Provider` 的对应物。可以用来从 React 的上下文中挑选 store 作为 prop 传递给目标组件。用法:
 * `inject("store1", "store2")(observer(MyComponent))`
 * `@inject("store1", "store2") @observer MyComponent`
 * `@inject((stores, props, context) => props) @observer MyComponent`
 * `@observer(["store1", "store2"]) MyComponent` is a shorthand for the the `@inject() @observer` combo.
 
 ### `toJS`
-Usage: `toJS(observableDataStructure)`. Converts observable data structures back to plain javascript objects, ignoring computed values. [&laquo;details&raquo;](tojson.md)
+用法: `toJS(observableDataStructure)`。把 observable 数据结构转换成普通的 javascript 对象并忽略计算值。 [&laquo;详情&raquo;](tojson.md)
 
 ### `isObservable`
-Usage: `isObservable(thing, property?)`. Returns true if the given thing, or the `property` of the given thing is observable.
-Works for all observables, computed values and disposer functions of reactions. [&laquo;details&raquo;](is-observable)
+用法: `isObservable(thing, property?)`。如果给定的thing，或者thing指定的属性是 observable 的话返回true。
+适用于所有的 observable、计算值和 reaction 的清理函数。[&laquo;详情&raquo;](is-observable)
 
 ### `isObservableObject|Array|Map`
-Usage: `isObservableObject(thing)`, `isObservableArray(thing)`, `isObservableMap(thing)`. Returns `true` if.., well, do the math.
+用法: `isObservableObject(thing)`, `isObservableArray(thing)`, `isObservableMap(thing)`. 如果类型匹配的话返回true。
 
 ### `isArrayLike`
-Usage: `isArrayLike(thing)`. Returns `true` if the given thing is either a true JS-array or an observable (MobX-)array.
-This is intended as convenience/shorthand.
-Note that observable arrays can be `.slice()`d to turn them into true JS-arrays.
+用法: `isArrayLike(thing)`。如果给定的thing是 javascript 数组或者 observable (MobX的)数组的话，返回true。
+这是为了方便和简写。
+注意，observable 数组可以通过 `.slice()` 转变成 javascript 数组。
 
 ### `isAction`
-Usage: `isAction(func)`. Returns true if the given function is wrapped / decorated with `action`.
+用法: `isAction(func)`。如果给定函数是用`action` 方法包裹的或者是 `@action` 装饰器的话，返回true。
 
 ### `isComputed`
-Usage: `isComputed(thing, property?)`. Returns true if the giving thing is a boxed computed value, or if the designated property is a computed value.
+用法: `isComputed(thing, property?)`。如果给定的thing是计算值或者thing指定的属性是计算值的话，返回true。
 
 ### `createTransformer`
-Usage: `createTransformer(transformation: A => B, onCleanup?): A = B`.
-Can be used to make functions that transforms one value into another value reactive and memoized.
-It behaves similar to computed and can be used for advanced patterns like very efficient array maps, map reduce or computed values that are not part of an object.
-[&laquo;details&raquo;](create-transformer.md)
+用法: `createTransformer(transformation: A => B, onCleanup?): A = B`。
+可以用来使函数将一个值转换为另一个可以反应和记忆的值。
+它的行为类似于计算值，可以用于一些高级模式，比如非常高效的数组映射，映射归并或者不是对象的一部分的计算值。
+[&laquo;详情&raquo;](create-transformer.md)
 
 ### `intercept`
-Usage: `intercept(object, property?, interceptor)`.
-Api that can be used to intercept changes before they are applied to an observable api. Useful for validation, normalization or cancellation.
-[&laquo;details&raquo;](observe.md)
+用法: `intercept(object, property?, interceptor)`.
+这个API可以在应用 observable 的API之前，拦截更改。对于验证、标准化和取消十分有用。
+[&laquo;详情&raquo;](observe.md)
 
 ### `observe`
 Usage: `observe(object, property?, listener, fireImmediately = false)`
