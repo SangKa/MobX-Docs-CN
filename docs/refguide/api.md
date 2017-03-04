@@ -24,52 +24,51 @@ Observable 值可以是JS基本数据类型、引用类型、普通对象、类�
 
 1. 如果 **value** 是[ES6 Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)的实例: 会返回一个新的 [Observable Map](map.md)。如果你不想只对一个特定项的更改做出反应，而是对添加或删除该项做出反应的话，那么 Observable map 会非常有用。
 1. 如果 **value** 是数组，会返回一个 [Observable Array](array.md)。
-1. 如果 **value** 是没有原型的对象，那么对象会被克隆并且所有的属性都会被变成可观察的。参见 [Observable Object](object.md)。
-1. 如果 **value** 是有原型的对象，JavaSript原始数据类型或者函数，会返回一个 [Boxed Observable](boxed.md)。MobX 不会将一个有原型的对象自动变成可观察的，因为这是它构造函数的职责。在构造函数中使用 `extendObservable` 或者在类定义中使用 `@observable`。
+1. 如果 **value** 是没有原型的对象，那么对象会被克隆并且所有的属性都会被转换成可观察的。参见 [Observable Object](object.md)。
+1. 如果 **value** 是有原型的对象，JavaSript原始数据类型或者函数，会返回一个 [Boxed Observable](boxed.md)。MobX 不会将一个有原型的对象自动转换成可观察的，因为这是它构造函数的职责。在构造函数中使用 `extendObservable` 或者在类定义中使用 `@observable`。
 
 乍看之下，这些规则可能看上去很复杂，但实际上实践当中你会发现他们是非常直观的。
 
 一些笔记:
-* 要创建键是动态的对象时永远都使用 maps！该对象只有初始化时便存在的属性会变成可观察的，但新添加的属性只有通过使用 `extendObservable` 才可以变成可观察的。
+* 要创建键是动态的对象时永远都使用 maps！该对象只有初始化时便存在的属性会转换成可观察的，但新添加的属性只有通过使用 `extendObservable` 才可以转换成可观察的。
 * 要想使用 `@observable` 装饰器，首先要确保 在你的编译器(babel 或者 typescript)中 [装饰器是启用的](http://mobxjs.github.io/mobx/refguide/observable-decorator.html)。
-* 默认情况下将一个数据结构变成可观察的是**有感染性的**，这意味着 `observable` 被自动应用于数据结构包含的任何值，或者将来会被该数据结构包含的值。这个行为可以通过使用 *modifiers* 或 *shallow* 来更改。
+* 默认情况下将一个数据结构转换成可观察的是**有感染性的**，这意味着 `observable` 被自动应用于数据结构包含的任何值，或者将来会被该数据结构包含的值。这个行为可以通过使用 *modifiers* 或 *shallow* 来更改。
 
 [&laquo;`observable`&raquo;](observable.md)  &mdash;  [&laquo;`@observable`&raquo;](observable-decorator.md)
 
 ### `@observable property =  value`
 
-`observable` can also be used as property decorator. It requires [decorators to be enabled](../best/decorators.md) and is syntactic
-sugar for `extendObservable(this, { property: value })`.
+`observable` 也可以用作属性装饰器。它需要[启用装饰器](../best/decorators.md)而且它是 `extendObservable(this, { property: value })` 的语法糖。
 
-[&laquo;`details`&raquo;](observable-decorator.md)
+[&laquo;`详情`&raquo;](observable-decorator.md)
 
 ### `observable.box(value)` & `observable.shallowBox(value)`
 
-Creates an observable _box_ that stores an observable reference to a value. Use `get()` to get the current value of the box, and `set()` to update it.
-This is the foundation on which all other observables are built, but in practice you will use it rarely.
-Normal boxes will automatically try to turn any new value into an observable if it isn't already. Use `shallowBox` to disable this behavior.
+创建一个 observable 的盒子，它用来存储值的 observable 引用。使用 `get()` 方法可以得到盒子中的当前值，而使用 `set()` 方法可以更新值。
+这是所有其它 observable 创建的基础，但实际中你其实很少能使用到它。
+通常盒子会自动地尝试把任何还不是 observable 的新值转换成 observable 。使用 `shallowBox` 会禁用这项行为。
 
-[&laquo;`details`&raquo;](boxed.md)
+[&laquo;`详情`&raquo;](boxed.md)
 
 ### `observable.object(value)` & `observable.shallowObject(value)`
 
-Creates a clone of the provided object and makes all its properties observable.
-By default any values in those properties will be made observable as well, but when using `shallowObject` only the properties will be made into observable
-references, but the values will be untouched. (This holds also for any values assigned in the future)
+为提供的对象创建一个克隆并将其所有的属性转换成 observable 。
+默认情况下这些属性中的任何值都会转换成 observable，但当使用 `shallowObject` 时只有属性会转换成 observable 引用，而值不会改变(这也适用于将来分配的任何值)。
 
-[&laquo;`details`&raquo;](object.md)
+[&laquo;`详情`&raquo;](object.md)
 
 ### `observable.array(value)` & `observable.shallowArray(value)`
 
 Creates a new observable array based on the provided value. Use `shallowArray` if the values in the array should not be turned into observables.
+基于提供的值来创建一个新的 observable 数组。如果不想数组中的值转换成 observable 请使用 `shallowArray`。
 
-[&laquo;`details`&raquo;](array.md)
+[&laquo;`详情`&raquo;](array.md)
 
 ### `observable.map(value)` & `observable.shallowMap(value)`
 
-Creates a new observable map based on the provided value. Use `shallowMap` if the values in the array should not be turned into observables.
-Use `map` whenever you want to create a dynamically keyed collections and the addition / removal of keys needs to be observed.
-Note that only string keys are supported.
+基于提供的值来创建一个新的 observable 映射。如果不想数组中的值转换成 observable 请使用 `shallowMap`。
+当想创建动态的键集合并且需要能观察到键的添加和移除时，请使用 `map`。
+注意只支持字符串键。
 
 [&laquo;`details`&raquo;](map.md)
 
