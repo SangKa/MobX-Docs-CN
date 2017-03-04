@@ -5,7 +5,6 @@ Applies to MobX 3 and higher. For MobX 2, the old documentation is still availab
 
 # 核心API
 
-_The most important MobX api's. Understanding `observable`, `computed`, `reactions` and `actions` is enough to master MobX and use it in your applications!_
 _MobX 最重要的API。理解了`observable`、 `computed`、 `reactions` 和 `actions`的话，对于精通 MobX 已经足够了并能在应用中使用它！_
 
 ## 创建 observables
@@ -198,30 +197,30 @@ The side effect can be debounced, just like `autorunAsync`. [&laquo;details&raqu
 和 `autorunAsync` 一样，副作用是可以进行函数去抖的。[&laquo;详情&raquo;](reaction.md)
 
 ### `expr`
-Usage: `expr(() => someExpression)`. Just a shorthand for `computed(() => someExpression).get()`.
-`expr` is useful in some rare cases to optimize another computed function or reaction.
-In general it is simpler and better to just split the function in multiple smaller computed's to achieve the same effect.
-[&laquo;details&raquo;](expr.md)
+用法: `expr(() => someExpression)`。`computed(() => someExpression).get()` 的简写形式。
+`expr` 在一些极少数场景下用来优化另一个计算值函数或者 reaction 是有用的。
+通常情况是将函数拆分成一些更小的计算值函数来达到同样的效果，这样做更简单，也更合理。
+[&laquo;详情&raquo;](expr.md)
 
 ### `onReactionError`
 
-Usage: `extras.onReactionError(handler: (error: any, derivation) => void)`
+用法: `extras.onReactionError(handler: (error: any, derivation) => void)`
 
-This method attaches a global error listener, which is invoked for every error that is thrown from a _reaction_.
-This can be used for monitoring or test purposes.
+此方法附加一个全局错误监听器，对于从 _reaction_ 抛出的每个错误都调用该错误监听器。
+它可以用来监控或者测试。
 
 ------
 
-# Utilities
+# 实用工具
 
-_Here are some utilities that might make working with observable objects or computed values more convenient.
-More, less trivial utilities can be found in the * [mobx-utils](https://github.com/mobxjs/mobx-utils) package._
+_有一些工具函数可以使得 observable 或者  计算值用起来更方便。
+更多实用工具可以在 [mobx-utils](https://github.com/mobxjs/mobx-utils) 包中找到。_
 
-### `Provider` (`mobx-react` package)
+### `Provider` (`mobx-react` 包)
 
-Can be used to pass stores to child components using React's context mechanism. See the [`mobx-react` docs](https://github.com/mobxjs/mobx-react#provider-experimental).
+可以用来使用 React 的上下文机制来传递 store 给子组件。参见[`mobx-react` 文档](https://github.com/mobxjs/mobx-react#provider-experimental)。
 
-### `inject` (`mobx-react` package)
+### `inject` (`mobx-react` 包)
 
 Higher order component and counterpart of `Provider`. Can be used to pick stores from React's context and pass it as props to the target component. Usage:
 * `inject("store1", "store2")(observer(MyComponent))`
