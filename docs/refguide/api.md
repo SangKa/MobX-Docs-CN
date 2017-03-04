@@ -29,7 +29,7 @@ Observable 值可以是JS基本数据类型、引用类型、普通对象、类�
 
 乍看之下，这些规则可能看上去很复杂，但实际上实践当中你会发现他们是非常直观的。
 
-一些笔记:
+一些便笺:
 * 要创建键是动态的对象时永远都使用 maps！该对象只有初始化时便存在的属性会转换成可观察的，但新添加的属性只有通过使用 `extendObservable` 才可以转换成可观察的。
 * 要想使用 `@observable` 装饰器，首先要确保 在你的编译器(babel 或者 typescript)中 [装饰器是启用的](http://mobxjs.github.io/mobx/refguide/observable-decorator.html)。
 * 默认情况下将一个数据结构转换成可观察的是**有感染性的**，这意味着 `observable` 被自动应用于数据结构包含的任何值，或者将来会被该数据结构包含的值。这个行为可以通过使用 *modifiers* 或 *shallow* 来更改。
@@ -116,28 +116,29 @@ const taskStore = observable({
 
 ## Computed values(计算值)
 
-Usage:
+用法:
 * `computed(() => expression)`
 * `computed(() => expression, (newValue) => void)`
 * `computed(() => expression, options)`
 * `@computed get classProperty() { return expression; }`
 * `@computed.struct get classProperty() { return expression; }`
 
-Creates a computed property. The `expression` should not have side effects but return a value.
-The expression will automatically be re-evaluated if any observables it uses changes, but only if it is in use by some *reaction*.
+创建计算值，`expression` 不应该有任何副作用而只是返回一个值。
+如果任何 `expression` 中使用的 observable 发生改变，它都会自动地重新计算，但前提是计算值被某些 **reaction** 使用了。
 
-[&laquo;details&raquo;](computed-decorator.md)
+[&laquo;详情&raquo;](computed-decorator.md)
 
-## Actions
+## Actions(动作)
 
-Any application has actions. Actions are anything that modify the state.
+任何应用都有动作。动作是任何用来修改状态的东西。
 
-With MobX you can make it explicit in your code where your actions live by marking them.
-Actions helps you to structure your code better.
-It is advised to use them on any function that modifies observables or has side effects.
-`action` also provides useful debugging information in combination with the devtools.
-Note: using `action` is mandatory when *strict mode* is enabled, see `useStrict`.
-[&laquo;details&raquo;](action.md)
+使用MobX你可以在代码中显示的标记出动作所在的位置。
+动作可以有助于更好的组织代码。
+建议在任何更改 observable 或者有副作用的函数上使用动作。
+结合开发者工具的话，动作还能提供非常有用的调试信息。
+注意: 当启用**严格模式**时，需要强制使用 `action`，参见 `useStrict`。
+
+[&laquo;详情&raquo;](action.md)
 
 Usage:
 * `action(fn)`
@@ -147,9 +148,9 @@ Usage:
 * `@action boundClassMethod = (args) => { body }`
 * `@action(name) boundClassMethod = (args) => { body }`
 
-For one-time-actions `runInAction(name?, fn, scope?)` can be used, which is sugar for `action(name, fn, scope)()`.
+对于一次性动作，可以使用 `runInAction(name?, fn, scope?)` , 它是 `action(name, fn, scope)()` 的语法糖.
 
-## Reactions & Derivations
+## Reactions(反应) & Derivations(推导)
 
 *Computed values* are **values** that react automatically to state changes.
 *Reactions* are **side effects** that react automatically to state changes.
