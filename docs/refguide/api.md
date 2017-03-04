@@ -20,7 +20,7 @@ Observable 值可以是JS基本数据类型、引用类型、普通对象、类�
 `observable(value)` 是一个方便的重载，总是试图创建最佳匹配的 observable 类型。
 还可以直接创建所需的 observable 类型，请参见下文。
 
-匹配类型应用了以下转换规则，但可以通过使用**修改器**进行微调。请参见下文。
+匹配类型应用了以下转换规则，但可以通过使用**调节器**进行微调。请参见下文。
 
 1. 如果 **value** 是[ES6 Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)的实例: 会返回一个新的 [Observable Map](map.md)。如果你不想只对一个特定项的更改做出反应，而是对添加或删除该项做出反应的话，那么 Observable map 会非常有用。
 1. 如果 **value** 是数组，会返回一个 [Observable Array](array.md)。
@@ -70,31 +70,31 @@ Creates a new observable array based on the provided value. Use `shallowArray` i
 当想创建动态的键集合并且需要能观察到键的添加和移除时，请使用 `map`。
 注意只支持字符串键。
 
-[&laquo;`details`&raquo;](map.md)
+[&laquo;`详情`&raquo;](map.md)
 
 ### `extendObservable` & `extendShallowObservable`
-Usage: `extendObservable(target, ...propertyMaps)`. For each key/value pair in each `propertyMap` a (new) observable property will be introduced on the target object.
-This can be used in constructor functions to introduce observable properties without using decorators.
-If a value of the `propertyMap` is a getter function, a *computed* property will be introduced.
+用法: `extendObservable(target, ...propertyMaps)`。对于 `propertyMap` 中的每个键值对，都会作为一个(新)的 observable 属性引入到 target 对象中。
+还可以在构造函数中使用来引入 observable 属性，这样就不需要用装饰器了。
+如果 `propertyMap` 的某个值是一个 getter 函数，那么会引入一个**计算的**属性。
 
-Use `extendShallowObservable` if the new properties should not be infective (that is; newly assigned values should not be turned into observables automatically).
-Note that `extendObservable` enhances existing objects, unlike `observable.object` which creates a new object.
+如果新的属性不应该具备感染性(即新分配的值不应该自动地转换成 observable)的话，请使用 `extendShallowObservable`。
+注意 `extendObservable` 增强了现有的对象，不像 `observable.object` 是创建一个新对象。
 
-[&laquo;details&raquo;](extend-observable.md)
+[&laquo;详情&raquo;](extend-observable.md)
 
-### Modifiers
+### 调节器
 
-Modifiers can be used decorator or in combination with `extendObservable` and `observable.object` to change the autoconversion rules for specific properties.
+调节器可以作为装饰器或者组合 `extendObservable` 和 `observable.object` 使用，以改变特定属性的自动转换规则。
 
-The following modifiers are available:
+可用的调节器列表:
 
-* `observable.deep`: This is the default modifier, used by any observable. It converts any assigned, non-primitive value into an observable if it isn't one yet.
-* `observable.ref`: Disables automatic observable conversion, just creates an observable reference instead.
-* `observable.shallow`: Can only used in combination with collections. Turns any assigned collection into an collection, which is shallowly observable (instead of deep). In other words; the values inside the collection won't become observables automatically.
-* `computed`: Creates a derived property, see [`computed`](computed-decorator.md)
-* `action`: Creates an action, see [`action`](action.md)
+* `observable.deep`: 任何 observable 都使用的默认的调节器。它把任何分配的、非原始数据类型的、非 observable 的值转换成 observable。
+* `observable.ref`: 禁用自动的 observable 转换，只是创建一个 observable 引用。
+* `observable.shallow`: 只能与集合组合使用。 将任何分配的集合转换为浅 observable (而不是深 observable)的集合。 换一种说法; 集合中的值将不会自动变为 observable。
+* `computed`: 创建一个推导属性, 参见 [`computed`](computed-decorator.md)
+* `action`: 创建一个动作, 参见 [`action`](action.md)
 
-Modifiers can be used as decorator:
+调节器可以作为装饰器使用:
 
 ```javascript
 class TaskStore {
@@ -102,8 +102,8 @@ class TaskStore {
 }
 ```
 
-Or as property modifier in combination with `observable.object` / `observable.extendObservable`.
-Note that modifiers always 'stick' to the property. So they will remain in effect even if a new value is assigned.
+或者作为属性调节器组合 `observable.object` / `observable.extendObservable` 使用。
+注意，调节器总是“附着”在属性上的。 因此，即使分配了新值，它们仍将保持有效。
 
 ```javascript
 const taskStore = observable({
@@ -111,10 +111,10 @@ const taskStore = observable({
 })
 ```
 
-[&laquo;details&raquo;](modifiers.md)
+[&laquo;详情&raquo;](modifiers.md)
 
 
-## Computed values
+## Computed values(计算值)
 
 Usage:
 * `computed(() => expression)`
