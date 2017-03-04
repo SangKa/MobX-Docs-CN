@@ -152,18 +152,18 @@ Usage:
 
 ## Reactions(反应) & Derivations(推导)
 
-*Computed values* are **values** that react automatically to state changes.
-*Reactions* are **side effects** that react automatically to state changes.
-Reactions _can_ be used to ensure that a certain side effect (mainly I/O) is automatically executed when relevant state changes, like logging, network requests etc.
-The most commonly used reaction is the `observer` decorator for React components (see below).
+**计算值** 是自动响应状态变化的**值**。
+**反应*** 是自动响应状态变化的**副作用**。
+反应可以确保当相关状态发生变化时指定的副作用(主要是 I/O)可以自动地执行，比如打印日志、网络请求、等等。
+使用反应最常见的场景是 React 组件的 `observer` 装饰器(参见下文)。
 
 ### `observer`
-Can be used as higher order component around a React component.
-The component will then automatically re-render if any of the observables used in the `render` function of the component has changed.
-Note that `observer` is provided by the `"mobx-react"` package and not by `"mobx"` itself.
-[&laquo;details&raquo;](observer-component.md)
+可以用作包裹 React 组件的高阶组件。
+组件的 `render` 函数中的任何已使用的 observable 发生变化时，组件都会自动重新渲染。
+注意 `observer` 是由 `"mobx-react"` 包提供的，而不是 `mobx` 本身。
+[&laquo;详情&raquo;](observer-component.md)
 
-Usage:
+用法:
 * `observer(React.createClass({ ... }))`
 * `observer((props, context) => ReactElement)`
 * `observer(class MyComponent extends React.Component { ... })`
@@ -171,19 +171,19 @@ Usage:
 
 
 ### `autorun`
-Usage: `autorun(debugname?, () => { sideEffect })`. Autorun runs the provided `sideEffect` and tracks which observable state is accessed while running the side effect.
-Whenever one of the used observables is changed in the future, the same sideEffect will be run again.
-Returns a disposer function to cancel the side effect. [&laquo;details&raquo;](autorun.md)
+用法：`autorun(debugname?, () => { sideEffect })`。`autorun` 负责运行所提供的 `sideEffect` 并追踪在副作用运行期间访问哪个 observable 状态。
+后面当其中一个已使用的 observable 发生变化了，同样的副作用会再运行一遍。
+`autorun` 返回一个清理函数用来取消副作用。[&laquo;详情&raquo;](autorun.md)
 
 ### `when`
-Usage: `when(debugname?, () => condition, () => { sideEffect })`.
-The condition expression will react automatically to any observables it uses.
-As soon as the expression returns true the sideEffect function will be invoked, but only once.
-`when` returns a disposer to prematurely cancel the whole thing. [&laquo;details&raquo;](when.md)
+用法: `when(debugname?, () => condition, () => { sideEffect })`。
+`condition` 表达式会自动响应任何它所使用的 observable。
+一旦表但是返回的是真值，副作用函数便会立即调用，但只会调用一次。
+`when` 返回一个清理函数用来提早取消这一切。[&laquo;详情&raquo;](when.md)
 
 ### `autorunAsync`
-Usage: `autorunAsync(debugname?, () => { sideEffect }, delay)`. Similar to `autorun`, but the sideEffect will be delayed and debounced with the given `delay`.
-[&laquo;details&raquo;](autorun-async.md)
+用法: `autorunAsync(debugname?, () => { sideEffect }, delay)`。类似于 `autorun`，但是副作用会有延迟而且根据给定的 `delay` 来进行函数去抖(debounce)。
+[&laquo;详情&raquo;](autorun-async.md)
 
 ### `reaction`
 Usage: `reaction(debugname?, () => data, data => { sideEffect }, fireImmediately = false, delay = 0)`.
@@ -191,6 +191,11 @@ A variation on `autorun` that gives more fine-grained control on which observabl
 It takes two function, the first one is tracked and returns data that is used as input for the second one, the side effect.
 Unlike `autorun` the side effect won't be run initially, and any observables that are accessed while executing the side effect will not be tracked.
 The side effect can be debounced, just like `autorunAsync`. [&laquo;details&raquo;](reaction.md)
+用法: `reaction(debugname?, () => data, data => { sideEffect }, fireImmediately = false, delay = 0)`.
+`reaction` 是 `autorun` 的变种，在如何追踪 observable 方面给予了更细粒度的控制。
+它接收两个函数，第一个是追踪并返回数据，该数据用作第二个函数，也就是副作用的输入。
+与 'autorun' 不同的是副作用起初不会运行，并且在执行副作用时访问的任何 observable 都不会被追踪。
+和 `autorunAsync` 一样，副作用是可以进行函数去抖的。[&laquo;详情&raquo;](reaction.md)
 
 ### `expr`
 Usage: `expr(() => someExpression)`. Just a shorthand for `computed(() => someExpression).get()`.
