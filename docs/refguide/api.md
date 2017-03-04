@@ -334,36 +334,35 @@ _以下方法都在 MobX 内部使用，在极少数情况下可能会派上用�
 
 ### `transaction`
 用法: `transaction(() => { block })`.
-Deprecated, use actions or `runInAction` instead.
-Low-level api that can be used to batch state changes.
-State changes made inside the block won't cause any computations or reactions to run until the end of the block is reached.
-Nonetheless inspecting a computed value inside a transaction block will still return a consistent value.
-It is recommended to use `action` instead, which uses `transaction` internally.
-[&laquo;details&raquo;](transaction.md)
+已废弃，使用 action 或者 `runInAction` 替代。
+低等级API，用于批量处理状态更改。
+在块内部进行的状态更改不会导致任何计算或 reaction 运行，直到到达块结束。
+尽管如此，检查事务块内部的计算值仍将返回一致的值。
+建议使用 `action`，它会在内部使用 `transaction`。
+[&laquo;详情&raquo;](transaction.md)
 
 ### `untracked`
 用法: `untracked(() => { block })`.
-Low-level api that might be useful inside reactions and computations.
-Any observables accessed in the `block` won't cause the reaction / compuations to be recomputed automatically.
-However it is recommended to use `action` instead, which uses `untracked` internally.
-[&laquo;details&raquo;](untracked.md)
+低等级API，在 reaction 和 计算 内部或许有用。
+在 `block` 中访问任何 observable 都不会导致 reaction / compuation 自动重新计算。
+[&laquo;详情&raquo;](untracked.md)
 
 ### `Atom`
-Utility class that can be used to create your own observable data structures and hook them up to MobX.
-Used internally by all observable data types.
-[&laquo;details&raquo;](extending.md)
+实用程序类，可用于创建你自己的 observable 数据结构，并将它们连接到 MobX。
+在所有 observable 数据类型的内部使用。
+[&laquo;详情&raquo;](extending.md)
 
 ### `Reaction`
-Utility class that can be used to create your own reactions and hook them up to MobX.
-Used internally by `autorun`, `reaction` (function) etc.
-[&laquo;details&raquo;](extending.md)
+实用程序类，可用于创建自己的 reaction ，并将它们连接到 MobX。
+在 `autorun`, `reaction` (函数)等内部使用。
+[&laquo;详情&raquo;](extending.md)
 
 ### `extras.allowStateChanges`
 用法: `allowStateChanges(allowStateChanges, () => { block })`.
-Can be used to (dis)allow state changes in a certain function.
-Used internally by `action` to allow changes, and by `computed` and `observer` to disallow state changes.
+可以用于 允许/禁止 某个函数中的状态变化。
+在 `action` 内部使用以允许更改，在 `computed` 和 `observer` 内部使用以禁止状态更改。
 
 ### `extras.resetGlobalState`
 用法: `resetGlobalState()`.
-Resets MobX internal global state. MobX by defaults fails fast if an exception occurs inside a computation or reaction and refuses to run them again.
-This function resets MobX to the zero state. Existing `spy` listeners and the current value of strictMode will be preserved though.
+重置 MobX 内部全局状态。 如果在计算或 reaction 内发生异常并且拒绝再次运行它们，默认情况下 MobX 会快速失败。
+此函数将 MobX 重置为零状态。 现有的 `spy` 监听器和严格模式下的当前值将被保留。
