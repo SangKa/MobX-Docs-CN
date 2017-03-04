@@ -256,48 +256,46 @@ _有一些工具函数可以使得 observable 或者  计算值用起来更方�
 [&laquo;详情&raquo;](observe.md)
 
 ### `observe`
-Usage: `observe(object, property?, listener, fireImmediately = false)`
-Low-level api that can be used to observe a single observable value.
-[&laquo;details&raquo;](observe.md)
+用法: `observe(object, property?, listener, fireImmediately = false)`
+这个一个底层API，用来观察一个单个的 observable 值。
+[&laquo;详情&raquo;](observe.md)
 
 ### `useStrict`
-Usage: `useStrict(boolean)`.
-Enables / disables strict mode *globally*.
-In strict mode, it is not allowed to change any state outside of an [`action`](action.md).
-See also `extras.allowStateChanges`.
+用法: `useStrict(boolean)`。
+**全局性** 地启用/禁用严格模式。
+在严格模式下，不允许在 [`action`](action.md) 外更改任何状态。
+还可以参见 `extras.allowStateChanges`。
 
 
 
+# 开发工具
 
-# Development utilities
+_如果你想在 MobX 的上层构建很酷的工具或如果你想检查 MobX 的内部状态，下列API可能会派上用场。_
 
-_The following api's might come in handy if you want to build cool tools on top of MobX or if you want to inspect the internal state of MobX_
-
-### `"mobx-react-devtools"` package
-The mobx-react-devtools is a powerful package that helps you to investigate the performance and dependencies of your react components.
-Also has a powerful logger utility based on `spy`. [&laquo;details&raquo;](../best/devtools.md)
+### `"mobx-react-devtools"` 包
+mobx-react-devtools 是个功能强大的包，它帮助你调查 React 组件的性能和依赖。
+还有基于 `spy` 的强大的日志功能。[&laquo;详情&raquo;](../best/devtools.md)
 
 ### `spy`
-Usage: `spy(listener)`.
-Registers a global spy listener that listens to all events that happen in MobX.
-It is similar to attaching an `observe` listener to *all* observables at once, but also notifies about running (trans/re)actions and computations.
-Used for example by the `mobx-react-devtools`.
-[&laquo;details&raquo;](spy.md)
+用法: `spy(listener)`.
+注册全局侦查监听器可以监听所有 MobX 中发生的时间。
+它类似于将一个 `observe` 监听器一次性附加到**所有的** observables 上，而且还负责正在运行的动作和计算的通知。
+用于 `mobx-react-devtools` 的示例。
+[&laquo;详情&raquo;](spy.md)
 
 ### `whyRun`
-Usage:
+用法:
 * `whyRun()`
 * `whyRun(Reaction object / ComputedValue object / disposer function)`
 * `whyRun(object, "computed property name")`
 
-`whyRun` is a small utility that can be used inside computed value or reaction (`autorun`, `reaction` or the `render` method of an `observer` React component)
-and prints why the derivation is currently running, and under which circumstances it will run again.
-This should help to get a deeper understanding when and why MobX runs stuff, and prevent some beginner mistakes.
+`whyRun` 是个可以在计算值或 reaction(`autorun`、 `reaction` 或 使用了 `observer` 的 React 组件的 `render` 方法)中使用的小功能，它还可以打印出 derivation 正在运行的原因和在哪种情况下它会再次运行。
+这应该有助于更深入地了解 MobX 运作的时机和原因，并防止一些初学者的错误。
 
 
 ### `extras.getAtom`
-Usage: `getAtom(thing, property?)`.
-Returns the backing *Atom* of a given observable object, property, reaction etc.
+用法: `getAtom(thing, property?)`.
+返回给定的 observable 对象、属性、reaction 等的背后的原子。
 
 ### `extras.getDebugName`
 Usage: `getDebugName(thing, property?)`
