@@ -139,7 +139,7 @@ const taskStore = observable({
 
 [&laquo;详情&raquo;](action.md)
 
-Usage:
+用法:
 * `action(fn)`
 * `action(name, fn)`
 * `@action classMethod`
@@ -227,7 +227,7 @@ _有一些工具函数可以使得 observable 或者  计算值用起来更方�
 用法: `toJS(observableDataStructure)`。把 observable 数据结构转换成普通的 javascript 对象并忽略计算值。 [&laquo;详情&raquo;](tojson.md)
 
 ### `isObservable`
-用法: `isObservable(thing, property?)`。如果给定的thing，或者thing指定的属性是 observable 的话返回true。
+用法: `isObservable(thing, property?)`。如果给定的thing，或者thing指定的属性是 observable 的话，返回true。
 适用于所有的 observable、计算值和 reaction 的清理函数。[&laquo;详情&raquo;](is-observable)
 
 ### `isObservableObject|Array|Map`
@@ -298,41 +298,42 @@ mobx-react-devtools 是个功能强大的包，它帮助你调查 React 组件�
 返回给定的 observable 对象、属性、reaction 等的背后的原子。
 
 ### `extras.getDebugName`
-Usage: `getDebugName(thing, property?)`
-Returns a (generated) friendly debug name of an observable object, property, reaction etc. Used by for example the `mobx-react-devtools`.
+用法: `getDebugName(thing, property?)`
+返回 observable 对象、属性、reaction等友好的(生成的)调试名称。用于 `mobx-react-devtools` 的示例。
 
 ### `extras.getDependencyTree`
-Usage: `getDependencyTree(thing, property?)`.
-Returns a tree structure with all observables the given reaction / computation currently depends upon.
+用法: `getDependencyTree(thing, property?)`.
+返回给定 reaction / 计算 当前依赖的所有 observable 的树型结构。
 
 ### `extras.getObserverTree`
-Usage: `getObserverTree(thing, property?)`.
-Returns a tree structure with all reactions / computations that are observing the given observable.
+用法: `getObserverTree(thing, property?)`.
+返回观察给定的 observable 的所有 reaction / 计算的树型结构。
 
 ### `extras.isSpyEnabled`
-Usage: `isSpyEnabled()`. Returns true if at least one spy is active
+用法: `isSpyEnabled()`. 如果至少有一个 spy 是活动的话，返回true。
 
 ### `extras.spyReport`
-Usage: `spyReport({ type: "your type", &laquo;details&raquo; data})`. Emit your own custom spy event.
+用法: `spyReport({ type: "your type", &laquo;details&raquo; data})`。 发射自定义侦查事件。
 
 ### `extras.spyReportStart`
-Usage: `spyReportStart({ type: "your type", &laquo;details&raquo; data})`. Emit your own custom spy event. Will start a new nested spy event group which should be closed using `spyReportEnd()`
+用法: `spyReportStart({ type: "your type", &laquo;details&raquo; data})`。 发射自定义侦查事件。将启动一个新的嵌套侦查事件组，该事件组应该使用 `spyReportEnd（）` 关闭。
 
 ### `extras.spyReportEnd`
-Usage: `spyReportEnd()`. Ends the current spy group that was started with `extras.spyReportStart`.
+用法: `spyReportEnd()`。关闭由 `extras.spyReportStart` 开启的当前侦查组。
 
-### `"mobx-react"` development hooks
-The `mobx-react` package exposes the following additional api's that are used by the `mobx-react-devtools`:
-* `trackComponents()`: enables the tracking of `observer` based React components
-* `renderReporter.on(callback)`: callback will be invoked on each rendering of an `observer` enabled React component, with timing information etc
-* `componentByNodeRegistery`: ES6 WeakMap that maps from DOMNode to a `observer` based React component instance
+### `"mobx-react"` 开发钩子
+`mobx-react` 包暴露了以下几个供 `mobx-react-devtools` 使用的附加API:
+* `trackComponents()`: 启用追踪基于 React 组件的 `observer`
+* `renderReporter.on(callback)`: 每次渲染启用 `observer` 的 React 组件时会调用callback，并附带时间信息等等
+* `componentByNodeRegistery`: ES6 WeakMap 从 DOMNode 映射到一个基于 `observer` 的 React 组件实例
 
-# Internal functions
 
-_The following methods are all used internally by MobX, and might come in handy in rare cases. But usually MobX offers more declarative alternatives to tackle the same problem. They might come in handy though if you try to extend MobX_
+# 内部函数
+
+_以下方法都在 MobX 内部使用，在极少数情况下可能会派上用场。 但是通常 MobX 提供了更多的声明性替代方法来解决同样的问题。如果你尝试扩展 MobX 的话，它们可能会派上用场。_
 
 ### `transaction`
-Usage: `transaction(() => { block })`.
+用法: `transaction(() => { block })`.
 Deprecated, use actions or `runInAction` instead.
 Low-level api that can be used to batch state changes.
 State changes made inside the block won't cause any computations or reactions to run until the end of the block is reached.
@@ -341,7 +342,7 @@ It is recommended to use `action` instead, which uses `transaction` internally.
 [&laquo;details&raquo;](transaction.md)
 
 ### `untracked`
-Usage: `untracked(() => { block })`.
+用法: `untracked(() => { block })`.
 Low-level api that might be useful inside reactions and computations.
 Any observables accessed in the `block` won't cause the reaction / compuations to be recomputed automatically.
 However it is recommended to use `action` instead, which uses `untracked` internally.
@@ -358,11 +359,11 @@ Used internally by `autorun`, `reaction` (function) etc.
 [&laquo;details&raquo;](extending.md)
 
 ### `extras.allowStateChanges`
-Usage: `allowStateChanges(allowStateChanges, () => { block })`.
+用法: `allowStateChanges(allowStateChanges, () => { block })`.
 Can be used to (dis)allow state changes in a certain function.
 Used internally by `action` to allow changes, and by `computed` and `observer` to disallow state changes.
 
 ### `extras.resetGlobalState`
-Usage: `resetGlobalState()`.
+用法: `resetGlobalState()`.
 Resets MobX internal global state. MobX by defaults fails fast if an exception occurs inside a computation or reaction and refuses to run them again.
 This function resets MobX to the zero state. Existing `spy` listeners and the current value of strictMode will be preserved though.
