@@ -163,5 +163,5 @@ divided.get() // 报错: Division by zero
 divided.get() // 报错: Division by zero
 
 y.set(2)
-divided.get() // 恢复; 返回 1.5
+divided.get() // 已恢复; 返回 1.5
 ```
