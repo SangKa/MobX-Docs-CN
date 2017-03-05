@@ -122,17 +122,18 @@ var upperCaseName = computed(() =>
 var disposer = upperCaseName.observe(change => console.log(change.newValue));
 
 name.set("Dave");
-// prints: 'DAVE'
+// 输出: 'DAVE'
 ```
 
-## Options for `computed`
+## `computed` 的选项
 
 When using `computed` as modifier or as box, it accepts a second options argument with the following optional arguments:
+当使用 `computed` 作为调节器或者盒子，它接收的第二个选项参数对象，选项参数对象有如下可选参数:
 
-* `name`: String, the debug name used in spy and the MobX devtools
-* `context`: The `this` that should be used in the provided expression
-* `setter`: The setter function to be used. Without setter it is not possible to assign new values to a computed value. If the second argument passed to `computed` is a function, this is assumed to be a setter.
-* `compareStructural`: By default `false`. When true, the output of the expression is structurally compared with the previous value before any observer is notified about a change. This makes sure that observers of the computation don't re-evaluate if new structures are returned that are structurally equal to the original ones. This is very useful when working with point, vector or color structures for example.
+* `name`: 字符串, 在 spy 和 MobX 开发者工具中使用的调试名称
+* `context`: 在提供的表达式中使用的 `this`
+* `setter`: 要使用的setter函数。 没有 setter 的话无法为计算值分配新值。 如果传递给 `computed` 的第二个参数是一个函数，那么就把会这个函数作为 setter
+* `compareStructural`: 默认值是 `false`。 当为 true 时，表达式的输出在结果上与先前的值进行比较，然后通知任何观察者相关的更改。 这确保了计算的观察者不用重新评估返回的新结构是否等于原始结构。 这在使用点、矢量或颜色结构时非常有用。
 
 ## `@computed.struct` for structural comparison
 
