@@ -13,13 +13,13 @@
 任何应用都有动作。动作是任何用来修改状态的东西。
 使用MobX你可以在代码中显示的标记出动作所在的位置。
 动作可以有助于更好的组织代码。
-It takes a function and returns it after wrapping it with `untracked`, `transaction` and `allowStateChanges`.
-It is advised to use them on any function that modifies observables or has side effects.
-`action` also provides useful debugging information in combination with the devtools.
-Using the `@action` decorator with [ES 5.1 setters](http://www.ecma-international.org/ecma-262/5.1/#sec-11.1.5) (i.e. `@action set propertyName`) is not supported, however setters of [computed properties are automatically actions](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/computed-decorator.md#setters-for-computed-values).
+它接收一个函数并在用 `untracked`、`transaction` 和 `allowStateChanges` 包装后返回它。
+建议在任何更改 observable 或者有副作用的函数上使用动作。
+结合开发者工具的话，动作还能提供非常有用的调试信息。
+和 [ES 5.1 setters](http://www.ecma-international.org/ecma-262/5.1/#sec-11.1.5) 一起使用 `@action` 装饰器(例如 `@action set propertyName`) 还不支持，尽管 [计算属性的 setter 是自动地动作](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/computed-decorator.md#setters-for-computed-values)。
 
 
-Note: using `action` is mandatory when *strict mode* is enabled, see [`useStrict`](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/api.md#usestrict).
+注意: 当启用**严格模式**时，需要强制使用 `action`，参见 [`useStrict`](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/api.md#usestrict)。
 
 For an extensive introduction to `action` see also the [MobX 2.2 release notes](https://medium.com/p/45cdc73c7c8d/).
 
