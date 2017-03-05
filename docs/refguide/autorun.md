@@ -17,24 +17,23 @@ var numbers = observable([1,2,3]);
 var sum = computed(() => numbers.reduce((a, b) => a + b, 0));
 
 var disposer = autorun(() => console.log(sum.get()));
-// prints '6'
+// 输出 '6'
 numbers.push(4);
-// prints '10'
+// 输出 '10'
 
 disposer();
 numbers.push(5);
-// won't print anything, nor is `sum` re-evaluated
+// 不会再输入任何值。`sum` 不会再重新计算。
 ```
 
-## Error handling
+## 错误处理
 
-Exceptions thrown in autorun and all other types reactions are catched and logged to the console, but not propagated back to the original causing code.
-This is to make sure that a reaction in one exception does not prevent the scheduled execution of other, possibly unrelated, reactions.
-This also allows reactions to recover from exceptions; throwing an exception does not break the tracking done by MobX,
-so as subsequent run of a reaction might complete normally again if the cause for the exception is removed.
+在 autorun 和所有其他类型 reaction 中抛出的异常会被捕获并打印到控制台，但不会传播回原始导致异常的代码。
+这是为了确保一个异常中的 reaction 不会阻止其他可能不相关的 reaction 的预定执行。
+这也允许 reaction 从异常恢复; 抛出异常不会破坏 MobX的跟踪，因此如果除去异常的原因，reaction 的后续运行可能会再次正常完成。
 
-It is possible to override the default logging behavior of Reactions by calling the `onError` handler on the disposer of the reaction.
-Example:
+可以通过调用 reaction 的disposer的 `onError` 处理方法来覆盖 Reactions 的默认日志行为。
+示例:
 
 ```javascript
 const age = observable(10)
@@ -44,15 +43,15 @@ const dispose = autorun(() => {
     console.log("Age", age.get())
 })
 
-age.set(18)  // Logs: Age 18
-age.set(-10) // Logs "Error in reaction .... Age should not be negative
-age.set(5)   // Recovered, logs Age 5
+age.set(18)  // 输出: Age 18
+age.set(-10) // 输出: Age should not be negative
+age.set(5)   // 已恢复; 输出: Age 5
 
 dispose.onError(e => {
     window.alert("Please enter a valid age")
 })
 
-age.set(-5)  // Shows alert box
+age.set(-5)  // 显示alert弹出框
 ```
 
-A global onError handler can be set as well through `extras.onReactionError(handler)`. This can be useful in tests or for monitoring.
+一个全局的 onError 处理方法可以通过 `extras.onReactionError(handler)` 来设置。这在测试或监控中很有用。
