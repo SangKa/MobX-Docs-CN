@@ -1,14 +1,12 @@
 # (@)computed
 
-Computed values are values that can be derived from the existing state or other computed values.
-Conceptually, they are very similar to formulas in spreadsheets.
-Computed values can't be underestimated, as they help you to make your actual modifiable state as small as possible.
-Besides that they are highly optimized, so use them wherever possible.
+计算值(computed values)是可以根据现有的状态或其它计算值推导出的值。
+概念上来说，它们与excel表格中的公式十分相似。
+不要低估计算值，因为它们有助于使实际可修改的状态尽可能的小。
+此外计算值还是高度优化过的，所以尽可能的多使用它们。
 
-Don't confuse `computed` with `autorun`. They are both reactively invoked expressions,
-but use `@computed` if you want to reactively produce a *value* that can be used by other observers and
-`autorun` if you don't want to produce a new value but rather want ot achieve an *effect*.
-For example imperative side effects like logging, making network requests etc.
+不要把 `computed` 和 `autorun` 搞混。它们都是响应式调用的表达式，但是，如果你想响应式的产生一个可以被其它 observer 使用的**值**，请使用 `@computed`，如果你不想产生一个新值，而想要达到一个**效果**，请使用 `autorun`。
+举例来说，效果是像打印日志、发起网络请求等这样命令式的副作用。
 
 Computed values are automatically derived from your state if any value that affects them changes.
 Computed values can be optimized away in many cases by MobX as they are assumed to be pure.
