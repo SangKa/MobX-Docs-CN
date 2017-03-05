@@ -8,17 +8,17 @@
 不要把 `computed` 和 `autorun` 搞混。它们都是响应式调用的表达式，但是，如果你想响应式的产生一个可以被其它 observer 使用的**值**，请使用 `@computed`，如果你不想产生一个新值，而想要达到一个**效果**，请使用 `autorun`。
 举例来说，效果是像打印日志、发起网络请求等这样命令式的副作用。
 
-Computed values are automatically derived from your state if any value that affects them changes.
-Computed values can be optimized away in many cases by MobX as they are assumed to be pure.
-For example, a computed property won't re-run if none of the data used in the previous computation changed.
-Nor will a computed property re-run if is not in use by some other computed property or reaction.
-In such cases it will be suspended.
+如果任何影响计算值的值发生变化了，计算值将根据状态自动推导。
+计算值在大多数情况下可以被 MobX 优化的，因为它们被认为是纯函数。
+例如，如果前一个计算中使用的数据没有更改，计算属性将不会重新运行。
+如果某个其它计算属性或 reaction 未使用该计算属性，也不会重新运行。
+在这种情况下，它将被暂停。
 
-This automatic suspension is very convenient. If a computed value is no longer observed, for example the UI in which it was used no longer exists, MobX can automatically garbage collect it. This differs from `autorun`'s values where you must dispose of them yourself.
-It sometimes confuses people new to MobX, that if you create a computed property but don't use it anywhere in a reaction, it will not cache its value and recompute more often than seems necessary.
-However, in real life situations this by far the best default, and you can always forcefully keep a computed value awake if you need to by using either [`observe`](observe.md) or [`keepAlive`](https://github.com/mobxjs/mobx-utils#keepalive).
+这个自动地暂停是非常方便的。如果一个计算值不再被观察了，例如使用它的UI不复存在了，MobX 可以自动地将其垃圾回收。而 `autorun` 中的值必须要手动清理才行，这点和计算值是有所不同的。
+如果你创建一个计算属性，但不在 reaction 中的任何地方使用它，它不会缓存值并且有些重新计算看起来似乎是没有必要的。这点有时候会让刚接触 MobX 的人们很困惑。
+然而，在现实开发场景中，这是迄今为止最好的默认逻辑。如果你需要的话，可以使用 [`observe`](observe.md) 或 [`keepAlive`](https://github.com/mobxjs/mobx-utils#keepalive) 来强制保持计算值总是处于唤醒状态。
 
-Note that `computed` properties are not enumerable. Nor can they be overwritten in an inheritance chain.
+注意计算属性是不可枚举的，它们也不能在继承链中被覆盖。
 
 ## `@computed`
 
