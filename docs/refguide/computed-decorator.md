@@ -135,17 +135,17 @@ When using `computed` as modifier or as box, it accepts a second options argumen
 * `setter`: 要使用的setter函数。 没有 setter 的话无法为计算值分配新值。 如果传递给 `computed` 的第二个参数是一个函数，那么就把会这个函数作为 setter
 * `compareStructural`: 默认值是 `false`。 当为 true 时，表达式的输出在结果上与先前的值进行比较，然后通知任何观察者相关的更改。 这确保了计算的观察者不用重新评估返回的新结构是否等于原始结构。 这在使用点、矢量或颜色结构时非常有用。
 
-## `@computed.struct` for structural comparison
+## `@computed.struct` 用来比较结构
 
-The `@computed` decorator does not take arguments. If you want to to create a computed property which does structural comparison, use `@computed.struct`.
+`@computed` 装饰器不需要接收参数。如果你行啊创建一个能进行结构比较的计算属性时，请使用 `@computed.struct`。
 
-## Note on error handling
+## 错误处理
 
-If a computed value throws an exception during its computation, this exception will be catched and rethrown any time its value is read.
-It is strongly recommended to always throw `Error`'s, so that the original stack trace is preserved. E.g.: `throw new Error("Uhoh")` instead of `throw "Uhoh"`.
-Throwing exceptions doesn't break tracking, so it is possible for computed values to recover from exceptions.
+如果计算值在其计算期间抛出异常，则此异常将捕获并在读取其值时重新抛出。
+强烈建议始终抛出“错误”，以便保留原始堆栈跟踪。 例如：`throw new Error（“Uhoh”）`, 而不是`throw "Uhoh"`。
+抛出异常不会中断跟踪，所有计算值可以从异常中恢复。
 
-Example:
+示例:
 
 ```javascript
 const x = observable(3)
@@ -156,12 +156,12 @@ const divided = computed(() => {
     return x.get() / y.get()
 })
 
-divided.get() // returns 3
+divided.get() // 返回 3
 
 y.set(0) // OK
-divided.get() // Throws: Division by zero
-divided.get() // Throws: Division by zero
+divided.get() // 报错: Division by zero
+divided.get() // 报错: Division by zero
 
 y.set(2)
-divided.get() // Recovered; Returns 1.5
+divided.get() // 恢复; 返回 1.5
 ```
