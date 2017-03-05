@@ -55,11 +55,11 @@
 在这种情况下，`runInAction` 可以派上用场，把它放在你打算更新状态的地方。
 (但不要在这些块中调用 `await`)。
 
-Example:
+示例:
 ```javascript
-@action /*optional*/ updateDocument = async () => {
+@action /*可选的*/ updateDocument = async () => {
     const data = await fetchDataFromUrl();
-    /* required in strict mode to be allowed to update state: */
+    /* 需要严格模式下，以允许更新状态: */
     runInAction("update state after fetching data", () => {
         this.data.replace(data);
         this.isSaving = true;
@@ -67,15 +67,15 @@ Example:
 }
 ```
 
-The usage of `runInAction` is: `runInAction(name?, fn, scope?)`.
+`runInAction` 的用法: `runInAction(name?, fn, scope?)`.
 
-If you use babel, this plugin could help you to handle your async actions: [mobx-deep-action](https://github.com/mobxjs/babel-plugin-mobx-deep-action).
+如果你使用 babel，这个插件可以帮助你处理异步动作: [mobx-deep-action](https://github.com/mobxjs/babel-plugin-mobx-deep-action)。
 
-## Bound actions
+## 绑定的动作
 
-The `action` decorator / function follows the normal rules for binding in javascript.
-However, Mobx 3 introduces `action.bound` to automatically bind actions to the targeted object.
-Note that `(@)action.bound` does, unlike `action`, not take a name parameter, the name will always be based on the property the action is bound to.
+`action` 装饰器/函数遵循 javascript 中标准的绑定规则。
+但是，Mobx 3引入了 `action.bound` 来自动地将动作绑定到目标对象。
+注意，`(@)action.bound` 与 `action` 不同的是，它不需要一个name参数，名称将始终基于动作绑定的属性。
 
 Example:
 
