@@ -47,13 +47,13 @@
 
 ## `async` 动作和 `runInAction`
 
-`action` only affects the currently running function, not functions that are scheduled (but not invoked) by the current function!
-This means that if you have a `setTimeout`, promise`.then` or `async` construction, and in that callback some more state is changed, those callbacks should be wrapped in `action` as well!
-This is demonstrated above with the `"createRandomContact-callback"` action.
+`action` 只会影响当前运行的函数，而不是由当前函数调度(非调用)的函数。
+这意味着如果你有一个 `setTimeout` ，promise 的 `.then` 或 `async` 构造，并且在回调中有一些更多的状态被改变，那些回调也应该应该用 `action` 来包装！
+这就是上面的 `"createRandomContact-callback"` 动作所演示的。
 
-If you use `async` / `await`, this is a bit trickier as you cannot just wrap the async function body in `action`.
-In this situation `runInAction` can come in handy, wrap this around the places where you intend to update the state.
-(But don't make `await` calls in these blocks).
+如果你使用 `async` / `await`，这个有点棘手，因为你不能在 `action` 中只是包装异步函数体。
+在这种情况下，`runInAction` 可以派上用场，把它放在你打算更新状态的地方。
+(但不要在这些块中调用 `await`)。
 
 Example:
 ```javascript
