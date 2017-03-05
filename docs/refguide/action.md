@@ -85,7 +85,7 @@ class Ticker {
 
 	@action.bound
 	increment() {
-		this.tick++ // 'this' will always be correct
+		this.tick++ // 'this' 永远都是正确的
 	}
 }
 
@@ -99,11 +99,11 @@ Or
 const ticker = observable({
 	tick: 1,
 	increment: action.bound(function() {
-		this.tick++ // bound 'this'
+		this.tick++ // 绑定 'this'
 	})
 })
 
 setInterval(ticker.increment, 1000)
 ```
 
-_Note: don't use *action.bind* with arrow functions; arrow functions are already bound and cannot be rebound._
+_注意: *action.bound* 不要和箭头函数一起使用；箭头函数已经是绑定过的并且不能重新绑定。_
