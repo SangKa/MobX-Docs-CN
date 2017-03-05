@@ -84,7 +84,7 @@ const box = observable({
 });
 ```
 
-And similarly
+同样的
 
 ```javascript
 class Foo {
@@ -92,15 +92,15 @@ class Foo {
     @computed get squared() {
         return this.length * this.length;
     }
-    set squared(value) { //this is automatically an action, no annotation necessary
+    set squared(value) { // 这是一个自动的动作，不需要注解
         this.length = Math.sqrt(value);
     }
 }
 ```
 
-_Note: always define the setter *after* the getter, some TypeScript versions are known to declare two properties with the same name otherwise._
+_注意: 永远在 getter **之后** 定义 setter，一些 TypeScript 版本会知道声明了两个具有相同名称的属性。_
 
-_Note: setters require MobX 2.5.1 or higher_
+_注意: setter 需要 MobX 2.5.1 或者更高版本_
 
 ## `computed(expression)` as function
 
