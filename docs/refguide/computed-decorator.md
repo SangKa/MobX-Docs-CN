@@ -102,14 +102,14 @@ _注意: 永远在 getter **之后** 定义 setter，一些 TypeScript 版本会
 
 _注意: setter 需要 MobX 2.5.1 或者更高版本_
 
-## `computed(expression)` as function
+## `computed(expression)` 函数
 
-`computed` can also be invoked directly as function.
-Just like `observable.box(primitive value)` creates a stand-alone observable.
-Use `.get()` on the returned object to get the current value of the computation, or `.observe(callback)` to observe its changes.
-This form of `computed` is not used very often, but in some cases where you need to pass a "boxed" computed value around it might prove useful.
+`computed` 还可以直接当做函数来调用。
+就像 `observable.box(primitive value)` 创建一个独立的 observable。
+在返回的对象上使用 `.get()` 来获取计算的当前值，或者使用 `.observe(callback)` 来观察值的改变。
+这种形式的 `computed` 不常使用，但在某些情况下，你需要传递一个“在box中”的计算值时，它可能是有用的。
 
-Example:
+示例:
 
 ```javascript
 import {observable, computed} from "mobx";
