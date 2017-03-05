@@ -22,7 +22,7 @@
 
 ## `@computed`
 
-If you have [decorators enabled](../best/decorators.md) you can use the `@computed` decorator on any getter of a class property to declaratively created computed properties.
+如果已经[启用 decorators](../best/decorators.md) 的话，可以在任意类属性的 getter 上使用 `@computed` 装饰器来声明式的创建计算属性。
 
 ```javascript
 import {observable, computed} from "mobx";
@@ -41,11 +41,11 @@ class OrderLine {
 }
 ```
 
-## `computed` modifier
+## `computed` 调节器
 
-If your environment doesn't support decorators, use the `computed(expression)` modifier in combination with `extendObservable` / `observable` to introduce new computed properties.
+如果你的环境不支持装饰器，请使用 `computed(expression)` 调节器组合 `extendObservable` / `observable` 以引入新的计算属性。
 
-`@computed get propertyName() { }` is basically sugar for [`extendObservable(this, { propertyName: get func() { } })`](extend-observable.md) in the constructor call.
+从本质上来说，`@computed get propertyName() { }` 在构造函数中调用的 [`extendObservable(this, { propertyName: get func() { } })`](extend-observable.md) 的语法糖。
 
 ```javascript
 import {extendObservable, computed} from "mobx";
