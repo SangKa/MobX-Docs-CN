@@ -29,19 +29,19 @@ class OrderLine {
 ```javascript
 const line = new OrderLine();
 console.log("price" in line); // true
-console.log(line.hasOwnProperty("price")); // false, the price _property_ is defined on the class, although the value will be stored per instance.
+console.log(line.hasOwnProperty("price")); // false, price属性是定义在类上的，尽管每个实例都会存储price的值。
 ```
 
-The `@observable` decorator can be combined with modifiers like `asStructure`:
+`@observable` 装饰器可以和像 `asStructure` 这样的调节器共同使用:
 
 ```javascript
 @observable position = asStructure({ x: 0, y: 0})
 ```
 
 
-### Enabling decorators in your transpiler
+### 在编译器中启用装饰器
 
-Decorators are not supported by default when using TypeScript or Babel pending a definitive definition in the ES standard.
-* For _typescript_, enable the `--experimentalDecorators` compiler flag or set the compiler option `experimentalDecorators` to `true` in `tsconfig.json` (Recommended)
-* For _babel5_, make sure `--stage 0` is passed to the Babel CLI
-* For _babel6_, see the example configuration as suggested in this [issue](https://github.com/mobxjs/mobx/issues/105)
+在使用 TypeScript 或 Babel 这些等待ES标准定义的编译器时，默认情况下是不支持装饰器的。
+* 对于 _typescript_，启用 `--experimentalDecorators` 编译器标识或者在 `tsconfig.json` 中把编译器属性 `experimentalDecorators` 设置为 `true` (推荐做法)
+* 对于 _babel5_，确保把 `--stage 0` 传递给 Babel CLI
+* 对于 _babel6_，参见此 [issue](https://github.com/mobxjs/mobx/issues/105) 中建议的示例配置。
