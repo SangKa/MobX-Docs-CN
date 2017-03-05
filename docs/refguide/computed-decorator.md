@@ -55,11 +55,11 @@ class OrderLine {
         extendObservable(this, {
             price: price,
             amount: 1,
-            // valid:
+            // 有效:
             get total() {
                 return this.price * this.amount
             },
-            // also valid:
+            // 同样有效:
             total: computed(function() {
                 return this.price * this.amount
             })
@@ -68,10 +68,9 @@ class OrderLine {
 }
 ```
 
-## Setters for computed values
+## 计算值的 setter
 
-It is possible to define a setter for computed values as well. Note that these setters cannot be used to alter the value of the computed property directly,
-but they can be used as 'inverse' of the derivation. For example:
+还可以为计算值定义 setter。注意这些 setters 不能用来直接改变计算属性的值，但是它们可以用来作为推导的“反转”。例如:
 
 ```javascript
 const box = observable({
