@@ -1,8 +1,8 @@
 # @observable
 
-Decorator that can be used on ES7- or TypeScript class properties to make them observable.
-The @observable can be used on instance fields and property getters.
-This offers fine-grained control on which parts of your object become observable.
+装饰器可以在 ES7 或者 TypeScript 类属性中属性使用，将其转换成可观察的。
+@observable 可以在实例字段和属性 getter 上使用。
+对于对象的哪部分成为可观察的，@observable 提供了细粒度的控制。
 
 ```javascript
 import {observable} from "mobx";
@@ -21,11 +21,10 @@ class OrderLine {
 }
 ```
 
-If your environment doesn't support decorators or field initializers,
-`@observable key = value;` is sugar for [`extendObservable(this, { key: value })`](extend-observable.md)
+如果你的环境不支持装饰器或字段初始化器，那么 `@observable key = value;` 会是 [`extendObservable(this, { key: value })`](extend-observable.md) 的语法糖。
 
-Enumerability: properties decorator with `@observable` are enumerable, but defined on the class prototype and not on the class instances.
-In other words:
+可枚举性: 使用 `@observable` 的属性装饰器是可枚举的，但是定义在类原型和不在类实例上定义的不可枚举。
+换句话说:
 
 ```javascript
 const line = new OrderLine();
