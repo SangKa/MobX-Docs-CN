@@ -1,6 +1,6 @@
 #action
 
-Usage:
+用法:
 * `action(fn)`
 * `action(name, fn)`
 * `@action classMethod() {}`
@@ -10,9 +10,9 @@ Usage:
 * `@action.bound classMethod() {}`
 * `@action.bound(function() {})`
 
-Any application has actions. Actions are anything that modify the state.
-With MobX you can make it explicit in your code where your actions live by marking them.
-Actions help you to structure your code better.
+任何应用都有动作。动作是任何用来修改状态的东西。
+使用MobX你可以在代码中显示的标记出动作所在的位置。
+动作可以有助于更好的组织代码。
 It takes a function and returns it after wrapping it with `untracked`, `transaction` and `allowStateChanges`.
 It is advised to use them on any function that modifies observables or has side effects.
 `action` also provides useful debugging information in combination with the devtools.
