@@ -21,9 +21,9 @@
 
 注意: 当启用**严格模式**时，需要强制使用 `action`，参见 [`useStrict`](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/api.md#usestrict)。
 
-For an extensive introduction to `action` see also the [MobX 2.2 release notes](https://medium.com/p/45cdc73c7c8d/).
+想要获取更多 `action` 的详细介绍还可以参见 [MobX 2.2 发行说明](https://medium.com/p/45cdc73c7c8d/)。
 
-Two example actions from the `contact-list` project:
+`contact-list` 项目中的两个 action 示例:
 
 ```javascript
 	@action	createRandomContact() {
@@ -45,7 +45,7 @@ Two example actions from the `contact-list` project:
 	}
 ```
 
-## `async` actions and `runInAction`.
+## `async` 动作和 `runInAction`
 
 `action` only affects the currently running function, not functions that are scheduled (but not invoked) by the current function!
 This means that if you have a `setTimeout`, promise`.then` or `async` construction, and in that callback some more state is changed, those callbacks should be wrapped in `action` as well!
