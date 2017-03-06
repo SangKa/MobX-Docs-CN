@@ -174,19 +174,18 @@ import {observer} from "mobx-react";
 结合 `@observer`，可以使用 MobX-React-DevTools ，它精确地显示了何时重新渲染组件，并且可以检查组件的数据依赖关系。
 详情请参见 [开发者工具](../best/devtools.md) 。
 
-## Characteristics of observer components
+## observer 组件特性
 
-* Observer only subscribe to the data structures that were actively used during the last render. This means that you cannot under-subscribe or over-subscribe. You can even use data in your rendering that will only be available at later moment in time. This is ideal for asynchronously loading data.
-* You are not required to declare what data a component will use. Instead, dependencies are determined at runtime and tracked in a very fine-grained manner.
-* Usually reactive components have no or little state, as it is often more convenient to encapsulate (view) state in objects that are shared with other component. But you are still free to use state.
-* `@observer` implements `shouldComponentUpdate` in the same way as `PureRenderMixin` so that children are not re-rendered unnecessary.
-* Reactive components sideways load data; parent components won't re-render unnecessarily even when child components will.
-* `@observer` does not depend on React's context system.
-* In mobx-react@4+, the props object and the state object of an observer component are automatically made observable to make it easier to create @computed properties that derive from props inside such a component. If you have a reaction (i.e. `autorun`) inside your `@observer` component that must _not_ be re-evaluated when the specific props it uses don't change, be sure to derefence those specific props for use inside your reaction (i.e. `const myProp = props.myProp`). Otherwise, if you reference `props.myProp` inside the reaction, then a change in _any_ of the props will cause the reaction to be re-evaluated. For a typical use case with React-Router, see [this article](https://alexhisen.gitbooks.io/mobx-recipes/content/observable-based-routing.html).
+* Observer 仅订阅在上次渲染期间活跃使用的数据结构。这意味着你不能订阅不足或者过度订阅。甚至可以在渲染中使用仅在未来时间段可用的数据。 这是异步加载数据的理想选择。
+* 你不需要声明组件将使用什么数据。相反，依赖关系在运行时会确定并以非常细粒度的方式进行跟踪。
+* 通常，响应式组件没有或很少有状态，因为在与其他组件共享的对象中封装(视图)状态通常更方便。但你仍然可以自由地使用状态。
+* `@observer` 以和 `PureRenderMixin` 同样的方式实现了 `shouldComponentUpdate`，因此子组件可以避免不必要的重新渲染。
+* `@observer` 不依赖于 React 的上下文系统。
+* mobx-react@4+ 中，observer 组件的props 对象和 state 对象都会自动地转变为 observable，这使得创建 @computed 属性更容易，@computed 属性是根据组件内部的 props 推导得到的。如果在 `@observer` 组件中包含 reaction(例如 `autorun`) 的话，当 reaction 使用的特定属性不再改变时，reaction 是不会再重新运行的，在 reaction 中使用的特定 props 一定要间接引用(例如 `const myProp = props.myProp`)。不然，如果你在 reaction 中引用了 `props.myProp`，那么 props 的**任何**改变都会导致 reaction 的重新运行。对于 React-Router 的典型用例，请参见[这篇文章](https://alexhisen.gitbooks.io/mobx-recipes/content/observable-based-routing.html)。
 
-## Enabling ES6 decorators in your transpiler
+## 在编译器中启用装饰器
 
-Decorators are not supported by default when using TypeScript or Babel pending a definitive definition in the ES standard.
-* For _typescript_, enable the `--experimentalDecorators` compiler flag or set the compiler option `experimentalDecorators` to `true` in `tsconfig.json` (Recommended)
-* For _babel5_, make sure `--stage 0` is passed to the Babel CLI
-* For _babel6_, see the example configuration as suggested in this [issue](https://github.com/mobxjs/mobx/issues/105)
+在使用 TypeScript 或 Babel 这些等待ES标准定义的编译器时，默认情况下是不支持装饰器的。
+* 对于 _typescript_，启用 `--experimentalDecorators` 编译器标识或者在 `tsconfig.json` 中把编译器属性 `experimentalDecorators` 设置为 `true` (推荐做法)
+* 对于 _babel5_，确保把 `--stage 0` 传递给 Babel CLI
+* 对于 _babel6_，参见此 [issue](https://github.com/mobxjs/mobx/issues/105) 中建议的示例配置。
