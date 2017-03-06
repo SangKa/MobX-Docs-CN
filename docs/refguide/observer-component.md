@@ -125,18 +125,18 @@ colors.foreground = 'blue';
 更多资料，请参见 [`mobx-react` 文档](https://github.com/mobxjs/mobx-react#provider-experimental)。
 
 
-## When to apply `observer`?
+## 何时使用 `observer`?
 
-The simple rule of thumb is: _all components that render observable data_.
-If you don't want to mark a component as observer, for example to reduce the dependencies of a generic component package, make sure you only pass it plain data.
+最简单的经验法则是: _所有渲染 observable 数据的组件_。
+如果你不想将组件标记为 observer，例如为了减少通用组件包的依赖性，请确保只传递普通数据。
 
-With `@observer` there is no need to distinguish 'smart' components from 'dumb' components for the purpose of rendering.
-It is still a good separation of concerns for where to handle events, make requests etc.
-All components become responsible for updating when their _own_ dependencies change.
-Its overhead is neglectable and it makes sure that whenever you start using observable data the component will respond to it.
-See this [thread](https://www.reddit.com/r/reactjs/comments/4vnxg5/free_eggheadio_course_learn_mobx_react_in_30/d61oh0l) for more details.
+使用 `@observer` 的话，不再需要从渲染目的上来区分是“智能组件”还是“无脑”组件。
+在事件处理、发起请求等方面，它仍然是一个很好的概念分离。
+当所有组件它们**自己的**依赖改变时，组件自己负责更新。
+它的开销是可以忽略的，它确保每当你开始使用 observable 数据时，组件将响应它。
+更多详情，请参见 [这里](https://www.reddit.com/r/reactjs/comments/4vnxg5/free_eggheadio_course_learn_mobx_react_in_30/d61oh0l)。
 
-## `observer` and `PureRenderMixin`
+## `observer` 和 `PureRenderMixin`
 `observer` also prevents re-renderings when the *props* of the component have only shallowly changed, which makes a lot of sense if the data passed into the component is reactive.
 This behavior is similar to [React PureRender mixin](https://facebook.github.io/react/docs/pure-render-mixin.html), except that *state* changes are still always processed.
 If a component provides its own `shouldComponentUpdate`, that one takes precedence.
