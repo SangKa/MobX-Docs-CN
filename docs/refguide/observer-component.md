@@ -1,8 +1,9 @@
 # @observer
 
-The `observer` function / decorator can be used to turn ReactJS components into reactive components.
-It wraps the component's render function in `mobx.autorun` to make sure that any data that is used during the rendering of a component forces a re-rendering upon change.
-It is available through the separate `mobx-react` package.
+`observer` 函数/装饰器可以用来将 React 组件转变成响应式组件。
+它用 `mobx.autorun` 包装了组件的 render 函数以确保任何组件渲染中使用的数据变化时可以强制刷新组件。
+`observer` 是由单独的 `mobx-react` 包提供的。
+
 
 ```javascript
 import {observer} from "mobx-react";
@@ -24,8 +25,7 @@ setInterval(() => {
 React.render(<Timer timerData={timerData} />, document.body);
 ```
 
-Tip: when `observer` needs to be combined with other decorators or higher-order-components, make sure that `observer` is the innermost (first applied) decorator;
-otherwise it might do nothing at all.
+小贴士: 当 `observer` 需要组合其它装饰器或高阶组件时，请确保 `observer` 是最深处(第一个应用)的装饰器，否则它可能什么都不做。
 
 Note that using `@observer` as decorator is optional, `observer(class Timer ... { })` achieves exactly the same.
 
