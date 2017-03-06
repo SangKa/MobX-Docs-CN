@@ -1,7 +1,7 @@
-## Observable Arrays
+## Observable 数组
 
-Similar to objects, arrays can be made observable using `observable.array(values?)` or by passing an array to `observable`.
-This works recursively as well, so all (future) values of the array will also be observable.
+和对象类似，可以使用 `observable.array(values?)` 或者将数组传给 `observable`，可以将数组转变为可观察的。
+这也是递归的，所以数组中的所有(未来的)值都会是可观察的。
 
 ```javascript
 import {observable, autorun} from "mobx";
@@ -18,20 +18,20 @@ autorun(() => {
 		.join(", ")
 	);
 });
-// Prints: 'Remaining: Make coffee'
+// 输出: 'Remaining: Make coffee'
 
 todos[0].completed = false;
-// Prints: 'Remaining: Spoil tea, Make coffee'
+// 输出: 'Remaining: Spoil tea, Make coffee'
 
 todos[2] = { title: 'Take a nap', completed: false };
-// Prints: 'Remaining: Spoil tea, Make coffee, Take a nap'
+// 输出: 'Remaining: Spoil tea, Make coffee, Take a nap'
 
 todos.shift();
-// Prints: 'Remaining: Make coffee, Take a nap'
+// 输出: 'Remaining: Make coffee, Take a nap'
 ```
 
-Due to limitations of native arrays in ES5 `observable.array` will create a faux-array (array-like object) instead of a real array.
-In practice, these arrays work just as fine as native arrays and all native methods are supported, including index assignments, up-to and including the length of the array.
+由于 ES5 中的原生数组的局限性，`observable.array` 会创建一个人造数组(类数组对象)来代替真正的数组。
+实际上，这些数组能像原生数组一样很好的工作，并且支持所有的原生方法，包括从索引的分配到包含数组长度。
 
 Bear in mind however that `Array.isArray(observable([]))` will yield `false`, so whenever you need to pass an observable array to an external library,
 it is a good idea to _create a shallow copy before passing it to other libraries or built-in functions_ (which is good practice anyway) by using `array.slice()`.
