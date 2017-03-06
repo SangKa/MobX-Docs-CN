@@ -180,6 +180,7 @@ import {observer} from "mobx-react";
 * 你不需要声明组件将使用什么数据。相反，依赖关系在运行时会确定并以非常细粒度的方式进行跟踪。
 * 通常，响应式组件没有或很少有状态，因为在与其他组件共享的对象中封装(视图)状态通常更方便。但你仍然可以自由地使用状态。
 * `@observer` 以和 `PureRenderMixin` 同样的方式实现了 `shouldComponentUpdate`，因此子组件可以避免不必要的重新渲染。
+* 响应式组件单方向加载数据，即使子组件要重新渲染，父组件也不会进行不必要地重新渲染。
 * `@observer` 不依赖于 React 的上下文系统。
 * mobx-react@4+ 中，observer 组件的props 对象和 state 对象都会自动地转变为 observable，这使得创建 @computed 属性更容易，@computed 属性是根据组件内部的 props 推导得到的。如果在 `@observer` 组件中包含 reaction(例如 `autorun`) 的话，当 reaction 使用的特定属性不再改变时，reaction 是不会再重新运行的，在 reaction 中使用的特定 props 一定要间接引用(例如 `const myProp = props.myProp`)。不然，如果你在 reaction 中引用了 `props.myProp`，那么 props 的**任何**改变都会导致 reaction 的重新运行。对于 React-Router 的典型用例，请参见[这篇文章](https://alexhisen.gitbooks.io/mobx-recipes/content/observable-based-routing.html)。
 
