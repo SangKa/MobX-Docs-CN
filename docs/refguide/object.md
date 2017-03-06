@@ -1,38 +1,38 @@
-## Observable Objects
+## Observable 对象
 
-If a plain JavaScript object is passed to `observable` all properties inside will be copied into a clone and made observable.
-(A plain object is an object that wasn't created using a constructor function / but has `Object` as its prototype, or no prototype at all.)
-`observable` is by default applied recursively, so if one of the encoutered values is an object or array, that value will be passed through `observable` as well.
+如果把一个普通的 JavaScript 对象传递给 `observable` 方法，对象的所有属性都将被拷贝至一个克隆对象并将克隆对象转换成 observable 。
+(普通对象是指不是使用构造函数创建出来的对象，而是以 `Object` 作为其原型，或者根本没有原型。)
+默认情况下，`observable` 是递归应用的，所以如果对象的某个值是一个对象或数组，那么该值也将通过 `observable` 传递。
 
 ```javascript
 import {observable, autorun, action} from "mobx";
 
 var person = observable({
-    // observable properties:
+    // observable 属性:
 	name: "John",
 	age: 42,
 	showAge: false,
 
-    // computed property:
+    // 计算属性:
 	get labelText() {
 		return this.showAge ? `${this.name} (age: ${this.age})` : this.name;
 	},
 
-    // action:
+    // 动作:
     setAge: action(function() {
         this.age = 21;
     })
 });
 
-// object properties don't expose an 'observe' method,
-// but don't worry, 'mobx.autorun' is even more powerful
+// 对象属性没有暴露 'observe' 方法,
+// 但不用担心, 'mobx.autorun' 功能更加强大
 autorun(() => console.log(person.labelText));
 
 person.name = "Dave";
-// prints: 'Dave'
+// 输出: 'Dave'
 
 person.setAge(21);
-// etc
+// 等等
 ```
 
 Some things to keep in mind when making objects observable:
