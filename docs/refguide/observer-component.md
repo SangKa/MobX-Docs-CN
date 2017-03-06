@@ -137,16 +137,15 @@ colors.foreground = 'blue';
 更多详情，请参见 [这里](https://www.reddit.com/r/reactjs/comments/4vnxg5/free_eggheadio_course_learn_mobx_react_in_30/d61oh0l)。
 
 ## `observer` 和 `PureRenderMixin`
-`observer` also prevents re-renderings when the *props* of the component have only shallowly changed, which makes a lot of sense if the data passed into the component is reactive.
-This behavior is similar to [React PureRender mixin](https://facebook.github.io/react/docs/pure-render-mixin.html), except that *state* changes are still always processed.
-If a component provides its own `shouldComponentUpdate`, that one takes precedence.
-See for an explanation this [github issue](https://github.com/mobxjs/mobx/issues/101)
+`observer` 还可以防止当组件的 *props* 只是浅改变时的重新渲染，如果传递给组件的数据是响应式的，这是很有意义的。
+这个行为与 [React PureRender mixin](https://facebook.github.io/react/docs/pure-render-mixin.html) 相似，除了 *state* 的更改仍然总是被处理。
+如果一个组件提供了它自己的 `shouldComponentUpdate`，那么这个是高优先级的。
+想要更详细的解释，请参见这个 [github issue](https://github.com/mobxjs/mobx/issues/101)。
 
-## `componentWillReact` (lifecycle hook)
+## `componentWillReact` (生命周期钩子)
 
-React components usually render on a fresh stack, so that makes it often hard to figure out what _caused_ a component to re-render.
-When using `mobx-react` you can define a new life cycle hook, `componentWillReact` (pun intended) that will be triggered when a component will be scheduled to re-render because
-data it observes has changed. This makes it easy to trace renders back to the action that caused the rendering.
+React 组件通常在新的堆栈上渲染，这使得通常很难弄清楚是什么**导致**组件的重新渲染。
+当使用 `mobx-react` 时可以定义一个新生命周期钩子 `componentWillReact`(一语双关)。当组件因为它观察的数据发生了改变，它会安排重新渲染，这个时候 `componentWillReact` 会被触发。这使得它很容易追溯渲染并找到导致渲染的操作。
 
 ```javascript
 import {observer} from "mobx-react";
@@ -162,18 +161,18 @@ import {observer} from "mobx-react";
 }
 ```
 
-* `componentWillReact` doesn't take arguments
-* `componentWillReact` won't fire before the initial render (use `componentWillMount` instead)
-* `componentWillReact` for mobx-react@4+, the hook will fire when receiving new props and after `setState` calls
+* `componentWillReact` 不接收参数
+* `componentWillReact` 初始化渲染前不会触发 (使用 `componentWillMount` 替代)
+* `componentWillReact` 对于 mobx-react@4+, 当接收新的 props 时并在 `setState` 调用后会触发此钩子
 
-## Optimizing components
+## 优化组件
 
-See the relevant [section](../best/react-performance.md).
+请参见相关[章节](../best/react-performance.md)。
 
 ## MobX-React-DevTools
 
-In combination with `@observer` you can use the MobX-React-DevTools, it shows exactly when your components are re-rendered and you can inspect the data dependencies of your components.
-See the [DevTools](../best/devtools.md) section.
+结合 `@observer`，可以使用 MobX-React-DevTools ，它精确地显示了何时重新渲染组件，并且可以检查组件的数据依赖关系。
+详情请参见 [开发者工具](../best/devtools.md) 。
 
 ## Characteristics of observer components
 
