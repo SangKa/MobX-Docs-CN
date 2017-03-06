@@ -35,23 +35,23 @@ person.setAge(21);
 // 等等
 ```
 
-Some things to keep in mind when making objects observable:
+当使对象转变成 observable 时，需要记住一些事情:
 
-* When passing objects through `observable`, only the properties that exist at the time of making the object observable will be observable.
-Properties that are added to the object at a later time won't become observable, unless [`extendObservable`](extend-observable.md) is used.
-* Only plain objects will be made observable. For non-plain objects it is considered the responsibility of the constructor to initialize the observable properties.
-Either use the [`@observable`](observable.md) annotation or the [`extendObservable`](extend-observable.md) function.
-* Property getters will be automatically turned into derived properties, just like [`@computed`](computed-decorator) would do.
-* `observable` is applied recursively to a whole object graph automatically. Both on instantiation and to any new values that will be assigned to observable properties in the future. Observable will not recurse into non-plain objects.
-* These defaults are fine in 95% of the cases, but for more fine-grained on how and which properties should be made observable, see the [modifiers](modifiers.md) section.
+* 当通过 `observable` 传递对象时，只有在把对象转变 observable 时存在的属性才会是可观察的。
+稍后添加到对象的属性不会变为可观察的，除非使用 [`extendObservable`](extend-observable.md)。
+* 只有普通的对象可以转变成 observable 。对于非普通对象，构造函数负责初始化 observable 属性。
+要么使用 [`@observable`](observable.md) 注解，要么使用 [`extendObservable`](extend-observable.md) 函数。
+* 属性的 getter 会自动转变成推导属性，就像 [`@computed`](computed-decorator) 所做的。
+* `observable` 是自动递归到整个对象的。在实例化过程中和将来分配给 observable 属性的任何新值的时候。Observable 不会递归到非普通对象中。
+* 这些默认行为能应对95%的场景，但想要更细粒度的控制，比如哪些属性应该转变成可观察的和如何变成可观察的，请参见[调节器](modifiers.md)。
 
 # `observable.object(props)` & `observable.shallowObject(props)`
 
-`observable(object)` is just a shorthand for `observable.object(props)`.
-All properties are by default made deep observable.
-[modifiers](modifiers.md) can be used to override this behavior for individual properties.
-`shallowObject(props)` can be used to make the properties only shallow observables. That is, the reference to the value is observabled, but the value itself won't be made observable automatically.
+`observable(object)` 只是 `observable.object(props)` 的简写形式。
+默认所有属性都会转变成深 observable。
+[调节器](modifiers.md) 可以用来为个别的属性覆盖此行为。
+`shallowObject(props)` 可以用来把属性只是转变成浅 observable 。也就是说，对值的引用是可观察的，但是值本身不会自动转变成可观察的。
 
-## Name argument
+## 名称参数
 
-Both `observable.object` and `observable.shallowObject` take a second parameter which is used as debug name in for example `spy` or the MobX dev tools.
+`observable.object` 和 `observable.shallowObject` 都接收第二个参数作为 `spy` 或者 MobX 开发者工具中的调试名称。
