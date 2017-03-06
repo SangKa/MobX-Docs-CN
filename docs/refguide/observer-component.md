@@ -117,12 +117,12 @@ const Button = observer(["colors"], ({ colors, label, onClick }) =>
   >{label}<button>
 );
 
-// later..
+// 稍后..
 colors.foreground = 'blue';
-// all buttons updated
+// 所有button都会更新
 ```
 
-See for more information the [`mobx-react` docs](https://github.com/mobxjs/mobx-react#provider-experimental).
+更多资料，请参见 [`mobx-react` 文档](https://github.com/mobxjs/mobx-react#provider-experimental)。
 
 
 ## When to apply `observer`?
