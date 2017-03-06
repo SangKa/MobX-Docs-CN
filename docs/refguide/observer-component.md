@@ -47,7 +47,7 @@ React.render(<Timer timerData={timerData.secondsPassed} />, document.body)
 
 ## 无状态函数组件
 
-The above timer widget could also be written using stateless function components that are passed through `observer`:
+上面的 `Timer` 组件还可以通过使用 `observer` 传递的无状态函数组件来编写:
 
 ```javascript
 import {observer} from "mobx-react";
@@ -57,14 +57,14 @@ const Timer = observer(({ timerData }) =>
 );
 ```
 
-## Observable local component state
+## 可观察的局部组件状态
 
-Just like normal classes, you can introduce observable properties on a component by using the `@observable` decorator.
-This means that you can have local state in components that doesn't need to be manged by React's verbose and imperative `setState` mechanism, but is as powerful.
-The reactive state will be picked up by `render` but will not explicitly invoke other React lifecycle methods like `componentShouldUpdate` or `componentWillUpdate`.
-If you need those, just use the normal React `state` based APIs.
+就像普通类一样，你可以通过使用 `@observable` 装饰器在组件上引入可观察属性。
+这意味着你可以在组件中拥有本地状态，而不需要通过 React 的冗长和强制性的 `setState` 机制来管理，但是功能同样强大。
+响应式状态会被 `render` 提取，但不会显示调用其它 React 声明周期方法，像 `componentShouldUpdate` 或 `componentWillUpdate`。
+如果你需要用到这些，只是使用正常的基于 `state` 的API就好了。
 
-The example above could also have been written as:
+上面的例子还可以这样写:
 
 ```javascript
 import {observer} from "mobx-react"
