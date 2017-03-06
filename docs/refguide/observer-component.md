@@ -87,15 +87,15 @@ import {observable} from "mobx"
 React.render(<Timer />, document.body)
 ```
 
-For more advantages of using observable local component state, see [3 reasons why I stopped using `setState`](https://medium.com/@mweststrate/3-reasons-why-i-stopped-using-react-setstate-ab73fc67a42e).
+对于使用可观察的局部组件状态更多的优势，请参见[为什么我不再使用 `setState` 的三个理由](https://medium.com/@mweststrate/3-reasons-why-i-stopped-using-react-setstate-ab73fc67a42e)。
 
-## Connect `observer` to stores
+## 将 `observer` 连接到 store
 
-The `mobx-react` package also provides the `Provider` component that can be used to pass down stores using React's context mechanism.
-To connect to those stores, pass an array of store names to `observer`, which will make the stores available as props.
-This is supported when using the decorator (`@observer(["store"]) class ...`, or the function `observer(["store"], React.createClass({ ...``.
+`mobx-react` 包还提供了 `Provider` 组件，它使用了 React 的上下文机制，可以用来向下传递 store。
+要连接到这些 store，传一个 store 名称的数组给 `observer`，这使得 store 可以作为 props 使用。
+支持使用装饰器 `@observer(["store"]) class ...` 或者函数 `observer(["store"], React.createClass({ ...`。
 
-Example:
+示例:
 
 ```javascript
 const colors = observable({
