@@ -27,25 +27,25 @@ React.render(<Timer timerData={timerData} />, document.body);
 
 小贴士: 当 `observer` 需要组合其它装饰器或高阶组件时，请确保 `observer` 是最深处(第一个应用)的装饰器，否则它可能什么都不做。
 
-Note that using `@observer` as decorator is optional, `observer(class Timer ... { })` achieves exactly the same.
+注意，使用 `@observer` 装饰器是可选的，它和 `observer(class Timer ... { })` 达到的效果是一样的。
 
-## Gotcha: dereference values _inside_ your components
-MobX can do a lot, but it cannot make primitive values observable (although it can wrap them in an object see [boxed observables](boxed.md)).
-So not the _values_ that are observable, but the _properties_ of an object. This means that `@observer` actually reacts to the fact that you dereference a value.
-So in our above example, the `Timer` component would **not** react if it was initialized as follows:
+## 陷阱: 组件中的间接引用值
+MobX 可以做很多事，但是它无法使原始数据类型值转变成可观察的(尽管它可以用对象来包装它们，参见 [boxed observables](boxed.md))。
+所以**值**是不可观察的，但是对象的**属性**可以。这意味着 `@observer` 实际上是对间接引用值的反应。
+那么在上面的示例中，如果是用下面这种方式初始化的，`Timer` 组件是**不会**有反应的:
 
 ```javascript
 React.render(<Timer timerData={timerData.secondsPassed} />, document.body)
 ```
-In this snippet just the current value of `secondsPassed` is passed to the `Timer`, which is the immutable value `0` (all primitives are immutable in JS).
-That number won't change anymore in the future, so `Timer` will never update. It is the property `secondsPassed` that will change in the future,
-so we need to access it *in* the component. Or in other words: values need to be passed _by reference_ and not by value.
+在这个代码片段中只是把 `secondsPassed` 的当前值传递给了 `Timer` 组件，这个值是不可变值`0`(JS中所有的原始类型值都是不可变的)。
+这个数值永远都不会改变，因此 `Timer` 组件不会更新。只是 `secondsPassed` 将来会发生改变。
+所以我们需要在组件**中**访问它。或者换句话说: 值需要**通过引用**来传递而不少通过值来传递。
 
-## ES5 support
+## ES5 支持
 
-In ES5 environments, observer components can be simple declared using `observer(React.createClass({ ... `. See also the [syntax guide](../best/syntax.md)
+在ES5环境中，可以简单地使用 `observer(React.createClass({ ... ` 来定义观察者组件。还可以参见[语法指南](../best/syntax.md)。
 
-## Stateless function components
+## 无状态函数组件
 
 The above timer widget could also be written using stateless function components that are passed through `observer`:
 
