@@ -44,10 +44,10 @@ cityName.observe(function(change) {
 });
 
 cityName.set("Amsterdam");
-// prints 'Vienna -> Amsterdam'
+// 输出 'Vienna -> Amsterdam'
 ```
 
-Array Example:
+数组示例:
 
 ```javascript
 import {observable} from "mobx";
@@ -56,7 +56,7 @@ const myArray = ["Vienna"];
 const cityName = observable(myArray);
 
 console.log(cityName[0]);
-// prints 'Vienna'
+// 输出 'Vienna'
 
 cityName.observe(function(observedArray) {
 	if (observedArray.type === "update") {
@@ -72,15 +72,15 @@ cityName.observe(function(observedArray) {
 });
 
 cityName[0] = "Amsterdam";
-// prints 'Vienna -> Amsterdam'
+// 输出 'Vienna -> Amsterdam'
 
 cityName[1] = "Cleveland";
-// prints 'Cleveland added'
+// 输出 'Cleveland added'
 
 cityName.splice(0, 1);
-// prints 'Amsterdam removed'
+// 输出 'Amsterdam removed'
 ```
 
-## Name argument
+## 名称参数
 
-Both `observable.box` and `observable.shallowBox` take a second parameter which is used as debug name in for example `spy` or the MobX dev tools.
+`observable.box` 和 `observable.shallowBox` 都接收第二个参数作为 `spy` 或者 MobX 开发者工具中的调试名称。
