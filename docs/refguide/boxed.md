@@ -14,15 +14,15 @@ JavaScript 中的所有原始类型值都是不可变的，因此它们都是不
 此外，还可以使用它的 `.observe` 方法注册回调，以监听对存储值的更改。
 但因为 MobX 自动追踪了箱子的变化，在绝大多数情况下最好还是使用像 [`mobx.autorun`](autorun.md) 这样的 reaction 来替代。
 
-So the signature of object returned by `observable.box(scalar)` is:
-* `.get()` Returns the current value.
-* `.set(value)` Replaces the currently stored value. Notifies all observers.
-* `intercept(interceptor)`. Can be used to intercept changes before they are applied. See [observe & intercept](observe.md)
-* `.observe(callback: (change) => void, fireImmediately = false): disposerFunction`. Registers an observer function that will fire each time the stored value is replaced. Returns a function to cancel the observer. See [observe & intercept](observe.md). The `change` parameter is an object containing both the `newValue` and `oldValue` of the observable.
+`observable.box(scalar)` 返回的对象签名是:
+* `.get()` - 返回当前值。
+* `.set(value)` - 替换当前存储的值并通知所有观察者。
+* `intercept(interceptor)` - 可以用来在任何变化应用前将其拦截。参见 [observe & intercept](observe.md)。
+* `.observe(callback: (change) => void, fireImmediately = false): disposerFunction` - 注册一个观察者函数，每次存储值被替换时触发。返回一个函数以取消观察者。参见 [observe & intercept](observe.md)。`change` 参数是一个对象，其中包含 observable 的 `newValue` 和 `oldValue` 。
 
 ### `observable.shallowBox(value)`
 
-`shallowBox` creates a box based on the [`ref`](modifiers.md) modifier. This means that any (future) value of box wouldn't be converted into an observable automatically.
+`shallowBox` 创建一个基于 [`ref`](modifiers.md) 调节器的箱子。这意味着箱子里的任何(将来)值都不会自动地转换成 observable 。
 
 
 ### `observable(primitiveValue)`
