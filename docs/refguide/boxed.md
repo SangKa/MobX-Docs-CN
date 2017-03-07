@@ -27,9 +27,9 @@ JavaScript 中的所有原始类型值都是不可变的，因此它们都是不
 
 ### `observable(primitiveValue)`
 
-When using the generic `observable(value)` method, MobX will create an observable box for any value that could not be turned into an observable automatically..
+当使用通用的 `observable(value)` 方法时， MobX 会为任何不能转换成 observable 的值自动创建一个 observable 箱子。
 
-### Example
+### 示例
 
 ```javascript
 import {observable} from "mobx";
@@ -37,7 +37,7 @@ import {observable} from "mobx";
 const cityName = observable("Vienna");
 
 console.log(cityName.get());
-// prints 'Vienna'
+// 输出 'Vienna'
 
 cityName.observe(function(change) {
 	console.log(change.oldValue, "->", change.newValue);
