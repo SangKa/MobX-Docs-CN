@@ -7,7 +7,7 @@
 `observable.map(values)` 中的 values 可以是对象、 数组或者字符串键的 [ES6 map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)。
 与 ES6 map 不同的是，键只能是字符串。
 
-下列 observable 映射所暴露的方法是依据 [ES6 Map 规格](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map):
+下列 observable 映射所暴露的方法是依据 [ES6 Map 规范](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map):
 
 * `has(key)` - 返回映射是否有提供键对应的项。注意键的存在本身就是可观察的。
 * `set(key, value)` - 把给定键的值设置为 `value` 。提供的键如果在映射中不存在的话，那么它会被添加到映射之中。
@@ -20,19 +20,19 @@
 * `clear()` - 移除映射中的所有项。
 * `size` - 返回映射中项的数量。
 
-The following functions are not in the ES6 spec but are available in MobX:
-* `toJS()`. Returns a shallow plain object representation of this map. (For a deep copy use `mobx.toJS(map)`).
+以下函数不属于 ES6 规范，而是由 MobX 提供:
 
-* `intercept(interceptor)`. Registers an interceptor that will be triggered before any changes are applied to the map. See [observe & intercept](observe.md).
-* `observe(listener, fireImmediately?)`. Registers a listener that fires upon each change in this map, similarly to the events that are emitted for [Object.observe](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe). See [observe & intercept](observe.md) for more details.
-* `merge(values)`. Copies all entries from the provided object into this map. `values` can be a plain object, array of entries or string-keyed ES6 Map.
-* `replace(values)`. Replaces the entire contents of this map with the provided values. Short hand for `.clear().merge(values)`
+* `toJS()` - 返回映射的浅的普通对象表示。(深复制使用 `mobx.toJS(map)`)。
+* `intercept(interceptor)` - 可以用来在任何变化作用于映射前将其拦截。参见 [observe & intercept](observe.md)。
+* `observe(listener, fireImmediately?)` - 注册侦听器，在映射中的每个更改时触发，类似于为 [Object.observe](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe) 发出的事件。想了解更多详情，请参见 [observe & intercept](observe.md)。
+* `merge(values)` - 把提供对象的所有项拷贝到映射中。`values` 可以是普通对象、entries 数组或者 ES6 字符串键的映射。
+* `replace(values)` - 用提供值替换映射全部内容。是 `.clear().merge(values)` 的简写形式。
 
 ## `observable.shallowMap(values)`
 
-Any values assigned to an observable map will be default passed through [`observable`](observable.md) to make them observable.
-Create a shallow map to disable this behavior and store are values as-is. See also [modifiers](modifiers.md) for more details on this mechanism.
+任何分配给 observable 映射的值都会默认通过 [`observable`](observable.md) 来传递使其转变成可观察的。
+创建浅映射以禁用此行为，并按原样存储值。关于此机制的更多详情，请参见 [调节器](modifiers.md)。
 
-## Name argument
+## 名称参数
 
-Both `observable.map` and `observable.shallowMap` take a second parameter which is used as debug name in for example `spy` or the MobX dev tools.
+`observable.map` 和 `observable.shallowMap` 都接收第二个参数作为 `spy` 或者 MobX 开发者工具中的调试名称。
