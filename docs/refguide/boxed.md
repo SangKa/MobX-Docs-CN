@@ -1,10 +1,10 @@
-## Primitive values and references
+## 原值类型值和引用类型值
 
-All primitive values in JavaScript are immutable and hence per definition not observable.
-Usually that is fine, as MobX usually can just make the _property_ that contains the value observable.
-See also [observable objects](object.md).
-In rare cases it can be convenient to have an observable "primitive" that is not owned by an object.
-For these cases it is possible to create an observable box that manages such a primitive.
+JavaScript 中的所有原始类型值都是不可变的，因此它们都是不可观察的。
+通常这是好的，因为 MobX 通常可以使包含值的**属性**转变成可观察的。
+可参见 [observable objects](object.md)。
+在极少数情况下，拥有一个不属于某个对象的可观察的“原始类型值”还是是很方便的。
+对于这种情况，可以创建一个 observable 箱子以便管理这样的原始类型值。
 
 ### `observable.box(value)`
 
