@@ -1,24 +1,24 @@
-# Observable Maps
+# Observable 映射
 
 ## `observable.map(values)`
 
-`observable.map(values?)` creates a dynamic keyed observable map.
-Observable maps are very useful if you don't want to react just to the change of a specific entry, but also to the addition or removal of entries.
-Optionally takes an object, entries array or string keyed [ES6 map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) with initial values.
-Unlike ES6 maps, only strings are accepted as keys.
+`observable.map(values?)` - 创建一个动态键的 observable 映射。
+如果你不想只对一个特定项的更改做出反应，而是对添加或删除该项做出反应的话，那么 observable 映射会非常有用。
+`observable.map(values)` 中的 values 可以是对象、 数组或者字符串键的 [ES6 map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)。
+与 ES6 map 不同的是，键只能是字符串。
 
-The following methods are exposed according to the [ES6 Map spec](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map):
+下列 observable 映射所暴露的方法是依据 [ES6 Map 规格](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map):
 
-* `has(key)` Returns whether this map has an entry the provided key. Note that the presence of a key is an observable fact in itself.
-* `set(key, value)`. Sets the given `key` to `value`. The provided key will be added to the map if it didn't exist yet.
-* `delete(key)`. Deletes the given key and its value from the map.
-* `get(key)`. Returns the value at the given key (or `undefined`).
-* `keys()`. Returns all keys present in this map. The insertion order is preserved.
-* `values()`. Returns all values present in this map. Insertion order is preserved.
-* `entries()`. Returns an (insertion ordered) array that for each key/value pair in the map contains an array `[key, value]`.
-* `forEach(callback:(value, key, map) => void, thisArg?)`. Invokes the given callback for each key / value pair in the map.
-* `clear()`. Removes all entries from this map.
-* `size`. Returns the amount of entries in this map.
+* `has(key)` - 返回映射是否有提供键对应的项。注意键的存在本身就是可观察的。
+* `set(key, value)` - 把给定键的值设置为 `value` 。提供的键如果在映射中不存在的话，那么它会被添加到映射之中。
+* `delete(key)` - 把给定键和它的值从映射中删除。
+* `get(key)` - 返回给定键的值(或 `undefined`)。
+* `keys()` - 返回映射中存在的所有键。插入顺序会被保留。
+* `values()` - 返回映射中存在的所有值。插入顺序会被保留。
+* `entries()` - 返回一个(保留插入顺序)的数组，映射中的每个键值对都会对应数组中的一项 `[key, value]`。
+* `forEach(callback:(value, key, map) => void, thisArg?)` - 为映射中每个键值对调用给定的回调函数。
+* `clear()` - 移除映射中的所有项。
+* `size` - 返回映射中项的数量。
 
 The following functions are not in the ES6 spec but are available in MobX:
 * `toJS()`. Returns a shallow plain object representation of this map. (For a deep copy use `mobx.toJS(map)`).
