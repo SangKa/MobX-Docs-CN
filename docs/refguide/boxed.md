@@ -8,11 +8,11 @@ JavaScript 中的所有原始类型值都是不可变的，因此它们都是不
 
 ### `observable.box(value)`
 
-So `observable.box(value)` accepts any value and stores it inside a box.
-The current value can be accessed through `.get()` and updated using `.set(newValue)`.
+`observable.box(value)` 接收任何值并把值存储到箱子中。
+使用 `.get()` 可以获取当前值，使用 `.set(newValue)` 可以更新值。
 
-Furthermore you can register a callback using its `.observe` method to listen to changes on the stored value.
-But since MobX tracks changes to boxes automatically, in most cases it is better to use a reaction like [`mobx.autorun`](autorun.md) instead.
+此外，还可以使用它的 `.observe` 方法注册回调，以监听对存储值的更改。
+但因为 MobX 自动追踪了箱子的变化，在绝大多数情况下最好还是使用像 [`mobx.autorun`](autorun.md) 这样的 reaction 来替代。
 
 So the signature of object returned by `observable.box(scalar)` is:
 * `.get()` Returns the current value.
