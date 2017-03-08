@@ -311,13 +311,13 @@ A common mistake is to store local variables that dereference observables, and t
 
 ```javascript
 @observer class MyComponent extends React.component {
-    @computed get author() {
+    @computed get author()
         return this.props.message.author
     }
 // ...
 ```
 
-## 多个组件如何渲染
+## 多个组件将如何渲染
 
 假设我们使用下面的组件来渲染上面的 `message` 对象。
 
@@ -343,17 +343,17 @@ const Likes = observer(({ likes }) =>
 )
 ```
 
-| change | re-rendering component |
+| 变化 | 重新渲染组件 |
 | --- | --- |
 | `message.title = "Bar"` | `Message` |
-| `message.author.name = "Susan"` | `Author` (`.author` is dereferenced in `Message`, but didn't change)* |
+| `message.author.name = "Susan"` | `Author` (`.author` 在 `Message` 中进行间接引用, 但没有改变)* |
 | `message.author = { name: "Susan"}` | `Message`, `Author` |
 | `message.likes[0] = "Michel"` | `Likes` |
 
-Notes:
-1. \* If the `Author` component was invoked like: `<Author author={ message.author.name} />`. Then `Message` would be the dereferencing component and react to changes to `message.author.name`. Nonetheless `<Author>` would rerender as well, because it receives a new value. So performance wise it is best to dereference as late as possible.
-2. \** If likes where objects instead of strings, and if they were rendered by their own `Like` component, the `Likes` component would not rerender for changes happening inside a specific like.
+便笺:
+1. \* 如果 `Author` 组件是像这样调用的: `<Author author={ message.author.name} />` 。`Message` 会是进行间接引用的组件并对 `message.author.name` 的改变作出反应。尽管如此，`<Author>` 同样会重新渲染，因为它接收到了一个新的值。所以从性能上考虑，越晚进行间接引用越好。
+2. \** 如果 likes 数组里面的是对象而不是字符串，并且它们在它们自己的 `Like` 组件中渲染，那么对于发生在某个具体的 like 中发生的变化，`Likes` 组件将不会重新渲染。
 
 ## TL;DR
 
-> MobX reacts to any an _existing_ **observable** _property_ that is read during the execution of a tracked function.
+> MobX 会对在执行跟踪函数期间读取的任何**现有的可观察属性**做出反应。
