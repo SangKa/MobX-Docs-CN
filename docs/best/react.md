@@ -218,13 +218,13 @@ autorun(() => {
 twitterUrls.set("Sara", "twitter.com/horsejs")
 ```
 
-This **will** react. Observable maps support observing entries that may not exist.
-Note that this will initially print `undefined`.
-You can check for the existence of an entry first by using `twitterUrls.has("Sara")`.
-So for dynamically keyed collections, always use observable maps.
+这将**会**作出反应。Observable 映射支持观察还不存在的项。
+注意这里最初会输出 `undefined`。
+可以通过使用 `twitterUrls.has("Sara")` 来先检查该项是否存在。
+所以对于动态键集合，总是使用 observable 映射。
 
 
-## MobX only tracks synchronously accessed data
+## MobX 只追踪同步地访问数据
 
 ```javascript
 function upperCaseAuthorName(author) {
@@ -236,9 +236,8 @@ autorun(() => {
 })
 message.author.name = "Chesterton"
 ```
-This will react. Even though `author.name` is not dereferenced by the thunk passed to `autorun` itself,
-MobX will still track the dereferencing that happens in `upperCaseAuthorName`,
-because it happens _during_ the execution of the autorun.
+这将**会**作出反应。尽管 `author.name` 不是在 `autorun` 本身的代码块中进行间接引用的。
+MobX 会追踪发生在 `upperCaseAuthorName` 函数里的间接引用，因为它是在 autorun 执行期间发生的。
 
 ----
 
@@ -255,6 +254,7 @@ message.likes.push("Jennifer");
 This will **not** react, during the execution of the `autorun` no observables where accessed, only during the `setTimeout`.
 In general this is quite obvious and rarely causes issues.
 The notable caveat here is passing renderable callbacks to React components, take for example the following example:
+
 
 ```javascript
 const MyComponent = observer(({ message }) =>
