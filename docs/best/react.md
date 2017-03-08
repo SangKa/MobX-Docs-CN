@@ -67,7 +67,7 @@ WhyRun? reaction 'Autorun@1':
     ObservableObject@1.title
 ```
 
-#### Incorrect: changing a non-observable reference
+#### 错误的: 改变了非 observable 的引用
 
 ```javascript
 autorun(() => {
@@ -76,11 +76,10 @@ autorun(() => {
 message = observable({ title: "Bar" })
 ```
 
-This will **not** react. `message` was changed, but `message` is not an observable, just a variable which _refers to_ an observable,
-but the variable (reference) itself is not observable.
+这将**不会**作出反应。`message` 被改变了，但它不是 observable，它只是一个**引用** observable 的变量，但是变量(引用)本身并不是可观察的。
 
 
-#### Incorrect: dereference outside a tracked function
+#### 错误的: 在追踪函数外进行间接引用
 
 ```javascript
 var title = message.title;
@@ -90,10 +89,10 @@ autorun(() => {
 message.title = "Bar"
 ```
 
-This will **not** react. `message.title` was dereferenced outside the `autorun`, and just contains the value of `message.title` at the  moment of dereferencing (the string `"Foo"`).
-`title` is not an observable so `autorun` will never react.
+这将**不会**作出反应。`message.title` 是在 `autorun` 外面进行的间接引用，在间接引用的时候 `title` 变量只是包含 `message.title` 的值(字符串 `Foo`)而已。
+`title` 变量不是 observable，所以 `autorun` 永远不会作出反应。
 
-#### Correct: dereference inside the tracked function
+#### 正确的: 在追踪函数内进行间接引用
 
 ```javascript
 autorun(() => {
@@ -103,9 +102,9 @@ message.author.name = "Sara";
 message.author = { name: "John" };
 ```
 
-This will react to both changes. Both `author` and `author.name` are dotted into, allowing MobX to track these references.
+对于这两个变化都将作出反应。 `author` 和 `author.name` 都是通过 `.` 访问的，使得 MobX 可以追踪这些引用。
 
-#### Incorrect: store a local reference to an observable object without tracking
+#### 错误的: 存储 observable 对象的本地引用而不对其追踪
 
 ```javascript
 const author = message.author;
