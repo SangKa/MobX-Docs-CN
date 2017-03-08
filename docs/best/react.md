@@ -1,23 +1,24 @@
-# What does MobX react to?
+# MobX 会对什么作出反应?
 
-MobX usually reacts to exactly the things you expect it to.
-Which means that in 90% of your use cases mobx "just works".
-However, at some point you will encounter a case where it might not do what you expected.
-At that point it is invaluable to understand how MobX determines what to react to.
+MobX 通常会对你期望的东西做出反应。
+这意味着在90％的场景下，mobx “都可以工作”。
+然而，在某些时候，你会遇到一个情况，它可能不会像你所所期望的那样工作。
+在这个时候理解 MobX 如何确定对什么有反应就显得尤为重要。
 
-> MobX reacts to any _existing_ **observable** _property_ that is read during the execution of a tracked function.
+> MobX 会对在执行跟踪函数期间读取的任何**现有的可观察属性**做出反应。
 
-* _"reading"_ is dereferencing an object's property, which can be done through "dotting into" it (eg. `user.name`) or using the bracket notation (eg. `user['name']`).
-* _"trackable functions"_ are the expression of `computed`, the `render()` method of an observer component, and the functions that are passed as the first param to `when`, `reaction` and `autorun`.
-* _"during"_ means that only those observables that are being read while the function is executing are tracked. It doesn't matter whether these values are used directly or indirectly by the tracked function.
+* **“读取”** 是对象属性的间接引用，可以用过 `.` (例如 `user.name`) 或者 `[]` (例如 `user['name']`) 的形式完成。
+* **“可追踪函数”** 是 `computed` 表达式、observer 组件的 `render()` 方法和 `when`、`reaction` 和 `autorun` 的第一个入参函数。
+* **“其间(during)”** 意味着只追踪那些在函数执行时被读取的 observable 。这些值是否由追踪函数直接或间接使用并不重要。
 
-In other words, MobX will not react to:
- * Values that are obtained from observables, but outside a tracked function
- * Observables that are read in an asynchronously invoked code block
+换句话所，MobX 不会对其作出反应:
+ * 从 observable 获取的值，但是在追踪函数之外
+ * 在异步调用的代码块中读取的 observable
 
-## MobX tracks property access, not values
+## MobX 追踪属性访问，而不是值
 
 To elaborate on the above rules with an example, suppose that you have the following observable data structure (`observable` applies itself recursively by default, so all fields in this example are observable):
+用一个示例来阐述上述规则，假设你有如下的 observable 数据结构(默认情况下 `observable` 会递归应用，所以本示例中的所有字段都是可观察的)。
 
 ```javascript
 let message = observable({
