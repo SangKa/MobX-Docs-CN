@@ -115,10 +115,10 @@ message.author.name = "Sara";
 message.author = { name: "John" };
 ```
 
-The first change will be picked up, `message.author` and `author` are the same object, and the `.name` property is dereferenced in the autorun.
-However the second change will **not** be picked up, the `message.author` relation is not tracked by the `autorun`. Autorun is still using the "old" `author`.
+对于第一个改变将会作出反应，`message.author` 和 `author` 是同一个对象，而 `name` 属性在 autorun 中进行的间接引用。
+但对于第二个改变将**不会**作出反应，`message.author` 的关系没有通过 `autorun` 追踪。Autorun 仍然使用的是“老的” `author`。
 
-#### Correct: access array properties in tracked function
+#### 正确的: 在追踪函数内访问数组属性
 
 
 ```javascript
@@ -128,11 +128,11 @@ autorun(() => {
 message.likes.push("Jennifer");
 ```
 
-This will react as expected. `.length` counts towards a property.
-Note that this will react to *any* change in the array.
-Arrays are not tracked per index / property (like observable objects and maps) but as a whole.
+这将如预期一样会作出反应。`.length` 指向一个属性。
+注意这会对数组中的**任何**更改做出反应。
+数组不追踪每个索引/属性(如 observable 对象和映射)，而是作为一个整体追踪。
 
-#### Incorrect: access out-of-bounds indices in tracked function
+#### 错误的: 在追踪函数内索引越界访问
 
 ```javascript
 autorun(() => {
@@ -141,9 +141,9 @@ autorun(() => {
 message.likes.push("Jennifer");
 ```
 
-This will react with the above sample data, array indexers count as property access. But **only** if the provided `index < length`.
-MobX will not track not-yet-existing indices or object properties (except when using maps).
-So always guard your array index based access with a `.length` check.
+使用上面的示例数据是会作出反应的，数组的索引计数作为属性访问。但前提条件**必须**是提供的索引小于数组长度。
+MobX 不会追踪还不存在的索引或者对象属性(当使用 observable 映射时除外)。
+所以建议总是使用 `.length` 来检查保护基于数组索引的访问。
 
 #### Correct: access array functions in tracked function
 
