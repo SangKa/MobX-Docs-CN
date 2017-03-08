@@ -179,7 +179,7 @@ message.likes.push("Jennifer");
 这将**不会**作出反应。只是因为 `likes` 数组本身并没有被 `autorun` 使用，只是引用了数组。
 所以相比之下，`messages.likes = ["Jennifer"]` 是会作出反应的，表达式没有修改数组，而是修改了 `likes` 属性本身。
 
-#### Incorrect: using non-observable object properties
+#### 错误的: 使用对象的非 observable 属性
 
 
 ```javascript
@@ -189,9 +189,9 @@ autorun(() => {
 message.postDate = new Date()
 ```
 
-This will **not** react. MobX can only track observable properties.
+这将**不会**作出反应。MobX 只能追踪 observable 属性。
 
-#### Incorrect: using not yet existing observable object properties
+#### 错误的: 使用 observable 对象还不存在的属性
 
 ```javascript
 autorun(() => {
@@ -202,10 +202,10 @@ extendObservable(message, {
 })
 ```
 
-This will **not** react. MobX will not react to observable properties that did not exist when tracking started.
-If the two statements are swapped, or if any other observable causes the `autorun` to re-run, the `autorun` will start tracking the `postDate` as well.
+这将**不会**作出反应。MobX 不会对当追踪开始时还不能存在的 observable 属性作出反应。
+如果两个表达式交换下顺序，或者任何其它的 observable 引起 `autorun` 再次运行的话，`autorun` 也会开始追踪 `postDate` 属性了。
 
-#### Correct: using not yet existing map entries
+#### 正确的: 使用映射中还不能存在的项
 
 ```javascript
 const twitterUrls = observable(asMap({
