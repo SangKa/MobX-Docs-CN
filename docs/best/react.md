@@ -17,7 +17,6 @@ MobX 通常会对你期望的东西做出反应。
 
 ## MobX 追踪属性访问，而不是值
 
-To elaborate on the above rules with an example, suppose that you have the following observable data structure (`observable` applies itself recursively by default, so all fields in this example are observable):
 用一个示例来阐述上述规则，假设你有如下的 observable 数据结构(默认情况下 `observable` 会递归应用，所以本示例中的所有字段都是可观察的)。
 
 ```javascript
@@ -32,17 +31,17 @@ let message = observable({
 })
 ```
 
-In memory that looks as follows. The green boxes indicate _observable_ properties. Note that the _values_ themselves are not observable!
+在内存中看起来像下面这样。 绿色框表示**可观察**属性。 请注意，**值** 本身是不可观察的！
 
 ![MobX reacts to changing references](../images/observed-refs.png)
 
-Now what MobX basically does is recording which _arrows_ you use in your function. After that, it will re-run whenever one of this _arrows_ changes; when they start to refer to something else.
+现在 MobX 基本上所做的是记录你在函数中使用的是哪个**箭头**。之后，只要这些箭头中的其中一个改变了(它们开始引用别的东西了)，它就会重新运行。
 
-## Examples
+## 示例
 
-Lets show that with a bunch of examples (based on the `message` variable defined above):
+来看下下面这些示例(基于上面定义的 `message` 变量):
 
-#### Correct: dereference inside the tracked function
+#### 正确的: 在追踪函数内进行间接引用
 
 ```javascript
 autorun(() => {
@@ -51,9 +50,9 @@ autorun(() => {
 message.title = "Bar"
 ```
 
-This will react as expected, the `.title` property was dereferenced by the autorun, and changed afterwards, so this change is detected.
+这将如预期一样会作出反应，`title` 属性会被 autorun 间接引用并且发生了改变，所以这个改变是能检测到的。
 
-You can verify what MobX will track by calling `whyRun()` inside the tracked function. In the case of the above function it will output the following:
+你可以通过在追踪函数内调用 `whyRun()` 方法来验证 MobX 在追踪什么。以上面的函数为例，输出结果如下:
 
 ```javascript
 autorun(() => {
@@ -61,7 +60,7 @@ autorun(() => {
     whyRun()
 })
 
-// Outputs:
+// 输出:
 WhyRun? reaction 'Autorun@1':
  * Status: [running]
  * This reaction will re-run if any of the following observables changes:
