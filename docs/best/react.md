@@ -141,11 +141,11 @@ autorun(() => {
 message.likes.push("Jennifer");
 ```
 
-使用上面的示例数据是会作出反应的，数组的索引计数作为属性访问。但前提条件**必须**是提供的索引小于数组长度。
+使用上面的示例数据是会作出反应的，数组的索引计数作为属性访问，但前提条件**必须**是提供的索引小于数组长度。
 MobX 不会追踪还不存在的索引或者对象属性(当使用 observable 映射时除外)。
 所以建议总是使用 `.length` 来检查保护基于数组索引的访问。
 
-#### Correct: access array functions in tracked function
+#### 正确的: 在追踪函数内访问数组方法
 
 ```javascript
 autorun(() => {
@@ -154,7 +154,7 @@ autorun(() => {
 message.likes.push("Jennifer");
 ```
 
-This will react as expected. All array functions that do not mutate the array are tracked automatically.
+这将如预期一样会作出反应。所有不会改变数组的数组方法都会自动地追踪。
 
 ---
 
@@ -165,9 +165,9 @@ autorun(() => {
 message.likes[2] = "Jennifer";
 ```
 
-This will react as expected. All array index assignments are detected, but only if `index <= length`.
+这将如预期一样会作出反应。所有数组的索引分配都可以检测到，但前提条件**必须**是提供的索引小于数组长度。
 
-#### Incorrect: "use" an observable but without accessing any of its properties
+#### 错误的: “使用” observable 但没有访问它的任何属性
 
 ```javascript
 autorun(() => {
@@ -176,8 +176,8 @@ autorun(() => {
 message.likes.push("Jennifer");
 ```
 
-This will **not** react. Simply because the `likes` array itself is not being used by the `autorun`, only the reference to the array.
-So in contrast, `messages.likes = ["Jennifer"]` would be picked up; that statement does not modify the array, but the `likes` property itself.
+这将**不会**作出反应。只是因为 `likes` 数组本身并没有被 `autorun` 使用，只是引用了数组。
+所以相比之下，`messages.likes = ["Jennifer"]` 是会作出反应的，表达式没有修改数组，而是修改了 `likes` 属性本身。
 
 #### Incorrect: using non-observable object properties
 
