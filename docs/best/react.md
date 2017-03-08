@@ -286,9 +286,10 @@ const TitleRenderer = observer(({ message }) =>
 message.title = "Bar"
 ```
 
-## Avoid caching observables in local fields
+## 避免在本地字段中缓存 observable
 
 A common mistake is to store local variables that dereference observables, and then expect components to react. For example:
+一个常见的错误就是把间接引用的 observable 存储到本地变量，然后认为组件会作出反应。举例来说:
 
 ```javascript
 @observer class MyComponent extends React.component {
@@ -304,10 +305,9 @@ A common mistake is to store local variables that dereference observables, and t
 }
 ```
 
-This component will react to changes in the `author`'s name, but it won't react to changing the `.author` of the `message` itself! Because that dereferencing happened outside `render()`,
-which is the only tracked function of an `observer` component.
-Note that even marking the `author` component field as `@observable` field does not solve this; that field is still assigned only once.
-This can simply be solved by doing the dereferencing inside `render()`, or by introducing a computed property on the component instance:
+组件会对 `author.name` 的变化作出反应，但不会对 `message` 本身的 `.author` 的变化作出反应！因为这个间接引用发生在 `render()` 之外，`render()` 是 `observer` 组件的唯一追踪函数。
+注意，即便把组件的 `author` 字段标记为 `@observable` 字段也不能解决这个问题，`author` 仍然是只分配一次。
+这个问题可以简单地解决，方法是在 `render()` 中进行间接引用或者在组件实例上引入一个计算属性:
 
 ```javascript
 @observer class MyComponent extends React.component {
@@ -317,9 +317,9 @@ This can simply be solved by doing the dereferencing inside `render()`, or by in
 // ...
 ```
 
-## How multiple components will render
+## 多个组件如何渲染
 
-Suppose that we use the following components are used to render our above `message` object.
+假设我们使用下面的组件来渲染上面的 `message` 对象。
 
 ```javascript
 const Message = observer(({ message }) =>
