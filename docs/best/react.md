@@ -254,7 +254,9 @@ message.likes.push("Jennifer");
 This will **not** react, during the execution of the `autorun` no observables where accessed, only during the `setTimeout`.
 In general this is quite obvious and rarely causes issues.
 The notable caveat here is passing renderable callbacks to React components, take for example the following example:
-
+这将**不会**作出反应。在 `autorun` 执行期间没有访问 observable，只在 `setTimeout` 执行期间访问了。
+通常来说，这是相当明显的，很少会导致问题。
+这里需要注意的是将可渲染的回调传递给 React 组件，例如下面的示例:
 
 ```javascript
 const MyComponent = observer(({ message }) =>
@@ -266,9 +268,9 @@ const MyComponent = observer(({ message }) =>
 message.title = "Bar"
 ```
 
-At first glance everything might seem ok here, except that the `<div>` is actually not rendered by `MyComponent` (which has a tracked rendering), but by `SomeContainer`.
-So to make sure that the title of `SomeContainer` correctly reacts to a new `message.title`, `SomeContainer` should be an `observer` as well.
-If `SomeContainer` comes from an external lib, you can also fix this by wrapping the `div` in its own stateless `observer` based component, and instantiating that one in the callback:
+起初看上去一切似乎都是没问题的，除了 `<div>` 实际上不是由 `MyComponent`(有追踪的渲染) 渲染的，而是 `SomeContainer`。
+所以要确保 `SomeContainer` 的 title 可以正确对新的 `message.title` 作出反应，`SomeContainer` 应该也是一个 `observer`。
+如果 `SomeContainer` 来自外部库，你也可以通过在自己的无状态 `observer` 组件中包装 `div` 来解决这个问题，并在回调中实例化:
 
 ```javascript
 const MyComponent = observer(({ message }) =>
