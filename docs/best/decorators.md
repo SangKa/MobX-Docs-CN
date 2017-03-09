@@ -70,13 +70,13 @@ function Timer() {
 }
 ```
 
-Or, when using classes:
+或者当使用类时:
 
 ```javascript
 class Timer {
 	constructor() {
 		extendObservable(this, {
-			/* See previous listing */
+			/* 参见上面 */
 		})
 	}
 }
