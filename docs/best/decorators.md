@@ -104,11 +104,11 @@ class Timer {
 
 ## 创建 observer 组件
 
-The `observer` function / decorator from the mobx-package converts react components into observer components.
-The rule to remember here is that `@observer class ComponentName {}` is simply sugar for `const ComponentName = observer(class { })`.
-So all the following forms of creating observer components are valid:
+mobx 包中的 `observer` 函数/装饰器用来将 react 组件转变为 observer 组件。
+这里需要记住的规则是 `@observer class ComponentName {}` 只是 `const ComponentName = observer(class { })` 的语法糖而已。
+所以下面 observer 组件的所有创建形式都是有效的:
 
-Stateless function component, ES5:
+ES5 版本的无状态组件函数:
 
 ```javascript
 const Timer = observer(function(props) {
@@ -116,7 +116,7 @@ const Timer = observer(function(props) {
 })
 ```
 
-Stateless function component, ES6:
+ES6 版本的无状态组件函数:
 
 ```javascript
 const Timer = observer(({ timer }) =>
