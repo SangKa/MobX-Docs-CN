@@ -32,17 +32,17 @@
 }
 ```
 
-Note that the order of plugins is important: `transform-decorators-legacy` should be listed *first*.
-Having issues with the babel setup? Check this [issue](https://github.com/mobxjs/mobx/issues/105) first.
+请注意， `plugins` 的属性非常重要: `transform-decorators-legacy` 应该放在**最前面**。
+babel 设置有问题？请先查看这个 [issue](https://github.com/mobxjs/mobx/issues/105) 。
 
-When using react native, the following preset can be used instead of `transform-decorators-legacy`:
+当使用 react native 时，可以用下面的预设来代替 `transform-decorators-legacy`:
 ```
 {
   "presets": ["stage-2", "react-native-stage-0/decorator-support"]
 }
 ```
 
-## Limitations on decorators
+## 装饰器的局限性
 
 * reflect-metadata https://github.com/mobxjs/mobx/issues/534
 * decorators are not supported out of the box in `create-react-app`. To fix this, you can either eject, or use [custom-react-scripts](https://www.npmjs.com/package/custom-react-scripts) for `create-react-app` ([blog](https://medium.com/@kitze/configure-create-react-app-without-ejecting-d8450e96196a#.n6xx12p5c))
