@@ -12,15 +12,15 @@
 
 ## 启用装饰器
 
-If you want to use decorators follow the following steps.
+如果想使用装饰器，请按照以下步骤操作。
 
 **TypeScript**
 
-Enable the compiler option `experimentalDecorators` in `tsconfig.json` or pass it as flag `--experimentalDecorators` to the compiler.
+启用 `tsconfig.json` 文件中的 `experimentalDecorators` 编译器选项，或者把 `--experimentalDecorators` 作为标识传给编译器。
 
 **Babel:**
 
-Install support for decorators: `npm i --save-dev babel-plugin-transform-decorators-legacy`. And enable it in your `.babelrc` file:
+安装装饰器支持: `npm i --save-dev babel-plugin-transform-decorators-legacy`。然后在 `.babelrc` 文件中启用它:
 
 ```
 {
