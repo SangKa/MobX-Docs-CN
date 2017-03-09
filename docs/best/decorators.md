@@ -1,16 +1,16 @@
-# How to (not) use decorators
+# 如何(不)使用装饰器
 
-Using ES.next decorators in MobX is optional. This section explains how to use them, or how to avoid them.
+在MobX 中使用 ES.next 装饰器是可选的。本章节将解释如何(避免)使用它们。
 
-Advantages of using decorators:
-* Minimizes boilerplate, declarative.
-* Easy to use and read. A majority of the MobX users use them.
+使用装饰器的优势:
+* 样板文件最小化，声明式代码。
+* 易于使用和阅读。大多数 MobX 用户都在使用。
 
-Disadvantages of using decorators:
-* Stage-2 ES.next feature
-* Requires a little setup and transpilation, only supported with Babel / Typescript transpilation so far
+使用装饰器的劣势:
+* ES.next 2阶段特性。
+* 需要设置和编译，目前只有 Babel/Typescript 编译器支持。
 
-## Enabling decorators
+## 启用装饰器
 
 If you want to use decorators follow the following steps.
 
