@@ -45,15 +45,15 @@ babel 设置有问题？请先查看这个 [issue](https://github.com/mobxjs/mob
 ## 装饰器的局限性
 
 * reflect-metadata https://github.com/mobxjs/mobx/issues/534
-* decorators are not supported out of the box in `create-react-app`. To fix this, you can either eject, or use [custom-react-scripts](https://www.npmjs.com/package/custom-react-scripts) for `create-react-app` ([blog](https://medium.com/@kitze/configure-create-react-app-without-ejecting-d8450e96196a#.n6xx12p5c))
-* decorators are currently not yet support in Next.JS [issue](https://github.com/zeit/next.js/issues/26)
+* `create-react-app` 本身不支持装饰器。为了解决这个问题，可以使用 eject 或 [custom-react-scripts](https://www.npmjs.com/package/custom-react-scripts) ([博客](https://medium.com/@kitze/configure-create-react-app-without-ejecting-d8450e96196a#.n6xx12p5c))
+* Next.JS 目前还不支持装饰器，参见这个 [issue](https://github.com/zeit/next.js/issues/26)
 
 
-## Creating observable properties without decorators
+## 不使用装饰器创建 observable 属性
 
-Without decorators `extendObservable` can be used to introduce observable properties on an object.
-Typically this is done inside a constructor function.
-The following example introduces observable properties, a computed property and an action in a constructor function / class:
+不使用装饰器，可以用 `extendObservable` 来为对象引入 observable 属性。
+通常都是在构造函数中来完成这件事。
+下面的示例在构造函数/类中引入了 observable 属性、计算属性和动作:
 
 ```javascript
 function Timer() {
