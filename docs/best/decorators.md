@@ -124,7 +124,7 @@ const Timer = observer(({ timer }) =>
 )
 ```
 
-React component, ES5:
+ES5 版本的 React 组件:
 
 ```javascript
 const Timer = observer(React.createClass({
@@ -132,7 +132,7 @@ const Timer = observer(React.createClass({
 }))
 ```
 
-React component class, ES6:
+ES6 版本的 React 组件:
 
 ```javascript
 const Timer = observer(class Timer extends React.Component {
@@ -140,7 +140,7 @@ const Timer = observer(class Timer extends React.Component {
 })
 ```
 
-React component class with decorator, ES.next:
+ES.next 版本的使用装饰器的 React 组件:
 
 ```javascript
 @observer
