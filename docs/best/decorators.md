@@ -82,10 +82,10 @@ class Timer {
 }
 ```
 
-## Creating observable properties with decorators
+## 使用装饰器创建 observable 属性
 
-Decorators combine very nicely with classes.
-When using decorators, observables, computed values and actions can be simply introduced by using the decorators:
+装饰器可以非常好的与类结合。
+当使用装饰器时，observables、计算值和动作可以通过使用装饰器简单地引入:
 
 ```javascript
 class Timer {
