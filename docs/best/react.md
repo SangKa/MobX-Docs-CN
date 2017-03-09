@@ -311,7 +311,7 @@ A common mistake is to store local variables that dereference observables, and t
 
 ```javascript
 @observer class MyComponent extends React.component {
-    @computed get author()
+    @computed get author() {
         return this.props.message.author
     }
 // ...
