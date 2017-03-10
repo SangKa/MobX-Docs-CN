@@ -17,7 +17,7 @@
 ## 教程
 
 * [十分钟交互式的 MobX + React 教程](https://mobxjs.github.io/mobx/getting-started.html#demo)
-* [ES5版本的 MobX 简单示例](https://github.com/mattruby/mobx-examples) MobX 的小示例都安装运行在 jsFiddle 中.
+* [ES5版本的 MobX 简单示例](https://github.com/mattruby/mobx-examples) MobX 的小示例都安装运行在 jsFiddle 中。
 * [唯快不破: 使用 MobX 和 React 构建一个高性能的秒表](https://onsen.io/blog/mobx-tutorial-react-stopwatch/)
 * [MobX 入门: 一个简单示例](https://tonyspiro.com/getting-started-with-mobx-an-easy-example)
 * [如何使用 Jest 测试 React 和 MobX](https://semaphoreci.com/community/tutorials/how-to-test-react-and-mobx-with-jest?utm_content=buffer15b42&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer)
