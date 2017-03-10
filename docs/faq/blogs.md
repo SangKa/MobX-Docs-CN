@@ -73,11 +73,11 @@
 * [使用 MobX 的 React 表单验证](https://medium.com/@KozhukharenkoN/react-form-validation-with-mobx-8ce00233ae27#.d8biky8cv)
 * [MobX 食谱 - 收集的一些 MobX 使用过程中的经验教训和实用模式](https://alexhisen.gitbooks.io/mobx-recipes/content/)
 
-## Testimonials
+## 客户评价
 
-Want to know how people experience starting or porting projects to MobX? Besides the above listed blogs, the following threads might shed some light:
-* [search twitter](https://twitter.com/search?q=mobx&src=typd) ([example](https://twitter.com/jason_kelly6/status/792043911573303296))
-* [hacker news](https://news.ycombinator.com/item?id=11181980)
+想知道人们如何体验新建或移植项目到 MobX？ 除了上面列出的博客，下面的相关线索可能会给你一起启示:
+* [twitter 搜索](https://twitter.com/search?q=mobx&src=typd) ([示例](https://twitter.com/jason_kelly6/status/792043911573303296))
+* [黑客新闻](https://news.ycombinator.com/item?id=11181980)
 * [reddit](https://www.reddit.com/r/reactjs/comments/4pgbhq/redux_like_dan_abramov/d4kod21)
 * [reddit](https://www.reddit.com/r/reactjs/comments/4l44a2/mobx_22_has_been_released_explicit_actions/)
 * [reddit](https://www.reddit.com/r/reactjs/comments/4npzq5/confused_redux_or_mobx/)
