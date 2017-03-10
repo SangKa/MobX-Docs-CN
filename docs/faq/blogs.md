@@ -1,17 +1,18 @@
-## Blogs, tutorials, videos
+## 博客、教程、视频
 
-## Videos
-* [Egghead.io course: Manage Complex State in React Apps with MobX](https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx)
-* LearnCode.academy MobX tutorial [Part I: MobX + React is AWESOME (7m)](https://www.youtube.com/watch?v=_q50BXqkAfI) [Part II: Computed Values and Nested/Referenced Observables (12m.)](https://www.youtube.com/watch?v=nYvNqKrl69s)
-* [ReactNext 2016: Real World MobX](https://www.youtube.com/watch?v=Aws40KOx90U) - 40m [slides](https://docs.google.com/presentation/d/1DrI6Hc2xIPTLBkfNH8YczOcPXQTOaCIcDESdyVfG_bE/edit?usp=sharing)
-* [Practical React with MobX](https://www.youtube.com/watch?v=XGwuM_u7UeQ). In depth introduction and explanation to MobX and React by Matt Ruby on OpenSourceNorth (ES5 only). ([slides](http://slides.com/mattruby/deck))
-* [Screencast: 8 minute overview of MobX](https://www.youtube.com/watch?v=K8dr8BMU7-8)
-* [Understanding MobX versus Redux](https://www.youtube.com/watch?v=83v8cdvGfeA) (related thread: https://github.com/mobxjs/mobx/issues/199)
-* [State Management Is Easy, React Amsterdam 2016 conf](https://www.youtube.com/watch?v=ApmSsu3qnf0&feature=youtu.be) ([slides](https://speakerdeck.com/mweststrate/state-management-is-easy-introduction-to-mobx))
-* [Transparent Reactive Programming and Mutable Data, Reactive2015 conf](https://www.youtube.com/watch?v=FEwLwiizlk0) ([slides](https://speakerdeck.com/mweststrate/react-transparent-reactive-programming-and-mutable-data-structures))
-* Magic MobX, [RuhrJS 2016](https://www.youtube.com/watch?v=TfxfRkNCnmk) ([slides](http://magixmobx.surge.sh) and [more slides](https://docs.google.com/presentation/d/1d54mSxF0VOAFlsUGM8eonZDs9gZecTOz1ErSbnydChQ/edit?usp=sharing))
-* [Spacedojo Show - Reactive Programming with Mobx](https://www.youtube.com/watch?v=QTptEw2cYt0&feature=youtu.be&a)
-* [The Quest For Immer Mutable Data, Reactive2016 conf](https://youtu.be/1Urj4TZ5BLI?t=5h27m40s) ([slides](http://immer-mutable-state.surge.sh/#1))
+## 视频
+
+* [Egghead.io 课程: 在 React 应用中使用 MobX 管理复杂的状态](https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx)
+* LearnCode.academy MobX 教程 [第一部分: MobX + React 太棒了 (7分钟)](https://www.youtube.com/watch?v=_q50BXqkAfI) [第二部分: Computed Values and 嵌套/引用的 Observables (12分钟)](https://www.youtube.com/watch?v=nYvNqKrl69s)
+* [ReactNext 2016: 真实世界的 MobX](https://www.youtube.com/watch?v=Aws40KOx90U) - 40分钟 [幻灯片](https://docs.google.com/presentation/d/1DrI6Hc2xIPTLBkfNH8YczOcPXQTOaCIcDESdyVfG_bE/edit?usp=sharing)
+* [React 和 MobX 实战](https://www.youtube.com/watch?v=XGwuM_u7UeQ). OpenSourceNorth 开发者大会上，Matt Ruby 深入介绍和说明如何使用MobX和React(ES5版本) ([幻灯片](http://slides.com/mattruby/deck))
+* [录播: 8分钟让你了解 MobX](https://www.youtube.com/watch?v=K8dr8BMU7-8)
+* [MobX vs Redux](https://www.youtube.com/watch?v=83v8cdvGfeA) (相关线索: https://github.com/mobxjs/mobx/issues/199)
+* [状态管理很容易 - React Amsterdam 2016 开发者大会](https://www.youtube.com/watch?v=ApmSsu3qnf0&feature=youtu.be) ([幻灯片](https://speakerdeck.com/mweststrate/state-management-is-easy-introduction-to-mobx))
+* [透明的响应式编程和可变数据, Reactive2015 开发者大会](https://www.youtube.com/watch?v=FEwLwiizlk0) ([幻灯片](https://speakerdeck.com/mweststrate/react-transparent-reactive-programming-and-mutable-data-structures))
+* 魔幻的 MobX, [RuhrJS 2016](https://www.youtube.com/watch?v=TfxfRkNCnmk) ([幻灯片](http://magixmobx.surge.sh) 和 [更多幻灯片](https://docs.google.com/presentation/d/1d54mSxF0VOAFlsUGM8eonZDs9gZecTOz1ErSbnydChQ/edit?usp=sharing))
+* [Spacedojo Show - 使用 Mobx 的响应式编程](https://www.youtube.com/watch?v=QTptEw2cYt0&feature=youtu.be&a)
+* [探索可变数据 - Reactive2016 开发者大会](https://youtu.be/1Urj4TZ5BLI?t=5h27m40s) ([幻灯片](http://immer-mutable-state.surge.sh/#1))
 
 ## Tutorials
 * [Ten minute interactive introduction to MobX and React](https://mobxjs.github.io/mobx/getting-started.html#demo)
