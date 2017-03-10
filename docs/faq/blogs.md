@@ -29,11 +29,6 @@
 * [ReactJS 和 MobX 入门](https://codequs.com/p/HyTu8aIK/getting-started-reactjs-with-mobx/)
 * [Redux vs. MobX 示例 — 第二部分: MobX 的简单性和结论](https://hashnode.com/post/redux-vs-mobx-by-example-part-ii-the-simplicity-of-mobx-and-conclusion-citpp2tbu003za853ua1tx228) - 一个两部分的教程，通过在一个简单的 ES6 + React todo 的应用中分别用 Redux 和 MobX 实现，来进行比较。
 
-## Articles / blogs explaining the inner working of MobX:
-
-* [In depth explanation of MobX](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254)
-* [Making React reactive: the pursuit of high performing, easily maintainable React apps](https://www.mendix.com/tech-blog/making-react-reactive-pursuit-high-performing-easily-maintainable-react-apps/)
-
 ## 解释 MobX 内部运行原理的文章/博客:
 
 * [MobX 深入剖析](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254)
