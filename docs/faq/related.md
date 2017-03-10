@@ -1,26 +1,26 @@
-# Related projects
+# 相关项目
 
-* [MobX react bindings](https://github.com/mobxjs/mobx-react)
-* [MobX react devtools](https://github.com/mobxjs/mobx-react-devtools)
-* [MobX remotedev: Use the Redux Devtools with MobX](https://github.com/zalmoxisus/mobx-remotedev)
-* [MobX inferno bindings](https://www.npmjs.com/package/mobx-inferno)
-* [MobX deku bindings](https://github.com/micnews/mobx-deku)
-* For Preact the [preact-compat](https://github.com/developit/preact-compat) module + mobx-react can be used.
-* [tracker-mobx-autorun](https://github.com/meteor-space/tracker-mobx-autorun) Integrate Meteor reactive data with MobX for simple yet highly optimized state management
-* [react-native-mobx](https://github.com/aksonov/react-native-mobx) Make your app reactive with MobX and react-native-router-flux
+* [MobX react 绑定](https://github.com/mobxjs/mobx-react)
+* [MobX react 开发者工具](https://github.com/mobxjs/mobx-react-devtools)
+* [MobX remotedev: 使用 MobX 版本的 Redux 开发工具](https://github.com/zalmoxisus/mobx-remotedev)
+* [MobX inferno 绑定](https://www.npmjs.com/package/mobx-inferno)
+* [MobX deku 绑定](https://github.com/micnews/mobx-deku)
+* 对于 Preact，可以使用 [preact-compat](https://github.com/developit/preact-compat) 模块 + mobx-react 。
+* [tracker-mobx-autorun](https://github.com/meteor-space/tracker-mobx-autorun) 将 Meteor 响应式数据与 MobX 集成，实现简单而高度优化的状态管理
+* [react-native-mobx](https://github.com/aksonov/react-native-mobx) 使用 MobX 和 react-native-router-flux 将你的应用转变成响应式
 * [ng2-mobx](https://github.com/500tech/ng2-mobx)
 
-* Staff pick: [mobx-react-form](https://foxhound87.github.io/mobx-react-form/docs/devtools.html) Build forms and validate them using json-schema rules
-* [mobx-form-store](https://github.com/alexhisen/mobx-form-store) + [mobx-schema-form](https://github.com/alexhisen/mobx-schema-form) Loosely-coupled components for managing, rendering and validating forms in MobX-based apps
-* [mobx-forms](https://github.com/oreqizer/mobx-forms) A simple form manager for React and Mobx, heavily inspired by redux-forms
-* [mobx-form](https://github.com/royriojas/mobx-form) Declaratively build forms using MobX
-* [mobx-input](https://github.com/tomaash/mobx-input) Form validation for MobX and react-bootstrap.
-* [Form abstraction in one fiddle](https://jsfiddle.net/darthapo/k63ujjsp/)
+* 推荐: [mobx-react-form](https://foxhound87.github.io/mobx-react-form/docs/devtools.html) 构建表单并使用 json-schema 规则验证它们
+* [mobx-form-store](https://github.com/alexhisen/mobx-form-store) + [mobx-schema-form](https://github.com/alexhisen/mobx-schema-form) 松耦合组件，用于基于 MobX 的应用的管理、渲染和验证表单
+* [mobx-forms](https://github.com/oreqizer/mobx-forms) React + Mobx 的简单表单管理, 深受 redux-forms 启发
+* [mobx-form](https://github.com/royriojas/mobx-form) 使用 MobX 声明式地构建表单
+* [mobx-input](https://github.com/tomaash/mobx-input) MobX + react-bootstrap 的表单验证
+* [jsfiddle 中演示的表单抽象](https://jsfiddle.net/darthapo/k63ujjsp/)
 
-* [serializr](https://github.com/mobxjs/serializr) Small library to (de)serialize complex object graphs to JSON
-* [mobx-utils](https://github.com/mobxjs/mobx-utils) Utility belt for MobX with several common patterns, like subscribing to external resources, converting promises etc.
-* [mobx-state-tree](https://github.com/mobxjs/mobx-state-tree) Idiomatic state container, supporting time traveling, patches, replayable actions etc.
-* [mobx-rest](https://github.com/masylum/mobx-rest) REST conventions for MobX.
+* [serializr](https://github.com/mobxjs/serializr) 将复杂对象图(反)形序列化为 JSON 的小型库
+* [mobx-utils](https://github.com/mobxjs/mobx-utils) 服务于 MobX 的常用工具集, 像订阅外部资源、转换 promises等。
+* [mobx-state-tree](https://github.com/mobxjs/mobx-state-tree) 丰富的状态容器，支持时间旅行、补丁、可重放动作等。
+* [mobx-rest](https://github.com/masylum/mobx-rest) MobX 的 REST 约定
 * [mobx-model](https://github.com/ikido/mobx-model) Simplify mobx data stores that mimic backend models
 * [mobx-router](https://github.com/kitze/mobx-router) A simple router for MobX apps
 * [mobx-firebase-store](https://github.com/nyura123/mobx-firebase-store) Subscribe MobX observables to firebase
