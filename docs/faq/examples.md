@@ -1,13 +1,13 @@
-# Public projects using MobX
+# 使用 MobX 的开源项目
 
-* [Spectacle editor: Official editor for building presentations using the Spectacle library](https://github.com/FormidableLabs/spectacle-editor)
+* [Spectacle editor: 使用 Spectacle 库建立演示文稿的官方编辑器](https://github.com/FormidableLabs/spectacle-editor)
 * [React-Game-Kit](https://github.com/FormidableLabs/react-game-kit)
-* [SoundCloud Client in React + MobX](https://github.com/rwieruch/favesound-mobx)
-* [DWatch - docker container manager, Electron, typescript, inversifyJS](https://github.com/Mercateo/dwatch)
-* Kratelabs interactive map / map order service [Demo](https://kratelabs.addxy.com/#/) [Source](https://github.com/KrateLabs/KrateLabs-App)
-* [Google Play Music Desktop Remote](https://github.com/GPMDP/google-play-music-desktop-remote) A React-Native app for remote controlling Google Play Music Desktop: MobX + WebSocket.
-* [PokemonGo webspoof](https://github.com/iam4x/pokemongo-webspoof/) Play PokemonGo on your Mac
-* [vcash-electron](https://github.com/whphhg/vcash-electron) - Electron UI for the Vcash crypto currency
+* [使用 React + MobX 的 SoundCloud 客户端](https://github.com/rwieruch/favesound-mobx)
+* [DWatch - docker 容器管理(Electron + typescript +inversifyJS)](https://github.com/Mercateo/dwatch)
+* Kratelabs 互动地图/地图订购服务 [Demo](https://kratelabs.addxy.com/#/) [Source](https://github.com/KrateLabs/KrateLabs-App)
+* [Google Play Music Desktop Remote](https://github.com/GPMDP/google-play-music-desktop-remote) 远程遥控 Google Play Music Desktop 的 React-Native 应用: MobX + WebSocket.
+* [PokemonGo webspoof](https://github.com/iam4x/pokemongo-webspoof/) 在 Mac 上玩 PokemonGo
+* [vcash-electron](https://github.com/whphhg/vcash-electron) - Vcash 加密货币的 Electron UI
 
 # Example projects
 
@@ -33,5 +33,5 @@
 * [Github Note Taker in MobX](https://github.com/eswat2/egghead-mobx)
 * SoundCloud client, in MobX and React: [React-MobX-SoundCloud](https://github.com/rwieruch/react-mobx-soundcloud)
 * Lightweight support service via ReactJS, Mobx, Grape (ruby) and Mongodb: [support-service](https://github.com/ifokeev/support-service)
-* [A simple Tetris using React + MobX](https://github.com/1984weed/mobx-react-tetris) 
+* [A simple Tetris using React + MobX](https://github.com/1984weed/mobx-react-tetris)
 * [React Native + Mobx sample app](https://github.com/winterbe/RNTimerExample)
