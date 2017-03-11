@@ -9,23 +9,23 @@
 * [PokemonGo webspoof](https://github.com/iam4x/pokemongo-webspoof/) 在 Mac 上玩 PokemonGo
 * [vcash-electron](https://github.com/whphhg/vcash-electron) - Vcash 加密货币的 Electron UI
 
-# Example projects
+# 示例项目
 
-* [Simple ES5 MobX examples](https://github.com/mattruby/mobx-examples) Bite sized MobX examples all setup to run in jsFiddle.
-* [TodoMVC application, including Server Side Rendering](https://github.com/mobxjs/mobx-react-todomvc)
-* [Contact list application (simple data fetching, routing, complex components, material UI)](https://github.com/mobxjs/mobx-contacts-list)
-* [Logpipe](https://github.com/jeffijoe/logpipe-server), a dev-logging app using MobX with Socket.IO for **real-time updates**
-* [Example with Server Side Rendering, react-router](https://github.com/kuuup/mobx-ssr-example)
-* [Server Side Api Mocking made easy with UI](https://github.com/Raathigesh/Atmo)
-* Accounting System built in ASP.NET MVC, ReactJS, MobX [Demo](http://www.accountgo.ph/) [Source](https://github.com/AccountGo/accountgo)
-* [Easy MobX example with React, MobX, Cosmic JS, shorti](https://github.com/tonyspiro/easy-mobx-example)
-* A simple webshop using [React + mobx](https://jsfiddle.net/mweststrate/46vL0phw)
-* A simple webshop using [JQuery + mobx](http://jsfiddle.net/mweststrate/vxn7qgdw).
-* [Simple app with Ajax, authentication, context, routing](http://stackoverflow.com/a/36164488/1983583)
-* [Contacts MVC app with Typescript, routing etc.](https://github.com/contacts-mvc/mobx-react-typescript)
-* [React Particles (React, MobX, D3. one app with two architectures in two branches, Flux and MVC](https://github.com/mobxjs/react-particles-experiment)
-* [Mortgage overpayment calculator using React with MobX](https://github.com/paulhoughton/mortgage-mobx)
-* [Simple drag and drop application. Also provides time travelling](https://github.com/mobxjs/mobx-reactive2015-demo)
+* [ES5 版本的 MobX 简单示例](https://github.com/mattruby/mobx-examples) MobX 的小示例都安装运行在 jsFiddle 中。
+* [TodoMVC 应用 + 包括服务器端渲染](https://github.com/mobxjs/mobx-react-todomvc)
+* [联系人列表应用(简单的数据获取、路由、复杂组件、material UI)](https://github.com/mobxjs/mobx-contacts-list)
+* [Logpipe](https://github.com/jeffijoe/logpipe-server), 一个**实时更新**的开发日志应用，使用 MobX + Socket.IO
+* [服务端渲染 + react-router 示例](https://github.com/kuuup/mobx-ssr-example)
+* [使用 UI 模拟服务器端 API](https://github.com/Raathigesh/Atmo)
+* 使用 ASP.NET MVC + ReactJS + MobX 构建的会计系统 [Demo](http://www.accountgo.ph/) [Source](https://github.com/AccountGo/accountgo)
+* [使用 React + MobX + Cosmic JS + shorti 的简单示例](https://github.com/tonyspiro/easy-mobx-example)
+* 使用 [React + mobx](https://jsfiddle.net/mweststrate/46vL0phw) 的简易网上商店
+* 使用 [JQuery + mobx](http://jsfiddle.net/mweststrate/vxn7qgdw) 的简易网上商店
+* [使用 Ajax、身份认证、上下文、路由的简单应用](http://stackoverflow.com/a/36164488/1983583)
+* [使用Typescript、路由等技术的联系人 MVC 应用](https://github.com/contacts-mvc/mobx-react-typescript)
+* [React 粒子(React + MobX + D3 。同一个应用在两个分支上使用了不同的架构，Flux 和 MVC](https://github.com/mobxjs/react-particles-experiment)
+* [使用 React + MobX 的抵押多付款计算器](https://github.com/paulhoughton/mortgage-mobx)
+* [简单拖拽应用。还提供了时间旅行功能](https://github.com/mobxjs/mobx-reactive2015-demo)
 * The [ports of the _Notes_ and _Kanban_ examples](https://github.com/survivejs/mobx-demo) from the book "SurviveJS - Webpack and React" to MobX.
 * [Flux challenge, implemeted with MobX](https://github.com/staltz/flux-challenge/tree/master/submissions/mweststrate)
 * [MobX + D3 codepen](http://codepen.io/timelyportfolio/pen/zrJwvE)
