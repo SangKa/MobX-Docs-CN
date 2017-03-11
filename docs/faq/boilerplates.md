@@ -1,19 +1,19 @@
-# Boilerplate projects
+# 样板项目
 
-* [React, Babel, Webpack](https://github.com/mweststrate/react-mobservable-boilerplate)
-* [React, Typescript, Webpack](https://github.com/mobxjs/mobx-react-typescript-boilerplate)
+* [React + Babel + Webpack](https://github.com/mweststrate/react-mobservable-boilerplate)
+* [React + Typescript + Webpack](https://github.com/mobxjs/mobx-react-typescript-boilerplate)
 * [MobX + React JSFiddle](https://jsfiddle.net/mweststrate/wgbe4guu/)
-* [MobX + React JSFiddle with just ES5](https://jsfiddle.net/rubyred/55oc981v/)
-* [custom-react-scripts](https://www.npmjs.com/package/custom-react-scripts) for [create-react-app](https://github.com/facebookincubator/create-react-app) that enables using decorators; add `REACT_APP_DECORATORS=true` to `.env` to enable decorators.
-* [generator-mobx-react](https://www.npmjs.com/package/generator-mobx-react) Yeoman MobX, React, Webpack, Babel / Typescript project generator
-* [mobx-starter](https://github.com/nightwolfz/mobx-starter): Starting base for an mobx react project with optional isomorphism. MongoDB auth & sessions, hot reload, react-router
-* [React, React-Router 4, MobX and Webpack 2-boilerplate with async routes](https://github.com/mhaagens/react-mobx-react-router4-boilerplate)
-* [react-mobx-typescript-boilerplate](https://github.com/rokoroku/react-mobx-typescript-boilerplate) A boilerplate with Webpack 2 and Typescript 2, including TodoMVC example
-* [rfx-stack](https://github.com/foxhound87/rfx-stack) RFX Stack - Universal App featuring: React + Feathers + MobX
-* MobX, TypeScript, React, React Router, Server Side Rendering and Webpack: https://github.com/contacts-mvc/mobx-react-typescript
-* [reaxor](https://github.com/KadoBOT/reaxor) Boilerplate for better state management, styling, testing and cleaner code
-* [jspm-react](https://github.com/capaj/jspm-react) lightweight React.js ES6 boilerplate with JSPM and proper hot reloading modules
-* [react-portal](https://github.com/vinej/react-portal) MobX, React with Flux architecture
+* [MobX + React JSFiddle(ES5 版本)](https://jsfiddle.net/rubyred/55oc981v/)
+* [custom-react-scripts](https://www.npmjs.com/package/custom-react-scripts): 让 [create-react-app](https://github.com/facebookincubator/create-react-app) 可以使用装饰器; 添加 `REACT_APP_DECORATORS=true` 到 `.env` 中以启用装饰器。
+* [generator-mobx-react](https://www.npmjs.com/package/generator-mobx-react) MobX + React + Webpack + Babel / Typescript 项目的 Yeoman 生成器
+* [mobx-starter](https://github.com/nightwolfz/mobx-starter): 用于可选同构的 mobx + react 项目的起始基础。 MongoDB 验证和会话、热更新 、react-router
+* [使用异步路由的 React + React-Router 4 + MobX + Webpack 2 的样板文件](https://github.com/mhaagens/react-mobx-react-router4-boilerplate)
+* [react-mobx-typescript-boilerplate](https://github.com/rokoroku/react-mobx-typescript-boilerplate) Webpack 2 + Typescript 2 样板文件, 包含 TodoMVC 示例
+* [rfx-stack](https://github.com/foxhound87/rfx-stack) RFX 技术栈 - 通用应用程序特点: React + Feathers + MobX
+* MobX + TypeScript + React + React Router + Webpack + 服务端渲染: https://github.com/contacts-mvc/mobx-react-typescript
+* [reaxor](https://github.com/KadoBOT/reaxor) 更好的状态管理、样式、测试和整洁代码的样板文件
+* [jspm-react](https://github.com/capaj/jspm-react) 使用 JSPM 和特有热更新模块的轻量级 React.js ES6 版本的样板文件
+* [react-portal](https://github.com/vinej/react-portal) MobX + React + Flux 架构
 * [react-mobx-webpack](https://github.com/tapos007/ReactJS-MobX-Webpack-Boilerplate/tree/master/app/store) Quickstart project template for learning React
 * [gulp-es6-sass-mobx](https://github.com/pixelkritzel/gulp_es6_sass_boilerplate)
 * [react-mobx-boilerplate](https://github.com/osenvosem/react-mobx-boilerplate) A small React + React Router + MobX boilerplate with a small example app.
