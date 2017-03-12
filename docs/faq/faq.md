@@ -21,7 +21,7 @@ MobX 只能在 ES5 环境中运行。这意味着支持 Node.js、Rhino和所有
 
 ##### MobX 如何兼容其它响应式框架?
 
-参见这个 [issue](https://github.com/mobxjs/mobx/issues/18) 以了解一些注意事项。
+参见此 [issue](https://github.com/mobxjs/mobx/issues/18) 以了解一些注意事项。
 
 ##### MobX 是框架吗?
 
@@ -29,17 +29,18 @@ MobX 不是一个框架。它不会告诉你如何去组织你的代码，在哪
 
 ##### MobX 可以和 Flux 一起使用吗?
 
-Flux implementations that do not work on the assumption that the data in their stores is immutable should work well with MobX.
-However, the need for Flux is reduced when using MobX.
-MobX already optimizes rendering, and it works with most kinds of data, including cycles and classes.
-So other programming paradigms like classic MVC can now be easily applied in applications that combine ReactJS with MobX.
+假设 store 中的数据是不可变的，这很适合使用 MobX，而 Flux 的实现并不能很好的工作。
+然而，使用 MobX 时，减少了对 Flux 的需求。
+MobX 已经优化了渲染，它适用于大多数类型的数据，包括循环和类。
+因此，其他编程范例(如经典MVC)现在也可以轻松应用于使用 ReactJS + MobX 的应用之中。
 
-##### Can I use MobX together with framework X?
+##### MobX 可以和其它框架一起使用吗?
 
-Probably.
-MobX is framework agnostic and can be applied in any modern JS environment.
-It just ships with a small function to transform ReactJS components into reactive view functions for convenience.
-MobX works just as well server side, and is already combined with jQuery (see this [Fiddle](http://jsfiddle.net/mweststrate/vxn7qgdw)) and [Deku](https://gist.github.com/mattmccray/d8740ea97013c7505a9b).
+或许吧。
+MobX 是框架无关的，可以应用在任何现代JS环境中。
+为了方便起见，它只是用一个小函数来将 ReactJS 组件转换为响应式视图函数。
+MobX 同样可以在服务器端使用，并且它已经可以和 jQuery (参见此 [Fiddle](http://jsfiddle.net/mweststrate/vxn7qgdw)) 和 [Deku](https://gist.github.com/mattmccray/d8740ea97013c7505a9b) 一起使用了。
+
 
 ##### Can I record states and re-hydrate them?
 
