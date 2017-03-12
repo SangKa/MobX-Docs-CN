@@ -1,19 +1,18 @@
-## FAQ
+## 常见问题
 
-##### Which browsers are supported?
+##### 支持哪些浏览器?
 
-MobX runs on any ES5 environment. That means that Node.js, Rhino and all browsers except for IE8 are supported. See [caniuse.com](http://caniuse.com/#feat=es5)
+MobX 只能在 ES5 环境中运行。这意味着支持 Node.js、Rhino和所有浏览器(除了 IE8及以下)。参见 [caniuse.com](http://caniuse.com/#feat=es5)
 
-##### Can MobX be combined with RxJS?
-Yes, you can use [toStream and fromStream from mobx-utils](https://github.com/mobxjs/mobx-utils#tostream) to use RXJS and other TC 39 compatible observables with mobx.
+##### MobX 可以和 RxJS 一起使用吗?
+可以，MobX 可以通过 [mobx-utils 中的 toStream 和 fromStream](https://github.com/mobxjs/mobx-utils#tostream) 使用 RxJS 和其它 TC 39 兼容的 observable。
 
-##### When to use RxJS instead of MobX?
-For anything that involves explictly working with the concept of time,
-or when you need to reason about the historical values / events of an observable (and not just the latest), RxJs is recommended as it provides more low-level primitives.
-Whenever you want to react to _state_ instead of _events_, MobX offers an easier and more high-level approach.
-In practice, combining RxJS and MobX might result in really powerful constructions.
-Use for example RxJS to process and throttle user events and as a result of that update the state.
-If the state has been made observable by MobX, it will then take care of updating the UI and other derivations accordingly.
+##### 何时使用 RxJS 替代 MobX?
+对于任何涉及明确使用时间的概念，或者当你需要推理一个 observable 历史值/事件(而不仅仅是最新的)时，建议使用 RxJS，因为它提供了更多的低层级的原始类型。
+当你想对**状态**作出反应，而不是**事件**时，MobX 提供了一种更容易而且高层级处理方法。
+实际上，结合 RxJS 和 MobX 可能会产生真正强大的架构。
+例如使用 RxJS 来处理和节流用户事件，并作为更新状态的结果。
+如果状态已经被 MobX 转变成 observable ，则它将相应地处理更新 UI 和其他推导。
 
 ##### Is React Native supported?
 
