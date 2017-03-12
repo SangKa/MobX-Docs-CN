@@ -42,11 +42,11 @@ MobX 是框架无关的，可以应用在任何现代JS环境中。
 MobX 同样可以在服务器端使用，并且它已经可以和 jQuery (参见此 [Fiddle](http://jsfiddle.net/mweststrate/vxn7qgdw)) 和 [Deku](https://gist.github.com/mattmccray/d8740ea97013c7505a9b) 一起使用了。
 
 
-##### Can I record states and re-hydrate them?
+##### 可以记录状态并对其进行补充吗?
 
-Yes, see [createTransformer](http://mobxjs.github.io/mobx/refguide/create-transformer.html) for some examples.
+可以的, 参见 [createTransformer](http://mobxjs.github.io/mobx/refguide/create-transformer.html) 以查看一些示例。
 
-##### Can you tell me how it works?
+##### 可以告诉我 MobX 是如何工作的吗?
 
-Sure, join the reactiflux channel or checkout the code. Or, submit an issue to motivate me to make some nice drawings :).
-And look at this [Medium article](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254).
+当然可以，加入 reactiflux 频道或签出代码。或者，提交一个 issue，以激励我做一些更好的规划 :)。
+还可以参见这篇 [Medium 文章](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254)。
