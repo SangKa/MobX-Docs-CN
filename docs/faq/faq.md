@@ -14,20 +14,20 @@ MobX 只能在 ES5 环境中运行。这意味着支持 Node.js、Rhino和所有
 例如使用 RxJS 来处理和节流用户事件，并作为更新状态的结果。
 如果状态已经被 MobX 转变成 observable ，则它将相应地处理更新 UI 和其他推导。
 
-##### Is React Native supported?
+##### 支持 React Native 吗?
 
-Yes, `mobx` and `mobx-react` will work on React Native. The latter through importing `"mobx-react/native"`.
-The devtools don't support React Native. Note that if you indend to store state in a component that you want to be able to use with hot reloading, do not use decorators (annotations) in the component, use the functions instead (eg. `action(fn)` instead of `@action`).
+当然，`mobx` 和 `mobx-react` 都可以在 React Native 中使用。后者通过导入 `"mobx-react/native"` 。
+开发者工具还不支持 React Native 。注意，如果你打算将状态存储在你希望能够与热重新加载一起使用的组件中，那么不要在组件中使用装饰器(注解)，使用函数替代(例如，用 `action(fn)` 替代 `@action`)。
 
-##### How does MobX compare to other Reactive frameworks?
+##### MobX 如何兼容其它响应式框架?
 
-See this [issue](https://github.com/mobxjs/mobx/issues/18) for some considerations.
+参见这个 [issue](https://github.com/mobxjs/mobx/issues/18) 以了解一些注意事项。
 
-##### Is MobX a framework?
+##### MobX 是框架吗?
 
-MobX is *not* a framework. It does not tell you how to structure your code, where to store state or how to process events. Yet it might free you from frameworks that poses all kinds of restrictions on your code in the name of performance.
+MobX 不是一个框架。它不会告诉你如何去组织你的代码，在哪存储状态或者如何处理事件。然而，它可能将你从以性能的名义对你的代码提出各种限制的框架中解放出来。
 
-##### Can I combine MobX with Flux?
+##### MobX 可以和 Flux 一起使用吗?
 
 Flux implementations that do not work on the assumption that the data in their stores is immutable should work well with MobX.
 However, the need for Flux is reduced when using MobX.
