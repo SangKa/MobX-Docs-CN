@@ -14,25 +14,25 @@
 只要外部库没有修改数组的意图，那么一切都将如预期一样的正常运作。
 可以使用 `isObservableArray(observable)` 来检查是否是 observable 数组。
 
-#### `object.someNewProp = value` is not picked up
+#### `object.someNewProp = value` 不起作用
 
-MobX observable _objects_ do not detect or react to property assignments that weren't declared observable before.
-So MobX observable objects act as records with predefined keys.
-You can use `extendObservable(target, props)` to introduce new observable properties to an object.
-However object iterators like `for .. in` or `Object.keys()` won't react to this automatically.
-If you need a dynamically keyed object, for example to store users by id, create observable _maps_ using [`observable.map`](../refguide/map.md).
-For more info see [what will MobX react to?](react.md).
+对于声明 observable 时未分配的属性，MobX observable **对象**  检测不到，也无法作出反应。
+因此 MobX observable 对象充当具有预定义键的记录。
+可以使用 `extendObservable(target, props)` 来为一个对象引入新的 observable 属性。
+但是像 `for .. in` 或 `Object.keys()` 这样的对象迭代不会自动地对这样的改变作出反应。
+如果你需要动态键对象，例如通过 id 来存储用户，可以使用 [`observable.map`](../refguide/map.md) 来创建 observable **映射**。
+想了解更多详情，请参见 [MobX 会对什么作出反应?](react.md)。
 
-### Use `@observer` on all components that render `@observable`s.
+### 在所有渲染 `@observable` 的组件上使用 `@observer`
 
-`@observer` only enhances the component you are decorating, not the components used inside it.
-So usually all your components should be decorated. Don't worry, this is not inefficient, in contrast, more `observer` components make rendering more efficient.
+`@observer` 只会增强你正在装饰的组件，而不是内部使用了的组件。
+所以通常你的所有组件都应该是装饰了的。但别担心，这样不会降低效率，相反 `observer` 组件越多，渲染效率越高。
 
-### Dereference values as late as possible
+### 间接引用值尽可能晚的使用
 
-MobX can do a lot, but it cannot make primitive values observable (although it can wrap them in an object see [boxed observables](../refguide/boxed.md)).
-So it is not the _values_ that are observable, but the _properties_ of an object. This means that `@observer` actually reacts to the fact that you dereference a value.
-So in our above example, the `Timer` component would **not** react if it was initialized as follows:
+MobX 可以做许多事，但是它无法将原始类型值转变成 observable(尽管可以用对象来包装它们，参见 [boxed observables](../refguide/boxed.md))。
+所以说**值**不是 observable，而对象的**属性**才是。这意味着 `@observer` 实际上是对间接引用值作出反应。
+所以如果像下面这样初始化的话，`Timer` 组件是不会作出任何反应的:
 
 ```javascript
 React.render(<Timer timerData={timerData.secondsPassed} />, document.body)
