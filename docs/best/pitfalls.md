@@ -94,24 +94,24 @@ class OrderLIne {
 `react-hot-loader` 不支持装饰器，所以当使用时会出现这个错误。
 解决方法: 在 `componentWillMount` 中使用 `extendObservable` 替代 `@observable` 或者 把 `react-hot-loader` 更新到 `"^3.0.0-beta.2"` 版本或者更高。
 
-#### The display name of react components is not set
+#### 未设置 React 组件的显示名称
 
-If you use `export const MyComponent = observer((props => <div>hi</div>))`, no display name will be visible in the devtools.
-The following approaches can be used to fix this:
+如果你使用 `export const MyComponent = observer((props => <div>hi</div>))`，那么在开发者工具中看不到显示名称。
+下列方法可以用来解决此问题:
 
 ```javascript
-// 1 (set displayName explicitly)
+// 1 (显示设置 displayName)
 export const MyComponent = observer((props => <div>hi</div>))
 myComponent.displayName = "MyComponent"
 
-// 2 (MobX infers component name from function name)
+// 2 (MobX 根据函数名推断出组件名)
 export const MyComponent = observer(function MyComponent(props) { return <div>hi</div> })
 
-// 3 (transpiler will infer component name from variable name)
+// 3 (编译器根据变量名推断出组件名)
 const _MyComponent = observer((props => <div>hi</div>)) //
 export const MyComponent = observer(_MyComponent)
 
-// 4 (with default export)
+// 4 (默认导出)
 const MyComponent = observer((props => <div>hi</div>))
 export default observer(MyComponent)
 ```
