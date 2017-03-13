@@ -74,24 +74,25 @@ class OrderLIne {
         this.handler = autorun(() => {
             doSomethingWith(this.price * this.amount)
         })
-        // this autorun won't be GC-ed together with the current orderline instance
-        // since VAT keeps a reference to notify this autorun,
-        // which in turn keeps 'this' in scope
+        // 这个 autorun 将不会与当前的命令行实例一起进行垃圾回收
+        // 因为 VAT 保留了引用以通知这个 autorun
+        // 这反过来在作用域中保留了 `this`
         this.handler = autorun(() => {
             doSomethingWith(this.price * this.amount * VAT.get())
         })
-        // So, to avoid subtle memory issues, always call..
+        // 所以，为了避免细微的内存问题，总是调用清理函数..
         this.handler()
-        // When the reaction is no longer needed!
+        // 当 reaction 不再需要时！
     }
 }
 
 ```
 
-#### I have a weird exception when using `@observable` in a React component.
+#### 当在 React 组件中使用 `@observable` 时有一个奇怪的异常
 
-The following exception: `Uncaught TypeError: Cannot assign to read only property '__mobxLazyInitializers' of object` occurs when using a `react-hot-loader` that does not support decorators.
-Either use `extendObservable` in `componentWillMount` instead of `@observable`, or upgrade to `react-hot-loader` `"^3.0.0-beta.2"` or higher.
+如下异常: `Uncaught TypeError: Cannot assign to read only property '__mobxLazyInitializers' of object`
+`react-hot-loader` 不支持装饰器，所以当使用时会出现这个错误。
+解决方法: 在 `componentWillMount` 中使用 `extendObservable` 替代 `@observable` 或者 把 `react-hot-loader` 更新到 `"^3.0.0-beta.2"` 版本或者更高。
 
 #### The display name of react components is not set
 
