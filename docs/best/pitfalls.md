@@ -116,16 +116,17 @@ const MyComponent = observer((props => <div>hi</div>))
 export default observer(MyComponent)
 ```
 
-See also: http://mobxjs.github.io/mobx/best/stateless-HMR.html or [#141](https://github.com/mobxjs/mobx/issues/141#issuecomment-228457886).
+还可参见: http://mobxjs.github.io/mobx/best/stateless-HMR.html 或 [#141](https://github.com/mobxjs/mobx/issues/141#issuecomment-228457886)。
 
-#### The propType of an observable array is object
+#### observable 数组的 propType 是对象
 
-Observable arrays are actually objects, so they comply to `propTypes.object` instead of `array`.
-`mobx-react` provides its explicit `PropTypes` for observable data structures.
+Observable 数组实际上是对象，所以它们遵循 `propTypes.object` 而不是 `propTypes.array`。
+`mobx-react` 为 observable 数据结构提供了明确的 `PropTypes`。
 
-#### Rendering ListViews in React Native
+#### 在 React Native 中渲染 ListViews
 
-`ListView.DataSource` in React Native expects real arrays. Observable arrays are actually objects, make sure to `.slice()` them first before passing to list views. Furthermore, `ListView.DataSource` itself can be moved to the store and have it automatically updated with a `@computed`, this step can also be done on the component level.
+React Native 的 `ListView.DataSource` 接收真正的数组。Observable 数组实际上是对象，要确保在传给 ListViews 之前先使用 `.slice()` 方法。
+此外，`ListView.DataSource` 本身可以移到 store 之中并且使用 `@computed` 自动地更新，这步操作同样可以在组件层完成。
 
 ```javascript
 class ListStore {
