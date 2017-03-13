@@ -55,14 +55,13 @@ MobX 计算也会在事务期间自动地保持活动，参见 PR: [#452](https:
 
 #### 永远要清理 reaction
 
-all forms of `autorun`, `observe` and `intercept` will only be garbage collected if all objects they observe are garbage collection themselves.
-So it is recommend to use the disposer function that is returned from these methods to stop them when you no longer need them.
-Usually for `observe` and `intercept` it is not strictly necessary to dispose them if when targed `this`.
-For reactions like `autorun` it is more tricky, as they might observe many different observables, and as long as one of them is still in scope,
-the reaction will remain in scope which means that all other observables it uses are also kept alive to support future recomputions.
-So make sure to always dispose your reactions when you no longer need them!
+所有形式的 `autorun`、 `observe` 和 `intercept`， 只有所有它们观察的对象都垃圾回收了，它们才会被垃圾回收。
+所以当不再需要使用它们的时候，推荐使用清理函数(这些方法返回的函数)来停止它们继续运行。
+对于 `observe` 和 `intercept` 来说，当目标是 `this` 时通常不是必须要清理它们。
+对于像 `autorun` 这样的 reaction 要棘手得多，因为它们可能观察到许多不同的 observable，并且只要其中一个仍在作用域内，reaction 将保持在作用域内，这意味着其使用的所有其他 observable 也保持活跃以支持将来的重新计算。
+所以当你不再需要 reaction 的时候，千万要清理掉它们！
 
-Example:
+示例:
 
 ```javascript
 const VAT = observable(1.20)
@@ -71,7 +70,7 @@ class OrderLIne {
     @observable price = 10;
     @observable amount = 1;
     constructor() {
-        // this autorun will be GC-ed together with the current orderline instance
+        // 这个 autorun 将与当前的命令行实例一起进行垃圾回收
         this.handler = autorun(() => {
             doSomethingWith(this.price * this.amount)
         })
