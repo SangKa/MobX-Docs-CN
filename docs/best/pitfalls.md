@@ -187,5 +187,5 @@ todo.hasOwnProperty("done") // true
 Object.keys(todo) // ["done", "title"]
 ```
 
-In practice this is rarely an issue, only when using generic methods like `Object.assign(target, todo)` or `assert.deepEquals` *before* reading or writing any property of the object.
-If you want to make sure that this issue doesn't occur, just initialize the fields in the constructor instead of at the field declaration or use `extendObservable` to create the observable properties.
+在实践中，很少会出现这样的问题，只有在读/写对象的任何属性**之前**使用像 `Object.assign(target, todo)` 或 `assert.deepEquals` 这样的一般方法时才会出现。
+如果你想确保此问题不会出现，在构造函数中初始化字段来替代字段声明，或者使用 `extendObservable` 来创建 observable 属性。
