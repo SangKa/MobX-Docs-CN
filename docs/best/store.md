@@ -21,32 +21,32 @@ Store 的主要职责是将**逻辑**和**状态**从组件中移至一个独立
 这个 store 通常没有太多的逻辑，但会存储大量的松散耦合的 UI 相关的信息。
 这是理想状况下的，因为大多数应用在开发过程中会经常性地改变 UI 状态。
 
-Things you will typically find in UI stores:
-* Session information
-* Information about how far your application has loaded
-* Information that will not be stored in the backend
-* Information that affects the UI globally
-  * Window dimensions
-  * Accessibility information
-  * Current language
-  * Currently active theme
-* User interface state as soon as it effects multiple, further unrelated components:
-  * Current selection
-  * Visibility of toolbars, etc.
-  * State of a wizard
-  * State of a global overlay
+通常可以在 UI stores 中找到的:
+* Session 信息
+* 应用已经加载了的相关信息
+* 不会存储到后端的信息
+* 全局性影响 UI 的信息
+  * 窗口尺寸
+  * 可访问性信息
+  * 当前语言
+  * 当前活动主题
+* 用户界面状态瞬时影响多个、毫不相关的组件:
+  * 当前选择
+  * 工具栏可见性, 等等
+  * 向导的状态
+  * 全局叠加的状态
 
-It might very well be that these pieces of information start as internal state of a specific component (for example the visibility of a toolbar).
-But after a while you discover that you need this information somewhere else in your application.
-Instead of pushing state in such a case upwards in the component tree, like you would do in plain React apps, you just move that state to the _ui-state-store_.
+这些信息开始作为某个特定组件的内部状态会是不错的选择(例如工具栏的可见性)。
+但过了一段时间，你发现应用中的其他地方也需要这些信息。
+您只需将状态移动到 **UI 状态 store**，而不是在组件树中向上推动状态，就像在普通的 React 应用中所做的那样。
 
-Make sure this state is a singleton.
-For isomorphic applications you might also want to provide a stub implementation of this store with sane defaults so that all components render as expected.
-You might distribute the _ui-state-store_ through your application by passing it as a property through your component tree.
-You can also pass this store by using context or make it globally available as a module.
-For testing purposes, I recommend to just pass it through the component tree.
+请确保这个状态是个单例。
+对于同构应用程序，你可能还希望使用正常默认值提供这个 store 的存根实现，以便所有组件按预期呈现。
+可以通过在应用中传递属性到组件树中来分发 **UI 状态 store**。
+还可以通过使用上下文或将其作为模块全局使用来传递这个 store。
+为了测试，我推荐只是通过组件树来传递。
 
-Example of a store (using ES6 syntax):
+store 示例 (使用 ES6 语法):
 
 ```javascript
 import {observable, computed, asStructure} from 'mobx';
