@@ -38,22 +38,22 @@ MobX 可以做许多事，但是它无法将原始类型值转变成 observable(
 React.render(<Timer timerData={timerData.secondsPassed} />, document.body)
 ```
 
-In this snippet just the current value of `secondsPassed` is passed to the `Timer`, which is the immutable value `0` (all primitives are immutable in JS).
-That number won't change anymore in the future, so `Timer` will never update. It is the property `secondsPassed` that will change in the future,
-so we need to access it *in* the component. Or in other words: always try to pass the owning object of an observable property.
-For more info see [what will MobX react to?](react.md).
+在这行代码中，只是 `secondsPassed` 的当前值传递给了 `Timer`，这个值是不可变值 `0` (JS中的所有原始类型值都是不可变的)。
+这个值永远都不会改变，所以 `Timer` 也永远不会更新。`secondsPassed` 属性将来会改变，所以我们需要在组件**内**访问它。
+或者换句话说: 永远只传递拥有 observable 属性的对象。
+想了解更多详情，请参见 [MobX 会对什么作出反应?](react.md)。
 
-#### Computed values run more often then expected
+#### 计算值(Computed values)的运行次数要比预想中频繁的多
 
-If a computed property is *not* in use by some reaction (`autorun`, `observer` etc), computed expressions will be evaluated lazily; each time their value is requested (so they just act as normal property).
-Computed values will only track their dependencies if they are observed.
-This allows MobX to automatically suspend computations that are not actively in use.
-See this [blog](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254) or [issue #356](https://github.com/mobxjs/mobx/issues/356) for an explanation.
-So if you fiddle arounds, computed properties might not seem efficient. But when applied in a project that uses `observer`, `autorun` etc, they become very efficient.
+如果一个计算属性**没有**被 reaction(`autorun`、`observer` 等) 使用，计算表达式将会延迟执行；每次它们的值被请求(所以它们只是作为正常属性)。
+计算值将仅追踪那些它们已被观察的依赖。
+这允许 MobX 自动暂停非使用状态的计算。
+想深入的了解内部原理，请参见此 [博客](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254) 或 [issue #356](https://github.com/mobxjs/mobx/issues/356)。
+如果你胡乱使用的话，计算属性似乎效率不怎么高。但当使用 `observer`、 `autorun` 等并应用在项目中时，它们会变得非常高效。
 
-MobX computeds will automatically be kept alive during transactions as well, see PRs: [#452](https://github.com/mobxjs/mobx/pull/452) and [#489](https://github.com/mobxjs/mobx/pull/489)
+MobX 计算也会在事务期间自动地保持活动，参见 PR: [#452](https://github.com/mobxjs/mobx/pull/452) 和 [#489](https://github.com/mobxjs/mobx/pull/489)。
 
-#### Always dispose reactions
+#### 永远要清理 reaction
 
 all forms of `autorun`, `observe` and `intercept` will only be garbage collected if all objects they observe are garbage collection themselves.
 So it is recommend to use the disposer function that is returned from these methods to stop them when you no longer need them.
