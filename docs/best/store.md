@@ -56,8 +56,7 @@ class UiState {
     @observable language = "en_US";
     @observable pendingRequestCount = 0;
 
-    // asStructure makes sure observer won't be signaled only if the
-    // dimensions object changed in a deepEqual manner
+    // asStructure 确保仅当尺寸对象以深度相等的方式更改时才会通知观察者
     @observable windowDimensions = asStructure({
         width: jquery(window).width(),
         height: jquery(window).height()
@@ -78,7 +77,7 @@ singleton = new UiState();
 export default singleton;
 ```
 
-## Domain Stores
+## 领域 store
 
 Your application will contain one or multiple _domain_ stores.
 These stores store the data your application is all about.
