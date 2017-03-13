@@ -1,25 +1,25 @@
-# Best Practices for building large scale maintainable projects
+# 构建大型可扩展可维护项目的最佳实践
 
-This section contains some best practices we discovered at Mendix while working with MobX.
-This section is opinionated and you are in no way forced to apply these practices.
-There are many ways of working with MobX and React, and this is just one of them.
+本章节主要是在 Mendix 使用 MobX 工作中发现的一些最佳实践。
+本章节完全是出于个人见解的，你完全不必强行应用这些实践。
+有很多种使用 MobX 和 React 的方式，这仅仅只是其中的一个。
 
-# Stores
+# Stores(存储)
 
-Let's start with _stores_.
-In the next sections we will discuss _actions_ and React _components_ as well.
-Stores can be found in any Flux architecture and can be compared a bit with controllers in the MVC pattern.
-The main responsibility of stores is to move _logic_ and _state_ out of your components into a standalone testable unit that can be used in both frontend and backend JavaScript.
+让我们先从 _store_ 开始。
+在下节中我们还会讨论**动作**(action)和 React **组件**。
+Store 可以在任何 Flux 系架构中找到，可以与 MVC 模式中的控制器进行比较。
+Store 的主要职责是将**逻辑**和**状态**从组件中移至一个独立的，可测试的单元，这个单元在 JavaScript 前端和后端中都可以使用。
 
-## Stores for the user interface state
+## 用户界面状态的 store
 
-Most applications benefit from having at least two stores.
-One for the _UI state_ and one or more for the _domain state_.
-The advantage of separating those two is you can reuse and test _domain state_ universally, and you might very well reuse it in other applications.
-The _ui-state-store_ however is often very specific for your application.
-But usually very simple as well.
-This store typically doesn't have much logic in it, but will store a plethora of loosely coupled pieces of information about the UI.
-This is ideal as most applications will change the UI state often during the development process.
+至少两个 store 可以让绝大多数应用从中受益。
+一个用于 **UI 状态**，一个或多个用于**领域状态**。
+分离这两个 store 的优点是可以重用和测试**领域状态**，并且可以很好地在其他应用中重用它。
+然而，**UI 状态 store** 对于你的应用来说通常非常特别。
+但通常也很简单。
+这个 store 通常没有太多的逻辑，但会存储大量的松散耦合的 UI 相关的信息。
+这是理想状况下的，因为大多数应用在开发过程中会经常性地改变 UI 状态。
 
 Things you will typically find in UI stores:
 * Session information
