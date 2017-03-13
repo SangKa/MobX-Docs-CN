@@ -158,17 +158,17 @@ const listStore = new ListStore();
 }
 ```
 
-For more info see [#476](https://github.com/mobxjs/mobx/issues/476)
+想了解更多信息，请参见 [#476](https://github.com/mobxjs/mobx/issues/476)。
 
-#### Declaring propTypes might cause unnecessary renders in dev mode
+#### 开发模式下声明 propTypes 可能会引起不必要的渲染
 
-See: https://github.com/mobxjs/mobx-react/issues/56
+参见: https://github.com/mobxjs/mobx-react/issues/56
 
-#### `@observable` properties initialize lazily when using Babel
+#### 使用 Babel 时 `@observable` 属性延迟初始化
 
-This issue only occurs when transpiling with Babel and not with Typescript (in which decorator support is more mature).
-Observable properties will not be instantiated upon an instance until the first read / write to a property (at that point they all will be initialized).
-This results in the following subtle bug:
+这个问题只有当使用 Babel 作为编辑器，而不是 Typescript(装饰器支持更成熟) 时才会出现。
+Observable 属性不会进行初始化，直到第一次读/写此属性(在这一刻它们都会被初始化)。
+这导致了以下细微的bug:
 
 ```javascript
 class Todo {
