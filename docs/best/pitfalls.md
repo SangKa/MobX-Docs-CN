@@ -1,18 +1,18 @@
-# Common pitfalls & best practices
+# 常见陷阱与最佳实践
 
-Stuck with MobX? This section contains a list of common issues people new to MobX might run into.
+使用 MobX 遇到坑了？本章节涵盖了一些 MobX 新手可能会遭遇的一些常见问题。
 
-#### Issues with decorators?
+#### 装饰器问题?
 
-For setup tips and limitations on decorators, check the [decorators](decorators.md) page
+有关装饰器的设置提示和限制，请参见 [装饰器](decorators.md) 一节。
 
 #### `Array.isArray(observable([1,2,3])) === false`
 
-In ES5 there is no way to reliably inherit from arrays, and hence observable arrays inherit from objects.
-This means that regularly libraries are not able to recognize observable arrays as normal arrays (like lodash, or built-in operations like `Array.concat`).
-This can simply be fixed by passing calling `observable.toJS()` or `observable.slice()` before passing the array to another library.
-As long as the external library has no intent to modify the array, this will further work completely as expected.
-You can use `isObservableArray(observable)` to check whether something is an observable array.
+在 ES5 中没有继承数组的可靠方法，因此 observabl e数组继承自对象。
+这意味着一般的库没有办法识别出 observable 数组就是普通数组(像 lodash，或 `Array.concat` 这样的内置操作符)。
+这个问题很容易解决，在把 observable 数组传递给其它库之前先调用 `observable.toJS()` 或 `observable.slice()` 将其转化为普通数组。
+只要外部库没有修改数组的意图，那么一切都将如预期一样的正常运作。
+可以使用 `isObservableArray(observable)` 来检查是否是 observable 数组。
 
 #### `object.someNewProp = value` is not picked up
 
@@ -20,7 +20,7 @@ MobX observable _objects_ do not detect or react to property assignments that we
 So MobX observable objects act as records with predefined keys.
 You can use `extendObservable(target, props)` to introduce new observable properties to an object.
 However object iterators like `for .. in` or `Object.keys()` won't react to this automatically.
-If you need a dynamically keyed object, for example to store users by id, create observable _map_s using [`observable.map`](../refguide/map.md).
+If you need a dynamically keyed object, for example to store users by id, create observable _maps_ using [`observable.map`](../refguide/map.md).
 For more info see [what will MobX react to?](react.md).
 
 ### Use `@observer` on all components that render `@observable`s.
