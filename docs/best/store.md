@@ -102,27 +102,26 @@ Store 的职责:
 * 要确保 store 是可测试的并且可以在服务端运行，你可能需要将实际的 websocket/http 请求移到单独的对象，以便你可以通过通信层抽象。
 * Store 应该只有一个实例。
 
-### Domain objects
+### 领域对象
 
-Each domain object should be expressed using its own class (or constructor function).
-It is recommended to store your data in _denormalized_ form.
-There is no need to treat your client-side application state as some kind of database.
-Real references, cyclic data structures and instance methods are powerful concepts in JavaScript.
-Domain objects are allowed to refer directly to domain objects from other stores.
-Remember: we want to keep our actions and views as simple as possible and needing to manage references and doing garbage collection yourself might be a step backward.
-Unlike many Flux architectures, with MobX there is no need to normalize your data, and this makes it a lot simpler to build the _essentially_ complex parts of your application:
-your business rules, actions and user interface.
+每个领域对象应使用自己的类(或构造函数)来表示。
+建议以**非规范化**形式存储数据。
+不必把客户端应用的状态看做数据库的一种。
+真实引用、循环数据结构和实例方法都是 JavaScript 中非常强大的概念。
+允许领域对象直接引用来自其他 store 的领域对象。
+记住: 我们想保持我们的操作和视图尽可能简单，并且需要管理引用和自己做垃圾回收可能是一种倒退。
+不同于其他 Flux 系统架构，使用 MobX 不需要对数据进行标准化，而且这使得构建应用**本质上**复杂的部分变得更简单:
+你的业务规则、操作和用户界面。
 
-Domain objects can delegate all their logic to the store they belong to if that suits your application well.
-It is possible to express your domain objects as plain objects, but classes have some important advantages over plain objects:
-* They can have methods.
-This makes your domain concepts easier to use stand-alone and reduces the amount of contextual awareness that is needed in your application.
-Just pass objects around.
-You don't have to pass stores around, or have to figure out which actions can be applied to an object if they are just available as instance methods.
-Especially in large applications this is important.
-* They offer fine grained control over the visibility of attributes and methods.
-* Objects created using a constructor function can freely mix observable properties and functions, and non-observable properties and methods.
-* They are easily recognizable and can strictly be type-checked.
+领域对象可以将其所有逻辑委托给它们所属的 store，如果这更符合你的应用的话。
+可以将领域对象表示成普通对象，但类比普通对象有一些重要的优势:
+* 它们可以有方法。
+这使得领域概念更容易独立使用，并减少应用所需的上下文感知的数量。
+只是传递对象。
+你不需要传递 store，或者必须弄清楚哪些操作可以在对象上应用，如果它们只是作为实例方法可用。
+* 对于属性和方法的可见性，它们提供了细粒度的控制。
+* 使用构造函数创建的对象可以自由地混合 observable 属性和函数，以及非 observable 属性和方法。
+* 它们易于识别，并且可以进行严格的类型检查。
 
 
 ### Example domain store
