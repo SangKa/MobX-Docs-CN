@@ -201,15 +201,14 @@ export class Todo {
     @observable task = "";
 
     /**
-     * reference to an Author object (from the authorStore)
+     * 引用一个 author 对象(来自 authorStore)
      */
     @observable author = null;
 
     store = null;
 
     /**
-     * Indicates whether changes in this object
-     * should be submitted to the server
+     * 指示此对象的更改是否应提交到服务器
      */
     autoSave = true;
 
