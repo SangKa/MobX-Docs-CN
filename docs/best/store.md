@@ -173,7 +173,7 @@ export class TodoStore {
     }
 
     /**
-     * 在客户端和服务端都都创建一个新的 todo
+     * 在客户端和服务端都创建一个新的 todo
      */
     createTodo() {
         var todo = new Todo(this);
@@ -235,7 +235,7 @@ export class Todo {
     }
 
     /**
-     * Remove this todo from the client and server
+     * 在客户端和服务端中删除此 todo
      */
     delete() {
         this.store.transportLayer.deleteTodo(this.id);
@@ -252,10 +252,10 @@ export class Todo {
     }
 
     /**
-     * Update this todo with information from the server
+     * 使用服务端信息更新此 todo
      */
     updateFromJson(json) {
-        // make sure our changes aren't send back to the server
+        // 请确保我们的更改不会发送回服务器
         this.autoSave = false;
         this.completed = json.completed;
         this.task = json.task;
@@ -264,7 +264,7 @@ export class Todo {
     }
 
     dispose() {
-        // clean up the observer
+        // 清理观察者
         this.saveHandler();
     }
 }
