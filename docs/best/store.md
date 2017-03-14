@@ -79,28 +79,28 @@ export default singleton;
 
 ## 领域 store
 
-Your application will contain one or multiple _domain_ stores.
-These stores store the data your application is all about.
-Todo items, users, books, movies, orders, you name it.
-Your application will most probably have at least one domain store.
+你的应用应该包含一个或多个**领域** store。
+这些 store 存储你的应用所关心的数据。
+待办事项、用户、书、电影、订单、凡是你能说出的。
+你的应用很有可能至少有一个领域 store。
 
-A single domain store should be responsible for a single concept in your application.
-However a single concept might take the form of multiple subtypes and it is often a (cyclic) tree structure.
-For example: one domain store for your products, and one for our orders and orderlines.
-As a rule of thumb: if the nature of the relationship between two items is containment, they should typically be in the same store.
-So a store just manages _domain objects_.
+单个领域 store 应该负责应用中的单个概念。
+然而，单个概念可以采取多个子类型的形式，并且它通常是(循环)树结构。
+举例来说，一个领域 store 负责产品，一个负责订单。
+根据经验来说，如果两个概念之间的关系的本质是包含的，则它们通常应在同一个 store 中。
+所以说一个 store 只是管理 **领域对象**。
 
-These are the responsibility of a store:
-* Instantiate domain objects. Make sure domain objects know the store they belong to.
-* Make sure there is only one instance of each of your domain objects.
-The same user, order or todo should not be twice in your memory.
-This way you can safely use references and also be sure you are looking at the latest instance, without ever having to resolve a reference.
-This is fast, straightforward and convenient when debugging.
-* Provide backend integration. Store data when needed.
-* Update existing instances if updates are received from the backend.
-* Provide a stand-alone, universal, testable component of your application.
-* To make sure your store is testable and can be run server-side, you probably will move doing actual websocket / http requests to a separate object so that you can abstract over your communication layer.
-* There should be only one instance of a store.
+Store 的职责:
+* 实例化领域对象， 确保领域对象知道它们所属的 store。
+* 确保每个领域对象只有一个实例。
+同一个用户、订单或者待办事项在内存中不应该在内存中出现两次。
+这样，可以安全地使用引用，并确保正在查看的实例是最新的，而无需解析引用。
+当调试时这十分快速、简单、方便。
+* 提供后端集成，当需要时存储数据。
+* 如果从后端接收到更新，则更新现有实例。
+* 为你的应用提供一个独立、通用、可测试的组件。
+* 要确保 store 是可测试的并且可以在服务端运行，你可能需要将实际的 websocket/http 请求移到单独的对象，以便你可以通过通信层抽象。
+* Store 应该只有一个实例。
 
 ### Domain objects
 
