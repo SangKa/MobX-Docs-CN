@@ -1,26 +1,29 @@
-# Writing Actions
+# 编写 Actions(动作)
 
-Writing actions is straight-forward when using MobX.
-Just create, change or delete data and MobX will make sure that changes are picked up by the store and the components that depend on your data.
-Based on the store we have created in the previous section, actions become as simple as:
+使用 MobX 来编写动作是很直观的。
+只是简单地创建、更改或删除数据，MobX 将确保变化会由 store 和依赖于这些数据的组件捕获。
+在前一章节中我们所创建的 store 基础上，动作可以如此简单:
 
 ```javascript
 var todo = todoStore.createTodo();
 todo.task = "make coffee";
 ```
 
-That is enough to create a todo, submit it to the server and update our user interface accordingly.
+这足以创建一个待办事项，提交到服务器，并相应地更新我们的用户界面。
 
-## When to use actions?
+## 何时使用动作?
 
-Actions should only be used on functions that _modify_ state.
-Functions that just perform look-ups, filters etc should _not_ be marked as actions; to allow MobX to track their invocations.
+动作只应该在**修改**状态的函数上使用。
+仅执行查找，过滤等操作的函数**不**应该标记为动作，以允许 MobX 追踪它们的调用。
 
-## Asynchronous actions
+## 异步动作
 
 Writing asynchronous actions is pretty simple as well.
 You can use observable data structures as a promise.
 This is what happens with the `isLoading` property in the `todoStore` for example:
+编写异步动作同样非常的简单。
+可以使用 observable 数据结构作为 promise。
+示例中 `todoStore` 的 `isLoading` 属性就是这样的:
 
 ```javascript
 // ...
