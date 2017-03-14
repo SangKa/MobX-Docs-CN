@@ -173,7 +173,7 @@ export class TodoStore {
     }
 
     /**
-     * Creates a fresh todo on the client and server
+     * 在客户端和服务端都都创建一个新的 todo
      */
     createTodo() {
         var todo = new Todo(this);
@@ -182,7 +182,7 @@ export class TodoStore {
     }
 
     /**
-     * A todo was somehow deleted, clean it from the client memory
+     * 如果一个 todo 被删除了，将其从客户端内存中清理掉
      */
     removeTodo(todo) {
         this.todos.splice(this.todos.indexOf(todo), 1);
@@ -193,7 +193,7 @@ export class TodoStore {
 export class Todo {
 
     /**
-     * unique id of this todo, immutable.
+     * todo 的唯一 id, 不可改变。
      */
     id = null;
 
