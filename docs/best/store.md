@@ -213,8 +213,8 @@ export class Todo {
     autoSave = true;
 
     /**
-     * Disposer for the side effect that automatically
-     * stores this Todo, see @dispose.
+     * 为自动存储此 Todo 的副作用提供的清理方法
+     * 参见 @dispose.
      */
     saveHandler = null;
 
@@ -223,9 +223,9 @@ export class Todo {
         this.id = id;
 
         this.saveHandler = reaction(
-            // observe everything that is used in the JSON:
+            // 观察在 JSON 中使用了的任何东西:
             () => this.asJson,
-            // if autoSave is on, send json to server
+            // 如何 autoSave 为 true, 把 json 发送到服务端
             (json) => {
                 if (this.autoSave) {
                     this.store.transportLayer.saveTodo(json);
