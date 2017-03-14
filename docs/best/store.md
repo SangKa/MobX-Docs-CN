@@ -124,7 +124,7 @@ Store 的职责:
 * 它们易于识别，并且可以进行严格的类型检查。
 
 
-### Example domain store
+### 领域 store 示例
 
 ```javascript
 import {observable, autorun} from 'mobx';
@@ -137,14 +137,14 @@ export class TodoStore {
     @observable isLoading = true;
 
     constructor(transportLayer, authorStore) {
-        this.authorStore = authorStore; // Store that can resolve authors for us
-        this.transportLayer = transportLayer; // Thing that can make server requests for us
+        this.authorStore = authorStore; // 可以为我们提供 author 的 store
+        this.transportLayer = transportLayer; // 可以为我们发起服务端请求的东西
         this.transportLayer.onReceiveTodoUpdate(updatedTodo => this.updateTodoFromServer(updatedTodo));
         this.loadTodos();
     }
 
     /**
-     * Fetches all todo's from the server
+     * 从服务端拉取所有的 todo
      */
     loadTodos() {
         this.isLoading = true;
@@ -155,9 +155,9 @@ export class TodoStore {
     }
 
     /**
-     * Update a todo with information from the server. Guarantees a todo
-     * only exists once. Might either construct a new todo, update an existing one,
-     * or remove an todo if it has been deleted on the server.
+     * 使用服务器中的信息更新 todo。保证一个 todo 只存在一次。
+     * 可能构造一个新的 todo，更新现有的 todo,
+     * 或删除 todo，如果它已经在服务器上被删除的话。
      */
     updateTodoFromServer(json) {
         var todo = this.todos.find(todo => todo.id === json.id);
