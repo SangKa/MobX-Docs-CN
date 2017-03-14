@@ -35,8 +35,8 @@ This is what happens with the `isLoading` property in the `todoStore` for exampl
 // ...
 ```
 
-After completing the asynchronous action, just update your data and your views will update.
-The render function of a React component could become as simple as:
+异步动作完成后，只是更新了数据，视图也会更新。
+React 组件的 render 函数 可以变得如此简单:
 
 ```javascript
 import {observer} from "mobx-react";
@@ -53,6 +53,6 @@ var TodoOverview = observer(function(props) {
 });
 ```
 
-The above `TodoOverview` component will now update whenever `isLoading` changes, or when `isLoading` is true and the `todos` list changes.
-Note that we could have expressed `todoStore.isLoading` as `todoStore.todos.length` as well.
-The result would be exactly the same.
+上面的 `TodoOverview` 组件每当 `isLoading` 变化时，或 `isLoading` 为 true 且 `todos` 改变时就会更新。
+注意，我们可以将 `todoStore.isLoading` 替换为 `todoStore.todos.length` 。
+结果是相同的。
