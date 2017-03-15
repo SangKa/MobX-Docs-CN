@@ -21,14 +21,14 @@ class Clock {
 	currentDateTime;
 
 	constructor() {
-		// creates an atom to interact with the MobX core algorithm
+		// 创建一个 atom 用来和 MobX 核心算法交互
 		this.atom =	new Atom(
-			// first param: a name for this atom, for debugging purposes
+			// 第一个参数: atom 的名字，用于调试
 			"Clock",
-			// second (optional) parameter: callback for when this atom transitions from unobserved to observed.
+			// 第二个参数(可选的): 当 atom 从未被观察到被观察时的回调函数
 			() => this.startTicking(),
-			// third (optional) parameter: callback for when this atom transitions from observed to unobserved
-			// note that the same atom transitions multiple times between these two states
+			// 第三个参数(可选的): 当 atom 从被观察到不再被观察时的回调函数
+			// 注意同一个 atom 在这两个状态之间转换多次
 			() => this.stopTicking()
 		);
 	}
