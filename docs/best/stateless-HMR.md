@@ -1,6 +1,6 @@
-# Hot Module Reloading with Stateless Components
+# 使用无状态组件的热加载(Hot Module Reloading)
 
-One thing that can be a challenge when getting started with MobX (and React in general) is understanding why Hot Module Reloading (HMR) sometimes breaks. When you initially get it working, it seems like magic (and it kind of is), however there's at least one rough edge with regard to HMR and React: stateless components. Since stateless components don't explicitly identify themselves as React components, HMR doesn't quite know what to do with them, and so you'll often see warnings in your console like this:
+当刚接触 MobX(和普通的 React) 时有一个挑战就是理解为什么热加载(HMR)有时会失败。当热加载起初工作时，它看起来像魔术一般(确实也是)，但是有一个关于 HMR 和 React 的粗糙边缘，那就是无状态组件。因为无状态组件不会显示地把自己定义为 React 组件，对于它们 HMR 不知道该怎么做，所以你经常会在控制台看到这样的警告:
 
 ```
 [HMR] The following modules couldn't be hot updated: (Full reload needed)
@@ -8,13 +8,13 @@ This is usually because the modules which have changed (and their parents) do no
 [HMR]  - ./src/ToDoItem.jsx
 ```
 
-This is especially apparent when you start working with MobX since observables make it really easy to create a lot of stateless components. Here are some tips for how to build your stateless components and still get all the advantages of HMR:
+当你开始使用 MobX 时，这一点尤其明显，因为 observables 使得创建大量的无状态组件变得非常容易。这里有一些小贴士，是关于如何构建无状态组件的同时还能享受HMR带来的便利:
 
-## Use function declarations instead of arrow functions
+## 使用函数声明来替代箭头函数
 
-Function declarations still do the exact same thing as arrow functions, but they have the key advantage of actually having names inside of the React DevTools.
+函数声明和箭头函数所做的事完全相同，但实际上它们具有在 React 开发者工具中具有名称的关键优势。
 
-For instance, here's a stateless component built with an arrow function:
+举例来说，有一些使用箭头函数构建的无状态组件:
 
 ```javascript
 const ToDoItem = observer(props => <div>{props.item}</div>);
