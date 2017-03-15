@@ -34,10 +34,9 @@ class Clock {
 	}
 
 	getTime() {
-		// let MobX know this observable data source has been used
-        // reportObserved will return true if the atom is currenlty being observed
-        // by some reaction.
-        // reportObserved will alos trigger the onBecomeObserved event handler (startTicking) if needed
+		// 让 MobX 知道这个 observable 数据源已经使用了
+		// 如果 atom 当前是被某些 reaction 观察的，那么 reportObserved 方法会返回 true
+		// 如果需要的话，reportObserved 还会触发 onBecomeObserved 事件处理函数(startTicking)
 		if (this.atom.reportObserved()) {
             return this.currentDateTime;
         } else {
