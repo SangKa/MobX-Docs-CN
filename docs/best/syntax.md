@@ -1,3 +1,3 @@
-# ES5 / ES6 / ES.next syntax
+# ES5 / ES6 / ES.next 语法
 
-Moved [here](http://mobxjs.github.io/mobx/best/decorators.html)
+移至 [这里](decorators.md)
