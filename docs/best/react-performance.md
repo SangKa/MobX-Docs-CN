@@ -90,7 +90,7 @@ React 在渲染大型数据集合时表现非常糟糕，因为协调器必须�
 * [用于 no-bind 的 ESLint 规则](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
 
 
-Bad:
+不好的:
 
 ```javascript
 render() {
@@ -98,7 +98,7 @@ render() {
 }
 ```
 
-Good:
+好的:
 
 ```javascript
 render() {
@@ -110,4 +110,4 @@ handleClick = () => {
 }
 ```
 
-The bad example will always yield the `shouldComponent` of `PureRenderMixin` used in `MyWidget` to always yield false as you pass a new function each time the parent is re-rendered.
+不好的那个示例中， `MyWidget` 里使用的 `PureRenderMixin` 中的 `shouldComponent` 的返回值永远是 false，因为每当父组件重新渲染时你传递的都是一个新函数。
