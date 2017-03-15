@@ -14,7 +14,7 @@ This is usually because the modules which have changed (and their parents) do no
 
 函数声明和箭头函数所做的事完全相同，但实际上它们具有在 React 开发者工具中具有名称的关键优势。
 
-举例来说，有一些使用箭头函数构建的无状态组件:
+举例来说，这是使用箭头函数构建的无状态组件:
 
 ```javascript
 const ToDoItem = observer(props => <div>{props.item}</div>);
@@ -23,11 +23,11 @@ export default ToDoItem;
 
 ```
 
-And here's how that will appear in the React DevTools:
+然后在 React 开发者工具中是这样显示的:
 
 ![devtools-noname](../images/devtools-noDisplayName.png)
 
-On the other hand, using a function declaration will allow you to build the same stateless component AND see it in the DevTools:
+另一方面，使用函数声明允许你构建同样的无状态组件并且可以在开发者工具中看见名称:
 
 ```javascript
 function ToDoItem(props) {
@@ -38,13 +38,13 @@ export default observer(ToDoItem);
 
 ```
 
-And now the component shows up correctly in the DevTools:
+现在开发者工具中可以正确的显示组件了:
 
 ![devtools-withname](../images/devtools-withDisplayName.png)
 
-## Make sure your top-level component is a stateful observer
+## 确保顶层组件是有状态的观察者
 
-By "stateful observer", all I really mean is a component created with `React.Component` or `React.createClass` and which uses the `@observer` decorator, like so:
+通过“有状态的观察者”，我的意思是使用 `React.Component` 或 `React.createClass` 创建的组件并且使用了 `@observer` 装饰器，像这样:
 
 ```javascript
 import { observer } from 'mobx-react';
