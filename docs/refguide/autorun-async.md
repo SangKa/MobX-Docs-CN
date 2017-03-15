@@ -2,26 +2,26 @@
 
 `autorunAsync(action: () => void, minimumDelay?: number, scope?)`
 
-Just like `autorun` except that the action won't be invoked synchronously but asynchronously after the minimum amount of milliseconds has passed.
-The `action` will be run and observed.
-However, instead of running the action immediately when the values it observes have changed, the `minimumDelay` will be awaited before re-execution the `action` again.
+同 `autorun` 一样，除了 `action` 不是同步调用，而是在传入的最小的毫秒数量之后异步调用。
+`action` 将会运行和观察。
+然而当它观察的值更改时，不是立即运行 `action`，而是等待 `minimumDelay` 后在重新运行 `action`。
 
-If observed values are changed multiple times while waiting, the action is still triggered only once, so in a sense it achieves a similar effect than a transaction.
-This might be useful for stuff that is expensive and doesn't need to happen synchronously; such as debouncing server communication.
+如果在等待这段时间内，观察的值发生了多次的变化，`action` 仍然只会触发一次，因此在某种意义上，它实现了与事务类似的效果。
+这可能对昂贵的并且不需要同步发生的东西有用，例如去抖的服务端通信。
 
-If a scope is given, the action will be bound to this scope object.
+如果提供了 scope，那么 action 会绑定到这个作用域对象。
 
 `autorunAsync(debugName: string, action: () => void, minimumDelay?: number, scope?)`
 
-If a string is passed as first argument to `autorunAsync`, it will be used as debug name.
+如果传给 `autorunAsync` 的第一个参数是字符串的话，它会作为调试的名称。
 
-`autorunAsync` returns a disposer to cancel the autorun.
+`autorunAsync` 返回一个清理函数用来取消 autorun 。
 
 ```javascript
 autorunAsync(() => {
-	// Assuming that profile.asJson returns an observable Json representation of profile,
-	// send it to the server each time it is changed, but await at least 300 milliseconds before sending it.
-	// When sent, the latest value of profile.asJson will be used.
+	// 假设 profile.asJson 返回一个用来展现 profile 的 observable json
+	// 每次改变都会把它发送到服务端，但发送前至少要等待300毫秒
+	// 发送后，将使用 profile.asJson 的最新值
 	sendProfileToServer(profile.asJson);
 }, 300);
 ```
