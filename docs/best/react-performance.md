@@ -14,7 +14,7 @@ MobX 非常快，[甚至比 Redux 更快](https://twitter.com/mweststrate/status
 React 在渲染大型数据集合时表现非常糟糕，因为协调器必须评估每个集合变化的集合所产生的组件。
 因此，建议使用专门的组件来映射集合并渲染这个组件，而不再渲染其他组件:
 
-Bad:
+不好的:
 
 ```javascript
 @observer class MyComponent extends Component {
@@ -30,9 +30,9 @@ Bad:
 }
 ```
 
-In the above listing React will unnecessarily need to reconcile all TodoView components when the `user.name` changes. They won't re-render, but the reconcile process is expensive in itself.
+在上来的示例中，当 `user.name` 改变时，React 会不必要地协调所有的 TodoView 组件。尽管TodoView 组件不会重新渲染，但是协调的过程本身是非常昂贵的。
 
-Good:
+好的:
 
 ```javascript
 @observer class MyComponent extends Component {
