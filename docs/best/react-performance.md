@@ -1,17 +1,18 @@
-# Optimizing rendering React components
+# 优化 React 组件渲染
 
-MobX is very fast, [often even faster than Redux](https://twitter.com/mweststrate/status/718444275239882753). But here are some tips to get most out of React and MobX. Note that most tips apply to React in general and are not specific for MobX.
+MobX 非常快，[甚至比 Redux 更快](https://twitter.com/mweststrate/status/718444275239882753)。但本章节一些小贴士，以便充分利用 React 和 MobX。
+请注意，大多数小贴士适用与普通的 React，而非 MobX 专用的。
 
-## Use many small components
+## 使用大量的小组件
 
-`@observer` components will track all values they use and re-render if any of them changes.
-So the smaller your components are, the smaller the change they have to re-render; it means that more parts of your user interface have the possibility to render independently of each other.
+`@observer` 组件会追踪它们使用的所有值，并且当它们中的任何一个改变时重新渲染。
+所以你的组件越小，它们需要重新渲染产生的变化则越小。这意味着用户界面的更多部分具备彼此独立渲染的可能性。
 
-## Render lists in dedicated components
+## 在专用组件中渲染列表
 
-This is especially true when rendering big collections.
-React is notoriously bad at rendering large collections as the reconciler has to evaluate the components produced by a collection on each collection change.
-It is therefore recommended to have components that just map over a collection and render it, and render nothing else:
+这点在渲染大型数据集合时尤为重要。
+React 在渲染大型数据集合时表现非常糟糕，因为协调器必须评估每个集合变化的集合所产生的组件。
+因此，建议使用专门的组件来映射集合并渲染这个组件，而不再渲染其他组件:
 
 Bad:
 
