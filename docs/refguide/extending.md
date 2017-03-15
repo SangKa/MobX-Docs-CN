@@ -7,11 +7,10 @@
 Atom 可以用来通知 Mobx 某些 observable 数据源被观察或发生了改变。
 当数据源被使用或不再使用时，MobX 会通知 atom 。
 
-The following example demonstrates how you can create an observable `Clock`, which can be used in reactive functions,
-and returns the current date-time.
-This clock will only actually tick if it is observed by someone.
+下面的示例演示了如何创建一个 observable `Clock`，它可以用在响应式函数中，并且返回当前时间。
+这个 clock 只有当它被观察了才会运行。
 
-The complete API of the `Atom` class is demonstrated by this example.
+此示例演示了 Atom 类的完整API。
 
 ```javascript
 import {Atom, autorun} from "mobx";
