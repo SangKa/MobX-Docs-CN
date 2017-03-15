@@ -74,20 +74,20 @@ React 在渲染大型数据集合时表现非常糟糕，因为协调器必须�
 
 `<DisplayName name={person.name} />`.
 
-There is nothing wrong to the latter.
-But a change in the `name` property will, in the first case, trigger the `DisplayName` to re-render, while in the latter, the owner of the component has to re-render.
-However, it is more important for your components to have a comprehensible API than applying this optimization.
-To have the best of both worlds, consider making smaller components:
+后者并没有什么错。
+但是当 `name` 属性变化时，第一种情况会触发 `DisplayName` 组件重新渲染，而第二种情况组件的拥有者需要重新渲染。
+但是，对于你的组件来说，使用可理解的 API 比应用此优化更为重要。
+为了两全其美，考虑制造更小的组件:
 
 `const PersonNameDisplayer = observer(({ props }) => <DisplayName name={props.person.name} />)`
 
-## Bind functions early
+## 尽早绑定函数
 
-This tip applies to React in general and libraries using `PureRenderMixin` especially, try to avoid creating new closures in render methods.
+此贴士适用于普通的 React 和特别是使用了 `PureRenderMixin` 的库，尽量避免在 render 方法中创建新的闭包。
 
-See also these resources:
-* [Autobinding with property initializers](https://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html#autobinding)
-* [ESLint rule for no-bind](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
+还可参见一下资源:
+* [使用属性初始化程序进行自动绑定](https://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html#autobinding)
+* [用于 no-bind 的 ESLint 规则](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
 
 
 Bad:
