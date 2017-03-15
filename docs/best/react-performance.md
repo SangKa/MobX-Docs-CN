@@ -55,22 +55,22 @@ React 在渲染大型数据集合时表现非常糟糕，因为协调器必须�
 }
 ```
 
-## Don't use array indexes as keys
+## 不要使用数组的索引作为 key
 
-Don't use array indexes or any value that might change in the future as key. Generate id's for your objects if needed.
-See also this [blog](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318).
+不用使用数组索引或者任何将来可能会改变的值作为 key 。如果需要的话为你的对象生成 id。
+还可以参见这篇 [博客](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318)。
 
-## Dereference values late
+## 晚一点使用间接引用值
 
-When using `mobx-react` it is recommended to dereference values as late as possible.
-This is because MobX will re-render components that dereference observable values automatically.
-If this happens deeper in your component tree, less components have to re-render.
+使用 `mobx-react` 时，推荐尽可能晚的使用间接引用值。
+这是因为当使用 observable 间接引用值时 MobX 会自动重新渲染组件。
+如果间接引用值发生在组件树的层级越深，那么需要重新渲染的组件就越少。
 
-Fast:
+快的:
 
 `<DisplayName person={person} />`
 
-Slower:
+慢的:
 
 `<DisplayName name={person.name} />`.
 
