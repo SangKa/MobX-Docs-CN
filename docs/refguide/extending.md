@@ -1,11 +1,11 @@
-# Creating observable data structures and reactions
+# 创建 observable 数据结构和 reactions
 
 ## Atoms
 
-At some point you might want to have more data structures or other things (like streams) that can be used in reactive computations.
-Achieving that is pretty simple by using the `Atom` class.
-Atoms can be used to signal MobX that some observable data source has been observed or changed.
-And MobX will signal the atom whenever it is used or no longer in use.
+在某些时候，你可能想要有更多的数据结构或其他可以在响应式计算中使用的东西(如流)。
+要实现这个其实非常容易，使用 `Atom` 类即可。
+Atom 可以用来通知 Mobx 某些 observable 数据源被观察或发生了改变。
+当数据源被使用或不再使用时，MobX 会通知 atom 。
 
 The following example demonstrates how you can create an observable `Clock`, which can be used in reactive functions,
 and returns the current date-time.
