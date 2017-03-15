@@ -36,22 +36,20 @@ class Clock {
 	getTime() {
 		// 让 MobX 知道这个 observable 数据源已经使用了
 		// 如果 atom 当前是被某些 reaction 观察的，那么 reportObserved 方法会返回 true
-		// 如果需要的话，reportObserved 还会触发 onBecomeObserved 事件处理函数(startTicking)
+		// 如果需要的话，reportObserved 还会触发 onBecomeObserved 事件处理方法(startTicking)
 		if (this.atom.reportObserved()) {
-            return this.currentDateTime;
-        } else {
-            // apparantly getTime was called but not while a reaction is running.
-            // So, nobody depends on this value, hence the onBecomeObserved handler (startTicking) won't be fired
-            // Depending on the nature
-            // of your atom it might behave differently in such circumstances
-            // (like throwing an error, returning a default value etc)
-		    return new Date();
-        }
+      return this.currentDateTime;
+    } else {
+			// 显然 getTime 被调用的同时并没有 reaction 正在运行
+			// 所以，没有人依赖这个值，因此 onBecomeObserved 处理方法(startTicking)不会被触发
+			// 根据 atom 的性质，在这种情况下它可能会有不同的表现(像抛出错误、返回默认值等等)
+    	return new Date();
+    }
 	}
 
 	tick() {
 		this.currentDateTime = new Date();
-		// let MobX know that this data source has changed
+		// 让 MobX 知道这个数据源发生了改变
 		this.atom.reportChanged();
 	}
 
