@@ -1,4 +1,4 @@
-# 创建 observable 数据结构和 reactions
+# 创建 observable 数据结构和 reactions(反应)
 
 ## Atoms
 
@@ -78,14 +78,13 @@ disposer();
 // 停止输出。如果没有人使用同一个 `clock` 的话，clock 也将停止运行。
 ```
 
-## Reactions
+## Reactions(反应)
 
-`Reaction` allows you to create your own 'auto runner'.
-Reactions track a function and signal when the function should be executed again because one or more dependencies have changed.
+`Reaction` 允许你创建你自己的 **自动运行器**。
+当函数应该再次执行时， Reaction 会追踪函数和信号，因为一个或多个依赖关系已更改。
 
 
-
-This is how `autorun` is defined using `Reaction`:
+这是 `autorun` 如何使用 `Reaction` 来定义的:
 
 ```typescript
 export function autorun(view: Lambda, scope?: any) {
@@ -96,7 +95,7 @@ export function autorun(view: Lambda, scope?: any) {
 		this.track(view);
 	});
 
-	// Start or schedule the just created reaction
+	// 运行刚刚创建的 reaction 或将其列入计划表中
 	if (isComputingDerivation() || globalState.inTransaction > 0)
 		globalState.pendingReactions.push(reaction);
 	else
