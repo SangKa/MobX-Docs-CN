@@ -54,7 +54,7 @@ class Clock {
 	}
 
 	startTicking() {
-		this.tick(); // initial tick
+		this.tick(); // 最初的运行
         this.intervalHandler = setInterval(
 			() => this.tick(),
 			1000
@@ -71,11 +71,11 @@ const clock = new Clock();
 
 const disposer = autorun(() => console.log(clock.getTime()));
 
-// ... prints the time each second
+// ... 输出每一秒的时间
 
 disposer();
 
-// printing stops. If nobody else uses the same `clock` the clock will stop ticking as well.
+// 停止输出。如果没有人使用同一个 `clock` 的话，clock 也将停止运行。
 ```
 
 ## Reactions
