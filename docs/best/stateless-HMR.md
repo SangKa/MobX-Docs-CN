@@ -70,4 +70,4 @@ class App extends React.Component {
 
 ```
 
-In this case, `ToDoItem` is stateless, but will still work with HMR because the root-level of the UI tree is a stateful observer. As a result, whenever we change **any** stateless component, it will be hot-reloaded because the observers will trigger computations in the root-level component as well. And since the root-level component is a good old-fashioned React component, it'll trigger the HMR for all of its children and voila! All the magic of stateless components, observables, and hot module reloading working together beautifully.
+在本案例中，`ToDoItem` 是无状态的，但同样可以正常使用 HMR，因为 UI 树的根级是有状态的观察者。因此，每当我们改变**任何**无状态组件时，它都会热加载，因为观察者同样会在根组件中触发计算。既然根组件是一个正常的老式 React 组件，它会为所有的子组件触发 HMR，瞧！无状态组件、observables 和热加载魔法般的完美融合在一起！
