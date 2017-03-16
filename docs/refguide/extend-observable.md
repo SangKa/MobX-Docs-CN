@@ -28,12 +28,12 @@ extendObservable(matthew, {
 
 ## 调节器
 
-[Modifiers](modifiers.md) can be used to define special behavior for certain properties.
-For example `observable.ref` creates an observable reference which doesn't automatically convert its values into observables, and `computed` introduces a derived property:
+[调节器](modifiers.md)可以用来为某个属性定义特殊的行为。
+举例来说， `observable.ref` 创建一个 observable 引用，此引用不用自动将值转变为 observable，并且 `computed` 引入了推导属性:
 
 ```javascript
 var Person = function(firstName, lastName) {
-	// initialize observable properties on a new instance
+	// 在一个新实例上初始化 observable 属性
 	extendObservable(this, {
 		firstName: observable.ref(firstName),
 		lastName: observable.ref(lastName),
@@ -44,7 +44,7 @@ var Person = function(firstName, lastName) {
 }
 ```
 
-An overview of all available modifiers can be found in the [modifiers](modifiers.md) section.
+所有可用调节器的概览可以在 [调节器](modifiers.md) 章节中找到。
 
 ## Computed properties
 
