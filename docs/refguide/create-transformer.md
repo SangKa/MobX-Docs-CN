@@ -74,18 +74,17 @@ autorunner 触发 `store` 对象的序列化，也就是依次将 boxes 和 arro
 但是由于它不再使用 `serializeBox` 的程序操作 box#3，响应式函数会回退成非响应模式。
 然后通知内部记忆表，该条目可以被删除，以便它准备好 GC。
 
-So effectively we have achieved state tracking using immutable, shared datas structures here.
-All boxes and arrows are mapped and reduced into single state tree.
-Each change will result in a new entry in the `states` array, but the different entries will share almost all of their box and arrow representations.
+所以在这里我们使用不可变的、共享的数据结构有效地实现了状态追踪。
+所有的 boxes 和 arrows 都映射并简化到一个状态树。
+每次变化都会导致 `states` 数组中产生一个新条目，但不同的条目将分享几乎所有的 box 和 arrow 表示。
 
-## Transforming a datagraph into another reactive data graph
+## 将数据图转换为响应式数据图
 
-Instead of returning plain values from a transformation function, it is also possible to return observable objects.
-This can be used to transform an observable data graph into a another observable data graph, which can be used to transform... you get the idea.
+转换函数返回的是普通值，作为替代还可以返回 observable 对象。
+这个可以用来把一个 observable 数据图转换成另外一个 observable 数据图，可以应用转换...思想。
 
-Here is a small example that encodes a reactive file explorer that will update its representation upon each change.
-Data graphs that are built this way will in general react a lot faster and will consist of much more straight-forward code,
-compared to derived data graph that are updated using your own code. See the [performance tests](https://github.com/mobxjs/mobx/blob/3ea1f4af20a51a1cb30be3e4a55ec8f964a8c495/test/perf/transform-perf.js#L4) for some examples.
+这有个小示例，是对一个响应式文件探测器进行编码，它将在每次更改时更新其表示。
+以这种方式构建的数据图通常反应更快，并且代码更为直接，与使用你自己的代码更新的推导数据图相比。参见一些示例的[性能测试](https://github.com/mobxjs/mobx/blob/3ea1f4af20a51a1cb30be3e4a55ec8f964a8c495/test/perf/transform-perf.js#L4)。
 
 Unlike the previous example, the `transformFolder` will only run once as long as a folder remains visible;
 the `DisplayFolder` objects track the associated `Folder` objects themselves.
