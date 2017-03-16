@@ -45,22 +45,22 @@ function Message() {
 }
 ```
 
-Note that an observable, boxed reference can be created by using `const box = observable.shallowBox(value)`
+注意，可以通过使用 `const box = observable.shallowBox（value）` 来创建一个装箱的 observable 引用
 
-## Shallow observability
+## 浅层可观察性
 
-The `observable.shallow` modifier applies observability 'one-level-deep'. You need those if you want to create a _collection_ of observable references.
-If a new collection is assigned to a property with this modifier, it will be made observable, but its values will be left as is, so unlike `deep`, it won't recurse.
-Example:
+`observable.shallow` 调节器会应用“单层”可观察性。如果想创建一个 observable 引用的**集合**，那你会需要它。
+如果新集合分配给具有此调节器的属性，那么它会转变成 observable，但它的值将保持原样，不同于 `deep` 的是它不会递归。
+示例:
 
 ```javascript
 class AuthorStore {
     @observable.shallow authors = []
 }
 ```
-In the above example an assignment of a plain array with authors to the `authors` will update the authors with an observable array, containing the original, non-observable authors.
+在上面的示例中，使用普通的 author 数组分配给 `authors` 的话，会使用 observables 数组来更新 author，observables 数组包含原始的、非 observable 的 author 。
 
-Note that the following methods can be used to create shallow collections manually: `observable.shallowObject`, `observable.shallowArray`, `observable.shallowMap` and `extendShallowObservable`.
+注意这些方法可用于手动创建浅集合: `observable.shallowObject`、 `observable.shallowArray`、 `observable.shallowMap` 和 `extendShallowObservable`。
 
 ## Action & Computed
 
