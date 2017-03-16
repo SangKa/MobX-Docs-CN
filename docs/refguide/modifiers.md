@@ -15,26 +15,26 @@
 
 这是一个非常便利的默认设置。无需额外的工作，分配给 observable 的所有值本身也将转变成 observable(除非它们已经是)，因此不需要额外的工作就可使对象转变成深 observable 。
 
-## Reference observability
+## 引用可观察性
 
-In some cases however, objects don't need to be converted into observables.
-Typical cases are immutable objects, or objects that are not managed by you but by an external library.
-Examples are JSX elements, DOM elements, native objects like History, window or etc.
-To those kind of objects, you just want to store a reference without turning them into an observable.
+然后在某些情况下，不需要将对象转变成 observable 。
+典型案例就是不可变对象，或者不是由你管理，而是由外部库管理的对象。
+例如 JSX 元素、DOM 元素、像 History、window 这样的原生对象，等等。
+对于这类对象，只需要存储引用而不用把它们转变成 observable 。
 
-For these situations there is the `ref` modifier. It makes sure that an observable property is created, which only tracks the reference but doesn't try to convert its value.
-For example:
+对于这些情况，可以使用 `ref` 调节器。它会确保创建 observable 属性时，只追踪引用而不会把它的值转变成 observable 。
+示例:
 
 ```javascript
 class Message {
     @observable message = "Hello world"
 
-    // fictional example, if author is immutable, we just need to store a reference and shouldn't turn it into a mutable, observable object
+    // 虚构的例子，如果 author 是不可变的，我们只需要存储一个引用，不应该把它变成一个可变的 observable 对象
     @observable.ref author = null
 }
 ```
 
-Or with just ES5 syntax:
+或者使用 ES5 语法:
 
 ```javascript
 function Message() {
