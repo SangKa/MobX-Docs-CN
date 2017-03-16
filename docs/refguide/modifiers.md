@@ -1,21 +1,19 @@
-# Modifiers for observable
+# observable 调节器
 
-Modifiers can be used decorator or in combination with `extendObservable` and `observable.object` to change the autoconversion rules for specific properties.
+调节器可以作为装饰器或者组合 `extendObservable` 和 `observable.object` 使用，以改变特定属性的自动转换规则。
 
-* `observable.deep`: This is the default modifier, used by any observable. It converts any assigned, non-primitive value into an observable value if it isn't one yet.
-* `observable.ref`: Disables automatic observable conversion, just creates an observable reference instead.
-* `observable.shallow`: Can only used in combination with collections. Turns any assigned collection into an collection, which is shallowly observable (instead of deep)
-* `computed`: Creates a derived property, see [`computed`](computed-decorator.md)
-* `action`: Creates an action, see [`action`](action.md)
+* `observable.deep`: 任何 observable 都使用的默认的调节器。它把任何分配的、非原始数据类型的、非 observable 的值转换成 observable。
+* `observable.ref`: 禁用自动的 observable 转换，只是创建一个 observable 引用。
+* `observable.shallow`: 只能与集合组合使用。 将任何分配的集合转换为浅 observable (而不是深 observable)的集合。 换一种说法; 集合中的值将不会自动变为 observable。
+* `computed`: 创建一个推导属性, 参见 [`computed`](computed-decorator.md)
+* `action`: 创建一个动作, 参见 [`action`](action.md)
 
-## Deep observability
+## 深层可观察性
 
-When MobX creates an observable object, (using `observable`, `observable.object`, or `extendObservable`), it introduces observable properties which
-by default use the `deep` modifier. The deep modifier basically recursively calls `observable(newValue)` for any newly assigned value.
-Which in turns uses the `deep` modifier... you get the idea.
+当 MobX 创建一个 observable 对象时，(使用 `observable`、 `observable.object` 或 `extendObservable`)，它引入的 observable 属性默认是使用 `deep` 调节器的。`deep` 调节器主要是为任何新分配的值递归调用 `observable(newValue)`。
+会依次使用 `deep` 调节器...你可以想象。
 
-This is a very convenient default. Without any additional effort all values assigned to an observable will themselves be made observable too (unless they already are), so no additional
-effort is required to make objects deep observable.
+这是一个非常便利的默认设置。无需额外的工作，分配给 observable 的所有值本身也将转变成 observable(除非它们已经是)，因此不需要额外的工作就可使对象转变成深 observable 。
 
 ## Reference observability
 
