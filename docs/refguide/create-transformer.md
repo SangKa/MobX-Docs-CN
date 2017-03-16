@@ -12,21 +12,21 @@
 结果数据图永远不会失效，它将通过对结果图应用小补丁与源同步。
 这使得它很容易实现强大的模式类似于横向数据加载、map-reduce、使用不可变的数据结构跟踪状态历史等等。
 
-The optional `onCleanup` function can be used to get a notification when a transformation of an object is no longer needed.
-This can be used to dispose resources attached to the result object if needed.
+可选的 `onCleanup` 函数可用于在不再需要对象的转换时获取通知。
+如果需要，可以用于清理附加到结果对象上的资源。
 
-Always use transformations inside a reaction like `@observer` or `autorun`.
-Transformations will, like any other computed value, fall back to lazy evaluation if not observed by something, which sort of defeats their purpose.
+永远在 `@observer` 或 `autorun` 这样的 reaction 中使用转换。
+如同任何其他计算值一样，如果没有被某些东西观察的话，转换将会回退到惰性评估，这也算是一种任务失败吧。
 
-This all might still be a bit vague, so here are two examples that explain this whole idea of transforming one data structure into another by using small, reactive functions:
+这一切可能仍然有点模糊，因此这里用两个示例来解释通过使用小的响应式函数将一个数据结构转换成另一个数据结构的整体思路:
 
-## Tracking mutable state using immutable, shared data structures.
+## 使用不可变的、同享的数据结构来追踪可变状态
 
-This example is taken from the [Reactive2015 conference demo](https://github.com/mobxjs/mobx-reactive2015-demo):
+本示例取自 [Reactive2015 conference demo](https://github.com/mobxjs/mobx-reactive2015-demo):
 
 ```javascript
 /*
-    The store that holds our domain: boxes and arrows
+    store 保存了我们的领域对象: boxes 和 arrows
 */
 const store = observable({
     boxes: [],
