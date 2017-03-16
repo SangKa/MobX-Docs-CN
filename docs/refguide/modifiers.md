@@ -64,8 +64,8 @@ class AuthorStore {
 
 ## Action & Computed
 
-`action`, `action.bound`, `computed` and `computed.struct` can be used as modifiers as well.
-See [`computed`](computed-decorator.md) respectively [`action`](action.md).
+`action`、`action.bound`、`computed` 和 `computed.struct` 同样可以作为调节器使用。
+参见 [`computed`](computed-decorator.md) 和 [`action`](action.md)。
 
 ```javascript
 const taskStore = observable({
@@ -81,8 +81,8 @@ const taskStore = observable({
 
 ## asStructure
 
-MobX 2 had the `asStructure` modifier, which in practice was rarely used, or only used in cases where it is used `reference` / `shallow` is often a better fit (when using immutable data for example).
-Structural comparision for computed properties and reactions is still possible.
+MobX 2 中有 `asStructure` 调节器，它在实践中极少被使用，或者只能在使用 `reference` / `shallow` 更适合(例如使用不可变数据)的情况下使用。
+计算属性和 reaction 的结构比较仍是可能的。
 
 ## Effect of modifiers
 
