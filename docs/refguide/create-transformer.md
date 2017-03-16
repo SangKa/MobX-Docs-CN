@@ -86,17 +86,16 @@ autorunner 触发 `store` 对象的序列化，也就是依次将 boxes 和 arro
 这有个小示例，是对一个响应式文件探测器进行编码，它将在每次更改时更新其表示。
 以这种方式构建的数据图通常反应更快，并且代码更为直接，与使用你自己的代码更新的推导数据图相比。参见一些示例的[性能测试](https://github.com/mobxjs/mobx/blob/3ea1f4af20a51a1cb30be3e4a55ec8f964a8c495/test/perf/transform-perf.js#L4)。
 
-Unlike the previous example, the `transformFolder` will only run once as long as a folder remains visible;
-the `DisplayFolder` objects track the associated `Folder` objects themselves.
+不同于前一个示例的是，`transformFolder` 在文件夹保持可见的情况下只会运行一次。
+`DisplayFolder` 对象追踪 `Folder` 对象本身相关的东西。
 
-In the following example all mutations to the `state` graph will be processed automatically.
-Some examples:
-1. Changing the name of a folder will update its own `path` property and the `path` property of all its descendants.
-2. Collapsing a folder will remove all descendant `DisplayFolders` from the tree.
-3. Expanding a folder will restore them again.
-4. Setting a search filter will remove all nodes that do not match the filter, unless they have a descendant that matches the filter.
-5. Etc.
-
+在下面的示例中， `state` 图的所有变化都会被自动处理。
+一些示例:
+1. 改变文件夹的名称会更新对应的 `path` 属性和其所有后代的 `path` 属性。
+2. 折叠文件夹会将从树中删除所有后代的 `DisplayFolders`。
+3. 展开文件夹将再次恢复。
+4. 设置搜索过滤器将删除不匹配过滤器的所有节点，除非它们有与过滤器匹配的后代。
+5. 等等...
 
 
 ```javascript
