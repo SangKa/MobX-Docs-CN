@@ -14,18 +14,19 @@ var Person = function(firstName, lastName) {
 
 var matthew = new Person("Matthew", "Henry");
 
-// add a observable property to an already observable object
+// 为已存在的 observable 对象添加一个 observable 属性
 extendObservable(matthew, {
 	age: 353
 });
 ```
 
-N.b:  `observable.object(object)` is actually an alias for `extendObservable({}, object)`.
+注意:  `observable.object(object)` 实际上是 `extendObservable({}, object)` 的别名。
 
-Note that the property maps are not always copied literally onto the target, but they are considered property descriptor.
-Most values are copied as-is, but values wrapped in a modifier as treated specially. And so are properties that have a getter.
 
-## Modifiers
+注意，属性映射并不总是复制到目标上，但它们被视为属性描述符。
+大多数值按原样复制，但包装在调节器中的值会作为特殊处理。有 getter 的属性也是如此。
+
+## 调节器
 
 [Modifiers](modifiers.md) can be used to define special behavior for certain properties.
 For example `observable.ref` creates an observable reference which doesn't automatically convert its values into observables, and `computed` introduces a derived property:
