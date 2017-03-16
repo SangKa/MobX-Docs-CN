@@ -1,11 +1,11 @@
 # extendObservable
 
-Quite similar to `Object.assign`, `extendObservable` takes two or more arguments, a `target` object and one or more `properties` maps.
-It adds all key-value pairs from the properties to the `target` as observable properties.
+与 `Object.assign` 十分类似，`extendObservable` 接收两个或者更多的参数，一个是 `target` 对象，一个或多个 `properties` 映射。
+它会把 `properties` 映射中的所有键值对添加到 `target` 对象中作为 observable 属性。
 
 ```javascript
 var Person = function(firstName, lastName) {
-	// initialize observable properties on a new instance
+	// 在一个新实例上初始化 observable 属性
 	extendObservable(this, {
 		firstName: firstName,
 		lastName: lastName
