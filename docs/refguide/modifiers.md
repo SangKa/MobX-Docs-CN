@@ -84,7 +84,7 @@ const taskStore = observable({
 MobX 2 中有 `asStructure` 调节器，它在实践中极少被使用，或者只能在使用 `reference` / `shallow` 更适合(例如使用不可变数据)的情况下使用。
 计算属性和 reaction 的结构比较仍是可能的。
 
-## Effect of modifiers
+## 调节器的效果
 
 ```javascript
 class Store {
@@ -103,11 +103,11 @@ store.collection2 = todos;
 store.collection3 = todos;
 ```
 
-After these assignments:
+完成这些分配后:
 
-1. `collection1 === todos` is false; the contents of todos will be cloned into a new observable array
-2. `collection1[0] === todos[0]` is false; the first todo was a plain object and hence it was cloned into an observable object which is stored in the array
-3. `collection2 === todos` is true; the `todos` are kept as is, and are non-observable. Only the `collection2` property itself is observable.
-4. `collection2[0] === todos[0]` is true; because of 3.
-5. `collection3 === todos` is false; collection 3 is a new observable array
-6. `collection3[0] === todos[0]` is true; the value of `collection3` was only shallowly turned into an observable, but the contents of the array is left as is.
+1. `collection1 === todos` 是 false; todos 的内容会被克隆至一个新的 observable 数组。
+2. `collection1[0] === todos[0]` 是 false; 第一个 todo 是个普通对象，因此它被克隆至一个存储在数组中的 observable 对象。
+3. `collection2 === todos` 是 true; `todos` 保持不变， 而且是非 observable。 只有 `collection2` 属性本身是 observable 。
+4. `collection2[0] === todos[0]` 是 true; 理由同 3。
+5. `collection3 === todos` 是 false; collection3 是一个新的 observable 数组。
+6. `collection3[0] === todos[0]` 是 true; `collection3` 的值只是浅的转变成 observable，但数组的内容保持不变。
