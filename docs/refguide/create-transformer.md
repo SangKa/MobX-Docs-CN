@@ -35,7 +35,7 @@ const store = observable({
 });
 
 /**
-    Serialize store to json upon each change and push it onto the states list
+    每次更改会把 store 序列化成 json 并将其添加到状态列表中
 */
 const states = [];
 
