@@ -2,15 +2,15 @@
 
 `createTransformer<A, B>(transformation: (value: A) => B, onCleanup?: (result: B, value?: A) => void): (value: A) => B`
 
-`createTransformer` turns a function (that should transform one value into another value) into a reactive and memoizing function.
-In other words, if the `transformation` function computes B given a specific A, the same B will be returned for all other future invocations of the transformation with the same A.
-However, if A changes, the transformation will be re-applied so that B is updated accordingly.
-And last but not least, if nobody is using the transformation of a specific A anymore, its entry will be removed from the memoization table.
+`createTransformer` 将一个函数(此函数把一个值转换为另一个值)转换为响应式且有记忆功能的函数。
+换句话说，如果给 `transformation` 函数一个具体的A值，那么它将计算出B值，只要保持A值不变，那么今后任何时候的转换调用返回的B值也是不变的。
+但是，如果A值改变了，将会重新应用转换，以便相应地更新B值。
+最后但同样重要的是，如果没有人在使用具体A值的转换，则此条转换将从记忆表中移除。
 
-With `createTransformer` it is very easy to transform a complete data graph into another data graph.
-Transformation functions can be composed so that you can build a tree using lots of small transformations.
-The resulting data graph will never be stale, it will be kept in sync with the source by applying small patches to the result graph.
-This makes it very easy to achieve powerful patterns similar to sideways data loading, map-reduce, tracking state history using immutable data structures etc.
+使用 `createTransformer` 可以很容易的将一个完整数据图转换成另外一个数据图。
+转换函数可以组合，这样你可以使用很多小的转换函数来构建一颗树。
+结果数据图永远不会失效，它将通过对结果图应用小补丁与源同步。
+这使得它很容易实现强大的模式类似于横向数据加载、map-reduce、使用不可变的数据结构跟踪状态历史等等。
 
 The optional `onCleanup` function can be used to get a notification when a transformation of an object is no longer needed.
 This can be used to dispose resources attached to the result object if needed.
