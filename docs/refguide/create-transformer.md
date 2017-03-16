@@ -58,23 +58,21 @@ const serializeArrow = createTransformer(arrow => ({
 }));
 ```
 
-In this example the state is serialized by composing three different transformation functions.
-The autorunner triggers the serialization of the `store` object, which in turn serializes all boxes and arrows.
-Let's take closer look at the life of an imaginary example box#3.
+在本示例中，state 是通过组合三个不同的转换函数序列化过的。
+autorunner 触发 `store` 对象的序列化，也就是依次将 boxes 和 arrows 序列化。
+我们来仔细看下一个假想的示例 box#3 的生命周期。
 
-1. The first time box#3 is passed by `map` to `serializeBox`,
-the serializeBox transformation is executed and an entry containing box#3 and its serialized representation is added to the internal memoization table of `serializeBox`.
-2. Imagine that another box is added to the `store.boxes` list.
-This would cause the `serializeState` function to re-compute, resulting in a complete remapping of all the boxes.
-However, all the invocations of `serializeBox` will now return their old values from the memoization tables since their transformation functions didn't (need to) run again.
-3. Secondly, if somebody changes a property of box#3 this will cause the application of the `serializeBox` to box#3 to re-compute, just like any other reactive function in MobX.
-Since the transformation will now produce a new Json object based on box#3, all observers of that specific transformation will be forced to run again as well.
-That's the `serializeState` transformation in this case.
-`serializeState` will now produce a new value in turn and map all the boxes again. But except for box#3, all other boxes will be returned from the memoization table.
-4. Finally, if box#3 is removed from `store.boxes`, `serializeState` will compute again.
-But since it will no longer be using the application of `serializeBox` to box#3,
-that reactive function will go back to non-reactive mode.
-This signals the memoization table that the entry can be removed so that it is ready for GC.
+1. 首先 box#3 是通过 `map` 传递给 `serializeBox` 的，执行 serializeBox 转换然后包含 box#3 的条目及其序列化表示会被添加到 `serializeBox` 的内部记忆表中。
+2. 想象一下，另一个 box 被添加到 `store.boxes` 列表中。
+这会导致 `serializeState` 函数再次计算，结果就是所有 boxes 的完全重新映射。
+然而，所有的 `serializeBox` 的调用都会返回它们保存在内部记忆表中的旧值，这样它们的转换函数不会(需要)再次运行。
+3. 接下来，如果有人改变了 box#3 的属性，这会导致 box#3 的 `serializeBox` 程序重新计算，就像 MobX 中的其他响应式函数一样。
+因为转换会产生一个基于 box#3 的新的 json 对象，对应的转换中的所有观察者都被强制重新运行。
+在这个示例中对应的是 `serializeState` 转换。
+`serializeState` 会依次产生一个新的值并再次映射所有的 boxex 。但除了 box#3，其他所有的 boxes 都是从内部记忆表中直接返回的。
+4. 最后，如果 box#3 从 `store.boxes` 移除了，那么 `serializeState` 会重新计算。
+但是由于它不再使用 `serializeBox` 的程序操作 box#3，响应式函数会回退成非响应模式。
+然后通知内部记忆表，该条目可以被删除，以便它准备好 GC。
 
 So effectively we have achieved state tracking using immutable, shared datas structures here.
 All boxes and arrows are mapped and reduced into single state tree.
