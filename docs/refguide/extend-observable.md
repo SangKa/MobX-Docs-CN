@@ -46,13 +46,13 @@ var Person = function(firstName, lastName) {
 
 所有可用调节器的概览可以在 [调节器](modifiers.md) 章节中找到。
 
-## Computed properties
+## 计算属性
 
-Computed properties can also be written by using a *getter* function. Optionally accompanied with a setter:
+计算属性还可以通过使用 *getter* 函数来写。可选地伴随一个 setter:
 
 ```javascript
 var Person = function(firstName, lastName) {
-	// initialize observable properties on a new instance
+	// 在一个新实例上初始化 observable 属性
 	extendObservable(this, {
 		firstName: firstName,
 		lastName: lastName,
@@ -68,10 +68,10 @@ var Person = function(firstName, lastName) {
 }
 ```
 
-_Note: getter / setter is valid ES5 syntax and doesn't require a transpiler!_
+_注意: getter / setter 是合法的 ES5 语法，并不需要编译器！_
 
 ## `extendShallowObservable`
 
-`extendShallowObservable` is like `extendObservable`, except that by default the properties will by default *not* automatically convert their values into observables.
-So it is similar to calling `extendObservable` with `observable.ref` modifier for each property.
-Note that `observable.deep` can be used to get the automatic conversion back for a specific property.
+`extendShallowObservable` 很像 `extendObservable`，除了默认情况下属性**不会**自动地将值转变为 observable 。
+所以这和调用 `extendObservable` 并且每个属性都使用 `observable.ref` 很类似。
+注意，`observable.deep` 可以用来让特定属性进行自动转换。
