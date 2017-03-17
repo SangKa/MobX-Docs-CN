@@ -50,12 +50,12 @@ const disposer = intercept(theme, "backgroundColor", change => {
 ```
 
 ## Observe
-Usage: `observe(target, propertyName?, listener, invokeImmediately?)`
+用法: `observe(target, propertyName?, listener, invokeImmediately?)`
 
-* `target`: the observable to observe
-* `propertyName`: optional parameter to specify a specific property to observe. Note that `observe(user.name, listener)` is fundamentally different from `observe(user, "name", listener)`. The first observes the _current_ `value` inside `user.name` (which might not be an observable at all), the latter observes the `name` _property_ of `user`.
-* `listener`: callback that will be invoked for *each* change that is made to the observable. Receives a single change object describing the mutation, except for boxed observables, which will invoke the ` listener` two parameters: `newValue, oldValue`.
-* `invokeImmediately`: by default false. Set it to true if you want `observe` to invoke `listener` directly with the state of the observable (instead of waiting for the first change). Not supported (yet) by all kinds of observables.
+* `target`: 观察的 observable
+* `propertyName`: 可选参数，用来指定某个属性进行观察。注意，`observe(user.name, listener)` 和 `observe(user, "name", listener)` 根本是完全不同的。前者观察 `user.name`(或许根本不是一个 observable) 里面的**当前值**，而后者观察 `user` 的 `name` 属性。
+* `listener`: 在**每次**变化作用于 observable 后调用的回调函数。接收一个用来描述变化的对象，除了装箱的 observable，它调用 `listener` 有两个参数: `newValue、oldValue`。
+* `invokeImmediately`: 默认是 false。如果你想 `observe` 直接使用 observable 的状态(而不是等待第一次变化)调用 `listener` 的话，把它设置为 true。不是所有类型的 observable 都支持。
 
 The function returns a `disposer` function that can be used to cancel the observer.
 Note that `transaction` does not affect the working of the `observe` method(s).
