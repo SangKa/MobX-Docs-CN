@@ -11,12 +11,12 @@
 * `propertyName`: 可选参数，用来指定某个属性进行拦截。注意，`intercept(user.name, interceptor)` 和 `intercept(user, "name", interceptor)` 根本是完全不同的。前者尝试给 `user.name`(或许根本不是一个 observable) 里面的**当前值**添加一个拦截器，而后者拦截 `user` 的 `name` 属性的变化。
 * `interceptor`: 在**每次**变化作用于 observable 后调用的回调函数。接收一个用来描述变化的对象。
 
-The `intercept` should tell MobX what needs to happen with the current change.
-Therefore it should do one of the following things:
-1. Return the received `change` object as-is from the function, in wich case the mutation will be applied.
-2. Modify the `change` object and return it, for example to normalize the data. Not all fields are modifiable, see below.
-3. Return `null`, this indicates that the change can be ignored and shouldn't be applied. This is a powerful concept to make your objects for example temporarily immutable.
-4. Throw an exception, for example if some invariant isn't met.
+`intercept` 应该告诉 MobX 对于当前变化需要做些什么。
+因此，它应该做下列事情中的某个:
+1. 把从函数中接收到的 `change` 对象原样返回，这样变化会被应用。
+2. 修改 `change` 对象并将其返回，例如数据标准化。但不是所有字段都是可以修改的，参见下面。
+3. 返回 `null`，这表示此次变化可以被忽略而且不会应用。这是一个强大的概念，例如可以使你的对象临时性的不可改变。
+4. 抛出异常，例如如果一些不变量未被满足。
 
 The function returns a `disposer` function that can be used to cancel the interceptor when invoked.
 It is possible to register multiple interceptors to the same observable.
