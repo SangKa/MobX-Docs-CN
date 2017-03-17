@@ -18,12 +18,12 @@
 3. 返回 `null`，这表示此次变化可以被忽略而且不会应用。这是一个强大的概念，例如可以使你的对象临时性的不可改变。
 4. 抛出异常，例如如果一些不变量未被满足。
 
-The function returns a `disposer` function that can be used to cancel the interceptor when invoked.
-It is possible to register multiple interceptors to the same observable.
-They will be chained in registration order.
-If one of the interceptors returns `null` or throw an exception, the other interceptors won't be evaluated anymore.
-It is also possible to register an interceptor both on a parent object and on an individual property.
-In that case the parent object interceptors are run before the property interceptors.
+该函数返回一个 `disposer` 函数，当调用时可以取消拦截器。
+可以为同一个 observable 注册多个拦截器。
+它们会按照注册的顺序串联起来。
+如果一个拦截器返回 `null` 或抛出异常，其它的拦截器不会再执行。
+还可以注册一个拦截器同时作用于父对象和某个属性。
+在这种情况下，父对象的拦截器在属性拦截器之前运行。
 
 ```javascript
 const theme = observable({
@@ -32,7 +32,7 @@ const theme = observable({
 
 const disposer = intercept(theme, "backgroundColor", change => {
   if (!change.newValue) {
-    // ignore attempts to unset the background color
+    // 忽略取消设置背景颜色
     return null;
   }
   if (change.newValue.length === 6) {
