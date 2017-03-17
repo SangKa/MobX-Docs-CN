@@ -36,15 +36,15 @@ const disposer = intercept(theme, "backgroundColor", change => {
     return null;
   }
   if (change.newValue.length === 6) {
-    // correct missing '#' prefix
+    // 补全缺少的 '#' 前缀
     change.newValue = '#' + change.newValue;
     return change;
   }
   if (change.newValue.length === 7) {
-      // this must be a properly formatted color code!
+      // 这一定是格式正确的颜色代码！
       return change;
   }
-  if (change.newValue.length > 10) disposer(); // stop intercepting future changes
+  if (change.newValue.length > 10) disposer(); // 不再拦截今后的任何变化
   throw new Error("This doesn't like a color at all: " + change.newValue);
 })
 ```
