@@ -1,15 +1,15 @@
 # Intercept & Observe
 
-`observe` and `intercept` can be used to monitor the changes of a single observable (they ***don't*** track nested observables).
-`intercept` can be used to detect and modify mutations before they are applied to the observable.
-`observe` allows you to intercept changes after they have been made.
+`observe` 和 `intercept` 可以用来监测单个 observable(它们**不**追踪嵌套的 observable) 的变化。
+`intercept` 可以在变化作用于 observable 之前监测和修改变化。
+`observe` 允许你在 observable 变化之后拦截改变。
 
 ## Intercept
-Usage: `intercept(target, propertyName?, interceptor)`
+用法: `intercept(target, propertyName?, interceptor)`
 
-* `target`: the observable to guard
-* `propertyName`: optional parameter to specify a specific property to intercept. Note that `intercept(user.name, interceptor)` is fundamentally different from `intercept(user, "name", interceptor)`. The first tries to add an interceptor to the _current_ `value` inside `user.name` (which might not be an observable at all), the latter intercepts changes to the `name` _property_ of `user`.
-* `interceptor`: callback that will be invoked for *each* change that is made to the observable. Receives a single change object describing the mutation.
+* `target`: 监测的 observable
+* `propertyName`: 可选参数，用来指定某个属性进行拦截。注意，`intercept(user.name, interceptor)` 和 `intercept(user, "name", interceptor)` 根本是完全不同的。前者尝试给 `user.name`(或许根本不是一个 observable) 里面的**当前值**添加一个拦截器，而后者拦截 `user` 的 `name` 属性的变化。
+* `interceptor`: 在**每次**变化作用于 observable 后调用的回调函数。接收一个用来描述变化的对象。
 
 The `intercept` should tell MobX what needs to happen with the current change.
 Therefore it should do one of the following things:
