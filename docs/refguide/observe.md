@@ -57,14 +57,14 @@ const disposer = intercept(theme, "backgroundColor", change => {
 * `listener`: 在**每次**变化作用于 observable 后调用的回调函数。接收一个用来描述变化的对象，除了装箱的 observable，它调用 `listener` 有两个参数: `newValue、oldValue`。
 * `invokeImmediately`: 默认是 false。如果你想 `observe` 直接使用 observable 的状态(而不是等待第一次变化)调用 `listener` 的话，把它设置为 true。不是所有类型的 observable 都支持。
 
-The function returns a `disposer` function that can be used to cancel the observer.
-Note that `transaction` does not affect the working of the `observe` method(s).
-This means that even inside a transaction `observe` will fire its listeners for each mutation.
-Hence `autorun` is usually a more powerful and declarative alternative to `observe`.
+该函数返回一个 `disposer` 函数，当调用时可以取消观察者。
+注意，`transaction` 不影响 `observe` 方法工作。
+意味着即使在一个 `transaction` 中，`observe` 也会触发每个变化的监听器。
+因此，`autorun` 通常是一个更强大的和更具声明性的 `observe` 替代品。
 
-_`observe` reacts to *mutations*, when they are being made, while reactions like `autorun` or `reaction` react to *new values* when they become available. In many cases the latter is sufficient_
+_当 `observe` 被创建出来后就会对**变化**作出反应，而像 `autorun` 或 `reaction` 这样的反应当，它们变得可用时，它们会对**新值**做出反应。在大多数情况下，后者就足够了。_
 
-Example:
+示例:
 
 ```javascript
 import {observable, observe} from 'mobx';
