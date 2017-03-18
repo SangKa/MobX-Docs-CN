@@ -97,20 +97,20 @@ const disposer2 = observe(person, "lastName", (change) => {
 * `object`: 触发事件的 observable
 * `type`: 当前事件类型(字符串)
 
-These are the additional fields that are available per type:
+对于每种类型可用的附加字段:
 
-| observable type | event type | property | description | available during intercept | can be modified by intercept |
+| observable 类型 | 事件类型 | 属性 | 描述 | intercept 期间能否获得 | 能否被 intercept 修改 |
 | -- | --- | ---| --| --| -- |
-| Object | add | name | name of the property being added | √ | |
-| | | newValue | the new value being assigned | √ | √ |
-| | update\* | name | name of the property being updated | √ |  |
-| | | newValue | the new value being assigned | √ | √ |
-| | | oldValue | the value that is replaced |  |  |
-| Array | splice | index | starting index of the splice. Splices are also fired by `push`, `unshift`, `replace` etc. | √ | |
-| | | removedCount | amount of items being removed | √ | √ |
-| | | added | array with items being added | √ | √ |
-| | | removed | array with items that where removed | | |
-| | | addCount | amount of items that where added | | |
+| 对象 | add | name | 添加的属性名称 | √ | |
+| | | newValue | 分配的新值 | √ | √ |
+| | update\* | name | 更新的属性名称 | √ |  |
+| | | newValue | 分配的新值 | √ | √ |
+| | | oldValue | 被替换的值 |  |  |
+| 数组 | splice | index | splice 的起始索引。 `push`、 `unshift`、 `replace` 等方法可以触发 splice。 | √ | |
+| | | removedCount | 删除项的数量 | √ | √ |
+| | | added | 添加到数组中的项 | √ | √ |
+| | | removed | 数组中移除的项 | | |
+| | | addCount | 添加项的数量 | | |
 | | update | index | index of the single entry that is being updated | √ | |
 | | | newValue | the newValue that is / will be assigned | √ | √ |
 | | | oldValue | the old value that was replaced | | |
