@@ -79,12 +79,12 @@ const disposer = observe(person, (change) => {
 });
 
 person.firstName =  "Martin";
-// Prints: 'update firstName from Maarten to Martin'
+// 输出: 'update firstName from Maarten to Martin'
 
 disposer();
-// Ignore any future updates
+// 忽略任何未来的变化
 
-// observe a single field
+// 观察单个字段
 const disposer2 = observe(person, "lastName", (change) => {
 	console.log("LastName changed to ", change.newValue);
 });
