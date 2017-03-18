@@ -111,18 +111,18 @@ const disposer2 = observe(person, "lastName", (change) => {
 | | | added | 添加到数组中的项 | √ | √ |
 | | | removed | 数组中移除的项 | | |
 | | | addCount | 添加项的数量 | | |
-| | update | index | index of the single entry that is being updated | √ | |
-| | | newValue | the newValue that is / will be assigned | √ | √ |
-| | | oldValue | the old value that was replaced | | |
-| Map | add | name | the name of the entry that was added | √ | |
-| | | newValue | the new value that is being assigned | √ | √ |
-| | update | name | the name of the entry that is being updated | √ | |
-| | | newValue | the new value that is being assigned | √ | √ |
-| | | oldValue | the value that has been replaced | | |
-| | delete | name | the name of the entry that is being removed | √ | |
-| | | oldValue | the value of the entry that was removed | | |
-| Boxed & computed observables | create | newValue | the value that was assigned during creation. Only available as `spy` event for boxed observables | | |
-| | update | newValue | the new value being assigned | √ | √ |
-| | | oldValue | the previous value of the observable | | |
+| | update | index | 更新的单个项的索引 | √ | |
+| | | newValue | (将)分配的新值 | √ | √ |
+| | | oldValue | 被替换的值 | | |
+| 映射 | add | name | 添加项的名称 | √ | |
+| | | newValue | 分配的新值 | √ | √ |
+| | update | name | 更新项的名称 | √ | |
+| | | newValue | 分配的新值 | √ | √ |
+| | | oldValue | 被替换的值 | | |
+| | delete | name | 删除项的名称 | √ | |
+| | | oldValue | 删除项的值 | | |
+| Boxed & computed observables | create | newValue | 创建期间分配的新值。只有 boxed observables 的 `spy` 事件可获得 | | |
+| | update | newValue | 分配的新值 | √ | √ |
+| | | oldValue | observable 的前一个值 | | |
 
-_\* Note that object `update` events won't fire for updated computated values (as those aren't mutations). But it is possible to observe them by explicitly subscribing to the specific property using `observe(object, 'computedPropertyName', listener)`._
+_\* 注意，对象的 `update` 事件不会为更新的计算值(因为它们没有变化)触发。但是可以通过使用 `observe(object, 'computedPropertyName', listener)` 明确地订阅特定属性来观察它们。_
