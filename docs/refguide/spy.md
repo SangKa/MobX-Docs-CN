@@ -1,11 +1,11 @@
 # Spy
 
-Usage: `spy(listener)`.
-Registers a global spy listener that listens to all events that happen in MobX.
-It is similar to attaching an `observe` listener to *all* observables at once, but also notifies about running (trans/re)actions and computations.
-Used for example by the `mobx-react-devtools`.
+用法: `spy(listener)`.
+注册一个全局间谍监听器，用来监听所有 MobX 中的事件。
+它类似于同时在**所有的** observable 上附加了一个 `observe` 监听器，而且还通知关于运行中的事务/反应和计算。
+举例来说，`mobx-react-devtools` 中使用了 `spy`。
 
-Example usage of spying all actions:
+侦察所有动作的示例用法:
 ```
 spy((event) => {
     if (event.type === 'action') {
@@ -14,24 +14,24 @@ spy((event) => {
 })
 ```
 
-Spy listeners always receive one object, which usually has at least a `type` field. The following events are emitted by default by spy.
+间谍监听器永远接收一个对象，通常至少有一个 `type` 字段。默认情况下，spy 会发出以下事件。
 
-| event | fields | nested |
+| 事件 | 字段 | 嵌套的 |
 | --- | --- |--- |
-| action | name, target (scope), arguments, fn (source function of the action | yes |
-| transaction | name, target (scope) | yes |
-| scheduled-reaction | object (Reaction instance) | no |
-| reaction | object (Reaction instance), fn (source of the reaction) | yes
-| compute | object (ComputedValue instance), target (scope), fn (source) | no
-| error | message | no |
-| update (array) | object (the array), index, newValue, oldValue | yes
-| update (map) | object (observable map instance), name, newValue, oldValue | yes
-| update (object) | object (instance), name, newValue, oldValue | yes
-| splice (array) | object (the array), index, added, removed, addedCount, removedCount | yes
-| add (map) | object, name, newValue | yes
-| add (object) | object, name, newValue | yes
-| delete (map) | object, name, oldValue | yes
-| create (boxed observable) | object (ObservableValue instance), newValue | yes |
+| action | name, target (作用域), arguments, fn (action 的原始函数 | 是 |
+| transaction | name, target (作用域) | 是 |
+| scheduled-reaction | object (Reaction 实例) | 否 |
+| reaction | object (Reaction instance), fn (source of the reaction) | 是
+| compute | object (ComputedValue instance), target (scope), fn (source) | 否
+| error | message | 否 |
+| update (array) | object (the array), index, newValue, oldValue | 是
+| update (map) | object (observable map instance), name, newValue, oldValue | 是
+| update (object) | object (instance), name, newValue, oldValue | 是
+| splice (array) | object (the array), index, added, removed, addedCount, removedCount | 是
+| add (map) | object, name, newValue | 是
+| add (object) | object, name, newValue | 是
+| delete (map) | object, name, oldValue | 是
+| create (boxed observable) | object (ObservableValue instance), newValue | 是 |
 
 Note that there are events with the signature `{ spyReportEnd: true, time? }`.
 These events might not have a `type` field, but they are part of an earlier fired event that had `spyReportStart: true`.
