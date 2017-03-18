@@ -21,23 +21,23 @@ spy((event) => {
 | action | name, target (作用域), arguments, fn (action 的原始函数 | 是 |
 | transaction | name, target (作用域) | 是 |
 | scheduled-reaction | object (Reaction 实例) | 否 |
-| reaction | object (Reaction instance), fn (source of the reaction) | 是
-| compute | object (ComputedValue instance), target (scope), fn (source) | 否
+| reaction | object (Reaction 实例), fn (reaction 的原始函数) | 是
+| compute | object (ComputedValue 实例), target (作用域), fn (原始函数) | 否
 | error | message | 否 |
-| update (array) | object (the array), index, newValue, oldValue | 是
-| update (map) | object (observable map instance), name, newValue, oldValue | 是
-| update (object) | object (instance), name, newValue, oldValue | 是
-| splice (array) | object (the array), index, added, removed, addedCount, removedCount | 是
-| add (map) | object, name, newValue | 是
-| add (object) | object, name, newValue | 是
-| delete (map) | object, name, oldValue | 是
-| create (boxed observable) | object (ObservableValue instance), newValue | 是 |
+| update (数组) | object (数组), index, newValue, oldValue | 是
+| update (映射) | object (observable map 实例), name, newValue, oldValue | 是
+| update (对象) | object (实例), name, newValue, oldValue | 是
+| splice (数组) | object (数组), index, added, removed, addedCount, removedCount | 是
+| add (映射) | object, name, newValue | 是
+| add (对象) | object, name, newValue | 是
+| delete (映射) | object, name, oldValue | 是
+| create (boxed observable) | object (ObservableValue 实例), newValue | 是 |
 
-Note that there are events with the signature `{ spyReportEnd: true, time? }`.
-These events might not have a `type` field, but they are part of an earlier fired event that had `spyReportStart: true`.
-This event indicates the end of an event and this way groups of events with sub-events are created.
-This event might report the total execution time as well.
+注意签名是 `{ spyReportEnd: true, time? }` 的事件。
+这些事件可能没有 `type` 字段，但是它们是具有 `spyReportStart：true` 的早期触发事件的一部分。
+该事件指示事件的结束，并且以这种方式创建具有子事件的事件组。
+此事件同样也可以报告总执行时间。
 
-The spy events for observable values are identical to the events passed to `observe`. See [intercept & observe](observe.md) for an extensive overview.
+Observable 值的间谍事件与传递给 `observe` 的事件相同。想了解更多，请参见 [intercept & observe](observe.md)。
 
-It is possible to emit your own spy events as well. See `extras.spyReport`, `extras.spyReportStart` and `extras.spyReportEnd`
+也可以发出你自己的间谍事件。参见 `extras.spyReport`、`extras.spyReportStart` 和 `extras.spyReportEnd` 。
