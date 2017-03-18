@@ -25,12 +25,12 @@ Reaction 接收第三个参数，它是一个参数对象，有如下可选的�
 * `compareStructural`: 默认值是 `false`。如果是 `true` 的话，**数据** 函数的返回值会在结构上与前一个返回值进行比较，并且**效果**函数只有在输出结构改变时才会被调用。
 * `name`: 字符串，用于在例如像 [`spy`](spy.md) 这样事件中用作此 reaction 的名称。
 
-## Example
+## 示例
 
-In the following example both `reaction1`, `reaction2` and `autorun1` will react to the addition, removal or replacement of todo's in the `todos` array.
-But only `reaction2` and `autorun` will react to the change of a `title` in one of the todo items, because `title` is used in the data expression of reaction 2, while it isn't in the data expression of reaction 1.
-`autorun` tracks the complete side effect, hence it will always trigger correctly, but is also more suspectible to accidentally accessing unrelevant data.
-See also [what will MobX React to?](../best/react).
+在下面的示例中，`reaction1`、`reaction2` 和 `autorun1` 都会对 `todos` 数组中的 todo 的添加、删除或替换作出反应。
+但只有 `reaction2` 和 `autorun` 会对某个 todo 的 `title` 变化作出反应，因为在 `reaction2` 的数据表达式中使用了 `title`，而 `reaction1` 的数据表达式没有使用。
+`autorun` 追踪完整的副作用，因此它将始终正确触发，但也更容易意外地访问相关数据。
+还可参见 [MobX 会对什么作出反应?](../best/react).
 
 ```javascript
 const todos = observable([
@@ -44,7 +44,7 @@ const todos = observable([
     }
 ]);
 
-// wrong use of reaction: reacts to length changes, but not to title changes!
+// reaction 的错误用法: 对 length 的变化作出反应, 而不是 title 的变化!
 const reaction1 = reaction(
     () => todos.length,
     length => console.log("reaction 1:", todos.map(todo => todo.title).join(", "))
