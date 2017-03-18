@@ -89,13 +89,13 @@ const disposer2 = observe(person, "lastName", (change) => {
 	console.log("LastName changed to ", change.newValue);
 });
 ```
-Related blog: [Object.observe is dead. Long live mobx.observe](https://medium.com/@mweststrate/object-observe-is-dead-long-live-mobservable-observe-ad96930140c5)
+相关博客: [Object.observe 已死。mobx.observe 永生](https://medium.com/@mweststrate/object-observe-is-dead-long-live-mobservable-observe-ad96930140c5)
 
-## Event overview
+## 事件概览
 
-The callbacks of `intercept` and `observe` will receive an event object which has at least the following properties:
-* `object`: the observable triggering the event
-* `type`: (string) the type of the current event
+`intercept` 和 `observe` 的回调函数接收一个事件对象，它至少有如下属性:
+* `object`: 触发事件的 observable
+* `type`: 当前事件类型(字符串)
 
 These are the additional fields that are available per type:
 
