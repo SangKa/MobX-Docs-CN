@@ -50,27 +50,27 @@ const reaction1 = reaction(
     length => console.log("reaction 1:", todos.map(todo => todo.title).join(", "))
 );
 
-// correct use of reaction: reacts to length and title changes
+// reaction 的正确用法: 对 length 和 title 的变化作出反应
 const reaction2 = reaction(
     () => todos.map(todo => todo.title),
     titles => console.log("reaction 2:", titles.join(", "))
 );
 
-// autorun reacts to just everything that is used in its function
+// autorun 对它函数中使用的任何东西作出反应
 const autorun1 = autorun(
     () => console.log("autorun 1:", todos.map(todo => todo.title).join(", "))
 );
 
 todos.push({ title: "explain reactions", done: false });
-// prints:
+// 输出:
 // reaction 1: Make coffee, find biscuit, explain reactions
 // reaction 2: Make coffee, find biscuit, explain reactions
 // autorun 1: Make coffee, find biscuit, explain reactions
 
 todos[0].title = "Make tea"
-// prints:
+// 输出:
 // reaction 2: Make tea, find biscuit, explain reactions
 // autorun 1: Make tea, find biscuit, explain reactions
 ```
 
-Reaction is roughly speaking sugar for: `computed(expression).observe(action(sideEffect))` or `autorun(() => action(sideEffect)(expression)`
+粗略地讲，reaction 是 `computed(expression).observe(action(sideEffect))` 或 `autorun(() => action(sideEffect)(expression)` 的语法糖。
