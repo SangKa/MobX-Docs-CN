@@ -1,0 +1,1152 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>intercept & observe · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="reaction.html" />
+    
+    
+    <link rel="prev" href="modifiers.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    MobX 介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../intro/overview.html">
+            
+                <a href="../intro/overview.html">
+            
+                    
+                    MobX 要点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../intro/concepts.html">
+            
+                <a href="../intro/concepts.html">
+            
+                    
+                    概念与原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    API概览
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="observable.html">
+            
+                <a href="observable.html">
+            
+                    
+                    observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="observable-decorator.html">
+            
+                <a href="observable-decorator.html">
+            
+                    
+                    @observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="computed-decorator.html">
+            
+                <a href="computed-decorator.html">
+            
+                    
+                    (@)computed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="autorun.html">
+            
+                <a href="autorun.html">
+            
+                    
+                    autorun
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="observer-component.html">
+            
+                <a href="observer-component.html">
+            
+                    
+                    (@)observer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="action.html">
+            
+                <a href="action.html">
+            
+                    
+                    action
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Observable类型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="object.html">
+            
+                <a href="object.html">
+            
+                    
+                    objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="array.html">
+            
+                <a href="array.html">
+            
+                    
+                    arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="map.html">
+            
+                <a href="map.html">
+            
+                    
+                    maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="boxed.html">
+            
+                <a href="boxed.html">
+            
+                    
+                    boxed values
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../best/react.html">
+            
+                <a href="../best/react.html">
+            
+                    
+                    理解 MobX 对什么有反应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../best/decorators.html">
+            
+                <a href="../best/decorators.html">
+            
+                    
+                    如何(不)使用装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    资源
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../faq/blogs.html">
+            
+                <a href="../faq/blogs.html">
+            
+                    
+                    教程、视频和博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../faq/related.html">
+            
+                <a href="../faq/related.html">
+            
+                    
+                    相关项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../faq/examples.html">
+            
+                <a href="../faq/examples.html">
+            
+                    
+                    案例项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../faq/boilerplates.html">
+            
+                <a href="../faq/boilerplates.html">
+            
+                    
+                    样板文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../faq/faq.html">
+            
+                <a href="../faq/faq.html">
+            
+                    
+                    常见问题解答
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    贴士与技巧
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../best/pitfalls.html">
+            
+                <a href="../best/pitfalls.html">
+            
+                    
+                    常见陷阱与最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../best/store.html">
+            
+                <a href="../best/store.html">
+            
+                    
+                    定义数据存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../best/actions.html">
+            
+                <a href="../best/actions.html">
+            
+                    
+                    编写(异步) actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../best/react-performance.html">
+            
+                <a href="../best/react-performance.html">
+            
+                    
+                    优化 React 组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../best/devtools.html">
+            
+                <a href="../best/devtools.html">
+            
+                    
+                    开发工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../best/syntax.html">
+            
+                <a href="../best/syntax.html">
+            
+                    
+                    ES5 / ES6 / TypeScript 语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../best/stateless-HMR.html">
+            
+                <a href="../best/stateless-HMR.html">
+            
+                    
+                    无状态组件和热加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    实用函数
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="autorun-async.html">
+            
+                <a href="autorun-async.html">
+            
+                    
+                    autorunAsync
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="extending.html">
+            
+                <a href="extending.html">
+            
+                    
+                    Atom & Reaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="create-transformer.html">
+            
+                <a href="create-transformer.html">
+            
+                    
+                    createTransformer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="expr.html">
+            
+                <a href="expr.html">
+            
+                    
+                    expr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="extend-observable.html">
+            
+                <a href="extend-observable.html">
+            
+                    
+                    extendObservable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="is-observable.html">
+            
+                <a href="is-observable.html">
+            
+                    
+                    isObservable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="modifiers.html">
+            
+                <a href="modifiers.html">
+            
+                    
+                    modifiers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.8" data-path="observe.html">
+            
+                <a href="observe.html">
+            
+                    
+                    intercept & observe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="reaction.html">
+            
+                <a href="reaction.html">
+            
+                    
+                    reaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="spy.html">
+            
+                <a href="spy.html">
+            
+                    
+                    spy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="tojson.html">
+            
+                <a href="tojson.html">
+            
+                    
+                    toJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.12" data-path="transaction.html">
+            
+                <a href="transaction.html">
+            
+                    
+                    transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13" data-path="untracked.html">
+            
+                <a href="untracked.html">
+            
+                    
+                    untracked
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14" data-path="when.html">
+            
+                <a href="when.html">
+            
+                    
+                    when
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../donating.html">
+            
+                <a href="../donating.html">
+            
+                    
+                    捐赠
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >intercept & observe</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="intercept--observe">Intercept &amp; Observe</h1>
+<p><code>observe</code> &#x548C; <code>intercept</code> &#x53EF;&#x4EE5;&#x7528;&#x6765;&#x76D1;&#x6D4B;&#x5355;&#x4E2A; observable(&#x5B83;&#x4EEC;<strong>&#x4E0D;</strong>&#x8FFD;&#x8E2A;&#x5D4C;&#x5957;&#x7684; observable) &#x7684;&#x53D8;&#x5316;&#x3002;
+<code>intercept</code> &#x53EF;&#x4EE5;&#x5728;&#x53D8;&#x5316;&#x4F5C;&#x7528;&#x4E8E; observable &#x4E4B;&#x524D;&#x76D1;&#x6D4B;&#x548C;&#x4FEE;&#x6539;&#x53D8;&#x5316;&#x3002;
+<code>observe</code> &#x5141;&#x8BB8;&#x4F60;&#x5728; observable &#x53D8;&#x5316;&#x4E4B;&#x540E;&#x62E6;&#x622A;&#x6539;&#x53D8;&#x3002;</p>
+<h2 id="intercept">Intercept</h2>
+<p>&#x7528;&#x6CD5;: <code>intercept(target, propertyName?, interceptor)</code></p>
+<ul>
+<li><code>target</code>: &#x76D1;&#x6D4B;&#x7684; observable</li>
+<li><code>propertyName</code>: &#x53EF;&#x9009;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x62E6;&#x622A;&#x3002;&#x6CE8;&#x610F;&#xFF0C;<code>intercept(user.name, interceptor)</code> &#x548C; <code>intercept(user, &quot;name&quot;, interceptor)</code> &#x6839;&#x672C;&#x662F;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x7684;&#x3002;&#x524D;&#x8005;&#x5C1D;&#x8BD5;&#x7ED9; <code>user.name</code>(&#x6216;&#x8BB8;&#x6839;&#x672C;&#x4E0D;&#x662F;&#x4E00;&#x4E2A; observable) &#x91CC;&#x9762;&#x7684;<strong>&#x5F53;&#x524D;&#x503C;</strong>&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x62E6;&#x622A;&#x5668;&#xFF0C;&#x800C;&#x540E;&#x8005;&#x62E6;&#x622A; <code>user</code> &#x7684; <code>name</code> &#x5C5E;&#x6027;&#x7684;&#x53D8;&#x5316;&#x3002;</li>
+<li><code>interceptor</code>: &#x5728;<strong>&#x6BCF;&#x6B21;</strong>&#x53D8;&#x5316;&#x4F5C;&#x7528;&#x4E8E; observable &#x540E;&#x8C03;&#x7528;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x7528;&#x6765;&#x63CF;&#x8FF0;&#x53D8;&#x5316;&#x7684;&#x5BF9;&#x8C61;&#x3002;</li>
+</ul>
+<p><code>intercept</code> &#x5E94;&#x8BE5;&#x544A;&#x8BC9; MobX &#x5BF9;&#x4E8E;&#x5F53;&#x524D;&#x53D8;&#x5316;&#x9700;&#x8981;&#x505A;&#x4E9B;&#x4EC0;&#x4E48;&#x3002;
+&#x56E0;&#x6B64;&#xFF0C;&#x5B83;&#x5E94;&#x8BE5;&#x505A;&#x4E0B;&#x5217;&#x4E8B;&#x60C5;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;:</p>
+<ol>
+<li>&#x628A;&#x4ECE;&#x51FD;&#x6570;&#x4E2D;&#x63A5;&#x6536;&#x5230;&#x7684; <code>change</code> &#x5BF9;&#x8C61;&#x539F;&#x6837;&#x8FD4;&#x56DE;&#xFF0C;&#x8FD9;&#x6837;&#x53D8;&#x5316;&#x4F1A;&#x88AB;&#x5E94;&#x7528;&#x3002;</li>
+<li>&#x4FEE;&#x6539; <code>change</code> &#x5BF9;&#x8C61;&#x5E76;&#x5C06;&#x5176;&#x8FD4;&#x56DE;&#xFF0C;&#x4F8B;&#x5982;&#x6570;&#x636E;&#x6807;&#x51C6;&#x5316;&#x3002;&#x4F46;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#x90FD;&#x662F;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x7684;&#xFF0C;&#x53C2;&#x89C1;&#x4E0B;&#x9762;&#x3002;</li>
+<li>&#x8FD4;&#x56DE; <code>null</code>&#xFF0C;&#x8FD9;&#x8868;&#x793A;&#x6B64;&#x6B21;&#x53D8;&#x5316;&#x53EF;&#x4EE5;&#x88AB;&#x5FFD;&#x7565;&#x800C;&#x4E14;&#x4E0D;&#x4F1A;&#x5E94;&#x7528;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5F3A;&#x5927;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x4F8B;&#x5982;&#x53EF;&#x4EE5;&#x4F7F;&#x4F60;&#x7684;&#x5BF9;&#x8C61;&#x4E34;&#x65F6;&#x6027;&#x7684;&#x4E0D;&#x53EF;&#x6539;&#x53D8;&#x3002;</li>
+<li>&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x4F8B;&#x5982;&#x5982;&#x679C;&#x4E00;&#x4E9B;&#x4E0D;&#x53D8;&#x91CF;&#x672A;&#x88AB;&#x6EE1;&#x8DB3;&#x3002;</li>
+</ol>
+<p>&#x8BE5;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <code>disposer</code> &#x51FD;&#x6570;&#xFF0C;&#x5F53;&#x8C03;&#x7528;&#x65F6;&#x53EF;&#x4EE5;&#x53D6;&#x6D88;&#x62E6;&#x622A;&#x5668;&#x3002;
+&#x53EF;&#x4EE5;&#x4E3A;&#x540C;&#x4E00;&#x4E2A; observable &#x6CE8;&#x518C;&#x591A;&#x4E2A;&#x62E6;&#x622A;&#x5668;&#x3002;
+&#x5B83;&#x4EEC;&#x4F1A;&#x6309;&#x7167;&#x6CE8;&#x518C;&#x7684;&#x987A;&#x5E8F;&#x4E32;&#x8054;&#x8D77;&#x6765;&#x3002;
+&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x62E6;&#x622A;&#x5668;&#x8FD4;&#x56DE; <code>null</code> &#x6216;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x5176;&#x5B83;&#x7684;&#x62E6;&#x622A;&#x5668;&#x4E0D;&#x4F1A;&#x518D;&#x6267;&#x884C;&#x3002;
+&#x8FD8;&#x53EF;&#x4EE5;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x62E6;&#x622A;&#x5668;&#x540C;&#x65F6;&#x4F5C;&#x7528;&#x4E8E;&#x7236;&#x5BF9;&#x8C61;&#x548C;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#x3002;
+&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7236;&#x5BF9;&#x8C61;&#x7684;&#x62E6;&#x622A;&#x5668;&#x5728;&#x5C5E;&#x6027;&#x62E6;&#x622A;&#x5668;&#x4E4B;&#x524D;&#x8FD0;&#x884C;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> theme = observable({
+  backgroundColor: <span class="hljs-string">&quot;#ffffff&quot;</span>
+})
+
+<span class="hljs-keyword">const</span> disposer = intercept(theme, <span class="hljs-string">&quot;backgroundColor&quot;</span>, change =&gt; {
+  <span class="hljs-keyword">if</span> (!change.newValue) {
+    <span class="hljs-comment">// &#x5FFD;&#x7565;&#x53D6;&#x6D88;&#x8BBE;&#x7F6E;&#x80CC;&#x666F;&#x989C;&#x8272;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+  }
+  <span class="hljs-keyword">if</span> (change.newValue.length === <span class="hljs-number">6</span>) {
+    <span class="hljs-comment">// &#x8865;&#x5168;&#x7F3A;&#x5C11;&#x7684; &apos;#&apos; &#x524D;&#x7F00;</span>
+    change.newValue = <span class="hljs-string">&apos;#&apos;</span> + change.newValue;
+    <span class="hljs-keyword">return</span> change;
+  }
+  <span class="hljs-keyword">if</span> (change.newValue.length === <span class="hljs-number">7</span>) {
+      <span class="hljs-comment">// &#x8FD9;&#x4E00;&#x5B9A;&#x662F;&#x683C;&#x5F0F;&#x6B63;&#x786E;&#x7684;&#x989C;&#x8272;&#x4EE3;&#x7801;&#xFF01;</span>
+      <span class="hljs-keyword">return</span> change;
+  }
+  <span class="hljs-keyword">if</span> (change.newValue.length &gt; <span class="hljs-number">10</span>) disposer(); <span class="hljs-comment">// &#x4E0D;&#x518D;&#x62E6;&#x622A;&#x4ECA;&#x540E;&#x7684;&#x4EFB;&#x4F55;&#x53D8;&#x5316;</span>
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;This doesn&apos;t like a color at all: &quot;</span> + change.newValue);
+})
+</code></pre>
+<h2 id="observe">Observe</h2>
+<p>&#x7528;&#x6CD5;: <code>observe(target, propertyName?, listener, invokeImmediately?)</code></p>
+<ul>
+<li><code>target</code>: &#x89C2;&#x5BDF;&#x7684; observable</li>
+<li><code>propertyName</code>: &#x53EF;&#x9009;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x89C2;&#x5BDF;&#x3002;&#x6CE8;&#x610F;&#xFF0C;<code>observe(user.name, listener)</code> &#x548C; <code>observe(user, &quot;name&quot;, listener)</code> &#x6839;&#x672C;&#x662F;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x7684;&#x3002;&#x524D;&#x8005;&#x89C2;&#x5BDF; <code>user.name</code>(&#x6216;&#x8BB8;&#x6839;&#x672C;&#x4E0D;&#x662F;&#x4E00;&#x4E2A; observable) &#x91CC;&#x9762;&#x7684;<strong>&#x5F53;&#x524D;&#x503C;</strong>&#xFF0C;&#x800C;&#x540E;&#x8005;&#x89C2;&#x5BDF; <code>user</code> &#x7684; <code>name</code> &#x5C5E;&#x6027;&#x3002;</li>
+<li><code>listener</code>: &#x5728;<strong>&#x6BCF;&#x6B21;</strong>&#x53D8;&#x5316;&#x4F5C;&#x7528;&#x4E8E; observable &#x540E;&#x8C03;&#x7528;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x7528;&#x6765;&#x63CF;&#x8FF0;&#x53D8;&#x5316;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x9664;&#x4E86;&#x88C5;&#x7BB1;&#x7684; observable&#xFF0C;&#x5B83;&#x8C03;&#x7528; <code>listener</code> &#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;: <code>newValue&#x3001;oldValue</code>&#x3002;</li>
+<li><code>invokeImmediately</code>: &#x9ED8;&#x8BA4;&#x662F; false&#x3002;&#x5982;&#x679C;&#x4F60;&#x60F3; <code>observe</code> &#x76F4;&#x63A5;&#x4F7F;&#x7528; observable &#x7684;&#x72B6;&#x6001;(&#x800C;&#x4E0D;&#x662F;&#x7B49;&#x5F85;&#x7B2C;&#x4E00;&#x6B21;&#x53D8;&#x5316;)&#x8C03;&#x7528; <code>listener</code> &#x7684;&#x8BDD;&#xFF0C;&#x628A;&#x5B83;&#x8BBE;&#x7F6E;&#x4E3A; true&#x3002;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x7684; observable &#x90FD;&#x652F;&#x6301;&#x3002;</li>
+</ul>
+<p>&#x8BE5;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <code>disposer</code> &#x51FD;&#x6570;&#xFF0C;&#x5F53;&#x8C03;&#x7528;&#x65F6;&#x53EF;&#x4EE5;&#x53D6;&#x6D88;&#x89C2;&#x5BDF;&#x8005;&#x3002;
+&#x6CE8;&#x610F;&#xFF0C;<code>transaction</code> &#x4E0D;&#x5F71;&#x54CD; <code>observe</code> &#x65B9;&#x6CD5;&#x5DE5;&#x4F5C;&#x3002;
+&#x610F;&#x5473;&#x7740;&#x5373;&#x4F7F;&#x5728;&#x4E00;&#x4E2A; <code>transaction</code> &#x4E2D;&#xFF0C;<code>observe</code> &#x4E5F;&#x4F1A;&#x89E6;&#x53D1;&#x6BCF;&#x4E2A;&#x53D8;&#x5316;&#x7684;&#x76D1;&#x542C;&#x5668;&#x3002;
+&#x56E0;&#x6B64;&#xFF0C;<code>autorun</code> &#x901A;&#x5E38;&#x662F;&#x4E00;&#x4E2A;&#x66F4;&#x5F3A;&#x5927;&#x7684;&#x548C;&#x66F4;&#x5177;&#x58F0;&#x660E;&#x6027;&#x7684; <code>observe</code> &#x66FF;&#x4EE3;&#x54C1;&#x3002;</p>
+<p><em>&#x5F53; <code>observe</code> &#x88AB;&#x521B;&#x5EFA;&#x51FA;&#x6765;&#x540E;&#x5C31;&#x4F1A;&#x5BF9;<strong>&#x53D8;&#x5316;</strong>&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#xFF0C;&#x800C;&#x50CF; <code>autorun</code> &#x6216; <code>reaction</code> &#x8FD9;&#x6837;&#x7684;&#x53CD;&#x5E94;&#x5F53;&#xFF0C;&#x5B83;&#x4EEC;&#x53D8;&#x5F97;&#x53EF;&#x7528;&#x65F6;&#xFF0C;&#x5B83;&#x4EEC;&#x4F1A;&#x5BF9;<strong>&#x65B0;&#x503C;</strong>&#x505A;&#x51FA;&#x53CD;&#x5E94;&#x3002;&#x5728;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x540E;&#x8005;&#x5C31;&#x8DB3;&#x591F;&#x4E86;&#x3002;</em></p>
+<p>&#x793A;&#x4F8B;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> {observable, observe} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;mobx&apos;</span>;
+
+<span class="hljs-keyword">const</span> person = observable({
+    firstName: <span class="hljs-string">&quot;Maarten&quot;</span>,
+    lastName: <span class="hljs-string">&quot;Luther&quot;</span>
+});
+
+<span class="hljs-keyword">const</span> disposer = observe(person, (change) =&gt; {
+    <span class="hljs-built_in">console</span>.log(change.type, change.name, <span class="hljs-string">&quot;from&quot;</span>, change.oldValue, <span class="hljs-string">&quot;to&quot;</span>, change.object[change.name]);
+});
+
+person.firstName =  <span class="hljs-string">&quot;Martin&quot;</span>;
+<span class="hljs-comment">// &#x8F93;&#x51FA;: &apos;update firstName from Maarten to Martin&apos;</span>
+
+disposer();
+<span class="hljs-comment">// &#x5FFD;&#x7565;&#x4EFB;&#x4F55;&#x672A;&#x6765;&#x7684;&#x53D8;&#x5316;</span>
+
+<span class="hljs-comment">// &#x89C2;&#x5BDF;&#x5355;&#x4E2A;&#x5B57;&#x6BB5;</span>
+<span class="hljs-keyword">const</span> disposer2 = observe(person, <span class="hljs-string">&quot;lastName&quot;</span>, (change) =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;LastName changed to &quot;</span>, change.newValue);
+});
+</code></pre>
+<p>&#x76F8;&#x5173;&#x535A;&#x5BA2;: <a href="https://medium.com/@mweststrate/object-observe-is-dead-long-live-mobservable-observe-ad96930140c5" target="_blank">Object.observe &#x5DF2;&#x6B7B;&#x3002;mobx.observe &#x6C38;&#x751F;</a></p>
+<h2 id="&#x4E8B;&#x4EF6;&#x6982;&#x89C8;">&#x4E8B;&#x4EF6;&#x6982;&#x89C8;</h2>
+<p><code>intercept</code> &#x548C; <code>observe</code> &#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x81F3;&#x5C11;&#x6709;&#x5982;&#x4E0B;&#x5C5E;&#x6027;:</p>
+<ul>
+<li><code>object</code>: &#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x7684; observable</li>
+<li><code>type</code>: &#x5F53;&#x524D;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;(&#x5B57;&#x7B26;&#x4E32;)</li>
+</ul>
+<p>&#x5BF9;&#x4E8E;&#x6BCF;&#x79CD;&#x7C7B;&#x578B;&#x53EF;&#x7528;&#x7684;&#x9644;&#x52A0;&#x5B57;&#x6BB5;:</p>
+<table>
+<thead>
+<tr>
+<th>observable &#x7C7B;&#x578B;</th>
+<th>&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;</th>
+<th>&#x5C5E;&#x6027;</th>
+<th>&#x63CF;&#x8FF0;</th>
+<th>intercept &#x671F;&#x95F4;&#x80FD;&#x5426;&#x83B7;&#x5F97;</th>
+<th>&#x80FD;&#x5426;&#x88AB; intercept &#x4FEE;&#x6539;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x5BF9;&#x8C61;</td>
+<td>add</td>
+<td>name</td>
+<td>&#x6DFB;&#x52A0;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x79F0;</td>
+<td>&#x221A;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>newValue</td>
+<td>&#x5206;&#x914D;&#x7684;&#x65B0;&#x503C;</td>
+<td>&#x221A;</td>
+<td>&#x221A;</td>
+</tr>
+<tr>
+<td></td>
+<td>update*</td>
+<td>name</td>
+<td>&#x66F4;&#x65B0;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x79F0;</td>
+<td>&#x221A;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>newValue</td>
+<td>&#x5206;&#x914D;&#x7684;&#x65B0;&#x503C;</td>
+<td>&#x221A;</td>
+<td>&#x221A;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>oldValue</td>
+<td>&#x88AB;&#x66FF;&#x6362;&#x7684;&#x503C;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&#x6570;&#x7EC4;</td>
+<td>splice</td>
+<td>index</td>
+<td>splice &#x7684;&#x8D77;&#x59CB;&#x7D22;&#x5F15;&#x3002; <code>push</code>&#x3001; <code>unshift</code>&#x3001; <code>replace</code> &#x7B49;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x89E6;&#x53D1; splice&#x3002;</td>
+<td>&#x221A;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>removedCount</td>
+<td>&#x5220;&#x9664;&#x9879;&#x7684;&#x6570;&#x91CF;</td>
+<td>&#x221A;</td>
+<td>&#x221A;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>added</td>
+<td>&#x6DFB;&#x52A0;&#x5230;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x9879;</td>
+<td>&#x221A;</td>
+<td>&#x221A;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>removed</td>
+<td>&#x6570;&#x7EC4;&#x4E2D;&#x79FB;&#x9664;&#x7684;&#x9879;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>addCount</td>
+<td>&#x6DFB;&#x52A0;&#x9879;&#x7684;&#x6570;&#x91CF;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>update</td>
+<td>index</td>
+<td>&#x66F4;&#x65B0;&#x7684;&#x5355;&#x4E2A;&#x9879;&#x7684;&#x7D22;&#x5F15;</td>
+<td>&#x221A;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>newValue</td>
+<td>(&#x5C06;)&#x5206;&#x914D;&#x7684;&#x65B0;&#x503C;</td>
+<td>&#x221A;</td>
+<td>&#x221A;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>oldValue</td>
+<td>&#x88AB;&#x66FF;&#x6362;&#x7684;&#x503C;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&#x6620;&#x5C04;</td>
+<td>add</td>
+<td>name</td>
+<td>&#x6DFB;&#x52A0;&#x9879;&#x7684;&#x540D;&#x79F0;</td>
+<td>&#x221A;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>newValue</td>
+<td>&#x5206;&#x914D;&#x7684;&#x65B0;&#x503C;</td>
+<td>&#x221A;</td>
+<td>&#x221A;</td>
+</tr>
+<tr>
+<td></td>
+<td>update</td>
+<td>name</td>
+<td>&#x66F4;&#x65B0;&#x9879;&#x7684;&#x540D;&#x79F0;</td>
+<td>&#x221A;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>newValue</td>
+<td>&#x5206;&#x914D;&#x7684;&#x65B0;&#x503C;</td>
+<td>&#x221A;</td>
+<td>&#x221A;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>oldValue</td>
+<td>&#x88AB;&#x66FF;&#x6362;&#x7684;&#x503C;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>delete</td>
+<td>name</td>
+<td>&#x5220;&#x9664;&#x9879;&#x7684;&#x540D;&#x79F0;</td>
+<td>&#x221A;</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>oldValue</td>
+<td>&#x5220;&#x9664;&#x9879;&#x7684;&#x503C;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Boxed &amp; computed observables</td>
+<td>create</td>
+<td>newValue</td>
+<td>&#x521B;&#x5EFA;&#x671F;&#x95F4;&#x5206;&#x914D;&#x7684;&#x65B0;&#x503C;&#x3002;&#x53EA;&#x6709; boxed observables &#x7684; <code>spy</code> &#x4E8B;&#x4EF6;&#x53EF;&#x83B7;&#x5F97;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>update</td>
+<td>newValue</td>
+<td>&#x5206;&#x914D;&#x7684;&#x65B0;&#x503C;</td>
+<td>&#x221A;</td>
+<td>&#x221A;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>oldValue</td>
+<td>observable &#x7684;&#x524D;&#x4E00;&#x4E2A;&#x503C;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>* &#x6CE8;&#x610F;&#xFF0C;&#x5BF9;&#x8C61;&#x7684; <code>update</code> &#x4E8B;&#x4EF6;&#x4E0D;&#x4F1A;&#x4E3A;&#x66F4;&#x65B0;&#x7684;&#x8BA1;&#x7B97;&#x503C;(&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x6CA1;&#x6709;&#x53D8;&#x5316;)&#x89E6;&#x53D1;&#x3002;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528; <code>observe(object, &apos;computedPropertyName&apos;, listener)</code> &#x660E;&#x786E;&#x5730;&#x8BA2;&#x9605;&#x7279;&#x5B9A;&#x5C5E;&#x6027;&#x6765;&#x89C2;&#x5BDF;&#x5B83;&#x4EEC;&#x3002;</em></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="modifiers.html" class="navigation navigation-prev " aria-label="Previous page: modifiers">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="reaction.html" class="navigation navigation-next " aria-label="Next page: reaction">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"intercept & observe","level":"1.8.8","depth":2,"next":{"title":"reaction","level":"1.8.9","depth":2,"path":"refguide/reaction.md","ref":"refguide/reaction.md","articles":[]},"previous":{"title":"modifiers","level":"1.8.7","depth":2,"path":"refguide/modifiers.md","ref":"refguide/modifiers.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"refguide/observe.md","mtime":"2017-03-18T09:10:53.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-19T01:36:42.175Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

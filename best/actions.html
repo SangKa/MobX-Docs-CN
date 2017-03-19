@@ -1,0 +1,907 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>编写(异步) actions · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="react-performance.html" />
+    
+    
+    <link rel="prev" href="store.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    MobX 介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../intro/overview.html">
+            
+                <a href="../intro/overview.html">
+            
+                    
+                    MobX 要点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../intro/concepts.html">
+            
+                <a href="../intro/concepts.html">
+            
+                    
+                    概念与原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../refguide/api.html">
+            
+                <a href="../refguide/api.html">
+            
+                    
+                    API概览
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../refguide/observable.html">
+            
+                <a href="../refguide/observable.html">
+            
+                    
+                    observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../refguide/observable-decorator.html">
+            
+                <a href="../refguide/observable-decorator.html">
+            
+                    
+                    @observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../refguide/computed-decorator.html">
+            
+                <a href="../refguide/computed-decorator.html">
+            
+                    
+                    (@)computed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../refguide/autorun.html">
+            
+                <a href="../refguide/autorun.html">
+            
+                    
+                    autorun
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../refguide/observer-component.html">
+            
+                <a href="../refguide/observer-component.html">
+            
+                    
+                    (@)observer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../refguide/action.html">
+            
+                <a href="../refguide/action.html">
+            
+                    
+                    action
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Observable类型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../refguide/object.html">
+            
+                <a href="../refguide/object.html">
+            
+                    
+                    objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../refguide/array.html">
+            
+                <a href="../refguide/array.html">
+            
+                    
+                    arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../refguide/map.html">
+            
+                <a href="../refguide/map.html">
+            
+                    
+                    maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../refguide/boxed.html">
+            
+                <a href="../refguide/boxed.html">
+            
+                    
+                    boxed values
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="react.html">
+            
+                <a href="react.html">
+            
+                    
+                    理解 MobX 对什么有反应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="decorators.html">
+            
+                <a href="decorators.html">
+            
+                    
+                    如何(不)使用装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    资源
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../faq/blogs.html">
+            
+                <a href="../faq/blogs.html">
+            
+                    
+                    教程、视频和博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../faq/related.html">
+            
+                <a href="../faq/related.html">
+            
+                    
+                    相关项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../faq/examples.html">
+            
+                <a href="../faq/examples.html">
+            
+                    
+                    案例项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../faq/boilerplates.html">
+            
+                <a href="../faq/boilerplates.html">
+            
+                    
+                    样板文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../faq/faq.html">
+            
+                <a href="../faq/faq.html">
+            
+                    
+                    常见问题解答
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    贴士与技巧
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="pitfalls.html">
+            
+                <a href="pitfalls.html">
+            
+                    
+                    常见陷阱与最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="store.html">
+            
+                <a href="store.html">
+            
+                    
+                    定义数据存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.3" data-path="actions.html">
+            
+                <a href="actions.html">
+            
+                    
+                    编写(异步) actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="react-performance.html">
+            
+                <a href="react-performance.html">
+            
+                    
+                    优化 React 组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="devtools.html">
+            
+                <a href="devtools.html">
+            
+                    
+                    开发工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="syntax.html">
+            
+                <a href="syntax.html">
+            
+                    
+                    ES5 / ES6 / TypeScript 语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="stateless-HMR.html">
+            
+                <a href="stateless-HMR.html">
+            
+                    
+                    无状态组件和热加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    实用函数
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../refguide/autorun-async.html">
+            
+                <a href="../refguide/autorun-async.html">
+            
+                    
+                    autorunAsync
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../refguide/extending.html">
+            
+                <a href="../refguide/extending.html">
+            
+                    
+                    Atom & Reaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../refguide/create-transformer.html">
+            
+                <a href="../refguide/create-transformer.html">
+            
+                    
+                    createTransformer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../refguide/expr.html">
+            
+                <a href="../refguide/expr.html">
+            
+                    
+                    expr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../refguide/extend-observable.html">
+            
+                <a href="../refguide/extend-observable.html">
+            
+                    
+                    extendObservable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../refguide/is-observable.html">
+            
+                <a href="../refguide/is-observable.html">
+            
+                    
+                    isObservable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../refguide/modifiers.html">
+            
+                <a href="../refguide/modifiers.html">
+            
+                    
+                    modifiers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../refguide/observe.html">
+            
+                <a href="../refguide/observe.html">
+            
+                    
+                    intercept & observe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../refguide/reaction.html">
+            
+                <a href="../refguide/reaction.html">
+            
+                    
+                    reaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="../refguide/spy.html">
+            
+                <a href="../refguide/spy.html">
+            
+                    
+                    spy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="../refguide/tojson.html">
+            
+                <a href="../refguide/tojson.html">
+            
+                    
+                    toJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.12" data-path="../refguide/transaction.html">
+            
+                <a href="../refguide/transaction.html">
+            
+                    
+                    transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13" data-path="../refguide/untracked.html">
+            
+                <a href="../refguide/untracked.html">
+            
+                    
+                    untracked
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14" data-path="../refguide/when.html">
+            
+                <a href="../refguide/when.html">
+            
+                    
+                    when
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../donating.html">
+            
+                <a href="../donating.html">
+            
+                    
+                    捐赠
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >编写(异步) actions</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7F16;&#x5199;-actions&#x52A8;&#x4F5C;">&#x7F16;&#x5199; Actions(&#x52A8;&#x4F5C;)</h1>
+<p>&#x4F7F;&#x7528; MobX &#x6765;&#x7F16;&#x5199;&#x52A8;&#x4F5C;&#x662F;&#x5F88;&#x76F4;&#x89C2;&#x7684;&#x3002;
+&#x53EA;&#x662F;&#x7B80;&#x5355;&#x5730;&#x521B;&#x5EFA;&#x3001;&#x66F4;&#x6539;&#x6216;&#x5220;&#x9664;&#x6570;&#x636E;&#xFF0C;MobX &#x5C06;&#x786E;&#x4FDD;&#x53D8;&#x5316;&#x4F1A;&#x7531; store &#x548C;&#x4F9D;&#x8D56;&#x4E8E;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x7684;&#x7EC4;&#x4EF6;&#x6355;&#x83B7;&#x3002;
+&#x5728;&#x524D;&#x4E00;&#x7AE0;&#x8282;&#x4E2D;&#x6211;&#x4EEC;&#x6240;&#x521B;&#x5EFA;&#x7684; store &#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x52A8;&#x4F5C;&#x53EF;&#x4EE5;&#x5982;&#x6B64;&#x7B80;&#x5355;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> todo = todoStore.createTodo();
+todo.task = <span class="hljs-string">&quot;make coffee&quot;</span>;
+</code></pre>
+<p>&#x8FD9;&#x8DB3;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5F85;&#x529E;&#x4E8B;&#x9879;&#xFF0C;&#x63D0;&#x4EA4;&#x5230;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5E76;&#x76F8;&#x5E94;&#x5730;&#x66F4;&#x65B0;&#x6211;&#x4EEC;&#x7684;&#x7528;&#x6237;&#x754C;&#x9762;&#x3002;</p>
+<h2 id="&#x4F55;&#x65F6;&#x4F7F;&#x7528;&#x52A8;&#x4F5C;">&#x4F55;&#x65F6;&#x4F7F;&#x7528;&#x52A8;&#x4F5C;?</h2>
+<p>&#x52A8;&#x4F5C;&#x53EA;&#x5E94;&#x8BE5;&#x5728;<strong>&#x4FEE;&#x6539;</strong>&#x72B6;&#x6001;&#x7684;&#x51FD;&#x6570;&#x4E0A;&#x4F7F;&#x7528;&#x3002;
+&#x4EC5;&#x6267;&#x884C;&#x67E5;&#x627E;&#xFF0C;&#x8FC7;&#x6EE4;&#x7B49;&#x64CD;&#x4F5C;&#x7684;&#x51FD;&#x6570;<strong>&#x4E0D;</strong>&#x5E94;&#x8BE5;&#x6807;&#x8BB0;&#x4E3A;&#x52A8;&#x4F5C;&#xFF0C;&#x4EE5;&#x5141;&#x8BB8; MobX &#x8FFD;&#x8E2A;&#x5B83;&#x4EEC;&#x7684;&#x8C03;&#x7528;&#x3002;</p>
+<h2 id="&#x5F02;&#x6B65;&#x52A8;&#x4F5C;">&#x5F02;&#x6B65;&#x52A8;&#x4F5C;</h2>
+<p>Writing asynchronous actions is pretty simple as well.
+You can use observable data structures as a promise.
+This is what happens with the <code>isLoading</code> property in the <code>todoStore</code> for example:
+&#x7F16;&#x5199;&#x5F02;&#x6B65;&#x52A8;&#x4F5C;&#x540C;&#x6837;&#x975E;&#x5E38;&#x7684;&#x7B80;&#x5355;&#x3002;
+&#x53EF;&#x4EE5;&#x4F7F;&#x7528; observable &#x6570;&#x636E;&#x7ED3;&#x6784;&#x4F5C;&#x4E3A; promise&#x3002;
+&#x793A;&#x4F8B;&#x4E2D; <code>todoStore</code> &#x7684; <code>isLoading</code> &#x5C5E;&#x6027;&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x7684;:</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">this</span>.isLoading = <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">this</span>.transportLayer.fetchTodos().then(fetchedTodos =&gt; {
+        fetchedTodos.forEach(json =&gt; <span class="hljs-keyword">this</span>.updateTodoFromServer(json));
+        <span class="hljs-keyword">this</span>.isLoading = <span class="hljs-literal">false</span>;
+    });
+<span class="hljs-comment">// ...</span>
+</code></pre>
+<p>&#x5F02;&#x6B65;&#x52A8;&#x4F5C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x53EA;&#x662F;&#x66F4;&#x65B0;&#x4E86;&#x6570;&#x636E;&#xFF0C;&#x89C6;&#x56FE;&#x4E5F;&#x4F1A;&#x66F4;&#x65B0;&#x3002;
+React &#x7EC4;&#x4EF6;&#x7684; render &#x51FD;&#x6570; &#x53EF;&#x4EE5;&#x53D8;&#x5F97;&#x5982;&#x6B64;&#x7B80;&#x5355;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> {observer} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;mobx-react&quot;</span>;
+
+<span class="hljs-keyword">var</span> TodoOverview = observer(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">props</span>) </span>{
+    <span class="hljs-keyword">var</span> todoStore = props.todoStore;
+    <span class="hljs-keyword">if</span> (todoStore.isLoading) {
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Loading...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{
+            todoStore.todos.map(todo =&gt; <span class="hljs-tag">&lt;<span class="hljs-name">TodoItem</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{todo.id}</span> <span class="hljs-attr">todo</span>=<span class="hljs-string">{todo}</span> /&gt;</span>)
+        }<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    }
+});
+</span></code></pre>
+<p>&#x4E0A;&#x9762;&#x7684; <code>TodoOverview</code> &#x7EC4;&#x4EF6;&#x6BCF;&#x5F53; <code>isLoading</code> &#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x6216; <code>isLoading</code> &#x4E3A; true &#x4E14; <code>todos</code> &#x6539;&#x53D8;&#x65F6;&#x5C31;&#x4F1A;&#x66F4;&#x65B0;&#x3002;
+&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06; <code>todoStore.isLoading</code> &#x66FF;&#x6362;&#x4E3A; <code>todoStore.todos.length</code> &#x3002;
+&#x7ED3;&#x679C;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="store.html" class="navigation navigation-prev " aria-label="Previous page: 定义数据存储">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="react-performance.html" class="navigation navigation-next " aria-label="Next page: 优化 React 组件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"编写(异步) actions","level":"1.7.3","depth":2,"next":{"title":"优化 React 组件","level":"1.7.4","depth":2,"path":"best/react-performance.md","ref":"best/react-performance.md","articles":[]},"previous":{"title":"定义数据存储","level":"1.7.2","depth":2,"path":"best/store.md","ref":"best/store.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"best/actions.md","mtime":"2017-03-14T14:35:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-19T01:36:42.175Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,944 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>action · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="observer-component.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    MobX 介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../intro/overview.html">
+            
+                <a href="../intro/overview.html">
+            
+                    
+                    MobX 要点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../intro/concepts.html">
+            
+                <a href="../intro/concepts.html">
+            
+                    
+                    概念与原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    API概览
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="observable.html">
+            
+                <a href="observable.html">
+            
+                    
+                    observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="observable-decorator.html">
+            
+                <a href="observable-decorator.html">
+            
+                    
+                    @observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="computed-decorator.html">
+            
+                <a href="computed-decorator.html">
+            
+                    
+                    (@)computed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="autorun.html">
+            
+                <a href="autorun.html">
+            
+                    
+                    autorun
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="observer-component.html">
+            
+                <a href="observer-component.html">
+            
+                    
+                    (@)observer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.6" data-path="action.html">
+            
+                <a href="action.html">
+            
+                    
+                    action
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Observable类型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="object.html">
+            
+                <a href="object.html">
+            
+                    
+                    objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="array.html">
+            
+                <a href="array.html">
+            
+                    
+                    arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="map.html">
+            
+                <a href="map.html">
+            
+                    
+                    maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="boxed.html">
+            
+                <a href="boxed.html">
+            
+                    
+                    boxed values
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../best/react.html">
+            
+                <a href="../best/react.html">
+            
+                    
+                    理解 MobX 对什么有反应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../best/decorators.html">
+            
+                <a href="../best/decorators.html">
+            
+                    
+                    如何(不)使用装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    资源
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../faq/blogs.html">
+            
+                <a href="../faq/blogs.html">
+            
+                    
+                    教程、视频和博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../faq/related.html">
+            
+                <a href="../faq/related.html">
+            
+                    
+                    相关项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../faq/examples.html">
+            
+                <a href="../faq/examples.html">
+            
+                    
+                    案例项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../faq/boilerplates.html">
+            
+                <a href="../faq/boilerplates.html">
+            
+                    
+                    样板文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../faq/faq.html">
+            
+                <a href="../faq/faq.html">
+            
+                    
+                    常见问题解答
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    贴士与技巧
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../best/pitfalls.html">
+            
+                <a href="../best/pitfalls.html">
+            
+                    
+                    常见陷阱与最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../best/store.html">
+            
+                <a href="../best/store.html">
+            
+                    
+                    定义数据存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../best/actions.html">
+            
+                <a href="../best/actions.html">
+            
+                    
+                    编写(异步) actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../best/react-performance.html">
+            
+                <a href="../best/react-performance.html">
+            
+                    
+                    优化 React 组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../best/devtools.html">
+            
+                <a href="../best/devtools.html">
+            
+                    
+                    开发工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../best/syntax.html">
+            
+                <a href="../best/syntax.html">
+            
+                    
+                    ES5 / ES6 / TypeScript 语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../best/stateless-HMR.html">
+            
+                <a href="../best/stateless-HMR.html">
+            
+                    
+                    无状态组件和热加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    实用函数
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="autorun-async.html">
+            
+                <a href="autorun-async.html">
+            
+                    
+                    autorunAsync
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="extending.html">
+            
+                <a href="extending.html">
+            
+                    
+                    Atom & Reaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="create-transformer.html">
+            
+                <a href="create-transformer.html">
+            
+                    
+                    createTransformer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="expr.html">
+            
+                <a href="expr.html">
+            
+                    
+                    expr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="extend-observable.html">
+            
+                <a href="extend-observable.html">
+            
+                    
+                    extendObservable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="is-observable.html">
+            
+                <a href="is-observable.html">
+            
+                    
+                    isObservable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="modifiers.html">
+            
+                <a href="modifiers.html">
+            
+                    
+                    modifiers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="observe.html">
+            
+                <a href="observe.html">
+            
+                    
+                    intercept & observe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="reaction.html">
+            
+                <a href="reaction.html">
+            
+                    
+                    reaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="spy.html">
+            
+                <a href="spy.html">
+            
+                    
+                    spy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="tojson.html">
+            
+                <a href="tojson.html">
+            
+                    
+                    toJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.12" data-path="transaction.html">
+            
+                <a href="transaction.html">
+            
+                    
+                    transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13" data-path="untracked.html">
+            
+                <a href="untracked.html">
+            
+                    
+                    untracked
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14" data-path="when.html">
+            
+                <a href="when.html">
+            
+                    
+                    when
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../donating.html">
+            
+                <a href="../donating.html">
+            
+                    
+                    捐赠
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >action</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="action">action</h1>
+<p>&#x7528;&#x6CD5;:</p>
+<ul>
+<li><code>action(fn)</code></li>
+<li><code>action(name, fn)</code></li>
+<li><code>@action classMethod() {}</code></li>
+<li><code>@action(name) classMethod () {}</code></li>
+<li><code>@action boundClassMethod = (args) =&gt; { body }</code></li>
+<li><code>@action(name) boundClassMethod = (args) =&gt; { body }</code></li>
+<li><code>@action.bound classMethod() {}</code></li>
+<li><code>@action.bound(function() {})</code></li>
+</ul>
+<p>&#x4EFB;&#x4F55;&#x5E94;&#x7528;&#x90FD;&#x6709;&#x52A8;&#x4F5C;&#x3002;&#x52A8;&#x4F5C;&#x662F;&#x4EFB;&#x4F55;&#x7528;&#x6765;&#x4FEE;&#x6539;&#x72B6;&#x6001;&#x7684;&#x4E1C;&#x897F;&#x3002;
+&#x4F7F;&#x7528;MobX&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x663E;&#x793A;&#x7684;&#x6807;&#x8BB0;&#x51FA;&#x52A8;&#x4F5C;&#x6240;&#x5728;&#x7684;&#x4F4D;&#x7F6E;&#x3002;
+&#x52A8;&#x4F5C;&#x53EF;&#x4EE5;&#x6709;&#x52A9;&#x4E8E;&#x66F4;&#x597D;&#x7684;&#x7EC4;&#x7EC7;&#x4EE3;&#x7801;&#x3002;
+&#x5B83;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5E76;&#x5728;&#x7528; <code>untracked</code>&#x3001;<code>transaction</code> &#x548C; <code>allowStateChanges</code> &#x5305;&#x88C5;&#x540E;&#x8FD4;&#x56DE;&#x5B83;&#x3002;
+&#x5EFA;&#x8BAE;&#x5728;&#x4EFB;&#x4F55;&#x66F4;&#x6539; observable &#x6216;&#x8005;&#x6709;&#x526F;&#x4F5C;&#x7528;&#x7684;&#x51FD;&#x6570;&#x4E0A;&#x4F7F;&#x7528;&#x52A8;&#x4F5C;&#x3002;
+&#x7ED3;&#x5408;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x7684;&#x8BDD;&#xFF0C;&#x52A8;&#x4F5C;&#x8FD8;&#x80FD;&#x63D0;&#x4F9B;&#x975E;&#x5E38;&#x6709;&#x7528;&#x7684;&#x8C03;&#x8BD5;&#x4FE1;&#x606F;&#x3002;
+&#x548C; <a href="http://www.ecma-international.org/ecma-262/5.1/#sec-11.1.5" target="_blank">ES 5.1 setters</a> &#x4E00;&#x8D77;&#x4F7F;&#x7528; <code>@action</code> &#x88C5;&#x9970;&#x5668;(&#x4F8B;&#x5982; <code>@action set propertyName</code>) &#x8FD8;&#x4E0D;&#x652F;&#x6301;&#xFF0C;&#x5C3D;&#x7BA1; <a href="https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/computed-decorator.md#setters-for-computed-values" target="_blank">&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x7684; setter &#x662F;&#x81EA;&#x52A8;&#x5730;&#x52A8;&#x4F5C;</a>&#x3002;</p>
+<p>&#x6CE8;&#x610F;: &#x5F53;&#x542F;&#x7528;<strong>&#x4E25;&#x683C;&#x6A21;&#x5F0F;</strong>&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5F3A;&#x5236;&#x4F7F;&#x7528; <code>action</code>&#xFF0C;&#x53C2;&#x89C1; <a href="https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/api.md#usestrict" target="_blank"><code>useStrict</code></a>&#x3002;</p>
+<p>&#x60F3;&#x8981;&#x83B7;&#x53D6;&#x66F4;&#x591A; <code>action</code> &#x7684;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x8FD8;&#x53EF;&#x4EE5;&#x53C2;&#x89C1; <a href="https://medium.com/p/45cdc73c7c8d/" target="_blank">MobX 2.2 &#x53D1;&#x884C;&#x8BF4;&#x660E;</a>&#x3002;</p>
+<p><code>contact-list</code> &#x9879;&#x76EE;&#x4E2D;&#x7684;&#x4E24;&#x4E2A; action &#x793A;&#x4F8B;:</p>
+<pre><code class="lang-javascript">    @action    createRandomContact() {
+        <span class="hljs-keyword">this</span>.pendingRequestCount++;
+        superagent
+            .get(<span class="hljs-string">&apos;https://randomuser.me/api/&apos;</span>)
+            .set(<span class="hljs-string">&apos;Accept&apos;</span>, <span class="hljs-string">&apos;application/json&apos;</span>)
+            .end(action(<span class="hljs-string">&quot;createRandomContact-callback&quot;</span>, (error, results) =&gt; {
+                <span class="hljs-keyword">if</span> (error)
+                    <span class="hljs-built_in">console</span>.error(error);
+                <span class="hljs-keyword">else</span> {
+                    <span class="hljs-keyword">const</span> data = <span class="hljs-built_in">JSON</span>.parse(results.text).results[<span class="hljs-number">0</span>];
+                    <span class="hljs-keyword">const</span> contact = <span class="hljs-keyword">new</span> Contact(<span class="hljs-keyword">this</span>, data.dob, data.name, data.login.username, data.picture)
+                    contact.addTag(<span class="hljs-string">&apos;random-user&apos;</span>);
+                    <span class="hljs-keyword">this</span>.contacts.push(contact);
+                    <span class="hljs-keyword">this</span>.pendingRequestCount--;
+                }
+            }));
+    }
+</code></pre>
+<h2 id="async-&#x52A8;&#x4F5C;&#x548C;-runinaction"><code>async</code> &#x52A8;&#x4F5C;&#x548C; <code>runInAction</code></h2>
+<p><code>action</code> &#x53EA;&#x4F1A;&#x5F71;&#x54CD;&#x5F53;&#x524D;&#x8FD0;&#x884C;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7531;&#x5F53;&#x524D;&#x51FD;&#x6570;&#x8C03;&#x5EA6;(&#x975E;&#x8C03;&#x7528;)&#x7684;&#x51FD;&#x6570;&#x3002;
+&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5982;&#x679C;&#x4F60;&#x6709;&#x4E00;&#x4E2A; <code>setTimeout</code> &#xFF0C;promise &#x7684; <code>.then</code> &#x6216; <code>async</code> &#x6784;&#x9020;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x56DE;&#x8C03;&#x4E2D;&#x6709;&#x4E00;&#x4E9B;&#x66F4;&#x591A;&#x7684;&#x72B6;&#x6001;&#x88AB;&#x6539;&#x53D8;&#xFF0C;&#x90A3;&#x4E9B;&#x56DE;&#x8C03;&#x4E5F;&#x5E94;&#x8BE5;&#x5E94;&#x8BE5;&#x7528; <code>action</code> &#x6765;&#x5305;&#x88C5;&#xFF01;
+&#x8FD9;&#x5C31;&#x662F;&#x4E0A;&#x9762;&#x7684; <code>&quot;createRandomContact-callback&quot;</code> &#x52A8;&#x4F5C;&#x6240;&#x6F14;&#x793A;&#x7684;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528; <code>async</code> / <code>await</code>&#xFF0C;&#x8FD9;&#x4E2A;&#x6709;&#x70B9;&#x68D8;&#x624B;&#xFF0C;&#x56E0;&#x4E3A;&#x4F60;&#x4E0D;&#x80FD;&#x5728; <code>action</code> &#x4E2D;&#x53EA;&#x662F;&#x5305;&#x88C5;&#x5F02;&#x6B65;&#x51FD;&#x6570;&#x4F53;&#x3002;
+&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>runInAction</code> &#x53EF;&#x4EE5;&#x6D3E;&#x4E0A;&#x7528;&#x573A;&#xFF0C;&#x628A;&#x5B83;&#x653E;&#x5728;&#x4F60;&#x6253;&#x7B97;&#x66F4;&#x65B0;&#x72B6;&#x6001;&#x7684;&#x5730;&#x65B9;&#x3002;
+(&#x4F46;&#x4E0D;&#x8981;&#x5728;&#x8FD9;&#x4E9B;&#x5757;&#x4E2D;&#x8C03;&#x7528; <code>await</code>)&#x3002;</p>
+<p>&#x793A;&#x4F8B;:</p>
+<pre><code class="lang-javascript">@action <span class="hljs-comment">/*&#x53EF;&#x9009;&#x7684;*/</span> updateDocument = <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> fetchDataFromUrl();
+    <span class="hljs-comment">/* &#x9700;&#x8981;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x4EE5;&#x5141;&#x8BB8;&#x66F4;&#x65B0;&#x72B6;&#x6001;: */</span>
+    runInAction(<span class="hljs-string">&quot;update state after fetching data&quot;</span>, () =&gt; {
+        <span class="hljs-keyword">this</span>.data.replace(data);
+        <span class="hljs-keyword">this</span>.isSaving = <span class="hljs-literal">true</span>;
+    })
+}
+</code></pre>
+<p><code>runInAction</code> &#x7684;&#x7528;&#x6CD5;: <code>runInAction(name?, fn, scope?)</code>.</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528; babel&#xFF0C;&#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x4F60;&#x5904;&#x7406;&#x5F02;&#x6B65;&#x52A8;&#x4F5C;: <a href="https://github.com/mobxjs/babel-plugin-mobx-deep-action" target="_blank">mobx-deep-action</a>&#x3002;</p>
+<h2 id="&#x7ED1;&#x5B9A;&#x7684;&#x52A8;&#x4F5C;">&#x7ED1;&#x5B9A;&#x7684;&#x52A8;&#x4F5C;</h2>
+<p><code>action</code> &#x88C5;&#x9970;&#x5668;/&#x51FD;&#x6570;&#x9075;&#x5FAA; javascript &#x4E2D;&#x6807;&#x51C6;&#x7684;&#x7ED1;&#x5B9A;&#x89C4;&#x5219;&#x3002;
+&#x4F46;&#x662F;&#xFF0C;Mobx 3&#x5F15;&#x5165;&#x4E86; <code>action.bound</code> &#x6765;&#x81EA;&#x52A8;&#x5730;&#x5C06;&#x52A8;&#x4F5C;&#x7ED1;&#x5B9A;&#x5230;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x3002;
+&#x6CE8;&#x610F;&#xFF0C;<code>(@)action.bound</code> &#x4E0E; <code>action</code> &#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x5B83;&#x4E0D;&#x9700;&#x8981;&#x4E00;&#x4E2A;name&#x53C2;&#x6570;&#xFF0C;&#x540D;&#x79F0;&#x5C06;&#x59CB;&#x7EC8;&#x57FA;&#x4E8E;&#x52A8;&#x4F5C;&#x7ED1;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#x3002;</p>
+<p>Example:</p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Ticker</span> </span>{
+    @observable <span class="hljs-keyword">this</span>.tick = <span class="hljs-number">0</span>
+
+    @action.bound
+    increment() {
+        <span class="hljs-keyword">this</span>.tick++ <span class="hljs-comment">// &apos;this&apos; &#x6C38;&#x8FDC;&#x90FD;&#x662F;&#x6B63;&#x786E;&#x7684;</span>
+    }
+}
+
+<span class="hljs-keyword">const</span> ticker = <span class="hljs-keyword">new</span> Ticker()
+setInterval(ticker.increment, <span class="hljs-number">1000</span>)
+</code></pre>
+<p>Or</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> ticker = observable({
+    tick: <span class="hljs-number">1</span>,
+    increment: action.bound(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">this</span>.tick++ <span class="hljs-comment">// &#x7ED1;&#x5B9A; &apos;this&apos;</span>
+    })
+})
+
+setInterval(ticker.increment, <span class="hljs-number">1000</span>)
+</code></pre>
+<p><em>&#x6CE8;&#x610F;: <em>action.bound</em> &#x4E0D;&#x8981;&#x548C;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF1B;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x5DF2;&#x7ECF;&#x662F;&#x7ED1;&#x5B9A;&#x8FC7;&#x7684;&#x5E76;&#x4E14;&#x4E0D;&#x80FD;&#x91CD;&#x65B0;&#x7ED1;&#x5B9A;&#x3002;</em></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="observer-component.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: (@)observer">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"action","level":"1.2.6","depth":2,"next":{"title":"Observable类型","level":"1.3","depth":1,"ref":"","articles":[{"title":"objects","level":"1.3.1","depth":2,"path":"refguide/object.md","ref":"refguide/object.md","articles":[]},{"title":"arrays","level":"1.3.2","depth":2,"path":"refguide/array.md","ref":"refguide/array.md","articles":[]},{"title":"maps","level":"1.3.3","depth":2,"path":"refguide/map.md","ref":"refguide/map.md","articles":[]},{"title":"boxed values","level":"1.3.4","depth":2,"path":"refguide/boxed.md","ref":"refguide/boxed.md","articles":[]}]},"previous":{"title":"(@)observer","level":"1.2.5","depth":2,"path":"refguide/observer-component.md","ref":"refguide/observer-component.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"refguide/action.md","mtime":"2017-03-05T12:38:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-19T01:36:42.175Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

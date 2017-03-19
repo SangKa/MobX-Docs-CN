@@ -1,0 +1,1067 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MobX 介绍 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="intro/overview.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    MobX 介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="intro/overview.html">
+            
+                <a href="intro/overview.html">
+            
+                    
+                    MobX 要点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="intro/concepts.html">
+            
+                <a href="intro/concepts.html">
+            
+                    
+                    概念与原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="refguide/api.html">
+            
+                <a href="refguide/api.html">
+            
+                    
+                    API概览
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="refguide/observable.html">
+            
+                <a href="refguide/observable.html">
+            
+                    
+                    observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="refguide/observable-decorator.html">
+            
+                <a href="refguide/observable-decorator.html">
+            
+                    
+                    @observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="refguide/computed-decorator.html">
+            
+                <a href="refguide/computed-decorator.html">
+            
+                    
+                    (@)computed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="refguide/autorun.html">
+            
+                <a href="refguide/autorun.html">
+            
+                    
+                    autorun
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="refguide/observer-component.html">
+            
+                <a href="refguide/observer-component.html">
+            
+                    
+                    (@)observer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="refguide/action.html">
+            
+                <a href="refguide/action.html">
+            
+                    
+                    action
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Observable类型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="refguide/object.html">
+            
+                <a href="refguide/object.html">
+            
+                    
+                    objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="refguide/array.html">
+            
+                <a href="refguide/array.html">
+            
+                    
+                    arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="refguide/map.html">
+            
+                <a href="refguide/map.html">
+            
+                    
+                    maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="refguide/boxed.html">
+            
+                <a href="refguide/boxed.html">
+            
+                    
+                    boxed values
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="best/react.html">
+            
+                <a href="best/react.html">
+            
+                    
+                    理解 MobX 对什么有反应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="best/decorators.html">
+            
+                <a href="best/decorators.html">
+            
+                    
+                    如何(不)使用装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    资源
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="faq/blogs.html">
+            
+                <a href="faq/blogs.html">
+            
+                    
+                    教程、视频和博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="faq/related.html">
+            
+                <a href="faq/related.html">
+            
+                    
+                    相关项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="faq/examples.html">
+            
+                <a href="faq/examples.html">
+            
+                    
+                    案例项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="faq/boilerplates.html">
+            
+                <a href="faq/boilerplates.html">
+            
+                    
+                    样板文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="faq/faq.html">
+            
+                <a href="faq/faq.html">
+            
+                    
+                    常见问题解答
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    贴士与技巧
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="best/pitfalls.html">
+            
+                <a href="best/pitfalls.html">
+            
+                    
+                    常见陷阱与最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="best/store.html">
+            
+                <a href="best/store.html">
+            
+                    
+                    定义数据存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="best/actions.html">
+            
+                <a href="best/actions.html">
+            
+                    
+                    编写(异步) actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="best/react-performance.html">
+            
+                <a href="best/react-performance.html">
+            
+                    
+                    优化 React 组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="best/devtools.html">
+            
+                <a href="best/devtools.html">
+            
+                    
+                    开发工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="best/syntax.html">
+            
+                <a href="best/syntax.html">
+            
+                    
+                    ES5 / ES6 / TypeScript 语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="best/stateless-HMR.html">
+            
+                <a href="best/stateless-HMR.html">
+            
+                    
+                    无状态组件和热加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    实用函数
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="refguide/autorun-async.html">
+            
+                <a href="refguide/autorun-async.html">
+            
+                    
+                    autorunAsync
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="refguide/extending.html">
+            
+                <a href="refguide/extending.html">
+            
+                    
+                    Atom & Reaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="refguide/create-transformer.html">
+            
+                <a href="refguide/create-transformer.html">
+            
+                    
+                    createTransformer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="refguide/expr.html">
+            
+                <a href="refguide/expr.html">
+            
+                    
+                    expr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="refguide/extend-observable.html">
+            
+                <a href="refguide/extend-observable.html">
+            
+                    
+                    extendObservable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="refguide/is-observable.html">
+            
+                <a href="refguide/is-observable.html">
+            
+                    
+                    isObservable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="refguide/modifiers.html">
+            
+                <a href="refguide/modifiers.html">
+            
+                    
+                    modifiers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="refguide/observe.html">
+            
+                <a href="refguide/observe.html">
+            
+                    
+                    intercept & observe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="refguide/reaction.html">
+            
+                <a href="refguide/reaction.html">
+            
+                    
+                    reaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="refguide/spy.html">
+            
+                <a href="refguide/spy.html">
+            
+                    
+                    spy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="refguide/tojson.html">
+            
+                <a href="refguide/tojson.html">
+            
+                    
+                    toJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.12" data-path="refguide/transaction.html">
+            
+                <a href="refguide/transaction.html">
+            
+                    
+                    transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13" data-path="refguide/untracked.html">
+            
+                <a href="refguide/untracked.html">
+            
+                    
+                    untracked
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14" data-path="refguide/when.html">
+            
+                <a href="refguide/when.html">
+            
+                    
+                    when
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="donating.html">
+            
+                <a href="donating.html">
+            
+                    
+                    捐赠
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >MobX 介绍</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <blockquote>
+<p>&#x6B64;&#x4E2D;&#x6587;&#x6587;&#x6863;&#x4F1A;&#x4E0E;&#x5B98;&#x7F51;&#x6587;&#x6863;&#x4FDD;&#x6301;&#x540C;&#x6B65;</p>
+<p>&#x6B22;&#x8FCE;&#x5927;&#x5BB6;&#x5171;&#x540C;&#x6765;&#x5B8C;&#x5584;&#x6B64;&#x6587;&#x6863;&#xFF0C;&#x4E3A;&#x56FD;&#x5185; MobX &#x7231;&#x597D;&#x8005;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x66F4;&#x597D;&#x7684;&#x5B66;&#x4E60;&#x73AF;&#x5883;</p>
+<p>Github &#x4ED3;&#x5E93;: <a href="https://github.com/SangKa/mobx-docs-cn" target="_blank">https://github.com/SangKa/mobx-docs-cn</a></p>
+</blockquote>
+<p><img src="docs/mobx.png" alt="logo" height="120" align="right"></p>
+<h1 id="mobx">MobX</h1>
+<p><em>&#x7B80;&#x5355;&#x3001;&#x53EF;&#x6269;&#x5C55;&#x7684;&#x72B6;&#x6001;&#x7BA1;&#x7406;</em></p>
+<p><a href="https://travis-ci.org/mobxjs/mobx" target="_blank"><img src="https://travis-ci.org/mobxjs/mobx.svg?branch=master" alt="Build Status"></a>
+<a href="https://coveralls.io/github/mobxjs/mobx?branch=master" target="_blank"><img src="https://coveralls.io/repos/mobxjs/mobx/badge.svg?branch=master&amp;service=github" alt="Coverage Status"></a>
+<a href="https://gitter.im/mobxjs/mobx?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge" target="_blank"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/mobxjs/mobx"></a></p>
+<p><img src="https://nodei.co/npm/mobx.png?downloadRank=true&amp;downloads=true" alt="npm install mobx"></p>
+<ul>
+<li>&#x5B89;&#x88C5;: <code>npm install mobx --save</code>. React &#x7ED1;&#x5B9A;&#x5E93;: <code>npm install mobx-react --save</code>. &#x8981;&#x542F;&#x7528; ESNext &#x7684;&#x88C5;&#x9970;&#x5668; (&#x53EF;&#x9009;), &#x89C1;&#x4E0B;&#x9762;.</li>
+<li>CDN: <a href="https://unpkg.com/mobx/lib/mobx.umd.js" target="_blank">https://unpkg.com/mobx/lib/mobx.umd.js</a></li>
+</ul>
+<h2 id="&#x5165;&#x95E8;&#x6307;&#x5357;">&#x5165;&#x95E8;&#x6307;&#x5357;</h2>
+<ul>
+<li><a href="https://mobxjs.github.io/mobx/getting-started.html" target="_blank">&#x5341;&#x5206;&#x949F;&#x4EA4;&#x4E92;&#x5F0F;&#x7684; MobX + React &#x6559;&#x7A0B;</a></li>
+<li><a href="https://mobxjs.github.io/mobx/refguide/api.html" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;&#x548C;API&#x6982;&#x89C8;</a></li>
+<li>&#x89C6;&#x9891;:<ul>
+<li><a href="https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx" target="_blank">Egghead.io &#x8BFE;&#x7A0B;: &#x5728; React &#x5E94;&#x7528;&#x4E2D;&#x4F7F;&#x7528; MobX &#x7BA1;&#x7406;&#x590D;&#x6742;&#x7684;&#x72B6;&#x6001;</a> - 30&#x5206;&#x949F;.</li>
+<li><a href="https://www.youtube.com/watch?v=Aws40KOx90U" target="_blank">ReactNext 2016: &#x771F;&#x5B9E;&#x4E16;&#x754C;&#x7684; MobX</a> - 40&#x5206;&#x949F; <a href="https://docs.google.com/presentation/d/1DrI6Hc2xIPTLBkfNH8YczOcPXQTOaCIcDESdyVfG_bE/edit?usp=sharing" target="_blank">&#x5E7B;&#x706F;&#x7247;</a></li>
+<li><a href="https://www.youtube.com/watch?v=XGwuM_u7UeQ" target="_blank">React &#x548C; MobX &#x5B9E;&#x6218;</a>. OpenSourceNorth &#x5F00;&#x53D1;&#x8005;&#x5927;&#x4F1A;&#x4E0A;&#xFF0C;Matt Ruby &#x6DF1;&#x5165;&#x4ECB;&#x7ECD;&#x548C;&#x8BF4;&#x660E;&#x5982;&#x4F55;&#x4F7F;&#x7528;MobX&#x548C;React(ES5&#x7248;&#x672C;) - 42&#x5206;&#x949F;.</li>
+<li>LearnCode.academy MobX &#x6559;&#x7A0B; <a href="https://www.youtube.com/watch?v=_q50BXqkAfI" target="_blank">&#x7B2C;&#x4E00;&#x90E8;&#x5206;: MobX + React &#x592A;&#x68D2;&#x4E86; (7&#x5206;&#x949F;)</a> <a href="https://www.youtube.com/watch?v=nYvNqKrl69s" target="_blank">&#x7B2C;&#x4E8C;&#x90E8;&#x5206;: Computed Values and &#x5D4C;&#x5957;/&#x5F15;&#x7528;&#x7684; Observables (12&#x5206;&#x949F;)</a></li>
+<li><a href="https://www.youtube.com/watch?v=K8dr8BMU7-8" target="_blank">&#x5F55;&#x64AD;: MobX &#x4ECB;&#x7ECD;</a> - 8&#x5206;&#x949F;</li>
+<li><a href="https://www.youtube.com/watch?v=ApmSsu3qnf0&amp;feature=youtu.be" target="_blank">&#x8BBF;&#x8C08;: &#x72B6;&#x6001;&#x7BA1;&#x7406;&#x5F88;&#x5BB9;&#x6613; - React Amsterdam 2016 &#x5F00;&#x53D1;&#x8005;&#x5927;&#x4F1A;</a> (<a href="https://speakerdeck.com/mweststrate/state-management-is-easy-introduction-to-mobx" target="_blank">&#x5E7B;&#x706F;&#x7247;</a>)</li>
+</ul>
+</li>
+<li><a href="http://mobxjs.github.io/mobx/faq/boilerplates.html" target="_blank">&#x6837;&#x677F;&#x6587;&#x4EF6;&#x548C;&#x76F8;&#x5173;&#x9879;&#x76EE;</a></li>
+<li>&#x66F4;&#x591A;&#x6559;&#x7A0B;&#x3001;&#x535A;&#x5BA2;&#x548C;&#x89C6;&#x9891;&#x5C3D;&#x5728; <a href="http://mobxjs.github.io/mobx/faq/blogs.html" target="_blank">MobX &#x4E3B;&#x9875;</a></li>
+</ul>
+<h2 id="&#x5165;&#x95E8;">&#x5165;&#x95E8;</h2>
+<p>MobX &#x662F;&#x4E00;&#x4E2A;&#x7ECF;&#x8FC7;&#x6218;&#x706B;&#x6D17;&#x793C;&#x7684;&#x5E93;&#xFF0C;&#x5B83;&#x901A;&#x8FC7;&#x900F;&#x660E;&#x7684;&#x51FD;&#x6570;&#x54CD;&#x5E94;&#x5F0F;&#x7F16;&#x7A0B;(transparently applying functional reactive programming - TFRP)&#x4F7F;&#x5F97;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x53D8;&#x5F97;&#x7B80;&#x5355;&#x548C;&#x53EF;&#x6269;&#x5C55;&#x3002;MobX&#x80CC;&#x540E;&#x7684;&#x54F2;&#x5B66;&#x5F88;&#x7B80;&#x5355;:</p>
+<p><em>&#x4EFB;&#x4F55;&#x6E90;&#x81EA;&#x5E94;&#x7528;&#x72B6;&#x6001;&#x7684;&#x4E1C;&#x897F;&#x90FD;&#x5E94;&#x8BE5;&#x81EA;&#x52A8;&#x5730;&#x83B7;&#x5F97;&#x3002;</em></p>
+<p>&#x5176;&#x4E2D;&#x5305;&#x62EC;UI&#x3001;&#x6570;&#x636E;&#x5E8F;&#x5217;&#x5316;&#x3001;&#x670D;&#x52A1;&#x5668;&#x901A;&#x8BAF;&#xFF0C;&#x7B49;&#x7B49;&#x3002;</p>
+<p><img alt="MobX unidirectional flow" src="docs/flow.png" align="center"></p>
+<p>React &#x548C; MobX &#x662F;&#x4E00;&#x5BF9;&#x5F3A;&#x529B;&#x7EC4;&#x5408;&#x3002;React &#x901A;&#x8FC7;&#x63D0;&#x4F9B;&#x673A;&#x5236;&#x628A;&#x5E94;&#x7528;&#x72B6;&#x6001;&#x8F6C;&#x6362;&#x4E3A;&#x53EF;&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#x6811;&#x5E76;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x6E32;&#x67D3;&#x3002;&#x800C;MobX&#x63D0;&#x4F9B;&#x673A;&#x5236;&#x6765;&#x5B58;&#x50A8;&#x548C;&#x66F4;&#x65B0;&#x5E94;&#x7528;&#x72B6;&#x6001;&#x4F9B; React &#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x5E94;&#x7528;&#x5F00;&#x53D1;&#x4E2D;&#x7684;&#x5E38;&#x89C1;&#x95EE;&#x9898;&#xFF0C;React &#x548C; MobX&#x90FD;&#x63D0;&#x4F9B;&#x4E86;&#x6700;&#x4F18;&#x548C;&#x72EC;&#x7279;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;React &#x63D0;&#x4F9B;&#x4E86;&#x4F18;&#x5316;UI&#x6E32;&#x67D3;&#x7684;&#x673A;&#x5236;&#xFF0C; &#x8FD9;&#x79CD;&#x673A;&#x5236;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x865A;&#x62DF;DOM&#x6765;&#x51CF;&#x5C11;&#x6602;&#x8D35;&#x7684;DOM&#x53D8;&#x5316;&#x7684;&#x6570;&#x91CF;&#x3002;MobX &#x63D0;&#x4F9B;&#x4E86;&#x4F18;&#x5316;&#x5E94;&#x7528;&#x72B6;&#x6001;&#x4E0E; React &#x7EC4;&#x4EF6;&#x540C;&#x6B65;&#x7684;&#x673A;&#x5236;&#xFF0C;&#x8FD9;&#x79CD;&#x673A;&#x5236;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x54CD;&#x5E94;&#x5F0F;&#x865A;&#x62DF;&#x4F9D;&#x8D56;&#x72B6;&#x6001;&#x56FE;&#x8868;&#xFF0C;&#x5B83;&#x53EA;&#x6709;&#x5728;&#x771F;&#x6B63;&#x9700;&#x8981;&#x7684;&#x65F6;&#x5019;&#x624D;&#x66F4;&#x65B0;&#x5E76;&#x4E14;&#x6C38;&#x8FDC;&#x4FDD;&#x6301;&#x662F;&#x6700;&#x65B0;&#x7684;&#x3002;</p>
+<h2 id="&#x6838;&#x5FC3;&#x6982;&#x5FF5;">&#x6838;&#x5FC3;&#x6982;&#x5FF5;</h2>
+<p>MobX &#x7684;&#x6838;&#x5FC3;&#x6982;&#x5FF5;&#x4E0D;&#x591A;&#x3002; &#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x53EF;&#x4EE5;&#x5728; <a href="https://jsfiddle.net/mweststrate/wv3yopo0/" target="_blank">JSFiddle</a> (&#x6216;&#x8005; <a href="https://jsfiddle.net/rubyred/55oc981v/" target="_blank">&#x4E0D;&#x4F7F;&#x7528; ES6 &#x548C; JSX</a>)&#x4E2D;&#x5728;&#x7EBF;&#x8BD5;&#x7528;&#x3002;</p>
+<h3 id="observable-state&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#x72B6;&#x6001;">Observable state(&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#x72B6;&#x6001;)</h3>
+<p>MobX &#x4E3A;&#x73B0;&#x6709;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;(&#x5982;&#x5BF9;&#x8C61;&#xFF0C;&#x6570;&#x7EC4;&#x548C;&#x7C7B;&#x5B9E;&#x4F8B;)&#x6DFB;&#x52A0;&#x4E86;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#x529F;&#x80FD;&#x3002;
+&#x901A;&#x8FC7;&#x4F7F;&#x7528; <a href="http://mobxjs.github.io/mobx/refguide/observable-decorator.html" target="_blank">@observable</a> &#x88C5;&#x9970;&#x5668;(ES.Next)&#x6765;&#x7ED9;&#x4F60;&#x7684;&#x7C7B;&#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x6CE8;&#x89E3;&#x5C31;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x5730;&#x5B8C;&#x6210;&#x8FD9;&#x4E00;&#x5207;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Todo</span> </span>{
+    id = <span class="hljs-built_in">Math</span>.random();
+    @observable title = <span class="hljs-string">&quot;&quot;</span>;
+    @observable finished = <span class="hljs-literal">false</span>;
+}
+</code></pre>
+<p>&#x4F7F;&#x7528; <code>observable</code> &#x5F88;&#x50CF;&#x628A;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x53D8;&#x6210;excel&#x7684;&#x5355;&#x5143;&#x683C;&#x3002;
+&#x4F46;&#x548C;&#x5355;&#x5143;&#x683C;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x4E9B;&#x503C;&#x4E0D;&#x53EA;&#x662F;&#x539F;&#x59CB;&#x503C;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x662F;&#x5F15;&#x7528;&#x503C;&#xFF0C;&#x6BD4;&#x5982;&#x5BF9;&#x8C61;&#x548C;&#x6570;&#x7EC4;&#x3002;
+&#x4F60;&#x751A;&#x81F3;&#x8FD8;&#x53EF;&#x4EE5;<a href="http://mobxjs.github.io/mobx/refguide/extending.html" target="_blank">&#x81EA;&#x5B9A;&#x4E49;</a>&#x53EF;&#x89C2;&#x5BDF;&#x6570;&#x636E;&#x6E90;&#x3002;</p>
+<h3 id="&#x63D2;&#x66F2;-&#x5728;es5&#x3001;es6&#x548C;esnext&#x73AF;&#x5883;&#x4E0B;&#x4F7F;&#x7528;-mobx">&#x63D2;&#x66F2;: &#x5728;ES5&#x3001;ES6&#x548C;ES.next&#x73AF;&#x5883;&#x4E0B;&#x4F7F;&#x7528; MobX</h3>
+<p>&#x8FD9;&#x4E9B; <code>@</code> &#x5F00;&#x5934;&#x7684;&#x4E1C;&#x897F;&#x5BF9;&#x4F60;&#x6765;&#x8BF4;&#x6216;&#x8BB8;&#x8FD8;&#x6BD4;&#x8F83;&#x964C;&#x751F;&#xFF0C;&#x5B83;&#x4EEC;&#x662F;ES.next&#x88C5;&#x9970;&#x5668;&#x3002;
+&#x5728; MobX &#x4E2D;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x5B8C;&#x5168;&#x662F;&#x53EF;&#x9009;&#x7684;&#x3002;&#x53C2;&#x89C1;<a href="http://mobxjs.github.io/mobx/best/decorators.html" target="_blank">&#x88C5;&#x9970;&#x5668;&#x6587;&#x6863;</a>&#x8BE6;&#x7EC6;&#x4E86;&#x89E3;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x6216;&#x8005;&#x907F;&#x514D;&#x5B83;&#x4EEC;&#x3002;
+MobX &#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x4F55;ES5&#x7684;&#x73AF;&#x5883;&#x4E2D;&#x8FD0;&#x884C;&#xFF0C;&#x4F46;&#x662F;&#x5229;&#x7528;&#x50CF;&#x88C5;&#x9970;&#x5668;&#x8FD9;&#x6837;&#x7684;ES.next&#x7684;&#x7279;&#x6027;&#x662F;&#x4F7F;&#x7528; MobX &#x7684;&#x6700;&#x4F73;&#x9009;&#x62E9;&#x3002;
+&#x672C;&#x81EA;&#x8FF0;&#x6587;&#x4EF6;&#x7684;&#x5269;&#x4F59;&#x90E8;&#x5206;&#x90FD;&#x4F1A;&#x4F7F;&#x7528;&#x88C5;&#x9970;&#x5668;&#xFF0C;&#x4F46;&#x8BF7;&#x7262;&#x8BB0;&#xFF0C;<em>&#x5B83;&#x4EEC;&#x662F;&#x53EF;&#x9009;&#x7684;</em>&#x3002;</p>
+<p>For example, in good ol&apos; ES5 the above snippet would look like:
+&#x4F8B;&#x5982;&#xFF0C;&#x4E0A;&#x9762;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#x7684;ES5&#x7248;&#x672C;&#x5E94;&#x8BE5;&#x662F;&#x8FD9;&#x6837;:</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Todo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">this</span>.id = <span class="hljs-built_in">Math</span>.random()
+    extendObservable(<span class="hljs-keyword">this</span>, {
+        title: <span class="hljs-string">&quot;&quot;</span>,
+        finished: <span class="hljs-literal">false</span>
+    })
+}
+</code></pre>
+<h3 id="computed-values&#x8BA1;&#x7B97;&#x503C;">Computed values(&#x8BA1;&#x7B97;&#x503C;)</h3>
+<p>&#x4F7F;&#x7528; MobX&#xFF0C; &#x4F60;&#x5B9A;&#x4E49;&#x7684;&#x503C;&#x53EF;&#x4EE5;&#x5728;&#x76F8;&#x5173;&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x3002;
+&#x901A;&#x8FC7;&#x4F7F;&#x7528; <a href="http://mobxjs.github.io/mobx/refguide/computed-decorator.html" target="_blank"><code>@computed</code></a> &#x88C5;&#x9970;&#x5668;&#x6216;&#x8005;&#x5F53;&#x4F7F;&#x7528; <code>(extend)Observable</code> &#x65F6;&#x4F7F;&#x7528; getter / setter &#x51FD;&#x6570;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TodoList</span> </span>{
+    @observable todos = [];
+    @computed get unfinishedTodoCount() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.todos.filter(todo =&gt; !todo.finished).length;
+    }
+}
+</code></pre>
+<p>&#x5F53;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;todo&#x6216;&#x8005;&#x67D0;&#x4E2A;todo&#x7684; <code>finished</code> &#x5C5E;&#x6027;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;MobX &#x4F1A;&#x786E;&#x4FDD; <code>unfinishedTodoCount</code> &#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x3002;
+&#x8FD9;&#x6837;&#x7684;&#x8BA1;&#x7B97;&#x53EF;&#x4EE5;&#x5F88;&#x597D;&#x5730;&#x4E0E;&#x7535;&#x5B50;&#x8868;&#x683C;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x516C;&#x5F0F;(&#x5982;MS Excel)&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x3002;&#x6BCF;&#x5F53;&#x53EA;&#x6709;&#x5728;&#x9700;&#x8981;&#x5B83;&#x4EEC;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B83;&#x4EEC;&#x624D;&#x4F1A;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x3002;</p>
+<h3 id="reactions&#x53CD;&#x5E94;">Reactions(&#x53CD;&#x5E94;)</h3>
+<p>Reactions &#x548C;&#x8BA1;&#x7B97;&#x503C;&#x5F88;&#x50CF;&#xFF0C;&#x4F46;&#x5B83;&#x4E0D;&#x662F;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x503C;&#xFF0C;&#x800C;&#x662F;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E9B;&#x526F;&#x4F5C;&#x7528;&#xFF0C;&#x6BD4;&#x5982;&#x6253;&#x5370;&#x5230;&#x63A7;&#x5236;&#x53F0;&#x3001;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x3001;&#x9012;&#x589E;&#x5730;&#x66F4;&#x65B0; React &#x7EC4;&#x4EF6;&#x6811;&#x4EE5;&#x4FEE;&#x8865;DOM&#x3001;&#x7B49;&#x7B49;&#x3002;
+&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;reactions &#x4F5C;&#x4E3A; <a href="https://en.wikipedia.org/wiki/Reactive_programming" target="_blank">&#x54CD;&#x5E94;&#x5F0F;&#x7F16;&#x7A0B;</a>&#x548C;<a href="https://en.wikipedia.org/wiki/Imperative_programming" target="_blank">&#x547D;&#x4EE4;&#x5F0F;&#x7F16;&#x7A0B;</a>&#x7684;&#x6865;&#x6881;&#x3002;</p>
+<h4 id="react-&#x7EC4;&#x4EF6;">React &#x7EC4;&#x4EF6;</h4>
+<p>&#x5982;&#x679C;&#x4F60;&#x7528; React &#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x4F60;&#x7684;(&#x65E0;&#x72B6;&#x6001;&#x51FD;&#x6570;)&#x7EC4;&#x4EF6;&#x53D8;&#x6210;&#x54CD;&#x5E94;&#x5F0F;&#x7EC4;&#x4EF6;&#xFF0C;&#x65B9;&#x6CD5;&#x662F;&#x5728;&#x7EC4;&#x4EF6;&#x4E0A;&#x6DFB;&#x52A0; <a href="http://mobxjs.github.io/mobx/refguide/observer-component.html" target="_blank"><code>observer</code></a> &#x51FD;&#x6570;/ &#x88C5;&#x9970;&#x5668;&#xFF0C;<code>observer</code> &#x7531; <code>mobx-react</code> &#x5305;&#x63D0;&#x4F9B;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> React, {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-dom&apos;</span>;
+<span class="hljs-keyword">import</span> {observer} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;mobx-react&quot;</span>;
+
+@observer
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TodoListView</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    render() {
+        <span class="hljs-keyword">return</span> &lt;div&gt;
+            &lt;ul&gt;
+                {this.props.todoList.todos.map(todo =&gt;
+                    &lt;TodoView todo={todo} key={todo.id} /&gt;
+                )}
+            &lt;/ul&gt;
+            Tasks left: {this.props.todoList.unfinishedTodoCount}
+        &lt;/div&gt;
+    }
+}
+
+const TodoView = observer(({todo}) =&gt;
+    &lt;li&gt;
+        &lt;input
+            type=&quot;checkbox&quot;
+            checked={todo.finished}
+            onClick={() =&gt; todo.finished = !todo.finished}
+        /&gt;{todo.title}
+    &lt;/li&gt;
+)
+
+const store = new TodoList();
+ReactDOM.render(&lt;TodoListView todoList={store} /&gt;, document.getElementById(&apos;mount&apos;));
+</code></pre>
+<p><code>observer</code> &#x628A; React (&#x51FD;&#x6570;)&#x7EC4;&#x4EF6;&#x8F6C;&#x6362;&#x4E3A;&#x5B83;&#x4EEC;&#x6E32;&#x67D3;&#x7684;&#x6570;&#x636E;&#x7684;&#x63A8;&#x5BFC;&#x3002;
+&#x5F53;&#x4F7F;&#x7528; MobX &#x65F6;&#x6CA1;&#x6709;&#x6240;&#x8C13;&#x7684;&#x667A;&#x80FD;&#x548C;&#x65E0;&#x8111;&#x7EC4;&#x4EF6;&#x3002;
+&#x6240;&#x6709;&#x7EC4;&#x4EF6;&#x90FD;&#x4EE5;&#x5DE7;&#x5999;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x6E32;&#x67D3;&#xFF0C;&#x800C;&#x5B9A;&#x4E49;&#x5374;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x79CD;&#x7B80;&#x5355;&#x65E0;&#x8111;&#x7684;&#x65B9;&#x5F0F;&#x3002;MobX &#x4F1A;&#x7B80;&#x5355;&#x5730;&#x786E;&#x4FDD;&#x7EC4;&#x4EF6;&#x603B;&#x662F;&#x5728;&#x9700;&#x8981;&#x65F6;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#xFF0C;&#x4F46;&#x4EC5;&#x6B64;&#x800C;&#x5DF2;&#x3002;&#x6240;&#x4EE5;&#x4E0A;&#x9762;&#x4F8B;&#x5B50;&#x4E2D;&#x7684; <code>onClick</code> &#x5904;&#x7406;&#x65B9;&#x6CD5;&#x4F1A;&#x5F3A;&#x5236;&#x5BF9;&#x5E94;&#x7684; <code>TodoView</code> &#x8FDB;&#x884C;&#x6E32;&#x67D3;&#xFF0C;&#x5982;&#x679C;&#x672A;&#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#x7684;&#x6570;&#x91CF;(unfinishedTodoCount)&#x5DF2;&#x7ECF;&#x6539;&#x53D8;&#xFF0C;&#x5B83;&#x5C06;&#x5BFC;&#x81F4; <code>TodoListView</code> &#x8FDB;&#x884C;&#x6E32;&#x67D3;&#x3002;
+&#x7136;&#x800C;&#xFF0C;&#x5982;&#x679C;&#x79FB;&#x9664; <code>Tasks left</code> &#x8FD9;&#x884C;&#x4EE3;&#x7801;(&#x6216;&#x8005;&#x5C06;&#x5B83;&#x653E;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E2D;)&#xFF0C;&#x5F53;&#x70B9;&#x51FB; <code>checkbox</code> &#x7684;&#x65F6;&#x5019; <code>TodoListView</code> &#x4E0D;&#x4F1A;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5728; <a href="https://jsfiddle.net/mweststrate/wv3yopo0/" target="_blank">JSFiddle</a> &#x4E2D;&#x81EA;&#x5DF1;&#x52A8;&#x624B;&#x6765;&#x9A8C;&#x8BC1;&#x8FD9;&#x70B9;&#x3002;</p>
+<h4 id="&#x81EA;&#x5B9A;&#x4E49;-reactions">&#x81EA;&#x5B9A;&#x4E49; reactions</h4>
+<p>&#x4F7F;&#x7528;<a href="http://mobxjs.github.io/mobx/refguide/autorun.html" target="_blank"><code>autorun</code></a>&#x3001;<a href="http://mobxjs.github.io/mobx/refguide/autorun-async.html" target="_blank"><code>autorunAsync</code></a> &#x548C; <a href="http://mobxjs.github.io/mobx/refguide/when.html" target="_blank"><code>when</code></a> &#x51FD;&#x6570;&#x5373;&#x53EF;&#x7B80;&#x5355;&#x7684;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49; reactions&#xFF0C;&#x4EE5;&#x6EE1;&#x8DB3;&#x4F60;&#x7684;&#x5177;&#x4F53;&#x573A;&#x666F;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x6BCF;&#x5F53; <code>unfinishedTodoCount</code> &#x7684;&#x6570;&#x91CF;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x4E0B;&#x9762;&#x7684; <code>autorun</code> &#x4F1A;&#x6253;&#x5370;&#x65E5;&#x5FD7;&#x6D88;&#x606F;:</p>
+<pre><code class="lang-javascript">autorun(() =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Tasks left: &quot;</span> + todos.unfinishedTodoCount)
+})
+</code></pre>
+<h3 id="mobx-&#x4F1A;&#x5BF9;&#x4EC0;&#x4E48;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;">MobX &#x4F1A;&#x5BF9;&#x4EC0;&#x4E48;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;?</h3>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x6BCF;&#x6B21; <code>unfinishedTodoCount</code> &#x53D8;&#x5316;&#x65F6;&#x90FD;&#x4F1A;&#x6253;&#x5370;&#x4E00;&#x6761;&#x65B0;&#x6D88;&#x606F;&#xFF1F;&#x7B54;&#x6848;&#x5C31;&#x662F;&#x4E0B;&#x9762;&#x8FD9;&#x6761;&#x7ECF;&#x9A8C;&#x6CD5;&#x5219;:
+<em>MobX &#x4F1A;&#x5BF9;&#x5728;&#x6267;&#x884C;&#x8DDF;&#x8E2A;&#x51FD;&#x6570;&#x671F;&#x95F4;&#x8BFB;&#x53D6;&#x7684;&#x4EFB;&#x4F55;&#x73B0;&#x6709;&#x7684;&#x53EF;&#x89C2;&#x5BDF;&#x5C5E;&#x6027;&#x505A;&#x51FA;&#x53CD;&#x5E94;</em>&#x3002;</p>
+<p>&#x60F3;&#x6DF1;&#x5165;&#x4E86;&#x89E3; MobX &#x662F;&#x5982;&#x4F55;&#x77E5;&#x9053;&#x9700;&#x8981;&#x5BF9;&#x54EA;&#x4E2A;&#x53EF;&#x89C2;&#x5BDF;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x53CD;&#x5E94;&#xFF0C;&#x8BF7;&#x67E5;&#x9605; <a href="https://github.com/mobxjs/mobx/blob/gh-pages/docs/best/react.md" target="_blank">&#x7406;&#x89E3; MobX &#x5BF9;&#x4EC0;&#x4E48;&#x6709;&#x53CD;&#x5E94;</a>&#x3002;</p>
+<h3 id="actions&#x52A8;&#x4F5C;">Actions(&#x52A8;&#x4F5C;)</h3>
+<p>&#x4E0D;&#x540C;&#x4E8E; flux &#x7CFB;&#x7684;&#x4E00;&#x4E9B;&#x6846;&#x67B6;&#xFF0C;MobX &#x5BF9;&#x4E8E;&#x5982;&#x4F55;&#x5904;&#x7406;&#x7528;&#x6237;&#x4E8B;&#x4EF6;&#x662F;&#x5B8C;&#x5168;&#x5F00;&#x660E;&#x7684;&#x3002;</p>
+<ul>
+<li>&#x53EF;&#x4EE5;&#x7528;&#x7C7B;&#x4F3C; Flux &#x7684;&#x65B9;&#x5F0F;&#x5B8C;&#x6210;</li>
+<li>&#x6216;&#x8005;&#x4F7F;&#x7528; RxJS &#x6765;&#x5904;&#x7406;&#x4E8B;&#x4EF6;</li>
+<li>&#x6216;&#x8005;&#x7528;&#x6700;&#x76F4;&#x89C2;&#x3001;&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5904;&#x7406;&#x4E8B;&#x4EF6;&#xFF0C;&#x6B63;&#x5982;&#x4E0A;&#x9762;&#x6F14;&#x793A;&#x6240;&#x7528;&#x7684; <code>onClick</code></li>
+</ul>
+<p>&#x6700;&#x540E;&#x5168;&#x90E8;&#x5F52;&#x7EB3;&#x4E3A;: &#x72B6;&#x6001;&#x5E94;&#x8BE5;&#x4EE5;&#x67D0;&#x79CD;&#x65B9;&#x5F0F;&#x6765;&#x66F4;&#x65B0;&#x3002;</p>
+<p>&#x5F53;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x540E;&#xFF0C;<code>MobX</code> &#x4F1A;&#x4EE5;&#x4E00;&#x79CD;&#x9AD8;&#x6548;&#x4E14;&#x65E0;&#x969C;&#x788D;&#x7684;&#x65B9;&#x5F0F;&#x5904;&#x7406;&#x597D;&#x5269;&#x4E0B;&#x7684;&#x4E8B;&#x60C5;&#x3002;&#x50CF;&#x4E0B;&#x9762;&#x5982;&#x6B64;&#x7B80;&#x5355;&#x7684;&#x8BED;&#x53E5;&#xFF0C;&#x5DF2;&#x7ECF;&#x8DB3;&#x591F;&#x7528;&#x6765;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x7528;&#x6237;&#x754C;&#x9762;&#x4E86;&#x3002;</p>
+<p>&#x4ECE;&#x6280;&#x672F;&#x4E0A;&#x5C42;&#x9762;&#x6765;&#x8BB2;&#xFF0C;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x3001;&#x8C03;&#x7528;&#x5206;&#x6D3E;&#x7A0B;&#x5E8F;&#x6216;&#x8005;&#x7C7B;&#x4F3C;&#x7684;&#x5DE5;&#x4F5C;&#x3002;&#x5F52;&#x6839;&#x7A76;&#x5E95; React &#x7EC4;&#x4EF6;&#x53EA;&#x662F;&#x72B6;&#x6001;&#x7684;&#x534E;&#x4E3D;&#x5C55;&#x793A;&#xFF0C;&#x800C;&#x72B6;&#x6001;&#x7684;&#x63A8;&#x5BFC;&#x7531; MobX &#x6765;&#x7BA1;&#x7406;&#x3002;</p>
+<pre><code class="lang-javascript">store.todos.push(
+    <span class="hljs-keyword">new</span> Todo(<span class="hljs-string">&quot;Get Coffee&quot;</span>),
+    <span class="hljs-keyword">new</span> Todo(<span class="hljs-string">&quot;Write simpler code&quot;</span>)
+);
+store.todos[<span class="hljs-number">0</span>].finished = <span class="hljs-literal">true</span>;
+</code></pre>
+<p>&#x5C3D;&#x7BA1;&#x5982;&#x6B64;&#xFF0C;MobX &#x8FD8;&#x662F;&#x63D0;&#x4F9B;&#x4E86; <a href="https://mobxjs.github.io/mobx/refguide/action.html" target="_blank"><code>actions</code></a> &#x8FD9;&#x4E2A;&#x53EF;&#x9009;&#x7684;&#x5185;&#x7F6E;&#x6982;&#x5FF5;&#x3002;
+&#x4F7F;&#x7528; <code>actions</code> &#x662F;&#x6709;&#x4F18;&#x52BF;&#x7684;: &#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x4F60;&#x628A;&#x4EE3;&#x7801;&#x7EC4;&#x7EC7;&#x7684;&#x66F4;&#x597D;&#xFF0C;&#x8FD8;&#x80FD;&#x5728;&#x72B6;&#x6001;&#x4F55;&#x65F6;&#x4F55;&#x5730;&#x5E94;&#x8BE5;&#x88AB;&#x4FEE;&#x6539;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x4E0A;&#x5E2E;&#x52A9;&#x4F60;&#x505A;&#x51FA;&#x660E;&#x667A;&#x7684;&#x51B3;&#x5B9A;&#x3002;</p>
+<h2 id="mobx-&#x7B80;&#x5355;&#x4E14;&#x53EF;&#x6269;&#x5C55;">MobX: &#x7B80;&#x5355;&#x4E14;&#x53EF;&#x6269;&#x5C55;</h2>
+<p>MobX &#x662F;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x5E93;&#x4E2D;&#x4FB5;&#x5165;&#x6027;&#x6700;&#x5C0F;&#x7684;&#x4E4B;&#x4E00;&#x3002;&#x8FD9;&#x4F7F;&#x5F97; <code>MobX</code>&#x7684;&#x65B9;&#x6CD5;&#x4E0D;&#x4F46;&#x7B80;&#x5355;&#xFF0C;&#x800C;&#x4E14;&#x53EF;&#x6269;&#x5C55;&#x6027;&#x4E5F;&#x975E;&#x5E38;&#x597D;:</p>
+<h3 id="&#x4F7F;&#x7528;&#x7C7B;&#x548C;&#x771F;&#x6B63;&#x7684;&#x5F15;&#x7528;">&#x4F7F;&#x7528;&#x7C7B;&#x548C;&#x771F;&#x6B63;&#x7684;&#x5F15;&#x7528;</h3>
+<p>&#x4F7F;&#x7528; MobX &#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x6570;&#x636E;&#x6807;&#x51C6;&#x5316;&#x3002;&#x8FD9;&#x4F7F;&#x5F97;&#x5E93;&#x5341;&#x5206;&#x9002;&#x5408;&#x90A3;&#x4E9B;&#x5F02;&#x5E38;&#x590D;&#x6742;&#x7684;&#x9886;&#x57DF;&#x6A21;&#x578B;(&#x4EE5; Mendix &#x4E3A;&#x4F8B;: &#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x4E2D;&#x6709;&#x5927;&#x7EA6;500&#x4E2A;&#x9886;&#x57DF;&#x7C7B;)&#x3002;</p>
+<h3 id="&#x4FDD;&#x8BC1;&#x53C2;&#x7167;&#x5B8C;&#x6574;&#x6027;">&#x4FDD;&#x8BC1;&#x53C2;&#x7167;&#x5B8C;&#x6574;&#x6027;</h3>
+<p>&#x56E0;&#x4E3A;&#x6570;&#x636E;&#x4E0D;&#x9700;&#x8981;&#x6807;&#x51C6;&#x5316;&#xFF0C;&#x6240;&#x4EE5; MobX &#x4F1A;&#x81EA;&#x52A8;&#x8DDF;&#x8E2A;&#x72B6;&#x6001;&#x548C;&#x63A8;&#x5BFC;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x514D;&#x8D39;&#x83B7;&#x5F97;&#x53C2;&#x7167;&#x5B8C;&#x6574;&#x6027;&#x3002;&#x6E32;&#x67D3;&#x662F;&#x901A;&#x8FC7;&#x4E09;&#x7EA7;&#x95F4;&#x63A5;&#x5BFB;&#x5740;&#x8BBF;&#x95EE;&#xFF1F;</p>
+<p>&#x6CA1;&#x6709;&#x95EE;&#x9898;&#xFF0C;MobX &#x4F1A;&#x8DDF;&#x8E2A;&#x5B83;&#x4EEC;&#xFF0C;&#x4E00;&#x65E6;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#xFF0C;&#x5C31;&#x4F1A;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x3002;&#x4F5C;&#x4E3A;&#x56DE;&#x62A5;&#xFF0C;&#x9648;&#x5E74;&#x7684;&#x8001;bug&#x5DF2;&#x4E0D;&#x590D;&#x5B58;&#x5728;&#x3002;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x5458;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x4F1A;&#x5FD8;&#x8BB0;&#x4FEE;&#x6539;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#x53EF;&#x80FD;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x4E00;&#x4E2A;&#x89D2;&#x843D;&#x91CC;&#x770B;&#x8D77;&#x6765;&#x6BEB;&#x4E0D;&#x76F8;&#x5173;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x4F46; MobX &#x4E0D;&#x4F1A;&#x3002;</p>
+<h3 id="&#x66F4;&#x7B80;&#x5355;&#x7684;-actions-&#x66F4;&#x4FBF;&#x4E8E;&#x7EF4;&#x62A4;">&#x66F4;&#x7B80;&#x5355;&#x7684; actions &#x66F4;&#x4FBF;&#x4E8E;&#x7EF4;&#x62A4;</h3>
+<p>&#x6B63;&#x5982;&#x4E0A;&#x9762;&#x6240;&#x6F14;&#x793A;&#x7684;&#xFF0C;&#x4F7F;&#x7528; MobX &#x4FEE;&#x6539;&#x72B6;&#x6001;&#x662F;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x7684;&#x3002;&#x4F60;&#x53EA;&#x9700;&#x7B80;&#x5355;&#x7684;&#x5199;&#x51FA;&#x4F60;&#x7684;&#x76EE;&#x7684;&#x3002;MobX &#x4F1A;&#x66FF;&#x4F60;&#x5904;&#x7406;&#x597D;&#x5269;&#x4E0B;&#x7684;&#x4E8B;&#x60C5;&#x3002;</p>
+<h3 id="&#x7EC6;&#x7C92;&#x5EA6;&#x7684;&#x53EF;&#x89C2;&#x6D4B;&#x6027;&#x662F;&#x9AD8;&#x6548;&#x7684;">&#x7EC6;&#x7C92;&#x5EA6;&#x7684;&#x53EF;&#x89C2;&#x6D4B;&#x6027;&#x662F;&#x9AD8;&#x6548;&#x7684;</h3>
+<p>MobX &#x6784;&#x5EFA;&#x5E94;&#x7528;&#x4E2D;&#x6240;&#x6709;&#x63A8;&#x5BFC;&#x7684;&#x56FE;&#x5F62;&#xFF0C;&#x4EE5;&#x627E;&#x5230;&#x4FDD;&#x6301;&#x6700;&#x65B0;&#x6240;&#x9700;&#x7684;&#x6700;&#x5C11;&#x6570;&#x91CF;&#x7684;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x3002;&#x201C;&#x63A8;&#x5BFC;&#x4E00;&#x5207;&#x201D;&#x6216;&#x8BB8;&#x542C;&#x4E0A;&#x53BB;&#x5F00;&#x9500;&#x5F88;&#x6602;&#x8D35;&#xFF0C;&#x4F46; MobX &#x6784;&#x5EFA;&#x865A;&#x62DF;&#x63A8;&#x5BFC;&#x56FE;&#x4EE5;&#x4FDD;&#x6301;&#x63A8;&#x5BFC;&#x4E0E;&#x72B6;&#x6001;&#x540C;&#x6B65;&#x6240;&#x9700;&#x7684;&#x91CD;&#x8BA1;&#x7B97;&#x7684;&#x6570;&#x91CF;&#x6700;&#x5C0F;&#x5316;&#x3002;</p>
+<p>&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x5728; Mendix &#x6D4B;&#x8BD5; MobX &#x65F6;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x5E93;&#x8DDF;&#x8E2A;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x5173;&#x7CFB;&#x901A;&#x5E38;&#x6BD4;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x624B;&#x5199;&#x4E8B;&#x4EF6;&#x6216;&#x57FA;&#x4E8E;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x7684;&#x201C;&#x667A;&#x80FD;&#x201D;&#x9009;&#x62E9;&#x5668;&#x6765;&#x63A8;&#x9001;&#x66F4;&#x6539;&#x66F4;&#x6709;&#x6548;&#x7387;&#x3002;</p>
+<p>&#x539F;&#x56E0;&#x7B80;&#x5355;&#x6765;&#x8BF4;&#x662F; MobX &#x5C06;&#x5728;&#x4F60;&#x7684;&#x6570;&#x636E;&#x4E0A;&#x5EFA;&#x7ACB;&#x6BD4;&#x4F60;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x5458;&#x66F4;&#x591A;&#x7684;&#x7EC6;&#x7C92;&#x5EA6;&#x7684;&#x201C;&#x76D1;&#x542C;&#x5668;&#x201D;&#x3002;</p>
+<p>&#x5176;&#x6B21;, MobX &#x770B;&#x5230;&#x63A8;&#x5BFC;&#x4E4B;&#x95F4;&#x7684;&#x56E0;&#x679C;&#x5173;&#x7CFB;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x53EF;&#x4EE5;&#x4E3A;&#x63A8;&#x5BFC;&#x6392;&#x5E8F;&#xFF0C;&#x4F7F;&#x5F97;&#x63A8;&#x5BFC;&#x4E0D;&#x4F1A;&#x8FD0;&#x884C;&#x591A;&#x6B21;&#x6216;&#x5F15;&#x5165;&#x7F3A;&#x9677;&#x3002;</p>
+<p>&#x60F3;&#x4E86;&#x89E3;&#x8FD9;&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#xFF1F; &#x8BF7;&#x53C2;&#x89C1; <a href="https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254" target="_blank">&#x6DF1;&#x5165;&#x5256;&#x6790; MobX</a>&#x3002;</p>
+<h3 id="&#x6613;&#x64CD;&#x4F5C;&#x6027;">&#x6613;&#x64CD;&#x4F5C;&#x6027;</h3>
+<p>MobX &#x4F7F;&#x7528;&#x539F;&#x751F;javascript&#x3002;&#x7531;&#x4E8E;&#x5B83;&#x7684;&#x4E0D;&#x5510;&#x7A81;&#x6027;&#xFF0C;&#x5B83;&#x5929;&#x751F;&#x53EF;&#x4EE5;&#x548C;&#x7EDD;&#x5927;&#x90E8;&#x5206;javascript&#x5E93;&#x5171;&#x540C;&#x4F7F;&#x7528;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x7279;&#x5B9A;&#x7684; MobX &#x98CE;&#x683C;&#x5E93;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x4F60;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#x4F60;&#x7684;&#x8DEF;&#x7531;&#xFF0C;&#x6570;&#x636E;&#x83B7;&#x53D6;&#x548C;&#x5DE5;&#x5177;&#x5E93;&#xFF0C;&#x6BD4;&#x5982;<code>react-router</code>&#x3001; <code>director</code>&#x3001; <code>superagent</code>&#x3001; <code>lodash</code>&#xFF0C;&#x7B49;&#x7B49;&#x3002;</p>
+<p>&#x51FA;&#x4E8E;&#x540C;&#x6837;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x4F7F;&#x7528;&#x5B83;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728; react-native &#x8FD9;&#x6837;&#x7684;&#x540C;&#x6784;&#x5E94;&#x7528;&#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x7ED3;&#x8BBA;&#x5C31;&#x662F;: &#x76F8;&#x6BD4;&#x5176;&#x5B83;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x5F53;&#x4F7F;&#x7528; MobX &#x65F6;&#x901A;&#x5E38;&#x53EA;&#x9700;&#x5B66;&#x4E60;&#x66F4;&#x5C11;&#x7684;&#x65B0;&#x611F;&#x5FF5;&#x3002;</p>
+<hr>
+<center>
+<img src="https://www.mendix.com/styleguide/img/logo-mendix.png" align="center" width="200">
+
+<strong>&#x53EF;&#x4EE5;&#x81EA;&#x8C6A;&#x7684;&#x8BF4;&#xFF0C;MobX &#x5DF2;&#x7ECF;&#x5728; <a href="https://www.mendix.com" target="_blank">Medix</a> &#x7684;&#x4EFB;&#x52A1;&#x5173;&#x952E;&#x7CFB;&#x7EDF;&#x4E2D;&#x4F7F;&#x7528; </strong>
+</center>
+
+
+<h2 id="&#x4FE1;&#x7528;">&#x4FE1;&#x7528;</h2>
+<p>MobX &#x7684;&#x7075;&#x611F;&#x6765;&#x81EA;excel&#x8868;&#x683C;&#x4E2D;&#x7684;&#x53CD;&#x5E94;&#x5F0F;&#x7F16;&#x7A0B;&#x539F;&#x7406;&#x3002;&#x540C;&#x6837;&#x4E5F;&#x53D7;&#x5230;&#x50CF; MeteorJS&#x3001;knockout&#x548C;Vue.js&#x8FD9;&#x6837;&#x7684; MVVM &#x6846;&#x67B6;&#x7684;&#x542F;&#x53D1;&#x3002;&#x4F46;&#x662F; MobX &#x628A;&#x900F;&#x660E;&#x7684;&#x51FD;&#x6570;&#x54CD;&#x5E94;&#x5F0F;&#x7F16;&#x7A0B;(Transparent Functional Reactive Programming)&#x63D0;&#x5347;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x66F4;&#x597D;&#x7684;&#x6C34;&#x5E73;&#x5E76;&#x4E14;&#x63D0;&#x4F9B;&#x4E86;&#x72EC;&#x7ACB;&#x7684;&#x5B9E;&#x73B0;&#x3002;&#x5B83;&#x4EE5;&#x4E00;&#x79CD;&#x65E0;&#x969C;&#x788D;&#x3001;&#x540C;&#x6B65;&#x3001;&#x53EF;&#x9884;&#x89C1;&#x548C;&#x9AD8;&#x6548;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x4E86; TFRP&#x3002;</p>
+<p><a href="https://github.com/mendix" target="_blank">Mendix</a> &#x79EF;&#x7D2F;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x4FE1;&#x7528;&#xFF0C;&#x4E3A;&#x7EF4;&#x62A4; MobX &#x63D0;&#x4F9B;&#x4E86;&#x7075;&#x6D3B;&#x6027;&#x548C;&#x652F;&#x6301;&#xFF0C;&#x5E76;&#x6709;&#x673A;&#x4F1A;&#x5728;&#x663E;&#x793A;&#x3001;&#x590D;&#x6742;&#x3001;&#x6027;&#x80FD;&#x5173;&#x952E;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x8BC1;&#x660E; MobX &#x7684;&#x54F2;&#x5B66;&#x3002;</p>
+<p>&#x6700;&#x7EC8;&#x7684;&#x8D5E;&#x8A89;&#x5C5E;&#x4E8E;&#x6240;&#x6709;&#x7684;&#x9009;&#x62E9;&#x76F8;&#x4FE1;&#x3001;&#x4E0D;&#x65AD;&#x5C1D;&#x8BD5;&#x3001;&#x4E0D;&#x65AD;&#x9A8C;&#x8BC1;&#x3001;&#x4E43;&#x81F3;<a href="https://github.com/mobxjs/mobx/blob/master/sponsors.md" target="_blank">&#x8D5E;&#x52A9;</a> MobX &#x7684;&#x4EBA;&#x4EEC;&#x3002;</p>
+<h2 id="&#x66F4;&#x591A;&#x8D44;&#x6E90;&#x53CA;&#x6587;&#x6863;">&#x66F4;&#x591A;&#x8D44;&#x6E90;&#x53CA;&#x6587;&#x6863;</h2>
+<ul>
+<li><a href="http://mobxjs.github.io/mobx/faq/blogs.html" target="_blank">MobX &#x4E3B;&#x9875;</a></li>
+<li><a href="http://mobxjs.github.io/mobx/refguide/api.html" target="_blank">API&#x6982;&#x89C8;</a></li>
+<li><a href="http://mobxjs.github.io/mobx/faq/blogs.html" target="_blank">&#x6559;&#x7A0B;&#x3001;&#x535A;&#x5BA2;&#x548C;&#x89C6;&#x9891;</a></li>
+<li><a href="http://mobxjs.github.io/mobx/faq/boilerplates.html" target="_blank">&#x6837;&#x677F;&#x6587;&#x4EF6;</a></li>
+<li><a href="http://mobxjs.github.io/mobx/faq/related.html" target="_blank">&#x76F8;&#x5173;&#x9879;&#x76EE;</a></li>
+</ul>
+<h2 id="&#x5176;&#x5B83;&#x4EBA;&#x90FD;&#x5728;&#x8BF4;&#x4E9B;&#x4EC0;&#x4E48;">&#x5176;&#x5B83;&#x4EBA;&#x90FD;&#x5728;&#x8BF4;&#x4E9B;&#x4EC0;&#x4E48;...</h2>
+<blockquote>
+<p>&#x5728;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x9879;&#x76EE;&#x4F7F;&#x7528; mobx &#x51E0;&#x5468;&#x540E;&#xFF0C;&#x611F;&#x89C9;&#x628A;&#x5B83;&#x5F15;&#x5165;&#x5230;&#x56E2;&#x961F;&#x4E2D;&#x771F;&#x662F;&#x592A;&#x68D2;&#x4E86;&#x3002;&#x5DE5;&#x4F5C;&#x65F6;&#x95F4;&#x51CF;&#x534A;&#xFF0C;&#x5FEB;&#x4E50;&#x52A0;&#x500D;&#x3002;</p>
+<p>&#x4F7F;&#x7528; mobx &#x5DE5;&#x4F5C;&#x5BF9;&#x4E8E;&#x6765;&#x6211;&#x6765;&#x8BF4;&#xFF0C;&#x57FA;&#x672C;&#x5C31;&#x662F;&#x4E0D;&#x65AD;&#x5730;&#x8BC1;&#x660E;&#x201C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x592A;&#x7B80;&#x5355;&#xFF0C;&#x80AF;&#x5B9A;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x201D;&#x7684;&#x60F3;&#x6CD5;&#x662F;&#x9519;&#x8BEF;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>&#x5C1D;&#x8BD5;&#x4F7F;&#x7528; ES6 &#x7248;&#x672C;&#x7684; react-mobx &#x540E;&#xFF0C;&#x4F60;&#x4F1A;&#x7ED9;&#x5B83;&#x4E00;&#x4E2A;&#x70ED;&#x60C5;&#x7684;&#x62E5;&#x62B1;&#x5E76;&#x6DF1;&#x6DF1;&#x5730;&#x7231;&#x4E0A;&#x5B83;&#x3002;</p>
+<p>&#x6211;&#x5DF2;&#x7ECF;&#x5728;&#x5927;&#x578B;&#x5E94;&#x7528;&#x4E2D;&#x4F7F;&#x7528;&#x4E86; MobX&#xFF0C;&#x548C;&#x4E4B;&#x524D;&#x4F7F;&#x7528;&#x7684; Redux &#x76F8;&#x6BD4;&#xFF0C;&#x5B83;&#x66F4;&#x5BB9;&#x6613;&#x9605;&#x8BFB;&#x548C;&#x63A8;&#x5BFC;&#x3002;</p>
+<p>mobx &#x6B63;&#x662F;&#x6211;&#x4E00;&#x76F4;&#x60F3;&#x8981;&#x7684;&#x65B9;&#x5F0F;&#xFF01;&#x5B83;&#x771F;&#x7684;&#x8D85;&#x7EA7;&#x7B80;&#x5355;&#x3001;&#x8D85;&#x7EA7;&#x5FEB;&#xFF01;&#x68D2;&#x6781;&#x4E86;&#xFF01;&#x5343;&#x4E07;&#x4E0D;&#x8981;&#x9519;&#x8FC7;&#xFF01;</p>
+</blockquote>
+<h2 id="&#x8D21;&#x732E;">&#x8D21;&#x732E;</h2>
+<ul>
+<li>&#x5C0F;&#x7684; pull requests &#x53EF;&#x4EE5;&#x968F;&#x610F;&#x53D1;&#x8D77;&#x3002;&#x4F46;&#x662F;&#x65B0;&#x529F;&#x80FD;&#x6216;&#x8005;&#x91CD;&#x5927;&#x53D8;&#x66F4;&#x8BF7;&#x5148;&#x5728; Github Issues &#x4E2D;&#x8BA8;&#x8BBA;&#x3002;</li>
+<li>&#x4F7F;&#x7528; <code>npm test</code> &#x8FD0;&#x884C;&#x57FA;&#x672C;&#x6D4B;&#x8BD5;&#x5957;&#x4EF6;&#xFF0C;<code>npm run coverage</code> &#x7528;&#x6765;&#x6D4B;&#x8BD5;&#x5957;&#x4EF6;&#x7684;&#x8986;&#x76D6;&#x7387;&#xFF0C;<code>npm run perf</code> &#x7528;&#x6765;&#x6D4B;&#x8BD5;&#x6027;&#x80FD;&#x3002;</li>
+</ul>
+<h2 id="bower-&#x652F;&#x6301;">Bower &#x652F;&#x6301;</h2>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x81ED;&#x540D;&#x662D;&#x7740;&#x7684; unpkg.com &#x83B7;&#x5F97; Bower &#x652F;&#x6301;:
+<code>bower install https://unpkg.com/mobx/bower.zip</code></p>
+<p>&#x7136;&#x540E;&#x4F7F;&#x7528;&#x6587;&#x4EF6; <code>lib/mobx.umd.js</code> &#x6216;&#x8005; <code>lib/mobx.umd.min.js</code></p>
+<h2 id="mobx-&#x4EE5;&#x524D;&#x53EB;&#x505A;-mobservable">MobX &#x4EE5;&#x524D;&#x53EB;&#x505A; Mobservable</h2>
+<p>&#x60F3;&#x4E86;&#x89E3; <code>mobservable</code> &#x66F4;&#x540D;&#x4E3A; <code>mobx</code> &#x7684;&#x6240;&#x6709;&#x7EC6;&#x8282;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;<a href="https://github.com/mobxjs/mobx/blob/master/CHANGELOG.md#200" target="_blank">&#x53D8;&#x66F4;&#x65E5;&#x5FD7;</a>&#x3002;</p>
+<h2 id="&#x6350;&#x8D60;">&#x6350;&#x8D60;</h2>
+<p>MobX &#x662F;&#x4F7F;&#x60A8;&#x7684;&#x9879;&#x76EE;&#x6210;&#x529F;&#x7684;&#x5173;&#x952E;&#x5417;&#xFF1F; &#x4F7F;&#x7528;<a href="https://mobxjs.github.io/mobx/donate.html" target="_blank">&#x6350;&#x8D60;&#x6309;&#x94AE;</a>&#x5206;&#x4EAB;&#x80DC;&#x5229;&#xFF01; MobX &#x4E3B;&#x8981;&#x5229;&#x7528;&#x7A7A;&#x95F2;&#x65F6;&#x95F4;&#x8FDB;&#x884C;&#x5F00;&#x53D1;&#xFF0C;&#x6240;&#x4EE5;&#x4EFB;&#x4F55;&#x652F;&#x52A9;&#x90FD;&#x5C06;&#x4E0D;&#x80DC;&#x611F;&#x6FC0; :-)&#x3002; &#x5982;&#x679C;&#x4F60;&#x7559;&#x4E0B;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#xFF0C;&#x5B83;&#x5C06;&#x88AB;&#x6DFB;&#x52A0;&#x5230;<a href="https://github.com/mobxjs/mobx/blob/master/sponsors.md" target="_blank">&#x8D5E;&#x52A9;&#x5546;</a>&#x5217;&#x8868; :)&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="intro/overview.html" class="navigation navigation-next navigation-unique" aria-label="Next page: MobX 要点">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MobX 介绍","level":"1.1","depth":1,"next":{"title":"MobX 要点","level":"1.1.1","depth":2,"path":"intro/overview.md","ref":"intro/overview.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2017-03-19T01:36:37.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-19T01:36:42.175Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1004 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>常见陷阱与最佳实践 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="store.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    MobX 介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../intro/overview.html">
+            
+                <a href="../intro/overview.html">
+            
+                    
+                    MobX 要点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../intro/concepts.html">
+            
+                <a href="../intro/concepts.html">
+            
+                    
+                    概念与原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../refguide/api.html">
+            
+                <a href="../refguide/api.html">
+            
+                    
+                    API概览
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../refguide/observable.html">
+            
+                <a href="../refguide/observable.html">
+            
+                    
+                    observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../refguide/observable-decorator.html">
+            
+                <a href="../refguide/observable-decorator.html">
+            
+                    
+                    @observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../refguide/computed-decorator.html">
+            
+                <a href="../refguide/computed-decorator.html">
+            
+                    
+                    (@)computed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../refguide/autorun.html">
+            
+                <a href="../refguide/autorun.html">
+            
+                    
+                    autorun
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../refguide/observer-component.html">
+            
+                <a href="../refguide/observer-component.html">
+            
+                    
+                    (@)observer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../refguide/action.html">
+            
+                <a href="../refguide/action.html">
+            
+                    
+                    action
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Observable类型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../refguide/object.html">
+            
+                <a href="../refguide/object.html">
+            
+                    
+                    objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../refguide/array.html">
+            
+                <a href="../refguide/array.html">
+            
+                    
+                    arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../refguide/map.html">
+            
+                <a href="../refguide/map.html">
+            
+                    
+                    maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../refguide/boxed.html">
+            
+                <a href="../refguide/boxed.html">
+            
+                    
+                    boxed values
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="react.html">
+            
+                <a href="react.html">
+            
+                    
+                    理解 MobX 对什么有反应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="decorators.html">
+            
+                <a href="decorators.html">
+            
+                    
+                    如何(不)使用装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    资源
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../faq/blogs.html">
+            
+                <a href="../faq/blogs.html">
+            
+                    
+                    教程、视频和博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../faq/related.html">
+            
+                <a href="../faq/related.html">
+            
+                    
+                    相关项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../faq/examples.html">
+            
+                <a href="../faq/examples.html">
+            
+                    
+                    案例项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../faq/boilerplates.html">
+            
+                <a href="../faq/boilerplates.html">
+            
+                    
+                    样板文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../faq/faq.html">
+            
+                <a href="../faq/faq.html">
+            
+                    
+                    常见问题解答
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    贴士与技巧
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.7.1" data-path="pitfalls.html">
+            
+                <a href="pitfalls.html">
+            
+                    
+                    常见陷阱与最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="store.html">
+            
+                <a href="store.html">
+            
+                    
+                    定义数据存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="actions.html">
+            
+                <a href="actions.html">
+            
+                    
+                    编写(异步) actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="react-performance.html">
+            
+                <a href="react-performance.html">
+            
+                    
+                    优化 React 组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="devtools.html">
+            
+                <a href="devtools.html">
+            
+                    
+                    开发工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="syntax.html">
+            
+                <a href="syntax.html">
+            
+                    
+                    ES5 / ES6 / TypeScript 语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="stateless-HMR.html">
+            
+                <a href="stateless-HMR.html">
+            
+                    
+                    无状态组件和热加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    实用函数
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../refguide/autorun-async.html">
+            
+                <a href="../refguide/autorun-async.html">
+            
+                    
+                    autorunAsync
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../refguide/extending.html">
+            
+                <a href="../refguide/extending.html">
+            
+                    
+                    Atom & Reaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../refguide/create-transformer.html">
+            
+                <a href="../refguide/create-transformer.html">
+            
+                    
+                    createTransformer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../refguide/expr.html">
+            
+                <a href="../refguide/expr.html">
+            
+                    
+                    expr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../refguide/extend-observable.html">
+            
+                <a href="../refguide/extend-observable.html">
+            
+                    
+                    extendObservable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../refguide/is-observable.html">
+            
+                <a href="../refguide/is-observable.html">
+            
+                    
+                    isObservable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../refguide/modifiers.html">
+            
+                <a href="../refguide/modifiers.html">
+            
+                    
+                    modifiers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../refguide/observe.html">
+            
+                <a href="../refguide/observe.html">
+            
+                    
+                    intercept & observe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../refguide/reaction.html">
+            
+                <a href="../refguide/reaction.html">
+            
+                    
+                    reaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="../refguide/spy.html">
+            
+                <a href="../refguide/spy.html">
+            
+                    
+                    spy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="../refguide/tojson.html">
+            
+                <a href="../refguide/tojson.html">
+            
+                    
+                    toJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.12" data-path="../refguide/transaction.html">
+            
+                <a href="../refguide/transaction.html">
+            
+                    
+                    transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13" data-path="../refguide/untracked.html">
+            
+                <a href="../refguide/untracked.html">
+            
+                    
+                    untracked
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14" data-path="../refguide/when.html">
+            
+                <a href="../refguide/when.html">
+            
+                    
+                    when
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../donating.html">
+            
+                <a href="../donating.html">
+            
+                    
+                    捐赠
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >常见陷阱与最佳实践</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5E38;&#x89C1;&#x9677;&#x9631;&#x4E0E;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;">&#x5E38;&#x89C1;&#x9677;&#x9631;&#x4E0E;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;</h1>
+<p>&#x4F7F;&#x7528; MobX &#x9047;&#x5230;&#x5751;&#x4E86;&#xFF1F;&#x672C;&#x7AE0;&#x8282;&#x6DB5;&#x76D6;&#x4E86;&#x4E00;&#x4E9B; MobX &#x65B0;&#x624B;&#x53EF;&#x80FD;&#x4F1A;&#x906D;&#x9047;&#x7684;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x95EE;&#x9898;&#x3002;</p>
+<h4 id="&#x88C5;&#x9970;&#x5668;&#x95EE;&#x9898;">&#x88C5;&#x9970;&#x5668;&#x95EE;&#x9898;?</h4>
+<p>&#x6709;&#x5173;&#x88C5;&#x9970;&#x5668;&#x7684;&#x8BBE;&#x7F6E;&#x63D0;&#x793A;&#x548C;&#x9650;&#x5236;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="decorators.html">&#x88C5;&#x9970;&#x5668;</a> &#x4E00;&#x8282;&#x3002;</p>
+<h4 id="arrayisarrayobservable123--false"><code>Array.isArray(observable([1,2,3])) === false</code></h4>
+<p>&#x5728; ES5 &#x4E2D;&#x6CA1;&#x6709;&#x7EE7;&#x627F;&#x6570;&#x7EC4;&#x7684;&#x53EF;&#x9760;&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x6B64; observabl e&#x6570;&#x7EC4;&#x7EE7;&#x627F;&#x81EA;&#x5BF9;&#x8C61;&#x3002;
+&#x8FD9;&#x610F;&#x5473;&#x7740;&#x4E00;&#x822C;&#x7684;&#x5E93;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x8BC6;&#x522B;&#x51FA; observable &#x6570;&#x7EC4;&#x5C31;&#x662F;&#x666E;&#x901A;&#x6570;&#x7EC4;(&#x50CF; lodash&#xFF0C;&#x6216; <code>Array.concat</code> &#x8FD9;&#x6837;&#x7684;&#x5185;&#x7F6E;&#x64CD;&#x4F5C;&#x7B26;)&#x3002;
+&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5F88;&#x5BB9;&#x6613;&#x89E3;&#x51B3;&#xFF0C;&#x5728;&#x628A; observable &#x6570;&#x7EC4;&#x4F20;&#x9012;&#x7ED9;&#x5176;&#x5B83;&#x5E93;&#x4E4B;&#x524D;&#x5148;&#x8C03;&#x7528; <code>observable.toJS()</code> &#x6216; <code>observable.slice()</code> &#x5C06;&#x5176;&#x8F6C;&#x5316;&#x4E3A;&#x666E;&#x901A;&#x6570;&#x7EC4;&#x3002;
+&#x53EA;&#x8981;&#x5916;&#x90E8;&#x5E93;&#x6CA1;&#x6709;&#x4FEE;&#x6539;&#x6570;&#x7EC4;&#x7684;&#x610F;&#x56FE;&#xFF0C;&#x90A3;&#x4E48;&#x4E00;&#x5207;&#x90FD;&#x5C06;&#x5982;&#x9884;&#x671F;&#x4E00;&#x6837;&#x7684;&#x6B63;&#x5E38;&#x8FD0;&#x4F5C;&#x3002;
+&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>isObservableArray(observable)</code> &#x6765;&#x68C0;&#x67E5;&#x662F;&#x5426;&#x662F; observable &#x6570;&#x7EC4;&#x3002;</p>
+<h4 id="objectsomenewprop--value-&#x4E0D;&#x8D77;&#x4F5C;&#x7528;"><code>object.someNewProp = value</code> &#x4E0D;&#x8D77;&#x4F5C;&#x7528;</h4>
+<p>&#x5BF9;&#x4E8E;&#x58F0;&#x660E; observable &#x65F6;&#x672A;&#x5206;&#x914D;&#x7684;&#x5C5E;&#x6027;&#xFF0C;MobX observable <strong>&#x5BF9;&#x8C61;</strong>  &#x68C0;&#x6D4B;&#x4E0D;&#x5230;&#xFF0C;&#x4E5F;&#x65E0;&#x6CD5;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#x3002;
+&#x56E0;&#x6B64; MobX observable &#x5BF9;&#x8C61;&#x5145;&#x5F53;&#x5177;&#x6709;&#x9884;&#x5B9A;&#x4E49;&#x952E;&#x7684;&#x8BB0;&#x5F55;&#x3002;
+&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>extendObservable(target, props)</code> &#x6765;&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5F15;&#x5165;&#x65B0;&#x7684; observable &#x5C5E;&#x6027;&#x3002;
+&#x4F46;&#x662F;&#x50CF; <code>for .. in</code> &#x6216; <code>Object.keys()</code> &#x8FD9;&#x6837;&#x7684;&#x5BF9;&#x8C61;&#x8FED;&#x4EE3;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x5730;&#x5BF9;&#x8FD9;&#x6837;&#x7684;&#x6539;&#x53D8;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#x3002;
+&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x52A8;&#x6001;&#x952E;&#x5BF9;&#x8C61;&#xFF0C;&#x4F8B;&#x5982;&#x901A;&#x8FC7; id &#x6765;&#x5B58;&#x50A8;&#x7528;&#x6237;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="../refguide/map.html"><code>observable.map</code></a> &#x6765;&#x521B;&#x5EFA; observable <strong>&#x6620;&#x5C04;</strong>&#x3002;
+&#x60F3;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x8BE6;&#x60C5;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="react.html">MobX &#x4F1A;&#x5BF9;&#x4EC0;&#x4E48;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;?</a>&#x3002;</p>
+<h3 id="&#x5728;&#x6240;&#x6709;&#x6E32;&#x67D3;-observable-&#x7684;&#x7EC4;&#x4EF6;&#x4E0A;&#x4F7F;&#x7528;-observer">&#x5728;&#x6240;&#x6709;&#x6E32;&#x67D3; <code>@observable</code> &#x7684;&#x7EC4;&#x4EF6;&#x4E0A;&#x4F7F;&#x7528; <code>@observer</code></h3>
+<p><code>@observer</code> &#x53EA;&#x4F1A;&#x589E;&#x5F3A;&#x4F60;&#x6B63;&#x5728;&#x88C5;&#x9970;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x4E86;&#x7684;&#x7EC4;&#x4EF6;&#x3002;
+&#x6240;&#x4EE5;&#x901A;&#x5E38;&#x4F60;&#x7684;&#x6240;&#x6709;&#x7EC4;&#x4EF6;&#x90FD;&#x5E94;&#x8BE5;&#x662F;&#x88C5;&#x9970;&#x4E86;&#x7684;&#x3002;&#x4F46;&#x522B;&#x62C5;&#x5FC3;&#xFF0C;&#x8FD9;&#x6837;&#x4E0D;&#x4F1A;&#x964D;&#x4F4E;&#x6548;&#x7387;&#xFF0C;&#x76F8;&#x53CD; <code>observer</code> &#x7EC4;&#x4EF6;&#x8D8A;&#x591A;&#xFF0C;&#x6E32;&#x67D3;&#x6548;&#x7387;&#x8D8A;&#x9AD8;&#x3002;</p>
+<h3 id="&#x95F4;&#x63A5;&#x5F15;&#x7528;&#x503C;&#x5C3D;&#x53EF;&#x80FD;&#x665A;&#x7684;&#x4F7F;&#x7528;">&#x95F4;&#x63A5;&#x5F15;&#x7528;&#x503C;&#x5C3D;&#x53EF;&#x80FD;&#x665A;&#x7684;&#x4F7F;&#x7528;</h3>
+<p>MobX &#x53EF;&#x4EE5;&#x505A;&#x8BB8;&#x591A;&#x4E8B;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x65E0;&#x6CD5;&#x5C06;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x503C;&#x8F6C;&#x53D8;&#x6210; observable(&#x5C3D;&#x7BA1;&#x53EF;&#x4EE5;&#x7528;&#x5BF9;&#x8C61;&#x6765;&#x5305;&#x88C5;&#x5B83;&#x4EEC;&#xFF0C;&#x53C2;&#x89C1; <a href="../refguide/boxed.html">boxed observables</a>)&#x3002;
+&#x6240;&#x4EE5;&#x8BF4;<strong>&#x503C;</strong>&#x4E0D;&#x662F; observable&#xFF0C;&#x800C;&#x5BF9;&#x8C61;&#x7684;<strong>&#x5C5E;&#x6027;</strong>&#x624D;&#x662F;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740; <code>@observer</code> &#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x5BF9;&#x95F4;&#x63A5;&#x5F15;&#x7528;&#x503C;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#x3002;
+&#x6240;&#x4EE5;&#x5982;&#x679C;&#x50CF;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x521D;&#x59CB;&#x5316;&#x7684;&#x8BDD;&#xFF0C;<code>Timer</code> &#x7EC4;&#x4EF6;&#x662F;&#x4E0D;&#x4F1A;&#x4F5C;&#x51FA;&#x4EFB;&#x4F55;&#x53CD;&#x5E94;&#x7684;:</p>
+<pre><code class="lang-javascript">React.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Timer</span> <span class="hljs-attr">timerData</span>=<span class="hljs-string">{timerData.secondsPassed}</span> /&gt;</span>, document.body)
+</span></code></pre>
+<p>&#x5728;&#x8FD9;&#x884C;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x53EA;&#x662F; <code>secondsPassed</code> &#x7684;&#x5F53;&#x524D;&#x503C;&#x4F20;&#x9012;&#x7ED9;&#x4E86; <code>Timer</code>&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x503C; <code>0</code> (JS&#x4E2D;&#x7684;&#x6240;&#x6709;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x503C;&#x90FD;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;)&#x3002;
+&#x8FD9;&#x4E2A;&#x503C;&#x6C38;&#x8FDC;&#x90FD;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#xFF0C;&#x6240;&#x4EE5; <code>Timer</code> &#x4E5F;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x66F4;&#x65B0;&#x3002;<code>secondsPassed</code> &#x5C5E;&#x6027;&#x5C06;&#x6765;&#x4F1A;&#x6539;&#x53D8;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x7EC4;&#x4EF6;<strong>&#x5185;</strong>&#x8BBF;&#x95EE;&#x5B83;&#x3002;
+&#x6216;&#x8005;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;: &#x6C38;&#x8FDC;&#x53EA;&#x4F20;&#x9012;&#x62E5;&#x6709; observable &#x5C5E;&#x6027;&#x7684;&#x5BF9;&#x8C61;&#x3002;
+&#x60F3;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x8BE6;&#x60C5;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="react.html">MobX &#x4F1A;&#x5BF9;&#x4EC0;&#x4E48;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;?</a>&#x3002;</p>
+<h4 id="&#x8BA1;&#x7B97;&#x503C;computed-values&#x7684;&#x8FD0;&#x884C;&#x6B21;&#x6570;&#x8981;&#x6BD4;&#x9884;&#x60F3;&#x4E2D;&#x9891;&#x7E41;&#x7684;&#x591A;">&#x8BA1;&#x7B97;&#x503C;(Computed values)&#x7684;&#x8FD0;&#x884C;&#x6B21;&#x6570;&#x8981;&#x6BD4;&#x9884;&#x60F3;&#x4E2D;&#x9891;&#x7E41;&#x7684;&#x591A;</h4>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;<strong>&#x6CA1;&#x6709;</strong>&#x88AB; reaction(<code>autorun</code>&#x3001;<code>observer</code> &#x7B49;) &#x4F7F;&#x7528;&#xFF0C;&#x8BA1;&#x7B97;&#x8868;&#x8FBE;&#x5F0F;&#x5C06;&#x4F1A;&#x5EF6;&#x8FDF;&#x6267;&#x884C;&#xFF1B;&#x6BCF;&#x6B21;&#x5B83;&#x4EEC;&#x7684;&#x503C;&#x88AB;&#x8BF7;&#x6C42;(&#x6240;&#x4EE5;&#x5B83;&#x4EEC;&#x53EA;&#x662F;&#x4F5C;&#x4E3A;&#x6B63;&#x5E38;&#x5C5E;&#x6027;)&#x3002;
+&#x8BA1;&#x7B97;&#x503C;&#x5C06;&#x4EC5;&#x8FFD;&#x8E2A;&#x90A3;&#x4E9B;&#x5B83;&#x4EEC;&#x5DF2;&#x88AB;&#x89C2;&#x5BDF;&#x7684;&#x4F9D;&#x8D56;&#x3002;
+&#x8FD9;&#x5141;&#x8BB8; MobX &#x81EA;&#x52A8;&#x6682;&#x505C;&#x975E;&#x4F7F;&#x7528;&#x72B6;&#x6001;&#x7684;&#x8BA1;&#x7B97;&#x3002;
+&#x60F3;&#x6DF1;&#x5165;&#x7684;&#x4E86;&#x89E3;&#x5185;&#x90E8;&#x539F;&#x7406;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;&#x6B64; <a href="https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254" target="_blank">&#x535A;&#x5BA2;</a> &#x6216; <a href="https://github.com/mobxjs/mobx/issues/356" target="_blank">issue #356</a>&#x3002;
+&#x5982;&#x679C;&#x4F60;&#x80E1;&#x4E71;&#x4F7F;&#x7528;&#x7684;&#x8BDD;&#xFF0C;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x4F3C;&#x4E4E;&#x6548;&#x7387;&#x4E0D;&#x600E;&#x4E48;&#x9AD8;&#x3002;&#x4F46;&#x5F53;&#x4F7F;&#x7528; <code>observer</code>&#x3001; <code>autorun</code> &#x7B49;&#x5E76;&#x5E94;&#x7528;&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x65F6;&#xFF0C;&#x5B83;&#x4EEC;&#x4F1A;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x9AD8;&#x6548;&#x3002;</p>
+<p>MobX &#x8BA1;&#x7B97;&#x4E5F;&#x4F1A;&#x5728;&#x4E8B;&#x52A1;&#x671F;&#x95F4;&#x81EA;&#x52A8;&#x5730;&#x4FDD;&#x6301;&#x6D3B;&#x52A8;&#xFF0C;&#x53C2;&#x89C1; PR: <a href="https://github.com/mobxjs/mobx/pull/452" target="_blank">#452</a> &#x548C; <a href="https://github.com/mobxjs/mobx/pull/489" target="_blank">#489</a>&#x3002;</p>
+<h4 id="&#x6C38;&#x8FDC;&#x8981;&#x6E05;&#x7406;-reaction">&#x6C38;&#x8FDC;&#x8981;&#x6E05;&#x7406; reaction</h4>
+<p>&#x6240;&#x6709;&#x5F62;&#x5F0F;&#x7684; <code>autorun</code>&#x3001; <code>observe</code> &#x548C; <code>intercept</code>&#xFF0C; &#x53EA;&#x6709;&#x6240;&#x6709;&#x5B83;&#x4EEC;&#x89C2;&#x5BDF;&#x7684;&#x5BF9;&#x8C61;&#x90FD;&#x5783;&#x573E;&#x56DE;&#x6536;&#x4E86;&#xFF0C;&#x5B83;&#x4EEC;&#x624D;&#x4F1A;&#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;&#x3002;
+&#x6240;&#x4EE5;&#x5F53;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x6E05;&#x7406;&#x51FD;&#x6570;(&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;&#x51FD;&#x6570;)&#x6765;&#x505C;&#x6B62;&#x5B83;&#x4EEC;&#x7EE7;&#x7EED;&#x8FD0;&#x884C;&#x3002;
+&#x5BF9;&#x4E8E; <code>observe</code> &#x548C; <code>intercept</code> &#x6765;&#x8BF4;&#xFF0C;&#x5F53;&#x76EE;&#x6807;&#x662F; <code>this</code> &#x65F6;&#x901A;&#x5E38;&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x8981;&#x6E05;&#x7406;&#x5B83;&#x4EEC;&#x3002;
+&#x5BF9;&#x4E8E;&#x50CF; <code>autorun</code> &#x8FD9;&#x6837;&#x7684; reaction &#x8981;&#x68D8;&#x624B;&#x5F97;&#x591A;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x53EF;&#x80FD;&#x89C2;&#x5BDF;&#x5230;&#x8BB8;&#x591A;&#x4E0D;&#x540C;&#x7684; observable&#xFF0C;&#x5E76;&#x4E14;&#x53EA;&#x8981;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x4ECD;&#x5728;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#xFF0C;reaction &#x5C06;&#x4FDD;&#x6301;&#x5728;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5176;&#x4F7F;&#x7528;&#x7684;&#x6240;&#x6709;&#x5176;&#x4ED6; observable &#x4E5F;&#x4FDD;&#x6301;&#x6D3B;&#x8DC3;&#x4EE5;&#x652F;&#x6301;&#x5C06;&#x6765;&#x7684;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x3002;
+&#x6240;&#x4EE5;&#x5F53;&#x4F60;&#x4E0D;&#x518D;&#x9700;&#x8981; reaction &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5343;&#x4E07;&#x8981;&#x6E05;&#x7406;&#x6389;&#x5B83;&#x4EEC;&#xFF01;</p>
+<p>&#x793A;&#x4F8B;:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> VAT = observable(<span class="hljs-number">1.20</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OrderLIne</span> </span>{
+    @observable price = <span class="hljs-number">10</span>;
+    @observable amount = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">constructor</span>() {
+        <span class="hljs-comment">// &#x8FD9;&#x4E2A; autorun &#x5C06;&#x4E0E;&#x5F53;&#x524D;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5B9E;&#x4F8B;&#x4E00;&#x8D77;&#x8FDB;&#x884C;&#x5783;&#x573E;&#x56DE;&#x6536;</span>
+        <span class="hljs-keyword">this</span>.handler = autorun(() =&gt; {
+            doSomethingWith(<span class="hljs-keyword">this</span>.price * <span class="hljs-keyword">this</span>.amount)
+        })
+        <span class="hljs-comment">// &#x8FD9;&#x4E2A; autorun &#x5C06;&#x4E0D;&#x4F1A;&#x4E0E;&#x5F53;&#x524D;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5B9E;&#x4F8B;&#x4E00;&#x8D77;&#x8FDB;&#x884C;&#x5783;&#x573E;&#x56DE;&#x6536;</span>
+        <span class="hljs-comment">// &#x56E0;&#x4E3A; VAT &#x4FDD;&#x7559;&#x4E86;&#x5F15;&#x7528;&#x4EE5;&#x901A;&#x77E5;&#x8FD9;&#x4E2A; autorun</span>
+        <span class="hljs-comment">// &#x8FD9;&#x53CD;&#x8FC7;&#x6765;&#x5728;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x4FDD;&#x7559;&#x4E86; `this`</span>
+        <span class="hljs-keyword">this</span>.handler = autorun(() =&gt; {
+            doSomethingWith(<span class="hljs-keyword">this</span>.price * <span class="hljs-keyword">this</span>.amount * VAT.get())
+        })
+        <span class="hljs-comment">// &#x6240;&#x4EE5;&#xFF0C;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x7EC6;&#x5FAE;&#x7684;&#x5185;&#x5B58;&#x95EE;&#x9898;&#xFF0C;&#x603B;&#x662F;&#x8C03;&#x7528;&#x6E05;&#x7406;&#x51FD;&#x6570;..</span>
+        <span class="hljs-keyword">this</span>.handler()
+        <span class="hljs-comment">// &#x5F53; reaction &#x4E0D;&#x518D;&#x9700;&#x8981;&#x65F6;&#xFF01;</span>
+    }
+}
+</code></pre>
+<h4 id="&#x5F53;&#x5728;-react-&#x7EC4;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;-observable-&#x65F6;&#x6709;&#x4E00;&#x4E2A;&#x5947;&#x602A;&#x7684;&#x5F02;&#x5E38;">&#x5F53;&#x5728; React &#x7EC4;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528; <code>@observable</code> &#x65F6;&#x6709;&#x4E00;&#x4E2A;&#x5947;&#x602A;&#x7684;&#x5F02;&#x5E38;</h4>
+<p>&#x5982;&#x4E0B;&#x5F02;&#x5E38;: <code>Uncaught TypeError: Cannot assign to read only property &apos;__mobxLazyInitializers&apos; of object</code>
+<code>react-hot-loader</code> &#x4E0D;&#x652F;&#x6301;&#x88C5;&#x9970;&#x5668;&#xFF0C;&#x6240;&#x4EE5;&#x5F53;&#x4F7F;&#x7528;&#x65F6;&#x4F1A;&#x51FA;&#x73B0;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x3002;
+&#x89E3;&#x51B3;&#x65B9;&#x6CD5;: &#x5728; <code>componentWillMount</code> &#x4E2D;&#x4F7F;&#x7528; <code>extendObservable</code> &#x66FF;&#x4EE3; <code>@observable</code> &#x6216;&#x8005; &#x628A; <code>react-hot-loader</code> &#x66F4;&#x65B0;&#x5230; <code>&quot;^3.0.0-beta.2&quot;</code> &#x7248;&#x672C;&#x6216;&#x8005;&#x66F4;&#x9AD8;&#x3002;</p>
+<h4 id="&#x672A;&#x8BBE;&#x7F6E;-react-&#x7EC4;&#x4EF6;&#x7684;&#x663E;&#x793A;&#x540D;&#x79F0;">&#x672A;&#x8BBE;&#x7F6E; React &#x7EC4;&#x4EF6;&#x7684;&#x663E;&#x793A;&#x540D;&#x79F0;</h4>
+<p>&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528; <code>export const MyComponent = observer((props =&gt; &lt;div&gt;hi&lt;/div&gt;))</code>&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x4E2D;&#x770B;&#x4E0D;&#x5230;&#x663E;&#x793A;&#x540D;&#x79F0;&#x3002;
+&#x4E0B;&#x5217;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x89E3;&#x51B3;&#x6B64;&#x95EE;&#x9898;:</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 1 (&#x663E;&#x793A;&#x8BBE;&#x7F6E; displayName)</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> MyComponent = observer((props =&gt; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>hi<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>))
+myComponent.displayName = <span class="hljs-string">&quot;MyComponent&quot;</span>
+
+<span class="hljs-comment">// 2 (MobX &#x6839;&#x636E;&#x51FD;&#x6570;&#x540D;&#x63A8;&#x65AD;&#x51FA;&#x7EC4;&#x4EF6;&#x540D;)</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> MyComponent = observer(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyComponent</span>(<span class="hljs-params">props</span>) </span>{ <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>hi<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span> })
+
+<span class="hljs-comment">// 3 (&#x7F16;&#x8BD1;&#x5668;&#x6839;&#x636E;&#x53D8;&#x91CF;&#x540D;&#x63A8;&#x65AD;&#x51FA;&#x7EC4;&#x4EF6;&#x540D;)</span>
+<span class="hljs-keyword">const</span> _MyComponent = observer((props =&gt; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>hi<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>)) <span class="hljs-comment">//</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> MyComponent = observer(_MyComponent)
+
+<span class="hljs-comment">// 4 (&#x9ED8;&#x8BA4;&#x5BFC;&#x51FA;)</span>
+<span class="hljs-keyword">const</span> MyComponent = observer((props =&gt; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>hi<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>))
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> observer(MyComponent)
+</code></pre>
+<p>&#x8FD8;&#x53EF;&#x53C2;&#x89C1;: <a href="http://mobxjs.github.io/mobx/best/stateless-HMR.html" target="_blank">http://mobxjs.github.io/mobx/best/stateless-HMR.html</a> &#x6216; <a href="https://github.com/mobxjs/mobx/issues/141#issuecomment-228457886" target="_blank">#141</a>&#x3002;</p>
+<h4 id="observable-&#x6570;&#x7EC4;&#x7684;-proptype-&#x662F;&#x5BF9;&#x8C61;">observable &#x6570;&#x7EC4;&#x7684; propType &#x662F;&#x5BF9;&#x8C61;</h4>
+<p>Observable &#x6570;&#x7EC4;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4EEC;&#x9075;&#x5FAA; <code>propTypes.object</code> &#x800C;&#x4E0D;&#x662F; <code>propTypes.array</code>&#x3002;
+<code>mobx-react</code> &#x4E3A; observable &#x6570;&#x636E;&#x7ED3;&#x6784;&#x63D0;&#x4F9B;&#x4E86;&#x660E;&#x786E;&#x7684; <code>PropTypes</code>&#x3002;</p>
+<h4 id="&#x5728;-react-native-&#x4E2D;&#x6E32;&#x67D3;-listviews">&#x5728; React Native &#x4E2D;&#x6E32;&#x67D3; ListViews</h4>
+<p>React Native &#x7684; <code>ListView.DataSource</code> &#x63A5;&#x6536;&#x771F;&#x6B63;&#x7684;&#x6570;&#x7EC4;&#x3002;Observable &#x6570;&#x7EC4;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x8981;&#x786E;&#x4FDD;&#x5728;&#x4F20;&#x7ED9; ListViews &#x4E4B;&#x524D;&#x5148;&#x4F7F;&#x7528; <code>.slice()</code> &#x65B9;&#x6CD5;&#x3002;
+&#x6B64;&#x5916;&#xFF0C;<code>ListView.DataSource</code> &#x672C;&#x8EAB;&#x53EF;&#x4EE5;&#x79FB;&#x5230; store &#x4E4B;&#x4E2D;&#x5E76;&#x4E14;&#x4F7F;&#x7528; <code>@computed</code> &#x81EA;&#x52A8;&#x5730;&#x66F4;&#x65B0;&#xFF0C;&#x8FD9;&#x6B65;&#x64CD;&#x4F5C;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x5728;&#x7EC4;&#x4EF6;&#x5C42;&#x5B8C;&#x6210;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListStore</span> </span>{
+  @observable list = [
+    <span class="hljs-string">&apos;Hello World!&apos;</span>,
+    <span class="hljs-string">&apos;Hello React Native!&apos;</span>,
+    <span class="hljs-string">&apos;Hello MobX!&apos;</span>
+  ];
+
+  ds = <span class="hljs-keyword">new</span> ListView.DataSource({ rowHasChanged: (r1, r2) =&gt; r1 !== r2 });
+
+  @computed get dataSource() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.ds.cloneWithRows(<span class="hljs-keyword">this</span>.list.slice());
+  }
+}
+
+<span class="hljs-keyword">const</span> listStore = <span class="hljs-keyword">new</span> ListStore();
+
+@observer <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">List</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ListView</span>
+        <span class="hljs-attr">dataSource</span>=<span class="hljs-string">{listStore.dataSource}</span>
+        <span class="hljs-attr">renderRow</span>=<span class="hljs-string">{row</span> =&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>{row}<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>}
+        enableEmptySections={true}
+      /&gt;
+    );
+  }
+}
+</span></code></pre>
+<p>&#x60F3;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="https://github.com/mobxjs/mobx/issues/476" target="_blank">#476</a>&#x3002;</p>
+<h4 id="&#x5F00;&#x53D1;&#x6A21;&#x5F0F;&#x4E0B;&#x58F0;&#x660E;-proptypes-&#x53EF;&#x80FD;&#x4F1A;&#x5F15;&#x8D77;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x6E32;&#x67D3;">&#x5F00;&#x53D1;&#x6A21;&#x5F0F;&#x4E0B;&#x58F0;&#x660E; propTypes &#x53EF;&#x80FD;&#x4F1A;&#x5F15;&#x8D77;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x6E32;&#x67D3;</h4>
+<p>&#x53C2;&#x89C1;: <a href="https://github.com/mobxjs/mobx-react/issues/56" target="_blank">https://github.com/mobxjs/mobx-react/issues/56</a></p>
+<h4 id="&#x4F7F;&#x7528;-babel-&#x65F6;-observable-&#x5C5E;&#x6027;&#x5EF6;&#x8FDF;&#x521D;&#x59CB;&#x5316;">&#x4F7F;&#x7528; Babel &#x65F6; <code>@observable</code> &#x5C5E;&#x6027;&#x5EF6;&#x8FDF;&#x521D;&#x59CB;&#x5316;</h4>
+<p>&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x53EA;&#x6709;&#x5F53;&#x4F7F;&#x7528; Babel &#x4F5C;&#x4E3A;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x800C;&#x4E0D;&#x662F; Typescript(&#x88C5;&#x9970;&#x5668;&#x652F;&#x6301;&#x66F4;&#x6210;&#x719F;) &#x65F6;&#x624D;&#x4F1A;&#x51FA;&#x73B0;&#x3002;
+Observable &#x5C5E;&#x6027;&#x4E0D;&#x4F1A;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x76F4;&#x5230;&#x7B2C;&#x4E00;&#x6B21;&#x8BFB;/&#x5199;&#x6B64;&#x5C5E;&#x6027;(&#x5728;&#x8FD9;&#x4E00;&#x523B;&#x5B83;&#x4EEC;&#x90FD;&#x4F1A;&#x88AB;&#x521D;&#x59CB;&#x5316;)&#x3002;
+&#x8FD9;&#x5BFC;&#x81F4;&#x4E86;&#x4EE5;&#x4E0B;&#x7EC6;&#x5FAE;&#x7684;bug:</p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Todo</span> </span>{
+    @observable done = <span class="hljs-literal">true</span>
+    @observable title = <span class="hljs-string">&quot;test&quot;</span>
+}
+<span class="hljs-keyword">const</span> todo = <span class="hljs-keyword">new</span> Todo()
+
+<span class="hljs-string">&quot;done&quot;</span> <span class="hljs-keyword">in</span> todo <span class="hljs-comment">// true</span>
+todo.hasOwnProperty(<span class="hljs-string">&quot;done&quot;</span>) <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">Object</span>.keys(todo) <span class="hljs-comment">// []</span>
+
+<span class="hljs-built_in">console</span>.log(todo.title)
+<span class="hljs-string">&quot;done&quot;</span> <span class="hljs-keyword">in</span> todo <span class="hljs-comment">// true</span>
+todo.hasOwnProperty(<span class="hljs-string">&quot;done&quot;</span>) <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">Object</span>.keys(todo) <span class="hljs-comment">// [&quot;done&quot;, &quot;title&quot;]</span>
+</code></pre>
+<p>&#x5728;&#x5B9E;&#x8DF5;&#x4E2D;&#xFF0C;&#x5F88;&#x5C11;&#x4F1A;&#x51FA;&#x73B0;&#x8FD9;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x8BFB;/&#x5199;&#x5BF9;&#x8C61;&#x7684;&#x4EFB;&#x4F55;&#x5C5E;&#x6027;<strong>&#x4E4B;&#x524D;</strong>&#x4F7F;&#x7528;&#x50CF; <code>Object.assign(target, todo)</code> &#x6216; <code>assert.deepEquals</code> &#x8FD9;&#x6837;&#x7684;&#x4E00;&#x822C;&#x65B9;&#x6CD5;&#x65F6;&#x624D;&#x4F1A;&#x51FA;&#x73B0;&#x3002;
+&#x5982;&#x679C;&#x4F60;&#x60F3;&#x786E;&#x4FDD;&#x6B64;&#x95EE;&#x9898;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#xFF0C;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x521D;&#x59CB;&#x5316;&#x5B57;&#x6BB5;&#x6765;&#x66FF;&#x4EE3;&#x5B57;&#x6BB5;&#x58F0;&#x660E;&#xFF0C;&#x6216;&#x8005;&#x4F7F;&#x7528; <code>extendObservable</code> &#x6765;&#x521B;&#x5EFA; observable &#x5C5E;&#x6027;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="store.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 定义数据存储">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"常见陷阱与最佳实践","level":"1.7.1","depth":2,"next":{"title":"定义数据存储","level":"1.7.2","depth":2,"path":"best/store.md","ref":"best/store.md","articles":[]},"previous":{"title":"贴士与技巧","level":"1.7","depth":1,"ref":"","articles":[{"title":"常见陷阱与最佳实践","level":"1.7.1","depth":2,"path":"best/pitfalls.md","ref":"best/pitfalls.md","articles":[]},{"title":"定义数据存储","level":"1.7.2","depth":2,"path":"best/store.md","ref":"best/store.md","articles":[]},{"title":"编写(异步) actions","level":"1.7.3","depth":2,"path":"best/actions.md","ref":"best/actions.md","articles":[]},{"title":"优化 React 组件","level":"1.7.4","depth":2,"path":"best/react-performance.md","ref":"best/react-performance.md","articles":[]},{"title":"开发工具","level":"1.7.5","depth":2,"path":"best/devtools.md","ref":"best/devtools.md","articles":[]},{"title":"ES5 / ES6 / TypeScript 语法","level":"1.7.6","depth":2,"path":"best/syntax.md","ref":"best/syntax.md","articles":[]},{"title":"无状态组件和热加载","level":"1.7.7","depth":2,"path":"best/stateless-HMR.md","ref":"best/stateless-HMR.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"best/pitfalls.md","mtime":"2017-03-13T13:42:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-19T01:36:42.175Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

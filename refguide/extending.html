@@ -1,0 +1,957 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Atom & Reaction · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="create-transformer.html" />
+    
+    
+    <link rel="prev" href="autorun-async.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    MobX 介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../intro/overview.html">
+            
+                <a href="../intro/overview.html">
+            
+                    
+                    MobX 要点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../intro/concepts.html">
+            
+                <a href="../intro/concepts.html">
+            
+                    
+                    概念与原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    API概览
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="observable.html">
+            
+                <a href="observable.html">
+            
+                    
+                    observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="observable-decorator.html">
+            
+                <a href="observable-decorator.html">
+            
+                    
+                    @observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="computed-decorator.html">
+            
+                <a href="computed-decorator.html">
+            
+                    
+                    (@)computed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="autorun.html">
+            
+                <a href="autorun.html">
+            
+                    
+                    autorun
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="observer-component.html">
+            
+                <a href="observer-component.html">
+            
+                    
+                    (@)observer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="action.html">
+            
+                <a href="action.html">
+            
+                    
+                    action
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Observable类型
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="object.html">
+            
+                <a href="object.html">
+            
+                    
+                    objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="array.html">
+            
+                <a href="array.html">
+            
+                    
+                    arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="map.html">
+            
+                <a href="map.html">
+            
+                    
+                    maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="boxed.html">
+            
+                <a href="boxed.html">
+            
+                    
+                    boxed values
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../best/react.html">
+            
+                <a href="../best/react.html">
+            
+                    
+                    理解 MobX 对什么有反应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../best/decorators.html">
+            
+                <a href="../best/decorators.html">
+            
+                    
+                    如何(不)使用装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    资源
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../faq/blogs.html">
+            
+                <a href="../faq/blogs.html">
+            
+                    
+                    教程、视频和博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../faq/related.html">
+            
+                <a href="../faq/related.html">
+            
+                    
+                    相关项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../faq/examples.html">
+            
+                <a href="../faq/examples.html">
+            
+                    
+                    案例项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../faq/boilerplates.html">
+            
+                <a href="../faq/boilerplates.html">
+            
+                    
+                    样板文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../faq/faq.html">
+            
+                <a href="../faq/faq.html">
+            
+                    
+                    常见问题解答
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    贴士与技巧
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../best/pitfalls.html">
+            
+                <a href="../best/pitfalls.html">
+            
+                    
+                    常见陷阱与最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../best/store.html">
+            
+                <a href="../best/store.html">
+            
+                    
+                    定义数据存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../best/actions.html">
+            
+                <a href="../best/actions.html">
+            
+                    
+                    编写(异步) actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../best/react-performance.html">
+            
+                <a href="../best/react-performance.html">
+            
+                    
+                    优化 React 组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../best/devtools.html">
+            
+                <a href="../best/devtools.html">
+            
+                    
+                    开发工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../best/syntax.html">
+            
+                <a href="../best/syntax.html">
+            
+                    
+                    ES5 / ES6 / TypeScript 语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../best/stateless-HMR.html">
+            
+                <a href="../best/stateless-HMR.html">
+            
+                    
+                    无状态组件和热加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    实用函数
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="autorun-async.html">
+            
+                <a href="autorun-async.html">
+            
+                    
+                    autorunAsync
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.2" data-path="extending.html">
+            
+                <a href="extending.html">
+            
+                    
+                    Atom & Reaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="create-transformer.html">
+            
+                <a href="create-transformer.html">
+            
+                    
+                    createTransformer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="expr.html">
+            
+                <a href="expr.html">
+            
+                    
+                    expr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="extend-observable.html">
+            
+                <a href="extend-observable.html">
+            
+                    
+                    extendObservable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="is-observable.html">
+            
+                <a href="is-observable.html">
+            
+                    
+                    isObservable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="modifiers.html">
+            
+                <a href="modifiers.html">
+            
+                    
+                    modifiers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="observe.html">
+            
+                <a href="observe.html">
+            
+                    
+                    intercept & observe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="reaction.html">
+            
+                <a href="reaction.html">
+            
+                    
+                    reaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="spy.html">
+            
+                <a href="spy.html">
+            
+                    
+                    spy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="tojson.html">
+            
+                <a href="tojson.html">
+            
+                    
+                    toJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.12" data-path="transaction.html">
+            
+                <a href="transaction.html">
+            
+                    
+                    transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13" data-path="untracked.html">
+            
+                <a href="untracked.html">
+            
+                    
+                    untracked
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14" data-path="when.html">
+            
+                <a href="when.html">
+            
+                    
+                    when
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../donating.html">
+            
+                <a href="../donating.html">
+            
+                    
+                    捐赠
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Atom & Reaction</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x521B;&#x5EFA;-observable-&#x6570;&#x636E;&#x7ED3;&#x6784;&#x548C;-reactions&#x53CD;&#x5E94;">&#x521B;&#x5EFA; observable &#x6570;&#x636E;&#x7ED3;&#x6784;&#x548C; reactions(&#x53CD;&#x5E94;)</h1>
+<h2 id="atoms">Atoms</h2>
+<p>&#x5728;&#x67D0;&#x4E9B;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x60F3;&#x8981;&#x6709;&#x66F4;&#x591A;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6216;&#x5176;&#x4ED6;&#x53EF;&#x4EE5;&#x5728;&#x54CD;&#x5E94;&#x5F0F;&#x8BA1;&#x7B97;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x4E1C;&#x897F;(&#x5982;&#x6D41;)&#x3002;
+&#x8981;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x5176;&#x5B9E;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#xFF0C;&#x4F7F;&#x7528; <code>Atom</code> &#x7C7B;&#x5373;&#x53EF;&#x3002;
+Atom &#x53EF;&#x4EE5;&#x7528;&#x6765;&#x901A;&#x77E5; Mobx &#x67D0;&#x4E9B; observable &#x6570;&#x636E;&#x6E90;&#x88AB;&#x89C2;&#x5BDF;&#x6216;&#x53D1;&#x751F;&#x4E86;&#x6539;&#x53D8;&#x3002;
+&#x5F53;&#x6570;&#x636E;&#x6E90;&#x88AB;&#x4F7F;&#x7528;&#x6216;&#x4E0D;&#x518D;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;MobX &#x4F1A;&#x901A;&#x77E5; atom &#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; observable <code>Clock</code>&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x7528;&#x5728;&#x54CD;&#x5E94;&#x5F0F;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x3002;
+&#x8FD9;&#x4E2A; clock &#x53EA;&#x6709;&#x5F53;&#x5B83;&#x88AB;&#x89C2;&#x5BDF;&#x4E86;&#x624D;&#x4F1A;&#x8FD0;&#x884C;&#x3002;</p>
+<p>&#x6B64;&#x793A;&#x4F8B;&#x6F14;&#x793A;&#x4E86; Atom &#x7C7B;&#x7684;&#x5B8C;&#x6574;API&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> {Atom, autorun} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;mobx&quot;</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clock</span> </span>{
+    atom;
+    intervalHandler = <span class="hljs-literal">null</span>;
+    currentDateTime;
+
+    <span class="hljs-keyword">constructor</span>() {
+        <span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A; atom &#x7528;&#x6765;&#x548C; MobX &#x6838;&#x5FC3;&#x7B97;&#x6CD5;&#x4EA4;&#x4E92;</span>
+        <span class="hljs-keyword">this</span>.atom =    <span class="hljs-keyword">new</span> Atom(
+            <span class="hljs-comment">// &#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;: atom &#x7684;&#x540D;&#x5B57;&#xFF0C;&#x7528;&#x4E8E;&#x8C03;&#x8BD5;</span>
+            <span class="hljs-string">&quot;Clock&quot;</span>,
+            <span class="hljs-comment">// &#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;(&#x53EF;&#x9009;&#x7684;): &#x5F53; atom &#x4ECE;&#x672A;&#x88AB;&#x89C2;&#x5BDF;&#x5230;&#x88AB;&#x89C2;&#x5BDF;&#x65F6;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;</span>
+            () =&gt; <span class="hljs-keyword">this</span>.startTicking(),
+            <span class="hljs-comment">// &#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;(&#x53EF;&#x9009;&#x7684;): &#x5F53; atom &#x4ECE;&#x88AB;&#x89C2;&#x5BDF;&#x5230;&#x4E0D;&#x518D;&#x88AB;&#x89C2;&#x5BDF;&#x65F6;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;</span>
+            <span class="hljs-comment">// &#x6CE8;&#x610F;&#x540C;&#x4E00;&#x4E2A; atom &#x5728;&#x8FD9;&#x4E24;&#x4E2A;&#x72B6;&#x6001;&#x4E4B;&#x95F4;&#x8F6C;&#x6362;&#x591A;&#x6B21;</span>
+            () =&gt; <span class="hljs-keyword">this</span>.stopTicking()
+        );
+    }
+
+    getTime() {
+        <span class="hljs-comment">// &#x8BA9; MobX &#x77E5;&#x9053;&#x8FD9;&#x4E2A; observable &#x6570;&#x636E;&#x6E90;&#x5DF2;&#x7ECF;&#x4F7F;&#x7528;&#x4E86;</span>
+        <span class="hljs-comment">// &#x5982;&#x679C; atom &#x5F53;&#x524D;&#x662F;&#x88AB;&#x67D0;&#x4E9B; reaction &#x89C2;&#x5BDF;&#x7684;&#xFF0C;&#x90A3;&#x4E48; reportObserved &#x65B9;&#x6CD5;&#x4F1A;&#x8FD4;&#x56DE; true</span>
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x9700;&#x8981;&#x7684;&#x8BDD;&#xFF0C;reportObserved &#x8FD8;&#x4F1A;&#x89E6;&#x53D1; onBecomeObserved &#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x65B9;&#x6CD5;(startTicking)</span>
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.atom.reportObserved()) {
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.currentDateTime;
+    } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">// &#x663E;&#x7136; getTime &#x88AB;&#x8C03;&#x7528;&#x7684;&#x540C;&#x65F6;&#x5E76;&#x6CA1;&#x6709; reaction &#x6B63;&#x5728;&#x8FD0;&#x884C;</span>
+            <span class="hljs-comment">// &#x6240;&#x4EE5;&#xFF0C;&#x6CA1;&#x6709;&#x4EBA;&#x4F9D;&#x8D56;&#x8FD9;&#x4E2A;&#x503C;&#xFF0C;&#x56E0;&#x6B64; onBecomeObserved &#x5904;&#x7406;&#x65B9;&#x6CD5;(startTicking)&#x4E0D;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;</span>
+            <span class="hljs-comment">// &#x6839;&#x636E; atom &#x7684;&#x6027;&#x8D28;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x5B83;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x8868;&#x73B0;(&#x50CF;&#x629B;&#x51FA;&#x9519;&#x8BEF;&#x3001;&#x8FD4;&#x56DE;&#x9ED8;&#x8BA4;&#x503C;&#x7B49;&#x7B49;)</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+    }
+    }
+
+    tick() {
+        <span class="hljs-keyword">this</span>.currentDateTime = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+        <span class="hljs-comment">// &#x8BA9; MobX &#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x6E90;&#x53D1;&#x751F;&#x4E86;&#x6539;&#x53D8;</span>
+        <span class="hljs-keyword">this</span>.atom.reportChanged();
+    }
+
+    startTicking() {
+        <span class="hljs-keyword">this</span>.tick(); <span class="hljs-comment">// &#x6700;&#x521D;&#x7684;&#x8FD0;&#x884C;</span>
+        <span class="hljs-keyword">this</span>.intervalHandler = setInterval(
+            () =&gt; <span class="hljs-keyword">this</span>.tick(),
+            <span class="hljs-number">1000</span>
+        );
+    }
+
+    stopTicking() {
+        clearInterval(<span class="hljs-keyword">this</span>.intervalHandler);
+        <span class="hljs-keyword">this</span>.intervalHandler = <span class="hljs-literal">null</span>;
+    }
+}
+
+<span class="hljs-keyword">const</span> clock = <span class="hljs-keyword">new</span> Clock();
+
+<span class="hljs-keyword">const</span> disposer = autorun(() =&gt; <span class="hljs-built_in">console</span>.log(clock.getTime()));
+
+<span class="hljs-comment">// ... &#x8F93;&#x51FA;&#x6BCF;&#x4E00;&#x79D2;&#x7684;&#x65F6;&#x95F4;</span>
+
+disposer();
+
+<span class="hljs-comment">// &#x505C;&#x6B62;&#x8F93;&#x51FA;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4EBA;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A; `clock` &#x7684;&#x8BDD;&#xFF0C;clock &#x4E5F;&#x5C06;&#x505C;&#x6B62;&#x8FD0;&#x884C;&#x3002;</span>
+</code></pre>
+<h2 id="reactions&#x53CD;&#x5E94;">Reactions(&#x53CD;&#x5E94;)</h2>
+<p><code>Reaction</code> &#x5141;&#x8BB8;&#x4F60;&#x521B;&#x5EFA;&#x4F60;&#x81EA;&#x5DF1;&#x7684; <strong>&#x81EA;&#x52A8;&#x8FD0;&#x884C;&#x5668;</strong>&#x3002;
+&#x5F53;&#x51FD;&#x6570;&#x5E94;&#x8BE5;&#x518D;&#x6B21;&#x6267;&#x884C;&#x65F6;&#xFF0C; Reaction &#x4F1A;&#x8FFD;&#x8E2A;&#x51FD;&#x6570;&#x548C;&#x4FE1;&#x53F7;&#xFF0C;&#x56E0;&#x4E3A;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x5DF2;&#x66F4;&#x6539;&#x3002;</p>
+<p>&#x8FD9;&#x662F; <code>autorun</code> &#x5982;&#x4F55;&#x4F7F;&#x7528; <code>Reaction</code> &#x6765;&#x5B9A;&#x4E49;&#x7684;:</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">autorun</span>(<span class="hljs-params">view: Lambda, scope?: <span class="hljs-built_in">any</span></span>) </span>{
+    <span class="hljs-keyword">if</span> (scope)
+        view = view.bind(scope);
+
+    <span class="hljs-keyword">const</span> reaction = <span class="hljs-keyword">new</span> Reaction(view.name || <span class="hljs-string">&quot;Autorun&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">this</span>.track(view);
+    });
+
+    <span class="hljs-comment">// &#x8FD0;&#x884C;&#x521A;&#x521A;&#x521B;&#x5EFA;&#x7684; reaction &#x6216;&#x5C06;&#x5176;&#x5217;&#x5165;&#x8BA1;&#x5212;&#x8868;&#x4E2D;</span>
+    <span class="hljs-keyword">if</span> (isComputingDerivation() || globalState.inTransaction &gt; <span class="hljs-number">0</span>)
+        globalState.pendingReactions.push(reaction);
+    <span class="hljs-keyword">else</span>
+        reaction.runReaction();
+
+    <span class="hljs-keyword">return</span> reaction.getDisposer();
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="autorun-async.html" class="navigation navigation-prev " aria-label="Previous page: autorunAsync">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="create-transformer.html" class="navigation navigation-next " aria-label="Next page: createTransformer">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Atom & Reaction","level":"1.8.2","depth":2,"next":{"title":"createTransformer","level":"1.8.3","depth":2,"path":"refguide/create-transformer.md","ref":"refguide/create-transformer.md","articles":[]},"previous":{"title":"autorunAsync","level":"1.8.1","depth":2,"path":"refguide/autorun-async.md","ref":"refguide/autorun-async.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"refguide/extending.md","mtime":"2017-03-15T13:20:15.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-19T01:36:42.175Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
