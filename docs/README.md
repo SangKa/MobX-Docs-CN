@@ -1,5 +1,13 @@
+
+> 此中文文档会与官网文档保持同步
+
+> 欢迎大家共同来完善此文档，为国内 MobX 爱好者提供一个更好的学习环境
+
+> Github 仓库: [https://github.com/SangKa/mobx-docs-cn](https://github.com/SangKa/mobx-docs-cn)
+
 <img src="docs/mobx.png" alt="logo" height="120" align="right" />
 # MobX
+
 
 _简单、可扩展的状态管理_
 
