@@ -2,30 +2,30 @@
 
 `when(debugName?, predicate: () => boolean, effect: () => void, scope?)`
 
-`when` observes & runs the given `predicate` until it returns true.
-Once that happens, the given `effect` is executed and the autorunner is disposed.
-The function returns a disposer to cancel the autorunner prematurely.
+`when` 观察并运行给定的 `predicate`，直到返回true。
+一旦返回 true，给定的 `effect` 就会被执行，然后 autorunner(自动运行程序) 会被清理。
+该函数返回一个清理器以提前取消自动运行程序。
 
-This function is really useful to dispose or cancel stuff in a reactive way.
-For example:
+对于以响应式方式来进行处理或者取消，此函数非常有用。
+示例:
 
 ```javascript
 class MyResource {
 	constructor() {
 		when(
-			// once...
+			// 一旦...
 			() => !this.isVisible,
-			// ... then
+			// ... 然后
 			() => this.dispose()
 		);
 	}
 
 	@computed get isVisible() {
-		// indicate whether this item is visible
+		// 标识此项是否可见
 	}
 
 	dispose() {
-		// dispose
+		// 清理
 	}
 }
 
