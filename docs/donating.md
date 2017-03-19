@@ -1,4 +1,3 @@
-# Donating
+# 捐赠
 
-Was MobX key in making your project a success? Share the victory by using the [donate](https://mobxjs.github.io/mobx/donate.html) button! If you leave a name it will be added to the sponsors list.
-
+MobX 是使您的项目成功的关键吗？ 使用[捐赠按钮](https://mobxjs.github.io/mobx/donate.html)分享胜利！如果你留下一个名字，它将被添加到赞助商列表。
