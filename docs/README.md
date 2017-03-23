@@ -77,7 +77,6 @@ class Todo {
 MobX 可以在任何ES5的环境中运行，但是利用像装饰器这样的ES.next的特性是使用 MobX 的最佳选择。
 本自述文件的剩余部分都会使用装饰器，但请牢记，_它们是可选的_。
 
-For example, in good ol' ES5 the above snippet would look like:
 例如，上面一段代码的ES5版本应该是这样:
 
 ```javascript
@@ -93,7 +92,7 @@ function Todo() {
 ### Computed values(计算值)
 
 使用 MobX， 你定义的值可以在相关数据发生变化时自动更新。
-通过使用 [`@computed`](http://mobxjs.github.io/mobx/refguide/computed-decorator.html) 装饰器或者当使用 `(extend)Observable` 时使用 getter / setter 函数。
+通过[`@computed`](http://mobxjs.github.io/mobx/refguide/computed-decorator.html) 装饰器或者利用 `(extend)Observable` 时调用 的getter / setter 函数来进行使用。
 
 ```javascript
 class TodoList {
@@ -110,10 +109,10 @@ class TodoList {
 ### Reactions(反应)
 
 Reactions 和计算值很像，但它不是产生一个新的值，而是会产生一些副作用，比如打印到控制台、网络请求、递增地更新 React 组件树以修补DOM、等等。
-简而言之，reactions 作为 [响应式编程](https://en.wikipedia.org/wiki/Reactive_programming)和[命令式编程](https://en.wikipedia.org/wiki/Imperative_programming)的桥梁。
+简而言之，reactions 在 [响应式编程](https://en.wikipedia.org/wiki/Reactive_programming)和[命令式编程](https://en.wikipedia.org/wiki/Imperative_programming)之间建立沟通的桥梁。
 
 #### React 组件
-如果你用 React 的话，可以把你的(无状态函数)组件变成响应式组件，方法是在组件上添加 [`observer`](http://mobxjs.github.io/mobx/refguide/observer-component.html) 函数/ 装饰器，`observer` 由 `mobx-react` 包提供。
+如果你用 React 的话，可以把你的(无状态函数)组件变成响应式组件，方法是在组件上添加由 `mobx-react` 包提供的 [`observer`](http://mobxjs.github.io/mobx/refguide/observer-component.html) 函数/ 装饰器。
 
 ```javascript
 import React, {Component} from 'react';
@@ -148,10 +147,10 @@ const store = new TodoList();
 ReactDOM.render(<TodoListView todoList={store} />, document.getElementById('mount'));
 ```
 
-`observer` 把 React (函数)组件转换为它们渲染的数据的推导。
+`observer` 会将 React (函数)组件转换为它们需要渲染的数据的派生。
 当使用 MobX 时没有所谓的智能和无脑组件。
-所有组件都以巧妙的方式进行渲染，而定义却只需要一种简单无脑的方式。MobX 会简单地确保组件总是在需要时重新渲染，但仅此而已。所以上面例子中的 `onClick` 处理方法会强制对应的 `TodoView` 进行渲染，如果未完成任务的数量(unfinishedTodoCount)已经改变，它将导致 `TodoListView` 进行渲染。
-然而，如果移除 `Tasks left` 这行代码(或者将它放到另一个组件中)，当点击 `checkbox` 的时候 `TodoListView` 不会重新渲染。你可以在 [JSFiddle](https://jsfiddle.net/mweststrate/wv3yopo0/) 中自己动手来验证这点。
+所有的组件都会以巧妙的方式进行渲染，而只需要一种简单无脑的方式来定义它们。MobX 会确保组件总是在需要的时重新渲染，但仅此而已。所以上面例子中的 `onClick` 处理方法会强制对应的 `TodoView` 进行渲染，如果未完成任务的数量(unfinishedTodoCount)已经改变，它将导致 `TodoListView` 进行渲染。
+可是，如果移除 `Tasks left` 这行代码(或者将它放到另一个组件中)，当点击 `checkbox` 的时候 `TodoListView` 就不再重新渲染。你可以在 [JSFiddle](https://jsfiddle.net/mweststrate/wv3yopo0/) 中自己动手来验证这点。
 
 #### 自定义 reactions
 使用[`autorun`](http://mobxjs.github.io/mobx/refguide/autorun.html)、[`autorunAsync`](http://mobxjs.github.io/mobx/refguide/autorun-async.html) 和 [`when`](http://mobxjs.github.io/mobx/refguide/when.html) 函数即可简单的创建自定义 reactions，以满足你的具体场景。
@@ -206,9 +205,9 @@ MobX 是状态管理库中侵入性最小的之一。这使得 `MobX`的方法�
 
 ### 保证参照完整性
 
-因为数据不需要标准化，所以 MobX 会自动跟踪状态和推导之间的关系，你可以免费获得参照完整性。渲染是通过三级间接寻址访问？
+因为数据不需要标准化，所以 MobX 会自动跟踪状态和推导之间的关系，你可以免费获得参照完整性。渲染通过三级间接寻址访问的数据？
 
-没有问题，MobX 会跟踪它们，一旦其中一个引用发生了变化，就会重新渲染。作为回报，陈年的老bug已不复存在。作为一个程序员，你可能会忘记修改一些数据可能会影响到一个角落里看起来毫不相关的组件，但 MobX 不会。
+没有问题，MobX 会跟踪它们，一旦其中一个引用发生了变化，就会重新渲染。作为回报，陈年的老bug已不复存在。作为一个程序员，你可能不会注意到修改的一些数据可能会影响到的某个角落里看起来毫不相关的组件，但 MobX 不会。
 
 ### 更简单的 actions 更便于维护
 
@@ -216,25 +215,25 @@ MobX 是状态管理库中侵入性最小的之一。这使得 `MobX`的方法�
 
 ### 细粒度的可观测性是高效的
 
-MobX 构建应用中所有推导的图形，以找到保持最新所需的最少数量的重新计算。“推导一切”或许听上去开销很昂贵，但 MobX 构建虚拟推导图以保持推导与状态同步所需的重计算的数量最小化。
+MobX 构建应用中所有派生的图形，以找到保持最新状态所需的重新计算的最少次数。“推导一切”或许听上去开销很昂贵，但 MobX 构建虚拟推导图以保持推导与状态同步所需的重计算的数量最小化。
 
 事实上，在 Mendix 测试 MobX 时我们发现使用这个库跟踪代码中的关系通常比通过使用手写事件或基于容器组件的“智能”选择器来推送更改更有效率。
 
-原因简单来说是 MobX 将在你的数据上建立比你作为一个程序员更多的细粒度的“监听器”。
+原因简单来说是 MobX 将在你的数据上建立起比你作为一个程序员更多细粒度的“监听器”。
 
-其次, MobX 看到推导之间的因果关系，因此它可以为推导排序，使得推导不会运行多次或引入缺陷。
+其次, MobX 看到派生之间的因果关系，因此它可以为派生排序，使得派生不会运行多次或引入缺陷。
 
 想了解这是如何工作的？ 请参见 [深入剖析 MobX](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254)。
 
 ### 易操作性
 
-MobX 使用原生javascript。由于它的不唐突性，它天生可以和绝大部分javascript库共同使用，而不需要特定的 MobX 风格库。
+MobX 使用原生javascript。由于它的侵入性不强，它可以和绝大部分javascript库共同使用，而不需要特定的 MobX 风格库。
 
 所以你可以继续使用你的路由，数据获取和工具库，比如`react-router`、 `director`、 `superagent`、 `lodash`，等等。
 
 出于同样的原因，你可以在服务器端和客户端使用它，也可以在 react-native 这样的同构应用中使用。
 
-结论就是: 相比其它状态管理解决方案，当使用 MobX 时通常只需学习更少的新感念。
+结论就是: 相比其它状态管理解决方案，当使用 MobX 时通常只需学习更少的新概念。
 
 ---
 
@@ -247,11 +246,11 @@ MobX 使用原生javascript。由于它的不唐突性，它天生可以和绝�
 </center>
 
 
-## 信用
+## 赞誉
 
 MobX 的灵感来自excel表格中的反应式编程原理。同样也受到像 MeteorJS、knockout和Vue.js这样的 MVVM 框架的启发。但是 MobX 把透明的函数响应式编程(Transparent Functional Reactive Programming)提升到了一个更好的水平并且提供了独立的实现。它以一种无障碍、同步、可预见和高效的方式实现了 TFRP。
 
-[Mendix](https://github.com/mendix) 积累了大量的信用，为维护 MobX 提供了灵活性和支持，并有机会在显示、复杂、性能关键的应用程序中证明 MobX 的哲学。
+更多的赞誉给[Mendix](https://github.com/mendix) ，它为维护 MobX 给予了灵活性和支持，并提供机会在真实、复杂、性能关键的应用程序中证明 MobX 的哲学。
 
 最终的赞誉属于所有的选择相信、不断尝试、不断验证、乃至[赞助](https://github.com/mobxjs/mobx/blob/master/sponsors.md) MobX 的人们。
 
