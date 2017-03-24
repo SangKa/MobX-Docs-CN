@@ -112,7 +112,7 @@ Reactions 和计算值很像，但它不是产生一个新的值，而是会产�
 简而言之，reactions 在 [响应式编程](https://en.wikipedia.org/wiki/Reactive_programming)和[命令式编程](https://en.wikipedia.org/wiki/Imperative_programming)之间建立沟通的桥梁。
 
 #### React 组件
-如果你用 React 的话，可以把你的(无状态函数)组件变成响应式组件，方法是在组件上添加由 `mobx-react` 包提供的 [`observer`](http://mobxjs.github.io/mobx/refguide/observer-component.html) 函数/ 装饰器。
+如果你用 React 的话，可以把你的(无状态函数)组件变成响应式组件，方法是在组件上添加 [`observer`](http://mobxjs.github.io/mobx/refguide/observer-component.html) 函数/ 装饰器. `observer`由 `mobx-react` 包提供的。
 
 ```javascript
 import React, {Component} from 'react';
@@ -147,7 +147,7 @@ const store = new TodoList();
 ReactDOM.render(<TodoListView todoList={store} />, document.getElementById('mount'));
 ```
 
-`observer` 会将 React (函数)组件转换为它们需要渲染的数据的派生。
+`observer` 会将 React (函数)组件转换为它们需要渲染的数据的推导。
 当使用 MobX 时没有所谓的智能和无脑组件。
 所有的组件都会以巧妙的方式进行渲染，而只需要一种简单无脑的方式来定义它们。MobX 会确保组件总是在需要的时重新渲染，但仅此而已。所以上面例子中的 `onClick` 处理方法会强制对应的 `TodoView` 进行渲染，如果未完成任务的数量(unfinishedTodoCount)已经改变，它将导致 `TodoListView` 进行渲染。
 可是，如果移除 `Tasks left` 这行代码(或者将它放到另一个组件中)，当点击 `checkbox` 的时候 `TodoListView` 就不再重新渲染。你可以在 [JSFiddle](https://jsfiddle.net/mweststrate/wv3yopo0/) 中自己动手来验证这点。
@@ -207,7 +207,7 @@ MobX 是状态管理库中侵入性最小的之一。这使得 `MobX`的方法�
 
 因为数据不需要标准化，所以 MobX 会自动跟踪状态和推导之间的关系，你可以免费获得参照完整性。渲染通过三级间接寻址访问的数据？
 
-没有问题，MobX 会跟踪它们，一旦其中一个引用发生了变化，就会重新渲染。作为回报，陈年的老bug已不复存在。作为一个程序员，你可能不会注意到修改的一些数据可能会影响到的某个角落里看起来毫不相关的组件，但 MobX 不会。
+没有问题，MobX 会跟踪它们，一旦其中一个引用发生了变化，就会重新渲染。作为回报，陈年的老bug已不复存在。作为一个程序员，你可能记不住修改的一些数据可能会影响到的某个角落里看起来毫不相关的组件，但 MobX 不会。
 
 ### 更简单的 actions 更便于维护
 
@@ -215,13 +215,13 @@ MobX 是状态管理库中侵入性最小的之一。这使得 `MobX`的方法�
 
 ### 细粒度的可观测性是高效的
 
-MobX 构建应用中所有派生的图形，以找到保持最新状态所需的重新计算的最少次数。“推导一切”或许听上去开销很昂贵，但 MobX 构建虚拟推导图以保持推导与状态同步所需的重计算的数量最小化。
+MobX 构建应用中所有推导的图形，以找到保持最新状态所需的重新计算的最少次数。“推导一切”或许听上去开销很昂贵，但 MobX 构建虚拟推导图以保持推导与状态同步所需的重计算的数量最小化。
 
 事实上，在 Mendix 测试 MobX 时我们发现使用这个库跟踪代码中的关系通常比通过使用手写事件或基于容器组件的“智能”选择器来推送更改更有效率。
 
 原因简单来说是 MobX 将在你的数据上建立起比你作为一个程序员更多细粒度的“监听器”。
 
-其次, MobX 看到派生之间的因果关系，因此它可以为派生排序，使得派生不会运行多次或引入缺陷。
+其次, MobX 看到推导之间的因果关系，因此它可以为推导排序，使得推导不会运行多次或引入缺陷。
 
 想了解这是如何工作的？ 请参见 [深入剖析 MobX](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254)。
 
