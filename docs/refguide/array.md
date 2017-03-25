@@ -36,7 +36,7 @@ todos.shift();
 请记住无论如何 `Array.isArray(observable([]))` 都将返回 `false` ，所以无论何时当你需要传递 observable 数组到外部库时，通过使用 `array.slice()` **在 observable 数组传递给外部库或者内置方法前创建一份浅拷贝**(无论如何这都是最佳实践)总会是一个好主意。
 换句话说，`Array.isArray(observable([]).slice())` 会返回 `ture`。
 
-不同于 `sort` 和 `reverse` 函数的内置实现，observableArray.sort 和 observableArray.reverse 不会改变数组本身，而只是返回一个排序过/反转过的副本。
+不同于 `sort` 和 `reverse` 函数的内置实现，observableArray.sort 和 observableArray.reverse 不会改变数组本身，而只是返回一个排序过/反转过的拷贝。
 
 除了所有内置函数，observable 数组还可以使用下面的好东西:
 
@@ -49,7 +49,7 @@ todos.shift();
 * `peek()` - 和 `slice()` 类似， 返回一个有所有值的数组并且数组可以放心的传递给其它库。
 
 与 `slice` 相反，`peek` 不创建保护性拷贝。如果你确定是以只读方式使用数组，请在性能关键的应用中使用此方法。
-在性能关键的部分，还建议使用一个扁平的 observable 数组。
+在性能关键的部分，还建议使用一个扁平的 `observable` 数组。
 
 ## `observable.shallowArray(values)`
 
