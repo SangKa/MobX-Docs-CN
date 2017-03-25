@@ -1,11 +1,10 @@
 # MobX API参考
 
-Applies to MobX 3 and higher. For MobX 2, the old documentation is still available on [github](https://github.com/mobxjs/mobx/blob/7c9e7c86e0c6ead141bb0539d33143d0e1f576dd/docs/refguide/api.md).
 适用于 MobX 3或者更高版本。对于 MobX 2，旧文档依然可以在[github](https://github.com/mobxjs/mobx/blob/7c9e7c86e0c6ead141bb0539d33143d0e1f576dd/docs/refguide/api.md)找到。
 
 # 核心API
 
-_MobX 最重要的API。理解了`observable`、 `computed`、 `reactions` 和 `actions`的话，对于精通 MobX 已经足够了并能在应用中使用它！_
+MobX 中最重要的API。理解了`observable`、 `computed`、 `reactions` 和 `actions`的话，说明对于Mobx已经足够精通了,在你的应用中使用它吧！
 
 ## 创建 observables
 
@@ -16,20 +15,20 @@ _MobX 最重要的API。理解了`observable`、 `computed`、 `reactions` 和 `
 * `@observable classProperty = value`
 
 Observable 值可以是JS基本数据类型、引用类型、普通对象、类实例、数组和映射。
-`observable(value)` 是一个方便的重载，总是试图创建最佳匹配的 observable 类型。
-还可以直接创建所需的 observable 类型，请参见下文。
+`observable(value)` 是一个方便的重载函数，总是试图创建最佳匹配的 observable 类型。
+你也可以直接创建所需的 observable 类型，请参见下文。
 
 匹配类型应用了以下转换规则，但可以通过使用**调节器**进行微调。请参见下文。
 
-1. 如果 **value** 是[ES6 Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)的实例: 会返回一个新的 [Observable Map](map.md)。如果你不想只对一个特定项的更改做出反应，而是对添加或删除该项做出反应的话，那么 Observable map 会非常有用。
+1. 如果 **value** 是[ES6 Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)的实例: 会返回一个新的 [Observable Map](map.md)。如果你不只关注某个特定entry的更改，而且对添加或删除其他entry时也做出反应的话，那么 Observable map 会非常有用。
 1. 如果 **value** 是数组，会返回一个 [Observable Array](array.md)。
 1. 如果 **value** 是没有原型的对象，那么对象会被克隆并且所有的属性都会被转换成可观察的。参见 [Observable Object](object.md)。
-1. 如果 **value** 是有原型的对象，JavaSript原始数据类型或者函数，会返回一个 [Boxed Observable](boxed.md)。MobX 不会将一个有原型的对象自动转换成可观察的，因为这是它构造函数的职责。在构造函数中使用 `extendObservable` 或者在类定义中使用 `@observable`。
+1. 如果 **value** 是有原型的对象，JavaSript原始数据类型或者函数，会返回一个 [Boxed Observable](boxed.md)。MobX 不会将一个有原型的对象自动转换成可观察的，因为这是它构造函数的职责。对于这些类型你需要在它的构造函数中使用 `extendObservable` 或者在它的类定义中使用 `@observable`。
 
 乍看之下，这些规则可能看上去很复杂，但实际上实践当中你会发现他们是非常直观的。
 
-一些便笺:
-* 要创建键是动态的对象时永远都使用 maps！该对象只有初始化时便存在的属性会转换成可观察的，但新添加的属性只有通过使用 `extendObservable` 才可以转换成可观察的。
+一些建议:
+* 要创建键是动态的对象时永远都使用 maps！对象上只有初始化时便存在的属性会转换成可观察的，尽管新添加的属性可以通过使用 `extendObservable` 转换成可观察的。
 * 要想使用 `@observable` 装饰器，首先要确保 在你的编译器(babel 或者 typescript)中 [装饰器是启用的](http://mobxjs.github.io/mobx/refguide/observable-decorator.html)。
 * 默认情况下将一个数据结构转换成可观察的是**有感染性的**，这意味着 `observable` 被自动应用于数据结构包含的任何值，或者将来会被该数据结构包含的值。这个行为可以通过使用 *modifiers* 或 *shallow* 来更改。
 
@@ -37,13 +36,13 @@ Observable 值可以是JS基本数据类型、引用类型、普通对象、类�
 
 ### `@observable property =  value`
 
-`observable` 也可以用作属性装饰器。它需要[启用装饰器](../best/decorators.md)而且它是 `extendObservable(this, { property: value })` 的语法糖。
+`observable` 也可以用作属性的装饰器。它需要[启用装饰器](../best/decorators.md)而且它是 `extendObservable(this, { property: value })` 的语法糖。
 
 [&laquo;`详情`&raquo;](observable-decorator.md)
 
 ### `observable.box(value)` & `observable.shallowBox(value)`
 
-创建一个 observable 的盒子，它用来存储值的 observable 引用。使用 `get()` 方法可以得到盒子中的当前值，而使用 `set()` 方法可以更新值。
+创建一个 observable 的盒子，它用来存储value的 observable 引用。使用 `get()` 方法可以得到盒子中的当前value，而使用 `set()` 方法可以更新value。
 这是所有其它 observable 创建的基础，但实际中你其实很少能使用到它。
 通常盒子会自动地尝试把任何还不是 observable 的新值转换成 observable 。使用 `shallowBox` 会禁用这项行为。
 
@@ -58,14 +57,13 @@ Observable 值可以是JS基本数据类型、引用类型、普通对象、类�
 
 ### `observable.array(value)` & `observable.shallowArray(value)`
 
-Creates a new observable array based on the provided value. Use `shallowArray` if the values in the array should not be turned into observables.
 基于提供的值来创建一个新的 observable 数组。如果不想数组中的值转换成 observable 请使用 `shallowArray`。
 
 [&laquo;`详情`&raquo;](array.md)
 
 ### `observable.map(value)` & `observable.shallowMap(value)`
 
-基于提供的值来创建一个新的 observable 映射。如果不想数组中的值转换成 observable 请使用 `shallowMap`。
+基于提供的值来创建一个新的 observable 映射。如果不想集合中的值转换成 observable 请使用 `shallowMap`。
 当想创建动态的键集合并且需要能观察到键的添加和移除时，请使用 `map`。
 注意只支持字符串键。
 
@@ -74,15 +72,14 @@ Creates a new observable array based on the provided value. Use `shallowArray` i
 ### `extendObservable` & `extendShallowObservable`
 用法: `extendObservable(target, ...propertyMaps)`。对于 `propertyMap` 中的每个键值对，都会作为一个(新)的 observable 属性引入到 target 对象中。
 还可以在构造函数中使用来引入 observable 属性，这样就不需要用装饰器了。
-如果 `propertyMap` 的某个值是一个 getter 函数，那么会引入一个**计算的**属性。
+如果 `propertyMap` 的某个值是一个 getter 函数，那么会引入一个**computed**属性。
 
 如果新的属性不应该具备感染性(即新分配的值不应该自动地转换成 observable)的话，请使用 `extendShallowObservable`。
 注意 `extendObservable` 增强了现有的对象，不像 `observable.object` 是创建一个新对象。
 
 [&laquo;详情&raquo;](extend-observable.md)
 
-### 调节器
-
+### 调节器  -----------------------------------------------------------------++
 调节器可以作为装饰器或者组合 `extendObservable` 和 `observable.object` 使用，以改变特定属性的自动转换规则。
 
 可用的调节器列表:
