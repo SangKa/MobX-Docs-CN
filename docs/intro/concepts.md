@@ -30,7 +30,7 @@ MobX 区分了两种类型的推导:
 
 ### 3. Actions(动作)
 
-**动作** 是任何改变**状态**的一段代码。用户事件、后端数据推送、预定事件、等等。
+**动作** 是任一一段可以改变**状态**的代码。用户事件、后端数据推送、预定事件、等等。
 动作类似于用户在excel单元格中输入一个新的值。
 
 在 MobX 中可以显示的定义动作，它可以帮你把代码组织的更清晰。
@@ -38,7 +38,7 @@ MobX 区分了两种类型的推导:
 
 ## 原则
 
-MobX 支持单向数据流，其中**动作**改变**状态**，而状态的改变会更新所有受影响的**视图**。
+MobX 支持单向数据流，也就是**动作**改变**状态**，而状态的改变会更新所有受影响的**视图**。
 
 ![Action, State, View](../images/action-state-view.png)
 
@@ -60,16 +60,16 @@ The following listing illustrates the above concepts and principles:
 import {observable, autorun} from 'mobx';
 
 var todoStore = observable({
-	/* some observable state */
+	/* 一些观察的状态 */
 	todos: [],
 
-	/* a derived value */
+	/* 推导值 */
 	get completedCount() {
 		return this.todos.filter(todo => todo.completed).length;
 	}
 });
 
-/* a function that observes the state */
+/* 观察状态改变的函数 */
 autorun(function() {
 	console.log("Completed %d of %d items",
 		todoStore.completedCount,
@@ -77,15 +77,15 @@ autorun(function() {
 	);
 });
 
-/* ..and some actions that modify the state */
+/* ..以及一些改变状态的动作 */
 todoStore.todos[0] = {
 	title: "Take a walk",
 	completed: false
 };
-// -> synchronously prints 'Completed 0 of 1 items'
+// -> 同步打印 'Completed 0 of 1 items'
 
 todoStore.todos[0].completed = true;
-// -> synchronously prints 'Completed 1 of 1 items'
+// -> 同步打印 'Completed 1 of 1 items'
 
 ```
 
