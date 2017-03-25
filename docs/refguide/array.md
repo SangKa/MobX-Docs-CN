@@ -48,12 +48,12 @@ todos.shift();
 * `remove(value)` - 通过值从数组中移除一个单个的项。如果项被找到并移除的话，返回 `true` 。
 * `peek()` - 和 `slice()` 类似， 返回一个有所有值的数组并且数组可以放心的传递给其它库。
 
-与 `slice` 相反，`peek` 不创建防御型副本。如果你确定是以只读方式使用数组，请在性能关键的应用中使用此方法。
+与 `slice` 相反，`peek` 不创建保护性拷贝。如果你确定是以只读方式使用数组，请在性能关键的应用中使用此方法。
 在性能关键的部分，还建议使用一个扁平的 observable 数组。
 
 ## `observable.shallowArray(values)`
 
-任何分配给 observable 数组的值都会默认通过 [`observable`](observable.md) 来传递使其转变成可观察的。
+任何分配给 observable 数组的值都会默认通过 [`observable`](observable.md) 来使其转变成可观察的。
 创建浅数组以禁用此行为，并按原样存储值。关于此机制的更多详情，请参见 [调节器](modifiers.md)。
 
 ## 名称参数
