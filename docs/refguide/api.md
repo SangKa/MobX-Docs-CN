@@ -79,14 +79,14 @@ Observable 值可以是JS基本数据类型、引用类型、普通对象、类�
 
 [&laquo;详情&raquo;](extend-observable.md)
 
-### 调节器  -----------------------------------------------------------------++
+### 调节器 
 调节器可以作为装饰器或者组合 `extendObservable` 和 `observable.object` 使用，以改变特定属性的自动转换规则。
 
 可用的调节器列表:
 
-* `observable.deep`: 任何 observable 都使用的默认的调节器。它把任何分配的、非原始数据类型的、非 observable 的值转换成 observable。
+* `observable.deep`: 所有  observable 都使用的默认的调节器。它可以把任何指定的、非原始数据类型的、非 observable 的值转换成 observable。
 * `observable.ref`: 禁用自动的 observable 转换，只是创建一个 observable 引用。
-* `observable.shallow`: 只能与集合组合使用。 将任何分配的集合转换为浅 observable (而不是深 observable)的集合。 换一种说法; 集合中的值将不会自动变为 observable。
+* `observable.shallow`: 只能与集合组合使用。 将任何分配的集合转换为浅 observable (而不是深 observable)的集合。 换句话说, 集合中的值将不会自动变为 observable。
 * `computed`: 创建一个推导属性, 参见 [`computed`](computed-decorator.md)
 * `action`: 创建一个动作, 参见 [`action`](action.md)
 
@@ -155,7 +155,7 @@ const taskStore = observable({
 
 ### `observer`
 可以用作包裹 React 组件的高阶组件。
-组件的 `render` 函数中的任何已使用的 observable 发生变化时，组件都会自动重新渲染。
+在组件的 `render` 函数中的任何已使用的 observable 发生变化时，组件都会自动重新渲染。
 注意 `observer` 是由 `"mobx-react"` 包提供的，而不是 `mobx` 本身。
 [&laquo;详情&raquo;](observer-component.md)
 
@@ -167,18 +167,18 @@ const taskStore = observable({
 
 
 ### `autorun`
-用法：`autorun(debugname?, () => { sideEffect })`。`autorun` 负责运行所提供的 `sideEffect` 并追踪在副作用运行期间访问哪个 observable 状态。
-后面当其中一个已使用的 observable 发生变化了，同样的副作用会再运行一遍。
+用法：`autorun(debugname?, () => { sideEffect })`。`autorun` 负责运行所提供的 `sideEffect` 并追踪在`sideEffect`运行期间访问过的 `observable` 的状态。
+将来如果有其中一个已使用的 observable 发生变化，同样的`sideEffect`会再运行一遍。
 `autorun` 返回一个清理函数用来取消副作用。[&laquo;详情&raquo;](autorun.md)
 
 ### `when`
 用法: `when(debugname?, () => condition, () => { sideEffect })`。
 `condition` 表达式会自动响应任何它所使用的 observable。
-一旦表但是返回的是真值，副作用函数便会立即调用，但只会调用一次。
+一旦表达式返回的是真值，副作用函数便会立即调用，但只会调用一次。
 `when` 返回一个清理函数用来提早取消这一切。[&laquo;详情&raquo;](when.md)
 
 ### `autorunAsync`
-用法: `autorunAsync(debugname?, () => { sideEffect }, delay)`。类似于 `autorun`，但是副作用会有延迟而且根据给定的 `delay` 来进行函数去抖(debounce)。
+用法: `autorunAsync(debugname?, () => { sideEffect }, delay)`。类似于 `autorun`，但是`sideEffect`会延迟执行,并且根据给定的 `delay` 来进行函数去抖(debounce)。
 [&laquo;详情&raquo;](autorun-async.md)
 
 ### `reaction`
@@ -189,7 +189,7 @@ const taskStore = observable({
 和 `autorunAsync` 一样，副作用是可以进行函数去抖的。[&laquo;详情&raquo;](reaction.md)
 
 ### `expr`
-用法: `expr(() => someExpression)`。`computed(() => someExpression).get()` 的简写形式。
+用法: `expr(() => someExpression)`。只是`computed(() => someExpression).get()` 的简写形式。
 `expr` 在一些极少数场景下用来优化另一个计算值函数或者 reaction 是有用的。
 通常情况是将函数拆分成一些更小的计算值函数来达到同样的效果，这样做更简单，也更合理。
 [&laquo;详情&raquo;](expr.md)
@@ -198,7 +198,7 @@ const taskStore = observable({
 
 用法: `extras.onReactionError(handler: (error: any, derivation) => void)`
 
-此方法附加一个全局错误监听器，对于从 _reaction_ 抛出的每个错误都调用该错误监听器。
+此方法附加一个全局错误监听器，对于从 _reaction_ 抛出的每个错误都会调用该错误监听器。
 它可以用来监控或者测试。
 
 ------
@@ -207,14 +207,13 @@ const taskStore = observable({
 
 _有一些工具函数可以使得 observable 或者  计算值用起来更方便。
 更多实用工具可以在 [mobx-utils](https://github.com/mobxjs/mobx-utils) 包中找到。_
-
 ### `Provider` (`mobx-react` 包)
 
-可以用来使用 React 的上下文机制来传递 store 给子组件。参见[`mobx-react` 文档](https://github.com/mobxjs/mobx-react#provider-experimental)。
+可以用来使用 React 的`context`机制来传递 store 给子组件。参见[`mobx-react` 文档](https://github.com/mobxjs/mobx-react#provider-experimental)。
 
 ### `inject` (`mobx-react` 包)
 
-高阶组件和 `Provider` 的对应物。可以用来从 React 的上下文中挑选 store 作为 prop 传递给目标组件。用法:
+ 相当于`Provider` 的高阶组件。可以用来从 React 的`context`中挑选 store 作为 prop 传递给目标组件。用法:
 * `inject("store1", "store2")(observer(MyComponent))`
 * `@inject("store1", "store2") @observer MyComponent`
 * `@inject((stores, props, context) => props) @observer MyComponent`
@@ -224,7 +223,7 @@ _有一些工具函数可以使得 observable 或者  计算值用起来更方�
 用法: `toJS(observableDataStructure)`。把 observable 数据结构转换成普通的 javascript 对象并忽略计算值。 [&laquo;详情&raquo;](tojson.md)
 
 ### `isObservable`
-用法: `isObservable(thing, property?)`。如果给定的thing，或者thing指定的属性是 observable 的话，返回true。
+用法: `isObservable(thing, property?)`。如果给定的thing，或者thing指定的`property`是 observable 的话，返回true。
 适用于所有的 observable、计算值和 reaction 的清理函数。[&laquo;详情&raquo;](is-observable)
 
 ### `isObservableObject|Array|Map`
@@ -232,29 +231,29 @@ _有一些工具函数可以使得 observable 或者  计算值用起来更方�
 
 ### `isArrayLike`
 用法: `isArrayLike(thing)`。如果给定的thing是 javascript 数组或者 observable (MobX的)数组的话，返回true。
-这是为了方便和简写。
+这个方法更简便。
 注意，observable 数组可以通过 `.slice()` 转变成 javascript 数组。
 
 ### `isAction`
-用法: `isAction(func)`。如果给定函数是用`action` 方法包裹的或者是 `@action` 装饰器的话，返回true。
+用法: `isAction(func)`。如果给定函数是用`action` 方法包裹的或者是用 `@action` 装饰的话，返回true。
 
 ### `isComputed`
-用法: `isComputed(thing, property?)`。如果给定的thing是计算值或者thing指定的属性是计算值的话，返回true。
+用法: `isComputed(thing, property?)`。如果给定的thing是计算值或者thing指定的`property`是计算值的话，返回true。
 
 ### `createTransformer`
 用法: `createTransformer(transformation: A => B, onCleanup?): A = B`。
-可以用来使函数将一个值转换为另一个可以反应和记忆的值。
+可以用来创建将一个值转换为另一个可以反应和记忆的值的函数。
 它的行为类似于计算值，可以用于一些高级模式，比如非常高效的数组映射，映射归并或者不是对象的一部分的计算值。
 [&laquo;详情&raquo;](create-transformer.md)
 
 ### `intercept`
 用法: `intercept(object, property?, interceptor)`.
-这个API可以在应用 observable 的API之前，拦截更改。对于验证、标准化和取消十分有用。
+这个API可以在应用 observable 的API之前，拦截更改。对于验证、标准化和取消等操作十分有用。
 [&laquo;详情&raquo;](observe.md)
 
 ### `observe`
 用法: `observe(object, property?, listener, fireImmediately = false)`
-这个一个底层API，用来观察一个单个的 observable 值。
+这是一个底层API，用来观察一个单个的 observable 值。
 [&laquo;详情&raquo;](observe.md)
 
 ### `useStrict`
@@ -267,7 +266,7 @@ _有一些工具函数可以使得 observable 或者  计算值用起来更方�
 
 # 开发工具
 
-_如果你想在 MobX 的上层构建很酷的工具或如果你想检查 MobX 的内部状态，下列API可能会派上用场。_
+_如果你想在 MobX 的上层构建一些很酷的工具或者想检查 MobX 的内部状态的话，下列API可能会派上用场。_
 
 ### `"mobx-react-devtools"` 包
 mobx-react-devtools 是个功能强大的包，它帮助你调查 React 组件的性能和依赖。
@@ -277,7 +276,7 @@ mobx-react-devtools 是个功能强大的包，它帮助你调查 React 组件�
 用法: `spy(listener)`.
 注册全局侦查监听器可以监听所有 MobX 中发生的时间。
 它类似于将一个 `observe` 监听器一次性附加到**所有的** observables 上，而且还负责正在运行的动作和计算的通知。
-用于 `mobx-react-devtools` 的示例。
+用于 `mobx-react-devtools` 。
 [&laquo;详情&raquo;](spy.md)
 
 ### `whyRun`
@@ -286,43 +285,43 @@ mobx-react-devtools 是个功能强大的包，它帮助你调查 React 组件�
 * `whyRun(Reaction object / ComputedValue object / disposer function)`
 * `whyRun(object, "computed property name")`
 
-`whyRun` 是个可以在计算值或 reaction(`autorun`、 `reaction` 或 使用了 `observer` 的 React 组件的 `render` 方法)中使用的小功能，它还可以打印出 derivation 正在运行的原因和在哪种情况下它会再次运行。
+`whyRun` 是个可以在`computed`或 reaction(`autorun`、 `reaction` 或 使用了 `observer` 的 React 组件的 `render` 方法)中使用的小功能，它可以打印出 推导(derivation) 正在运行的原因以及在哪种情况下它会再次运行。
 这应该有助于更深入地了解 MobX 运作的时机和原因，并防止一些初学者的错误。
 
 
 ### `extras.getAtom`
 用法: `getAtom(thing, property?)`.
-返回给定的 observable 对象、属性、reaction 等的背后的原子。
+返回给定的 observable 对象、属性、reaction 等的背后作用的`Atom`。
 
 ### `extras.getDebugName`
 用法: `getDebugName(thing, property?)`
-返回 observable 对象、属性、reaction等友好的(生成的)调试名称。用于 `mobx-react-devtools` 的示例。
+返回 observable 对象、属性、reaction等(生成的)易读的调试名称。用于 `mobx-react-devtools` 的示例。
 
 ### `extras.getDependencyTree`
 用法: `getDependencyTree(thing, property?)`.
-返回给定 reaction / 计算 当前依赖的所有 observable 的树型结构。
+返回给定的 reaction / 计算 当前依赖的所有 observable 的树型结构。
 
 ### `extras.getObserverTree`
 用法: `getObserverTree(thing, property?)`.
-返回观察给定的 observable 的所有 reaction / 计算的树型结构。
+返回正在观察给定的 observable 的所有 reaction / 计算的树型结构。
 
 ### `extras.isSpyEnabled`
 用法: `isSpyEnabled()`. 如果至少有一个 spy 是活动的话，返回true。
 
 ### `extras.spyReport`
-用法: `spyReport({ type: "your type", &laquo;details&raquo; data})`。 发射自定义侦查事件。
+用法: `spyReport({ type: "your type", &laquo;details&raquo; data})`。 发射自定义`spy`事件。
 
 ### `extras.spyReportStart`
-用法: `spyReportStart({ type: "your type", &laquo;details&raquo; data})`。 发射自定义侦查事件。将启动一个新的嵌套侦查事件组，该事件组应该使用 `spyReportEnd（）` 关闭。
+用法: `spyReportStart({ type: "your type", &laquo;details&raquo; data})`。 发射自定义`spy`事件。将启动一个新的嵌套`spy`事件组，该事件组应该使用 `spyReportEnd（）` 关闭。
 
 ### `extras.spyReportEnd`
-用法: `spyReportEnd()`。关闭由 `extras.spyReportStart` 开启的当前侦查组。
+用法: `spyReportEnd()`。关闭由 `extras.spyReportStart` 开启的当前`spy`的事件组。
 
 ### `"mobx-react"` 开发钩子
-`mobx-react` 包暴露了以下几个供 `mobx-react-devtools` 使用的附加API:
-* `trackComponents()`: 启用追踪基于 React 组件的 `observer`
-* `renderReporter.on(callback)`: 每次渲染启用 `observer` 的 React 组件时会调用callback，并附带时间信息等等
-* `componentByNodeRegistery`: ES6 WeakMap 从 DOMNode 映射到一个基于 `observer` 的 React 组件实例
+`mobx-react` 包提供了以下几个供 `mobx-react-devtools` 使用的附加API:
+* `trackComponents()`: 启用追踪功能,追踪使用了`observer`的 React 组件 
+* `renderReporter.on(callback)`: 使用 `observer` 的 React 组件每次渲染都会调用callback，并附带相关的时间信息等等
+* `componentByNodeRegistery`: 使用ES6 WeakMap 将 DOMNode 映射到使用 `observer` 的 React 组件实例
 
 
 # 内部函数
@@ -333,15 +332,16 @@ _以下方法都在 MobX 内部使用，在极少数情况下可能会派上用�
 用法: `transaction(() => { block })`.
 已废弃，使用 action 或者 `runInAction` 替代。
 低等级API，用于批量处理状态更改。
-在块内部进行的状态更改不会导致任何计算或 reaction 运行，直到到达块结束。
-尽管如此，检查事务块内部的计算值仍将返回一致的值。
-建议使用 `action`，它会在内部使用 `transaction`。
+在`block`中进行的状态更改在`block`结束前不会导致任何计算或 reaction 的运行。
+尽管如此，(不管何时)检查`transaction`中`computed`值,返回的值仍然是一致的。
+建议使用 `action`来替代，它会在内部使用 `transaction`。
 [&laquo;详情&raquo;](transaction.md)
 
 ### `untracked`
 用法: `untracked(() => { block })`.
-低等级API，在 reaction 和 计算 内部或许有用。
-在 `block` 中访问任何 observable 都不会导致 reaction / compuation 自动重新计算。
+低等级API，在 reactions 和 compuations 内部可能会有用处。
+在 `block` 中访问任何 observable 都不会导致 reaction / compuation 自动重新计算。同样,
+建议使用 `action`来替代，它会在内部使用 `untracked`。
 [&laquo;详情&raquo;](untracked.md)
 
 ### `Atom`
@@ -361,5 +361,5 @@ _以下方法都在 MobX 内部使用，在极少数情况下可能会派上用�
 
 ### `extras.resetGlobalState`
 用法: `resetGlobalState()`.
-重置 MobX 内部全局状态。 如果在计算或 reaction 内发生异常并且拒绝再次运行它们，默认情况下 MobX 会快速失败。
-此函数将 MobX 重置为零状态。 现有的 `spy` 监听器和严格模式下的当前值将被保留。
+重置 MobX 内部全局状态。默认情况下 MobX 使用快速失败(fail fast)机制, 如果在`computation `或 `reaction` 内发生异常,MobX会拒绝再次运行它们。
+此函数将 MobX 重置为归零状态。 现有的 `spy` 监听器和严格模式下的当前值将被保留。
