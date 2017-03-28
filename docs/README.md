@@ -17,7 +17,7 @@ _简单、可扩展的状态管理_
 
 ![npm install mobx](https://nodei.co/npm/mobx.png?downloadRank=true&downloads=true)
 
-* 安装: `npm install mobx --save`. React 绑定库: `npm install mobx-react --save`. 要启用 ESNext 的装饰器 (可选), 见下面.
+* 安装: `npm install mobx --save`。 React 绑定库: `npm install mobx-react --save`。 要启用 ESNext 的装饰器 (可选), 参见下面。
 * CDN: https://unpkg.com/mobx/lib/mobx.umd.js
 
 ## 入门指南
@@ -25,9 +25,9 @@ _简单、可扩展的状态管理_
 * [十分钟交互式的 MobX + React 教程](https://mobxjs.github.io/mobx/getting-started.html)
 * [官方文档和API概览](https://mobxjs.github.io/mobx/refguide/api.html)
 * 视频:
-  * [Egghead.io 课程: 在 React 应用中使用 MobX 管理复杂的状态](https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx) - 30分钟.
+  * [Egghead.io 课程: 在 React 应用中使用 MobX 管理复杂的状态](https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx) - 30分钟
   * [ReactNext 2016: 真实世界的 MobX](https://www.youtube.com/watch?v=Aws40KOx90U) - 40分钟 [幻灯片](https://docs.google.com/presentation/d/1DrI6Hc2xIPTLBkfNH8YczOcPXQTOaCIcDESdyVfG_bE/edit?usp=sharing)
-  * [React 和 MobX 实战](https://www.youtube.com/watch?v=XGwuM_u7UeQ). OpenSourceNorth 开发者大会上，Matt Ruby 深入介绍和说明如何使用MobX和React(ES5版本) - 42分钟.
+  * [React 和 MobX 实战](https://www.youtube.com/watch?v=XGwuM_u7UeQ). OpenSourceNorth 开发者大会上，Matt Ruby 深入介绍和说明如何使用MobX和React(ES5版本) - 42分钟
   * LearnCode.academy MobX 教程 [第一部分: MobX + React 太棒了 (7分钟)](https://www.youtube.com/watch?v=_q50BXqkAfI) [第二部分: Computed Values and 嵌套/引用的 Observables (12分钟)](https://www.youtube.com/watch?v=nYvNqKrl69s)
   * [录播: MobX 介绍](https://www.youtube.com/watch?v=K8dr8BMU7-8) - 8分钟
   * [访谈: 状态管理很容易 - React Amsterdam 2016 开发者大会](https://www.youtube.com/watch?v=ApmSsu3qnf0&feature=youtu.be) ([幻灯片](https://speakerdeck.com/mweststrate/state-management-is-easy-introduction-to-mobx))
