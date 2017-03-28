@@ -21,7 +21,7 @@ var appState = observable({
 我们的 `appState` 还没有观察到任何的东西。
 你可以创建视图，当 `appState` 中相关数据发生改变时视图会自动更新。
 MobX 会以一种最小限度的方式来更新视图。
-这一事实节省了你大量的样板文件，它有着[令人匪夷所思的高效](https://mendix.com/tech-blog/making-react-reactive-pursuit-high-performing-easily-maintainable-react-apps/)。
+事实上这一点可以节省了你大量的样板文件，并且它有着[令人匪夷所思的高效](https://mendix.com/tech-blog/making-react-reactive-pursuit-high-performing-easily-maintainable-react-apps/)。
 
 通常来说，任何函数都可以成为可以观察自身数据的响应式视图，MobX 可以任何符合ES5的JavaScript环境中应用。
 但是在这所用的示例是 ES6版本的 React 组件视图。
@@ -73,6 +73,6 @@ setInterval(action(function tick() {
 
 只有在严格模式(默认是不启用)下使用 MobX 时才需要 `action` 包装。
 建议使用 action，因为它将帮助你更好地组织应用，并表达出一个函数修改状态的意图。
-它还自动应用事务以获得最佳性能。
+同时,它还自动应用事务以获得最佳性能。
 
 可以通过 [JSFiddle](http://jsfiddle.net/mweststrate/wgbe4guu/) 或者克隆 [MobX 样板工程](https://github.com/mobxjs/mobx-react-boilerplate) 来随意试用这个示例。
