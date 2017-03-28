@@ -782,10 +782,9 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="mobx-api&#x53C2;&#x8003;">MobX API&#x53C2;&#x8003;</h1>
-<p>Applies to MobX 3 and higher. For MobX 2, the old documentation is still available on <a href="https://github.com/mobxjs/mobx/blob/7c9e7c86e0c6ead141bb0539d33143d0e1f576dd/docs/refguide/api.md" target="_blank">github</a>.
-&#x9002;&#x7528;&#x4E8E; MobX 3&#x6216;&#x8005;&#x66F4;&#x9AD8;&#x7248;&#x672C;&#x3002;&#x5BF9;&#x4E8E; MobX 2&#xFF0C;&#x65E7;&#x6587;&#x6863;&#x4F9D;&#x7136;&#x53EF;&#x4EE5;&#x5728;<a href="https://github.com/mobxjs/mobx/blob/7c9e7c86e0c6ead141bb0539d33143d0e1f576dd/docs/refguide/api.md" target="_blank">github</a>&#x627E;&#x5230;&#x3002;</p>
+<p>&#x9002;&#x7528;&#x4E8E; MobX 3&#x6216;&#x8005;&#x66F4;&#x9AD8;&#x7248;&#x672C;&#x3002;&#x5BF9;&#x4E8E; MobX 2&#xFF0C;&#x65E7;&#x6587;&#x6863;&#x4F9D;&#x7136;&#x53EF;&#x4EE5;&#x5728;<a href="https://github.com/mobxjs/mobx/blob/7c9e7c86e0c6ead141bb0539d33143d0e1f576dd/docs/refguide/api.md" target="_blank">github</a>&#x627E;&#x5230;&#x3002;</p>
 <h1 id="&#x6838;&#x5FC3;api">&#x6838;&#x5FC3;API</h1>
-<p><em>MobX &#x6700;&#x91CD;&#x8981;&#x7684;API&#x3002;&#x7406;&#x89E3;&#x4E86;<code>observable</code>&#x3001; <code>computed</code>&#x3001; <code>reactions</code> &#x548C; <code>actions</code>&#x7684;&#x8BDD;&#xFF0C;&#x5BF9;&#x4E8E;&#x7CBE;&#x901A; MobX &#x5DF2;&#x7ECF;&#x8DB3;&#x591F;&#x4E86;&#x5E76;&#x80FD;&#x5728;&#x5E94;&#x7528;&#x4E2D;&#x4F7F;&#x7528;&#x5B83;&#xFF01;</em></p>
+<p>MobX &#x4E2D;&#x6700;&#x91CD;&#x8981;&#x7684;API&#x3002;&#x7406;&#x89E3;&#x4E86;<code>observable</code>&#x3001; <code>computed</code>&#x3001; <code>reactions</code> &#x548C; <code>actions</code>&#x7684;&#x8BDD;&#xFF0C;&#x8BF4;&#x660E;&#x5BF9;&#x4E8E;Mobx&#x5DF2;&#x7ECF;&#x8DB3;&#x591F;&#x7CBE;&#x901A;&#x4E86;,&#x5728;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#x4F7F;&#x7528;&#x5B83;&#x5427;&#xFF01;</p>
 <h2 id="&#x521B;&#x5EFA;-observables">&#x521B;&#x5EFA; observables</h2>
 <h3 id="observablevalue"><code>observable(value)</code></h3>
 <p>&#x7528;&#x6CD5;:</p>
@@ -794,28 +793,28 @@
 <li><code>@observable classProperty = value</code></li>
 </ul>
 <p>Observable &#x503C;&#x53EF;&#x4EE5;&#x662F;JS&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3001;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x3001;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#x3001;&#x7C7B;&#x5B9E;&#x4F8B;&#x3001;&#x6570;&#x7EC4;&#x548C;&#x6620;&#x5C04;&#x3002;
-<code>observable(value)</code> &#x662F;&#x4E00;&#x4E2A;&#x65B9;&#x4FBF;&#x7684;&#x91CD;&#x8F7D;&#xFF0C;&#x603B;&#x662F;&#x8BD5;&#x56FE;&#x521B;&#x5EFA;&#x6700;&#x4F73;&#x5339;&#x914D;&#x7684; observable &#x7C7B;&#x578B;&#x3002;
-&#x8FD8;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x521B;&#x5EFA;&#x6240;&#x9700;&#x7684; observable &#x7C7B;&#x578B;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;&#x4E0B;&#x6587;&#x3002;</p>
+<code>observable(value)</code> &#x662F;&#x4E00;&#x4E2A;&#x65B9;&#x4FBF;&#x7684;&#x91CD;&#x8F7D;&#x51FD;&#x6570;&#xFF0C;&#x603B;&#x662F;&#x8BD5;&#x56FE;&#x521B;&#x5EFA;&#x6700;&#x4F73;&#x5339;&#x914D;&#x7684; observable &#x7C7B;&#x578B;&#x3002;
+&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x521B;&#x5EFA;&#x6240;&#x9700;&#x7684; observable &#x7C7B;&#x578B;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;&#x4E0B;&#x6587;&#x3002;</p>
 <p>&#x5339;&#x914D;&#x7C7B;&#x578B;&#x5E94;&#x7528;&#x4E86;&#x4EE5;&#x4E0B;&#x8F6C;&#x6362;&#x89C4;&#x5219;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;<strong>&#x8C03;&#x8282;&#x5668;</strong>&#x8FDB;&#x884C;&#x5FAE;&#x8C03;&#x3002;&#x8BF7;&#x53C2;&#x89C1;&#x4E0B;&#x6587;&#x3002;</p>
 <ol>
-<li>&#x5982;&#x679C; <strong>value</strong> &#x662F;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map" target="_blank">ES6 Map</a>&#x7684;&#x5B9E;&#x4F8B;: &#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684; <a href="map.html">Observable Map</a>&#x3002;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x60F3;&#x53EA;&#x5BF9;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x9879;&#x7684;&#x66F4;&#x6539;&#x505A;&#x51FA;&#x53CD;&#x5E94;&#xFF0C;&#x800C;&#x662F;&#x5BF9;&#x6DFB;&#x52A0;&#x6216;&#x5220;&#x9664;&#x8BE5;&#x9879;&#x505A;&#x51FA;&#x53CD;&#x5E94;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48; Observable map &#x4F1A;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;</li>
+<li>&#x5982;&#x679C; <strong>value</strong> &#x662F;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map" target="_blank">ES6 Map</a>&#x7684;&#x5B9E;&#x4F8B;: &#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684; <a href="map.html">Observable Map</a>&#x3002;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x53EA;&#x5173;&#x6CE8;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;entry&#x7684;&#x66F4;&#x6539;&#xFF0C;&#x800C;&#x4E14;&#x5BF9;&#x6DFB;&#x52A0;&#x6216;&#x5220;&#x9664;&#x5176;&#x4ED6;entry&#x65F6;&#x4E5F;&#x505A;&#x51FA;&#x53CD;&#x5E94;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48; Observable map &#x4F1A;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;</li>
 <li>&#x5982;&#x679C; <strong>value</strong> &#x662F;&#x6570;&#x7EC4;&#xFF0C;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <a href="array.html">Observable Array</a>&#x3002;</li>
 <li>&#x5982;&#x679C; <strong>value</strong> &#x662F;&#x6CA1;&#x6709;&#x539F;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x90A3;&#x4E48;&#x5BF9;&#x8C61;&#x4F1A;&#x88AB;&#x514B;&#x9686;&#x5E76;&#x4E14;&#x6240;&#x6709;&#x7684;&#x5C5E;&#x6027;&#x90FD;&#x4F1A;&#x88AB;&#x8F6C;&#x6362;&#x6210;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#x3002;&#x53C2;&#x89C1; <a href="object.html">Observable Object</a>&#x3002;</li>
-<li>&#x5982;&#x679C; <strong>value</strong> &#x662F;&#x6709;&#x539F;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;JavaSript&#x539F;&#x59CB;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6216;&#x8005;&#x51FD;&#x6570;&#xFF0C;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <a href="boxed.html">Boxed Observable</a>&#x3002;MobX &#x4E0D;&#x4F1A;&#x5C06;&#x4E00;&#x4E2A;&#x6709;&#x539F;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x662F;&#x5B83;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x804C;&#x8D23;&#x3002;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528; <code>extendObservable</code> &#x6216;&#x8005;&#x5728;&#x7C7B;&#x5B9A;&#x4E49;&#x4E2D;&#x4F7F;&#x7528; <code>@observable</code>&#x3002;</li>
+<li>&#x5982;&#x679C; <strong>value</strong> &#x662F;&#x6709;&#x539F;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;JavaSript&#x539F;&#x59CB;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6216;&#x8005;&#x51FD;&#x6570;&#xFF0C;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <a href="boxed.html">Boxed Observable</a>&#x3002;MobX &#x4E0D;&#x4F1A;&#x5C06;&#x4E00;&#x4E2A;&#x6709;&#x539F;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x662F;&#x5B83;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x804C;&#x8D23;&#x3002;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E9B;&#x7C7B;&#x578B;&#x4F60;&#x9700;&#x8981;&#x5728;&#x5B83;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528; <code>extendObservable</code> &#x6216;&#x8005;&#x5728;&#x5B83;&#x7684;&#x7C7B;&#x5B9A;&#x4E49;&#x4E2D;&#x4F7F;&#x7528; <code>@observable</code>&#x3002;</li>
 </ol>
 <p>&#x4E4D;&#x770B;&#x4E4B;&#x4E0B;&#xFF0C;&#x8FD9;&#x4E9B;&#x89C4;&#x5219;&#x53EF;&#x80FD;&#x770B;&#x4E0A;&#x53BB;&#x5F88;&#x590D;&#x6742;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#x5B9E;&#x8DF5;&#x5F53;&#x4E2D;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x4ED6;&#x4EEC;&#x662F;&#x975E;&#x5E38;&#x76F4;&#x89C2;&#x7684;&#x3002;</p>
-<p>&#x4E00;&#x4E9B;&#x4FBF;&#x7B3A;:</p>
+<p>&#x4E00;&#x4E9B;&#x5EFA;&#x8BAE;:</p>
 <ul>
-<li>&#x8981;&#x521B;&#x5EFA;&#x952E;&#x662F;&#x52A8;&#x6001;&#x7684;&#x5BF9;&#x8C61;&#x65F6;&#x6C38;&#x8FDC;&#x90FD;&#x4F7F;&#x7528; maps&#xFF01;&#x8BE5;&#x5BF9;&#x8C61;&#x53EA;&#x6709;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x4FBF;&#x5B58;&#x5728;&#x7684;&#x5C5E;&#x6027;&#x4F1A;&#x8F6C;&#x6362;&#x6210;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#xFF0C;&#x4F46;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x5C5E;&#x6027;&#x53EA;&#x6709;&#x901A;&#x8FC7;&#x4F7F;&#x7528; <code>extendObservable</code> &#x624D;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;&#x6210;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#x3002;</li>
+<li>&#x8981;&#x521B;&#x5EFA;&#x952E;&#x662F;&#x52A8;&#x6001;&#x7684;&#x5BF9;&#x8C61;&#x65F6;&#x6C38;&#x8FDC;&#x90FD;&#x4F7F;&#x7528; maps&#xFF01;&#x5BF9;&#x8C61;&#x4E0A;&#x53EA;&#x6709;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x4FBF;&#x5B58;&#x5728;&#x7684;&#x5C5E;&#x6027;&#x4F1A;&#x8F6C;&#x6362;&#x6210;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#xFF0C;&#x5C3D;&#x7BA1;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528; <code>extendObservable</code> &#x8F6C;&#x6362;&#x6210;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#x3002;</li>
 <li>&#x8981;&#x60F3;&#x4F7F;&#x7528; <code>@observable</code> &#x88C5;&#x9970;&#x5668;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x786E;&#x4FDD; &#x5728;&#x4F60;&#x7684;&#x7F16;&#x8BD1;&#x5668;(babel &#x6216;&#x8005; typescript)&#x4E2D; <a href="http://mobxjs.github.io/mobx/refguide/observable-decorator.html" target="_blank">&#x88C5;&#x9970;&#x5668;&#x662F;&#x542F;&#x7528;&#x7684;</a>&#x3002;</li>
 <li>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x5C06;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x8F6C;&#x6362;&#x6210;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#x662F;<strong>&#x6709;&#x611F;&#x67D3;&#x6027;&#x7684;</strong>&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740; <code>observable</code> &#x88AB;&#x81EA;&#x52A8;&#x5E94;&#x7528;&#x4E8E;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5305;&#x542B;&#x7684;&#x4EFB;&#x4F55;&#x503C;&#xFF0C;&#x6216;&#x8005;&#x5C06;&#x6765;&#x4F1A;&#x88AB;&#x8BE5;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5305;&#x542B;&#x7684;&#x503C;&#x3002;&#x8FD9;&#x4E2A;&#x884C;&#x4E3A;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528; <em>modifiers</em> &#x6216; <em>shallow</em> &#x6765;&#x66F4;&#x6539;&#x3002;</li>
 </ul>
 <p><a href="observable.html">&#xAB;<code>observable</code>&#xBB;</a>  &#x2014;  <a href="observable-decorator.html">&#xAB;<code>@observable</code>&#xBB;</a></p>
 <h3 id="observable-property---value"><code>@observable property =  value</code></h3>
-<p><code>observable</code> &#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4F5C;&#x5C5E;&#x6027;&#x88C5;&#x9970;&#x5668;&#x3002;&#x5B83;&#x9700;&#x8981;<a href="../best/decorators.html">&#x542F;&#x7528;&#x88C5;&#x9970;&#x5668;</a>&#x800C;&#x4E14;&#x5B83;&#x662F; <code>extendObservable(this, { property: value })</code> &#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#x3002;</p>
+<p><code>observable</code> &#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4F5C;&#x5C5E;&#x6027;&#x7684;&#x88C5;&#x9970;&#x5668;&#x3002;&#x5B83;&#x9700;&#x8981;<a href="../best/decorators.html">&#x542F;&#x7528;&#x88C5;&#x9970;&#x5668;</a>&#x800C;&#x4E14;&#x5B83;&#x662F; <code>extendObservable(this, { property: value })</code> &#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#x3002;</p>
 <p><a href="observable-decorator.html">&#xAB;<code>&#x8BE6;&#x60C5;</code>&#xBB;</a></p>
 <h3 id="observableboxvalue--observableshallowboxvalue"><code>observable.box(value)</code> &amp; <code>observable.shallowBox(value)</code></h3>
-<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A; observable &#x7684;&#x76D2;&#x5B50;&#xFF0C;&#x5B83;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x503C;&#x7684; observable &#x5F15;&#x7528;&#x3002;&#x4F7F;&#x7528; <code>get()</code> &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x76D2;&#x5B50;&#x4E2D;&#x7684;&#x5F53;&#x524D;&#x503C;&#xFF0C;&#x800C;&#x4F7F;&#x7528; <code>set()</code> &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x66F4;&#x65B0;&#x503C;&#x3002;
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A; observable &#x7684;&#x76D2;&#x5B50;&#xFF0C;&#x5B83;&#x7528;&#x6765;&#x5B58;&#x50A8;value&#x7684; observable &#x5F15;&#x7528;&#x3002;&#x4F7F;&#x7528; <code>get()</code> &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x76D2;&#x5B50;&#x4E2D;&#x7684;&#x5F53;&#x524D;value&#xFF0C;&#x800C;&#x4F7F;&#x7528; <code>set()</code> &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x66F4;&#x65B0;value&#x3002;
 &#x8FD9;&#x662F;&#x6240;&#x6709;&#x5176;&#x5B83; observable &#x521B;&#x5EFA;&#x7684;&#x57FA;&#x7840;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E2D;&#x4F60;&#x5176;&#x5B9E;&#x5F88;&#x5C11;&#x80FD;&#x4F7F;&#x7528;&#x5230;&#x5B83;&#x3002;
 &#x901A;&#x5E38;&#x76D2;&#x5B50;&#x4F1A;&#x81EA;&#x52A8;&#x5730;&#x5C1D;&#x8BD5;&#x628A;&#x4EFB;&#x4F55;&#x8FD8;&#x4E0D;&#x662F; observable &#x7684;&#x65B0;&#x503C;&#x8F6C;&#x6362;&#x6210; observable &#x3002;&#x4F7F;&#x7528; <code>shallowBox</code> &#x4F1A;&#x7981;&#x7528;&#x8FD9;&#x9879;&#x884C;&#x4E3A;&#x3002;</p>
 <p><a href="boxed.html">&#xAB;<code>&#x8BE6;&#x60C5;</code>&#xBB;</a></p>
@@ -824,18 +823,17 @@
 &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x503C;&#x90FD;&#x4F1A;&#x8F6C;&#x6362;&#x6210; observable&#xFF0C;&#x4F46;&#x5F53;&#x4F7F;&#x7528; <code>shallowObject</code> &#x65F6;&#x53EA;&#x6709;&#x5C5E;&#x6027;&#x4F1A;&#x8F6C;&#x6362;&#x6210; observable &#x5F15;&#x7528;&#xFF0C;&#x800C;&#x503C;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;(&#x8FD9;&#x4E5F;&#x9002;&#x7528;&#x4E8E;&#x5C06;&#x6765;&#x5206;&#x914D;&#x7684;&#x4EFB;&#x4F55;&#x503C;)&#x3002;</p>
 <p><a href="object.html">&#xAB;<code>&#x8BE6;&#x60C5;</code>&#xBB;</a></p>
 <h3 id="observablearrayvalue--observableshallowarrayvalue"><code>observable.array(value)</code> &amp; <code>observable.shallowArray(value)</code></h3>
-<p>Creates a new observable array based on the provided value. Use <code>shallowArray</code> if the values in the array should not be turned into observables.
-&#x57FA;&#x4E8E;&#x63D0;&#x4F9B;&#x7684;&#x503C;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; observable &#x6570;&#x7EC4;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x60F3;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x503C;&#x8F6C;&#x6362;&#x6210; observable &#x8BF7;&#x4F7F;&#x7528; <code>shallowArray</code>&#x3002;</p>
+<p>&#x57FA;&#x4E8E;&#x63D0;&#x4F9B;&#x7684;&#x503C;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; observable &#x6570;&#x7EC4;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x60F3;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x503C;&#x8F6C;&#x6362;&#x6210; observable &#x8BF7;&#x4F7F;&#x7528; <code>shallowArray</code>&#x3002;</p>
 <p><a href="array.html">&#xAB;<code>&#x8BE6;&#x60C5;</code>&#xBB;</a></p>
 <h3 id="observablemapvalue--observableshallowmapvalue"><code>observable.map(value)</code> &amp; <code>observable.shallowMap(value)</code></h3>
-<p>&#x57FA;&#x4E8E;&#x63D0;&#x4F9B;&#x7684;&#x503C;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; observable &#x6620;&#x5C04;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x60F3;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x503C;&#x8F6C;&#x6362;&#x6210; observable &#x8BF7;&#x4F7F;&#x7528; <code>shallowMap</code>&#x3002;
+<p>&#x57FA;&#x4E8E;&#x63D0;&#x4F9B;&#x7684;&#x503C;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; observable &#x6620;&#x5C04;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x60F3;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x503C;&#x8F6C;&#x6362;&#x6210; observable &#x8BF7;&#x4F7F;&#x7528; <code>shallowMap</code>&#x3002;
 &#x5F53;&#x60F3;&#x521B;&#x5EFA;&#x52A8;&#x6001;&#x7684;&#x952E;&#x96C6;&#x5408;&#x5E76;&#x4E14;&#x9700;&#x8981;&#x80FD;&#x89C2;&#x5BDF;&#x5230;&#x952E;&#x7684;&#x6DFB;&#x52A0;&#x548C;&#x79FB;&#x9664;&#x65F6;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; <code>map</code>&#x3002;
 &#x6CE8;&#x610F;&#x53EA;&#x652F;&#x6301;&#x5B57;&#x7B26;&#x4E32;&#x952E;&#x3002;</p>
 <p><a href="map.html">&#xAB;<code>&#x8BE6;&#x60C5;</code>&#xBB;</a></p>
 <h3 id="extendobservable--extendshallowobservable"><code>extendObservable</code> &amp; <code>extendShallowObservable</code></h3>
 <p>&#x7528;&#x6CD5;: <code>extendObservable(target, ...propertyMaps)</code>&#x3002;&#x5BF9;&#x4E8E; <code>propertyMap</code> &#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x90FD;&#x4F1A;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;(&#x65B0;)&#x7684; observable &#x5C5E;&#x6027;&#x5F15;&#x5165;&#x5230; target &#x5BF9;&#x8C61;&#x4E2D;&#x3002;
 &#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;&#x6765;&#x5F15;&#x5165; observable &#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x7528;&#x88C5;&#x9970;&#x5668;&#x4E86;&#x3002;
-&#x5982;&#x679C; <code>propertyMap</code> &#x7684;&#x67D0;&#x4E2A;&#x503C;&#x662F;&#x4E00;&#x4E2A; getter &#x51FD;&#x6570;&#xFF0C;&#x90A3;&#x4E48;&#x4F1A;&#x5F15;&#x5165;&#x4E00;&#x4E2A;<strong>&#x8BA1;&#x7B97;&#x7684;</strong>&#x5C5E;&#x6027;&#x3002;</p>
+&#x5982;&#x679C; <code>propertyMap</code> &#x7684;&#x67D0;&#x4E2A;&#x503C;&#x662F;&#x4E00;&#x4E2A; getter &#x51FD;&#x6570;&#xFF0C;&#x90A3;&#x4E48;&#x4F1A;&#x5F15;&#x5165;&#x4E00;&#x4E2A;<strong>computed</strong>&#x5C5E;&#x6027;&#x3002;</p>
 <p>&#x5982;&#x679C;&#x65B0;&#x7684;&#x5C5E;&#x6027;&#x4E0D;&#x5E94;&#x8BE5;&#x5177;&#x5907;&#x611F;&#x67D3;&#x6027;(&#x5373;&#x65B0;&#x5206;&#x914D;&#x7684;&#x503C;&#x4E0D;&#x5E94;&#x8BE5;&#x81EA;&#x52A8;&#x5730;&#x8F6C;&#x6362;&#x6210; observable)&#x7684;&#x8BDD;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; <code>extendShallowObservable</code>&#x3002;
 &#x6CE8;&#x610F; <code>extendObservable</code> &#x589E;&#x5F3A;&#x4E86;&#x73B0;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x50CF; <code>observable.object</code> &#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x3002;</p>
 <p><a href="extend-observable.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
@@ -843,9 +841,9 @@
 <p>&#x8C03;&#x8282;&#x5668;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x88C5;&#x9970;&#x5668;&#x6216;&#x8005;&#x7EC4;&#x5408; <code>extendObservable</code> &#x548C; <code>observable.object</code> &#x4F7F;&#x7528;&#xFF0C;&#x4EE5;&#x6539;&#x53D8;&#x7279;&#x5B9A;&#x5C5E;&#x6027;&#x7684;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x89C4;&#x5219;&#x3002;</p>
 <p>&#x53EF;&#x7528;&#x7684;&#x8C03;&#x8282;&#x5668;&#x5217;&#x8868;:</p>
 <ul>
-<li><code>observable.deep</code>: &#x4EFB;&#x4F55; observable &#x90FD;&#x4F7F;&#x7528;&#x7684;&#x9ED8;&#x8BA4;&#x7684;&#x8C03;&#x8282;&#x5668;&#x3002;&#x5B83;&#x628A;&#x4EFB;&#x4F55;&#x5206;&#x914D;&#x7684;&#x3001;&#x975E;&#x539F;&#x59CB;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x3001;&#x975E; observable &#x7684;&#x503C;&#x8F6C;&#x6362;&#x6210; observable&#x3002;</li>
+<li><code>observable.deep</code>: &#x6240;&#x6709;  observable &#x90FD;&#x4F7F;&#x7528;&#x7684;&#x9ED8;&#x8BA4;&#x7684;&#x8C03;&#x8282;&#x5668;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x628A;&#x4EFB;&#x4F55;&#x6307;&#x5B9A;&#x7684;&#x3001;&#x975E;&#x539F;&#x59CB;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x3001;&#x975E; observable &#x7684;&#x503C;&#x8F6C;&#x6362;&#x6210; observable&#x3002;</li>
 <li><code>observable.ref</code>: &#x7981;&#x7528;&#x81EA;&#x52A8;&#x7684; observable &#x8F6C;&#x6362;&#xFF0C;&#x53EA;&#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; observable &#x5F15;&#x7528;&#x3002;</li>
-<li><code>observable.shallow</code>: &#x53EA;&#x80FD;&#x4E0E;&#x96C6;&#x5408;&#x7EC4;&#x5408;&#x4F7F;&#x7528;&#x3002; &#x5C06;&#x4EFB;&#x4F55;&#x5206;&#x914D;&#x7684;&#x96C6;&#x5408;&#x8F6C;&#x6362;&#x4E3A;&#x6D45; observable (&#x800C;&#x4E0D;&#x662F;&#x6DF1; observable)&#x7684;&#x96C6;&#x5408;&#x3002; &#x6362;&#x4E00;&#x79CD;&#x8BF4;&#x6CD5;; &#x96C6;&#x5408;&#x4E2D;&#x7684;&#x503C;&#x5C06;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x53D8;&#x4E3A; observable&#x3002;</li>
+<li><code>observable.shallow</code>: &#x53EA;&#x80FD;&#x4E0E;&#x96C6;&#x5408;&#x7EC4;&#x5408;&#x4F7F;&#x7528;&#x3002; &#x5C06;&#x4EFB;&#x4F55;&#x5206;&#x914D;&#x7684;&#x96C6;&#x5408;&#x8F6C;&#x6362;&#x4E3A;&#x6D45; observable (&#x800C;&#x4E0D;&#x662F;&#x6DF1; observable)&#x7684;&#x96C6;&#x5408;&#x3002; &#x6362;&#x53E5;&#x8BDD;&#x8BF4;, &#x96C6;&#x5408;&#x4E2D;&#x7684;&#x503C;&#x5C06;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x53D8;&#x4E3A; observable&#x3002;</li>
 <li><code>computed</code>: &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x63A8;&#x5BFC;&#x5C5E;&#x6027;, &#x53C2;&#x89C1; <a href="computed-decorator.html"><code>computed</code></a></li>
 <li><code>action</code>: &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x52A8;&#x4F5C;, &#x53C2;&#x89C1; <a href="action.html"><code>action</code></a></li>
 </ul>
@@ -898,7 +896,7 @@
 &#x4F7F;&#x7528;&#x53CD;&#x5E94;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x573A;&#x666F;&#x662F; React &#x7EC4;&#x4EF6;&#x7684; <code>observer</code> &#x88C5;&#x9970;&#x5668;(&#x53C2;&#x89C1;&#x4E0B;&#x6587;)&#x3002;</p>
 <h3 id="observer"><code>observer</code></h3>
 <p>&#x53EF;&#x4EE5;&#x7528;&#x4F5C;&#x5305;&#x88F9; React &#x7EC4;&#x4EF6;&#x7684;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x3002;
-&#x7EC4;&#x4EF6;&#x7684; <code>render</code> &#x51FD;&#x6570;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x5DF2;&#x4F7F;&#x7528;&#x7684; observable &#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x7EC4;&#x4EF6;&#x90FD;&#x4F1A;&#x81EA;&#x52A8;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x3002;
+&#x5728;&#x7EC4;&#x4EF6;&#x7684; <code>render</code> &#x51FD;&#x6570;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x5DF2;&#x4F7F;&#x7528;&#x7684; observable &#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x7EC4;&#x4EF6;&#x90FD;&#x4F1A;&#x81EA;&#x52A8;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x3002;
 &#x6CE8;&#x610F; <code>observer</code> &#x662F;&#x7531; <code>&quot;mobx-react&quot;</code> &#x5305;&#x63D0;&#x4F9B;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F; <code>mobx</code> &#x672C;&#x8EAB;&#x3002;
 <a href="observer-component.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
 <p>&#x7528;&#x6CD5;:</p>
@@ -909,16 +907,16 @@
 <li><code>@observer class MyComponent extends React.Component { ... })</code></li>
 </ul>
 <h3 id="autorun"><code>autorun</code></h3>
-<p>&#x7528;&#x6CD5;&#xFF1A;<code>autorun(debugname?, () =&gt; { sideEffect })</code>&#x3002;<code>autorun</code> &#x8D1F;&#x8D23;&#x8FD0;&#x884C;&#x6240;&#x63D0;&#x4F9B;&#x7684; <code>sideEffect</code> &#x5E76;&#x8FFD;&#x8E2A;&#x5728;&#x526F;&#x4F5C;&#x7528;&#x8FD0;&#x884C;&#x671F;&#x95F4;&#x8BBF;&#x95EE;&#x54EA;&#x4E2A; observable &#x72B6;&#x6001;&#x3002;
-&#x540E;&#x9762;&#x5F53;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5DF2;&#x4F7F;&#x7528;&#x7684; observable &#x53D1;&#x751F;&#x53D8;&#x5316;&#x4E86;&#xFF0C;&#x540C;&#x6837;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x4F1A;&#x518D;&#x8FD0;&#x884C;&#x4E00;&#x904D;&#x3002;
+<p>&#x7528;&#x6CD5;&#xFF1A;<code>autorun(debugname?, () =&gt; { sideEffect })</code>&#x3002;<code>autorun</code> &#x8D1F;&#x8D23;&#x8FD0;&#x884C;&#x6240;&#x63D0;&#x4F9B;&#x7684; <code>sideEffect</code> &#x5E76;&#x8FFD;&#x8E2A;&#x5728;<code>sideEffect</code>&#x8FD0;&#x884C;&#x671F;&#x95F4;&#x8BBF;&#x95EE;&#x8FC7;&#x7684; <code>observable</code> &#x7684;&#x72B6;&#x6001;&#x3002;
+&#x5C06;&#x6765;&#x5982;&#x679C;&#x6709;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5DF2;&#x4F7F;&#x7528;&#x7684; observable &#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x540C;&#x6837;&#x7684;<code>sideEffect</code>&#x4F1A;&#x518D;&#x8FD0;&#x884C;&#x4E00;&#x904D;&#x3002;
 <code>autorun</code> &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6E05;&#x7406;&#x51FD;&#x6570;&#x7528;&#x6765;&#x53D6;&#x6D88;&#x526F;&#x4F5C;&#x7528;&#x3002;<a href="autorun.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
 <h3 id="when"><code>when</code></h3>
 <p>&#x7528;&#x6CD5;: <code>when(debugname?, () =&gt; condition, () =&gt; { sideEffect })</code>&#x3002;
 <code>condition</code> &#x8868;&#x8FBE;&#x5F0F;&#x4F1A;&#x81EA;&#x52A8;&#x54CD;&#x5E94;&#x4EFB;&#x4F55;&#x5B83;&#x6240;&#x4F7F;&#x7528;&#x7684; observable&#x3002;
-&#x4E00;&#x65E6;&#x8868;&#x4F46;&#x662F;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x771F;&#x503C;&#xFF0C;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x4FBF;&#x4F1A;&#x7ACB;&#x5373;&#x8C03;&#x7528;&#xFF0C;&#x4F46;&#x53EA;&#x4F1A;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#x3002;
+&#x4E00;&#x65E6;&#x8868;&#x8FBE;&#x5F0F;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x771F;&#x503C;&#xFF0C;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x4FBF;&#x4F1A;&#x7ACB;&#x5373;&#x8C03;&#x7528;&#xFF0C;&#x4F46;&#x53EA;&#x4F1A;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#x3002;
 <code>when</code> &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6E05;&#x7406;&#x51FD;&#x6570;&#x7528;&#x6765;&#x63D0;&#x65E9;&#x53D6;&#x6D88;&#x8FD9;&#x4E00;&#x5207;&#x3002;<a href="when.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
 <h3 id="autorunasync"><code>autorunAsync</code></h3>
-<p>&#x7528;&#x6CD5;: <code>autorunAsync(debugname?, () =&gt; { sideEffect }, delay)</code>&#x3002;&#x7C7B;&#x4F3C;&#x4E8E; <code>autorun</code>&#xFF0C;&#x4F46;&#x662F;&#x526F;&#x4F5C;&#x7528;&#x4F1A;&#x6709;&#x5EF6;&#x8FDF;&#x800C;&#x4E14;&#x6839;&#x636E;&#x7ED9;&#x5B9A;&#x7684; <code>delay</code> &#x6765;&#x8FDB;&#x884C;&#x51FD;&#x6570;&#x53BB;&#x6296;(debounce)&#x3002;
+<p>&#x7528;&#x6CD5;: <code>autorunAsync(debugname?, () =&gt; { sideEffect }, delay)</code>&#x3002;&#x7C7B;&#x4F3C;&#x4E8E; <code>autorun</code>&#xFF0C;&#x4F46;&#x662F;<code>sideEffect</code>&#x4F1A;&#x5EF6;&#x8FDF;&#x6267;&#x884C;,&#x5E76;&#x4E14;&#x6839;&#x636E;&#x7ED9;&#x5B9A;&#x7684; <code>delay</code> &#x6765;&#x8FDB;&#x884C;&#x51FD;&#x6570;&#x53BB;&#x6296;(debounce)&#x3002;
 <a href="autorun-async.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
 <h3 id="reaction"><code>reaction</code></h3>
 <p>&#x7528;&#x6CD5;: <code>reaction(debugname?, () =&gt; data, data =&gt; { sideEffect }, fireImmediately = false, delay = 0)</code>.
@@ -927,22 +925,22 @@
 &#x4E0E; &apos;autorun&apos; &#x4E0D;&#x540C;&#x7684;&#x662F;&#x526F;&#x4F5C;&#x7528;&#x8D77;&#x521D;&#x4E0D;&#x4F1A;&#x8FD0;&#x884C;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x6267;&#x884C;&#x526F;&#x4F5C;&#x7528;&#x65F6;&#x8BBF;&#x95EE;&#x7684;&#x4EFB;&#x4F55; observable &#x90FD;&#x4E0D;&#x4F1A;&#x88AB;&#x8FFD;&#x8E2A;&#x3002;
 &#x548C; <code>autorunAsync</code> &#x4E00;&#x6837;&#xFF0C;&#x526F;&#x4F5C;&#x7528;&#x662F;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x51FD;&#x6570;&#x53BB;&#x6296;&#x7684;&#x3002;<a href="reaction.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
 <h3 id="expr"><code>expr</code></h3>
-<p>&#x7528;&#x6CD5;: <code>expr(() =&gt; someExpression)</code>&#x3002;<code>computed(() =&gt; someExpression).get()</code> &#x7684;&#x7B80;&#x5199;&#x5F62;&#x5F0F;&#x3002;
+<p>&#x7528;&#x6CD5;: <code>expr(() =&gt; someExpression)</code>&#x3002;&#x53EA;&#x662F;<code>computed(() =&gt; someExpression).get()</code> &#x7684;&#x7B80;&#x5199;&#x5F62;&#x5F0F;&#x3002;
 <code>expr</code> &#x5728;&#x4E00;&#x4E9B;&#x6781;&#x5C11;&#x6570;&#x573A;&#x666F;&#x4E0B;&#x7528;&#x6765;&#x4F18;&#x5316;&#x53E6;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x503C;&#x51FD;&#x6570;&#x6216;&#x8005; reaction &#x662F;&#x6709;&#x7528;&#x7684;&#x3002;
 &#x901A;&#x5E38;&#x60C5;&#x51B5;&#x662F;&#x5C06;&#x51FD;&#x6570;&#x62C6;&#x5206;&#x6210;&#x4E00;&#x4E9B;&#x66F4;&#x5C0F;&#x7684;&#x8BA1;&#x7B97;&#x503C;&#x51FD;&#x6570;&#x6765;&#x8FBE;&#x5230;&#x540C;&#x6837;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x8FD9;&#x6837;&#x505A;&#x66F4;&#x7B80;&#x5355;&#xFF0C;&#x4E5F;&#x66F4;&#x5408;&#x7406;&#x3002;
 <a href="expr.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
 <h3 id="onreactionerror"><code>onReactionError</code></h3>
 <p>&#x7528;&#x6CD5;: <code>extras.onReactionError(handler: (error: any, derivation) =&gt; void)</code></p>
-<p>&#x6B64;&#x65B9;&#x6CD5;&#x9644;&#x52A0;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x9519;&#x8BEF;&#x76D1;&#x542C;&#x5668;&#xFF0C;&#x5BF9;&#x4E8E;&#x4ECE; <em>reaction</em> &#x629B;&#x51FA;&#x7684;&#x6BCF;&#x4E2A;&#x9519;&#x8BEF;&#x90FD;&#x8C03;&#x7528;&#x8BE5;&#x9519;&#x8BEF;&#x76D1;&#x542C;&#x5668;&#x3002;
+<p>&#x6B64;&#x65B9;&#x6CD5;&#x9644;&#x52A0;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x9519;&#x8BEF;&#x76D1;&#x542C;&#x5668;&#xFF0C;&#x5BF9;&#x4E8E;&#x4ECE; <em>reaction</em> &#x629B;&#x51FA;&#x7684;&#x6BCF;&#x4E2A;&#x9519;&#x8BEF;&#x90FD;&#x4F1A;&#x8C03;&#x7528;&#x8BE5;&#x9519;&#x8BEF;&#x76D1;&#x542C;&#x5668;&#x3002;
 &#x5B83;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x76D1;&#x63A7;&#x6216;&#x8005;&#x6D4B;&#x8BD5;&#x3002;</p>
 <hr>
 <h1 id="&#x5B9E;&#x7528;&#x5DE5;&#x5177;">&#x5B9E;&#x7528;&#x5DE5;&#x5177;</h1>
 <p><em>&#x6709;&#x4E00;&#x4E9B;&#x5DE5;&#x5177;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x4F7F;&#x5F97; observable &#x6216;&#x8005;  &#x8BA1;&#x7B97;&#x503C;&#x7528;&#x8D77;&#x6765;&#x66F4;&#x65B9;&#x4FBF;&#x3002;
 &#x66F4;&#x591A;&#x5B9E;&#x7528;&#x5DE5;&#x5177;&#x53EF;&#x4EE5;&#x5728; <a href="https://github.com/mobxjs/mobx-utils" target="_blank">mobx-utils</a> &#x5305;&#x4E2D;&#x627E;&#x5230;&#x3002;</em></p>
 <h3 id="provider-mobx-react-&#x5305;"><code>Provider</code> (<code>mobx-react</code> &#x5305;)</h3>
-<p>&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4F7F;&#x7528; React &#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x673A;&#x5236;&#x6765;&#x4F20;&#x9012; store &#x7ED9;&#x5B50;&#x7EC4;&#x4EF6;&#x3002;&#x53C2;&#x89C1;<a href="https://github.com/mobxjs/mobx-react#provider-experimental" target="_blank"><code>mobx-react</code> &#x6587;&#x6863;</a>&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4F7F;&#x7528; React &#x7684;<code>context</code>&#x673A;&#x5236;&#x6765;&#x4F20;&#x9012; store &#x7ED9;&#x5B50;&#x7EC4;&#x4EF6;&#x3002;&#x53C2;&#x89C1;<a href="https://github.com/mobxjs/mobx-react#provider-experimental" target="_blank"><code>mobx-react</code> &#x6587;&#x6863;</a>&#x3002;</p>
 <h3 id="inject-mobx-react-&#x5305;"><code>inject</code> (<code>mobx-react</code> &#x5305;)</h3>
-<p>&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x548C; <code>Provider</code> &#x7684;&#x5BF9;&#x5E94;&#x7269;&#x3002;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4ECE; React &#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x6311;&#x9009; store &#x4F5C;&#x4E3A; prop &#x4F20;&#x9012;&#x7ED9;&#x76EE;&#x6807;&#x7EC4;&#x4EF6;&#x3002;&#x7528;&#x6CD5;:</p>
+<p> &#x76F8;&#x5F53;&#x4E8E;<code>Provider</code> &#x7684;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x3002;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4ECE; React &#x7684;<code>context</code>&#x4E2D;&#x6311;&#x9009; store &#x4F5C;&#x4E3A; prop &#x4F20;&#x9012;&#x7ED9;&#x76EE;&#x6807;&#x7EC4;&#x4EF6;&#x3002;&#x7528;&#x6CD5;:</p>
 <ul>
 <li><code>inject(&quot;store1&quot;, &quot;store2&quot;)(observer(MyComponent))</code></li>
 <li><code>@inject(&quot;store1&quot;, &quot;store2&quot;) @observer MyComponent</code></li>
@@ -952,30 +950,30 @@
 <h3 id="tojs"><code>toJS</code></h3>
 <p>&#x7528;&#x6CD5;: <code>toJS(observableDataStructure)</code>&#x3002;&#x628A; observable &#x6570;&#x636E;&#x7ED3;&#x6784;&#x8F6C;&#x6362;&#x6210;&#x666E;&#x901A;&#x7684; javascript &#x5BF9;&#x8C61;&#x5E76;&#x5FFD;&#x7565;&#x8BA1;&#x7B97;&#x503C;&#x3002; <a href="tojson.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
 <h3 id="isobservable"><code>isObservable</code></h3>
-<p>&#x7528;&#x6CD5;: <code>isObservable(thing, property?)</code>&#x3002;&#x5982;&#x679C;&#x7ED9;&#x5B9A;&#x7684;thing&#xFF0C;&#x6216;&#x8005;thing&#x6307;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#x662F; observable &#x7684;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;true&#x3002;
+<p>&#x7528;&#x6CD5;: <code>isObservable(thing, property?)</code>&#x3002;&#x5982;&#x679C;&#x7ED9;&#x5B9A;&#x7684;thing&#xFF0C;&#x6216;&#x8005;thing&#x6307;&#x5B9A;&#x7684;<code>property</code>&#x662F; observable &#x7684;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;true&#x3002;
 &#x9002;&#x7528;&#x4E8E;&#x6240;&#x6709;&#x7684; observable&#x3001;&#x8BA1;&#x7B97;&#x503C;&#x548C; reaction &#x7684;&#x6E05;&#x7406;&#x51FD;&#x6570;&#x3002;<a href="is-observable">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
 <h3 id="isobservableobjectarraymap"><code>isObservableObject|Array|Map</code></h3>
 <p>&#x7528;&#x6CD5;: <code>isObservableObject(thing)</code>, <code>isObservableArray(thing)</code>, <code>isObservableMap(thing)</code>. &#x5982;&#x679C;&#x7C7B;&#x578B;&#x5339;&#x914D;&#x7684;&#x8BDD;&#x8FD4;&#x56DE;true&#x3002;</p>
 <h3 id="isarraylike"><code>isArrayLike</code></h3>
 <p>&#x7528;&#x6CD5;: <code>isArrayLike(thing)</code>&#x3002;&#x5982;&#x679C;&#x7ED9;&#x5B9A;&#x7684;thing&#x662F; javascript &#x6570;&#x7EC4;&#x6216;&#x8005; observable (MobX&#x7684;)&#x6570;&#x7EC4;&#x7684;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;true&#x3002;
-&#x8FD9;&#x662F;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x548C;&#x7B80;&#x5199;&#x3002;
+&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x66F4;&#x7B80;&#x4FBF;&#x3002;
 &#x6CE8;&#x610F;&#xFF0C;observable &#x6570;&#x7EC4;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>.slice()</code> &#x8F6C;&#x53D8;&#x6210; javascript &#x6570;&#x7EC4;&#x3002;</p>
 <h3 id="isaction"><code>isAction</code></h3>
-<p>&#x7528;&#x6CD5;: <code>isAction(func)</code>&#x3002;&#x5982;&#x679C;&#x7ED9;&#x5B9A;&#x51FD;&#x6570;&#x662F;&#x7528;<code>action</code> &#x65B9;&#x6CD5;&#x5305;&#x88F9;&#x7684;&#x6216;&#x8005;&#x662F; <code>@action</code> &#x88C5;&#x9970;&#x5668;&#x7684;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;true&#x3002;</p>
+<p>&#x7528;&#x6CD5;: <code>isAction(func)</code>&#x3002;&#x5982;&#x679C;&#x7ED9;&#x5B9A;&#x51FD;&#x6570;&#x662F;&#x7528;<code>action</code> &#x65B9;&#x6CD5;&#x5305;&#x88F9;&#x7684;&#x6216;&#x8005;&#x662F;&#x7528; <code>@action</code> &#x88C5;&#x9970;&#x7684;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;true&#x3002;</p>
 <h3 id="iscomputed"><code>isComputed</code></h3>
-<p>&#x7528;&#x6CD5;: <code>isComputed(thing, property?)</code>&#x3002;&#x5982;&#x679C;&#x7ED9;&#x5B9A;&#x7684;thing&#x662F;&#x8BA1;&#x7B97;&#x503C;&#x6216;&#x8005;thing&#x6307;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#x662F;&#x8BA1;&#x7B97;&#x503C;&#x7684;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;true&#x3002;</p>
+<p>&#x7528;&#x6CD5;: <code>isComputed(thing, property?)</code>&#x3002;&#x5982;&#x679C;&#x7ED9;&#x5B9A;&#x7684;thing&#x662F;&#x8BA1;&#x7B97;&#x503C;&#x6216;&#x8005;thing&#x6307;&#x5B9A;&#x7684;<code>property</code>&#x662F;&#x8BA1;&#x7B97;&#x503C;&#x7684;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;true&#x3002;</p>
 <h3 id="createtransformer"><code>createTransformer</code></h3>
 <p>&#x7528;&#x6CD5;: <code>createTransformer(transformation: A =&gt; B, onCleanup?): A = B</code>&#x3002;
-&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4F7F;&#x51FD;&#x6570;&#x5C06;&#x4E00;&#x4E2A;&#x503C;&#x8F6C;&#x6362;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x53CD;&#x5E94;&#x548C;&#x8BB0;&#x5FC6;&#x7684;&#x503C;&#x3002;
+&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x5C06;&#x4E00;&#x4E2A;&#x503C;&#x8F6C;&#x6362;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x53CD;&#x5E94;&#x548C;&#x8BB0;&#x5FC6;&#x7684;&#x503C;&#x7684;&#x51FD;&#x6570;&#x3002;
 &#x5B83;&#x7684;&#x884C;&#x4E3A;&#x7C7B;&#x4F3C;&#x4E8E;&#x8BA1;&#x7B97;&#x503C;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x4E00;&#x4E9B;&#x9AD8;&#x7EA7;&#x6A21;&#x5F0F;&#xFF0C;&#x6BD4;&#x5982;&#x975E;&#x5E38;&#x9AD8;&#x6548;&#x7684;&#x6570;&#x7EC4;&#x6620;&#x5C04;&#xFF0C;&#x6620;&#x5C04;&#x5F52;&#x5E76;&#x6216;&#x8005;&#x4E0D;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x8BA1;&#x7B97;&#x503C;&#x3002;
 <a href="create-transformer.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
 <h3 id="intercept"><code>intercept</code></h3>
 <p>&#x7528;&#x6CD5;: <code>intercept(object, property?, interceptor)</code>.
-&#x8FD9;&#x4E2A;API&#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528; observable &#x7684;API&#x4E4B;&#x524D;&#xFF0C;&#x62E6;&#x622A;&#x66F4;&#x6539;&#x3002;&#x5BF9;&#x4E8E;&#x9A8C;&#x8BC1;&#x3001;&#x6807;&#x51C6;&#x5316;&#x548C;&#x53D6;&#x6D88;&#x5341;&#x5206;&#x6709;&#x7528;&#x3002;
+&#x8FD9;&#x4E2A;API&#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528; observable &#x7684;API&#x4E4B;&#x524D;&#xFF0C;&#x62E6;&#x622A;&#x66F4;&#x6539;&#x3002;&#x5BF9;&#x4E8E;&#x9A8C;&#x8BC1;&#x3001;&#x6807;&#x51C6;&#x5316;&#x548C;&#x53D6;&#x6D88;&#x7B49;&#x64CD;&#x4F5C;&#x5341;&#x5206;&#x6709;&#x7528;&#x3002;
 <a href="observe.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
 <h3 id="observe"><code>observe</code></h3>
 <p>&#x7528;&#x6CD5;: <code>observe(object, property?, listener, fireImmediately = false)</code>
-&#x8FD9;&#x4E2A;&#x4E00;&#x4E2A;&#x5E95;&#x5C42;API&#xFF0C;&#x7528;&#x6765;&#x89C2;&#x5BDF;&#x4E00;&#x4E2A;&#x5355;&#x4E2A;&#x7684; observable &#x503C;&#x3002;
+&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5E95;&#x5C42;API&#xFF0C;&#x7528;&#x6765;&#x89C2;&#x5BDF;&#x4E00;&#x4E2A;&#x5355;&#x4E2A;&#x7684; observable &#x503C;&#x3002;
 <a href="observe.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
 <h3 id="usestrict"><code>useStrict</code></h3>
 <p>&#x7528;&#x6CD5;: <code>useStrict(boolean)</code>&#x3002;
@@ -983,7 +981,7 @@
 &#x5728;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x5728; <a href="action.html"><code>action</code></a> &#x5916;&#x66F4;&#x6539;&#x4EFB;&#x4F55;&#x72B6;&#x6001;&#x3002;
 &#x8FD8;&#x53EF;&#x4EE5;&#x53C2;&#x89C1; <code>extras.allowStateChanges</code>&#x3002;</p>
 <h1 id="&#x5F00;&#x53D1;&#x5DE5;&#x5177;">&#x5F00;&#x53D1;&#x5DE5;&#x5177;</h1>
-<p><em>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5728; MobX &#x7684;&#x4E0A;&#x5C42;&#x6784;&#x5EFA;&#x5F88;&#x9177;&#x7684;&#x5DE5;&#x5177;&#x6216;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x68C0;&#x67E5; MobX &#x7684;&#x5185;&#x90E8;&#x72B6;&#x6001;&#xFF0C;&#x4E0B;&#x5217;API&#x53EF;&#x80FD;&#x4F1A;&#x6D3E;&#x4E0A;&#x7528;&#x573A;&#x3002;</em></p>
+<p><em>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5728; MobX &#x7684;&#x4E0A;&#x5C42;&#x6784;&#x5EFA;&#x4E00;&#x4E9B;&#x5F88;&#x9177;&#x7684;&#x5DE5;&#x5177;&#x6216;&#x8005;&#x60F3;&#x68C0;&#x67E5; MobX &#x7684;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x7684;&#x8BDD;&#xFF0C;&#x4E0B;&#x5217;API&#x53EF;&#x80FD;&#x4F1A;&#x6D3E;&#x4E0A;&#x7528;&#x573A;&#x3002;</em></p>
 <h3 id="mobx-react-devtools-&#x5305;"><code>&quot;mobx-react-devtools&quot;</code> &#x5305;</h3>
 <p>mobx-react-devtools &#x662F;&#x4E2A;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#x7684;&#x5305;&#xFF0C;&#x5B83;&#x5E2E;&#x52A9;&#x4F60;&#x8C03;&#x67E5; React &#x7EC4;&#x4EF6;&#x7684;&#x6027;&#x80FD;&#x548C;&#x4F9D;&#x8D56;&#x3002;
 &#x8FD8;&#x6709;&#x57FA;&#x4E8E; <code>spy</code> &#x7684;&#x5F3A;&#x5927;&#x7684;&#x65E5;&#x5FD7;&#x529F;&#x80FD;&#x3002;<a href="../best/devtools.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
@@ -991,7 +989,7 @@
 <p>&#x7528;&#x6CD5;: <code>spy(listener)</code>.
 &#x6CE8;&#x518C;&#x5168;&#x5C40;&#x4FA6;&#x67E5;&#x76D1;&#x542C;&#x5668;&#x53EF;&#x4EE5;&#x76D1;&#x542C;&#x6240;&#x6709; MobX &#x4E2D;&#x53D1;&#x751F;&#x7684;&#x65F6;&#x95F4;&#x3002;
 &#x5B83;&#x7C7B;&#x4F3C;&#x4E8E;&#x5C06;&#x4E00;&#x4E2A; <code>observe</code> &#x76D1;&#x542C;&#x5668;&#x4E00;&#x6B21;&#x6027;&#x9644;&#x52A0;&#x5230;<strong>&#x6240;&#x6709;&#x7684;</strong> observables &#x4E0A;&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x8D1F;&#x8D23;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x52A8;&#x4F5C;&#x548C;&#x8BA1;&#x7B97;&#x7684;&#x901A;&#x77E5;&#x3002;
-&#x7528;&#x4E8E; <code>mobx-react-devtools</code> &#x7684;&#x793A;&#x4F8B;&#x3002;
+&#x7528;&#x4E8E; <code>mobx-react-devtools</code> &#x3002;
 <a href="spy.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
 <h3 id="whyrun"><code>whyRun</code></h3>
 <p>&#x7528;&#x6CD5;:</p>
@@ -1000,34 +998,34 @@
 <li><code>whyRun(Reaction object / ComputedValue object / disposer function)</code></li>
 <li><code>whyRun(object, &quot;computed property name&quot;)</code></li>
 </ul>
-<p><code>whyRun</code> &#x662F;&#x4E2A;&#x53EF;&#x4EE5;&#x5728;&#x8BA1;&#x7B97;&#x503C;&#x6216; reaction(<code>autorun</code>&#x3001; <code>reaction</code> &#x6216; &#x4F7F;&#x7528;&#x4E86; <code>observer</code> &#x7684; React &#x7EC4;&#x4EF6;&#x7684; <code>render</code> &#x65B9;&#x6CD5;)&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5C0F;&#x529F;&#x80FD;&#xFF0C;&#x5B83;&#x8FD8;&#x53EF;&#x4EE5;&#x6253;&#x5370;&#x51FA; derivation &#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x539F;&#x56E0;&#x548C;&#x5728;&#x54EA;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x5B83;&#x4F1A;&#x518D;&#x6B21;&#x8FD0;&#x884C;&#x3002;
+<p><code>whyRun</code> &#x662F;&#x4E2A;&#x53EF;&#x4EE5;&#x5728;<code>computed</code>&#x6216; reaction(<code>autorun</code>&#x3001; <code>reaction</code> &#x6216; &#x4F7F;&#x7528;&#x4E86; <code>observer</code> &#x7684; React &#x7EC4;&#x4EF6;&#x7684; <code>render</code> &#x65B9;&#x6CD5;)&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5C0F;&#x529F;&#x80FD;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x6253;&#x5370;&#x51FA; &#x63A8;&#x5BFC;(derivation) &#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x539F;&#x56E0;&#x4EE5;&#x53CA;&#x5728;&#x54EA;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x5B83;&#x4F1A;&#x518D;&#x6B21;&#x8FD0;&#x884C;&#x3002;
 &#x8FD9;&#x5E94;&#x8BE5;&#x6709;&#x52A9;&#x4E8E;&#x66F4;&#x6DF1;&#x5165;&#x5730;&#x4E86;&#x89E3; MobX &#x8FD0;&#x4F5C;&#x7684;&#x65F6;&#x673A;&#x548C;&#x539F;&#x56E0;&#xFF0C;&#x5E76;&#x9632;&#x6B62;&#x4E00;&#x4E9B;&#x521D;&#x5B66;&#x8005;&#x7684;&#x9519;&#x8BEF;&#x3002;</p>
 <h3 id="extrasgetatom"><code>extras.getAtom</code></h3>
 <p>&#x7528;&#x6CD5;: <code>getAtom(thing, property?)</code>.
-&#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;&#x7684; observable &#x5BF9;&#x8C61;&#x3001;&#x5C5E;&#x6027;&#x3001;reaction &#x7B49;&#x7684;&#x80CC;&#x540E;&#x7684;&#x539F;&#x5B50;&#x3002;</p>
+&#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;&#x7684; observable &#x5BF9;&#x8C61;&#x3001;&#x5C5E;&#x6027;&#x3001;reaction &#x7B49;&#x7684;&#x80CC;&#x540E;&#x4F5C;&#x7528;&#x7684;<code>Atom</code>&#x3002;</p>
 <h3 id="extrasgetdebugname"><code>extras.getDebugName</code></h3>
 <p>&#x7528;&#x6CD5;: <code>getDebugName(thing, property?)</code>
-&#x8FD4;&#x56DE; observable &#x5BF9;&#x8C61;&#x3001;&#x5C5E;&#x6027;&#x3001;reaction&#x7B49;&#x53CB;&#x597D;&#x7684;(&#x751F;&#x6210;&#x7684;)&#x8C03;&#x8BD5;&#x540D;&#x79F0;&#x3002;&#x7528;&#x4E8E; <code>mobx-react-devtools</code> &#x7684;&#x793A;&#x4F8B;&#x3002;</p>
+&#x8FD4;&#x56DE; observable &#x5BF9;&#x8C61;&#x3001;&#x5C5E;&#x6027;&#x3001;reaction&#x7B49;(&#x751F;&#x6210;&#x7684;)&#x6613;&#x8BFB;&#x7684;&#x8C03;&#x8BD5;&#x540D;&#x79F0;&#x3002;&#x7528;&#x4E8E; <code>mobx-react-devtools</code> &#x7684;&#x793A;&#x4F8B;&#x3002;</p>
 <h3 id="extrasgetdependencytree"><code>extras.getDependencyTree</code></h3>
 <p>&#x7528;&#x6CD5;: <code>getDependencyTree(thing, property?)</code>.
-&#x8FD4;&#x56DE;&#x7ED9;&#x5B9A; reaction / &#x8BA1;&#x7B97; &#x5F53;&#x524D;&#x4F9D;&#x8D56;&#x7684;&#x6240;&#x6709; observable &#x7684;&#x6811;&#x578B;&#x7ED3;&#x6784;&#x3002;</p>
+&#x8FD4;&#x56DE;&#x7ED9;&#x5B9A;&#x7684; reaction / &#x8BA1;&#x7B97; &#x5F53;&#x524D;&#x4F9D;&#x8D56;&#x7684;&#x6240;&#x6709; observable &#x7684;&#x6811;&#x578B;&#x7ED3;&#x6784;&#x3002;</p>
 <h3 id="extrasgetobservertree"><code>extras.getObserverTree</code></h3>
 <p>&#x7528;&#x6CD5;: <code>getObserverTree(thing, property?)</code>.
-&#x8FD4;&#x56DE;&#x89C2;&#x5BDF;&#x7ED9;&#x5B9A;&#x7684; observable &#x7684;&#x6240;&#x6709; reaction / &#x8BA1;&#x7B97;&#x7684;&#x6811;&#x578B;&#x7ED3;&#x6784;&#x3002;</p>
+&#x8FD4;&#x56DE;&#x6B63;&#x5728;&#x89C2;&#x5BDF;&#x7ED9;&#x5B9A;&#x7684; observable &#x7684;&#x6240;&#x6709; reaction / &#x8BA1;&#x7B97;&#x7684;&#x6811;&#x578B;&#x7ED3;&#x6784;&#x3002;</p>
 <h3 id="extrasisspyenabled"><code>extras.isSpyEnabled</code></h3>
 <p>&#x7528;&#x6CD5;: <code>isSpyEnabled()</code>. &#x5982;&#x679C;&#x81F3;&#x5C11;&#x6709;&#x4E00;&#x4E2A; spy &#x662F;&#x6D3B;&#x52A8;&#x7684;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;true&#x3002;</p>
 <h3 id="extrasspyreport"><code>extras.spyReport</code></h3>
-<p>&#x7528;&#x6CD5;: <code>spyReport({ type: &quot;your type&quot;, &amp;laquo;details&amp;raquo; data})</code>&#x3002; &#x53D1;&#x5C04;&#x81EA;&#x5B9A;&#x4E49;&#x4FA6;&#x67E5;&#x4E8B;&#x4EF6;&#x3002;</p>
+<p>&#x7528;&#x6CD5;: <code>spyReport({ type: &quot;your type&quot;, &amp;laquo;details&amp;raquo; data})</code>&#x3002; &#x53D1;&#x5C04;&#x81EA;&#x5B9A;&#x4E49;<code>spy</code>&#x4E8B;&#x4EF6;&#x3002;</p>
 <h3 id="extrasspyreportstart"><code>extras.spyReportStart</code></h3>
-<p>&#x7528;&#x6CD5;: <code>spyReportStart({ type: &quot;your type&quot;, &amp;laquo;details&amp;raquo; data})</code>&#x3002; &#x53D1;&#x5C04;&#x81EA;&#x5B9A;&#x4E49;&#x4FA6;&#x67E5;&#x4E8B;&#x4EF6;&#x3002;&#x5C06;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5D4C;&#x5957;&#x4FA6;&#x67E5;&#x4E8B;&#x4EF6;&#x7EC4;&#xFF0C;&#x8BE5;&#x4E8B;&#x4EF6;&#x7EC4;&#x5E94;&#x8BE5;&#x4F7F;&#x7528; <code>spyReportEnd&#xFF08;&#xFF09;</code> &#x5173;&#x95ED;&#x3002;</p>
+<p>&#x7528;&#x6CD5;: <code>spyReportStart({ type: &quot;your type&quot;, &amp;laquo;details&amp;raquo; data})</code>&#x3002; &#x53D1;&#x5C04;&#x81EA;&#x5B9A;&#x4E49;<code>spy</code>&#x4E8B;&#x4EF6;&#x3002;&#x5C06;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5D4C;&#x5957;<code>spy</code>&#x4E8B;&#x4EF6;&#x7EC4;&#xFF0C;&#x8BE5;&#x4E8B;&#x4EF6;&#x7EC4;&#x5E94;&#x8BE5;&#x4F7F;&#x7528; <code>spyReportEnd&#xFF08;&#xFF09;</code> &#x5173;&#x95ED;&#x3002;</p>
 <h3 id="extrasspyreportend"><code>extras.spyReportEnd</code></h3>
-<p>&#x7528;&#x6CD5;: <code>spyReportEnd()</code>&#x3002;&#x5173;&#x95ED;&#x7531; <code>extras.spyReportStart</code> &#x5F00;&#x542F;&#x7684;&#x5F53;&#x524D;&#x4FA6;&#x67E5;&#x7EC4;&#x3002;</p>
+<p>&#x7528;&#x6CD5;: <code>spyReportEnd()</code>&#x3002;&#x5173;&#x95ED;&#x7531; <code>extras.spyReportStart</code> &#x5F00;&#x542F;&#x7684;&#x5F53;&#x524D;<code>spy</code>&#x7684;&#x4E8B;&#x4EF6;&#x7EC4;&#x3002;</p>
 <h3 id="mobx-react-&#x5F00;&#x53D1;&#x94A9;&#x5B50;"><code>&quot;mobx-react&quot;</code> &#x5F00;&#x53D1;&#x94A9;&#x5B50;</h3>
-<p><code>mobx-react</code> &#x5305;&#x66B4;&#x9732;&#x4E86;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x4F9B; <code>mobx-react-devtools</code> &#x4F7F;&#x7528;&#x7684;&#x9644;&#x52A0;API:</p>
+<p><code>mobx-react</code> &#x5305;&#x63D0;&#x4F9B;&#x4E86;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x4F9B; <code>mobx-react-devtools</code> &#x4F7F;&#x7528;&#x7684;&#x9644;&#x52A0;API:</p>
 <ul>
-<li><code>trackComponents()</code>: &#x542F;&#x7528;&#x8FFD;&#x8E2A;&#x57FA;&#x4E8E; React &#x7EC4;&#x4EF6;&#x7684; <code>observer</code></li>
-<li><code>renderReporter.on(callback)</code>: &#x6BCF;&#x6B21;&#x6E32;&#x67D3;&#x542F;&#x7528; <code>observer</code> &#x7684; React &#x7EC4;&#x4EF6;&#x65F6;&#x4F1A;&#x8C03;&#x7528;callback&#xFF0C;&#x5E76;&#x9644;&#x5E26;&#x65F6;&#x95F4;&#x4FE1;&#x606F;&#x7B49;&#x7B49;</li>
-<li><code>componentByNodeRegistery</code>: ES6 WeakMap &#x4ECE; DOMNode &#x6620;&#x5C04;&#x5230;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; <code>observer</code> &#x7684; React &#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;</li>
+<li><code>trackComponents()</code>: &#x542F;&#x7528;&#x8FFD;&#x8E2A;&#x529F;&#x80FD;,&#x8FFD;&#x8E2A;&#x4F7F;&#x7528;&#x4E86;<code>observer</code>&#x7684; React &#x7EC4;&#x4EF6; </li>
+<li><code>renderReporter.on(callback)</code>: &#x4F7F;&#x7528; <code>observer</code> &#x7684; React &#x7EC4;&#x4EF6;&#x6BCF;&#x6B21;&#x6E32;&#x67D3;&#x90FD;&#x4F1A;&#x8C03;&#x7528;callback&#xFF0C;&#x5E76;&#x9644;&#x5E26;&#x76F8;&#x5173;&#x7684;&#x65F6;&#x95F4;&#x4FE1;&#x606F;&#x7B49;&#x7B49;</li>
+<li><code>componentByNodeRegistery</code>: &#x4F7F;&#x7528;ES6 WeakMap &#x5C06; DOMNode &#x6620;&#x5C04;&#x5230;&#x4F7F;&#x7528; <code>observer</code> &#x7684; React &#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;</li>
 </ul>
 <h1 id="&#x5185;&#x90E8;&#x51FD;&#x6570;">&#x5185;&#x90E8;&#x51FD;&#x6570;</h1>
 <p><em>&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;&#x90FD;&#x5728; MobX &#x5185;&#x90E8;&#x4F7F;&#x7528;&#xFF0C;&#x5728;&#x6781;&#x5C11;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#x53EF;&#x80FD;&#x4F1A;&#x6D3E;&#x4E0A;&#x7528;&#x573A;&#x3002; &#x4F46;&#x662F;&#x901A;&#x5E38; MobX &#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x591A;&#x7684;&#x58F0;&#x660E;&#x6027;&#x66FF;&#x4EE3;&#x65B9;&#x6CD5;&#x6765;&#x89E3;&#x51B3;&#x540C;&#x6837;&#x7684;&#x95EE;&#x9898;&#x3002;&#x5982;&#x679C;&#x4F60;&#x5C1D;&#x8BD5;&#x6269;&#x5C55; MobX &#x7684;&#x8BDD;&#xFF0C;&#x5B83;&#x4EEC;&#x53EF;&#x80FD;&#x4F1A;&#x6D3E;&#x4E0A;&#x7528;&#x573A;&#x3002;</em></p>
@@ -1035,14 +1033,15 @@
 <p>&#x7528;&#x6CD5;: <code>transaction(() =&gt; { block })</code>.
 &#x5DF2;&#x5E9F;&#x5F03;&#xFF0C;&#x4F7F;&#x7528; action &#x6216;&#x8005; <code>runInAction</code> &#x66FF;&#x4EE3;&#x3002;
 &#x4F4E;&#x7B49;&#x7EA7;API&#xFF0C;&#x7528;&#x4E8E;&#x6279;&#x91CF;&#x5904;&#x7406;&#x72B6;&#x6001;&#x66F4;&#x6539;&#x3002;
-&#x5728;&#x5757;&#x5185;&#x90E8;&#x8FDB;&#x884C;&#x7684;&#x72B6;&#x6001;&#x66F4;&#x6539;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x4EFB;&#x4F55;&#x8BA1;&#x7B97;&#x6216; reaction &#x8FD0;&#x884C;&#xFF0C;&#x76F4;&#x5230;&#x5230;&#x8FBE;&#x5757;&#x7ED3;&#x675F;&#x3002;
-&#x5C3D;&#x7BA1;&#x5982;&#x6B64;&#xFF0C;&#x68C0;&#x67E5;&#x4E8B;&#x52A1;&#x5757;&#x5185;&#x90E8;&#x7684;&#x8BA1;&#x7B97;&#x503C;&#x4ECD;&#x5C06;&#x8FD4;&#x56DE;&#x4E00;&#x81F4;&#x7684;&#x503C;&#x3002;
-&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; <code>action</code>&#xFF0C;&#x5B83;&#x4F1A;&#x5728;&#x5185;&#x90E8;&#x4F7F;&#x7528; <code>transaction</code>&#x3002;
+&#x5728;<code>block</code>&#x4E2D;&#x8FDB;&#x884C;&#x7684;&#x72B6;&#x6001;&#x66F4;&#x6539;&#x5728;<code>block</code>&#x7ED3;&#x675F;&#x524D;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x4EFB;&#x4F55;&#x8BA1;&#x7B97;&#x6216; reaction &#x7684;&#x8FD0;&#x884C;&#x3002;
+&#x5C3D;&#x7BA1;&#x5982;&#x6B64;&#xFF0C;(&#x4E0D;&#x7BA1;&#x4F55;&#x65F6;)&#x68C0;&#x67E5;<code>transaction</code>&#x4E2D;<code>computed</code>&#x503C;,&#x8FD4;&#x56DE;&#x7684;&#x503C;&#x4ECD;&#x7136;&#x662F;&#x4E00;&#x81F4;&#x7684;&#x3002;
+&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; <code>action</code>&#x6765;&#x66FF;&#x4EE3;&#xFF0C;&#x5B83;&#x4F1A;&#x5728;&#x5185;&#x90E8;&#x4F7F;&#x7528; <code>transaction</code>&#x3002;
 <a href="transaction.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
 <h3 id="untracked"><code>untracked</code></h3>
 <p>&#x7528;&#x6CD5;: <code>untracked(() =&gt; { block })</code>.
-&#x4F4E;&#x7B49;&#x7EA7;API&#xFF0C;&#x5728; reaction &#x548C; &#x8BA1;&#x7B97; &#x5185;&#x90E8;&#x6216;&#x8BB8;&#x6709;&#x7528;&#x3002;
-&#x5728; <code>block</code> &#x4E2D;&#x8BBF;&#x95EE;&#x4EFB;&#x4F55; observable &#x90FD;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4; reaction / compuation &#x81EA;&#x52A8;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x3002;
+&#x4F4E;&#x7B49;&#x7EA7;API&#xFF0C;&#x5728; reactions &#x548C; compuations &#x5185;&#x90E8;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x7528;&#x5904;&#x3002;
+&#x5728; <code>block</code> &#x4E2D;&#x8BBF;&#x95EE;&#x4EFB;&#x4F55; observable &#x90FD;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4; reaction / compuation &#x81EA;&#x52A8;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x3002;&#x540C;&#x6837;,
+&#x5EFA;&#x8BAE;&#x4F7F;&#x7528; <code>action</code>&#x6765;&#x66FF;&#x4EE3;&#xFF0C;&#x5B83;&#x4F1A;&#x5728;&#x5185;&#x90E8;&#x4F7F;&#x7528; <code>untracked</code>&#x3002;
 <a href="untracked.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
 <h3 id="atom"><code>Atom</code></h3>
 <p>&#x5B9E;&#x7528;&#x7A0B;&#x5E8F;&#x7C7B;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x4F60;&#x81EA;&#x5DF1;&#x7684; observable &#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x5E76;&#x5C06;&#x5B83;&#x4EEC;&#x8FDE;&#x63A5;&#x5230; MobX&#x3002;
@@ -1058,8 +1057,8 @@
 &#x5728; <code>action</code> &#x5185;&#x90E8;&#x4F7F;&#x7528;&#x4EE5;&#x5141;&#x8BB8;&#x66F4;&#x6539;&#xFF0C;&#x5728; <code>computed</code> &#x548C; <code>observer</code> &#x5185;&#x90E8;&#x4F7F;&#x7528;&#x4EE5;&#x7981;&#x6B62;&#x72B6;&#x6001;&#x66F4;&#x6539;&#x3002;</p>
 <h3 id="extrasresetglobalstate"><code>extras.resetGlobalState</code></h3>
 <p>&#x7528;&#x6CD5;: <code>resetGlobalState()</code>.
-&#x91CD;&#x7F6E; MobX &#x5185;&#x90E8;&#x5168;&#x5C40;&#x72B6;&#x6001;&#x3002; &#x5982;&#x679C;&#x5728;&#x8BA1;&#x7B97;&#x6216; reaction &#x5185;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#x5E76;&#x4E14;&#x62D2;&#x7EDD;&#x518D;&#x6B21;&#x8FD0;&#x884C;&#x5B83;&#x4EEC;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B; MobX &#x4F1A;&#x5FEB;&#x901F;&#x5931;&#x8D25;&#x3002;
-&#x6B64;&#x51FD;&#x6570;&#x5C06; MobX &#x91CD;&#x7F6E;&#x4E3A;&#x96F6;&#x72B6;&#x6001;&#x3002; &#x73B0;&#x6709;&#x7684; <code>spy</code> &#x76D1;&#x542C;&#x5668;&#x548C;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x5F53;&#x524D;&#x503C;&#x5C06;&#x88AB;&#x4FDD;&#x7559;&#x3002;</p>
+&#x91CD;&#x7F6E; MobX &#x5185;&#x90E8;&#x5168;&#x5C40;&#x72B6;&#x6001;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B; MobX &#x4F7F;&#x7528;&#x5FEB;&#x901F;&#x5931;&#x8D25;(fail fast)&#x673A;&#x5236;, &#x5982;&#x679C;&#x5728;<code>computation</code>&#x6216; <code>reaction</code> &#x5185;&#x53D1;&#x751F;&#x5F02;&#x5E38;,MobX&#x4F1A;&#x62D2;&#x7EDD;&#x518D;&#x6B21;&#x8FD0;&#x884C;&#x5B83;&#x4EEC;&#x3002;
+&#x6B64;&#x51FD;&#x6570;&#x5C06; MobX &#x91CD;&#x7F6E;&#x4E3A;&#x5F52;&#x96F6;&#x72B6;&#x6001;&#x3002; &#x73B0;&#x6709;&#x7684; <code>spy</code> &#x76D1;&#x542C;&#x5668;&#x548C;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x5F53;&#x524D;&#x503C;&#x5C06;&#x88AB;&#x4FDD;&#x7559;&#x3002;</p>
 
                                 
                                 </section>
@@ -1103,7 +1102,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2. API概览","level":"1.2","depth":1,"next":{"title":"2.1. observable","level":"1.2.1","depth":2,"path":"refguide/observable.md","ref":"refguide/observable.md","articles":[]},"previous":{"title":"1.2. 概念与原则","level":"1.1.2","depth":2,"path":"intro/concepts.md","ref":"intro/concepts.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/api.md","mtime":"2017-03-04T13:02:12.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-24T22:44:05.317Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2. API概览","level":"1.2","depth":1,"next":{"title":"2.1. observable","level":"1.2.1","depth":2,"path":"refguide/observable.md","ref":"refguide/observable.md","articles":[]},"previous":{"title":"1.2. 概念与原则","level":"1.1.2","depth":2,"path":"intro/concepts.md","ref":"intro/concepts.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/api.md","mtime":"2017-03-28T15:11:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-28T15:14:24.103Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
