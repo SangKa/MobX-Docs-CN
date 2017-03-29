@@ -2,7 +2,7 @@
 
 装饰器可以在 ES7 或者 TypeScript 类属性中属性使用，将其转换成可观察的。
 @observable 可以在实例字段和属性 getter 上使用。
-对于对象的哪部分成为可观察的，@observable 提供了细粒度的控制。
+对于对象的哪部分需要成为可观察的，@observable 提供了细粒度的控制。
 
 ```javascript
 import {observable} from "mobx";
@@ -29,7 +29,7 @@ class OrderLine {
 ```javascript
 const line = new OrderLine();
 console.log("price" in line); // true
-console.log(line.hasOwnProperty("price")); // false, price属性是定义在类上的，尽管每个实例都会存储price的值。
+console.log(line.hasOwnProperty("price")); // false, price属性是定义在类上的，尽管每个实例都会持有price的值。 //这里是错的
 ```
 
 `@observable` 装饰器可以和像 `asStructure` 这样的调节器共同使用:
