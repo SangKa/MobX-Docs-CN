@@ -791,21 +791,19 @@
     @observable price = <span class="hljs-number">0</span>;
     @observable amount = <span class="hljs-number">1</span>;
 
-    <span class="hljs-keyword">constructor</span>(price) {
-        <span class="hljs-keyword">this</span>.price = price;
-    }
-
     @computed get total() {
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.price * <span class="hljs-keyword">this</span>.amount;
     }
 }
 </code></pre>
 <p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x73AF;&#x5883;&#x4E0D;&#x652F;&#x6301;&#x88C5;&#x9970;&#x5668;&#x6216;&#x5B57;&#x6BB5;&#x521D;&#x59CB;&#x5316;&#x5668;&#xFF0C;&#x90A3;&#x4E48; <code>@observable key = value;</code> &#x4F1A;&#x662F; <a href="extend-observable.html"><code>extendObservable(this, { key: value })</code></a> &#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#x3002;</p>
-<p>&#x53EF;&#x679A;&#x4E3E;&#x6027;: &#x4F7F;&#x7528; <code>@observable</code> &#x7684;&#x5C5E;&#x6027;&#x88C5;&#x9970;&#x5668;&#x662F;&#x53EF;&#x679A;&#x4E3E;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5B9A;&#x4E49;&#x5728;&#x7C7B;&#x539F;&#x578B;&#x548C;&#x4E0D;&#x5728;&#x7C7B;&#x5B9E;&#x4F8B;&#x4E0A;&#x5B9A;&#x4E49;&#x7684;&#x4E0D;&#x53EF;&#x679A;&#x4E3E;&#x3002;
+<p>&#x6CE8;&#x610F;: &#x6240;&#x6709;&#x7684;&#x5C5E;&#x6027;&#x90FD;&#x662F;&#x60F0;&#x6027;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x5B83;&#x4EEC;&#x4E2D;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x88AB;&#x8BBF;&#x95EE;&#x4E86;&#x624D;&#x4F1A;&#x5B9A;&#x4E49;&#x3002;&#x5728;&#x6B64;&#x4E4B;&#x524D;&#xFF0C;&#x5B83;&#x4EEC;&#x53EA;&#x662F;&#x5B9A;&#x4E49;&#x5728;&#x7C7B;&#x539F;&#x578B;&#x4E0A;&#x3002;
 &#x6362;&#x53E5;&#x8BDD;&#x8BF4;:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> line = <span class="hljs-keyword">new</span> OrderLine();
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;price&quot;</span> <span class="hljs-keyword">in</span> line); <span class="hljs-comment">// true</span>
 <span class="hljs-built_in">console</span>.log(line.hasOwnProperty(<span class="hljs-string">&quot;price&quot;</span>)); <span class="hljs-comment">// false, price&#x5C5E;&#x6027;&#x662F;&#x5B9A;&#x4E49;&#x5728;&#x7C7B;&#x4E0A;&#x7684;&#xFF0C;&#x5C3D;&#x7BA1;&#x6BCF;&#x4E2A;&#x5B9E;&#x4F8B;&#x90FD;&#x4F1A;&#x5B58;&#x50A8;price&#x7684;&#x503C;&#x3002;</span>
+line.amount = <span class="hljs-number">2</span>;
+<span class="hljs-built_in">console</span>.log(line.hasOwnProperty(<span class="hljs-string">&quot;price&quot;</span>)); <span class="hljs-comment">// true, &#x73B0;&#x5728;&#x6240;&#x6709;&#x7684;&#x5C5E;&#x6027;&#x90FD;&#x5B9A;&#x4E49;&#x5728;&#x5B9E;&#x4F8B;&#x4E0A;&#x4E86;&#x3002;</span>
 </code></pre>
 <p><code>@observable</code> &#x88C5;&#x9970;&#x5668;&#x53EF;&#x4EE5;&#x548C;&#x50CF; <code>asStructure</code> &#x8FD9;&#x6837;&#x7684;&#x8C03;&#x8282;&#x5668;&#x5171;&#x540C;&#x4F7F;&#x7528;:</p>
 <pre><code class="lang-javascript">@observable position = asStructure({ x: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span>})
@@ -860,7 +858,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.2. @observable","level":"1.2.2","depth":2,"next":{"title":"2.3. (@)computed","level":"1.2.3","depth":2,"path":"refguide/computed-decorator.md","ref":"refguide/computed-decorator.md","articles":[]},"previous":{"title":"2.1. observable","level":"1.2.1","depth":2,"path":"refguide/observable.md","ref":"refguide/observable.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/observable-decorator.md","mtime":"2017-03-05T01:06:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-28T15:14:24.103Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.2. @observable","level":"1.2.2","depth":2,"next":{"title":"2.3. (@)computed","level":"1.2.3","depth":2,"path":"refguide/computed-decorator.md","ref":"refguide/computed-decorator.md","articles":[]},"previous":{"title":"2.1. observable","level":"1.2.1","depth":2,"path":"refguide/observable.md","ref":"refguide/observable.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/observable-decorator.md","mtime":"2017-04-08T07:41:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-08T18:09:31.775Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
