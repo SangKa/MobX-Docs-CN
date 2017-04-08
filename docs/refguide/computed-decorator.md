@@ -88,7 +88,7 @@ const box = observable({
 
 ```javascript
 class Foo {
-    @observable length: 2,
+    @observable length = 2;
     @computed get squared() {
         return this.length * this.length;
     }
