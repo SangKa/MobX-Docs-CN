@@ -32,7 +32,6 @@ class OrderLine {
 ```javascript
 const line = new OrderLine();
 console.log("price" in line); // true
-console.log(line.hasOwnProperty("price")); // false , price 属性 定义在类上, 尽管每个实例都保存有它的值
 console.log(line.hasOwnProperty("price")); // true,现在所有的属性在实例上都有定义
 ```
 
