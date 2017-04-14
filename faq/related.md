@@ -1,67 +1,47 @@
-# Related projects
+# 相关项目
 
-Boilerplate projects, example projects with sources, Libraries.
+* [MobX react 绑定](https://github.com/mobxjs/mobx-react)
+* [MobX react 开发者工具](https://github.com/mobxjs/mobx-react-devtools)
+* [MobX remotedev: 使用 MobX 版本的 Redux 开发工具](https://github.com/zalmoxisus/mobx-remotedev)
+* [MobX inferno 绑定](https://www.npmjs.com/package/mobx-inferno)
+* [MobX deku 绑定](https://github.com/micnews/mobx-deku)
+* 对于 Preact，可以使用 [preact-compat](https://github.com/developit/preact-compat) 模块 + mobx-react 。
+* [tracker-mobx-autorun](https://github.com/meteor-space/tracker-mobx-autorun) 将 Meteor 响应式数据与 MobX 集成，实现简单而高度优化的状态管理
+* [react-native-mobx](https://github.com/aksonov/react-native-mobx) 使用 MobX 和 react-native-router-flux 将你的应用转变成响应式
+* [ng2-mobx](https://github.com/500tech/ng2-mobx)
 
-## Boilerplate projects
+* 推荐: [mobx-react-form](https://foxhound87.github.io/mobx-react-form/docs/devtools.html) 构建表单并使用 json-schema 规则验证它们
+* [mobx-form-store](https://github.com/alexhisen/mobx-form-store) + [mobx-schema-form](https://github.com/alexhisen/mobx-schema-form) 松耦合组件，用于基于 MobX 的应用的管理、渲染和验证表单
+* [mobx-forms](https://github.com/oreqizer/mobx-forms) React + Mobx 的简单表单管理, 深受 redux-forms 启发
+* [mobx-form](https://github.com/royriojas/mobx-form) 使用 MobX 声明式地构建表单
+* [mobx-input](https://github.com/tomaash/mobx-input) MobX + react-bootstrap 的表单验证
+* [jsfiddle 中演示的表单抽象](https://jsfiddle.net/darthapo/k63ujjsp/)
 
-* React, Babel, Webpack: https://github.com/mweststrate/react-mobservable-boilerplate
-* React, Typescript, Webpack: https://github.com/mobxjs/mobx-react-typescript-boilerplate  
-* MobX + React JSFiddle: https://jsfiddle.net/mweststrate/wgbe4guu/
-* MobX + React JSFiddle with just ES5: https://jsfiddle.net/rubyred/55oc981v/
-* [generator-mobx-react](https://www.npmjs.com/package/generator-mobx-react) Yeoman MobX, React, Webpack, Babel / Typescript project generator
-* [jspm-react](https://github.com/capaj/jspm-react) lightweight React.js ES6 boilerplate with JSPM and proper hot reloading modules
-* [rfx-stack](https://github.com/foxhound87/rfx-stack) RFX Stack - Universal App featuring: React + Feathers + MobX
-* [reaxor](https://github.com/KadoBOT/reaxor) Boilerplate for better state management, styling, testing and cleaner code
-* [react-portal](https://github.com/vinej/react-portal) MobX, React with Flux architecture
-* [react-mobx-webpack(https://github.com/tapos007/ReactJS-MobX-Webpack-Boilerplate/tree/master/app/store) Quickstart project template for learning React
-* [gulp-es6-sass-mobx](https://github.com/pixelkritzel/gulp_es6_sass_boilerplate)
-* [react-mobx-boilerplate](https://github.com/osenvosem/react-mobx-boilerplate) A small React + React Router + MobX boilerplate with a small example app.
-* [Small project to quickly start with deku, MobX, JSX, ES6, Babel](https://github.com/micnews/mobx-deku-boilerplate)
+* [serializr](https://github.com/mobxjs/serializr) 将复杂对象图(反)形序列化为 JSON 的小型库
+* [mobx-utils](https://github.com/mobxjs/mobx-utils) 服务于 MobX 的常用工具集, 像订阅外部资源、转换 promises等。
+* [mobx-state-tree](https://github.com/mobxjs/mobx-state-tree) 丰富的状态容器，支持时间旅行、补丁、可重放动作等。
+* [mobx-rest](https://github.com/masylum/mobx-rest) MobX 的 REST 约定
+* [mobx-model](https://github.com/ikido/mobx-model) 简化模仿后端模型的 mobx 数据存储
+* [mobx-router](https://github.com/kitze/mobx-router) MobX 应用的简单路由
+* [mobx-firebase-store](https://github.com/nyura123/mobx-firebase-store) 使用 MobX observable 订阅 firebase 数据
+* [mobx-store](https://github.com/AriaFallah/mobx-store) 一个受 lowdb 启发的数据存储，具有声明性查询，可观察状态和简单的撤销/重做。
+* [rx-mobx](https://github.com/chicoxyzzy/rx-mobx) Mobx observables 和 RxJS 的相互转换工具
+* [mobx-reactor](https://github.com/amsb/mobx-reactor) 使用异步动作和单向数据流将 MobX 数据存储连接到React 无状态函数组件。
+* [mobx-autorun-async-immediate](https://github.com/dettier/mobx-autorun-async-immediate) 可以去抖(debounce) 的 MobX autorun 函数，并且可以首次同步调用
+* [Smalldots MobX Store](https://github.com/smalldots/mobx-store) MobX 的 Store API
+* [mobx-roof](https://github.com/mobx-roof/mobx-roof) 简单、基于 MobX 的 React MVVM 框架
+* [mobx-translate](https://github.com/tomaash/mobx-translate) 简单的 MobX 翻译库
+* [react-mobx-translatable](https://github.com/infinum/react-mobx-translatable) 使 React 组件可以使用 MobX 进行翻译。可以在服务器(SSR)和浏览器中使用。
+* [mobx-logger](https://github.com/winterbe/mobx-logger) 通过记录正确的信息，总是知道你的 MobX 应用中真正发生了什么。
+* [mobx-react-matchmedia](https://github.com/foxhound87/mobx-react-matchmedia) React HOC 与媒体查询响应布局。
+* [mobx-server-wait](https://www.npmjs.com/package/mobx-server-wait) 通过服务器等待的 mobx 动作进行通用地渲染。
+* [mobx-cache](https://github.com/mdebbar/mobx-cache) 使用 MobX 的 observable 数据缓存
+* [mobx-persist](https://github.com/pinqy520/mobx-persist) 创建并持久化 mobx 存储
+* [gwt-mobx](https://github.com/GWTReact/gwt-mobx) MobX 的GWT Java 绑定
+* [mobx-app](https://github.com/danieldunderfelt/mobx-app) Mobx 的功能结构
 
-## Example projects
+## 更多...
 
-* [Simple ES5 MobX examples](https://github.com/mattruby/mobx-examples) Bite sized MobX examples all setup to run in jsFiddle.
-* TodoMVC application, including Server Side Rendering: https://github.com/mobxjs/mobx-react-todomvc
-* Contact list application (simple data fetching, routing, complex components, material UI): https://github.com/mobxjs/mobx-contacts-list
-* Spectacle editor: Official editor for building presentations using the Spectacle library: https://github.com/FormidableLabs/spectacle-editor
-* DWatch - docker container manager, Electron, typescript, inversifyJS: https://github.com/Mercateo/dwatch
-* Kratelabs interactive map / map order service https://kratelabs.addxy.com/#/ source: https://github.com/KrateLabs/KrateLabs-App
-* [Google Play Music Desktop Remote](https://github.com/GPMDP/google-play-music-desktop-remote) A React-Native app for remote controlling Google Play Music Desktop: MobX + WebSocket.
-* Example with Server Side Rendering, react-router: https://github.com/kuuup/mobx-ssr-example
-* Accounting System built in ASP.NET MVC, ReactJS, MobX http://www.accountgo.ph/ [source](https://github.com/AccountGo/accountgo)
-* Easy MobX example with React, MobX, cosmicJS, shorti,  https://github.com/tonyspiro/easy-mobx-example
-* A simple webshop using [React + mobx](https://jsfiddle.net/mweststrate/46vL0phw)
-* A simple webshop using [JQuery + mobx](http://jsfiddle.net/mweststrate/vxn7qgdw).
-* Simple app with Ajax, authentication, context, routing: http://stackoverflow.com/a/36164488/1983583
-* Contacts MVC app with Typescript, routing etc. https://github.com/contacts-mvc/mobx-react-typescript:
-* React Particles (React, MobX, D3. one app with two architectures in two branches, Flux and MVC: https://github.com/mobxjs/react-particles-experiment)
-* Mortgage overpayment calculator using React with MobX: https://github.com/paulhoughton/mortgage-mobx 
-* Simple drag and drop application. Also provides time travelling https://github.com/mobxjs/mobx-reactive2015-demo
-* The [ports of the _Notes_ and _Kanban_ examples](https://github.com/survivejs/mobx-demo) from the book "SurviveJS - Webpack and React" to MobX.
-* Flux challenge, implemeted with MobX: https://github.com/staltz/flux-challenge/tree/master/submissions/mweststrate
-* MobX + D3 codepen: http://codepen.io/timelyportfolio/pen/zrJwvE
-
-## Libraries
-
-* MobX-React bindings: https://github.com/mobxjs/mobx-react
-* Mobx-React-Devtools: https://github.com/mobxjs/mobx-react-devtools
-* MobX Deku bindings: https://github.com/micnews/mobx-deku
-* [mobx-form](https://github.com/royriojas/mobx-form) Declaratively build forms using MobX
-* [mobx-ajv-form](https://github.com/foxhound87/mobx-ajv-form) Build forms and validate them using json-schema rules 
-* [Form abstraction in one fiddle](https://jsfiddle.net/darthapo/k63ujjsp/)
-* [mobx-model](https://github.com/ikido/mobx-model) Simplify mobx data stores that mimic backend models 
-* [mobx-store](https://github.com/AriaFallah/mobx-store) A lowdb inspired data store with declarative querying, observable state, and easy undo/redo.
-* [mobx-firebase-store](https://github.com/nyura123/mobx-firebase-store) Subscribe MobX observables to firebase
-* [rx-mobx](https://github.com/chicoxyzzy/rx-mobx) Convert Mobx observables to RxJS and vice versa
-* [mobx-reactor](https://github.com/amsb/mobx-reactor) Connect MobX data stores to functional stateless React components with async actions and unidirectional data flow.
-* [mobx-connect](https://github.com/nightwolfz/mobx-connect) MobX @connect decorator for react components. Similar to redux's @connect.
-* [mobx-autorun-async-immediate](https://github.com/dettier/mobx-autorun-async-immediate) Mobx debounced autorun function with immediate synchronous first call
-* [Smalldots MobX Store](https://github.com/smalldots/mobx-store) Store API for MobX
-* [mobx-roof](https://github.com/mobx-roof/mobx-roof) Simple, React MVVM framework based on mobx
-
-
-## ... More
-
-* Anything missing? Feel free to submit a PR to add your own library / project!
-* Another nice overview of things related to MobX: https://github.com/xgrommx/mobx-ecosystem
-* Or just [search on Github](https://github.com/search?utf8=%E2%9C%93&q=mobx)
+* 还有遗漏吗？ 可以自由地提交 PR 来添加你自己的库/项目!
+* 另外一个不错的 MobX 周边生态概览: https://github.com/xgrommx/mobx-ecosystem
+* 或者至少 [在 Github 搜索](https://github.com/search?utf8=%E2%9C%93&q=mobx)

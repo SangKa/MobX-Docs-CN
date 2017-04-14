@@ -4,6 +4,7 @@
 
 * [Egghead.io 课程: 在 React 应用中使用 MobX 管理复杂的状态](https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx)
 * LearnCode.academy MobX 教程 [第一部分: MobX + React 太棒了 (7分钟)](https://www.youtube.com/watch?v=_q50BXqkAfI) [第二部分: Computed Values and 嵌套/引用的 Observables (12分钟)](https://www.youtube.com/watch?v=nYvNqKrl69s)
+* [React 基础 + Codemy.net 的 MobX 视频系列 (youtube 播放列表)](https://www.youtube.com/playlist?list=PLjQo0sojbbxU6Yl9l-38gOyeQYjqXefq7)
 * [ReactNext 2016: 真实世界的 MobX](https://www.youtube.com/watch?v=Aws40KOx90U) - 40分钟 [幻灯片](https://docs.google.com/presentation/d/1DrI6Hc2xIPTLBkfNH8YczOcPXQTOaCIcDESdyVfG_bE/edit?usp=sharing)
 * [React 和 MobX 实战](https://www.youtube.com/watch?v=XGwuM_u7UeQ). OpenSourceNorth 开发者大会上，Matt Ruby 深入介绍和说明如何使用MobX和React(ES5版本) ([幻灯片](http://slides.com/mattruby/deck))
 * [录播: 8分钟让你了解 MobX](https://www.youtube.com/watch?v=K8dr8BMU7-8)

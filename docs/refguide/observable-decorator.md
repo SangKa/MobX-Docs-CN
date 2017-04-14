@@ -11,10 +11,6 @@ class OrderLine {
     @observable price = 0;
     @observable amount = 1;
 
-    constructor(price) {
-        this.price = price;
-    }
-
     @computed get total() {
         return this.price * this.amount;
     }
@@ -23,18 +19,17 @@ class OrderLine {
 
 如果你的环境不支持装饰器或字段初始化器，那么 `@observable key = value;` 会是 [`extendObservable(this, { key: value })`](extend-observable.md) 的语法糖。
 
-可枚举性: 使用 `@observable` 的属性装饰器是可枚举的，但是定义在类原型和不在类实例上定义的不可枚举。
 
-注意: 所有的属性会在其被访问时定义.在此之前,只有该类的prototype上的属性被会被定义
-
+可枚举性: 使用 `@observable` 的属性装饰器是可枚举的，但是定义在类原型和不在类实例上定义的不可枚举
+注意: 所有的属性都是惰性定义的，它们中任何一个被访问了才会定义。在此之前，它们只是定义在类原
 换句话说:
 
 ```javascript
 const line = new OrderLine();
 console.log("price" in line); // true
-console.log(line.hasOwnProperty("price")); // true,现在所有的属性在实例上都有定义
-```
+console.log(line.hasOwnProperty("price")); // true, 现在所有的属性都定义在实例上了。
 
+```
 `@observable` 装饰器可以和像 `asStructure` 这样的调节器共同使用:
 
 ```javascript

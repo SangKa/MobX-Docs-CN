@@ -15,7 +15,7 @@
 * [TodoMVC 应用 + 包括服务器端渲染](https://github.com/mobxjs/mobx-react-todomvc)
 * [联系人列表应用(简单的数据获取、路由、复杂组件、material UI)](https://github.com/mobxjs/mobx-contacts-list)
 * [Logpipe](https://github.com/jeffijoe/logpipe-server), 一个**实时更新**的开发日志应用，使用 MobX + Socket.IO
-* [服务端渲染 + react-router 示例](https://github.com/kuuup/mobx-ssr-example)
+* [服务端渲染示例](https://github.com/kuuup/mobx-ssr-example)
 * [使用 UI 模拟服务器端 API](https://github.com/Raathigesh/Atmo)
 * 使用 ASP.NET MVC + ReactJS + MobX 构建的会计系统 [Demo](http://www.accountgo.ph/) [Source](https://github.com/AccountGo/accountgo)
 * [使用 React + MobX + Cosmic JS + shorti 的简单示例](https://github.com/tonyspiro/easy-mobx-example)
@@ -35,3 +35,4 @@
 * 使用 ReactJS + Mobx + Grape (ruby) + Mongodb 的轻量级支持服务: [support-service](https://github.com/ifokeev/support-service)
 * [使用 React + MobX 的简易版俄罗斯方块](https://github.com/1984weed/mobx-react-tetris)
 * [React Native + Mobx 示例应用](https://github.com/winterbe/RNTimerExample)
+* [TypeScript + MobX](https://github.com/dimafeng/typescript-react-mobx-template)
