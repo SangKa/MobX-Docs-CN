@@ -1,7 +1,7 @@
 # @observer
 
 `observer` 函数/装饰器可以用来将 React 组件转变成响应式组件。
-它用 `mobx.autorun` 包装了组件的 render 函数以确保任何组件渲染中使用的数据变化时可以强制刷新组件。
+它用 `mobx.autorun` 包装了组件的 render 函数以确保任何组件渲染中使用的数据变化时都可以强制刷新组件。
 `observer` 是由单独的 `mobx-react` 包提供的。
 
 
@@ -31,15 +31,15 @@ React.render(<Timer timerData={timerData} />, document.body);
 
 ## 陷阱: 组件中的间接引用值
 MobX 可以做很多事，但是它无法使原始数据类型值转变成可观察的(尽管它可以用对象来包装它们，参见 [boxed observables](boxed.md))。
-所以**值**是不可观察的，但是对象的**属性**可以。这意味着 `@observer` 实际上是对间接引用值的反应。
+所以**值**是不可观察的，但是对象的**属性**可以。这意味着 `@observer` 实际上是对间接引用(dereference)值的反应。
 那么在上面的示例中，如果是用下面这种方式初始化的，`Timer` 组件是**不会**有反应的:
 
 ```javascript
 React.render(<Timer timerData={timerData.secondsPassed} />, document.body)
 ```
 在这个代码片段中只是把 `secondsPassed` 的当前值传递给了 `Timer` 组件，这个值是不可变值`0`(JS中所有的原始类型值都是不可变的)。
-这个数值永远都不会改变，因此 `Timer` 组件不会更新。只是 `secondsPassed` 将来会发生改变。
-所以我们需要在组件**中**访问它。或者换句话说: 值需要**通过引用**来传递而不少通过值来传递。
+这个数值永远都不会改变，因此 `Timer` 组件不会更新。`secondsPassed`的值将来会发生改变，
+所以我们需要在组件**中**访问它。或者换句话说: 值需要**通过引用**来传递而不是通过(字面量)值来传递。
 
 ## ES5 支持
 
@@ -59,10 +59,10 @@ const Timer = observer(({ timerData }) =>
 
 ## 可观察的局部组件状态
 
-就像普通类一样，你可以通过使用 `@observable` 装饰器在组件上引入可观察属性。
-这意味着你可以在组件中拥有本地状态，而不需要通过 React 的冗长和强制性的 `setState` 机制来管理，但是功能同样强大。
-响应式状态会被 `render` 提取，但不会显示调用其它 React 声明周期方法，像 `componentShouldUpdate` 或 `componentWillUpdate`。
-如果你需要用到这些，只是使用正常的基于 `state` 的API就好了。
+就像普通类一样，你可以通过使用 `@observable` 装饰器在React组件上引入可观察属性。
+这意味着你可以在组件中拥有功能同样强大的本地状态(local state)，而不需要通过 React 的冗长和强制性的 `setState` 机制来管理。
+响应式状态会被 `render` 提取调用，但不会调用其它 React 的生命周期方法，比如 `componentShouldUpdate` 或 `componentWillUpdate`。
+如果你需要用到这些，只是使用正常的React `state` 的API就好了。
 
 上面的例子还可以这样写:
 
@@ -91,9 +91,9 @@ React.render(<Timer />, document.body)
 
 ## 将 `observer` 连接到 store
 
-`mobx-react` 包还提供了 `Provider` 组件，它使用了 React 的上下文机制，可以用来向下传递 store。
-要连接到这些 store，传一个 store 名称的数组给 `observer`，这使得 store 可以作为 props 使用。
-支持使用装饰器 `@observer(["store"]) class ...` 或者函数 `observer(["store"], React.createClass({ ...`。
+`mobx-react` 包还提供了 `Provider` 组件，它使用了 React 的上下文(context)机制，可以用来向下传递 `stores`。
+要连接到这些 stores，需要传递一个 stores 名称的数组给 `observer`，这使得 stores 可以作为组件的 `props` 使用。
+这些都可以通过使用装饰器 `@observer(["store"]) class ...` 或者函数 `observer(["store"], React.createClass({ ...`来提供。
 
 示例:
 
@@ -127,25 +127,25 @@ colors.foreground = 'blue';
 
 ## 何时使用 `observer`?
 
-最简单的经验法则是: _所有渲染 observable 数据的组件_。
-如果你不想将组件标记为 observer，例如为了减少通用组件包的依赖性，请确保只传递普通数据。
+简单来说: _所有渲染 observable 数据的组件_。
+如果你不想将组件标记为 observer，例如为了减少通用组件包的依赖，请确保只传递普通数据。
 
 使用 `@observer` 的话，不再需要从渲染目的上来区分是“智能组件”还是“无脑”组件。
-在事件处理、发起请求等方面，它仍然是一个很好的概念分离。
-当所有组件它们**自己的**依赖改变时，组件自己负责更新。
-它的开销是可以忽略的，它确保每当你开始使用 observable 数据时，组件将响应它。
+在组件的事件处理、发起请求等方面，它也是一个很好的分离关注点。
+当所有组件它们**自己的**依赖项有变化时，组件自己会响应更新。
+而它的计算开销是可以忽略的，并且它会确保不管何时,只要当你开始使用 observable 数据时，组件都将会响应它的变化。
 更多详情，请参见 [这里](https://www.reddit.com/r/reactjs/comments/4vnxg5/free_eggheadio_course_learn_mobx_react_in_30/d61oh0l)。
 
 ## `observer` 和 `PureRenderMixin`
-`observer` 还可以防止当组件的 *props* 只是浅改变时的重新渲染，如果传递给组件的数据是响应式的，这是很有意义的。
-这个行为与 [React PureRender mixin](https://facebook.github.io/react/docs/pure-render-mixin.html) 相似，除了 *state* 的更改仍然总是被处理。
-如果一个组件提供了它自己的 `shouldComponentUpdate`，那么这个是高优先级的。
+如果传递给组件的数据是响应式的,`observer` 还可以防止当组件的 *props* 只是浅改变时的重新渲染，这是很有意义的。
+这个行为与 [React PureRender mixin](https://facebook.github.io/react/docs/pure-render-mixin.html) 相似，不同在于这里的 *state* 的更改仍然会被处理。
+如果一个组件提供了它自己的 `shouldComponentUpdate`，这个方法会被优先调用。
 想要更详细的解释，请参见这个 [github issue](https://github.com/mobxjs/mobx/issues/101)。
 
 ## `componentWillReact` (生命周期钩子)
 
 React 组件通常在新的堆栈上渲染，这使得通常很难弄清楚是什么**导致**组件的重新渲染。
-当使用 `mobx-react` 时可以定义一个新生命周期钩子 `componentWillReact`(一语双关)。当组件因为它观察的数据发生了改变，它会安排重新渲染，这个时候 `componentWillReact` 会被触发。这使得它很容易追溯渲染并找到导致渲染的操作。
+当使用 `mobx-react` 时可以定义一个新的生命周期钩子函数 `componentWillReact`(一语双关)。当组件因为它观察的数据发生了改变，它会安排重新渲染，这个时候 `componentWillReact` 会被触发。这使得它很容易追溯渲染并找到导致渲染的操作(action)。
 
 ```javascript
 import {observer} from "mobx-react";
@@ -176,11 +176,11 @@ import {observer} from "mobx-react";
 
 ## observer 组件特性
 
-* Observer 仅订阅在上次渲染期间活跃使用的数据结构。这意味着你不能订阅不足或者过度订阅。甚至可以在渲染中使用仅在未来时间段可用的数据。 这是异步加载数据的理想选择。
+* Observer 仅订阅在上次渲染期间活跃使用的数据结构。这意味着你不会订阅不足(under-subscribe)或者过度订阅(over-subscribe)。你甚至可以在渲染方法中使用仅在未来时间段可用的数据。 这是异步加载数据的理想选择。
 * 你不需要声明组件将使用什么数据。相反，依赖关系在运行时会确定并以非常细粒度的方式进行跟踪。
 * 通常，响应式组件没有或很少有状态，因为在与其他组件共享的对象中封装(视图)状态通常更方便。但你仍然可以自由地使用状态。
 * `@observer` 以和 `PureRenderMixin` 同样的方式实现了 `shouldComponentUpdate`，因此子组件可以避免不必要的重新渲染。
-* 响应式组件单方向加载数据，即使子组件要重新渲染，父组件也不会进行不必要地重新渲染。
+* 响应式组件单方面加载数据，即使子组件要重新渲染，父组件也不会进行不必要地重新渲染。
 * `@observer` 不依赖于 React 的上下文系统。
 * mobx-react@4+ 中，observer 组件的props 对象和 state 对象都会自动地转变为 observable，这使得创建 @computed 属性更容易，@computed 属性是根据组件内部的 props 推导得到的。如果在 `@observer` 组件中包含 reaction(例如 `autorun`) 的话，当 reaction 使用的特定属性不再改变时，reaction 是不会再重新运行的，在 reaction 中使用的特定 props 一定要间接引用(例如 `const myProp = props.myProp`)。不然，如果你在 reaction 中引用了 `props.myProp`，那么 props 的**任何**改变都会导致 reaction 的重新运行。对于 React-Router 的典型用例，请参见[这篇文章](https://alexhisen.gitbooks.io/mobx-recipes/content/observable-based-routing.html)。
 
