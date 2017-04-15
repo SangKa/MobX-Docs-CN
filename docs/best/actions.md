@@ -18,9 +18,6 @@ todo.task = "make coffee";
 
 ## 异步动作
 
-Writing asynchronous actions is pretty simple as well.
-You can use observable data structures as a promise.
-This is what happens with the `isLoading` property in the `todoStore` for example:
 编写异步动作同样非常的简单。
 可以使用 observable 数据结构作为 promise。
 示例中 `todoStore` 的 `isLoading` 属性就是这样的:
