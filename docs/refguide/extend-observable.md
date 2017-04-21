@@ -29,7 +29,7 @@ extendObservable(matthew, {
 ## 调节器
 
 [调节器](modifiers.md)可以用来为某个属性定义特殊的行为。
-举例来说， `observable.ref` 创建一个 observable 引用，此引用不用自动将值转变为 observable，并且 `computed` 引入了推导属性:
+举例来说， `observable.ref` 创建一个 observable 引用，此引用不用自动将值转变为 observable，并且 `computed` 引入了衍生属性:
 
 ```javascript
 var Person = function(firstName, lastName) {

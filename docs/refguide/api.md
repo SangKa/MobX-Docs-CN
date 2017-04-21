@@ -4,7 +4,7 @@
 
 # 核心API
 
-MobX 中最重要的API。理解了`observable`、 `computed`、 `reactions` 和 `actions`的话，说明对于Mobx已经足够精通了,在你的应用中使用它吧！
+MobX 中最重要的API。理解了`observable`、 `computed`、 `reactions` 和 `actions`的话，说明对于 Mobx 已经足够精通了,在你的应用中使用它吧！
 
 ## 创建 observables
 
@@ -87,7 +87,7 @@ Observable 值可以是JS基本数据类型、引用类型、普通对象、类�
 * `observable.deep`: 所有  observable 都使用的默认的调节器。它可以把任何指定的、非原始数据类型的、非 observable 的值转换成 observable。
 * `observable.ref`: 禁用自动的 observable 转换，只是创建一个 observable 引用。
 * `observable.shallow`: 只能与集合组合使用。 将任何分配的集合转换为浅 observable (而不是深 observable)的集合。 换句话说, 集合中的值将不会自动变为 observable。
-* `computed`: 创建一个推导属性, 参见 [`computed`](computed-decorator.md)
+* `computed`: 创建一个衍生属性, 参见 [`computed`](computed-decorator.md)
 * `action`: 创建一个动作, 参见 [`action`](action.md)
 
 调节器可以作为装饰器使用:
@@ -146,7 +146,7 @@ const taskStore = observable({
 
 对于一次性动作，可以使用 `runInAction(name?, fn, scope?)` , 它是 `action(name, fn, scope)()` 的语法糖.
 
-## Reactions(反应) & Derivations(推导)
+## Reactions(反应) & Derivations(衍生)
 
 **计算值** 是自动响应状态变化的**值**。
 **反应*** 是自动响应状态变化的**副作用**。
@@ -285,7 +285,7 @@ mobx-react-devtools 是个功能强大的包，它帮助你调查 React 组件�
 * `whyRun(Reaction object / ComputedValue object / disposer function)`
 * `whyRun(object, "computed property name")`
 
-`whyRun` 是个可以在`computed`或 reaction(`autorun`、 `reaction` 或 使用了 `observer` 的 React 组件的 `render` 方法)中使用的小功能，它可以打印出 推导(derivation) 正在运行的原因以及在哪种情况下它会再次运行。
+`whyRun` 是个可以在`computed`或 reaction(`autorun`、 `reaction` 或 使用了 `observer` 的 React 组件的 `render` 方法)中使用的小功能，它可以打印出 衍生(derivation) 正在运行的原因以及在哪种情况下它会再次运行。
 这应该有助于更深入地了解 MobX 运作的时机和原因，并防止一些初学者的错误。
 
 

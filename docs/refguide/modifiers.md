@@ -5,7 +5,7 @@
 * `observable.deep`: 任何 observable 都使用的默认的调节器。它把任何分配的、非原始数据类型的、非 observable 的值转换成 observable。
 * `observable.ref`: 禁用自动的 observable 转换，只是创建一个 observable 引用。
 * `observable.shallow`: 只能与集合组合使用。 将任何分配的集合转换为浅 observable (而不是深 observable)的集合。 换一种说法; 集合中的值将不会自动变为 observable。
-* `computed`: 创建一个推导属性, 参见 [`computed`](computed-decorator.md)
+* `computed`: 创建一个衍生属性, 参见 [`computed`](computed-decorator.md)
 * `action`: 创建一个动作, 参见 [`action`](action.md)
 
 ## 深层可观察性
