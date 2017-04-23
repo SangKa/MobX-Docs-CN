@@ -75,7 +75,7 @@
 
 `action` 装饰器/函数遵循 javascript 中标准的绑定规则。
 但是，Mobx 3引入了 `action.bound` 来自动地将动作绑定到目标对象。
-注意，`(@)action.bound` 与 `action` 不同的是，它不需要一个name参数，名称将始终基于动作绑定的属性。
+注意，与 `action` 不同的是，`(@)action.bound` 不需要一个name参数，名称将始终基于动作绑定的属性。
 
 Example:
 

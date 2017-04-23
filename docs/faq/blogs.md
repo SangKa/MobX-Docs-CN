@@ -29,6 +29,7 @@
 * [如何解耦状态和UI (也称为 你不需要 componentWillMount) - 数据获取、身份认证、路由和测试](https://medium.com/@mweststrate/how-to-decouple-state-and-ui-a-k-a-you-dont-need-componentwillmount-cc90b787aa37#.7zvpxt746)
 * [ReactJS 和 MobX 入门](https://codequs.com/p/HyTu8aIK/getting-started-reactjs-with-mobx/)
 * [Redux vs. MobX 示例 — 第二部分: MobX 的简单性和结论](https://hashnode.com/post/redux-vs-mobx-by-example-part-ii-the-simplicity-of-mobx-and-conclusion-citpp2tbu003za853ua1tx228) - 一个两部分的教程，通过在一个简单的 ES6 + React todo 的应用中分别用 Redux 和 MobX 实现，来进行比较。
+* [使用 MobX + Firebase 仿建 Twitter](https://appendto.com/2017/03/mobx-firebase-create-a-twitter-clone-with-simple-state-management-database/) - 教程展示了如何构建一个简易版的 Twitter 并同步到 Firebase 。本教程适用于使用 MobX + Firebase 的开发者。
 
 ## 解释 MobX 内部运行原理的文章/博客:
 
