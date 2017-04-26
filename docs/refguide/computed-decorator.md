@@ -137,7 +137,7 @@ When using `computed` as modifier or as box, it accepts a second options argumen
 
 ## `@computed.struct` 用来比较结构
 
-`@computed` 装饰器不需要接收参数。如果你行啊创建一个能进行结构比较的计算属性时，请使用 `@computed.struct`。
+`@computed` 装饰器不需要接收参数。如果你想创建一个能进行结构比较的计算属性时，请使用 `@computed.struct`。
 
 ## 错误处理
 
