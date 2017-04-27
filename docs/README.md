@@ -5,7 +5,7 @@
 
 > Github 仓库: [https://github.com/SangKa/mobx-docs-cn](https://github.com/SangKa/mobx-docs-cn)
 
-<img src="docs/mobx.png" alt="logo" height="120" align="right" />
+<img src="mobx.png" alt="logo" height="120" align="right" />
 # MobX
 
 
@@ -43,7 +43,7 @@ _任何源自应用状态的东西都应该自动地获得。_
 
 其中包括UI、数据序列化、服务器通讯，等等。
 
-<img alt="MobX unidirectional flow" src="docs/flow.png" align="center" />
+<img alt="MobX unidirectional flow" src="flow.png" align="center" />
 
 React 和 MobX 是一对强力组合。React 通过提供机制把应用状态转换为可渲染组件树并对其进行渲染。而MobX提供机制来存储和更新应用状态供 React 使用。
 
