@@ -1,4 +1,14 @@
 {
+  "title": "MobX 中文文档",
   "gitbook": "3.2.2",
-  "title": "MobX 中文文档"
+  "plugins": ["github", "edit-link"],
+  "pluginsConfig": {
+    "github": {
+      "url": "https://github.com/SangKa/mobx-docs-cn"
+    },
+    "edit-link": {
+      "base": "https://github.com/SangKa/mobx-docs-cn/tree/master/docs",
+      "label": "完善文档"
+    }
+  }
 }
