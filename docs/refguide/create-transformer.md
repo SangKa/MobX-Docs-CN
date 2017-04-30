@@ -84,7 +84,7 @@ autorunner 触发 `store` 对象的序列化，也就是依次将 boxes 和 arro
 这个可以用来把一个 observable 数据图转换成另外一个 observable 数据图，得到的又可以进行转换...你懂得。
 
 这有个小示例，是对一个响应式文件探测器进行编码，它将在每次更改时进行更新。
-以这种方式构建的数据图通常反应更快，并且与使用你自己的代码更新的推导数据图相比,代码会更为直观，。参见一些示例的[性能测试](https://github.com/mobxjs/mobx/blob/3ea1f4af20a51a1cb30be3e4a55ec8f964a8c495/test/perf/transform-perf.js#L4)。
+以这种方式构建的数据图通常反应更快，并且与使用你自己的代码更新的衍生数据图相比,代码会更为直观，。参见一些示例的[性能测试](https://github.com/mobxjs/mobx/blob/3ea1f4af20a51a1cb30be3e4a55ec8f964a8c495/test/perf/transform-perf.js#L4)。
 
 不同于前一个示例的是，`transformFolder` 在文件夹保持可见的情况下只会运行一次。
 `DisplayFolder` 对象追踪 `Folder` 对象本身相关的东西。

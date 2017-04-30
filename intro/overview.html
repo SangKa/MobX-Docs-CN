@@ -815,7 +815,7 @@ MobX &#x4F1A;&#x4EE5;&#x4E00;&#x79CD;&#x6700;&#x5C0F;&#x9650;&#x5EA6;&#x7684;&#x
     }
 };
 
-React.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">TimerView</span> <span class="hljs-attr">appState</span>=<span class="hljs-string">{appState}</span> /&gt;</span>, document.body);
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">TimerView</span> <span class="hljs-attr">appState</span>=<span class="hljs-string">{appState}</span> /&gt;</span>, document.body);
 </span></code></pre>
 <p>(<code>resetTimer</code> &#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;&#x8BF7;&#x89C1;&#x4E0B;&#x8282;)</p>
 <h2 id="3-&#x66F4;&#x6539;&#x72B6;&#x6001;">3. &#x66F4;&#x6539;&#x72B6;&#x6001;</h2>
@@ -882,7 +882,7 @@ setInterval(action(<span class="hljs-function"><span class="hljs-keyword">functi
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.1. MobX 要点","level":"1.1.1","depth":2,"next":{"title":"1.2. 概念与原则","level":"1.1.2","depth":2,"path":"intro/concepts.md","ref":"intro/concepts.md","articles":[]},"previous":{"title":"1. MobX 介绍","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"1.1. MobX 要点","level":"1.1.1","depth":2,"path":"intro/overview.md","ref":"intro/overview.md","articles":[]},{"title":"1.2. 概念与原则","level":"1.1.2","depth":2,"path":"intro/concepts.md","ref":"intro/concepts.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"intro/overview.md","mtime":"2017-03-28T15:11:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-08T18:09:31.775Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.1. MobX 要点","level":"1.1.1","depth":2,"next":{"title":"1.2. 概念与原则","level":"1.1.2","depth":2,"path":"intro/concepts.md","ref":"intro/concepts.md","articles":[]},"previous":{"title":"1. MobX 介绍","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[{"title":"1.1. MobX 要点","level":"1.1.1","depth":2,"path":"intro/overview.md","ref":"intro/overview.md","articles":[]},{"title":"1.2. 概念与原则","level":"1.1.2","depth":2,"path":"intro/concepts.md","ref":"intro/concepts.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["github","edit-link"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"intro/overview.md","mtime":"2017-04-23T12:50:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-29T09:40:34.401Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -890,6 +890,14 @@ setInterval(action(<span class="hljs-function"><span class="hljs-keyword">functi
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

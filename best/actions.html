@@ -793,10 +793,7 @@ todo.task = <span class="hljs-string">&quot;make coffee&quot;</span>;
 <p>&#x52A8;&#x4F5C;&#x53EA;&#x5E94;&#x8BE5;&#x5728;<strong>&#x4FEE;&#x6539;</strong>&#x72B6;&#x6001;&#x7684;&#x51FD;&#x6570;&#x4E0A;&#x4F7F;&#x7528;&#x3002;
 &#x4EC5;&#x6267;&#x884C;&#x67E5;&#x627E;&#xFF0C;&#x8FC7;&#x6EE4;&#x7B49;&#x64CD;&#x4F5C;&#x7684;&#x51FD;&#x6570;<strong>&#x4E0D;</strong>&#x5E94;&#x8BE5;&#x6807;&#x8BB0;&#x4E3A;&#x52A8;&#x4F5C;&#xFF0C;&#x4EE5;&#x5141;&#x8BB8; MobX &#x8FFD;&#x8E2A;&#x5B83;&#x4EEC;&#x7684;&#x8C03;&#x7528;&#x3002;</p>
 <h2 id="&#x5F02;&#x6B65;&#x52A8;&#x4F5C;">&#x5F02;&#x6B65;&#x52A8;&#x4F5C;</h2>
-<p>Writing asynchronous actions is pretty simple as well.
-You can use observable data structures as a promise.
-This is what happens with the <code>isLoading</code> property in the <code>todoStore</code> for example:
-&#x7F16;&#x5199;&#x5F02;&#x6B65;&#x52A8;&#x4F5C;&#x540C;&#x6837;&#x975E;&#x5E38;&#x7684;&#x7B80;&#x5355;&#x3002;
+<p>&#x7F16;&#x5199;&#x5F02;&#x6B65;&#x52A8;&#x4F5C;&#x540C;&#x6837;&#x975E;&#x5E38;&#x7684;&#x7B80;&#x5355;&#x3002;
 &#x53EF;&#x4EE5;&#x4F7F;&#x7528; observable &#x6570;&#x636E;&#x7ED3;&#x6784;&#x4F5C;&#x4E3A; promise&#x3002;
 &#x793A;&#x4F8B;&#x4E2D; <code>todoStore</code> &#x7684; <code>isLoading</code> &#x5C5E;&#x6027;&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x7684;:</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// ...</span>
@@ -868,7 +865,7 @@ React &#x7EC4;&#x4EF6;&#x7684; render &#x51FD;&#x6570; &#x53EF;&#x4EE5;&#x53D8;&
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"7.3. 编写(异步) actions","level":"1.7.3","depth":2,"next":{"title":"7.4. 优化 React 组件","level":"1.7.4","depth":2,"path":"best/react-performance.md","ref":"best/react-performance.md","articles":[]},"previous":{"title":"7.2. 定义数据存储","level":"1.7.2","depth":2,"path":"best/store.md","ref":"best/store.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"best/actions.md","mtime":"2017-03-14T14:35:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-08T18:09:31.775Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"7.3. 编写(异步) actions","level":"1.7.3","depth":2,"next":{"title":"7.4. 优化 React 组件","level":"1.7.4","depth":2,"path":"best/react-performance.md","ref":"best/react-performance.md","articles":[]},"previous":{"title":"7.2. 定义数据存储","level":"1.7.2","depth":2,"path":"best/store.md","ref":"best/store.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"best/actions.md","mtime":"2017-04-15T01:40:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-29T09:40:34.401Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -876,6 +873,14 @@ React &#x7EC4;&#x4EF6;&#x7684; render &#x51FD;&#x6570; &#x53EF;&#x4EE5;&#x53D8;&
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

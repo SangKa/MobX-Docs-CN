@@ -41,7 +41,7 @@ person.setAge(21);
 稍后添加到对象的属性不会变为可观察的，除非使用 [`extendObservable`](extend-observable.md)。
 * 只有普通的对象可以转变成 observable 。对于非普通对象，构造函数负责初始化 observable 属性。
 要么使用 [`@observable`](observable.md) 注解，要么使用 [`extendObservable`](extend-observable.md) 函数。
-* 属性的 getter 会自动转变成推导属性，就像 [`@computed`](computed-decorator) 所做的。
+* 属性的 getter 会自动转变成衍生属性，就像 [`@computed`](computed-decorator) 所做的。
 * `observable` 是自动递归到整个对象的。在实例化过程中和将来分配给 observable 属性的任何新值的时候。Observable 不会递归到非普通对象中。
 * 这些默认行为能应对95%的场景，但想要更细粒度的控制，比如哪些属性应该转变成可观察的和如何变成可观察的，请参见[调节器](modifiers.md)。
 

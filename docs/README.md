@@ -5,7 +5,7 @@
 
 > Github 仓库: [https://github.com/SangKa/mobx-docs-cn](https://github.com/SangKa/mobx-docs-cn)
 
-<img src="docs/mobx.png" alt="logo" height="120" align="right" />
+<img src="mobx.png" alt="logo" height="120" align="right" />
 # MobX
 
 
@@ -43,7 +43,7 @@ _任何源自应用状态的东西都应该自动地获得。_
 
 其中包括UI、数据序列化、服务器通讯，等等。
 
-<img alt="MobX unidirectional flow" src="docs/flow.png" align="center" />
+<img alt="MobX unidirectional flow" src="flow.png" align="center" />
 
 React 和 MobX 是一对强力组合。React 通过提供机制把应用状态转换为可渲染组件树并对其进行渲染。而MobX提供机制来存储和更新应用状态供 React 使用。
 
@@ -91,7 +91,7 @@ function Todo() {
 
 ### Computed values(计算值)
 
-使用 MobX， 你定义的值可以在相关数据发生变化时自动更新。
+使用 MobX， 你可以定义在相关数据发生变化时自动更新的值。
 通过[`@computed`](http://mobxjs.github.io/mobx/refguide/computed-decorator.html) 装饰器或者利用 `(extend)Observable` 时调用 的getter / setter 函数来进行使用。
 
 ```javascript
@@ -147,7 +147,7 @@ const store = new TodoList();
 ReactDOM.render(<TodoListView todoList={store} />, document.getElementById('mount'));
 ```
 
-`observer` 会将 React (函数)组件转换为它们需要渲染的数据的推导。
+`observer` 会将 React (函数)组件转换为它们需要渲染的数据的衍生。
 当使用 MobX 时没有所谓的智能和无脑组件。
 所有的组件都会以巧妙的方式进行渲染，而只需要一种简单无脑的方式来定义它们。MobX 会确保组件总是在需要的时重新渲染，但仅此而已。所以上面例子中的 `onClick` 处理方法会强制对应的 `TodoView` 进行渲染，如果未完成任务的数量(unfinishedTodoCount)已经改变，它将导致 `TodoListView` 进行渲染。
 可是，如果移除 `Tasks left` 这行代码(或者将它放到另一个组件中)，当点击 `checkbox` 的时候 `TodoListView` 就不再重新渲染。你可以在 [JSFiddle](https://jsfiddle.net/mweststrate/wv3yopo0/) 中自己动手来验证这点。
@@ -182,7 +182,7 @@ _MobX 会对在执行跟踪函数期间读取的任何现有的可观察属性�
 
 当状态更新后，`MobX` 会以一种高效且无障碍的方式处理好剩下的事情。像下面如此简单的语句，已经足够用来自动更新用户界面了。
 
-从技术上层面来讲，并不需要触发事件、调用分派程序或者类似的工作。归根究底 React 组件只是状态的华丽展示，而状态的推导由 MobX 来管理。
+从技术上层面来讲，并不需要触发事件、调用分派程序或者类似的工作。归根究底 React 组件只是状态的华丽展示，而状态的衍生由 MobX 来管理。
 
 ```javascript
 store.todos.push(
@@ -205,7 +205,7 @@ MobX 是状态管理库中侵入性最小的之一。这使得 `MobX`的方法�
 
 ### 保证参照完整性
 
-因为数据不需要标准化，所以 MobX 会自动跟踪状态和推导之间的关系，你可以免费获得参照完整性。渲染通过三级间接寻址访问的数据？
+因为数据不需要标准化，所以 MobX 会自动跟踪状态和衍生之间的关系，你可以免费获得参照完整性。渲染通过三级间接寻址访问的数据？
 
 没有问题，MobX 会跟踪它们，一旦其中一个引用发生了变化，就会重新渲染。作为回报，陈年的老bug已不复存在。作为一个程序员，你可能记不住修改的一些数据可能会影响到的某个角落里看起来毫不相关的组件，但 MobX 不会。
 
@@ -215,13 +215,13 @@ MobX 是状态管理库中侵入性最小的之一。这使得 `MobX`的方法�
 
 ### 细粒度的可观测性是高效的
 
-MobX 构建应用中所有推导的图形，以找到保持最新状态所需的重新计算的最少次数。“推导一切”或许听上去开销很昂贵，但 MobX 构建虚拟推导图以保持推导与状态同步所需的重计算的数量最小化。
+MobX 构建应用中所有衍生的图形，以找到保持最新状态所需的重新计算的最少次数。“衍生一切”或许听上去开销很昂贵，但 MobX 构建虚拟衍生图以保持衍生与状态同步所需的重计算的数量最小化。
 
 事实上，在 Mendix 测试 MobX 时我们发现使用这个库跟踪代码中的关系通常比通过使用手写事件或基于容器组件的“智能”选择器来推送更改更有效率。
 
 原因简单来说是 MobX 将在你的数据上建立起比你作为一个程序员更多细粒度的“监听器”。
 
-其次, MobX 看到推导之间的因果关系，因此它可以为推导排序，使得推导不会运行多次或引入缺陷。
+其次, MobX 看到衍生之间的因果关系，因此它可以为衍生排序，使得衍生不会运行多次或引入缺陷。
 
 想了解这是如何工作的？ 请参见 [深入剖析 MobX](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254)。
 

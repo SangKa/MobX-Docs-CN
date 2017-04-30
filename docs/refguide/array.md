@@ -45,6 +45,7 @@ todos.shift();
 * `clear()` - 从数组中删除所有项。
 * `replace(newItems)` - 用新项替换数组中所有已存在的项。
 * `find(predicate: (item, index, array) => boolean, thisArg?, fromIndex?)` - 基本上等同于 ES7 的 `Array.find` 提议，除了多了一个 `fromIndex` 参数。
+* `findIndex(predicate: (item, index, array) => boolean, thisArg?, fromIndex?)` - 基本上等同于 ES7 的 `Array.findIndex` 提议，除了多了一个 `fromIndex` 参数。
 * `remove(value)` - 通过值从数组中移除一个单个的项。如果项被找到并移除的话，返回 `true` 。
 * `peek()` - 和 `slice()` 类似， 返回一个有所有值的数组并且数组可以放心的传递给其它库。
 

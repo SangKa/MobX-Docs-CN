@@ -2,12 +2,6 @@
 
 _Transaction 已经废弃，建议使用 *action* 或 *runInAction*。_
 
-`transaction(worker: () => void)` can be used to batch a bunch of updates without notifying any observers until the end of the transaction.
-`transaction` takes a single, parameterless `worker` function as argument and runs it.
-No observers are notified until this function has completed.
-`transaction` returns any value that was returned by the `worker` function.
-Note that `transaction` runs completely synchronously.
-Transactions can be nested. Only after completing the outermost `transaction` pending reactions will be run.
 `transaction(worker: () => void)` 可以用来批量更新，而不通知任何观察者，直到事务结束。
 `transaction` 接收一个无参数的 `worker` 函数作为参数并运行它。
 不会通知任何观察者知道这个函数完成运行。

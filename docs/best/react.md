@@ -319,7 +319,7 @@ A common mistake is to store local variables that dereference observables, and t
 
 ## 多个组件将如何渲染
 
-假设我们使用下面的组件来渲染上面的 `message` 对象。
+假设下面的组件是用来渲染上面的 `message` 对象的。
 
 ```javascript
 const Message = observer(({ message }) =>
