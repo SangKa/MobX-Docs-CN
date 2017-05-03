@@ -50,7 +50,7 @@ autorun(() => {
 message.title = "Bar"
 ```
 
-这将如预期一样会作出反应，`title` 属性会被 autorun 间接引用并且发生了改变，所以这个改变是能检测到的。
+这将如预期一样会作出反应，`title` 属性会被 autorun 间接引用并且在之后发生了改变，所以这个改变是能检测到的。
 
 你可以通过在追踪函数内调用 `whyRun()` 方法来验证 MobX 在追踪什么。以上面的函数为例，输出结果如下:
 
@@ -130,7 +130,7 @@ message.likes.push("Jennifer");
 
 这将如预期一样会作出反应。`.length` 指向一个属性。
 注意这会对数组中的**任何**更改做出反应。
-数组不追踪每个索引/属性(如 observable 对象和映射)，而是作为一个整体追踪。
+数组不追踪每个索引/属性(如 observable 对象和映射)，而是将其作为一个整体追踪。
 
 #### 错误的: 在追踪函数内索引越界访问
 
@@ -142,7 +142,7 @@ message.likes.push("Jennifer");
 ```
 
 使用上面的示例数据是会作出反应的，数组的索引计数作为属性访问，但前提条件**必须**是提供的索引小于数组长度。
-MobX 不会追踪还不存在的索引或者对象属性(当使用 observable 映射时除外)。
+MobX 不会追踪还不存在的索引或者对象属性(当使用 observable 映射(map)时除外)。
 所以建议总是使用 `.length` 来检查保护基于数组索引的访问。
 
 #### 正确的: 在追踪函数内访问数组方法
@@ -205,7 +205,7 @@ extendObservable(message, {
 这将**不会**作出反应。MobX 不会对当追踪开始时还不能存在的 observable 属性作出反应。
 如果两个表达式交换下顺序，或者任何其它的 observable 引起 `autorun` 再次运行的话，`autorun` 也会开始追踪 `postDate` 属性了。
 
-#### 正确的: 使用映射中还不能存在的项
+#### 正确的: 使用映射中还不存在的项
 
 ```javascript
 const twitterUrls = observable(asMap({
@@ -250,11 +250,7 @@ autorun(() => {
 })
 message.likes.push("Jennifer");
 ```
-
-This will **not** react, during the execution of the `autorun` no observables where accessed, only during the `setTimeout`.
-In general this is quite obvious and rarely causes issues.
-The notable caveat here is passing renderable callbacks to React components, take for example the following example:
-这将**不会**作出反应。在 `autorun` 执行期间没有访问 observable，只在 `setTimeout` 执行期间访问了。
+这将**不会**作出反应。在 `autorun` 执行期间没有访问到任何 observable，而只在 `setTimeout` 执行期间访问了。
 通常来说，这是相当明显的，很少会导致问题。
 这里需要注意的是将可渲染的回调传递给 React 组件，例如下面的示例:
 
@@ -288,7 +284,6 @@ message.title = "Bar"
 
 ## 避免在本地字段中缓存 observable
 
-A common mistake is to store local variables that dereference observables, and then expect components to react. For example:
 一个常见的错误就是把间接引用的 observable 存储到本地变量，然后认为组件会作出反应。举例来说:
 
 ```javascript
@@ -305,7 +300,7 @@ A common mistake is to store local variables that dereference observables, and t
 }
 ```
 
-组件会对 `author.name` 的变化作出反应，但不会对 `message` 本身的 `.author` 的变化作出反应！因为这个间接引用发生在 `render()` 之外，`render()` 是 `observer` 组件的唯一追踪函数。
+组件会对 `author.name` 的变化作出反应，但不会对 `message` 本身的 `.author` 的变化作出反应！因为这个间接引用发生在 `render()` 之外，而`render()` 是 `observer` 组件的唯一追踪函数。
 注意，即便把组件的 `author` 字段标记为 `@observable` 字段也不能解决这个问题，`author` 仍然是只分配一次。
 这个问题可以简单地解决，方法是在 `render()` 中进行间接引用或者在组件实例上引入一个计算属性:
 
@@ -350,7 +345,7 @@ const Likes = observer(({ likes }) =>
 | `message.author = { name: "Susan"}` | `Message`, `Author` |
 | `message.likes[0] = "Michel"` | `Likes` |
 
-便笺:
+注意:
 1. \* 如果 `Author` 组件是像这样调用的: `<Author author={ message.author.name} />` 。`Message` 会是进行间接引用的组件并对 `message.author.name` 的改变作出反应。尽管如此，`<Author>` 同样会重新渲染，因为它接收到了一个新的值。所以从性能上考虑，越晚进行间接引用越好。
 2. \** 如果 likes 数组里面的是对象而不是字符串，并且它们在它们自己的 `Like` 组件中渲染，那么对于发生在某个具体的 like 中发生的变化，`Likes` 组件将不会重新渲染。
 
