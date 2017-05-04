@@ -822,7 +822,7 @@
 })
 message.title = <span class="hljs-string">&quot;Bar&quot;</span>
 </code></pre>
-<p>&#x8FD9;&#x5C06;&#x5982;&#x9884;&#x671F;&#x4E00;&#x6837;&#x4F1A;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#xFF0C;<code>title</code> &#x5C5E;&#x6027;&#x4F1A;&#x88AB; autorun &#x95F4;&#x63A5;&#x5F15;&#x7528;&#x5E76;&#x4E14;&#x53D1;&#x751F;&#x4E86;&#x6539;&#x53D8;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x6539;&#x53D8;&#x662F;&#x80FD;&#x68C0;&#x6D4B;&#x5230;&#x7684;&#x3002;</p>
+<p>&#x8FD9;&#x5C06;&#x5982;&#x9884;&#x671F;&#x4E00;&#x6837;&#x4F1A;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#xFF0C;<code>title</code> &#x5C5E;&#x6027;&#x4F1A;&#x88AB; autorun &#x95F4;&#x63A5;&#x5F15;&#x7528;&#x5E76;&#x4E14;&#x5728;&#x4E4B;&#x540E;&#x53D1;&#x751F;&#x4E86;&#x6539;&#x53D8;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x6539;&#x53D8;&#x662F;&#x80FD;&#x68C0;&#x6D4B;&#x5230;&#x7684;&#x3002;</p>
 <p>&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728;&#x8FFD;&#x8E2A;&#x51FD;&#x6570;&#x5185;&#x8C03;&#x7528; <code>whyRun()</code> &#x65B9;&#x6CD5;&#x6765;&#x9A8C;&#x8BC1; MobX &#x5728;&#x8FFD;&#x8E2A;&#x4EC0;&#x4E48;&#x3002;&#x4EE5;&#x4E0A;&#x9762;&#x7684;&#x51FD;&#x6570;&#x4E3A;&#x4F8B;&#xFF0C;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;:</p>
 <pre><code class="lang-javascript">autorun(() =&gt; {
     <span class="hljs-built_in">console</span>.log(message.title)
@@ -877,7 +877,7 @@ message.likes.push(<span class="hljs-string">&quot;Jennifer&quot;</span>);
 </code></pre>
 <p>&#x8FD9;&#x5C06;&#x5982;&#x9884;&#x671F;&#x4E00;&#x6837;&#x4F1A;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#x3002;<code>.length</code> &#x6307;&#x5411;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x3002;
 &#x6CE8;&#x610F;&#x8FD9;&#x4F1A;&#x5BF9;&#x6570;&#x7EC4;&#x4E2D;&#x7684;<strong>&#x4EFB;&#x4F55;</strong>&#x66F4;&#x6539;&#x505A;&#x51FA;&#x53CD;&#x5E94;&#x3002;
-&#x6570;&#x7EC4;&#x4E0D;&#x8FFD;&#x8E2A;&#x6BCF;&#x4E2A;&#x7D22;&#x5F15;/&#x5C5E;&#x6027;(&#x5982; observable &#x5BF9;&#x8C61;&#x548C;&#x6620;&#x5C04;)&#xFF0C;&#x800C;&#x662F;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x6574;&#x4F53;&#x8FFD;&#x8E2A;&#x3002;</p>
+&#x6570;&#x7EC4;&#x4E0D;&#x8FFD;&#x8E2A;&#x6BCF;&#x4E2A;&#x7D22;&#x5F15;/&#x5C5E;&#x6027;(&#x5982; observable &#x5BF9;&#x8C61;&#x548C;&#x6620;&#x5C04;)&#xFF0C;&#x800C;&#x662F;&#x5C06;&#x5176;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x6574;&#x4F53;&#x8FFD;&#x8E2A;&#x3002;</p>
 <h4 id="&#x9519;&#x8BEF;&#x7684;-&#x5728;&#x8FFD;&#x8E2A;&#x51FD;&#x6570;&#x5185;&#x7D22;&#x5F15;&#x8D8A;&#x754C;&#x8BBF;&#x95EE;">&#x9519;&#x8BEF;&#x7684;: &#x5728;&#x8FFD;&#x8E2A;&#x51FD;&#x6570;&#x5185;&#x7D22;&#x5F15;&#x8D8A;&#x754C;&#x8BBF;&#x95EE;</h4>
 <pre><code class="lang-javascript">autorun(() =&gt; {
     <span class="hljs-built_in">console</span>.log(message.likes[<span class="hljs-number">0</span>]);
@@ -885,7 +885,7 @@ message.likes.push(<span class="hljs-string">&quot;Jennifer&quot;</span>);
 message.likes.push(<span class="hljs-string">&quot;Jennifer&quot;</span>);
 </code></pre>
 <p>&#x4F7F;&#x7528;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x6570;&#x636E;&#x662F;&#x4F1A;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#x7684;&#xFF0C;&#x6570;&#x7EC4;&#x7684;&#x7D22;&#x5F15;&#x8BA1;&#x6570;&#x4F5C;&#x4E3A;&#x5C5E;&#x6027;&#x8BBF;&#x95EE;&#xFF0C;&#x4F46;&#x524D;&#x63D0;&#x6761;&#x4EF6;<strong>&#x5FC5;&#x987B;</strong>&#x662F;&#x63D0;&#x4F9B;&#x7684;&#x7D22;&#x5F15;&#x5C0F;&#x4E8E;&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#x3002;
-MobX &#x4E0D;&#x4F1A;&#x8FFD;&#x8E2A;&#x8FD8;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x7D22;&#x5F15;&#x6216;&#x8005;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;(&#x5F53;&#x4F7F;&#x7528; observable &#x6620;&#x5C04;&#x65F6;&#x9664;&#x5916;)&#x3002;
+MobX &#x4E0D;&#x4F1A;&#x8FFD;&#x8E2A;&#x8FD8;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x7D22;&#x5F15;&#x6216;&#x8005;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;(&#x5F53;&#x4F7F;&#x7528; observable &#x6620;&#x5C04;(map)&#x65F6;&#x9664;&#x5916;)&#x3002;
 &#x6240;&#x4EE5;&#x5EFA;&#x8BAE;&#x603B;&#x662F;&#x4F7F;&#x7528; <code>.length</code> &#x6765;&#x68C0;&#x67E5;&#x4FDD;&#x62A4;&#x57FA;&#x4E8E;&#x6570;&#x7EC4;&#x7D22;&#x5F15;&#x7684;&#x8BBF;&#x95EE;&#x3002;</p>
 <h4 id="&#x6B63;&#x786E;&#x7684;-&#x5728;&#x8FFD;&#x8E2A;&#x51FD;&#x6570;&#x5185;&#x8BBF;&#x95EE;&#x6570;&#x7EC4;&#x65B9;&#x6CD5;">&#x6B63;&#x786E;&#x7684;: &#x5728;&#x8FFD;&#x8E2A;&#x51FD;&#x6570;&#x5185;&#x8BBF;&#x95EE;&#x6570;&#x7EC4;&#x65B9;&#x6CD5;</h4>
 <pre><code class="lang-javascript">autorun(() =&gt; {
@@ -926,7 +926,7 @@ extendObservable(message, {
 </code></pre>
 <p>&#x8FD9;&#x5C06;<strong>&#x4E0D;&#x4F1A;</strong>&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#x3002;MobX &#x4E0D;&#x4F1A;&#x5BF9;&#x5F53;&#x8FFD;&#x8E2A;&#x5F00;&#x59CB;&#x65F6;&#x8FD8;&#x4E0D;&#x80FD;&#x5B58;&#x5728;&#x7684; observable &#x5C5E;&#x6027;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#x3002;
 &#x5982;&#x679C;&#x4E24;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x4EA4;&#x6362;&#x4E0B;&#x987A;&#x5E8F;&#xFF0C;&#x6216;&#x8005;&#x4EFB;&#x4F55;&#x5176;&#x5B83;&#x7684; observable &#x5F15;&#x8D77; <code>autorun</code> &#x518D;&#x6B21;&#x8FD0;&#x884C;&#x7684;&#x8BDD;&#xFF0C;<code>autorun</code> &#x4E5F;&#x4F1A;&#x5F00;&#x59CB;&#x8FFD;&#x8E2A; <code>postDate</code> &#x5C5E;&#x6027;&#x4E86;&#x3002;</p>
-<h4 id="&#x6B63;&#x786E;&#x7684;-&#x4F7F;&#x7528;&#x6620;&#x5C04;&#x4E2D;&#x8FD8;&#x4E0D;&#x80FD;&#x5B58;&#x5728;&#x7684;&#x9879;">&#x6B63;&#x786E;&#x7684;: &#x4F7F;&#x7528;&#x6620;&#x5C04;&#x4E2D;&#x8FD8;&#x4E0D;&#x80FD;&#x5B58;&#x5728;&#x7684;&#x9879;</h4>
+<h4 id="&#x6B63;&#x786E;&#x7684;-&#x4F7F;&#x7528;&#x6620;&#x5C04;&#x4E2D;&#x8FD8;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x9879;">&#x6B63;&#x786E;&#x7684;: &#x4F7F;&#x7528;&#x6620;&#x5C04;&#x4E2D;&#x8FD8;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x9879;</h4>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> twitterUrls = observable(asMap({
     <span class="hljs-string">&quot;John&quot;</span>: <span class="hljs-string">&quot;twitter.com/johnny&quot;</span>
 }))
@@ -961,10 +961,7 @@ MobX &#x4F1A;&#x8FFD;&#x8E2A;&#x53D1;&#x751F;&#x5728; <code>upperCaseAuthorName<
 })
 message.likes.push(<span class="hljs-string">&quot;Jennifer&quot;</span>);
 </code></pre>
-<p>This will <strong>not</strong> react, during the execution of the <code>autorun</code> no observables where accessed, only during the <code>setTimeout</code>.
-In general this is quite obvious and rarely causes issues.
-The notable caveat here is passing renderable callbacks to React components, take for example the following example:
-&#x8FD9;&#x5C06;<strong>&#x4E0D;&#x4F1A;</strong>&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#x3002;&#x5728; <code>autorun</code> &#x6267;&#x884C;&#x671F;&#x95F4;&#x6CA1;&#x6709;&#x8BBF;&#x95EE; observable&#xFF0C;&#x53EA;&#x5728; <code>setTimeout</code> &#x6267;&#x884C;&#x671F;&#x95F4;&#x8BBF;&#x95EE;&#x4E86;&#x3002;
+<p>&#x8FD9;&#x5C06;<strong>&#x4E0D;&#x4F1A;</strong>&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#x3002;&#x5728; <code>autorun</code> &#x6267;&#x884C;&#x671F;&#x95F4;&#x6CA1;&#x6709;&#x8BBF;&#x95EE;&#x5230;&#x4EFB;&#x4F55; observable&#xFF0C;&#x800C;&#x53EA;&#x5728; <code>setTimeout</code> &#x6267;&#x884C;&#x671F;&#x95F4;&#x8BBF;&#x95EE;&#x4E86;&#x3002;
 &#x901A;&#x5E38;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x662F;&#x76F8;&#x5F53;&#x660E;&#x663E;&#x7684;&#xFF0C;&#x5F88;&#x5C11;&#x4F1A;&#x5BFC;&#x81F4;&#x95EE;&#x9898;&#x3002;
 &#x8FD9;&#x91CC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x5C06;&#x53EF;&#x6E32;&#x67D3;&#x7684;&#x56DE;&#x8C03;&#x4F20;&#x9012;&#x7ED9; React &#x7EC4;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> MyComponent = observer(({ message }) =&gt;
@@ -991,8 +988,7 @@ const TitleRenderer = observer(({ message }) =&gt;
 message.title = &quot;Bar&quot;
 </code></pre>
 <h2 id="&#x907F;&#x514D;&#x5728;&#x672C;&#x5730;&#x5B57;&#x6BB5;&#x4E2D;&#x7F13;&#x5B58;-observable">&#x907F;&#x514D;&#x5728;&#x672C;&#x5730;&#x5B57;&#x6BB5;&#x4E2D;&#x7F13;&#x5B58; observable</h2>
-<p>A common mistake is to store local variables that dereference observables, and then expect components to react. For example:
-&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x7684;&#x9519;&#x8BEF;&#x5C31;&#x662F;&#x628A;&#x95F4;&#x63A5;&#x5F15;&#x7528;&#x7684; observable &#x5B58;&#x50A8;&#x5230;&#x672C;&#x5730;&#x53D8;&#x91CF;&#xFF0C;&#x7136;&#x540E;&#x8BA4;&#x4E3A;&#x7EC4;&#x4EF6;&#x4F1A;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#x3002;&#x4E3E;&#x4F8B;&#x6765;&#x8BF4;:</p>
+<p>&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x7684;&#x9519;&#x8BEF;&#x5C31;&#x662F;&#x628A;&#x95F4;&#x63A5;&#x5F15;&#x7528;&#x7684; observable &#x5B58;&#x50A8;&#x5230;&#x672C;&#x5730;&#x53D8;&#x91CF;&#xFF0C;&#x7136;&#x540E;&#x8BA4;&#x4E3A;&#x7EC4;&#x4EF6;&#x4F1A;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#x3002;&#x4E3E;&#x4F8B;&#x6765;&#x8BF4;:</p>
 <pre><code class="lang-javascript">@observer <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">component</span> </span>{
     author;
     <span class="hljs-keyword">constructor</span>(props) {
@@ -1005,7 +1001,7 @@ message.title = &quot;Bar&quot;
     }
 }
 </code></pre>
-<p>&#x7EC4;&#x4EF6;&#x4F1A;&#x5BF9; <code>author.name</code> &#x7684;&#x53D8;&#x5316;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#xFF0C;&#x4F46;&#x4E0D;&#x4F1A;&#x5BF9; <code>message</code> &#x672C;&#x8EAB;&#x7684; <code>.author</code> &#x7684;&#x53D8;&#x5316;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#xFF01;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x95F4;&#x63A5;&#x5F15;&#x7528;&#x53D1;&#x751F;&#x5728; <code>render()</code> &#x4E4B;&#x5916;&#xFF0C;<code>render()</code> &#x662F; <code>observer</code> &#x7EC4;&#x4EF6;&#x7684;&#x552F;&#x4E00;&#x8FFD;&#x8E2A;&#x51FD;&#x6570;&#x3002;
+<p>&#x7EC4;&#x4EF6;&#x4F1A;&#x5BF9; <code>author.name</code> &#x7684;&#x53D8;&#x5316;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#xFF0C;&#x4F46;&#x4E0D;&#x4F1A;&#x5BF9; <code>message</code> &#x672C;&#x8EAB;&#x7684; <code>.author</code> &#x7684;&#x53D8;&#x5316;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#xFF01;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x95F4;&#x63A5;&#x5F15;&#x7528;&#x53D1;&#x751F;&#x5728; <code>render()</code> &#x4E4B;&#x5916;&#xFF0C;&#x800C;<code>render()</code> &#x662F; <code>observer</code> &#x7EC4;&#x4EF6;&#x7684;&#x552F;&#x4E00;&#x8FFD;&#x8E2A;&#x51FD;&#x6570;&#x3002;
 &#x6CE8;&#x610F;&#xFF0C;&#x5373;&#x4FBF;&#x628A;&#x7EC4;&#x4EF6;&#x7684; <code>author</code> &#x5B57;&#x6BB5;&#x6807;&#x8BB0;&#x4E3A; <code>@observable</code> &#x5B57;&#x6BB5;&#x4E5F;&#x4E0D;&#x80FD;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;<code>author</code> &#x4ECD;&#x7136;&#x662F;&#x53EA;&#x5206;&#x914D;&#x4E00;&#x6B21;&#x3002;
 &#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x5730;&#x89E3;&#x51B3;&#xFF0C;&#x65B9;&#x6CD5;&#x662F;&#x5728; <code>render()</code> &#x4E2D;&#x8FDB;&#x884C;&#x95F4;&#x63A5;&#x5F15;&#x7528;&#x6216;&#x8005;&#x5728;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#x4E0A;&#x5F15;&#x5165;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;:</p>
 <pre><code class="lang-javascript">@observer <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">component</span> </span>{
@@ -1062,7 +1058,7 @@ const Likes = observer(({ likes }) =&gt;
 </tr>
 </tbody>
 </table>
-<p>&#x4FBF;&#x7B3A;:</p>
+<p>&#x6CE8;&#x610F;:</p>
 <ol>
 <li>* &#x5982;&#x679C; <code>Author</code> &#x7EC4;&#x4EF6;&#x662F;&#x50CF;&#x8FD9;&#x6837;&#x8C03;&#x7528;&#x7684;: <code>&lt;Author author={ message.author.name} /&gt;</code> &#x3002;<code>Message</code> &#x4F1A;&#x662F;&#x8FDB;&#x884C;&#x95F4;&#x63A5;&#x5F15;&#x7528;&#x7684;&#x7EC4;&#x4EF6;&#x5E76;&#x5BF9; <code>message.author.name</code> &#x7684;&#x6539;&#x53D8;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#x3002;&#x5C3D;&#x7BA1;&#x5982;&#x6B64;&#xFF0C;<code>&lt;Author&gt;</code> &#x540C;&#x6837;&#x4F1A;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x63A5;&#x6536;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x503C;&#x3002;&#x6240;&#x4EE5;&#x4ECE;&#x6027;&#x80FD;&#x4E0A;&#x8003;&#x8651;&#xFF0C;&#x8D8A;&#x665A;&#x8FDB;&#x884C;&#x95F4;&#x63A5;&#x5F15;&#x7528;&#x8D8A;&#x597D;&#x3002;</li>
 <li>** &#x5982;&#x679C; likes &#x6570;&#x7EC4;&#x91CC;&#x9762;&#x7684;&#x662F;&#x5BF9;&#x8C61;&#x800C;&#x4E0D;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x4EEC;&#x5728;&#x5B83;&#x4EEC;&#x81EA;&#x5DF1;&#x7684; <code>Like</code> &#x7EC4;&#x4EF6;&#x4E2D;&#x6E32;&#x67D3;&#xFF0C;&#x90A3;&#x4E48;&#x5BF9;&#x4E8E;&#x53D1;&#x751F;&#x5728;&#x67D0;&#x4E2A;&#x5177;&#x4F53;&#x7684; like &#x4E2D;&#x53D1;&#x751F;&#x7684;&#x53D8;&#x5316;&#xFF0C;<code>Likes</code> &#x7EC4;&#x4EF6;&#x5C06;&#x4E0D;&#x4F1A;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x3002;</li>
@@ -1114,7 +1110,7 @@ const Likes = observer(({ likes }) =&gt;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4. 理解 MobX 对什么有反应","level":"1.4","depth":1,"next":{"title":"5. 如何(不)使用装饰器","level":"1.5","depth":1,"path":"best/decorators.md","ref":"best/decorators.md","articles":[]},"previous":{"title":"3.4. boxed values","level":"1.3.4","depth":2,"path":"refguide/boxed.md","ref":"refguide/boxed.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"best/react.md","mtime":"2017-04-23T12:52:33.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-29T09:40:34.401Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4. 理解 MobX 对什么有反应","level":"1.4","depth":1,"next":{"title":"5. 如何(不)使用装饰器","level":"1.5","depth":1,"path":"best/decorators.md","ref":"best/decorators.md","articles":[]},"previous":{"title":"3.4. boxed values","level":"1.3.4","depth":2,"path":"refguide/boxed.md","ref":"refguide/boxed.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"best/react.md","mtime":"2017-05-04T07:42:54.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-04T08:03:28.467Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
