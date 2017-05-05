@@ -23,7 +23,7 @@ var appState = observable({
 MobX 会以一种最小限度的方式来更新视图。
 事实上这一点可以节省了你大量的样板文件，并且它有着[令人匪夷所思的高效](https://mendix.com/tech-blog/making-react-reactive-pursuit-high-performing-easily-maintainable-react-apps/)。
 
-通常来说，任何函数都可以成为可以观察自身数据的响应式视图，MobX 可以任何符合ES5的JavaScript环境中应用。
+通常来说，任何函数都可以成为可以观察自身数据的响应式视图，MobX 可以在任何符合ES5的JavaScript环境中应用。
 但是在这所用的示例是 ES6版本的 React 组件视图。
 
 ```javascript
