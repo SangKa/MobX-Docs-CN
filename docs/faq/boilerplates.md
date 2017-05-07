@@ -5,6 +5,7 @@
 * [MobX + React JSFiddle](https://jsfiddle.net/mweststrate/wgbe4guu/)
 * [MobX + React JSFiddle(ES5 版本)](https://jsfiddle.net/rubyred/55oc981v/)
 * [custom-react-scripts](https://www.npmjs.com/package/custom-react-scripts): 让 [create-react-app](https://github.com/facebookincubator/create-react-app) 可以使用装饰器; 添加 `REACT_APP_DECORATORS=true` 到 `.env` 中以启用装饰器。
+* [React + React Router 4 + MobX + i18n](https://github.com/alexvcasillas/react-mobx-router) React Router 4 + MobX + 国际化 的定制版 Create React App 
 * [generator-mobx-react](https://www.npmjs.com/package/generator-mobx-react) MobX + React + Webpack + Babel / Typescript 项目的 Yeoman 生成器
 * [mobx-starter](https://github.com/nightwolfz/mobx-starter): 用于可选同构的 mobx + react 项目的起始基础。 MongoDB 验证和会话、热更新 、react-router
 * [使用异步路由的 React + React-Router 4 + MobX + Webpack 2 的样板文件](https://github.com/mhaagens/react-mobx-react-router4-boilerplate)
