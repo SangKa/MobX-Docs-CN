@@ -865,11 +865,13 @@ autorunner &#x89E6;&#x53D1; <code>store</code> &#x5BF9;&#x8C61;&#x7684;&#x5E8F;&
 <li>&#x8BBE;&#x7F6E;&#x641C;&#x7D22;&#x8FC7;&#x6EE4;&#x5668;&#x5C06;&#x5220;&#x9664;&#x4E0D;&#x5339;&#x914D;&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x6240;&#x6709;&#x8282;&#x70B9;&#xFF0C;&#x9664;&#x975E;&#x5B83;&#x4EEC;&#x6709;&#x4E0E;&#x8FC7;&#x6EE4;&#x5668;&#x5339;&#x914D;&#x7684;&#x540E;&#x4EE3;&#x8282;&#x70B9;&#x3002;</li>
 <li>&#x7B49;&#x7B49;...</li>
 </ol>
-<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Folder</span>(<span class="hljs-params">parent, name</span>) </span>{
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> m = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;mobx&apos;</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Folder</span>(<span class="hljs-params">parent, name</span>) </span>{
     <span class="hljs-keyword">this</span>.parent = parent;
     m.extendObservable(<span class="hljs-keyword">this</span>, {
         name: name,
-        children: m.asFlat([]),
+        children: m.observable.shallow([]),
     });
 }
 
@@ -878,22 +880,22 @@ autorunner &#x89E6;&#x53D1; <code>store</code> &#x5BF9;&#x8C61;&#x7684;&#x5E8F;&
     <span class="hljs-keyword">this</span>.folder = folder;
     m.extendObservable(<span class="hljs-keyword">this</span>, {
         collapsed: <span class="hljs-literal">false</span>,
-        name: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    get name() {
             <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.folder.name;
-        },
-        isVisible: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    },
+        get isVisible() {
             <span class="hljs-keyword">return</span> !<span class="hljs-keyword">this</span>.state.filter || <span class="hljs-keyword">this</span>.name.indexOf(<span class="hljs-keyword">this</span>.state.filter) !== <span class="hljs-number">-1</span> || <span class="hljs-keyword">this</span>.children.some(child =&gt; child.isVisible);
-        },
-        children: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    },
+        get children() {
             <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.collapsed)
                 <span class="hljs-keyword">return</span> [];
             <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.folder.children.map(transformFolder).filter(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">child</span>) </span>{
                 <span class="hljs-keyword">return</span> child.isVisible;
             })
-        },
-        path: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    },
+        get path() {
             <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.folder.parent === <span class="hljs-literal">null</span> ? <span class="hljs-keyword">this</span>.name : transformFolder(<span class="hljs-keyword">this</span>.folder.parent).path + <span class="hljs-string">&quot;/&quot;</span> + <span class="hljs-keyword">this</span>.name;
-        }
+        })
     });
 }
 
@@ -907,9 +909,37 @@ autorunner &#x89E6;&#x53D1; <code>store</code> &#x5BF9;&#x8C61;&#x7684;&#x5E8F;&
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> DisplayFolder(folder, state);
 });
 
+<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5217;&#x8868;</span>
+<span class="hljs-keyword">var</span> stringTransformer = m.createTransformer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">displayFolder</span>) </span>{
+    <span class="hljs-keyword">var</span> path = displayFolder.path;
+    <span class="hljs-keyword">return</span> path + <span class="hljs-string">&quot;\n&quot;</span> +
+        displayFolder.children.filter(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">child</span>) </span>{
+            <span class="hljs-keyword">return</span> child.isVisible;
+        }).map(stringTransformer).join(<span class="hljs-string">&apos;&apos;</span>);
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createFolders</span>(<span class="hljs-params">parent, recursion</span>) </span>{
+    <span class="hljs-keyword">if</span> (recursion === <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">return</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+        <span class="hljs-keyword">var</span> folder = <span class="hljs-keyword">new</span> Folder(parent, i + <span class="hljs-string">&apos;&apos;</span>);
+        parent.children.push(folder);
+        createFolders(folder, recursion - <span class="hljs-number">1</span>);
+    }
+}
+
+createFolders(state.root, <span class="hljs-number">2</span>); <span class="hljs-comment">// 3^2</span>
+
 m.autorun(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     state.displayRoot = transformFolder(state.root);
+    state.text = stringTransformer(state.displayRoot)
+    <span class="hljs-built_in">console</span>.log(state.text)
 });
+
+state.root.name = <span class="hljs-string">&apos;wow&apos;</span>; <span class="hljs-comment">// &#x6539;&#x53D8;&#x6587;&#x4EF6;&#x5939;&#x540D;&#x79F0;</span>
+state.displayRoot.children[<span class="hljs-number">1</span>].collapsed = <span class="hljs-literal">true</span>; <span class="hljs-comment">// &#x6298;&#x53E0;&#x6587;&#x4EF6;&#x5939;</span>
+state.filter = <span class="hljs-string">&quot;2&quot;</span>; <span class="hljs-comment">// &#x641C;&#x7D22;</span>
+state.filter = <span class="hljs-literal">null</span>; <span class="hljs-comment">// &#x53D6;&#x6D88;&#x641C;&#x7D22;</span>
 </code></pre>
 
                                 
@@ -954,7 +984,7 @@ m.autorun(<span class="hljs-function"><span class="hljs-keyword">function</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"8.3. createTransformer","level":"1.8.3","depth":2,"next":{"title":"8.4. expr","level":"1.8.4","depth":2,"path":"refguide/expr.md","ref":"refguide/expr.md","articles":[]},"previous":{"title":"8.2. Atom & Reaction","level":"1.8.2","depth":2,"path":"refguide/extending.md","ref":"refguide/extending.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/create-transformer.md","mtime":"2017-04-23T12:48:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-07T23:38:19.476Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"8.3. createTransformer","level":"1.8.3","depth":2,"next":{"title":"8.4. expr","level":"1.8.4","depth":2,"path":"refguide/expr.md","ref":"refguide/expr.md","articles":[]},"previous":{"title":"8.2. Atom & Reaction","level":"1.8.2","depth":2,"path":"refguide/extending.md","ref":"refguide/extending.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/create-transformer.md","mtime":"2017-05-21T10:47:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-21T11:06:36.301Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
