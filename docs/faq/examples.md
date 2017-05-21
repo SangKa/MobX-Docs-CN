@@ -2,7 +2,7 @@
 
 * [Spectacle editor: 使用 Spectacle 库建立演示文稿的官方编辑器](https://github.com/FormidableLabs/spectacle-editor)
 * [React-Game-Kit](https://github.com/FormidableLabs/react-game-kit)
-* [使用 React + MobX 的 SoundCloud 客户端](https://github.com/rwieruch/favesound-mobx)
+* 使用 React + MobX 的 SoundCloud 客户端：[源码](https://github.com/rwieruch/favesound-mobx) | [在线查看](http://www.favesound.de/)
 * [DWatch - docker 容器管理(Electron + typescript +inversifyJS)](https://github.com/Mercateo/dwatch)
 * Kratelabs 互动地图/地图订购服务 [Demo](https://kratelabs.addxy.com/#/) [Source](https://github.com/KrateLabs/KrateLabs-App)
 * [Google Play Music Desktop Remote](https://github.com/GPMDP/google-play-music-desktop-remote) 远程遥控 Google Play Music Desktop 的 React-Native 应用: MobX + WebSocket.

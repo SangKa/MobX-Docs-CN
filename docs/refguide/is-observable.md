@@ -28,3 +28,16 @@ isObservable(person, "age"); // false
 # isObservableObject
 
 如果给定对象是使用 `mobx.observable(object)` 转变成 observable 对象的则返回 true 。
+
+# isBoxedObservable
+
+Takes an object, returns true if the provided object is a boxed observable. N.b. does not return true for boxed computed values.
+接收一个对象，如果提供的对象是一个装箱的 observable 则返回 true 。注意对于装箱的计算值不返回 true 。
+
+# isComputed
+
+Accepts an `object` and optional `propertyName` argument. Returns `true` if either:
+接收 `object` 和可选的 `propertyName` 参数。如果是下面其中一种情况则返回 `true`：
+
+* 传入的 `object` 是装箱的计算属性
+* 如果 `object` 的 `propertyName` 属性是计算属性。

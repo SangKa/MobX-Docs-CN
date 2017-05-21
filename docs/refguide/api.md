@@ -79,7 +79,7 @@ Observable 值可以是JS基本数据类型、引用类型、普通对象、类�
 
 [&laquo;详情&raquo;](extend-observable.md)
 
-### 调节器 
+### 调节器
 调节器可以作为装饰器或者组合 `extendObservable` 和 `observable.object` 使用，以改变特定属性的自动转换规则。
 
 可用的调节器列表:
@@ -226,8 +226,8 @@ _有一些工具函数可以使得 observable 或者  计算值用起来更方�
 用法: `isObservable(thing, property?)`。如果给定的thing，或者thing指定的`property`是 observable 的话，返回true。
 适用于所有的 observable、计算值和 reaction 的清理函数。[&laquo;详情&raquo;](is-observable)
 
-### `isObservableObject|Array|Map`
-用法: `isObservableObject(thing)`, `isObservableArray(thing)`, `isObservableMap(thing)`. 如果类型匹配的话返回true。
+### `isObservableObject|Array|Map` 和 `isBoxedObservable`
+用法: `isObservableObject(thing)`, `isObservableArray(thing)`, `isObservableMap(thing)`,  `isBoxedObservable(thing)`。 如果类型匹配的话返回true。
 
 ### `isArrayLike`
 用法: `isArrayLike(thing)`。如果给定的thing是 javascript 数组或者 observable (MobX的)数组的话，返回true。
@@ -319,7 +319,7 @@ mobx-react-devtools 是个功能强大的包，它帮助你调查 React 组件�
 
 ### `"mobx-react"` 开发钩子
 `mobx-react` 包提供了以下几个供 `mobx-react-devtools` 使用的附加API:
-* `trackComponents()`: 启用追踪功能,追踪使用了`observer`的 React 组件 
+* `trackComponents()`: 启用追踪功能,追踪使用了`observer`的 React 组件
 * `renderReporter.on(callback)`: 使用 `observer` 的 React 组件每次渲染都会调用callback，并附带相关的时间信息等等
 * `componentByNodeRegistery`: 使用ES6 WeakMap 将 DOMNode 映射到使用 `observer` 的 React 组件实例
 

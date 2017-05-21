@@ -24,7 +24,7 @@
 * [如何使用 Jest 测试 React 和 MobX](https://semaphoreci.com/community/tutorials/how-to-test-react-and-mobx-with-jest?utm_content=buffer15b42&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer)
 * [使用 OnsenUI、Horizon 和 MobX 构建实时聊天应用](http://tutorials.pluralsight.com/html-css/real-time-chat-app-with-onsenui-and-horizon?hearted=1)
 * [React Native + MobX 入门](https://medium.com/@dabit3/react-native-with-mobx-getting-started-ba7e18d8ff44#.uge82y49s)
-* [MobX React: 更简单的 React 状态管理](http://www.robinwieruch.de/mobx-react/?utm_content=bufferd1bb1&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer)。 本教程是 SoundCloud 客户端从 React+Redux 转换为 React+MobX。
+* [SoundCloud 客户端如何从 Redux 重构成 Mobx](http://www.robinwieruch.de/mobx-react/?utm_content=bufferd1bb1&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer)。 如何将 SoundCloud 客户端从 React+Redux 转换成 React+MobX。
 * [Serializr 介绍: 如何轻松地序列化和反序列化对象图](https://medium.com/@mweststrate/introducing-serializr-serializing-and-deserializing-object-graphs-with-ease-8833c3fcea02#.lghi3ybjm)
 * [如何解耦状态和UI (也称为 你不需要 componentWillMount) - 数据获取、身份认证、路由和测试](https://medium.com/@mweststrate/how-to-decouple-state-and-ui-a-k-a-you-dont-need-componentwillmount-cc90b787aa37#.7zvpxt746)
 * [ReactJS 和 MobX 入门](https://codequs.com/p/HyTu8aIK/getting-started-reactjs-with-mobx/)
