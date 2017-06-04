@@ -1,7 +1,7 @@
 {
   "title": "MobX 中文文档",
   "gitbook": "3.2.2",
-  "plugins": ["github", "edit-link"],
+  "plugins": ["github", "edit-link", "copy-code-button", "github-buttons"],
   "pluginsConfig": {
     "github": {
       "url": "https://github.com/SangKa/mobx-docs-cn"
@@ -9,6 +9,14 @@
     "edit-link": {
       "base": "https://github.com/SangKa/mobx-docs-cn/tree/master/docs",
       "label": "完善文档"
+    },
+    "github-buttons": {
+      "repo": "SangKa/mobx-docs-cn",
+      "types": [
+        "star",
+        "fork"
+      ],
+      "size": "small"
     }
   }
 }
