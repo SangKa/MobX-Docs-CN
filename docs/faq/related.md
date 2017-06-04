@@ -30,6 +30,7 @@
 * [mobx-autorun-async-immediate](https://github.com/dettier/mobx-autorun-async-immediate) 可以去抖(debounce) 的 MobX autorun 函数，并且可以首次同步调用
 * [Smalldots MobX Store](https://github.com/smalldots/mobx-store) MobX 的 Store API
 * [mobx-roof](https://github.com/mobx-roof/mobx-roof) 简单、基于 MobX 的 React MVVM 框架
+* [mobx-react-intl](https://github.com/Sqooba/mobx-react-intl) react-intl 提供者和 mobx 的 store
 * [mobx-translate](https://github.com/tomaash/mobx-translate) 简单的 MobX 翻译库
 * [react-mobx-translatable](https://github.com/infinum/react-mobx-translatable) 使 React 组件可以使用 MobX 进行翻译。可以在服务器(SSR)和浏览器中使用。
 * [mobx-logger](https://github.com/winterbe/mobx-logger) 通过记录正确的信息，总是知道你的 MobX 应用中真正发生了什么。
