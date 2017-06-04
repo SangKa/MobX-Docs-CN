@@ -49,6 +49,7 @@
         
     
     
+    
     <meta name="HandheldFriendly" content="true"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -62,6 +63,17 @@
     
     <link rel="prev" href="blogs.html" />
     
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"};
+    </script>
 
     </head>
     <body>
@@ -815,6 +827,7 @@
 <li><a href="https://github.com/dettier/mobx-autorun-async-immediate" target="_blank">mobx-autorun-async-immediate</a> &#x53EF;&#x4EE5;&#x53BB;&#x6296;(debounce) &#x7684; MobX autorun &#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x9996;&#x6B21;&#x540C;&#x6B65;&#x8C03;&#x7528;</li>
 <li><a href="https://github.com/smalldots/mobx-store" target="_blank">Smalldots MobX Store</a> MobX &#x7684; Store API</li>
 <li><a href="https://github.com/mobx-roof/mobx-roof" target="_blank">mobx-roof</a> &#x7B80;&#x5355;&#x3001;&#x57FA;&#x4E8E; MobX &#x7684; React MVVM &#x6846;&#x67B6;</li>
+<li><a href="https://github.com/Sqooba/mobx-react-intl" target="_blank">mobx-react-intl</a> react-intl &#x63D0;&#x4F9B;&#x8005;&#x548C; mobx &#x7684; store</li>
 <li><a href="https://github.com/tomaash/mobx-translate" target="_blank">mobx-translate</a> &#x7B80;&#x5355;&#x7684; MobX &#x7FFB;&#x8BD1;&#x5E93;</li>
 <li><a href="https://github.com/infinum/react-mobx-translatable" target="_blank">react-mobx-translatable</a> &#x4F7F; React &#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; MobX &#x8FDB;&#x884C;&#x7FFB;&#x8BD1;&#x3002;&#x53EF;&#x4EE5;&#x5728;&#x670D;&#x52A1;&#x5668;(SSR)&#x548C;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4F7F;&#x7528;&#x3002;</li>
 <li><a href="https://github.com/winterbe/mobx-logger" target="_blank">mobx-logger</a> &#x901A;&#x8FC7;&#x8BB0;&#x5F55;&#x6B63;&#x786E;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x603B;&#x662F;&#x77E5;&#x9053;&#x4F60;&#x7684; MobX &#x5E94;&#x7528;&#x4E2D;&#x771F;&#x6B63;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;&#x3002;</li>
@@ -874,7 +887,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6.2. 相关项目","level":"1.6.2","depth":2,"next":{"title":"6.3. 案例项目","level":"1.6.3","depth":2,"path":"faq/examples.md","ref":"faq/examples.md","articles":[]},"previous":{"title":"6.1. 教程、视频和博客","level":"1.6.1","depth":2,"path":"faq/blogs.md","ref":"faq/blogs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"faq/related.md","mtime":"2017-03-10T15:40:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-21T11:06:36.301Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6.2. 相关项目","level":"1.6.2","depth":2,"next":{"title":"6.3. 案例项目","level":"1.6.3","depth":2,"path":"faq/examples.md","ref":"faq/examples.md","articles":[]},"previous":{"title":"6.1. 教程、视频和博客","level":"1.6.1","depth":2,"path":"faq/blogs.md","ref":"faq/blogs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"faq/related.md","mtime":"2017-06-04T09:03:53.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-04T11:55:21.558Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -889,6 +902,14 @@
     
         
         <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
         
     
         
