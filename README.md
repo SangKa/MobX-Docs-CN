@@ -14,3 +14,4 @@
 
 * [dive2Pro](https://github.com/dive2Pro)
 * [Miloas](https://github.com/Miloas)
+* [阿卡琳](https://github.com/hufan-akari)
