@@ -3,7 +3,7 @@
 ## `observable.map(values)`
 
 `observable.map(values?)` - 创建一个动态键的 observable 映射。
-如果你不想只对一个特定项的更改做出反应，而是对添加或删除该项做出反应的话，那么 observable 映射会非常有用。
+如果你不但想对一个特定项的更改做出反应，而且对添加或删除该项也做出反应的话，那么 observable 映射会非常有用。
 `observable.map(values)` 中的 values 可以是对象、 数组或者字符串键的 [ES6 map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)。
 与 ES6 map 不同的是，键只能是字符串。
 
