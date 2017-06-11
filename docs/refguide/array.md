@@ -34,7 +34,7 @@ todos.shift();
 实际上，这些数组能像原生数组一样很好的工作，并且支持所有的原生方法，包括从索引的分配到包含数组长度。
 
 请记住无论如何 `Array.isArray(observable([]))` 都将返回 `false` ，所以无论何时当你需要传递 observable 数组到外部库时，通过使用 `array.slice()` **在 observable 数组传递给外部库或者内置方法前创建一份浅拷贝**(无论如何这都是最佳实践)总会是一个好主意。
-换句话说，`Array.isArray(observable([]).slice())` 会返回 `ture`。
+换句话说，`Array.isArray(observable([]).slice())` 会返回 `true`。
 
 不同于 `sort` 和 `reverse` 函数的内置实现，observableArray.sort 和 observableArray.reverse 不会改变数组本身，而只是返回一个排序过/反转过的拷贝。
 
