@@ -110,7 +110,7 @@ const disposer2 = observe(person, "lastName", (change) => {
 | | | removedCount | 删除项的数量 | √ | √ |
 | | | added | 添加到数组中的项 | √ | √ |
 | | | removed | 数组中移除的项 | | |
-| | | addCount | 添加项的数量 | | |
+| | | addedCount | 添加项的数量 | | |
 | | update | index | 更新的单个项的索引 | √ | |
 | | | newValue | (将)分配的新值 | √ | √ |
 | | | oldValue | 被替换的值 | | |
