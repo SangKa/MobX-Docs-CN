@@ -10,8 +10,9 @@
 
 ### 贡献者列表
 
-> 感谢各位所做出的贡献
+> 按时间顺序排列
 
-* [dive2Pro](https://github.com/dive2Pro)
-* [Miloas](https://github.com/Miloas)
-* [阿卡琳](https://github.com/hufan-akari)
+感谢各位所做出的贡献!!!
+
+| [<img src="https://avatars2.githubusercontent.com/u/6177271?v=3" width="100px;"/><br /><sub>SangKa.Z</sub>](https://github.com/SangKa) | [<img src="https://avatars3.githubusercontent.com/u/23192045?v=3" width="100px;"/><br /><sub>dive2Pro</sub>](https://github.com/dive2Pro) | [<img src="https://avatars1.githubusercontent.com/u/11530682?v=3" width="100px;"/><br /><sub>Miloas</sub>](https://github.com/Miloas)| [<img src="https://avatars2.githubusercontent.com/u/7829098?v=3" width="100px;"/><br /><sub>阿卡琳</sub>](https://github.com/hufan-akari) |
+| :---: | :---: | :---: | :---: |
