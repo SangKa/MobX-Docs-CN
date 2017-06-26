@@ -23,7 +23,7 @@ numbers.push(4);
 
 disposer();
 numbers.push(5);
-// 不会再输入任何值。`sum` 不会再重新计算。
+// 不会再输出任何值。`sum` 不会再重新计算。
 ```
 
 ## 错误处理
