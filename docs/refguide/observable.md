@@ -15,7 +15,7 @@ Observable 值可以是JS基本数据类型、引用类型、普通对象、类�
 乍看之下，这些规则可能看上去很复杂，但实际上实践当中你会发现他们是非常直观的。
 
 一些建议:
-* 要创建键是动态的对象时使用 `asMap` 调节器！对象上只有初始化时便存在的属性会转换成可观察的，尽管新添加的属性可以通过使用 extendObservable 转换成可观察的。
+* 要创建 **键是动态的对象** 时使用 [Observable Map](map.md)！对象上只有初始化时便存在的属性会转换成可观察的，尽管新添加的属性可以通过使用 extendObservable 转换成可观察的。
 * 要想使用 `@observable` 装饰器，首先要确保 在你的编译器(babel 或者 typescript)中 [装饰器是启用的](http://mobxjs.github.io/mobx/refguide/observable-decorator.html)。
 * 默认情况下将一个数据结构转换成可观察的是**有感染性的**，这意味着 `observable` 被自动应用于数据结构包含的任何值，或者将来会被该数据结构包含的值。这个行为可以通过使用 *modifiers* 来更改。
 
