@@ -11,7 +11,7 @@ MobX 通常会对你期望的东西做出反应。
 * **“可追踪函数”** 是 `computed` 表达式、observer 组件的 `render()` 方法和 `when`、`reaction` 和 `autorun` 的第一个入参函数。
 * **“其间(during)”** 意味着只追踪那些在函数执行时被读取的 observable 。这些值是否由追踪函数直接或间接使用并不重要。
 
-换句话所，MobX 不会对其作出反应:
+换句话说，MobX 不会对其作出反应:
  * 从 observable 获取的值，但是在追踪函数之外
  * 在异步调用的代码块中读取的 observable
 
