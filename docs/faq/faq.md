@@ -50,3 +50,7 @@ MobX 同样可以在服务器端使用，并且它已经可以和 jQuery (参见
 
 当然可以，加入 reactiflux 频道或签出代码。或者，提交一个 issue，以激励我做一些更好的规划 :)。
 还可以参见这篇 [Medium 文章](https://medium.com/@mweststrate/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254)。
+
+##### 我可以在哪找到更多的 MobX 资源?
+
+我们已经在 [官方的 awesome mobx](https://github.com/mobxjs/awesome-mobx#awesome-mobx) 中编辑了大量各种类型的有帮助的资源列表。如果你觉得它缺少某些资源的话，请开启 [issue](https://github.com/mobxjs/awesome-mobx/issues/new) 或 [pull request](https://github.com/mobxjs/awesome-mobx/compare) 来描述你想要寻找或分享您所添加的链接 :) 。

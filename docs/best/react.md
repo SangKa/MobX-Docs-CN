@@ -208,9 +208,9 @@ extendObservable(message, {
 #### 正确的: 使用映射中还不存在的项
 
 ```javascript
-const twitterUrls = observable(asMap({
+const twitterUrls = observable.map({
     "John": "twitter.com/johnny"
-}))
+})
 
 autorun(() => {
     console.log(twitterUrls.get("Sara"))
