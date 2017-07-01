@@ -11,7 +11,7 @@
 * `@action.bound(function() {})`
 
 任何应用都有动作。动作是任何用来修改状态的东西。
-使用MobX你可以在代码中显式的标记出动作所在的位置。
+使用MobX你可以在代码中显式地标记出动作所在的位置。
 动作可以有助于更好的组织代码。
 它接收一个函数并在用 `untracked`、`transaction` 和 `allowStateChanges` 包装后返回它。
 建议在任何更改 observable 或者有副作用的函数上使用动作。
