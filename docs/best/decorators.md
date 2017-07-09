@@ -17,6 +17,7 @@
 **TypeScript**
 
 启用 `tsconfig.json` 文件中的 `experimentalDecorators` 编译器选项，或者把 `--experimentalDecorators` 作为标识传给编译器。
+你必须将 `target` 选项配置成 `es5`+ (es5, es6, ...) 或通过 `--target` 标识。
 
 **Babel:**
 
@@ -44,6 +45,7 @@ babel 设置有问题？请先查看这个 [issue](https://github.com/mobxjs/mob
 
 ## 装饰器的局限性
 
+* typescript target 配置最低限度必须是 es5
 * reflect-metadata https://github.com/mobxjs/mobx/issues/534
 * `create-react-app` 本身不支持装饰器。为了解决这个问题，可以使用 eject 或 [custom-react-scripts](https://www.npmjs.com/package/custom-react-scripts) ([博客](https://medium.com/@kitze/configure-create-react-app-without-ejecting-d8450e96196a#.n6xx12p5c))
 * Next.JS 目前还不支持装饰器，参见这个 [issue](https://github.com/zeit/next.js/issues/26)

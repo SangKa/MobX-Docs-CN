@@ -7,6 +7,8 @@
 `observable.map(values)` 中的 values 可以是对象、 数组或者字符串键的 [ES6 map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)。
 与 ES6 map 不同的是，键只能是字符串。
 
+通过 ES6 Map 构造函数，你可以使用 `observable(new Map())` 或使用装饰器 `@observable map = new Map()` 的类属性来初始化 observable 映射 。
+
 下列 observable 映射所暴露的方法是依据 [ES6 Map 规范](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map):
 
 * `has(key)` - 返回映射是否有提供键对应的项。注意键的存在本身就是可观察的。
