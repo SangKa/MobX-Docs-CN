@@ -124,20 +124,30 @@ var disposer = upperCaseName.observe(change => console.log(change.newValue));
 name.set("Dave");
 // 输出: 'DAVE'
 ```
-
 ## `computed` 的选项
 
-When using `computed` as modifier or as box, it accepts a second options argument with the following optional arguments:
 当使用 `computed` 作为调节器或者盒子，它接收的第二个选项参数对象，选项参数对象有如下可选参数:
 
 * `name`: 字符串, 在 spy 和 MobX 开发者工具中使用的调试名称
 * `context`: 在提供的表达式中使用的 `this`
 * `setter`: 要使用的setter函数。 没有 setter 的话无法为计算值分配新值。 如果传递给 `computed` 的第二个参数是一个函数，那么就把会这个函数作为 setter
-* `compareStructural`: 默认值是 `false`。 当为 true 时，表达式的输出在结果上与先前的值进行比较，然后通知任何观察者相关的更改。 这确保了计算的观察者不用重新评估返回的新结构是否等于原始结构。 这在使用点、矢量或颜色结构时非常有用。
+* `compareStructural`: 默认值是 `false`。 当为 true 时，表达式的输出在结果上与先前的值进行比较，然后通知任何观察者相关的更改。 这确保了计算的观察者不用重新评估返回的新结构是否等于原始结构。 这在使用点、矢量或颜色结构时非常有用。通过将 `equals` 选项指定为 `comparer.structural` 可以实现同样的行为。
+* `equals`: 默认值是 `comparer.default` 。它充当比较前一个值和后一个值的比较函数。如果这个函数认为前一个值和后一个值是相等的，那么观察者就不会重新评估。这在使用结构数据和来自其他库的类型时很有用。例如，一个 computed 的 [moment](https://momentjs.com/) 实例可以使用 `(a, b) => a.isSame(b)` 。此选项如果指定的话，会覆盖 `compareStructural` 选项。
 
-## `@computed.struct` 用来比较结构
+## `@computed.struct` 用于比较结构
 
 `@computed` 装饰器不需要接收参数。如果你想创建一个能进行结构比较的计算属性时，请使用 `@computed.struct`。
+
+## `@computed.equals` 用于自定义比较
+
+如果你想创建一个使用自定义比较的计算属性，请使用 `@computed.equals(comparer)`。
+
+## 内置比较器
+
+MobX 提供了三个内置 `comparer`s (比较器) ，它们应该能满足绝大部分需求：
+- `comparer.identity`: 使用恒等 (`===`) 运算符来判定两个值是否相同。
+- `comparer.default`: 等同于 `comparer.identity`，但还认为 `NaN` 等于 `NaN` 。
+- `comparer.structural`: 执行深层结构比较以确定两个值是否相同。
 
 ## 错误处理
 
