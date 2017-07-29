@@ -63,7 +63,7 @@ function Timer() {
 		start: Date.now(),
 		current: Date.now(),
 		get elapsedTime() {
-			return (this.current - this.start) + "seconds"
+			return (this.current - this.start) + "milliseconds"
 		},
         tick: action(function() {
           	this.current = Date.now()
@@ -95,7 +95,7 @@ class Timer {
 	@observable current = Date.now();
 
 	@computed get elapsedTime() {
-		return (this.current - this.start) + "seconds"
+		return (this.current - this.start) + "milliseconds"
 	}
 
 	@action tick() {

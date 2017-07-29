@@ -1,55 +1,206 @@
-# 编写 Actions(动作)
+# 编写异步 Actions (动作)
 
-使用 MobX 来编写动作是很直观的。
-只是简单地创建、更改或删除数据，MobX 将确保变化会由 store 和依赖于这些数据的组件捕获。
-在前一章节中我们所创建的 store 基础上，动作可以如此简单:
+`action` 包装/装饰器只会影响当前运行的函数，而不会影响当前函数调度(但不是调用)的函数！
+这意味着如果你有一个 `setTimeout`、promise 的 `then` 或 `async` 语句，并且在回调函数中某些状态改变了，这些回调函数也应该包装在 `action` 中。创建异步动作很几种方式。不能说某种方式一定比其他的好，但是本章只是列出编写异步代码所用的不同方式。
+我们先从一个基础的示例开始:
 
-```javascript
-var todo = todoStore.createTodo();
-todo.task = "make coffee";
-```
-
-这足以创建一个待办事项，提交到服务器，并相应地更新我们的用户界面。
-
-## 何时使用动作?
-
-动作只应该在**修改**状态的函数上使用。
-仅执行查找，过滤等操作的函数**不**应该标记为动作，以允许 MobX 追踪它们的调用。
-
-## 异步动作
-
-编写异步动作同样非常的简单。
-可以使用 observable 数据结构作为 promise。
-示例中 `todoStore` 的 `isLoading` 属性就是这样的:
+### Promises
 
 ```javascript
-// ...
-	this.isLoading = true;
-	this.transportLayer.fetchTodos().then(fetchedTodos => {
-		fetchedTodos.forEach(json => this.updateTodoFromServer(json));
-		this.isLoading = false;
-	});
-// ...
-```
+mobx.useStrict(true) // 不允许在动作之外进行状态修改
 
-异步动作完成后，只是更新了数据，视图也会更新。
-React 组件的 render 函数 可以变得如此简单:
+class Store {
+	@observable githubProjects = []
+	@state = "pending" // "pending" / "done" / "error"
 
-```javascript
-import {observer} from "mobx-react";
-
-var TodoOverview = observer(function(props) {
-	var todoStore = props.todoStore;
-	if (todoStore.isLoading) {
-		return <div>Loading...</div>;
-	} else {
-		return <div>{
-			todoStore.todos.map(todo => <TodoItem key={todo.id} todo={todo} />)
-		}</div>
+	@action
+	fetchProjects() {
+		this.githubProjects = []
+		this.state = "pending"
+		fetchGithubProjectsSomehow().then(
+			projects => {
+				const filteredProjects = somePreprocessing(projects)
+				this.githubProjects = filteredProjects
+				this.state = "done"
+			},
+			error => {
+				this.state = "error"
+			}
+		)
 	}
-});
+}
 ```
 
-上面的 `TodoOverview` 组件每当 `isLoading` 变化时，或 `isLoading` 为 true 且 `todos` 改变时就会更新。
-注意，我们可以将 `todoStore.isLoading` 替换为 `todoStore.todos.length` 。
-结果是相同的。
+上面的示例会抛出异常，因为传给 `fethGithubProjectsSomehow` promise 的回调函数不是 `fetchProjects` 动作的一部分，因为动作只会应用于当前栈。
+
+首选的简单修复是将回调函数变成动作。(注意绑定在这很重要，以获取正确的 `this`!):
+
+
+```javascript
+class Store {
+	@observable githubProjects = []
+	@state = "pending" // "pending" / "done" / "error"
+
+	@action
+	fetchProjects() {
+		this.githubProjects = []
+		this.state = "pending"
+		fetchGithubProjectsSomehow().then(fetchProjectsSuccess, fetchProjectsError)
+	}
+
+	@action.bound // 回调动作
+	fetchProjectsSuccess(projects) {
+		const filteredProjects = somePreprocessing(projects)
+		this.githubProjects = filteredProjects
+		this.state = "done"
+	}
+	@action.bound // 回调动作
+		fetchProjectsError(error) {
+			this.state = "error"
+		}
+	}
+```
+
+尽管这很整洁清楚，但异步流程复杂后可能会略显啰嗦。另外一种方案是你可以使用 `action` 关键字来包装 promises 回调函数。推荐这么做，但不是强制的，还需要给它们命名:
+
+```javascript
+mobx.useStrict(true) // 不允许在动作之外进行状态修改
+
+class Store {
+	@observable githubProjects = []
+	@state = "pending" // "pending" / "done" / "error"
+
+	@action
+	fetchProjects() {
+		this.githubProjects = []
+		this.state = "pending"
+		fetchGithubProjectsSomehow().then(
+			// 内联创建的动作
+			action("fetchSuccess", projects => {
+				const filteredProjects = somePreprocessing(projects)
+				this.githubProjects = filteredProjects
+				this.state = "done"
+			}),
+			// 内联创建的动作
+			action("fetchError", error => {
+				this.state = "error"
+			})
+		)
+	}
+}
+```
+
+### `runInAction` 工具函数
+
+内联动作的缺点是 TypeScript 无法对其进行类型推导，所以你应该为所有的回调函数定义类型。
+你还可以只在动作中运行回调函数中状态修改的部分，而不是为整个回调创建一个动作。
+这种模式的优势是它鼓励你不要到处写 `action`，而是在整个过程结束时尽可能多地对所有状态进行修改：
+
+```javascript
+mobx.useStrict(true) // 不允许在动作之外进行状态修改
+
+class Store {
+	@observable githubProjects = []
+	@state = "pending" // "pending" / "done" / "error"
+
+	@action
+	fetchProjects() {
+		this.githubProjects = []
+		this.state = "pending"
+		fetchGithubProjectsSomehow().then(
+			projects => {
+				const filteredProjects = somePreprocessing(projects)
+				// 将‘“最终的”修改放入一个异步动作中
+				runInAction(() => {
+					this.githubProjects = filteredProjects
+					this.state = "done"
+				})
+			},
+			error => {
+				// 过程的另一个结局:...
+				runInAction(() => {
+					this.state = "error"
+				})
+			}
+		)
+	}
+}
+```
+
+注意，`runInAction` 还可以给定第一个参数作为名称。`runInAction(f)` 实际上是 `action(f)()` 的语法糖。
+
+### async / await
+
+基于 async / await 的函数当开始使用动作时起初似乎会令人感到困惑。
+因为在词法上它们看起来是同步函数，它给人的印象是 `@action` 应用于整个函数。
+但事实并非若此，因为 async / await 只是围绕基于 promise 过程的语法糖。
+结果是 `@action` 仅应用于代码块，直到第一个 `await` 。
+在每个 `await` 之后，一个新的异步函数将启动，所以在每个 `await` 之后，状态修改代码应该被包装成动作。
+这正是 `runInAction` 再次派上用场的地方:
+
+```javascript
+mobx.useStrict(true) // 不允许在动作之外进行状态修改
+
+class Store {
+	@observable githubProjects = []
+	@state = "pending" // "pending" / "done" / "error"
+
+	@action
+	async fetchProjects() {
+		this.githubProjects = []
+		this.state = "pending"
+		try {
+			const projects = await fetchGithubProjectsSomehow()
+			const filteredProjects = somePreprocessing(projects)
+			// await 之后，再次修改状态需要动作:
+			runInAction(() => {
+				this.state = "done"
+				this.githubProjects = filteredProjects
+			})
+		} catch (error) {
+			runInAction(() => {
+				this.state = "error"
+			})
+		}
+	}
+}
+```
+
+### babel-plugin-mobx-deep-action
+
+如果你使用 babel，有一个插件在可以转译期间扫描 `@action` 方法并自动、正确地包装动作中的所有回调函数及 await 语句: [mobx-deep-action](https://github.com/mobxjs/babel-plugin-mobx-deep-action)。
+
+### Generators & asyncAction
+
+最后，在 [`mobx-utils` 包](https://github.com/mobxjs/mobx-utils)中还有一个 `asyncAction` 工具函数，它其实是使用 generators 来自动地在动作中包装 yield 过的 promises 。优点是它在语法上十分接近 async / await (使用不同的关键字)，并且异步部分不需要手动包装成动作，从而代码非常整洁。
+只要确保每个 `yield` 返回 promise 。
+
+`asyncAction` 可以作为装饰器和函数使用 (就像 `@action`)。
+`asyncAction` 与 MobX 开发者工具结合很好，所以它可以很轻松的追踪异步函数的进程。
+想了解更多详情，请参见 [asyncAction](https://github.com/mobxjs/mobx-utils#asyncaction) 的文档。
+
+```javascript
+import {asyncAction} from "mobx-utils"
+
+mobx.useStrict(true) // 不允许在动作之外进行状态修改
+
+class Store {
+	@observable githubProjects = []
+	@state = "pending" // "pending" / "done" / "error"
+
+	@asyncAction
+	*fetchProjects() { // <- 注意*号，这是一个 generator 函数!
+		this.githubProjects = []
+		this.state = "pending"
+		try {
+			const projects = yield fetchGithubProjectsSomehow() // 用 yield 代替 await
+			const filteredProjects = somePreprocessing(projects)
+			// 异步代码块会被自动包装成动作
+			this.state = "done"
+			this.githubProjects = filteredProjects
+		} catch (error) {
+			this.state = "error"
+		}
+	}
+}
+```

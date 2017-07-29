@@ -1,4 +1,4 @@
-#action
+# action (动作)
 
 用法:
 * `action(fn)`
@@ -13,11 +13,16 @@
 任何应用都有动作。动作是任何用来修改状态的东西。
 使用MobX你可以在代码中显式地标记出动作所在的位置。
 动作可以有助于更好的组织代码。
-它接收一个函数并在用 `untracked`、`transaction` 和 `allowStateChanges` 包装后返回它。
-建议在任何更改 observable 或者有副作用的函数上使用动作。
-结合开发者工具的话，动作还能提供非常有用的调试信息。
-和 [ES 5.1 setters](http://www.ecma-international.org/ecma-262/5.1/#sec-11.1.5) 一起使用 `@action` 装饰器(例如 `@action set propertyName`) 还不支持，尽管 [计算属性的 setter 是自动地动作](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/computed-decorator.md#setters-for-computed-values)。
 
+它接收一个函数并返回具有同样签名的函数。
+但是用 `transaction`、`untracked` 和 `allowStateChanges` 包裹起来，尤其是 `transaction` 的自动应用会产生巨大的性能收益，
+动作会分批处理变化并只在(最外层的)动作完成后通知计算值和反应。
+这将确保在动作完成之前，在动作期间生成的中间值或未完成的值对应用的其余部分是不可见的。
+
+建议对任何修改 observables 或具有副作用的函数使用 `(@)action` 。
+结合开发者工具的话，动作还能提供非常有用的调试信息。
+
+和 [ES 5.1 setters](http://www.ecma-international.org/ecma-262/5.1/#sec-11.1.5) 一起使用 `@action` 装饰器(例如 `@action set propertyName`) 还不支持，尽管 [计算属性的 setter 是自动地动作](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/computed-decorator.md#setters-for-computed-values)。
 
 注意: 当启用**严格模式**时，需要强制使用 `action`，参见 [`useStrict`](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/api.md#usestrict)。
 
@@ -32,6 +37,7 @@
 			.get('https://randomuser.me/api/')
 			.set('Accept', 'application/json')
 			.end(action("createRandomContact-callback", (error, results) => {
+				// ^ 注意: 异步回调函数是单独的动作！
 				if (error)
 					console.error(error);
 				else {
@@ -45,31 +51,18 @@
 	}
 ```
 
-## `async` 动作和 `runInAction`
+## 何时使用动作？
 
-`action` 只会影响当前运行的函数，而不是由当前函数调度(非调用)的函数。
-这意味着如果你有一个 `setTimeout` ，promise 的 `.then` 或 `async` 构造，并且在回调中有一些更多的状态被改变，那些回调也应该应该用 `action` 来包装！
-这就是上面的 `"createRandomContact-callback"` 动作所演示的。
+应该永远只对**修改**状态的函数使用动作。
+只执行查找，过滤器等函数**不**应该被标记为动作，以允许 MobX 跟踪它们的调用。
 
-如果你使用 `async` / `await`，这个有点棘手，因为你不能在 `action` 中只是包装异步函数体。
-在这种情况下，`runInAction` 可以派上用场，把它放在你打算更新状态的地方。
-(但不要在这些块中调用 `await`)。
+注意在上面的示例中，编写异步动作是非常直观的，只需将所有的回调函数标记为 `action` 即可。
+除此之外，MobX 中的异步过程并没有什么特别之处，异步更新只是一个在未来调用的异步动作。
 
-示例:
-```javascript
-@action /*可选的*/ updateDocument = async () => {
-    const data = await fetchDataFromUrl();
-    /* 需要严格模式下，以允许更新状态: */
-    runInAction("update state after fetching data", () => {
-        this.data.replace(data);
-        this.isSaving = true;
-    })
-}
-```
+[**严格模式**](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/api.md#usestrict) 强制所有的状态修改都必须由动作来完成。
+这在大型、长期的代码库中是非常有用的最佳实践。当应用初始化时，简单地调用 `mobx.useStrict(true)`，对于任何不使用动作的状态修改，MobX 都会抛出异常。
 
-`runInAction` 的用法: `runInAction(name?, fn, scope?)`.
-
-如果你使用 babel，这个插件可以帮助你处理异步动作: [mobx-deep-action](https://github.com/mobxjs/babel-plugin-mobx-deep-action)。
+[编写异步动作](https://mobx.js.org/best/actions.html) 章节提供了几个关于如何组织异步动作的语法配方，组合使用 promises、async / await、generators 等等。阅读它以开拓思路！
 
 ## 绑定的动作
 
@@ -107,3 +100,7 @@ setInterval(ticker.increment, 1000)
 ```
 
 _注意: *action.bound* 不要和箭头函数一起使用；箭头函数已经是绑定过的并且不能重新绑定。_
+
+## `runInAction(name?, thunk)`
+
+`runInAction` 是个简单的工具函数，它接收代码块并在(异步的)动作中执行。这对于即时创建和执行动作非常有用，例如在异步过程中。`runInAction(f)` 是 `action(f)()` 的语法糖。

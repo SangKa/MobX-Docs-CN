@@ -26,7 +26,7 @@
 * [7. 贴士与技巧]()
   * [7.1. 常见陷阱与最佳实践](best/pitfalls.md)
   * [7.2. 定义数据存储](best/store.md)
-  * [7.3. 编写(异步) actions](best/actions.md)
+  * [7.3. 编写异步 actions](best/actions.md)
   * [7.4. 优化 React 组件](best/react-performance.md)
   * [7.5. 开发工具](best/devtools.md)
   * [7.6. ES5 / ES6 / TypeScript 语法](best/syntax.md)
