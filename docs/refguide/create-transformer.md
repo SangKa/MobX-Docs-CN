@@ -2,7 +2,7 @@
 
 `createTransformer<A, B>(transformation: (value: A) => B, onCleanup?: (result: B, value?: A) => void): (value: A) => B`
 
-`createTransformer` 将一个函数(此函数把一个值转换为另一个值)转换为响应式且有记忆功能的函数。
+`createTransformer` 将一个函数(此函数值 `A` 转换为值 `B`)转换为响应式且有记忆功能的函数。
 换句话说，如果给 `transformation` 函数一个具体的A值，那么它将计算出B值，只要保持A值不变，那么今后任何时候的转换调用返回的B值也是不变的。
 但是，如果A值改变了，将会重新应用转换，以便相应地更新B值。
 最后但同样重要的是，如果没有人在使用具体A值的转换，则此条转换将从记忆表中移除。

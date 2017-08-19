@@ -45,7 +45,8 @@ class Store {
 	fetchProjects() {
 		this.githubProjects = []
 		this.state = "pending"
-		fetchGithubProjectsSomehow().then(fetchProjectsSuccess, fetchProjectsError)
+		fetchGithubProjectsSomehow().then(this.fetchProjectsSuccess, this.fetchProjectsError)
+
 	}
 
 	@action.bound // 回调动作
