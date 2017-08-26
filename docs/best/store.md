@@ -288,7 +288,7 @@ export class Todo {
 class RootStore {
   constructor() {
     this.userStore = new UserStore(this)
-    this.storeB = new StoreB(this)
+    this.todoStore = new TodoStore(this)
   }
 }
 

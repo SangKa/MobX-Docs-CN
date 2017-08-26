@@ -11,7 +11,7 @@ mobx.useStrict(true) // 不允许在动作之外进行状态修改
 
 class Store {
 	@observable githubProjects = []
-	@state = "pending" // "pending" / "done" / "error"
+	@observable state = "pending" // "pending" / "done" / "error"
 
 	@action
 	fetchProjects() {
@@ -39,7 +39,7 @@ class Store {
 ```javascript
 class Store {
 	@observable githubProjects = []
-	@state = "pending" // "pending" / "done" / "error"
+	@observable state = "pending" // "pending" / "done" / "error"
 
 	@action
 	fetchProjects() {
@@ -69,7 +69,7 @@ mobx.useStrict(true) // 不允许在动作之外进行状态修改
 
 class Store {
 	@observable githubProjects = []
-	@state = "pending" // "pending" / "done" / "error"
+	@observable state = "pending" // "pending" / "done" / "error"
 
 	@action
 	fetchProjects() {
@@ -102,7 +102,7 @@ mobx.useStrict(true) // 不允许在动作之外进行状态修改
 
 class Store {
 	@observable githubProjects = []
-	@state = "pending" // "pending" / "done" / "error"
+	@observable state = "pending" // "pending" / "done" / "error"
 
 	@action
 	fetchProjects() {
@@ -144,7 +144,7 @@ mobx.useStrict(true) // 不允许在动作之外进行状态修改
 
 class Store {
 	@observable githubProjects = []
-	@state = "pending" // "pending" / "done" / "error"
+	@observable state = "pending" // "pending" / "done" / "error"
 
 	@action
 	async fetchProjects() {
@@ -187,7 +187,7 @@ mobx.useStrict(true) // 不允许在动作之外进行状态修改
 
 class Store {
 	@observable githubProjects = []
-	@state = "pending" // "pending" / "done" / "error"
+	@observable state = "pending" // "pending" / "done" / "error"
 
 	@asyncAction
 	*fetchProjects() { // <- 注意*号，这是一个 generator 函数!
