@@ -61,8 +61,8 @@ const Timer = observer(({ timerData }) =>
 
 就像普通类一样，你可以通过使用 `@observable` 装饰器在React组件上引入可观察属性。
 这意味着你可以在组件中拥有功能同样强大的本地状态(local state)，而不需要通过 React 的冗长和强制性的 `setState` 机制来管理。
-响应式状态会被 `render` 提取调用，但不会调用其它 React 的生命周期方法，比如 `componentShouldUpdate` 或 `componentWillUpdate`。
-如果你需要用到这些，只是使用正常的React `state` 的API就好了。
+响应式状态会被 `render` 提取调用，但不会调用其它 React 的生命周期方法，除了 `componentWillUpdate` 和 `componentDidUpdate` 。
+如果你需要用到其他 React 生命周期方法 ，只需使用基于 `state` 的常规 React API 即可。
 
 上面的例子还可以这样写:
 
