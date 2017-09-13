@@ -274,7 +274,7 @@ mobx-react-devtools 是个功能强大的包，它帮助你调查 React 组件�
 
 ### `spy`
 用法: `spy(listener)`.
-注册全局侦查监听器可以监听所有 MobX 中发生的时间。
+注册全局侦查监听器可以监听所有 MobX 中发生的事件。
 它类似于将一个 `observe` 监听器一次性附加到**所有的** observables 上，而且还负责正在运行的动作和计算的通知。
 用于 `mobx-react-devtools` 。
 [&laquo;详情&raquo;](spy.md)
