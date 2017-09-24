@@ -252,7 +252,12 @@ message.likes.push("Jennifer");
 ```
 这将**不会**作出反应。在 `autorun` 执行期间没有访问到任何 observable，而只在 `setTimeout` 执行期间访问了。
 通常来说，这是相当明显的，很少会导致问题。
-这里需要注意的是将可渲染的回调传递给 React 组件，例如下面的示例:
+
+## MobX 只会为 `observer` 组件追踪数据存取，如果数据是直接通过 `render` 进行存取的
+
+一个使用 `observer` 的常见错误是它不会追踪语法上看起来像 `observer` 父组件的数据，但实际上是由不同的组件渲染的。当组件的 render 回调函数在第一个类中传递给另一个组件时，经常会发生这种情况。
+
+看下面这个人造的示例:
 
 ```javascript
 const MyComponent = observer(({ message }) =>
@@ -266,7 +271,8 @@ message.title = "Bar"
 
 起初看上去一切似乎都是没问题的，除了 `<div>` 实际上不是由 `MyComponent`(有追踪的渲染) 渲染的，而是 `SomeContainer`。
 所以要确保 `SomeContainer` 的 title 可以正确对新的 `message.title` 作出反应，`SomeContainer` 应该也是一个 `observer`。
-如果 `SomeContainer` 来自外部库，你也可以通过在自己的无状态 `observer` 组件中包装 `div` 来解决这个问题，并在回调中实例化:
+
+如果 `SomeContainer` 来源于外部库的话，这通常不在你的掌控之中。在这种场景下，你可以用自己的无状态 `observer` 组件来包裹 `div` 解决此问题，或通过利用 `<Observer>`组件:
 
 ```javascript
 const MyComponent = observer(({ message }) =>
@@ -278,6 +284,21 @@ const MyComponent = observer(({ message }) =>
 const TitleRenderer = observer(({ message }) =>
     <div>{message.title}</div>}
 )
+
+message.title = "Bar"
+```
+
+另外一种方法可以避免创建额外组件，它同样适用了 mobx-react 内置的 `Observer` 组件，它不接受参数，只需要单个的 render 函数作为子节点:
+
+```javascript
+const MyComponent = ({ message }) =>
+    <SomeContainer
+        title = {() =>
+            <Observer>
+                {() => <div>{message.title}</div>}
+            </Observer>
+        }
+    />
 
 message.title = "Bar"
 ```

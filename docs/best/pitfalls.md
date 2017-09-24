@@ -2,6 +2,22 @@
 
 使用 MobX 遇到坑了？本章节涵盖了一些 MobX 新手可能会遭遇的一些常见问题。
 
+#### 导入的路径有误
+
+因为 MobX 自带了 TypeScript 的 typings ，一些导入自动完成工具(至少在 VSCode 中是这样的)的自动导入会有问题，像这样:
+
+```javascript
+// 错误的
+import { observable } from "mobx/lib/mobx"
+```
+
+这是不正确的，但却不会总是立即导致运行时错误。所以需要注意。导入 `mobx` 包中任何东西的唯一正确方式是:
+
+```javascript
+// 正确的
+import { observable } from "mobx"
+```
+
 #### 装饰器问题?
 
 有关装饰器的设置提示和限制，请参见 [装饰器](decorators.md) 一节。
@@ -27,6 +43,55 @@
 
 `@observer` 只会增强你正在装饰的组件，而不是内部使用了的组件。
 所以通常你的所有组件都应该是装饰了的。但别担心，这样不会降低效率，相反 `observer` 组件越多，渲染效率越高。
+
+### 不要拷贝 observables 属性并存储在本地
+
+Observer 组件只会追踪在 render 方法中存取的数据。常见的错误的是从 observable 属性中提取数据并存储，这样的数据是不会被追踪的:
+
+```
+class User {
+  @observable name
+}
+
+class Profile extends React.Component {
+  name
+
+  componentWillMount() {
+    // 错误的
+    // 这会解除 user.name 的引用并只拷贝值一次！未来的更新不会被追踪，因为生命周期钩子不是响应的
+    // 像这样的赋值会创建冗余数据
+    this.name = this.props.user.name
+  }
+
+  render() {
+    return <div>{this.name}</div>
+  }
+}
+```
+
+正确的方法通过不将 observables 的值存储在本地(显然，上面的示例很简单，但却是有意为之的)，或通过将其定义为计算属性:
+
+```
+class User {
+  @observable name
+}
+
+class Profile extends React.Component {
+  @computed get name() {
+    // 正确的; 计算属性会追踪 `user.name` 属性
+    return this.props.user.name
+  }
+
+  render() {
+    return <div>{this.name}</div>
+  }
+}
+```
+
+### Render 回调函数**不是** render 方法的一部分
+
+因为 `observer` 只作用于当前组件的 `render` 函数，传递一个 render 回调函数或组件给子组件不会自动地变成响应的。
+想了解更多详情，请参见 [MobX 会对什么作出反应](https://github.com/mobxjs/mobx/blob/gh-pages/docs/best/react.md#mobx-only-tracks-data-accessed-for-observer-components-if-they-are-directly-accessed-by-render) 指南。
 
 ### 间接引用值尽可能晚的使用
 
