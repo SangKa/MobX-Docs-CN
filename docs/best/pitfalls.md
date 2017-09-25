@@ -91,7 +91,7 @@ class Profile extends React.Component {
 ### Render 回调函数**不是** render 方法的一部分
 
 因为 `observer` 只作用于当前组件的 `render` 函数，传递一个 render 回调函数或组件给子组件不会自动地变成响应的。
-想了解更多详情，请参见 [MobX 会对什么作出反应](https://github.com/mobxjs/mobx/blob/gh-pages/docs/best/react.md#mobx-only-tracks-data-accessed-for-observer-components-if-they-are-directly-accessed-by-render) 指南。
+想了解更多详情，请参见 [MobX 会对什么作出反应](https://github.com/SangKa/mobx-docs-cn/blob/master/docs/best/react.md#mobx-只会为-observer-组件追踪数据存取如果数据是直接通过-render-进行存取的) 指南。
 
 ### 间接引用值尽可能晚的使用
 
