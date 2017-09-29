@@ -58,7 +58,7 @@ class Profile extends React.Component {
 
   componentWillMount() {
     // 错误的
-    // 这会解除 user.name 的引用并只拷贝值一次！未来的更新不会被追踪，因为生命周期钩子不是响应的
+    // 这会间接引用 user.name 并只拷贝值一次！未来的更新不会被追踪，因为生命周期钩子不是响应的
     // 像这样的赋值会创建冗余数据
     this.name = this.props.user.name
   }

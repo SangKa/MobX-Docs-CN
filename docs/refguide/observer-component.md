@@ -30,6 +30,7 @@ React.render(<Timer timerData={timerData} />, document.body);
 注意，使用 `@observer` 装饰器是可选的，它和 `observer(class Timer ... { })` 达到的效果是一样的。
 
 ## 陷阱: 组件中的间接引用值
+
 MobX 可以做很多事，但是它无法使原始数据类型值转变成可观察的(尽管它可以用对象来包装它们，参见 [boxed observables](boxed.md))。
 所以**值**是不可观察的，但是对象的**属性**可以。这意味着 `@observer` 实际上是对间接引用(dereference)值的反应。
 那么在上面的示例中，如果是用下面这种方式初始化的，`Timer` 组件是**不会**有反应的:
