@@ -42,11 +42,8 @@ Store 的主要职责是将**逻辑**和**状态**从组件中移至一个独立
 但过了一段时间，你发现应用中的其他地方也需要这些信息。
 您只需将状态移动到 **UI 状态 store**，而不是在组件树中向上推动状态，就像在普通的 React 应用中所做的那样。
 
-请确保这个状态是个单例。
 对于同构应用程序，你可能还希望使用正常默认值提供这个 store 的存根实现，以便所有组件按预期呈现。
-可以通过在应用中传递属性到组件树中来分发 **UI 状态 store**。
-还可以通过使用上下文或将其作为模块全局使用来传递这个 store。
-为了测试，我推荐只是通过组件树来传递。
+可以通过在应用中传递属性到组件树中或使用 `mobx-react` 包中的 `Provider` 和 `inject` 来分发 **UI 状态 store**。
 
 store 示例 (使用 ES6 语法):
 
@@ -54,7 +51,7 @@ store 示例 (使用 ES6 语法):
 import {observable, computed, asStructure} from 'mobx';
 import jquery from 'jquery';
 
-class UiState {
+export class UiState {
     @observable language = "en_US";
     @observable pendingRequestCount = 0;
 
@@ -74,9 +71,6 @@ class UiState {
         return this.pendingRequestCount === 0
     }
 }
-
-singleton = new UiState();
-export default singleton;
 ```
 
 ## 领域 store
