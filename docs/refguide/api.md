@@ -22,7 +22,7 @@ Observable 值可以是JS基本数据类型、引用类型、普通对象、类�
 
 1. 如果 **value** 是[ES6 Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)的实例: 会返回一个新的 [Observable Map](map.md)。如果你不只关注某个特定entry的更改，而且对添加或删除其他entry时也做出反应的话，那么 Observable map 会非常有用。
 1. 如果 **value** 是数组，会返回一个 [Observable Array](array.md)。
-1. 如果 **value** 是没有原型的对象，那么对象会被克隆并且所有的属性都会被转换成可观察的。参见 [Observable Object](object.md)。
+1. 如果 **value** 是没有原型的对象或它的原型是 `Object.prototype`，那么对象会被克隆并且所有的属性都会被转换成可观察的。参见 [Observable Object](object.md)。
 1. 如果 **value** 是有原型的对象，JavaSript原始数据类型或者函数，会返回一个 [Boxed Observable](boxed.md)。MobX 不会将一个有原型的对象自动转换成可观察的，因为这是它构造函数的职责。对于这些类型你需要在它的构造函数中使用 `extendObservable` 或者在它的类定义中使用 `@observable`。
 
 乍看之下，这些规则可能看上去很复杂，但实际上实践当中你会发现他们是非常直观的。
@@ -63,7 +63,7 @@ Observable 值可以是JS基本数据类型、引用类型、普通对象、类�
 
 ### `observable.map(value)` & `observable.shallowMap(value)`
 
-基于提供的值来创建一个新的 observable 映射。如果不想集合中的值转换成 observable 请使用 `shallowMap`。
+基于提供的值来创建一个新的 observable 映射。如果不想映射中的值转换成 observable 请使用 `shallowMap`。
 当想创建动态的键集合并且需要能观察到键的添加和移除时，请使用 `map`。
 注意只支持字符串键。
 
@@ -248,7 +248,7 @@ _有一些工具函数可以使得 observable 或者  计算值用起来更方�
 
 ### `intercept`
 用法: `intercept(object, property?, interceptor)`.
-这个API可以在应用 observable 的API之前，拦截更改。对于验证、标准化和取消等操作十分有用。
+这个 API 可以在应用 observable 的API之前，拦截更改。对于验证、标准化和取消等操作十分有用。
 [&laquo;详情&raquo;](observe.md)
 
 ### `observe`
