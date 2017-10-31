@@ -22,7 +22,7 @@ class Clock {
 
 	constructor() {
 		// 创建一个 atom 用来和 MobX 核心算法交互
-		this.atom =	new Atom(
+		this.atom = new Atom(
 			// 第一个参数: atom 的名字，用于调试
 			"Clock",
 			// 第二个参数(可选的): 当 atom 从未被观察到被观察时的回调函数
