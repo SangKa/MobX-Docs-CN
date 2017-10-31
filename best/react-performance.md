@@ -72,7 +72,7 @@ React 在渲染大型数据集合时表现非常糟糕，因为协调器必须�
 
 慢的:
 
-`<DisplayName name={person.name} />`.
+`<DisplayName name={person.name} />`
 
 后者并没有什么错。
 但是当 `name` 属性变化时，第一种情况会触发 `DisplayName` 组件重新渲染，而第二种情况组件的拥有者需要重新渲染。
