@@ -242,7 +242,7 @@ MobX 使用原生javascript。由于它的侵入性不强，它可以和绝大�
 <center>
 <img src="https://www.mendix.com/styleguide/img/logo-mendix.png" align="center" width="200"/>
 
-<strong>可以自豪的说，MobX 已经在 <a href="https://www.mendix.com">Medix</a> 的任务关键系统中使用 </strong>
+<strong>可以自豪的说，MobX 已经在 <a href="https://www.mendix.com">Mendix</a> 的任务关键系统中使用 </strong>
 </center>
 
 
