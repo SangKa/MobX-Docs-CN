@@ -62,7 +62,7 @@ const disposer = intercept(theme, "backgroundColor", change => {
 意味着即使在一个 `transaction` 中，`observe` 也会触发每个变化的监听器。
 因此，`autorun` 通常是一个更强大的和更具声明性的 `observe` 替代品。
 
-_当 `observe` 被创建出来后就会对**变化**作出反应，而像 `autorun` 或 `reaction` 这样的反应当，它们变得可用时，它们会对**新值**做出反应。在大多数情况下，后者就足够了。_
+_ `observe` 会响应对应的**变动**，而像是 `autorun` 或 `reaction` 则会对**新值**做出响应。大多数情况下，后者足够用了。_
 
 示例:
 
