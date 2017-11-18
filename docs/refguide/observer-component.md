@@ -44,7 +44,7 @@ React.render(<Timer timerData={timerData.secondsPassed} />, document.body)
 
 ## ES5 支持
 
-在ES5环境中，可以简单地使用 `observer(React.createClass({ ... ` 来定义观察者组件。还可以参见[语法指南](../best/syntax.md)。
+在ES5环境中，可以简单地使用 `observer(React.createClass({ ...` 来定义观察者组件。还可以参见[语法指南](../best/syntax.md)。
 
 ## 无状态函数组件
 
@@ -94,7 +94,7 @@ React.render(<Timer />, document.body)
 
 `mobx-react` 包还提供了 `Provider` 组件，它使用了 React 的上下文(context)机制，可以用来向下传递 `stores`。
 要连接到这些 stores，需要传递一个 stores 名称的数组给 `observer`，这使得 stores 可以作为组件的 `props` 使用。
-这些都可以通过使用装饰器 `@observer(["store"]) class ...` 或者函数 `observer(["store"], React.createClass({ ...`来提供。
+这些都可以通过使用装饰器 `@observer(["store"]) class ...` 或者函数 `observer(["store"], React.createClass({ ...` 来提供。
 
 示例:
 
