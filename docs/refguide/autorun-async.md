@@ -2,12 +2,12 @@
 
 `autorunAsync(action: () => void, minimumDelay?: number, scope?)`
 
-基本同 `autorun` 一样，但是 `action` 不是同步调用，而是在等待传入的最小毫秒之后异步调用。
-`action` 将会运行和进行观察。
-然而当它观察的值更改时，不是立即运行 `action`，而是等待 `minimumDelay` 后再重新执行 `action`。
+基本同 `autorun` 一样，但是`autorunAsync`中的`action` 不是同步调用，而是在等待传入的最小毫秒之后异步调用。
+`autorunAsync` 将会运行并观察。
+当它观察的值更改时，`action`不会立即运行，而是等待 `minimumDelay` 后再重新执行 `action`。
 
 如果在等待这段时间内，就算观察的值多次发生了变化，`action` 仍然只会触发一次，所以在某种意义上，它实现了与事务类似的效果。
-这可能对昂贵的并且不需要同步发生的东西有用，例如去抖的服务端通信。
+这可能对代价高昂而不需要同步发生的东西有用，例如服务端通信防抖动。
 
 如果提供了 scope，那么 action 会绑定到这个作用域对象。
 
