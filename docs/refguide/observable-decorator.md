@@ -1,5 +1,8 @@
 # @observable
 
+<a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/javascript-sync-the-ui-with-the-app-state-using-mobx-observable-and-observer-in-react">Egghead.io 第1课: observable & observer</a>
+<a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px"  href="https://egghead.io/lessons/react-use-observable-objects-arrays-and-maps-to-store-state-in-mobx">Egghead.io 第4课: observable 对象 & 映射</a>
+
 装饰器可以在 ES7 或者 TypeScript 类属性中属性使用，将其转换成可观察的。
 `@observable` 可以在实例字段和属性 getter 上使用。
 对于对象的哪部分需要成为可观察的，@observable 提供了细粒度的控制。

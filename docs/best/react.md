@@ -118,8 +118,44 @@ message.author = { name: "John" };
 对于第一个改变将会作出反应，`message.author` 和 `author` 是同一个对象，而 `name` 属性在 autorun 中进行的间接引用。
 但对于第二个改变将**不会**作出反应，`message.author` 的关系没有通过 `autorun` 追踪。Autorun 仍然使用的是“老的” `author`。
 
-#### 正确的: 在追踪函数内访问数组属性
+#### 常见陷阱: console.log
 
+```javascript
+const message = observable({ title: "hello" })
+
+autorun(() => {
+    console.log(message)
+})
+
+// 不会触发重新运行
+message.title = "Hello world"
+```
+
+在上面的示例中，更新 `message` 的 `title` 属性不会被打印出来，因为没有在 `autorun` `内使用。autorun` 只依赖于 `message`，它不是 observable，而是常量。换句话说，对于 MobX 而言，它没有使用 `title`，因此与 `autorun` 无关。
+
+事实上 `console.log` 会打印出 `message` 的 `title`，这是让人费解的，`console.log` 是异步 API，它只会稍后对参数进行格式化，因此 `autorun` 不会追踪 `console.log` 访问的数据。所以，请确保始终传递不变数据 ( immutable data ) 或防御副本给 `console.log`。
+
+下面是一些解决方案，它们会对 `message.title` 作出反应:
+
+```javascript
+autorun(() => {
+    console.log(message.title) // 很显然， 使用了 `.title` observable
+})
+
+autorun(() => {
+    console.log(mobx.toJS(message)) // toJS 创建了深克隆，从而读取消息
+})
+
+autorun(() => {
+    console.log({...message}) // 创建了浅克隆，在此过程中也使用了 `.title`
+})
+
+autorun(() => {
+    console.log(JSON.stringify(message)) // 读取整个结构
+})
+```
+
+#### 正确的: 在追踪函数内访问数组属性
 
 ```javascript
 autorun(() => {

@@ -1,5 +1,7 @@
 # Autorun
 
+<a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/react-write-custom-mobx-reactions-with-when-and-autorun">Egghead.io 第9课: 自定义反应</a>
+
 当你想创建一个响应式函数，而该函数本身永远不会有观察者时,可以使用 `mobx.autorun`。
 这通常是当你需要从反应式代码桥接到命令式代码的情况，例如打印日志、持久化或者更新UI的代码。
 当使用 `autorun` 时，所提供的函数总是立即被触发一次，然后每次它的依赖关系改变时会再次被触发。

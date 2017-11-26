@@ -1,5 +1,7 @@
 # when
 
+<a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/react-write-custom-mobx-reactions-with-when-and-autorun">Egghead.io 第9课: 自定义反应</a>
+
 `when(debugName?, predicate: () => boolean, effect: () => void, scope?)`
 
 `when` 观察并运行给定的 `predicate`，直到返回true。

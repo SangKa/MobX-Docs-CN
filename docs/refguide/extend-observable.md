@@ -1,7 +1,7 @@
 # extendObservable
 
 与 `Object.assign` 十分类似，`extendObservable` 接收两个或者更多的参数，一个是 `target` 对象，一个或多个 `properties` 映射。
-它会把 `properties` 映射中的所有键值对添加到 `target` 对象中作为 observable 属性。
+它会把 `properties` 映射中的所有键值对添加到 `target` 对象中作为 observable 属性并返回 `target` 对象。
 
 ```javascript
 var Person = function(firstName, lastName) {
