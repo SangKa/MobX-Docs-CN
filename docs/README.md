@@ -186,7 +186,7 @@ autorun(() => {
 
 _MobX 会对在执行跟踪函数期间读取的任何现有的可观察属性做出反应_。
 
-想深入了解 MobX 是如何知道需要对哪个可观察属性进行反应，请查阅 [理解 MobX 对什么有反应](https://github.com/mobxjs/mobx/blob/gh-pages/docs/best/react.md)。
+想深入了解 MobX 是如何知道需要对哪个可观察属性进行反应，请查阅 [理解 MobX 对什么有反应](http://cn.mobx.js.org/best/react.html)。
 
 ### Actions(动作)
 
