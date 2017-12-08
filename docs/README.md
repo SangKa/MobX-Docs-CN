@@ -65,7 +65,7 @@ MobX 的核心概念不多。 下面的代码片段可以在 [JSFiddle](https://
 <i><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/javascript-sync-the-ui-with-the-app-state-using-mobx-observable-and-observer-in-react">Egghead.io 第1课: observable & observer</a></i>
 
 MobX 为现有的数据结构(如对象，数组和类实例)添加了可观察的功能。
-通过使用 [@observable](http://mobxjs.github.io/mobx/refguide/observable-decorator.html) 装饰器(ES.Next)来给你的类属性添加注解就可以简单地完成这一切。
+通过使用 [@observable](http://cn.mobx.js.org/refguide/observable-decorator.html) 装饰器(ES.Next)来给你的类属性添加注解就可以简单地完成这一切。
 
 ```javascript
 class Todo {
@@ -77,12 +77,12 @@ class Todo {
 
 使用 `observable` 很像把对象的属性变成excel的单元格。
 但和单元格不同的是，这些值不只是原始值，还可以是引用值，比如对象和数组。
-你甚至还可以[自定义](http://mobxjs.github.io/mobx/refguide/extending.html)可观察数据源。
+你甚至还可以[自定义](http://cn.mobx.js.org/refguide/extending.html)可观察数据源。
 
 ### 插曲: 在ES5、ES6和ES.next环境下使用 MobX
 
 这些 `@` 开头的东西对你来说或许还比较陌生，它们是ES.next装饰器。
-在 MobX 中使用它们完全是可选的。参见[装饰器文档](http://mobxjs.github.io/mobx/best/decorators.html)详细了解如何使用或者避免它们。
+在 MobX 中使用它们完全是可选的。参见[装饰器文档](http://cn.mobx.js.org/best/decorators.html)详细了解如何使用或者避免它们。
 MobX 可以在任何ES5的环境中运行，但是利用像装饰器这样的ES.next的特性是使用 MobX 的最佳选择。
 本自述文件的剩余部分都会使用装饰器，但请牢记，_它们是可选的_。
 
@@ -103,7 +103,7 @@ function Todo() {
 <i><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/javascript-derive-computed-values-and-manage-side-effects-with-mobx-reactions">Egghead.io 第3课: 计算值</a></i>
 
 使用 MobX， 你可以定义在相关数据发生变化时自动更新的值。
-通过[`@computed`](http://mobxjs.github.io/mobx/refguide/computed-decorator.html) 装饰器或者利用 `(extend)Observable` 时调用 的getter / setter 函数来进行使用。
+通过[`@computed`](http://cn.mobx.js.org/refguide/computed-decorator.html) 装饰器或者利用 `(extend)Observable` 时调用 的getter / setter 函数来进行使用。
 
 ```javascript
 class TodoList {
@@ -128,7 +128,7 @@ Reactions 和计算值很像，但它不是产生一个新的值，而是会产�
 
 <i><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx">Egghead.io 第1课: observable & observer</a></i>
 
-如果你用 React 的话，可以把你的(无状态函数)组件变成响应式组件，方法是在组件上添加 [`observer`](http://mobxjs.github.io/mobx/refguide/observer-component.html) 函数/ 装饰器. `observer`由 `mobx-react` 包提供的。
+如果你用 React 的话，可以把你的(无状态函数)组件变成响应式组件，方法是在组件上添加 [`observer`](http://cn.mobx.js.org/refguide/observable-decorator.html) 函数/ 装饰器. `observer`由 `mobx-react` 包提供的。
 
 ```javascript
 import React, {Component} from 'react';
@@ -170,7 +170,7 @@ ReactDOM.render(<TodoListView todoList={store} />, document.getElementById('moun
 
 #### 自定义 reactions
 
-使用[`autorun`](http://mobxjs.github.io/mobx/refguide/autorun.html)、[`reaction`](http://mobxjs.github.io/mobx/refguide/reaction.html) 和 [`when`](http://mobxjs.github.io/mobx/refguide/when.html) 函数即可简单的创建自定义 reactions，以满足你的具体场景。
+使用[`autorun`](http://cn.mobx.js.org/refguide/autorun.html)、[`reaction`](http://cn.mobx.js.org/refguide/reaction.html) 和 [`when`](http://cn.mobx.js.org/refguide/when.html) 函数即可简单的创建自定义 reactions，以满足你的具体场景。
 
 例如，每当 `unfinishedTodoCount` 的数量发生变化时，下面的 `autorun` 会打印日志消息:
 
@@ -212,7 +212,7 @@ store.todos.push(
 store.todos[0].finished = true;
 ```
 
-尽管如此，MobX 还是提供了 [`actions`](https://mobxjs.github.io/mobx/refguide/action.html) 这个可选的内置概念。
+尽管如此，MobX 还是提供了 [`actions`](http://cn.mobx.js.org/refguide/action.html) 这个可选的内置概念。
 使用 `actions` 是有优势的: 它们可以帮助你把代码组织的更好，还能在状态何时何地应该被修改这个问题上帮助你做出明智的决定。
 
 ## MobX: 简单且可扩展
