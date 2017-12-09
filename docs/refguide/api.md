@@ -163,7 +163,7 @@ const taskStore = observable({
 * `observer(React.createClass({ ... }))`
 * `observer((props, context) => ReactElement)`
 * `observer(class MyComponent extends React.Component { ... })`
-* `@observer class MyComponent extends React.Component { ... })`
+* `@observer class MyComponent extends React.Component { ... }`
 
 
 ### `autorun`
