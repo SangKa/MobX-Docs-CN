@@ -99,7 +99,7 @@ React.render(<Timer />, document.body)
 `mobx-react` 包还提供了 `Provider` 组件，它使用了 React 的上下文(context)机制，可以用来向下传递 `stores`。
 要连接到这些 stores，需要传递一个 stores 名称的列表给 `inject`，这使得 stores 可以作为组件的 `props` 使用。
 
-_ 注意: 从 mobx-rect 4开始，注入 stores 的语法发生了变化，应该一直使用  `inject(stores)(component)` 或 `@inject(stores) class Component...`。
+_ 注意: 从 mobx-react 4开始，注入 stores 的语法发生了变化，应该一直使用  `inject(stores)(component)` 或 `@inject(stores) class Component...`。
 直接传递 store 名称给 `observer` 的方式已废弃。 _
 
 示例:
