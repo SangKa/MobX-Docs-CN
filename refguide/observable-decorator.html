@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -793,7 +797,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="observable">@observable</h1>
+                                <h1 id="observable"><a name="observable" class="plugin-anchor" href="#observable"><i class="fa fa-link" aria-hidden="true"></i></a>@observable</h1>
 <p><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/javascript-sync-the-ui-with-the-app-state-using-mobx-observable-and-observer-in-react" target="_blank">Egghead.io &#x7B2C;1&#x8BFE;: observable &amp; observer</a>
 <a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/react-use-observable-objects-arrays-and-maps-to-store-state-in-mobx" target="_blank">Egghead.io &#x7B2C;4&#x8BFE;: observable &#x5BF9;&#x8C61; &amp; &#x6620;&#x5C04;</a></p>
 <p>&#x88C5;&#x9970;&#x5668;&#x53EF;&#x4EE5;&#x5728; ES7 &#x6216;&#x8005; TypeScript &#x7C7B;&#x5C5E;&#x6027;&#x4E2D;&#x5C5E;&#x6027;&#x4F7F;&#x7528;&#xFF0C;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x6210;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#x3002;
@@ -822,7 +826,7 @@ line.amount = <span class="hljs-number">2</span>;
 <p><code>@observable</code> &#x88C5;&#x9970;&#x5668;&#x53EF;&#x4EE5;&#x548C;&#x50CF; <code>asStructure</code> &#x8FD9;&#x6837;&#x7684;&#x8C03;&#x8282;&#x5668;&#x5171;&#x540C;&#x4F7F;&#x7528;:</p>
 <pre><code class="lang-javascript">@observable position = asStructure({ x: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span>})
 </code></pre>
-<h3 id="&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x4E2D;&#x542F;&#x7528;&#x88C5;&#x9970;&#x5668;">&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x4E2D;&#x542F;&#x7528;&#x88C5;&#x9970;&#x5668;</h3>
+<h3 id="&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x4E2D;&#x542F;&#x7528;&#x88C5;&#x9970;&#x5668;"><a name="&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x4E2D;&#x542F;&#x7528;&#x88C5;&#x9970;&#x5668;" class="plugin-anchor" href="#&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x4E2D;&#x542F;&#x7528;&#x88C5;&#x9970;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x4E2D;&#x542F;&#x7528;&#x88C5;&#x9970;&#x5668;</h3>
 <p>&#x5728;&#x4F7F;&#x7528; TypeScript &#x6216; Babel &#x8FD9;&#x4E9B;&#x7B49;&#x5F85;ES&#x6807;&#x51C6;&#x5B9A;&#x4E49;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x662F;&#x4E0D;&#x652F;&#x6301;&#x88C5;&#x9970;&#x5668;&#x7684;&#x3002;</p>
 <ul>
 <li>&#x5BF9;&#x4E8E; <em>typescript</em>&#xFF0C;&#x542F;&#x7528; <code>--experimentalDecorators</code> &#x7F16;&#x8BD1;&#x5668;&#x6807;&#x8BC6;&#x6216;&#x8005;&#x5728; <code>tsconfig.json</code> &#x4E2D;&#x628A;&#x7F16;&#x8BD1;&#x5668;&#x5C5E;&#x6027; <code>experimentalDecorators</code> &#x8BBE;&#x7F6E;&#x4E3A; <code>true</code> (&#x63A8;&#x8350;&#x505A;&#x6CD5;)</li>
@@ -872,7 +876,7 @@ line.amount = <span class="hljs-number">2</span>;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.2. @observable","level":"1.2.2","depth":2,"next":{"title":"2.3. (@)computed","level":"1.2.3","depth":2,"path":"refguide/computed-decorator.md","ref":"refguide/computed-decorator.md","articles":[]},"previous":{"title":"2.1. observable","level":"1.2.1","depth":2,"path":"refguide/observable.md","ref":"refguide/observable.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/observable-decorator.md","mtime":"2017-11-26T06:22:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-30T00:43:07.315Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.2. @observable","level":"1.2.2","depth":2,"next":{"title":"2.3. (@)computed","level":"1.2.3","depth":2,"path":"refguide/computed-decorator.md","ref":"refguide/computed-decorator.md","articles":[]},"previous":{"title":"2.1. observable","level":"1.2.1","depth":2,"path":"refguide/observable.md","ref":"refguide/observable.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/observable-decorator.md","mtime":"2017-11-26T06:22:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-01-07T09:02:52.099Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

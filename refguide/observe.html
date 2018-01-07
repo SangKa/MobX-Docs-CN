@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -793,11 +797,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="intercept--observe">Intercept &amp; Observe</h1>
+                                <h1 id="intercept--observe"><a name="intercept--observe" class="plugin-anchor" href="#intercept--observe"><i class="fa fa-link" aria-hidden="true"></i></a>Intercept &amp; Observe</h1>
 <p><code>observe</code> &#x548C; <code>intercept</code> &#x53EF;&#x4EE5;&#x7528;&#x6765;&#x76D1;&#x6D4B;&#x5355;&#x4E2A; observable(&#x5B83;&#x4EEC;<strong>&#x4E0D;</strong>&#x8FFD;&#x8E2A;&#x5D4C;&#x5957;&#x7684; observable) &#x7684;&#x53D8;&#x5316;&#x3002;
 <code>intercept</code> &#x53EF;&#x4EE5;&#x5728;&#x53D8;&#x5316;&#x4F5C;&#x7528;&#x4E8E; observable &#x4E4B;&#x524D;&#x76D1;&#x6D4B;&#x548C;&#x4FEE;&#x6539;&#x53D8;&#x5316;&#x3002;
 <code>observe</code> &#x5141;&#x8BB8;&#x4F60;&#x5728; observable &#x53D8;&#x5316;&#x4E4B;&#x540E;&#x62E6;&#x622A;&#x6539;&#x53D8;&#x3002;</p>
-<h2 id="intercept">Intercept</h2>
+<h2 id="intercept"><a name="intercept" class="plugin-anchor" href="#intercept"><i class="fa fa-link" aria-hidden="true"></i></a>Intercept</h2>
 <p>&#x7528;&#x6CD5;: <code>intercept(target, propertyName?, interceptor)</code></p>
 <ul>
 <li><code>target</code>: &#x76D1;&#x6D4B;&#x7684; observable</li>
@@ -840,7 +844,7 @@
   <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;This doesn&apos;t like a color at all: &quot;</span> + change.newValue);
 })
 </code></pre>
-<h2 id="observe">Observe</h2>
+<h2 id="observe"><a name="observe" class="plugin-anchor" href="#observe"><i class="fa fa-link" aria-hidden="true"></i></a>Observe</h2>
 <p>&#x7528;&#x6CD5;: <code>observe(target, propertyName?, listener, invokeImmediately?)</code></p>
 <ul>
 <li><code>target</code>: &#x89C2;&#x5BDF;&#x7684; observable</li>
@@ -877,7 +881,7 @@ disposer();
 });
 </code></pre>
 <p>&#x76F8;&#x5173;&#x535A;&#x5BA2;: <a href="https://medium.com/@mweststrate/object-observe-is-dead-long-live-mobservable-observe-ad96930140c5" target="_blank">Object.observe &#x5DF2;&#x6B7B;&#x3002;mobx.observe &#x6C38;&#x751F;</a></p>
-<h2 id="&#x4E8B;&#x4EF6;&#x6982;&#x89C8;">&#x4E8B;&#x4EF6;&#x6982;&#x89C8;</h2>
+<h2 id="&#x4E8B;&#x4EF6;&#x6982;&#x89C8;"><a name="&#x4E8B;&#x4EF6;&#x6982;&#x89C8;" class="plugin-anchor" href="#&#x4E8B;&#x4EF6;&#x6982;&#x89C8;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8B;&#x4EF6;&#x6982;&#x89C8;</h2>
 <p><code>intercept</code> &#x548C; <code>observe</code> &#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x63A5;&#x6536;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x81F3;&#x5C11;&#x6709;&#x5982;&#x4E0B;&#x5C5E;&#x6027;:</p>
 <ul>
 <li><code>object</code>: &#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x7684; observable</li>
@@ -1125,7 +1129,7 @@ disposer();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"8.8 intercept & observe","level":"1.8.8","depth":2,"next":{"title":"8.9. reaction","level":"1.8.9","depth":2,"path":"refguide/reaction.md","ref":"refguide/reaction.md","articles":[]},"previous":{"title":"8.7. modifiers","level":"1.8.7","depth":2,"path":"refguide/modifiers.md","ref":"refguide/modifiers.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/observe.md","mtime":"2017-11-13T22:02:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-30T00:43:07.315Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"8.8 intercept & observe","level":"1.8.8","depth":2,"next":{"title":"8.9. reaction","level":"1.8.9","depth":2,"path":"refguide/reaction.md","ref":"refguide/reaction.md","articles":[]},"previous":{"title":"8.7. modifiers","level":"1.8.7","depth":2,"path":"refguide/modifiers.md","ref":"refguide/modifiers.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/observe.md","mtime":"2017-11-13T22:02:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-01-07T09:02:52.099Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

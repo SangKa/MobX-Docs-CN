@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -793,7 +797,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="extendobservable">extendObservable</h1>
+                                <h1 id="extendobservable"><a name="extendobservable" class="plugin-anchor" href="#extendobservable"><i class="fa fa-link" aria-hidden="true"></i></a>extendObservable</h1>
 <p>&#x4E0E; <code>Object.assign</code> &#x5341;&#x5206;&#x7C7B;&#x4F3C;&#xFF0C;<code>extendObservable</code> &#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x6216;&#x8005;&#x66F4;&#x591A;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x4E00;&#x4E2A;&#x662F; <code>target</code> &#x5BF9;&#x8C61;&#xFF0C;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A; <code>properties</code> &#x6620;&#x5C04;&#x3002;
 &#x5B83;&#x4F1A;&#x628A; <code>properties</code> &#x6620;&#x5C04;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x952E;&#x503C;&#x5BF9;&#x6DFB;&#x52A0;&#x5230; <code>target</code> &#x5BF9;&#x8C61;&#x4E2D;&#x4F5C;&#x4E3A; observable &#x5C5E;&#x6027;&#x5E76;&#x8FD4;&#x56DE; <code>target</code> &#x5BF9;&#x8C61;&#x3002;</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Person = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">firstName, lastName</span>) </span>{
@@ -814,7 +818,7 @@ extendObservable(matthew, {
 <p>&#x6CE8;&#x610F;:  <code>observable.object(object)</code> &#x5B9E;&#x9645;&#x4E0A;&#x662F; <code>extendObservable({}, object)</code> &#x7684;&#x522B;&#x540D;&#x3002;</p>
 <p>&#x6CE8;&#x610F;&#xFF0C;&#x5C5E;&#x6027;&#x6620;&#x5C04;&#x5E76;&#x4E0D;&#x603B;&#x662F;&#x590D;&#x5236;&#x5230;&#x76EE;&#x6807;&#x4E0A;&#xFF0C;&#x4F46;&#x5B83;&#x4EEC;&#x88AB;&#x89C6;&#x4E3A;&#x5C5E;&#x6027;&#x63CF;&#x8FF0;&#x7B26;&#x3002;
 &#x5927;&#x591A;&#x6570;&#x503C;&#x6309;&#x539F;&#x6837;&#x590D;&#x5236;&#xFF0C;&#x4F46;&#x5305;&#x88C5;&#x5728;&#x8C03;&#x8282;&#x5668;&#x4E2D;&#x7684;&#x503C;&#x4F1A;&#x4F5C;&#x4E3A;&#x7279;&#x6B8A;&#x5904;&#x7406;&#x3002;&#x6709; getter &#x7684;&#x5C5E;&#x6027;&#x4E5F;&#x662F;&#x5982;&#x6B64;&#x3002;</p>
-<h2 id="&#x8C03;&#x8282;&#x5668;">&#x8C03;&#x8282;&#x5668;</h2>
+<h2 id="&#x8C03;&#x8282;&#x5668;"><a name="&#x8C03;&#x8282;&#x5668;" class="plugin-anchor" href="#&#x8C03;&#x8282;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8C03;&#x8282;&#x5668;</h2>
 <p><a href="modifiers.html">&#x8C03;&#x8282;&#x5668;</a>&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4E3A;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#x7279;&#x6B8A;&#x7684;&#x884C;&#x4E3A;&#x3002;
 &#x4E3E;&#x4F8B;&#x6765;&#x8BF4;&#xFF0C; <code>observable.ref</code> &#x521B;&#x5EFA;&#x4E00;&#x4E2A; observable &#x5F15;&#x7528;&#xFF0C;&#x6B64;&#x5F15;&#x7528;&#x4E0D;&#x7528;&#x81EA;&#x52A8;&#x5C06;&#x503C;&#x8F6C;&#x53D8;&#x4E3A; observable&#xFF0C;&#x5E76;&#x4E14; <code>computed</code> &#x5F15;&#x5165;&#x4E86;&#x884D;&#x751F;&#x5C5E;&#x6027;:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Person = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">firstName, lastName</span>) </span>{
@@ -829,7 +833,7 @@ extendObservable(matthew, {
 }
 </code></pre>
 <p>&#x6240;&#x6709;&#x53EF;&#x7528;&#x8C03;&#x8282;&#x5668;&#x7684;&#x6982;&#x89C8;&#x53EF;&#x4EE5;&#x5728; <a href="modifiers.html">&#x8C03;&#x8282;&#x5668;</a> &#x7AE0;&#x8282;&#x4E2D;&#x627E;&#x5230;&#x3002;</p>
-<h2 id="&#x8BA1;&#x7B97;&#x5C5E;&#x6027;">&#x8BA1;&#x7B97;&#x5C5E;&#x6027;</h2>
+<h2 id="&#x8BA1;&#x7B97;&#x5C5E;&#x6027;"><a name="&#x8BA1;&#x7B97;&#x5C5E;&#x6027;" class="plugin-anchor" href="#&#x8BA1;&#x7B97;&#x5C5E;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BA1;&#x7B97;&#x5C5E;&#x6027;</h2>
 <p>&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528; <em>getter</em> &#x51FD;&#x6570;&#x6765;&#x5199;&#x3002;&#x53EF;&#x9009;&#x5730;&#x4F34;&#x968F;&#x4E00;&#x4E2A; setter:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Person = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">firstName, lastName</span>) </span>{
     <span class="hljs-comment">// &#x5728;&#x4E00;&#x4E2A;&#x65B0;&#x5B9E;&#x4F8B;&#x4E0A;&#x521D;&#x59CB;&#x5316; observable &#x5C5E;&#x6027;</span>
@@ -848,7 +852,7 @@ extendObservable(matthew, {
 }
 </code></pre>
 <p><em>&#x6CE8;&#x610F;: getter / setter &#x662F;&#x5408;&#x6CD5;&#x7684; ES5 &#x8BED;&#x6CD5;&#xFF0C;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x7F16;&#x8BD1;&#x5668;&#xFF01;</em></p>
-<h2 id="extendshallowobservable"><code>extendShallowObservable</code></h2>
+<h2 id="extendshallowobservable"><a name="extendshallowobservable" class="plugin-anchor" href="#extendshallowobservable"><i class="fa fa-link" aria-hidden="true"></i></a><code>extendShallowObservable</code></h2>
 <p><code>extendShallowObservable</code> &#x5F88;&#x50CF; <code>extendObservable</code>&#xFF0C;&#x9664;&#x4E86;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x5C5E;&#x6027;<strong>&#x4E0D;&#x4F1A;</strong>&#x81EA;&#x52A8;&#x5730;&#x5C06;&#x503C;&#x8F6C;&#x53D8;&#x4E3A; observable &#x3002;
 &#x6240;&#x4EE5;&#x8FD9;&#x548C;&#x8C03;&#x7528; <code>extendObservable</code> &#x5E76;&#x4E14;&#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#x90FD;&#x4F7F;&#x7528; <code>observable.ref</code> &#x5F88;&#x7C7B;&#x4F3C;&#x3002;
 &#x6CE8;&#x610F;&#xFF0C;<code>observable.deep</code> &#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8BA9;&#x7279;&#x5B9A;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x3002;</p>
@@ -895,7 +899,7 @@ extendObservable(matthew, {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"8.5. extendObservable","level":"1.8.5","depth":2,"next":{"title":"8.6. isObservable","level":"1.8.6","depth":2,"path":"refguide/is-observable.md","ref":"refguide/is-observable.md","articles":[]},"previous":{"title":"8.4. expr","level":"1.8.4","depth":2,"path":"refguide/expr.md","ref":"refguide/expr.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/extend-observable.md","mtime":"2017-11-26T04:23:10.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-30T00:43:07.315Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"8.5. extendObservable","level":"1.8.5","depth":2,"next":{"title":"8.6. isObservable","level":"1.8.6","depth":2,"path":"refguide/is-observable.md","ref":"refguide/is-observable.md","articles":[]},"previous":{"title":"8.4. expr","level":"1.8.4","depth":2,"path":"refguide/expr.md","ref":"refguide/expr.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/extend-observable.md","mtime":"2017-11-26T04:23:10.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-01-07T09:02:52.099Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

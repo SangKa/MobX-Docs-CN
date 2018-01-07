@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -793,7 +797,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="autorun">Autorun</h1>
+                                <h1 id="autorun"><a name="autorun" class="plugin-anchor" href="#autorun"><i class="fa fa-link" aria-hidden="true"></i></a>Autorun</h1>
 <p><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/react-write-custom-mobx-reactions-with-when-and-autorun" target="_blank">Egghead.io &#x7B2C;9&#x8BFE;: &#x81EA;&#x5B9A;&#x4E49;&#x53CD;&#x5E94;</a></p>
 <p>&#x5F53;&#x4F60;&#x60F3;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x54CD;&#x5E94;&#x5F0F;&#x51FD;&#x6570;&#xFF0C;&#x800C;&#x8BE5;&#x51FD;&#x6570;&#x672C;&#x8EAB;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x6709;&#x89C2;&#x5BDF;&#x8005;&#x65F6;,&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>mobx.autorun</code>&#x3002;
 &#x8FD9;&#x901A;&#x5E38;&#x662F;&#x5F53;&#x4F60;&#x9700;&#x8981;&#x4ECE;&#x53CD;&#x5E94;&#x5F0F;&#x4EE3;&#x7801;&#x6865;&#x63A5;&#x5230;&#x547D;&#x4EE4;&#x5F0F;&#x4EE3;&#x7801;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4F8B;&#x5982;&#x6253;&#x5370;&#x65E5;&#x5FD7;&#x3001;&#x6301;&#x4E45;&#x5316;&#x6216;&#x8005;&#x66F4;&#x65B0;UI&#x7684;&#x4EE3;&#x7801;&#x3002;
@@ -816,7 +820,7 @@ disposer();
 numbers.push(<span class="hljs-number">5</span>);
 <span class="hljs-comment">// &#x4E0D;&#x4F1A;&#x518D;&#x8F93;&#x51FA;&#x4EFB;&#x4F55;&#x503C;&#x3002;`sum` &#x4E0D;&#x4F1A;&#x518D;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x3002;</span>
 </code></pre>
-<h2 id="&#x9519;&#x8BEF;&#x5904;&#x7406;">&#x9519;&#x8BEF;&#x5904;&#x7406;</h2>
+<h2 id="&#x9519;&#x8BEF;&#x5904;&#x7406;"><a name="&#x9519;&#x8BEF;&#x5904;&#x7406;" class="plugin-anchor" href="#&#x9519;&#x8BEF;&#x5904;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9519;&#x8BEF;&#x5904;&#x7406;</h2>
 <p>&#x5728; autorun &#x548C;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x7C7B;&#x578B; reaction &#x4E2D;&#x629B;&#x51FA;&#x7684;&#x5F02;&#x5E38;&#x4F1A;&#x88AB;&#x6355;&#x83B7;&#x5E76;&#x6253;&#x5370;&#x5230;&#x63A7;&#x5236;&#x53F0;&#xFF0C;&#x4F46;&#x4E0D;&#x4F1A;&#x5C06;&#x5F02;&#x5E38;&#x4F20;&#x64AD;&#x56DE;&#x539F;&#x59CB;&#x5BFC;&#x81F4;&#x5F02;&#x5E38;&#x7684;&#x4EE3;&#x7801;&#x3002;
 &#x8FD9;&#x662F;&#x4E3A;&#x4E86;&#x786E;&#x4FDD;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#x4E2D;&#x7684; reaction &#x4E0D;&#x4F1A;&#x963B;&#x6B62;&#x5176;&#x4ED6;&#x53EF;&#x80FD;&#x4E0D;&#x76F8;&#x5173;&#x7684; reaction &#x7684;&#x9884;&#x5B9A;&#x6267;&#x884C;&#x3002;
 &#x8FD9;&#x4E5F;&#x5141;&#x8BB8; reaction &#x4ECE;&#x5F02;&#x5E38;&#x4E2D;&#x6062;&#x590D;; &#x629B;&#x51FA;&#x5F02;&#x5E38;&#x4E0D;&#x4F1A;&#x7834;&#x574F; MobX&#x7684;&#x8DDF;&#x8E2A;&#xFF0C;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x9664;&#x53BB;&#x5F02;&#x5E38;&#x7684;&#x539F;&#x56E0;&#xFF0C;reaction &#x7684;&#x540E;&#x7EED;&#x8FD0;&#x884C;&#x53EF;&#x80FD;&#x4F1A;&#x518D;&#x6B21;&#x6B63;&#x5E38;&#x5B8C;&#x6210;&#x3002;</p>
@@ -883,7 +887,7 @@ age.set(<span class="hljs-number">-5</span>)  <span class="hljs-comment">// &#x6
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.4. autorun","level":"1.2.4","depth":2,"next":{"title":"2.5. (@)observer","level":"1.2.5","depth":2,"path":"refguide/observer-component.md","ref":"refguide/observer-component.md","articles":[]},"previous":{"title":"2.3. (@)computed","level":"1.2.3","depth":2,"path":"refguide/computed-decorator.md","ref":"refguide/computed-decorator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/autorun.md","mtime":"2017-11-26T06:19:42.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-30T00:43:07.315Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.4. autorun","level":"1.2.4","depth":2,"next":{"title":"2.5. (@)observer","level":"1.2.5","depth":2,"path":"refguide/observer-component.md","ref":"refguide/observer-component.md","articles":[]},"previous":{"title":"2.3. (@)computed","level":"1.2.3","depth":2,"path":"refguide/computed-decorator.md","ref":"refguide/computed-decorator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/autorun.md","mtime":"2017-11-26T06:19:42.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-01-07T09:02:52.099Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

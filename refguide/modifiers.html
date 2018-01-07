@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -793,7 +797,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="observable-&#x8C03;&#x8282;&#x5668;">observable &#x8C03;&#x8282;&#x5668;</h1>
+                                <h1 id="observable-&#x8C03;&#x8282;&#x5668;"><a name="observable-&#x8C03;&#x8282;&#x5668;" class="plugin-anchor" href="#observable-&#x8C03;&#x8282;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>observable &#x8C03;&#x8282;&#x5668;</h1>
 <p>&#x8C03;&#x8282;&#x5668;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x88C5;&#x9970;&#x5668;&#x6216;&#x8005;&#x7EC4;&#x5408; <code>extendObservable</code> &#x548C; <code>observable.object</code> &#x4F7F;&#x7528;&#xFF0C;&#x4EE5;&#x6539;&#x53D8;&#x7279;&#x5B9A;&#x5C5E;&#x6027;&#x7684;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x89C4;&#x5219;&#x3002;</p>
 <ul>
 <li><code>observable.deep</code>: &#x4EFB;&#x4F55; observable &#x90FD;&#x4F7F;&#x7528;&#x7684;&#x9ED8;&#x8BA4;&#x7684;&#x8C03;&#x8282;&#x5668;&#x3002;&#x5B83;&#x628A;&#x4EFB;&#x4F55;&#x5206;&#x914D;&#x7684;&#x3001;&#x975E;&#x539F;&#x59CB;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x3001;&#x975E; observable &#x7684;&#x503C;&#x8F6C;&#x6362;&#x6210; observable&#x3002;</li>
@@ -802,11 +806,11 @@
 <li><code>computed</code>: &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x884D;&#x751F;&#x5C5E;&#x6027;, &#x53C2;&#x89C1; <a href="computed-decorator.html"><code>computed</code></a></li>
 <li><code>action</code>: &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x52A8;&#x4F5C;, &#x53C2;&#x89C1; <a href="action.html"><code>action</code></a></li>
 </ul>
-<h2 id="&#x6DF1;&#x5C42;&#x53EF;&#x89C2;&#x5BDF;&#x6027;">&#x6DF1;&#x5C42;&#x53EF;&#x89C2;&#x5BDF;&#x6027;</h2>
+<h2 id="&#x6DF1;&#x5C42;&#x53EF;&#x89C2;&#x5BDF;&#x6027;"><a name="&#x6DF1;&#x5C42;&#x53EF;&#x89C2;&#x5BDF;&#x6027;" class="plugin-anchor" href="#&#x6DF1;&#x5C42;&#x53EF;&#x89C2;&#x5BDF;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6DF1;&#x5C42;&#x53EF;&#x89C2;&#x5BDF;&#x6027;</h2>
 <p>&#x5F53; MobX &#x521B;&#x5EFA;&#x4E00;&#x4E2A; observable &#x5BF9;&#x8C61;&#x65F6;&#xFF0C;(&#x4F7F;&#x7528; <code>observable</code>&#x3001; <code>observable.object</code> &#x6216; <code>extendObservable</code>)&#xFF0C;&#x5B83;&#x5F15;&#x5165;&#x7684; observable &#x5C5E;&#x6027;&#x9ED8;&#x8BA4;&#x662F;&#x4F7F;&#x7528; <code>deep</code> &#x8C03;&#x8282;&#x5668;&#x7684;&#x3002;<code>deep</code> &#x8C03;&#x8282;&#x5668;&#x4E3B;&#x8981;&#x662F;&#x4E3A;&#x4EFB;&#x4F55;&#x65B0;&#x5206;&#x914D;&#x7684;&#x503C;&#x9012;&#x5F52;&#x8C03;&#x7528; <code>observable(newValue)</code>&#x3002;
 &#x4F1A;&#x4F9D;&#x6B21;&#x4F7F;&#x7528; <code>deep</code> &#x8C03;&#x8282;&#x5668;...&#x4F60;&#x53EF;&#x4EE5;&#x60F3;&#x8C61;&#x3002;</p>
 <p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x4FBF;&#x5229;&#x7684;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x3002;&#x65E0;&#x9700;&#x989D;&#x5916;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x5206;&#x914D;&#x7ED9; observable &#x7684;&#x6240;&#x6709;&#x503C;&#x672C;&#x8EAB;&#x4E5F;&#x5C06;&#x8F6C;&#x53D8;&#x6210; observable(&#x9664;&#x975E;&#x5B83;&#x4EEC;&#x5DF2;&#x7ECF;&#x662F;)&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x5DE5;&#x4F5C;&#x5C31;&#x53EF;&#x4F7F;&#x5BF9;&#x8C61;&#x8F6C;&#x53D8;&#x6210;&#x6DF1; observable &#x3002;</p>
-<h2 id="&#x5F15;&#x7528;&#x53EF;&#x89C2;&#x5BDF;&#x6027;">&#x5F15;&#x7528;&#x53EF;&#x89C2;&#x5BDF;&#x6027;</h2>
+<h2 id="&#x5F15;&#x7528;&#x53EF;&#x89C2;&#x5BDF;&#x6027;"><a name="&#x5F15;&#x7528;&#x53EF;&#x89C2;&#x5BDF;&#x6027;" class="plugin-anchor" href="#&#x5F15;&#x7528;&#x53EF;&#x89C2;&#x5BDF;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5F15;&#x7528;&#x53EF;&#x89C2;&#x5BDF;&#x6027;</h2>
 <p>&#x7136;&#x540E;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5C06;&#x5BF9;&#x8C61;&#x8F6C;&#x53D8;&#x6210; observable &#x3002;
 &#x5178;&#x578B;&#x6848;&#x4F8B;&#x5C31;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x5BF9;&#x8C61;&#xFF0C;&#x6216;&#x8005;&#x4E0D;&#x662F;&#x7531;&#x4F60;&#x7BA1;&#x7406;&#xFF0C;&#x800C;&#x662F;&#x7531;&#x5916;&#x90E8;&#x5E93;&#x7BA1;&#x7406;&#x7684;&#x5BF9;&#x8C61;&#x3002;
 &#x4F8B;&#x5982; JSX &#x5143;&#x7D20;&#x3001;DOM &#x5143;&#x7D20;&#x3001;&#x50CF; History&#x3001;window &#x8FD9;&#x6837;&#x7684;&#x539F;&#x751F;&#x5BF9;&#x8C61;&#xFF0C;&#x7B49;&#x7B49;&#x3002;
@@ -829,7 +833,7 @@
 }
 </code></pre>
 <p>&#x6CE8;&#x610F;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528; <code>const box = observable.shallowBox&#xFF08;value&#xFF09;</code> &#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x88C5;&#x7BB1;&#x7684; observable &#x5F15;&#x7528;</p>
-<h2 id="&#x6D45;&#x5C42;&#x53EF;&#x89C2;&#x5BDF;&#x6027;">&#x6D45;&#x5C42;&#x53EF;&#x89C2;&#x5BDF;&#x6027;</h2>
+<h2 id="&#x6D45;&#x5C42;&#x53EF;&#x89C2;&#x5BDF;&#x6027;"><a name="&#x6D45;&#x5C42;&#x53EF;&#x89C2;&#x5BDF;&#x6027;" class="plugin-anchor" href="#&#x6D45;&#x5C42;&#x53EF;&#x89C2;&#x5BDF;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6D45;&#x5C42;&#x53EF;&#x89C2;&#x5BDF;&#x6027;</h2>
 <p><code>observable.shallow</code> &#x8C03;&#x8282;&#x5668;&#x4F1A;&#x5E94;&#x7528;&#x201C;&#x5355;&#x5C42;&#x201D;&#x53EF;&#x89C2;&#x5BDF;&#x6027;&#x3002;&#x5982;&#x679C;&#x60F3;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; observable &#x5F15;&#x7528;&#x7684;<strong>&#x96C6;&#x5408;</strong>&#xFF0C;&#x90A3;&#x4F60;&#x4F1A;&#x9700;&#x8981;&#x5B83;&#x3002;
 &#x5982;&#x679C;&#x65B0;&#x96C6;&#x5408;&#x5206;&#x914D;&#x7ED9;&#x5177;&#x6709;&#x6B64;&#x8C03;&#x8282;&#x5668;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x4F1A;&#x8F6C;&#x53D8;&#x6210; observable&#xFF0C;&#x4F46;&#x5B83;&#x7684;&#x503C;&#x5C06;&#x4FDD;&#x6301;&#x539F;&#x6837;&#xFF0C;&#x4E0D;&#x540C;&#x4E8E; <code>deep</code> &#x7684;&#x662F;&#x5B83;&#x4E0D;&#x4F1A;&#x9012;&#x5F52;&#x3002;
 &#x793A;&#x4F8B;:</p>
@@ -839,7 +843,7 @@
 </code></pre>
 <p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x666E;&#x901A;&#x7684; author &#x6570;&#x7EC4;&#x5206;&#x914D;&#x7ED9; <code>authors</code> &#x7684;&#x8BDD;&#xFF0C;&#x4F1A;&#x4F7F;&#x7528; observables &#x6570;&#x7EC4;&#x6765;&#x66F4;&#x65B0; author&#xFF0C;observables &#x6570;&#x7EC4;&#x5305;&#x542B;&#x539F;&#x59CB;&#x7684;&#x3001;&#x975E; observable &#x7684; author &#x3002;</p>
 <p>&#x6CE8;&#x610F;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x53EF;&#x7528;&#x4E8E;&#x624B;&#x52A8;&#x521B;&#x5EFA;&#x6D45;&#x96C6;&#x5408;: <code>observable.shallowObject</code>&#x3001; <code>observable.shallowArray</code>&#x3001; <code>observable.shallowMap</code> &#x548C; <code>extendShallowObservable</code>&#x3002;</p>
-<h2 id="action--computed">Action &amp; Computed</h2>
+<h2 id="action--computed"><a name="action--computed" class="plugin-anchor" href="#action--computed"><i class="fa fa-link" aria-hidden="true"></i></a>Action &amp; Computed</h2>
 <p><code>action</code>&#x3001;<code>action.bound</code>&#x3001;<code>computed</code> &#x548C; <code>computed.struct</code> &#x540C;&#x6837;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x8C03;&#x8282;&#x5668;&#x4F7F;&#x7528;&#x3002;
 &#x53C2;&#x89C1; <a href="computed-decorator.html"><code>computed</code></a> &#x548C; <a href="action.html"><code>action</code></a>&#x3002;</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> taskStore = observable({
@@ -852,10 +856,10 @@
     })
 })
 </code></pre>
-<h2 id="asstructure">asStructure</h2>
+<h2 id="asstructure"><a name="asstructure" class="plugin-anchor" href="#asstructure"><i class="fa fa-link" aria-hidden="true"></i></a>asStructure</h2>
 <p>MobX 2 &#x4E2D;&#x6709; <code>asStructure</code> &#x8C03;&#x8282;&#x5668;&#xFF0C;&#x5B83;&#x5728;&#x5B9E;&#x8DF5;&#x4E2D;&#x6781;&#x5C11;&#x88AB;&#x4F7F;&#x7528;&#xFF0C;&#x6216;&#x8005;&#x53EA;&#x80FD;&#x5728;&#x4F7F;&#x7528; <code>reference</code> / <code>shallow</code> &#x66F4;&#x9002;&#x5408;(&#x4F8B;&#x5982;&#x4F7F;&#x7528;&#x4E0D;&#x53EF;&#x53D8;&#x6570;&#x636E;)&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4F7F;&#x7528;&#x3002;
 &#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x548C; reaction &#x7684;&#x7ED3;&#x6784;&#x6BD4;&#x8F83;&#x4ECD;&#x662F;&#x53EF;&#x80FD;&#x7684;&#x3002;</p>
-<h2 id="&#x8C03;&#x8282;&#x5668;&#x7684;&#x6548;&#x679C;">&#x8C03;&#x8282;&#x5668;&#x7684;&#x6548;&#x679C;</h2>
+<h2 id="&#x8C03;&#x8282;&#x5668;&#x7684;&#x6548;&#x679C;"><a name="&#x8C03;&#x8282;&#x5668;&#x7684;&#x6548;&#x679C;" class="plugin-anchor" href="#&#x8C03;&#x8282;&#x5668;&#x7684;&#x6548;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8C03;&#x8282;&#x5668;&#x7684;&#x6548;&#x679C;</h2>
 <pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Store</span> </span>{
     @observable<span class="hljs-comment">/*.deep*/</span> collection1 = []
 
@@ -923,7 +927,7 @@ store.collection3 = todos;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"8.7. modifiers","level":"1.8.7","depth":2,"next":{"title":"8.8 intercept & observe","level":"1.8.8","depth":2,"path":"refguide/observe.md","ref":"refguide/observe.md","articles":[]},"previous":{"title":"8.6. isObservable","level":"1.8.6","depth":2,"path":"refguide/is-observable.md","ref":"refguide/is-observable.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/modifiers.md","mtime":"2017-04-23T12:48:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-30T00:43:07.315Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"8.7. modifiers","level":"1.8.7","depth":2,"next":{"title":"8.8 intercept & observe","level":"1.8.8","depth":2,"path":"refguide/observe.md","ref":"refguide/observe.md","articles":[]},"previous":{"title":"8.6. isObservable","level":"1.8.6","depth":2,"path":"refguide/is-observable.md","ref":"refguide/is-observable.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/modifiers.md","mtime":"2017-04-23T12:48:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-01-07T09:02:52.099Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -793,7 +797,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="computed">(@)computed</h1>
+                                <h1 id="computed"><a name="computed" class="plugin-anchor" href="#computed"><i class="fa fa-link" aria-hidden="true"></i></a>(@)computed</h1>
 <p><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/javascript-derive-computed-values-and-manage-side-effects-with-mobx-reactions" target="_blank">Egghead.io &#x7B2C;3&#x8BFE;: &#x8BA1;&#x7B97;&#x503C;</a></p>
 <p>&#x8BA1;&#x7B97;&#x503C;(computed values)&#x662F;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x73B0;&#x6709;&#x7684;&#x72B6;&#x6001;&#x6216;&#x5176;&#x5B83;&#x8BA1;&#x7B97;&#x503C;&#x884D;&#x751F;&#x51FA;&#x7684;&#x503C;&#x3002;
 &#x6982;&#x5FF5;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x4EEC;&#x4E0E;excel&#x8868;&#x683C;&#x4E2D;&#x7684;&#x516C;&#x5F0F;&#x5341;&#x5206;&#x76F8;&#x4F3C;&#x3002;
@@ -810,7 +814,7 @@
 &#x5982;&#x679C;&#x4F60;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#xFF0C;&#x4F46;&#x4E0D;&#x5728; reaction &#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x4F7F;&#x7528;&#x5B83;&#xFF0C;&#x5B83;&#x4E0D;&#x4F1A;&#x7F13;&#x5B58;&#x503C;&#x5E76;&#x4E14;&#x6709;&#x4E9B;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x770B;&#x8D77;&#x6765;&#x4F3C;&#x4E4E;&#x662F;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x7684;&#x3002;&#x8FD9;&#x70B9;&#x6709;&#x65F6;&#x5019;&#x4F1A;&#x8BA9;&#x521A;&#x63A5;&#x89E6; MobX &#x7684;&#x4EBA;&#x4EEC;&#x5F88;&#x56F0;&#x60D1;&#x3002;
 &#x7136;&#x800C;&#xFF0C;&#x5728;&#x73B0;&#x5B9E;&#x5F00;&#x53D1;&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x8FD9;&#x662F;&#x8FC4;&#x4ECA;&#x4E3A;&#x6B62;&#x6700;&#x597D;&#x7684;&#x9ED8;&#x8BA4;&#x903B;&#x8F91;&#x3002;&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="observe.html"><code>observe</code></a> &#x6216; <a href="https://github.com/mobxjs/mobx-utils#keepalive" target="_blank"><code>keepAlive</code></a> &#x6765;&#x5F3A;&#x5236;&#x4FDD;&#x6301;&#x8BA1;&#x7B97;&#x503C;&#x603B;&#x662F;&#x5904;&#x4E8E;&#x5524;&#x9192;&#x72B6;&#x6001;&#x3002;</p>
 <p>&#x6CE8;&#x610F;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x662F;&#x4E0D;&#x53EF;&#x679A;&#x4E3E;&#x7684;&#xFF0C;&#x5B83;&#x4EEC;&#x4E5F;&#x4E0D;&#x80FD;&#x5728;&#x7EE7;&#x627F;&#x94FE;&#x4E2D;&#x88AB;&#x8986;&#x76D6;&#x3002;</p>
-<h2 id="computed"><code>@computed</code></h2>
+<h2 id="computed"><a name="computed" class="plugin-anchor" href="#computed"><i class="fa fa-link" aria-hidden="true"></i></a><code>@computed</code></h2>
 <p>&#x5982;&#x679C;&#x5DF2;&#x7ECF;<a href="../best/decorators.html">&#x542F;&#x7528; decorators</a> &#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x7C7B;&#x5C5E;&#x6027;&#x7684; getter &#x4E0A;&#x4F7F;&#x7528; <code>@computed</code> &#x88C5;&#x9970;&#x5668;&#x6765;&#x58F0;&#x660E;&#x5F0F;&#x7684;&#x521B;&#x5EFA;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x3002;</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">import</span> {observable, computed} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;mobx&quot;</span>;
 
@@ -827,7 +831,7 @@
     }
 }
 </code></pre>
-<h2 id="computed-&#x8C03;&#x8282;&#x5668;"><code>computed</code> &#x8C03;&#x8282;&#x5668;</h2>
+<h2 id="computed-&#x8C03;&#x8282;&#x5668;"><a name="computed-&#x8C03;&#x8282;&#x5668;" class="plugin-anchor" href="#computed-&#x8C03;&#x8282;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a><code>computed</code> &#x8C03;&#x8282;&#x5668;</h2>
 <p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x73AF;&#x5883;&#x4E0D;&#x652F;&#x6301;&#x88C5;&#x9970;&#x5668;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; <code>computed(expression)</code> &#x8C03;&#x8282;&#x5668;&#x7EC4;&#x5408; <code>extendObservable</code> / <code>observable</code> &#x4EE5;&#x5F15;&#x5165;&#x65B0;&#x7684;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x3002;</p>
 <p>&#x4ECE;&#x672C;&#x8D28;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;<code>@computed get propertyName() { }</code> &#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x8C03;&#x7528;&#x7684; <a href="extend-observable.html"><code>extendObservable(this, { propertyName: get func() { } })</code></a> &#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#x3002;</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">import</span> {extendObservable, computed} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;mobx&quot;</span>;
@@ -849,7 +853,7 @@
     }
 }
 </code></pre>
-<h2 id="&#x8BA1;&#x7B97;&#x503C;&#x7684;-setter">&#x8BA1;&#x7B97;&#x503C;&#x7684; setter</h2>
+<h2 id="&#x8BA1;&#x7B97;&#x503C;&#x7684;-setter"><a name="&#x8BA1;&#x7B97;&#x503C;&#x7684;-setter" class="plugin-anchor" href="#&#x8BA1;&#x7B97;&#x503C;&#x7684;-setter"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BA1;&#x7B97;&#x503C;&#x7684; setter</h2>
 <p>&#x8FD8;&#x53EF;&#x4EE5;&#x4E3A;&#x8BA1;&#x7B97;&#x503C;&#x5B9A;&#x4E49; setter&#x3002;&#x6CE8;&#x610F;&#x8FD9;&#x4E9B; setters &#x4E0D;&#x80FD;&#x7528;&#x6765;&#x76F4;&#x63A5;&#x6539;&#x53D8;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x7684;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4F5C;&#x201C;&#x9006;&#x5411;&#x201D;&#x884D;&#x751F;&#x3002;&#x4F8B;&#x5982;:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> box = observable({
     length: <span class="hljs-number">2</span>,
@@ -874,7 +878,7 @@
 </code></pre>
 <p><em>&#x6CE8;&#x610F;: &#x6C38;&#x8FDC;&#x5728; getter <strong>&#x4E4B;&#x540E;</strong> &#x5B9A;&#x4E49; setter&#xFF0C;&#x4E00;&#x4E9B; TypeScript &#x7248;&#x672C;&#x4F1A;&#x77E5;&#x9053;&#x58F0;&#x660E;&#x4E86;&#x4E24;&#x4E2A;&#x5177;&#x6709;&#x76F8;&#x540C;&#x540D;&#x79F0;&#x7684;&#x5C5E;&#x6027;&#x3002;</em></p>
 <p><em>&#x6CE8;&#x610F;: setter &#x9700;&#x8981; MobX 2.5.1 &#x6216;&#x8005;&#x66F4;&#x9AD8;&#x7248;&#x672C;</em></p>
-<h2 id="computedexpression-&#x51FD;&#x6570;"><code>computed(expression)</code> &#x51FD;&#x6570;</h2>
+<h2 id="computedexpression-&#x51FD;&#x6570;"><a name="computedexpression-&#x51FD;&#x6570;" class="plugin-anchor" href="#computedexpression-&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a><code>computed(expression)</code> &#x51FD;&#x6570;</h2>
 <p><code>computed</code> &#x8FD8;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5F53;&#x505A;&#x51FD;&#x6570;&#x6765;&#x8C03;&#x7528;&#x3002;
 &#x5C31;&#x50CF; <code>observable.box(primitive value)</code> &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684; observable&#x3002;
 &#x5728;&#x8FD4;&#x56DE;&#x7684;&#x5BF9;&#x8C61;&#x4E0A;&#x4F7F;&#x7528; <code>.get()</code> &#x6765;&#x83B7;&#x53D6;&#x8BA1;&#x7B97;&#x7684;&#x5F53;&#x524D;&#x503C;&#xFF0C;&#x6216;&#x8005;&#x4F7F;&#x7528; <code>.observe(callback)</code> &#x6765;&#x89C2;&#x5BDF;&#x503C;&#x7684;&#x6539;&#x53D8;&#x3002;
@@ -892,7 +896,7 @@
 name.set(<span class="hljs-string">&quot;Dave&quot;</span>);
 <span class="hljs-comment">// &#x8F93;&#x51FA;: &apos;DAVE&apos;</span>
 </code></pre>
-<h2 id="computed-&#x7684;&#x9009;&#x9879;"><code>computed</code> &#x7684;&#x9009;&#x9879;</h2>
+<h2 id="computed-&#x7684;&#x9009;&#x9879;"><a name="computed-&#x7684;&#x9009;&#x9879;" class="plugin-anchor" href="#computed-&#x7684;&#x9009;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a><code>computed</code> &#x7684;&#x9009;&#x9879;</h2>
 <p>&#x5F53;&#x4F7F;&#x7528; <code>computed</code> &#x4F5C;&#x4E3A;&#x8C03;&#x8282;&#x5668;&#x6216;&#x8005;&#x76D2;&#x5B50;&#xFF0C;&#x5B83;&#x63A5;&#x6536;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x9009;&#x9879;&#x53C2;&#x6570;&#x5BF9;&#x8C61;&#xFF0C;&#x9009;&#x9879;&#x53C2;&#x6570;&#x5BF9;&#x8C61;&#x6709;&#x5982;&#x4E0B;&#x53EF;&#x9009;&#x53C2;&#x6570;:</p>
 <ul>
 <li><code>name</code>: &#x5B57;&#x7B26;&#x4E32;, &#x5728; spy &#x548C; MobX &#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x8C03;&#x8BD5;&#x540D;&#x79F0;</li>
@@ -901,18 +905,18 @@ name.set(<span class="hljs-string">&quot;Dave&quot;</span>);
 <li><code>compareStructural</code>: &#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>false</code>&#x3002; &#x5F53;&#x4E3A; true &#x65F6;&#xFF0C;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x8F93;&#x51FA;&#x5728;&#x7ED3;&#x679C;&#x4E0A;&#x4E0E;&#x5148;&#x524D;&#x7684;&#x503C;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x77E5;&#x4EFB;&#x4F55;&#x89C2;&#x5BDF;&#x8005;&#x76F8;&#x5173;&#x7684;&#x66F4;&#x6539;&#x3002; &#x8FD9;&#x786E;&#x4FDD;&#x4E86;&#x8BA1;&#x7B97;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x4E0D;&#x7528;&#x91CD;&#x65B0;&#x8BC4;&#x4F30;&#x8FD4;&#x56DE;&#x7684;&#x65B0;&#x7ED3;&#x6784;&#x662F;&#x5426;&#x7B49;&#x4E8E;&#x539F;&#x59CB;&#x7ED3;&#x6784;&#x3002; &#x8FD9;&#x5728;&#x4F7F;&#x7528;&#x70B9;&#x3001;&#x77E2;&#x91CF;&#x6216;&#x989C;&#x8272;&#x7ED3;&#x6784;&#x65F6;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;&#x901A;&#x8FC7;&#x5C06; <code>equals</code> &#x9009;&#x9879;&#x6307;&#x5B9A;&#x4E3A; <code>comparer.structural</code> &#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x540C;&#x6837;&#x7684;&#x884C;&#x4E3A;&#x3002;</li>
 <li><code>equals</code>: &#x9ED8;&#x8BA4;&#x503C;&#x662F; <code>comparer.default</code> &#x3002;&#x5B83;&#x5145;&#x5F53;&#x6BD4;&#x8F83;&#x524D;&#x4E00;&#x4E2A;&#x503C;&#x548C;&#x540E;&#x4E00;&#x4E2A;&#x503C;&#x7684;&#x6BD4;&#x8F83;&#x51FD;&#x6570;&#x3002;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x8BA4;&#x4E3A;&#x524D;&#x4E00;&#x4E2A;&#x503C;&#x548C;&#x540E;&#x4E00;&#x4E2A;&#x503C;&#x662F;&#x76F8;&#x7B49;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x89C2;&#x5BDF;&#x8005;&#x5C31;&#x4E0D;&#x4F1A;&#x91CD;&#x65B0;&#x8BC4;&#x4F30;&#x3002;&#x8FD9;&#x5728;&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x6570;&#x636E;&#x548C;&#x6765;&#x81EA;&#x5176;&#x4ED6;&#x5E93;&#x7684;&#x7C7B;&#x578B;&#x65F6;&#x5F88;&#x6709;&#x7528;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E00;&#x4E2A; computed &#x7684; <a href="https://momentjs.com/" target="_blank">moment</a> &#x5B9E;&#x4F8B;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>(a, b) =&gt; a.isSame(b)</code> &#x3002;&#x6B64;&#x9009;&#x9879;&#x5982;&#x679C;&#x6307;&#x5B9A;&#x7684;&#x8BDD;&#xFF0C;&#x4F1A;&#x8986;&#x76D6; <code>compareStructural</code> &#x9009;&#x9879;&#x3002;</li>
 </ul>
-<h2 id="computedstruct-&#x7528;&#x4E8E;&#x6BD4;&#x8F83;&#x7ED3;&#x6784;"><code>@computed.struct</code> &#x7528;&#x4E8E;&#x6BD4;&#x8F83;&#x7ED3;&#x6784;</h2>
+<h2 id="computedstruct-&#x7528;&#x4E8E;&#x6BD4;&#x8F83;&#x7ED3;&#x6784;"><a name="computedstruct-&#x7528;&#x4E8E;&#x6BD4;&#x8F83;&#x7ED3;&#x6784;" class="plugin-anchor" href="#computedstruct-&#x7528;&#x4E8E;&#x6BD4;&#x8F83;&#x7ED3;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a><code>@computed.struct</code> &#x7528;&#x4E8E;&#x6BD4;&#x8F83;&#x7ED3;&#x6784;</h2>
 <p><code>@computed</code> &#x88C5;&#x9970;&#x5668;&#x4E0D;&#x9700;&#x8981;&#x63A5;&#x6536;&#x53C2;&#x6570;&#x3002;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x80FD;&#x8FDB;&#x884C;&#x7ED3;&#x6784;&#x6BD4;&#x8F83;&#x7684;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x65F6;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; <code>@computed.struct</code>&#x3002;</p>
-<h2 id="computedequals-&#x7528;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x6BD4;&#x8F83;"><code>@computed.equals</code> &#x7528;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x6BD4;&#x8F83;</h2>
+<h2 id="computedequals-&#x7528;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x6BD4;&#x8F83;"><a name="computedequals-&#x7528;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x6BD4;&#x8F83;" class="plugin-anchor" href="#computedequals-&#x7528;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x6BD4;&#x8F83;"><i class="fa fa-link" aria-hidden="true"></i></a><code>@computed.equals</code> &#x7528;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x6BD4;&#x8F83;</h2>
 <p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x6BD4;&#x8F83;&#x7684;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528; <code>@computed.equals(comparer)</code>&#x3002;</p>
-<h2 id="&#x5185;&#x7F6E;&#x6BD4;&#x8F83;&#x5668;">&#x5185;&#x7F6E;&#x6BD4;&#x8F83;&#x5668;</h2>
+<h2 id="&#x5185;&#x7F6E;&#x6BD4;&#x8F83;&#x5668;"><a name="&#x5185;&#x7F6E;&#x6BD4;&#x8F83;&#x5668;" class="plugin-anchor" href="#&#x5185;&#x7F6E;&#x6BD4;&#x8F83;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x7F6E;&#x6BD4;&#x8F83;&#x5668;</h2>
 <p>MobX &#x63D0;&#x4F9B;&#x4E86;&#x4E09;&#x4E2A;&#x5185;&#x7F6E; <code>comparer</code>s (&#x6BD4;&#x8F83;&#x5668;) &#xFF0C;&#x5B83;&#x4EEC;&#x5E94;&#x8BE5;&#x80FD;&#x6EE1;&#x8DB3;&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x9700;&#x6C42;&#xFF1A;</p>
 <ul>
 <li><code>comparer.identity</code>: &#x4F7F;&#x7528;&#x6052;&#x7B49; (<code>===</code>) &#x8FD0;&#x7B97;&#x7B26;&#x6765;&#x5224;&#x5B9A;&#x4E24;&#x4E2A;&#x503C;&#x662F;&#x5426;&#x76F8;&#x540C;&#x3002;</li>
 <li><code>comparer.default</code>: &#x7B49;&#x540C;&#x4E8E; <code>comparer.identity</code>&#xFF0C;&#x4F46;&#x8FD8;&#x8BA4;&#x4E3A; <code>NaN</code> &#x7B49;&#x4E8E; <code>NaN</code> &#x3002;</li>
 <li><code>comparer.structural</code>: &#x6267;&#x884C;&#x6DF1;&#x5C42;&#x7ED3;&#x6784;&#x6BD4;&#x8F83;&#x4EE5;&#x786E;&#x5B9A;&#x4E24;&#x4E2A;&#x503C;&#x662F;&#x5426;&#x76F8;&#x540C;&#x3002;</li>
 </ul>
-<h2 id="&#x9519;&#x8BEF;&#x5904;&#x7406;">&#x9519;&#x8BEF;&#x5904;&#x7406;</h2>
+<h2 id="&#x9519;&#x8BEF;&#x5904;&#x7406;"><a name="&#x9519;&#x8BEF;&#x5904;&#x7406;" class="plugin-anchor" href="#&#x9519;&#x8BEF;&#x5904;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9519;&#x8BEF;&#x5904;&#x7406;</h2>
 <p>&#x5982;&#x679C;&#x8BA1;&#x7B97;&#x503C;&#x5728;&#x5176;&#x8BA1;&#x7B97;&#x671F;&#x95F4;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x5219;&#x6B64;&#x5F02;&#x5E38;&#x5C06;&#x6355;&#x83B7;&#x5E76;&#x5728;&#x8BFB;&#x53D6;&#x5176;&#x503C;&#x65F6;&#x91CD;&#x65B0;&#x629B;&#x51FA;&#x3002;
 &#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x59CB;&#x7EC8;&#x629B;&#x51FA;&#x201C;&#x9519;&#x8BEF;&#x201D;&#xFF0C;&#x4EE5;&#x4FBF;&#x4FDD;&#x7559;&#x539F;&#x59CB;&#x5806;&#x6808;&#x8DDF;&#x8E2A;&#x3002; &#x4F8B;&#x5982;&#xFF1A;<code>throw new Error&#xFF08;&#x201C;Uhoh&#x201D;&#xFF09;</code>, &#x800C;&#x4E0D;&#x662F;<code>throw &quot;Uhoh&quot;</code>&#x3002;
 &#x629B;&#x51FA;&#x5F02;&#x5E38;&#x4E0D;&#x4F1A;&#x4E2D;&#x65AD;&#x8DDF;&#x8E2A;&#xFF0C;&#x6240;&#x6709;&#x8BA1;&#x7B97;&#x503C;&#x53EF;&#x4EE5;&#x4ECE;&#x5F02;&#x5E38;&#x4E2D;&#x6062;&#x590D;&#x3002;</p>
@@ -977,7 +981,7 @@ divided.get() <span class="hljs-comment">// &#x5DF2;&#x6062;&#x590D;; &#x8FD4;&#
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.3. (@)computed","level":"1.2.3","depth":2,"next":{"title":"2.4. autorun","level":"1.2.4","depth":2,"path":"refguide/autorun.md","ref":"refguide/autorun.md","articles":[]},"previous":{"title":"2.2. @observable","level":"1.2.2","depth":2,"path":"refguide/observable-decorator.md","ref":"refguide/observable-decorator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/computed-decorator.md","mtime":"2017-11-26T06:20:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-30T00:43:07.315Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.3. (@)computed","level":"1.2.3","depth":2,"next":{"title":"2.4. autorun","level":"1.2.4","depth":2,"path":"refguide/autorun.md","ref":"refguide/autorun.md","articles":[]},"previous":{"title":"2.2. @observable","level":"1.2.2","depth":2,"path":"refguide/observable-decorator.md","ref":"refguide/observable-decorator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/computed-decorator.md","mtime":"2017-11-26T06:20:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-01-07T09:02:52.099Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

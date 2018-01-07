@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -793,13 +797,13 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x539F;&#x503C;&#x7C7B;&#x578B;&#x503C;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x503C;">&#x539F;&#x503C;&#x7C7B;&#x578B;&#x503C;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x503C;</h2>
+                                <h2 id="&#x539F;&#x503C;&#x7C7B;&#x578B;&#x503C;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x503C;"><a name="&#x539F;&#x503C;&#x7C7B;&#x578B;&#x503C;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x503C;" class="plugin-anchor" href="#&#x539F;&#x503C;&#x7C7B;&#x578B;&#x503C;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x539F;&#x503C;&#x7C7B;&#x578B;&#x503C;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x503C;</h2>
 <p>JavaScript &#x4E2D;&#x7684;&#x6240;&#x6709;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x503C;&#x90FD;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x4EEC;&#x90FD;&#x662F;&#x4E0D;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#x3002;
 &#x901A;&#x5E38;&#x8FD9;&#x662F;&#x597D;&#x7684;&#xFF0C;&#x56E0;&#x4E3A; MobX &#x901A;&#x5E38;&#x53EF;&#x4EE5;&#x4F7F;&#x5305;&#x542B;&#x503C;&#x7684;<strong>&#x5C5E;&#x6027;</strong>&#x8F6C;&#x53D8;&#x6210;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#x3002;
 &#x53EF;&#x53C2;&#x89C1; <a href="object.html">observable objects</a>&#x3002;
 &#x5728;&#x6781;&#x5C11;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x62E5;&#x6709;&#x4E00;&#x4E2A;&#x4E0D;&#x5C5E;&#x4E8E;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#x201C;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x503C;&#x201D;&#x8FD8;&#x662F;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#x3002;
 &#x5BF9;&#x4E8E;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; observable box &#x4EE5;&#x4FBF;&#x7BA1;&#x7406;&#x8FD9;&#x6837;&#x7684;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x503C;&#x3002;</p>
-<h3 id="observableboxvalue"><code>observable.box(value)</code></h3>
+<h3 id="observableboxvalue"><a name="observableboxvalue" class="plugin-anchor" href="#observableboxvalue"><i class="fa fa-link" aria-hidden="true"></i></a><code>observable.box(value)</code></h3>
 <p><code>observable.box(value)</code> &#x63A5;&#x6536;&#x4EFB;&#x4F55;&#x503C;&#x5E76;&#x628A;&#x503C;&#x5B58;&#x50A8;&#x5230;&#x7BB1;&#x5B50;&#x4E2D;&#x3002;
 &#x4F7F;&#x7528; <code>.get()</code> &#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x503C;&#xFF0C;&#x4F7F;&#x7528; <code>.set(newValue)</code> &#x53EF;&#x4EE5;&#x66F4;&#x65B0;&#x503C;&#x3002;</p>
 <p>&#x6B64;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B83;&#x7684; <code>.observe</code> &#x65B9;&#x6CD5;&#x6CE8;&#x518C;&#x56DE;&#x8C03;&#xFF0C;&#x4EE5;&#x76D1;&#x542C;&#x5BF9;&#x5B58;&#x50A8;&#x503C;&#x7684;&#x66F4;&#x6539;&#x3002;
@@ -811,11 +815,11 @@
 <li><code>intercept(interceptor)</code> - &#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5728;&#x4EFB;&#x4F55;&#x53D8;&#x5316;&#x5E94;&#x7528;&#x524D;&#x5C06;&#x5176;&#x62E6;&#x622A;&#x3002;&#x53C2;&#x89C1; <a href="observe.html">observe &amp; intercept</a>&#x3002;</li>
 <li><code>.observe(callback: (change) =&gt; void, fireImmediately = false): disposerFunction</code> - &#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x89C2;&#x5BDF;&#x8005;&#x51FD;&#x6570;&#xFF0C;&#x6BCF;&#x6B21;&#x5B58;&#x50A8;&#x503C;&#x88AB;&#x66FF;&#x6362;&#x65F6;&#x89E6;&#x53D1;&#x3002;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4EE5;&#x53D6;&#x6D88;&#x89C2;&#x5BDF;&#x8005;&#x3002;&#x53C2;&#x89C1; <a href="observe.html">observe &amp; intercept</a>&#x3002;<code>change</code> &#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B; observable &#x7684; <code>newValue</code> &#x548C; <code>oldValue</code> &#x3002;</li>
 </ul>
-<h3 id="observableshallowboxvalue"><code>observable.shallowBox(value)</code></h3>
+<h3 id="observableshallowboxvalue"><a name="observableshallowboxvalue" class="plugin-anchor" href="#observableshallowboxvalue"><i class="fa fa-link" aria-hidden="true"></i></a><code>observable.shallowBox(value)</code></h3>
 <p><code>shallowBox</code> &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; <a href="modifiers.html"><code>ref</code></a> &#x8C03;&#x8282;&#x5668;&#x7684;&#x7BB1;&#x5B50;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x7BB1;&#x5B50;&#x91CC;&#x7684;&#x4EFB;&#x4F55;(&#x5C06;&#x6765;)&#x503C;&#x90FD;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x5730;&#x8F6C;&#x6362;&#x6210; observable &#x3002;</p>
-<h3 id="observableprimitivevalue"><code>observable(primitiveValue)</code></h3>
+<h3 id="observableprimitivevalue"><a name="observableprimitivevalue" class="plugin-anchor" href="#observableprimitivevalue"><i class="fa fa-link" aria-hidden="true"></i></a><code>observable(primitiveValue)</code></h3>
 <p>&#x5F53;&#x4F7F;&#x7528;&#x901A;&#x7528;&#x7684; <code>observable(value)</code> &#x65B9;&#x6CD5;&#x65F6;&#xFF0C; MobX &#x4F1A;&#x4E3A;&#x4EFB;&#x4F55;&#x4E0D;&#x80FD;&#x8F6C;&#x6362;&#x6210; observable &#x7684;&#x503C;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; observable &#x7BB1;&#x5B50;&#x3002;</p>
-<h3 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h3>
+<h3 id="&#x793A;&#x4F8B;"><a name="&#x793A;&#x4F8B;" class="plugin-anchor" href="#&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x793A;&#x4F8B;</h3>
 <pre><code class="lang-javascript"><span class="hljs-keyword">import</span> {observable} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;mobx&quot;</span>;
 
 <span class="hljs-keyword">const</span> cityName = observable(<span class="hljs-string">&quot;Vienna&quot;</span>);
@@ -861,7 +865,7 @@ cityName[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;C
 cityName.splice(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>);
 <span class="hljs-comment">// &#x8F93;&#x51FA; &apos;Amsterdam removed&apos;</span>
 </code></pre>
-<h2 id="&#x540D;&#x79F0;&#x53C2;&#x6570;">&#x540D;&#x79F0;&#x53C2;&#x6570;</h2>
+<h2 id="&#x540D;&#x79F0;&#x53C2;&#x6570;"><a name="&#x540D;&#x79F0;&#x53C2;&#x6570;" class="plugin-anchor" href="#&#x540D;&#x79F0;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x540D;&#x79F0;&#x53C2;&#x6570;</h2>
 <p><code>observable.box</code> &#x548C; <code>observable.shallowBox</code> &#x90FD;&#x63A5;&#x6536;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x4F5C;&#x4E3A; <code>spy</code> &#x6216;&#x8005; MobX &#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x4E2D;&#x7684;&#x8C03;&#x8BD5;&#x540D;&#x79F0;&#x3002;</p>
 
                                 
@@ -906,7 +910,7 @@ cityName.splice(<span class="hljs-number">0</span>, <span class="hljs-number">1<
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.4. boxed values","level":"1.3.4","depth":2,"next":{"title":"4. 理解 MobX 对什么有反应","level":"1.4","depth":1,"path":"best/react.md","ref":"best/react.md","articles":[]},"previous":{"title":"3.3. maps","level":"1.3.3","depth":2,"path":"refguide/map.md","ref":"refguide/map.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/boxed.md","mtime":"2017-05-04T07:42:54.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-30T00:43:07.315Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.4. boxed values","level":"1.3.4","depth":2,"next":{"title":"4. 理解 MobX 对什么有反应","level":"1.4","depth":1,"path":"best/react.md","ref":"best/react.md","articles":[]},"previous":{"title":"3.3. maps","level":"1.3.3","depth":2,"path":"refguide/map.md","ref":"refguide/map.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/boxed.md","mtime":"2017-05-04T07:42:54.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-01-07T09:02:52.099Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
