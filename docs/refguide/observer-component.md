@@ -143,9 +143,10 @@ colors.foreground = 'blue';
 而它的计算开销是可以忽略的，并且它会确保不管何时,只要当你开始使用 observable 数据时，组件都将会响应它的变化。
 更多详情，请参见 [这里](https://www.reddit.com/r/reactjs/comments/4vnxg5/free_eggheadio_course_learn_mobx_react_in_30/d61oh0l)。
 
-## `observer` 和 `PureRenderMixin`
+## `observer` 和 `PureComponent`
+
 如果传递给组件的数据是响应式的,`observer` 还可以防止当组件的 *props* 只是浅改变时的重新渲染，这是很有意义的。
-这个行为与 [React PureRender mixin](https://facebook.github.io/react/docs/pure-render-mixin.html) 相似，不同在于这里的 *state* 的更改仍然会被处理。
+这个行为与 [React PureComponent](https://reactjs.org/docs/react-api.html#reactpurecomponent) 相似，不同在于这里的 *state* 的更改仍然会被处理。
 如果一个组件提供了它自己的 `shouldComponentUpdate`，这个方法会被优先调用。
 想要更详细的解释，请参见这个 [github issue](https://github.com/mobxjs/mobx/issues/101)。
 
@@ -186,7 +187,7 @@ import {observer} from "mobx-react";
 * Observer 仅订阅在上次渲染期间活跃使用的数据结构。这意味着你不会订阅不足(under-subscribe)或者过度订阅(over-subscribe)。你甚至可以在渲染方法中使用仅在未来时间段可用的数据。 这是异步加载数据的理想选择。
 * 你不需要声明组件将使用什么数据。相反，依赖关系在运行时会确定并以非常细粒度的方式进行跟踪。
 * 通常，响应式组件没有或很少有状态，因为在与其他组件共享的对象中封装(视图)状态通常更方便。但你仍然可以自由地使用状态。
-* `@observer` 以和 `PureRenderMixin` 同样的方式实现了 `shouldComponentUpdate`，因此子组件可以避免不必要的重新渲染。
+* `@observer` 以和 `PureComponent` 同样的方式实现了 `shouldComponentUpdate`，因此子组件可以避免不必要的重新渲染。
 * 响应式组件单方面加载数据，即使子组件要重新渲染，父组件也不会进行不必要地重新渲染。
 * `@observer` 不依赖于 React 的上下文系统。
 * mobx-react@4+ 中，observer 组件的props 对象和 state 对象都会自动地转变为 observable，这使得创建 @computed 属性更容易，@computed 属性是根据组件内部的 props 推导得到的。如果在 `@observer` 组件中包含 reaction(例如 `autorun`) 的话，当 reaction 使用的特定属性不再改变时，reaction 是不会再重新运行的，在 reaction 中使用的特定 props 一定要间接引用(例如 `const myProp = props.myProp`)。不然，如果你在 reaction 中引用了 `props.myProp`，那么 props 的**任何**改变都会导致 reaction 的重新运行。对于 React-Router 的典型用例，请参见[这篇文章](https://alexhisen.gitbooks.io/mobx-recipes/content/observable-based-routing.html)。
