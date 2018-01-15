@@ -24,7 +24,7 @@ setInterval(() => {
 	}
 };
 
-React.render(<Timer timerData={timerData} />, document.body);
+ReactDOM.render(<Timer timerData={timerData} />, document.body);
 ```
 
 小贴士: 当 `observer` 需要组合其它装饰器或高阶组件时，请确保 `observer` 是最深处(第一个应用)的装饰器，否则它可能什么都不做。
@@ -85,9 +85,9 @@ import {observable} from "mobx"
 	render() {
 		return (<span>Seconds passed: { this.secondsPassed } </span> )
 	}
-})
+}
 
-React.render(<Timer />, document.body)
+ReactDOM.render(<Timer />, document.body)
 ```
 
 对于使用可观察的局部组件状态更多的优势，请参见[为什么我不再使用 `setState` 的三个理由](https://medium.com/@mweststrate/3-reasons-why-i-stopped-using-react-setstate-ab73fc67a42e)。
