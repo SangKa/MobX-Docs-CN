@@ -129,7 +129,7 @@ colors.foreground = 'blue';
 // 所有button都会更新
 ```
 
-更多资料，请参见 [`mobx-react` 文档](https://github.com/mobxjs/mobx-react#provider-experimental)。
+更多资料，请参见 [`mobx-react` 文档](https://github.com/mobxjs/mobx-react#provider-and-inject)。
 
 
 ## 何时使用 `observer`?
@@ -140,7 +140,7 @@ colors.foreground = 'blue';
 使用 `@observer` 的话，不再需要从渲染目的上来区分是“智能组件”还是“无脑”组件。
 在组件的事件处理、发起请求等方面，它也是一个很好的分离关注点。
 当所有组件它们**自己的**依赖项有变化时，组件自己会响应更新。
-而它的计算开销是可以忽略的，并且它会确保不管何时,只要当你开始使用 observable 数据时，组件都将会响应它的变化。
+而它的计算开销是可以忽略的，并且它会确保不管何时，只要当你开始使用 observable 数据时，组件都将会响应它的变化。
 更多详情，请参见 [这里](https://www.reddit.com/r/reactjs/comments/4vnxg5/free_eggheadio_course_learn_mobx_react_in_30/d61oh0l)。
 
 ## `observer` 和 `PureComponent`
