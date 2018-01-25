@@ -31,7 +31,6 @@ isObservable(person, "age"); // false
 
 # isBoxedObservable
 
-Takes an object, returns true if the provided object is a boxed observable. N.b. does not return true for boxed computed values.
 接收一个对象，如果提供的对象是一个装箱的 observable 则返回 true 。注意对于装箱的计算值不返回 true 。
 
 # isComputed
