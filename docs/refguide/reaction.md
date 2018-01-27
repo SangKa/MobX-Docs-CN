@@ -1,6 +1,6 @@
 # Reaction
 
-用法: `reaction(() => data, data => { sideEffect }, options?)`.
+用法: `reaction(() => data, (data, reaction) => { sideEffect }, options?)`。
 
 `autorun` 的变种，对于如何追踪 observable 赋予了更细粒度的控制。
 它接收两个函数参数，第一个(*数据* 函数)是用来追踪并返回数据作为第二个函数(*效果* 函数)的输入。
@@ -9,7 +9,7 @@
 
 *效果* 函数是可以去抖的，就像 `autorunAsync`。
 `reaction` 返回一个清理函数。
-传入 `reaction` 的函数当调用时会接收一个参数，即当前的 reaction，可以用来在执行期间进行清理。
+传入 `reaction` 的函数当调用时会接收两个参数，即当前的 reaction，可以用来在执行期间进行清理。
 
 值得注意的是 *效果* 函数**仅**对数据函数中**访问**的数据作出反应，这可能会比实际在效果函数使用的数据要少。
 此外，*效果* 函数只会在表达式返回的数据发生更改时触发。
@@ -72,6 +72,35 @@ todos[0].title = "Make tea"
 // 输出:
 // reaction 2: Make tea, find biscuit, explain reactions
 // autorun 1: Make tea, find biscuit, explain reactions
+```
+
+在下面的示例中，`reaction3` 会对 `counter` 中的 count 作出反应。
+当调用 `reaction` 时，第二个参数会作为清理函数使用。
+下面的示例展示了 `reaction` 只会调用一次。
+
+```javascript
+const counter = observable({ count: 0 });
+
+// 只调用一次并清理掉 reaction : 对 observable 值作出反应。
+const reaction3 = reaction(
+    () => counter.count,
+    (count, reaction) => {
+        console.log("reaction 3: invoked. counter.count = " + count);
+        reaction.dispose();
+    }
+);
+
+counter.count = 1;
+// 输出:
+// reaction 3: invoked. counter.count = 1
+
+counter.count = 2;
+// 输出:
+// (There are no logging, because of reaction disposed. But, counter continue reaction)
+
+console.log(counter.count);
+// 输出:
+// 2
 ```
 
 粗略地讲，reaction 是 `computed(expression).observe(action(sideEffect))` 或 `autorun(() => action(sideEffect)(expression)` 的语法糖。

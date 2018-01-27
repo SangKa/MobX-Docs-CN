@@ -32,24 +32,24 @@
 `contact-list` 项目中的两个 action 示例:
 
 ```javascript
-	@action	createRandomContact() {
-		this.pendingRequestCount++;
-		superagent
-			.get('https://randomuser.me/api/')
-			.set('Accept', 'application/json')
-			.end(action("createRandomContact-callback", (error, results) => {
-				// ^ 注意: 异步回调函数是单独的动作！
-				if (error)
-					console.error(error);
-				else {
-					const data = JSON.parse(results.text).results[0];
-					const contact = new Contact(this, data.dob, data.name, data.login.username, data.picture)
-					contact.addTag('random-user');
-					this.contacts.push(contact);
-					this.pendingRequestCount--;
-				}
-			}));
-	}
+@action  createRandomContact() {
+    this.pendingRequestCount++;
+    superagent
+        .get('https://randomuser.me/api/')
+        .set('Accept', 'application/json')
+        .end(action("createRandomContact-callback", (error, results) => {
+            // ^ Note: asynchronous callbacks are separate actions!
+            if (error)
+                console.error(error);
+            else {
+                const data = JSON.parse(results.text).results[0];
+                const contact = new Contact(this, data.dob, data.name, data.login.username, data.picture)
+                contact.addTag('random-user');
+                this.contacts.push(contact);
+                this.pendingRequestCount--;
+            }
+        }));
+}
 ```
 
 ## 何时使用动作？
