@@ -65,7 +65,9 @@ require(['gitbook'], function (gitbook) {
     }
 
     function init(config) {
-        config.buttons.forEach(insertGitHubLink);
+        if (config.buttons instanceof Array) {
+            config.buttons.forEach(insertGitHubLink);
+        }
     }
 
     // injected by html hook
