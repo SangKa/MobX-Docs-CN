@@ -8,7 +8,6 @@ MobX 中最重要的API。理解了`observable`、 `computed`、 `reactions` 和
 
 ## 创建 observables
 
-
 ### `observable(value)`
 用法:
 * `observable(value)`
@@ -262,8 +261,6 @@ _有一些工具函数可以使得 observable 或者  计算值用起来更方�
 在严格模式下，不允许在 [`action`](action.md) 外更改任何状态。
 还可以参见 `extras.allowStateChanges`。
 
-
-
 # 开发工具
 
 _如果你想在 MobX 的上层构建一些很酷的工具或者想检查 MobX 的内部状态的话，下列API可能会派上用场。_
@@ -271,6 +268,20 @@ _如果你想在 MobX 的上层构建一些很酷的工具或者想检查 MobX �
 ### `"mobx-react-devtools"` 包
 mobx-react-devtools 是个功能强大的包，它帮助你调查 React 组件的性能和依赖。
 还有基于 `spy` 的强大的日志功能。[&laquo;详情&raquo;](../best/devtools.md)
+
+### `trace`
+
+用法:
+
+* `trace(enterDebugger?)`
+* `trace(Reaction object / ComputedValue object / disposer function, enterDebugger?)`
+* `trace(object, computedValuePropertyName, enterDebugger?)`
+
+`trace` 是一个可以在计算值或 reaction 中使用的小工具。
+如果启用了它，那么当值被无效时，它将开始记录，以及为什么。
+如果 `enterDebugger` 设置为 true ，并且启用开发者工具的话，JavaScript 引擎会在触发时在此进行断点调试。
+
+[&laquo;trace&raquo;](../best/trace.md)
 
 ### `spy`
 用法: `spy(listener)`.
@@ -285,9 +296,10 @@ mobx-react-devtools 是个功能强大的包，它帮助你调查 React 组件�
 * `whyRun(Reaction object / ComputedValue object / disposer function)`
 * `whyRun(object, "computed property name")`
 
+_whyRun 建议废弃，推荐使用 [trace](#trace)_
+
 `whyRun` 是个可以在`computed`或 reaction(`autorun`、 `reaction` 或 使用了 `observer` 的 React 组件的 `render` 方法)中使用的小功能，它可以打印出 衍生(derivation) 正在运行的原因以及在哪种情况下它会再次运行。
 这应该有助于更深入地了解 MobX 运作的时机和原因，并防止一些初学者的错误。
-
 
 ### `extras.getAtom`
 用法: `getAtom(thing, property?)`.

@@ -74,12 +74,44 @@ React 在渲染大型数据集合时表现非常糟糕，因为协调器必须�
 
 `<DisplayName name={person.name} />`.
 
-后者并没有什么错。
-但是当 `name` 属性变化时，第一种情况会触发 `DisplayName` 组件重新渲染，而第二种情况组件的拥有者需要重新渲染。
-但是，对于你的组件来说，使用可理解的 API 比应用此优化更为重要。
-为了两全其美，考虑制造更小的组件:
+后者并没有什么错，但是当 `name` 属性变化时，第一种情况只会触发 `DisplayName` 组件重新渲染，而第二种情况组件的拥有者需要重新渲染，如果组件的拥有者渲染足够快的话，这种方式也能很好的运行。
+、
+你或许注意到了，为了获得最佳的性能，你不得不创建大量小的 observer 组件，它们每个都用来渲染特定数据的不同部分，例如:
 
-`const PersonNameDisplayer = observer(({ props }) => <DisplayName name={props.person.name} />)`
+`const PersonNameDisplayer = observer((props) => <DisplayName name={props.person.name} />)`
+
+`const CarNameDisplayer = observer((props) => <DisplayName name={props.car.model} />)`
+
+`const ManufacturerNameDisplayer = observer((props) => <DisplayName name={props.car.manufacturer.name} />)`
+
+这是一种有效的选项，但如果数据模型比较庞大的话，这会变得冗长。另外一种选择是使用函数来返回想要渲染 `*Displayer` 的数据:
+
+`const GenericNameDisplayer = observer((props) => <DisplayName name={props.getNameTracked()} />)`
+
+然后，你可以使用类似这样的组件:
+
+```
+render() {
+  const { person, car } = this.props;
+  return (
+    <>
+      <GenericNameDisplayer getNameTracked={() => person.name} />
+      <GenericNameDisplayer getNameTracked={car.getModelTracked} />
+      <GenericNameDisplayer getNameTracked={this.getManufacturerNameTracked} />
+    </>
+  );
+}
+
+getManufacturerNameTracked = () => this.props.car.manufacturer.name;
+
+...
+class Car {
+  @observable model
+  getModelTracked = () => this.model
+}
+```
+
+这种方式允许 `GenericNameDisplayer` 渲染任何名称的组件，从而整个应用中复用。现在，还需要解决的是这些函数的放置问题: 示例中展示了三种可能性，你可以直接在 render 方法里创建函数 (被认为是最佳实践)，也可以将函数放置在组件中 (`getManufacturerNameTracked`)，或者将函数直接放在包含数据的对象之中 (`getModelTracked`)。
 
 ## 尽早绑定函数
 

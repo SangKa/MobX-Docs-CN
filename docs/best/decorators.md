@@ -19,7 +19,7 @@
 启用 `tsconfig.json` 文件中的 `experimentalDecorators` 编译器选项，或者把 `--experimentalDecorators` 作为标识传给编译器。
 你必须将 `target` 选项配置成 `es5`+ (es5, es6, ...) 或通过 `--target` 标识。
 
-**Babel:**
+**Babel: 启用装饰器**
 
 安装装饰器支持: `npm i --save-dev babel-plugin-transform-decorators-legacy`。然后在 `.babelrc` 文件中启用它:
 
@@ -40,6 +40,21 @@ babel 设置有问题？请先查看这个 [issue](https://github.com/mobxjs/mob
 ```
 {
   "presets": ["stage-2", "react-native-stage-0/decorator-support"]
+}
+```
+
+**Babel: 使用 `babel-preset-mobx`**
+
+另外一种在 Babel 中配置 MobX 的方式是使用 [`mobx`](https://github.com/zwhitchcox/babel-preset-mobx) preset，这种方式更方便，其中包含了装饰器及其他几个经常与 mobx 一起使用的插件:
+
+```
+npm install --save-dev babel-preset-mobx
+```
+
+.babelrc:
+```
+{
+  "presets": ["mobx"]
 }
 ```
 
