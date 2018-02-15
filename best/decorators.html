@@ -505,12 +505,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.6" data-path="syntax.html">
+        <li class="chapter " data-level="1.7.6" data-path="trace.html">
             
-                <a href="syntax.html">
+                <a href="trace.html">
             
                     
-                    7.6. ES5 / ES6 / TypeScript 语法
+                    7.6. 使用 trace 进行调试
             
                 </a>
             
@@ -518,12 +518,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.7" data-path="stateless-HMR.html">
+        <li class="chapter " data-level="1.7.7" data-path="syntax.html">
+            
+                <a href="syntax.html">
+            
+                    
+                    7.7. ES5 / ES6 / TypeScript 语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="stateless-HMR.html">
             
                 <a href="stateless-HMR.html">
             
                     
-                    7.7. 无状态组件和热加载
+                    7.8. 无状态组件和热加载
             
                 </a>
             
@@ -812,7 +825,7 @@
 <p><strong>TypeScript</strong></p>
 <p>&#x542F;&#x7528; <code>tsconfig.json</code> &#x6587;&#x4EF6;&#x4E2D;&#x7684; <code>experimentalDecorators</code> &#x7F16;&#x8BD1;&#x5668;&#x9009;&#x9879;&#xFF0C;&#x6216;&#x8005;&#x628A; <code>--experimentalDecorators</code> &#x4F5C;&#x4E3A;&#x6807;&#x8BC6;&#x4F20;&#x7ED9;&#x7F16;&#x8BD1;&#x5668;&#x3002;
 &#x4F60;&#x5FC5;&#x987B;&#x5C06; <code>target</code> &#x9009;&#x9879;&#x914D;&#x7F6E;&#x6210; <code>es5</code>+ (es5, es6, ...) &#x6216;&#x901A;&#x8FC7; <code>--target</code> &#x6807;&#x8BC6;&#x3002;</p>
-<p><strong>Babel:</strong></p>
+<p><strong>Babel: &#x542F;&#x7528;&#x88C5;&#x9970;&#x5668;</strong></p>
 <p>&#x5B89;&#x88C5;&#x88C5;&#x9970;&#x5668;&#x652F;&#x6301;: <code>npm i --save-dev babel-plugin-transform-decorators-legacy</code>&#x3002;&#x7136;&#x540E;&#x5728; <code>.babelrc</code> &#x6587;&#x4EF6;&#x4E2D;&#x542F;&#x7528;&#x5B83;:</p>
 <pre><code>{
   &quot;presets&quot;: [
@@ -826,6 +839,13 @@ babel &#x8BBE;&#x7F6E;&#x6709;&#x95EE;&#x9898;&#xFF1F;&#x8BF7;&#x5148;&#x67E5;&#
 <p>&#x5F53;&#x4F7F;&#x7528; react native &#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x9884;&#x8BBE;&#x6765;&#x4EE3;&#x66FF; <code>transform-decorators-legacy</code>:</p>
 <pre><code>{
   &quot;presets&quot;: [&quot;stage-2&quot;, &quot;react-native-stage-0/decorator-support&quot;]
+}
+</code></pre><p><strong>Babel: &#x4F7F;&#x7528; <code>babel-preset-mobx</code></strong></p>
+<p>&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x5728; Babel &#x4E2D;&#x914D;&#x7F6E; MobX &#x7684;&#x65B9;&#x5F0F;&#x662F;&#x4F7F;&#x7528; <a href="https://github.com/zwhitchcox/babel-preset-mobx" target="_blank"><code>mobx</code></a> preset&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x66F4;&#x65B9;&#x4FBF;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x88C5;&#x9970;&#x5668;&#x53CA;&#x5176;&#x4ED6;&#x51E0;&#x4E2A;&#x7ECF;&#x5E38;&#x4E0E; mobx &#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x7684;&#x63D2;&#x4EF6;:</p>
+<pre><code>npm install --save-dev babel-preset-mobx
+</code></pre><p>.babelrc:</p>
+<pre><code>{
+  &quot;presets&quot;: [&quot;mobx&quot;]
 }
 </code></pre><h2 id="&#x88C5;&#x9970;&#x5668;&#x7684;&#x5C40;&#x9650;&#x6027;"><a name="&#x88C5;&#x9970;&#x5668;&#x7684;&#x5C40;&#x9650;&#x6027;" class="plugin-anchor" href="#&#x88C5;&#x9970;&#x5668;&#x7684;&#x5C40;&#x9650;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x88C5;&#x9970;&#x5668;&#x7684;&#x5C40;&#x9650;&#x6027;</h2>
 <ul>
@@ -945,7 +965,7 @@ babel &#x8BBE;&#x7F6E;&#x6709;&#x95EE;&#x9898;&#xFF1F;&#x8BF7;&#x5148;&#x67E5;&#
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5. 如何(不)使用装饰器","level":"1.5","depth":1,"next":{"title":"6. 资源","level":"1.6","depth":1,"ref":"","articles":[{"title":"6.1. 教程、视频和博客","level":"1.6.1","depth":2,"path":"faq/blogs.md","ref":"faq/blogs.md","articles":[]},{"title":"6.2. 相关项目","level":"1.6.2","depth":2,"path":"faq/related.md","ref":"faq/related.md","articles":[]},{"title":"6.3. 案例项目","level":"1.6.3","depth":2,"path":"faq/examples.md","ref":"faq/examples.md","articles":[]},{"title":"6.4. 样板文件","level":"1.6.4","depth":2,"path":"faq/boilerplates.md","ref":"faq/boilerplates.md","articles":[]},{"title":"6.5. 常见问题解答","level":"1.6.5","depth":2,"path":"faq/faq.md","ref":"faq/faq.md","articles":[]}]},"previous":{"title":"4. 理解 MobX 对什么有反应","level":"1.4","depth":1,"path":"best/react.md","ref":"best/react.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"best/decorators.md","mtime":"2017-07-29T01:45:01.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-01-27T10:43:40.928Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5. 如何(不)使用装饰器","level":"1.5","depth":1,"next":{"title":"6. 资源","level":"1.6","depth":1,"ref":"","articles":[{"title":"6.1. 教程、视频和博客","level":"1.6.1","depth":2,"path":"faq/blogs.md","ref":"faq/blogs.md","articles":[]},{"title":"6.2. 相关项目","level":"1.6.2","depth":2,"path":"faq/related.md","ref":"faq/related.md","articles":[]},{"title":"6.3. 案例项目","level":"1.6.3","depth":2,"path":"faq/examples.md","ref":"faq/examples.md","articles":[]},{"title":"6.4. 样板文件","level":"1.6.4","depth":2,"path":"faq/boilerplates.md","ref":"faq/boilerplates.md","articles":[]},{"title":"6.5. 常见问题解答","level":"1.6.5","depth":2,"path":"faq/faq.md","ref":"faq/faq.md","articles":[]}]},"previous":{"title":"4. 理解 MobX 对什么有反应","level":"1.4","depth":1,"path":"best/react.md","ref":"best/react.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"SangKa/mobx-docs-cn","types":["star","fork"],"size":"small"},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"best/decorators.md","mtime":"2018-02-15T12:22:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-02-15T13:01:08.727Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
