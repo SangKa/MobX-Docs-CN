@@ -11,12 +11,19 @@
       "label": "完善文档"
     },
     "github-buttons": {
-      "repo": "SangKa/mobx-docs-cn",
-      "types": [
-        "star",
-        "fork"
-      ],
-      "size": "small"
+      "buttons": [{
+        "user" : "SangKa",
+        "repo" : "MobX-Docs-CN",
+        "type" : "star",
+        "size" : "small",
+        "count": true
+      }, {
+        "user" : "SangKa",
+        "repo" : "MobX-Docs-CN",
+        "type" : "fork",
+        "size" : "small",
+        "count": true
+      }]
     }
   }
 }
