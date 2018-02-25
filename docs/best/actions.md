@@ -31,7 +31,7 @@ class Store {
 }
 ```
 
-上面的示例会抛出异常，因为传给 `fethGithubProjectsSomehow` promise 的回调函数不是 `fetchProjects` 动作的一部分，因为动作只会应用于当前栈。
+上面的示例会抛出异常，因为传给 `fetchGithubProjectsSomehow` promise 的回调函数不是 `fetchProjects` 动作的一部分，因为动作只会应用于当前栈。
 
 首选的简单修复是将回调函数变成动作。(注意绑定在这很重要，以获取正确的 `this`!):
 
