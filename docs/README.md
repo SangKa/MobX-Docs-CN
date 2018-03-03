@@ -29,7 +29,7 @@ _简单、可扩展的状态管理_
 
 ## 入门指南
 
-* <i><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx">Egghead.io 课程</a></i>
+* <i><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx">egghead.io 课程</a></i>
 * [十分钟交互式的 MobX + React 教程](https://mobxjs.github.io/mobx/getting-started.html)
 * [MobX 3官方文档和API概览](http://cn.mobx.js.org/refguide/api.html) ([MobX 2](https://github.com/mobxjs/mobx/blob/7c9e7c86e0c6ead141bb0539d33143d0e1f576dd/docs/refguide/api.md))
 * 视频:
@@ -62,7 +62,7 @@ MobX 的核心概念不多。 下面的代码片段可以在 [JSFiddle](https://
 
 ### Observable state(可观察的状态)
 
-<i><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/javascript-sync-the-ui-with-the-app-state-using-mobx-observable-and-observer-in-react">Egghead.io 第1课: observable & observer</a></i>
+<i><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/javascript-sync-the-ui-with-the-app-state-using-mobx-observable-and-observer-in-react">egghead.io 第1课: observable & observer</a></i>
 
 MobX 为现有的数据结构(如对象，数组和类实例)添加了可观察的功能。
 通过使用 [@observable](http://cn.mobx.js.org/refguide/observable-decorator.html) 装饰器(ES.Next)来给你的类属性添加注解就可以简单地完成这一切。
@@ -100,7 +100,7 @@ function Todo() {
 
 ### Computed values(计算值)
 
-<i><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/javascript-derive-computed-values-and-manage-side-effects-with-mobx-reactions">Egghead.io 第3课: 计算值</a></i>
+<i><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/javascript-derive-computed-values-and-manage-side-effects-with-mobx-reactions">egghead.io 第3课: 计算值</a></i>
 
 使用 MobX， 你可以定义在相关数据发生变化时自动更新的值。
 通过[`@computed`](http://cn.mobx.js.org/refguide/computed-decorator.html) 装饰器或者利用 `(extend)Observable` 时调用 的getter / setter 函数来进行使用。
@@ -119,14 +119,14 @@ class TodoList {
 
 ### Reactions(反应)
 
-<i><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/react-write-custom-mobx-reactions-with-when-and-autorun">Egghead.io 第9课: 自定义反应</a></i>
+<i><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/react-write-custom-mobx-reactions-with-when-and-autorun">egghead.io 第9课: 自定义反应</a></i>
 
 Reactions 和计算值很像，但它不是产生一个新的值，而是会产生一些副作用，比如打印到控制台、网络请求、递增地更新 React 组件树以修补DOM、等等。
 简而言之，reactions 在 [响应式编程](https://en.wikipedia.org/wiki/Reactive_programming)和[命令式编程](https://en.wikipedia.org/wiki/Imperative_programming)之间建立沟通的桥梁。
 
 #### React 组件
 
-<i><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx">Egghead.io 第1课: observable & observer</a></i>
+<i><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx">egghead.io 第1课: observable & observer</a></i>
 
 如果你用 React 的话，可以把你的(无状态函数)组件变成响应式组件，方法是在组件上添加 [`observer`](http://cn.mobx.js.org/refguide/observable-decorator.html) 函数/ 装饰器. `observer`由 `mobx-react` 包提供的。
 
@@ -190,7 +190,7 @@ _MobX 会对在执行跟踪函数期间读取的任何现有的可观察属性�
 
 ### Actions(动作)
 
-<i><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/react-use-mobx-actions-to-change-and-guard-state">Egghead.io 第5课: actions</a></i>
+<i><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/react-use-mobx-actions-to-change-and-guard-state">egghead.io 第5课: actions</a></i>
 
 不同于 flux 系的一些框架，MobX 对于如何处理用户事件是完全开明的。
 

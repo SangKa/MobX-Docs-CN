@@ -1,6 +1,6 @@
 # (@)computed
 
-<a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/javascript-derive-computed-values-and-manage-side-effects-with-mobx-reactions">Egghead.io 第3课: 计算值</a>
+<a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/javascript-derive-computed-values-and-manage-side-effects-with-mobx-reactions">egghead.io 第3课: 计算值</a>
 
 计算值(computed values)是可以根据现有的状态或其它计算值衍生出的值。
 概念上来说，它们与excel表格中的公式十分相似。
