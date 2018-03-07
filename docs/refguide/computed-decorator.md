@@ -146,7 +146,7 @@ name.set("Dave");
 
 ## 内置比较器
 
-MobX 提供了三个内置 `comparer`s (比较器) ，它们应该能满足绝大部分需求：
+MobX 提供了三个内置 `comparer` (比较器) ，它们应该能满足绝大部分需求：
 - `comparer.identity`: 使用恒等 (`===`) 运算符来判定两个值是否相同。
 - `comparer.default`: 等同于 `comparer.identity`，但还认为 `NaN` 等于 `NaN` 。
 - `comparer.structural`: 执行深层结构比较以确定两个值是否相同。
