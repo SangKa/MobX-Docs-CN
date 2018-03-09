@@ -289,7 +289,7 @@ message.likes.push("Jennifer");
 这将**不会**作出反应。在 `autorun` 执行期间没有访问到任何 observable，而只在 `setTimeout` 执行期间访问了。
 通常来说，这是相当明显的，很少会导致问题。
 
-## MobX 只会为 `observer` 组件追踪数据存取，如果数据是直接通过 `render` 进行存取的
+## MobX 只会为数据是直接通过 `render` 存取的 `observer` 组件进行数据追踪 
 
 一个使用 `observer` 的常见错误是它不会追踪语法上看起来像 `observer` 父组件的数据，但实际上是由不同的组件渲染的。当组件的 render 回调函数在第一个类中传递给另一个组件时，经常会发生这种情况。
 
