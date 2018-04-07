@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>8.7. modifiers · MobX 中文文档</title>
+        <title>3.7 decorators · MobX 中文文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -62,10 +62,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="observe.html" />
     
-    
-    <link rel="prev" href="is-observable.html" />
+    <link rel="prev" href="boxed.html" />
     
 
     <style>
@@ -161,90 +159,6 @@
             
 
             
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1" data-path="observable.html">
-            
-                <a href="observable.html">
-            
-                    
-                    2.1. observable
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2" data-path="observable-decorator.html">
-            
-                <a href="observable-decorator.html">
-            
-                    
-                    2.2. @observable
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.3" data-path="computed-decorator.html">
-            
-                <a href="computed-decorator.html">
-            
-                    
-                    2.3. (@)computed
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.4" data-path="autorun.html">
-            
-                <a href="autorun.html">
-            
-                    
-                    2.4. autorun
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.5" data-path="observer-component.html">
-            
-                <a href="observer-component.html">
-            
-                    
-                    2.5. (@)observer
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.6" data-path="action.html">
-            
-                <a href="action.html">
-            
-                    
-                    2.6. action
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
         </li>
     
         <li class="chapter " data-level="1.3" >
@@ -252,7 +166,7 @@
                 <span>
             
                     
-                    3. Observable类型
+                    3. observable 相关
             
                 </span>
             
@@ -261,12 +175,38 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="object.html">
+        <li class="chapter " data-level="1.3.1" data-path="observable.html">
+            
+                <a href="observable.html">
+            
+                    
+                    3.1. observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="observable-decorator.html">
+            
+                <a href="observable-decorator.html">
+            
+                    
+                    3.2. @observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="object.html">
             
                 <a href="object.html">
             
                     
-                    3.1. objects
+                    3.3. objects
             
                 </a>
             
@@ -274,12 +214,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="array.html">
+        <li class="chapter " data-level="1.3.4" data-path="array.html">
             
                 <a href="array.html">
             
                     
-                    3.2. arrays
+                    3.4. arrays
             
                 </a>
             
@@ -287,12 +227,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="map.html">
+        <li class="chapter " data-level="1.3.5" data-path="map.html">
             
                 <a href="map.html">
             
                     
-                    3.3. maps
+                    3.5. maps
             
                 </a>
             
@@ -300,12 +240,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="boxed.html">
+        <li class="chapter " data-level="1.3.6" data-path="boxed.html">
             
                 <a href="boxed.html">
             
                     
-                    3.4. boxed values
+                    3.6. boxed values
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.7" data-path="modifiers.html">
+            
+                <a href="modifiers.html">
+            
+                    
+                    3.7 decorators
             
                 </a>
             
@@ -318,12 +271,26 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../best/react.html">
+        <li class="chapter " data-level="1.4" >
             
-                <a href="../best/react.html">
+                <span>
             
                     
-                    4. 理解 MobX 对什么有反应
+                    4. 对 observables 作出响应
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="computed-decorator.html">
+            
+                <a href="computed-decorator.html">
+            
+                    
+                    4.1. (@)computed
             
                 </a>
             
@@ -331,16 +298,131 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../best/decorators.html">
+        <li class="chapter " data-level="1.4.2" data-path="autorun.html">
             
-                <a href="../best/decorators.html">
+                <a href="autorun.html">
             
                     
-                    5. 如何(不)使用装饰器
+                    4.2. autorun
             
                 </a>
             
 
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="when.html">
+            
+                <a href="when.html">
+            
+                    
+                    4.3. when
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="reaction.html">
+            
+                <a href="reaction.html">
+            
+                    
+                    4.4. reaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="observer-component.html">
+            
+                <a href="observer-component.html">
+            
+                    
+                    4.5. (@)observer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../best/react.html">
+            
+                <a href="../best/react.html">
+            
+                    
+                    4.6. 理解 MobX 对何作出响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    5. 改变 observables
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="action.html">
+            
+                <a href="action.html">
+            
+                    
+                    5.1. action
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../best/actions.html">
+            
+                <a href="../best/actions.html">
+            
+                    
+                    5.2. async actions & flows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="object-api.html">
+            
+                <a href="object-api.html">
+            
+                    
+                    5.3. Object api
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -349,7 +431,7 @@
                 <span>
             
                     
-                    6. 资源
+                    6. 工具函数
             
                 </span>
             
@@ -358,12 +440,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../faq/blogs.html">
+        <li class="chapter " data-level="1.6.1" data-path="tojson.html">
             
-                <a href="../faq/blogs.html">
+                <a href="tojson.html">
             
                     
-                    6.1. 教程、视频和博客
+                    6.1. toJS
             
                 </a>
             
@@ -371,12 +453,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="../faq/related.html">
+        <li class="chapter " data-level="1.6.2" data-path="extend-observable.html">
             
-                <a href="../faq/related.html">
+                <a href="extend-observable.html">
             
                     
-                    6.2. 相关项目
+                    6.2. extendObservable
             
                 </a>
             
@@ -384,12 +466,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="../faq/examples.html">
+        <li class="chapter " data-level="1.6.3" data-path="extending.html">
             
-                <a href="../faq/examples.html">
+                <a href="extending.html">
             
                     
-                    6.3. 案例项目
+                    6.3. createAtom
             
                 </a>
             
@@ -397,12 +479,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="../faq/boilerplates.html">
+        <li class="chapter " data-level="1.6.4" data-path="observe.html">
             
-                <a href="../faq/boilerplates.html">
+                <a href="observe.html">
             
                     
-                    6.4. 样板文件
+                    6.4. intercept & observe
             
                 </a>
             
@@ -410,12 +492,103 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="../faq/faq.html">
+        <li class="chapter " data-level="1.6.5" >
             
-                <a href="../faq/faq.html">
+                <a target="_blank" href="https://github.com/mobxjs/mobx-utils#frompromise">
             
                     
-                    6.5. 常见问题解答
+                    6.5. mobxUtils.fromPromise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <a target="_blank" href="https://github.com/mobxjs/mobx-utils#fromresource">
+            
+                    
+                    6.6. mobxUtis.fromResource
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" >
+            
+                <a target="_blank" href="https://github.com/mobxjs/mobx-utils#tostream">
+            
+                    
+                    6.7. mobxUtils.toStream
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" >
+            
+                <a target="_blank" href="https://github.com/mobxjs/mobx-utils#fromstream">
+            
+                    
+                    6.8. mobxUtils.fromStream
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" >
+            
+                <a target="_blank" href="https://github.com/mobxjs/mobx-utils#now">
+            
+                    
+                    6.9. mobxUtils.now
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="create-transformer.html">
+            
+                <a href="create-transformer.html">
+            
+                    
+                    6.10. mobxUtils.createTransformer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="expr.html">
+            
+                <a href="expr.html">
+            
+                    
+                    6.11. mobxUtils.expr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    6.12. complete api overview
             
                 </a>
             
@@ -430,124 +603,14 @@
     
         <li class="chapter " data-level="1.7" >
             
-                <span>
+                <a target="_blank" href="https://github.com/mobxjs/awesome-mobx#examples">
             
                     
-                    7. 贴士与技巧
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.7.1" data-path="../best/pitfalls.html">
-            
-                <a href="../best/pitfalls.html">
-            
-                    
-                    7.1. 常见陷阱与最佳实践
+                    7. 博客、 视频及相关项目
             
                 </a>
             
 
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.2" data-path="../best/store.html">
-            
-                <a href="../best/store.html">
-            
-                    
-                    7.2. 定义数据存储
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.3" data-path="../best/actions.html">
-            
-                <a href="../best/actions.html">
-            
-                    
-                    7.3. 编写异步 actions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.4" data-path="../best/react-performance.html">
-            
-                <a href="../best/react-performance.html">
-            
-                    
-                    7.4. 优化 React 组件
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.5" data-path="../best/devtools.html">
-            
-                <a href="../best/devtools.html">
-            
-                    
-                    7.5. 开发工具
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.6" data-path="../best/trace.html">
-            
-                <a href="../best/trace.html">
-            
-                    
-                    7.6. 使用 trace 进行调试
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.7" data-path="../best/syntax.html">
-            
-                <a href="../best/syntax.html">
-            
-                    
-                    7.7. ES5 / ES6 / TypeScript 语法
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.8" data-path="../best/stateless-HMR.html">
-            
-                <a href="../best/stateless-HMR.html">
-            
-                    
-                    7.8. 无状态组件和热加载
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
             
         </li>
     
@@ -556,7 +619,7 @@
                 <span>
             
                     
-                    8. 实用函数
+                    8. 贴士与技巧
             
                 </span>
             
@@ -565,12 +628,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="autorun-async.html">
+        <li class="chapter " data-level="1.8.1" data-path="../faq/faq.html">
             
-                <a href="autorun-async.html">
+                <a href="../faq/faq.html">
             
                     
-                    8.1. autorunAsync
+                    8.1. 常见问题解答
             
                 </a>
             
@@ -578,12 +641,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="extending.html">
+        <li class="chapter " data-level="1.8.2" data-path="../best/pitfalls.html">
             
-                <a href="extending.html">
+                <a href="../best/pitfalls.html">
             
                     
-                    8.2. Atom & Reaction
+                    8.2. 常见陷阱与最佳实践
             
                 </a>
             
@@ -591,12 +654,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.3" data-path="create-transformer.html">
+        <li class="chapter " data-level="1.8.3" data-path="../best/decorators.html">
             
-                <a href="create-transformer.html">
+                <a href="../best/decorators.html">
             
                     
-                    8.3. createTransformer
+                    8.3. 如何(不)使用装饰器
             
                 </a>
             
@@ -604,12 +667,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.4" data-path="expr.html">
+        <li class="chapter " data-level="1.8.4" data-path="../best/trace.html">
             
-                <a href="expr.html">
+                <a href="../best/trace.html">
             
                     
-                    8.4. expr
+                    8.4. 使用 trace 进行调试
             
                 </a>
             
@@ -617,12 +680,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.5" data-path="extend-observable.html">
+        <li class="chapter " data-level="1.8.5" data-path="../best/store.html">
             
-                <a href="extend-observable.html">
+                <a href="../best/store.html">
             
                     
-                    8.5. extendObservable
+                    8.5. 定义数据存储
             
                 </a>
             
@@ -630,12 +693,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.6" data-path="is-observable.html">
+        <li class="chapter " data-level="1.8.6" data-path="../best/react-performance.html">
             
-                <a href="is-observable.html">
+                <a href="../best/react-performance.html">
             
                     
-                    8.6. isObservable
+                    8.6. 优化 React 组件
             
                 </a>
             
@@ -643,12 +706,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8.7" data-path="modifiers.html">
+        <li class="chapter " data-level="1.8.7" data-path="../best/devtools.html">
             
-                <a href="modifiers.html">
+                <a href="../best/devtools.html">
             
                     
-                    8.7. modifiers
+                    8.7. 开发工具
             
                 </a>
             
@@ -656,90 +719,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.8" data-path="observe.html">
-            
-                <a href="observe.html">
-            
-                    
-                    8.8 intercept & observe
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.9" data-path="reaction.html">
-            
-                <a href="reaction.html">
-            
-                    
-                    8.9. reaction
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.10" data-path="spy.html">
+        <li class="chapter " data-level="1.8.8" data-path="spy.html">
             
                 <a href="spy.html">
             
                     
-                    8.10. spy
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.11" data-path="tojson.html">
-            
-                <a href="tojson.html">
-            
-                    
-                    8.11. toJS
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.12" data-path="transaction.html">
-            
-                <a href="transaction.html">
-            
-                    
-                    8.12. transaction
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.13" data-path="untracked.html">
-            
-                <a href="untracked.html">
-            
-                    
-                    8.13. untracked
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.14" data-path="when.html">
-            
-                <a href="when.html">
-            
-                    
-                    8.14. when
+                    8.8. spy
             
                 </a>
             
@@ -795,7 +780,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >8.7. modifiers</a>
+        <a href=".." >3.7 decorators</a>
     </h1>
 </div>
 
@@ -810,15 +795,65 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="observable-&#x8C03;&#x8282;&#x5668;"><a name="observable-&#x8C03;&#x8282;&#x5668;" class="plugin-anchor" href="#observable-&#x8C03;&#x8282;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>observable &#x8C03;&#x8282;&#x5668;</h1>
-<p>&#x8C03;&#x8282;&#x5668;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x88C5;&#x9970;&#x5668;&#x6216;&#x8005;&#x7EC4;&#x5408; <code>extendObservable</code> &#x548C; <code>observable.object</code> &#x4F7F;&#x7528;&#xFF0C;&#x4EE5;&#x6539;&#x53D8;&#x7279;&#x5B9A;&#x5C5E;&#x6027;&#x7684;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x89C4;&#x5219;&#x3002;</p>
+                                <h1 id="&#x88C5;&#x9970;&#x5668;"><a name="&#x88C5;&#x9970;&#x5668;" class="plugin-anchor" href="#&#x88C5;&#x9970;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x88C5;&#x9970;&#x5668;</h1>
+<p>MobX &#x6709;&#x4E00;&#x7EC4;&#x88C5;&#x9970;&#x5668;&#x6765;&#x5B9A;&#x4E49; observable &#x5C5E;&#x6027;&#x7684;&#x884C;&#x4E3A;&#x3002;</p>
 <ul>
-<li><code>observable.deep</code>: &#x4EFB;&#x4F55; observable &#x90FD;&#x4F7F;&#x7528;&#x7684;&#x9ED8;&#x8BA4;&#x7684;&#x8C03;&#x8282;&#x5668;&#x3002;&#x5B83;&#x628A;&#x4EFB;&#x4F55;&#x5206;&#x914D;&#x7684;&#x3001;&#x975E;&#x539F;&#x59CB;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x3001;&#x975E; observable &#x7684;&#x503C;&#x8F6C;&#x6362;&#x6210; observable&#x3002;</li>
-<li><code>observable.ref</code>: &#x7981;&#x7528;&#x81EA;&#x52A8;&#x7684; observable &#x8F6C;&#x6362;&#xFF0C;&#x53EA;&#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; observable &#x5F15;&#x7528;&#x3002;</li>
-<li><code>observable.shallow</code>: &#x53EA;&#x80FD;&#x4E0E;&#x96C6;&#x5408;&#x7EC4;&#x5408;&#x4F7F;&#x7528;&#x3002; &#x5C06;&#x4EFB;&#x4F55;&#x5206;&#x914D;&#x7684;&#x96C6;&#x5408;&#x8F6C;&#x6362;&#x4E3A;&#x6D45; observable (&#x800C;&#x4E0D;&#x662F;&#x6DF1; observable)&#x7684;&#x96C6;&#x5408;&#x3002; &#x6362;&#x4E00;&#x79CD;&#x8BF4;&#x6CD5;; &#x96C6;&#x5408;&#x4E2D;&#x7684;&#x503C;&#x5C06;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x53D8;&#x4E3A; observable&#x3002;</li>
+<li><code>observable</code>: <code>observable.deep</code> &#x7684;&#x522B;&#x540D;</li>
+<li><code>observable.deep</code>: &#x4EFB;&#x4F55; observable &#x90FD;&#x4F7F;&#x7528;&#x7684;&#x9ED8;&#x8BA4;&#x7684;&#x8C03;&#x8282;&#x5668;&#x3002;&#x5B83;&#x5C06;&#x4EFB;&#x4F55;(&#x5C1A;&#x672A;&#x6210;&#x4E3A; observable )&#x6570;&#x7EC4;&#xFF0C;&#x6620;&#x5C04;&#x6216;&#x7EAF;&#x5BF9;&#x8C61;&#x514B;&#x9686;&#x5E76;&#x8F6C;&#x6362;&#x4E3A; observable &#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x8D4B;&#x503C;&#x7ED9;&#x7ED9;&#x5B9A;&#x5C5E;&#x6027;</li>
+<li><code>observable.ref</code>: &#x7981;&#x7528;&#x81EA;&#x52A8;&#x7684; observable &#x8F6C;&#x6362;&#xFF0C;&#x53EA;&#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; observable &#x5F15;&#x7528;</li>
+<li><code>observable.shallow</code>: &#x53EA;&#x80FD;&#x4E0E;&#x96C6;&#x5408;&#x7EC4;&#x5408;&#x4F7F;&#x7528;&#x3002; &#x5C06;&#x4EFB;&#x4F55;&#x5206;&#x914D;&#x7684;&#x96C6;&#x5408;&#x8F6C;&#x6362;&#x4E3A; observable&#xFF0C;&#x4F46;&#x8BE5;&#x96C6;&#x5408;&#x7684;&#x503C;&#x5C06;&#x6309;&#x539F;&#x6837;&#x5904;&#x7406;</li>
+<li><code>observable.struct</code>: &#x5C31;&#x50CF; <code>ref</code>, &#x4F46;&#x4F1A;&#x5FFD;&#x7565;&#x7ED3;&#x6784;&#x4E0A;&#x7B49;&#x4E8E;&#x5F53;&#x524D;&#x503C;&#x7684;&#x65B0;&#x503C;</li>
 <li><code>computed</code>: &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x884D;&#x751F;&#x5C5E;&#x6027;, &#x53C2;&#x89C1; <a href="computed-decorator.html"><code>computed</code></a></li>
+<li><code>computed(options)</code>: &#x540C; computed , &#x53EF;&#x8BBE;&#x7F6E;&#x9009;&#x9879;</li>
+<li><code>computed.struct</code>: &#x4E0E; <code>computed</code> &#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x662F;&#x53EA;&#x6709;&#x5F53;&#x89C6;&#x56FE;&#x4EA7;&#x751F;&#x7684;&#x503C;&#x4E0E;&#x4E4B;&#x524D;&#x7684;&#x503C;&#x7ED3;&#x6784;&#x4E0A;&#x6709;&#x4E0D;&#x540C;&#x65F6;&#xFF0C;&#x624D;&#x901A;&#x77E5;&#x5B83;&#x7684;&#x89C2;&#x5BDF;&#x8005;</li>
 <li><code>action</code>: &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x52A8;&#x4F5C;, &#x53C2;&#x89C1; <a href="action.html"><code>action</code></a></li>
+<li><code>action(name)</code>: &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x52A8;&#x4F5C;&#xFF0C;&#x91CD;&#x8F7D;&#x4E86;&#x540D;&#x79F0;</li>
+<li><code>action.bound</code>: &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x52A8;&#x4F5C;, &#x5E76;&#x5C06; <code>this</code> &#x7ED1;&#x5B9A;&#x5230;&#x4E86;&#x5B9E;&#x4F8B;</li>
 </ul>
+<p>&#x88C5;&#x9970;&#x5668;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; API <code>decorate</code>&#x3001;<code>observable.object</code>&#x3001;<code>extendObservable</code> &#x548C; <code>observable</code> (&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x65F6;) &#x6765;&#x6307;&#x5B9A;&#x5BF9;&#x8C61;&#x6210;&#x5458;&#x7684;&#x884C;&#x4E3A;&#x3002;
+&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4F20;&#x5165;&#x88C5;&#x9970;&#x5668;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x5BF9;&#x4EFB;&#x610F;&#x952E;&#x503C;&#x5BF9;&#x4F7F;&#x7528; <code>observable.deep</code>&#xFF0C;&#x5BF9; getters &#x4F7F;&#x7528; <code>computed</code> &#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> {observable, autorun, action} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;mobx&quot;</span>;
+
+<span class="hljs-keyword">var</span> person = observable({
+    name: <span class="hljs-string">&quot;John&quot;</span>,
+    age: <span class="hljs-number">42</span>,
+    showAge: <span class="hljs-literal">false</span>,
+
+    get labelText() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.showAge ? <span class="hljs-string">`<span class="hljs-subst">${this.name}</span> (age: <span class="hljs-subst">${this.age}</span>)`</span> : <span class="hljs-keyword">this</span>.name;
+    },
+
+    <span class="hljs-comment">// &#x52A8;&#x4F5C;:</span>
+    setAge(age) {
+        <span class="hljs-keyword">this</span>.age = age;
+    }
+}, {
+    setAge: action
+    <span class="hljs-comment">// &#x5176;&#x4ED6;&#x5C5E;&#x6027;&#x9ED8;&#x8BA4;&#x4E3A; observables / computed</span>
+});
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
+    name = <span class="hljs-string">&quot;John&quot;</span>
+    age = <span class="hljs-number">42</span>
+    showAge = <span class="hljs-literal">false</span>
+
+    get labelText() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.showAge ? <span class="hljs-string">`<span class="hljs-subst">${this.name}</span> (age: <span class="hljs-subst">${this.age}</span>)`</span> : <span class="hljs-keyword">this</span>.name;
+    }
+
+    setAge(age) {
+        <span class="hljs-keyword">this</span>.age = age;
+    }
+}
+<span class="hljs-comment">// &#x4F7F;&#x7528; decorate &#x65F6;&#xFF0C;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#x90FD;&#x5E94;&#x8BE5;&#x6307;&#x5B9A; (&#x6BD5;&#x7ADF;&#xFF0C;&#x7C7B;&#x91CC;&#x7684;&#x975E; observable &#x5B57;&#x6BB5;&#x53EF;&#x80FD;&#x4F1A;&#x66F4;&#x591A;)</span>
+decorate(Person, {
+    name: observable,
+    age: observable,
+    showAge: observable,
+    labelText: computed,
+    setAge: action
+})
+</code></pre>
 <h2 id="&#x6DF1;&#x5C42;&#x53EF;&#x89C2;&#x5BDF;&#x6027;"><a name="&#x6DF1;&#x5C42;&#x53EF;&#x89C2;&#x5BDF;&#x6027;" class="plugin-anchor" href="#&#x6DF1;&#x5C42;&#x53EF;&#x89C2;&#x5BDF;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6DF1;&#x5C42;&#x53EF;&#x89C2;&#x5BDF;&#x6027;</h2>
 <p>&#x5F53; MobX &#x521B;&#x5EFA;&#x4E00;&#x4E2A; observable &#x5BF9;&#x8C61;&#x65F6;&#xFF0C;(&#x4F7F;&#x7528; <code>observable</code>&#x3001; <code>observable.object</code> &#x6216; <code>extendObservable</code>)&#xFF0C;&#x5B83;&#x5F15;&#x5165;&#x7684; observable &#x5C5E;&#x6027;&#x9ED8;&#x8BA4;&#x662F;&#x4F7F;&#x7528; <code>deep</code> &#x8C03;&#x8282;&#x5668;&#x7684;&#x3002;<code>deep</code> &#x8C03;&#x8282;&#x5668;&#x4E3B;&#x8981;&#x662F;&#x4E3A;&#x4EFB;&#x4F55;&#x65B0;&#x5206;&#x914D;&#x7684;&#x503C;&#x9012;&#x5F52;&#x8C03;&#x7528; <code>observable(newValue)</code>&#x3002;
 &#x4F1A;&#x4F9D;&#x6B21;&#x4F7F;&#x7528; <code>deep</code> &#x8C03;&#x8282;&#x5668;...&#x4F60;&#x53EF;&#x4EE5;&#x60F3;&#x8C61;&#x3002;</p>
@@ -841,7 +876,9 @@
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Message</span>(<span class="hljs-params"></span>) </span>{
     extendObservable({
         message: <span class="hljs-string">&quot;Hello world&quot;</span>,
-        author: observable.ref(<span class="hljs-literal">null</span>)
+        author: <span class="hljs-literal">null</span>
+    }, {
+        author: observable.ref
     })
 }
 </code></pre>
@@ -855,48 +892,7 @@
 }
 </code></pre>
 <p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x666E;&#x901A;&#x7684; author &#x6570;&#x7EC4;&#x5206;&#x914D;&#x7ED9; <code>authors</code> &#x7684;&#x8BDD;&#xFF0C;&#x4F1A;&#x4F7F;&#x7528; observables &#x6570;&#x7EC4;&#x6765;&#x66F4;&#x65B0; author&#xFF0C;observables &#x6570;&#x7EC4;&#x5305;&#x542B;&#x539F;&#x59CB;&#x7684;&#x3001;&#x975E; observable &#x7684; author &#x3002;</p>
-<p>&#x6CE8;&#x610F;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x53EF;&#x7528;&#x4E8E;&#x624B;&#x52A8;&#x521B;&#x5EFA;&#x6D45;&#x96C6;&#x5408;: <code>observable.shallowObject</code>&#x3001; <code>observable.shallowArray</code>&#x3001; <code>observable.shallowMap</code> &#x548C; <code>extendShallowObservable</code>&#x3002;</p>
-<h2 id="action--computed"><a name="action--computed" class="plugin-anchor" href="#action--computed"><i class="fa fa-link" aria-hidden="true"></i></a>Action &amp; Computed</h2>
-<p><code>action</code>&#x3001;<code>action.bound</code>&#x3001;<code>computed</code> &#x548C; <code>computed.struct</code> &#x540C;&#x6837;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x8C03;&#x8282;&#x5668;&#x4F7F;&#x7528;&#x3002;
-&#x53C2;&#x89C1; <a href="computed-decorator.html"><code>computed</code></a> &#x548C; <a href="action.html"><code>action</code></a>&#x3002;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> taskStore = observable({
-    tasks: observable.shallow([]),
-    taskCount: computed(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.tasks.length
-    }),
-    clearTasks: action.bound(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">this</span>.tasks.clear()
-    })
-})
-</code></pre>
-<h2 id="asstructure"><a name="asstructure" class="plugin-anchor" href="#asstructure"><i class="fa fa-link" aria-hidden="true"></i></a>asStructure</h2>
-<p>MobX 2 &#x4E2D;&#x6709; <code>asStructure</code> &#x8C03;&#x8282;&#x5668;&#xFF0C;&#x5B83;&#x5728;&#x5B9E;&#x8DF5;&#x4E2D;&#x6781;&#x5C11;&#x88AB;&#x4F7F;&#x7528;&#xFF0C;&#x6216;&#x8005;&#x53EA;&#x80FD;&#x5728;&#x4F7F;&#x7528; <code>reference</code> / <code>shallow</code> &#x66F4;&#x9002;&#x5408;(&#x4F8B;&#x5982;&#x4F7F;&#x7528;&#x4E0D;&#x53EF;&#x53D8;&#x6570;&#x636E;)&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4F7F;&#x7528;&#x3002;
-&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x548C; reaction &#x7684;&#x7ED3;&#x6784;&#x6BD4;&#x8F83;&#x4ECD;&#x662F;&#x53EF;&#x80FD;&#x7684;&#x3002;</p>
-<h2 id="&#x8C03;&#x8282;&#x5668;&#x7684;&#x6548;&#x679C;"><a name="&#x8C03;&#x8282;&#x5668;&#x7684;&#x6548;&#x679C;" class="plugin-anchor" href="#&#x8C03;&#x8282;&#x5668;&#x7684;&#x6548;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8C03;&#x8282;&#x5668;&#x7684;&#x6548;&#x679C;</h2>
-<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Store</span> </span>{
-    @observable<span class="hljs-comment">/*.deep*/</span> collection1 = []
-
-    @observable.ref collection2 = []
-
-    @observable.shallow collection3 = []
-}
-
-<span class="hljs-keyword">const</span> todos = [{ test: <span class="hljs-string">&quot;value&quot;</span> }]
-<span class="hljs-keyword">const</span> store = <span class="hljs-keyword">new</span> Store()
-
-store.collection1 = todos;
-store.collection2 = todos;
-store.collection3 = todos;
-</code></pre>
-<p>&#x5B8C;&#x6210;&#x8FD9;&#x4E9B;&#x5206;&#x914D;&#x540E;:</p>
-<ol>
-<li><code>collection1 === todos</code> &#x662F; false; todos &#x7684;&#x5185;&#x5BB9;&#x4F1A;&#x88AB;&#x514B;&#x9686;&#x81F3;&#x4E00;&#x4E2A;&#x65B0;&#x7684; observable &#x6570;&#x7EC4;&#x3002;</li>
-<li><code>collection1[0] === todos[0]</code> &#x662F; false; &#x7B2C;&#x4E00;&#x4E2A; todo &#x662F;&#x4E2A;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x88AB;&#x514B;&#x9686;&#x81F3;&#x4E00;&#x4E2A;&#x5B58;&#x50A8;&#x5728;&#x6570;&#x7EC4;&#x4E2D;&#x7684; observable &#x5BF9;&#x8C61;&#x3002;</li>
-<li><code>collection2 === todos</code> &#x662F; true; <code>todos</code> &#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#xFF0C; &#x800C;&#x4E14;&#x662F;&#x975E; observable&#x3002; &#x53EA;&#x6709; <code>collection2</code> &#x5C5E;&#x6027;&#x672C;&#x8EAB;&#x662F; observable &#x3002;</li>
-<li><code>collection2[0] === todos[0]</code> &#x662F; true; &#x7406;&#x7531;&#x540C; 3&#x3002;</li>
-<li><code>collection3 === todos</code> &#x662F; false; collection3 &#x662F;&#x4E00;&#x4E2A;&#x65B0;&#x7684; observable &#x6570;&#x7EC4;&#x3002;</li>
-<li><code>collection3[0] === todos[0]</code> &#x662F; true; <code>collection3</code> &#x7684;&#x503C;&#x53EA;&#x662F;&#x6D45;&#x7684;&#x8F6C;&#x53D8;&#x6210; observable&#xFF0C;&#x4F46;&#x6570;&#x7EC4;&#x7684;&#x5185;&#x5BB9;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#x3002;</li>
-</ol>
+<p>&#x6CE8;&#x610F;&#xFF0C; <code>{ deep: false }</code> &#x4E86;&#x4F5C;&#x4E3A;&#x9009;&#x9879;&#x4F20;&#x7ED9; <code>observable</code>&#x3001;<code>observable.object</code>&#x3001;<code>observable.array</code>&#x3001;<code>observable.map</code> &#x548C; <code>extendObservable</code> &#x6765;&#x521B;&#x5EFA;&#x6D45;&#x96C6;&#x5408;&#x3002;</p>
 
                                 
                                 </section>
@@ -924,14 +920,10 @@ store.collection3 = todos;
 
             
                 
-                <a href="is-observable.html" class="navigation navigation-prev " aria-label="Previous page: 8.6. isObservable">
+                <a href="boxed.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 3.6. boxed values">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="observe.html" class="navigation navigation-next " aria-label="Next page: 8.8 intercept & observe">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -940,7 +932,7 @@ store.collection3 = todos;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"8.7. modifiers","level":"1.8.7","depth":2,"next":{"title":"8.8 intercept & observe","level":"1.8.8","depth":2,"path":"refguide/observe.md","ref":"refguide/observe.md","articles":[]},"previous":{"title":"8.6. isObservable","level":"1.8.6","depth":2,"path":"refguide/is-observable.md","ref":"refguide/is-observable.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/modifiers.md","mtime":"2017-04-23T12:48:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-09T16:05:28.236Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.7 decorators","level":"1.3.7","depth":2,"next":{"title":"4. 对 observables 作出响应","level":"1.4","depth":1,"ref":"","articles":[{"title":"4.1. (@)computed","level":"1.4.1","depth":2,"path":"refguide/computed-decorator.md","ref":"refguide/computed-decorator.md","articles":[]},{"title":"4.2. autorun","level":"1.4.2","depth":2,"path":"refguide/autorun.md","ref":"refguide/autorun.md","articles":[]},{"title":"4.3. when","level":"1.4.3","depth":2,"path":"refguide/when.md","ref":"refguide/when.md","articles":[]},{"title":"4.4. reaction","level":"1.4.4","depth":2,"path":"refguide/reaction.md","ref":"refguide/reaction.md","articles":[]},{"title":"4.5. (@)observer","level":"1.4.5","depth":2,"path":"refguide/observer-component.md","ref":"refguide/observer-component.md","articles":[]},{"title":"4.6. 理解 MobX 对何作出响应","level":"1.4.6","depth":2,"path":"best/react.md","ref":"best/react.md","articles":[]}]},"previous":{"title":"3.6. boxed values","level":"1.3.6","depth":2,"path":"refguide/boxed.md","ref":"refguide/boxed.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/modifiers.md","mtime":"2018-04-07T15:43:03.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-07T15:51:17.236Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

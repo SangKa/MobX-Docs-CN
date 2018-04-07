@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>3.2. @observable · MobX 中文文档</title>
+        <title>5.3. Object api · MobX 中文文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -62,10 +62,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="object.html" />
     
-    
-    <link rel="prev" href="observable.html" />
+    <link rel="prev" href="../best/actions.html" />
     
 
     <style>
@@ -190,7 +188,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2" data-path="observable-decorator.html">
+        <li class="chapter " data-level="1.3.2" data-path="observable-decorator.html">
             
                 <a href="observable-decorator.html">
             
@@ -410,7 +408,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="object-api.html">
+        <li class="chapter active" data-level="1.5.3" data-path="object-api.html">
             
                 <a href="object-api.html">
             
@@ -782,7 +780,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >3.2. @observable</a>
+        <a href=".." >5.3. Object api</a>
     </h1>
 </div>
 
@@ -797,24 +795,29 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="observable"><a name="observable" class="plugin-anchor" href="#observable"><i class="fa fa-link" aria-hidden="true"></i></a>@observable</h1>
-<p><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/javascript-sync-the-ui-with-the-app-state-using-mobx-observable-and-observer-in-react" target="_blank">egghead.io &#x7B2C;1&#x8BFE;: observable &amp; observer</a>
-<a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/react-use-observable-objects-arrays-and-maps-to-store-state-in-mobx" target="_blank">egghead.io &#x7B2C;4&#x8BFE;: observable &#x5BF9;&#x8C61; &amp; &#x6620;&#x5C04;</a></p>
-<p>&#x88C5;&#x9970;&#x5668;&#x53EF;&#x4EE5;&#x5728; ES7 &#x6216;&#x8005; TypeScript &#x7C7B;&#x5C5E;&#x6027;&#x4E2D;&#x5C5E;&#x6027;&#x4F7F;&#x7528;&#xFF0C;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x6210;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#x3002;
-<code>@observable</code> &#x53EF;&#x4EE5;&#x5728;&#x5B9E;&#x4F8B;&#x5B57;&#x6BB5;&#x548C;&#x5C5E;&#x6027; getter &#x4E0A;&#x4F7F;&#x7528;&#x3002;
-&#x5BF9;&#x4E8E;&#x5BF9;&#x8C61;&#x7684;&#x54EA;&#x90E8;&#x5206;&#x9700;&#x8981;&#x6210;&#x4E3A;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#xFF0C;@observable &#x63D0;&#x4F9B;&#x4E86;&#x7EC6;&#x7C92;&#x5EA6;&#x7684;&#x63A7;&#x5236;&#x3002;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { observable, computed } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;mobx&quot;</span>;
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OrderLine</span> </span>{
-    @observable price = <span class="hljs-number">0</span>;
-    @observable amount = <span class="hljs-number">1</span>;
-
-    @computed get total() {
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.price * <span class="hljs-keyword">this</span>.amount;
-    }
-}
-</code></pre>
-<p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x73AF;&#x5883;&#x4E0D;&#x652F;&#x6301;&#x88C5;&#x9970;&#x5668;&#x6216;&#x5B57;&#x6BB5;&#x521D;&#x59CB;&#x5316;&#x5668;&#xFF0C;&#x4F7F;&#x7528; <code>decorate</code> &#x6765;&#x4EE3;&#x66FF; (&#x60F3;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#xFF0C;&#x53C2;&#x89C1; <a href="../best/synax.md">&#x88C5;&#x9970;</a>)&#x3002;</p>
+                                <h2 id="&#x76F4;&#x63A5;&#x64CD;&#x63A7;-observable"><a name="&#x76F4;&#x63A5;&#x64CD;&#x63A7;-observable" class="plugin-anchor" href="#&#x76F4;&#x63A5;&#x64CD;&#x63A7;-observable"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76F4;&#x63A5;&#x64CD;&#x63A7; Observable</h2>
+<p>&#x73B0;&#x5728;&#x6709;&#x4E00;&#x4E2A;&#x7EDF;&#x4E00;&#x7684;&#x5DE5;&#x5177; API &#x53EF;&#x4EE5;&#x64CD;&#x63A7; observable &#x6620;&#x5C04;&#x3001;&#x5BF9;&#x8C61;&#x548C;&#x6570;&#x7EC4;&#x3002;&#x8FD9;&#x4E9B; API &#x90FD;&#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x7684;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5982;&#x679C;&#x4F7F;&#x7528; <code>set</code> &#x8FDB;&#x884C;&#x6DFB;&#x52A0;&#xFF0C;&#x4F7F;&#x7528; <code>values</code> &#x6216; <code>keys</code> &#x8FDB;&#x884C;&#x8FED;&#x4EE3;&#xFF0C;&#x5373;&#x4FBF;&#x662F;&#x65B0;&#x5C5E;&#x6027;&#x7684;&#x58F0;&#x660E;&#x90FD;&#x53EF;&#x4EE5;&#x88AB; MobX &#x68C0;&#x6D4B;&#x5230;&#x3002;</p>
+<ul>
+<li><strong><code>values(thing)</code></strong> &#x5C06;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x503C;&#x4F5C;&#x4E3A;&#x6570;&#x7EC4;&#x8FD4;&#x56DE;</li>
+<li><strong><code>keys(thing)</code></strong> &#x5C06;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x952E;&#x4F5C;&#x4E3A;&#x6570;&#x7EC4;&#x8FD4;&#x56DE;</li>
+<li><strong><code>set(thing, key, value)</code></strong> &#x6216; <strong><code>set(thing, { key: value })</code></strong> &#x4F7F;&#x7528;&#x63D0;&#x4F9B;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x6765;&#x66F4;&#x65B0;&#x7ED9;&#x5B9A;&#x7684;&#x96C6;&#x5408;</li>
+<li><strong><code>remove(thing, key)</code></strong> &#x4ECE;&#x96C6;&#x5408;&#x4E2D;&#x79FB;&#x9664;&#x6307;&#x5B9A;&#x7684;&#x9879;&#x3002;&#x7528;&#x4E8E;&#x6570;&#x7EC4;&#x62FC;&#x63A5;</li>
+<li><strong><code>has(thing, key)</code></strong> &#x5982;&#x679C;&#x96C6;&#x5408;&#x4E2D;&#x5B58;&#x5728;&#x6307;&#x5B9A;&#x7684; <em>observable</em> &#x5C5E;&#x6027;&#x5C31;&#x8FD4;&#x56DE; true</li>
+<li><strong><code>get(thing, key)</code></strong> &#x8FD4;&#x56DE;&#x6307;&#x5B9A;&#x952E;&#x4E0B;&#x7684;&#x5B50;&#x9879;</li>
+</ul>
+<p>```javascript
+import { get, set, observable, values } from &quot;mobx&quot;</p>
+<p>const twitterUrls = observable.object({
+    &quot;John&quot;: &quot;twitter.com/johnny&quot;
+})</p>
+<p>autorun(() =&gt; {
+    console.log(get(twitterUrls, &quot;Sara&quot;)) // get &#x53EF;&#x4EE5;&#x8FFD;&#x8E2A;&#x5C1A;&#x672A;&#x5B58;&#x5728;&#x7684;&#x5C5E;&#x6027;
+})</p>
+<p>autorun(() =&gt; {
+    console.log(&quot;All urls: &quot; + values(twitterUrls).join(&quot;, &quot;))
+})</p>
+<p>set(twitterUrls, { &quot;Sara&quot; : &quot;twitter.com/horsejs&quot;})
+``` &#xF09C;</p>
 
                                 
                                 </section>
@@ -842,14 +845,10 @@
 
             
                 
-                <a href="observable.html" class="navigation navigation-prev " aria-label="Previous page: 3.1. observable">
+                <a href="../best/actions.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 5.2. async actions & flows">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="object.html" class="navigation navigation-next " aria-label="Next page: 3.3. objects">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -858,7 +857,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.2. @observable","level":"1.3.2","depth":2,"next":{"title":"3.3. objects","level":"1.3.3","depth":2,"path":"refguide/object.md","ref":"refguide/object.md","articles":[]},"previous":{"title":"3.1. observable","level":"1.3.1","depth":2,"path":"refguide/observable.md","ref":"refguide/observable.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/observable-decorator.md","mtime":"2018-04-07T15:26:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-07T15:51:17.236Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.3. Object api","level":"1.5.3","depth":2,"next":{"title":"6. 工具函数","level":"1.6","depth":1,"ref":"","articles":[{"title":"6.1. toJS","level":"1.6.1","depth":2,"path":"refguide/tojson.md","ref":"refguide/tojson.md","articles":[]},{"title":"6.2. extendObservable","level":"1.6.2","depth":2,"path":"refguide/extend-observable.md","ref":"refguide/extend-observable.md","articles":[]},{"title":"6.3. createAtom","level":"1.6.3","depth":2,"path":"refguide/extending.md","ref":"refguide/extending.md","articles":[]},{"title":"6.4. intercept & observe","level":"1.6.4","depth":2,"path":"refguide/observe.md","ref":"refguide/observe.md","articles":[]},{"title":"6.5. mobxUtils.fromPromise","level":"1.6.5","depth":2,"anchor":"#frompromise","url":"https://github.com/mobxjs/mobx-utils#frompromise","ref":"https://github.com/mobxjs/mobx-utils#frompromise","articles":[]},{"title":"6.6. mobxUtis.fromResource","level":"1.6.6","depth":2,"anchor":"#fromresource","url":"https://github.com/mobxjs/mobx-utils#fromresource","ref":"https://github.com/mobxjs/mobx-utils#fromresource","articles":[]},{"title":"6.7. mobxUtils.toStream","level":"1.6.7","depth":2,"anchor":"#tostream","url":"https://github.com/mobxjs/mobx-utils#tostream","ref":"https://github.com/mobxjs/mobx-utils#tostream","articles":[]},{"title":"6.8. mobxUtils.fromStream","level":"1.6.8","depth":2,"anchor":"#fromstream","url":"https://github.com/mobxjs/mobx-utils#fromstream","ref":"https://github.com/mobxjs/mobx-utils#fromstream","articles":[]},{"title":"6.9. mobxUtils.now","level":"1.6.9","depth":2,"anchor":"#now","url":"https://github.com/mobxjs/mobx-utils#now","ref":"https://github.com/mobxjs/mobx-utils#now","articles":[]},{"title":"6.10. mobxUtils.createTransformer","level":"1.6.10","depth":2,"path":"refguide/create-transformer.md","ref":"refguide/create-transformer.md","articles":[]},{"title":"6.11. mobxUtils.expr","level":"1.6.11","depth":2,"path":"refguide/expr.md","ref":"refguide/expr.md","articles":[]},{"title":"6.12. complete api overview","level":"1.6.12","depth":2,"path":"refguide/api.md","ref":"refguide/api.md","articles":[]}]},"previous":{"title":"5.2. async actions & flows","level":"1.5.2","depth":2,"path":"best/actions.md","ref":"best/actions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/object-api.md","mtime":"2018-04-07T15:20:12.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-07T15:51:17.236Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

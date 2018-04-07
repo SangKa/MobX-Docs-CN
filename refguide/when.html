@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>8.14. when · MobX 中文文档</title>
+        <title>4.3. when · MobX 中文文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -62,10 +62,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../donating.html" />
+    <link rel="next" href="reaction.html" />
     
     
-    <link rel="prev" href="untracked.html" />
+    <link rel="prev" href="autorun.html" />
     
 
     <style>
@@ -161,90 +161,6 @@
             
 
             
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1" data-path="observable.html">
-            
-                <a href="observable.html">
-            
-                    
-                    2.1. observable
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2" data-path="observable-decorator.html">
-            
-                <a href="observable-decorator.html">
-            
-                    
-                    2.2. @observable
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.3" data-path="computed-decorator.html">
-            
-                <a href="computed-decorator.html">
-            
-                    
-                    2.3. (@)computed
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.4" data-path="autorun.html">
-            
-                <a href="autorun.html">
-            
-                    
-                    2.4. autorun
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.5" data-path="observer-component.html">
-            
-                <a href="observer-component.html">
-            
-                    
-                    2.5. (@)observer
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.6" data-path="action.html">
-            
-                <a href="action.html">
-            
-                    
-                    2.6. action
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
         </li>
     
         <li class="chapter " data-level="1.3" >
@@ -252,7 +168,7 @@
                 <span>
             
                     
-                    3. Observable类型
+                    3. observable 相关
             
                 </span>
             
@@ -261,12 +177,38 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="object.html">
+        <li class="chapter " data-level="1.3.1" data-path="observable.html">
+            
+                <a href="observable.html">
+            
+                    
+                    3.1. observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="observable-decorator.html">
+            
+                <a href="observable-decorator.html">
+            
+                    
+                    3.2. @observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="object.html">
             
                 <a href="object.html">
             
                     
-                    3.1. objects
+                    3.3. objects
             
                 </a>
             
@@ -274,12 +216,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="array.html">
+        <li class="chapter " data-level="1.3.4" data-path="array.html">
             
                 <a href="array.html">
             
                     
-                    3.2. arrays
+                    3.4. arrays
             
                 </a>
             
@@ -287,12 +229,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="map.html">
+        <li class="chapter " data-level="1.3.5" data-path="map.html">
             
                 <a href="map.html">
             
                     
-                    3.3. maps
+                    3.5. maps
             
                 </a>
             
@@ -300,12 +242,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="boxed.html">
+        <li class="chapter " data-level="1.3.6" data-path="boxed.html">
             
                 <a href="boxed.html">
             
                     
-                    3.4. boxed values
+                    3.6. boxed values
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="modifiers.html">
+            
+                <a href="modifiers.html">
+            
+                    
+                    3.7 decorators
             
                 </a>
             
@@ -318,12 +273,26 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../best/react.html">
+        <li class="chapter " data-level="1.4" >
             
-                <a href="../best/react.html">
+                <span>
             
                     
-                    4. 理解 MobX 对什么有反应
+                    4. 对 observables 作出响应
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="computed-decorator.html">
+            
+                <a href="computed-decorator.html">
+            
+                    
+                    4.1. (@)computed
             
                 </a>
             
@@ -331,16 +300,131 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../best/decorators.html">
+        <li class="chapter " data-level="1.4.2" data-path="autorun.html">
             
-                <a href="../best/decorators.html">
+                <a href="autorun.html">
             
                     
-                    5. 如何(不)使用装饰器
+                    4.2. autorun
             
                 </a>
             
 
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="when.html">
+            
+                <a href="when.html">
+            
+                    
+                    4.3. when
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="reaction.html">
+            
+                <a href="reaction.html">
+            
+                    
+                    4.4. reaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="observer-component.html">
+            
+                <a href="observer-component.html">
+            
+                    
+                    4.5. (@)observer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../best/react.html">
+            
+                <a href="../best/react.html">
+            
+                    
+                    4.6. 理解 MobX 对何作出响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    5. 改变 observables
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="action.html">
+            
+                <a href="action.html">
+            
+                    
+                    5.1. action
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../best/actions.html">
+            
+                <a href="../best/actions.html">
+            
+                    
+                    5.2. async actions & flows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="object-api.html">
+            
+                <a href="object-api.html">
+            
+                    
+                    5.3. Object api
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -349,7 +433,7 @@
                 <span>
             
                     
-                    6. 资源
+                    6. 工具函数
             
                 </span>
             
@@ -358,12 +442,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../faq/blogs.html">
+        <li class="chapter " data-level="1.6.1" data-path="tojson.html">
             
-                <a href="../faq/blogs.html">
+                <a href="tojson.html">
             
                     
-                    6.1. 教程、视频和博客
+                    6.1. toJS
             
                 </a>
             
@@ -371,12 +455,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="../faq/related.html">
+        <li class="chapter " data-level="1.6.2" data-path="extend-observable.html">
             
-                <a href="../faq/related.html">
+                <a href="extend-observable.html">
             
                     
-                    6.2. 相关项目
+                    6.2. extendObservable
             
                 </a>
             
@@ -384,12 +468,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="../faq/examples.html">
+        <li class="chapter " data-level="1.6.3" data-path="extending.html">
             
-                <a href="../faq/examples.html">
+                <a href="extending.html">
             
                     
-                    6.3. 案例项目
+                    6.3. createAtom
             
                 </a>
             
@@ -397,12 +481,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="../faq/boilerplates.html">
+        <li class="chapter " data-level="1.6.4" data-path="observe.html">
             
-                <a href="../faq/boilerplates.html">
+                <a href="observe.html">
             
                     
-                    6.4. 样板文件
+                    6.4. intercept & observe
             
                 </a>
             
@@ -410,12 +494,103 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="../faq/faq.html">
+        <li class="chapter " data-level="1.6.5" >
             
-                <a href="../faq/faq.html">
+                <a target="_blank" href="https://github.com/mobxjs/mobx-utils#frompromise">
             
                     
-                    6.5. 常见问题解答
+                    6.5. mobxUtils.fromPromise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <a target="_blank" href="https://github.com/mobxjs/mobx-utils#fromresource">
+            
+                    
+                    6.6. mobxUtis.fromResource
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" >
+            
+                <a target="_blank" href="https://github.com/mobxjs/mobx-utils#tostream">
+            
+                    
+                    6.7. mobxUtils.toStream
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" >
+            
+                <a target="_blank" href="https://github.com/mobxjs/mobx-utils#fromstream">
+            
+                    
+                    6.8. mobxUtils.fromStream
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" >
+            
+                <a target="_blank" href="https://github.com/mobxjs/mobx-utils#now">
+            
+                    
+                    6.9. mobxUtils.now
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="create-transformer.html">
+            
+                <a href="create-transformer.html">
+            
+                    
+                    6.10. mobxUtils.createTransformer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="expr.html">
+            
+                <a href="expr.html">
+            
+                    
+                    6.11. mobxUtils.expr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    6.12. complete api overview
             
                 </a>
             
@@ -430,124 +605,14 @@
     
         <li class="chapter " data-level="1.7" >
             
-                <span>
+                <a target="_blank" href="https://github.com/mobxjs/awesome-mobx#examples">
             
                     
-                    7. 贴士与技巧
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.7.1" data-path="../best/pitfalls.html">
-            
-                <a href="../best/pitfalls.html">
-            
-                    
-                    7.1. 常见陷阱与最佳实践
+                    7. 博客、 视频及相关项目
             
                 </a>
             
 
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.2" data-path="../best/store.html">
-            
-                <a href="../best/store.html">
-            
-                    
-                    7.2. 定义数据存储
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.3" data-path="../best/actions.html">
-            
-                <a href="../best/actions.html">
-            
-                    
-                    7.3. 编写异步 actions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.4" data-path="../best/react-performance.html">
-            
-                <a href="../best/react-performance.html">
-            
-                    
-                    7.4. 优化 React 组件
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.5" data-path="../best/devtools.html">
-            
-                <a href="../best/devtools.html">
-            
-                    
-                    7.5. 开发工具
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.6" data-path="../best/trace.html">
-            
-                <a href="../best/trace.html">
-            
-                    
-                    7.6. 使用 trace 进行调试
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.7" data-path="../best/syntax.html">
-            
-                <a href="../best/syntax.html">
-            
-                    
-                    7.7. ES5 / ES6 / TypeScript 语法
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.8" data-path="../best/stateless-HMR.html">
-            
-                <a href="../best/stateless-HMR.html">
-            
-                    
-                    7.8. 无状态组件和热加载
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
             
         </li>
     
@@ -556,7 +621,7 @@
                 <span>
             
                     
-                    8. 实用函数
+                    8. 贴士与技巧
             
                 </span>
             
@@ -565,12 +630,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="autorun-async.html">
+        <li class="chapter " data-level="1.8.1" data-path="../faq/faq.html">
             
-                <a href="autorun-async.html">
+                <a href="../faq/faq.html">
             
                     
-                    8.1. autorunAsync
+                    8.1. 常见问题解答
             
                 </a>
             
@@ -578,12 +643,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="extending.html">
+        <li class="chapter " data-level="1.8.2" data-path="../best/pitfalls.html">
             
-                <a href="extending.html">
+                <a href="../best/pitfalls.html">
             
                     
-                    8.2. Atom & Reaction
+                    8.2. 常见陷阱与最佳实践
             
                 </a>
             
@@ -591,12 +656,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.3" data-path="create-transformer.html">
+        <li class="chapter " data-level="1.8.3" data-path="../best/decorators.html">
             
-                <a href="create-transformer.html">
+                <a href="../best/decorators.html">
             
                     
-                    8.3. createTransformer
+                    8.3. 如何(不)使用装饰器
             
                 </a>
             
@@ -604,12 +669,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.4" data-path="expr.html">
+        <li class="chapter " data-level="1.8.4" data-path="../best/trace.html">
             
-                <a href="expr.html">
+                <a href="../best/trace.html">
             
                     
-                    8.4. expr
+                    8.4. 使用 trace 进行调试
             
                 </a>
             
@@ -617,12 +682,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.5" data-path="extend-observable.html">
+        <li class="chapter " data-level="1.8.5" data-path="../best/store.html">
             
-                <a href="extend-observable.html">
+                <a href="../best/store.html">
             
                     
-                    8.5. extendObservable
+                    8.5. 定义数据存储
             
                 </a>
             
@@ -630,12 +695,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.6" data-path="is-observable.html">
+        <li class="chapter " data-level="1.8.6" data-path="../best/react-performance.html">
             
-                <a href="is-observable.html">
+                <a href="../best/react-performance.html">
             
                     
-                    8.6. isObservable
+                    8.6. 优化 React 组件
             
                 </a>
             
@@ -643,12 +708,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.7" data-path="modifiers.html">
+        <li class="chapter " data-level="1.8.7" data-path="../best/devtools.html">
             
-                <a href="modifiers.html">
+                <a href="../best/devtools.html">
             
                     
-                    8.7. modifiers
+                    8.7. 开发工具
             
                 </a>
             
@@ -656,90 +721,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.8" data-path="observe.html">
-            
-                <a href="observe.html">
-            
-                    
-                    8.8 intercept & observe
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.9" data-path="reaction.html">
-            
-                <a href="reaction.html">
-            
-                    
-                    8.9. reaction
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.10" data-path="spy.html">
+        <li class="chapter " data-level="1.8.8" data-path="spy.html">
             
                 <a href="spy.html">
             
                     
-                    8.10. spy
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.11" data-path="tojson.html">
-            
-                <a href="tojson.html">
-            
-                    
-                    8.11. toJS
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.12" data-path="transaction.html">
-            
-                <a href="transaction.html">
-            
-                    
-                    8.12. transaction
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.13" data-path="untracked.html">
-            
-                <a href="untracked.html">
-            
-                    
-                    8.13. untracked
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.8.14" data-path="when.html">
-            
-                <a href="when.html">
-            
-                    
-                    8.14. when
+                    8.8. spy
             
                 </a>
             
@@ -795,7 +782,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >8.14. when</a>
+        <a href=".." >4.3. when</a>
     </h1>
 </div>
 
@@ -812,7 +799,7 @@
                                 
                                 <h1 id="when"><a name="when" class="plugin-anchor" href="#when"><i class="fa fa-link" aria-hidden="true"></i></a>when</h1>
 <p><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/react-write-custom-mobx-reactions-with-when-and-autorun" target="_blank">egghead.io &#x7B2C;9&#x8BFE;: &#x81EA;&#x5B9A;&#x4E49;&#x53CD;&#x5E94;</a></p>
-<p><code>when(debugName?, predicate: () =&gt; boolean, effect: () =&gt; void, scope?)</code></p>
+<p><code>when(predicate: () =&gt; boolean, effect?: () =&gt; void, options?)</code></p>
 <p><code>when</code> &#x89C2;&#x5BDF;&#x5E76;&#x8FD0;&#x884C;&#x7ED9;&#x5B9A;&#x7684; <code>predicate</code>&#xFF0C;&#x76F4;&#x5230;&#x8FD4;&#x56DE;true&#x3002;
 &#x4E00;&#x65E6;&#x8FD4;&#x56DE; true&#xFF0C;&#x7ED9;&#x5B9A;&#x7684; <code>effect</code> &#x5C31;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x7136;&#x540E; autorunner(&#x81EA;&#x52A8;&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;) &#x4F1A;&#x88AB;&#x6E05;&#x7406;&#x3002;
 &#x8BE5;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6E05;&#x7406;&#x5668;&#x4EE5;&#x63D0;&#x524D;&#x53D6;&#x6D88;&#x81EA;&#x52A8;&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#x3002;</p>
@@ -835,6 +822,13 @@
     dispose() {
         <span class="hljs-comment">// &#x6E05;&#x7406;</span>
     }
+}
+</code></pre>
+<h2 id="when-promise"><a name="when-promise" class="plugin-anchor" href="#when-promise"><i class="fa fa-link" aria-hidden="true"></i></a>when-promise</h2>
+<p>&#x5982;&#x679C;&#x6CA1;&#x63D0;&#x4F9B; <code>effect</code> &#x51FD;&#x6570;&#xFF0C;<code>when</code> &#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <code>Promise</code> &#x3002;&#x5B83;&#x4E0E; <code>async / await</code> &#x53EF;&#x4EE5;&#x5B8C;&#x7F8E;&#x7ED3;&#x5408;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">await</span> when(() =&gt; that.isVisible)
+    <span class="hljs-comment">// &#x7B49;&#x7B49;..</span>
 }
 </code></pre>
 
@@ -864,12 +858,12 @@
 
             
                 
-                <a href="untracked.html" class="navigation navigation-prev " aria-label="Previous page: 8.13. untracked">
+                <a href="autorun.html" class="navigation navigation-prev " aria-label="Previous page: 4.2. autorun">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../donating.html" class="navigation navigation-next " aria-label="Next page: 9. 捐赠">
+                <a href="reaction.html" class="navigation navigation-next " aria-label="Next page: 4.4. reaction">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -880,7 +874,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"8.14. when","level":"1.8.14","depth":2,"next":{"title":"9. 捐赠","level":"1.9","depth":1,"path":"donating.md","ref":"donating.md","articles":[]},"previous":{"title":"8.13. untracked","level":"1.8.13","depth":2,"path":"refguide/untracked.md","ref":"refguide/untracked.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/when.md","mtime":"2018-03-03T03:01:13.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-09T16:05:28.236Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.3. when","level":"1.4.3","depth":2,"next":{"title":"4.4. reaction","level":"1.4.4","depth":2,"path":"refguide/reaction.md","ref":"refguide/reaction.md","articles":[]},"previous":{"title":"4.2. autorun","level":"1.4.2","depth":2,"path":"refguide/autorun.md","ref":"refguide/autorun.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/when.md","mtime":"2018-04-07T15:34:41.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-07T15:51:17.236Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

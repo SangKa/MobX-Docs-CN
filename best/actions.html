@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>7.3. 编写异步 actions · MobX 中文文档</title>
+        <title>5.2. async actions & flows · MobX 中文文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -62,10 +62,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="react-performance.html" />
+    <link rel="next" href="../refguide/object-api.html" />
     
     
-    <link rel="prev" href="store.html" />
+    <link rel="prev" href="../refguide/action.html" />
     
 
     <style>
@@ -161,90 +161,6 @@
             
 
             
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1" data-path="../refguide/observable.html">
-            
-                <a href="../refguide/observable.html">
-            
-                    
-                    2.1. observable
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2" data-path="../refguide/observable-decorator.html">
-            
-                <a href="../refguide/observable-decorator.html">
-            
-                    
-                    2.2. @observable
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.3" data-path="../refguide/computed-decorator.html">
-            
-                <a href="../refguide/computed-decorator.html">
-            
-                    
-                    2.3. (@)computed
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.4" data-path="../refguide/autorun.html">
-            
-                <a href="../refguide/autorun.html">
-            
-                    
-                    2.4. autorun
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.5" data-path="../refguide/observer-component.html">
-            
-                <a href="../refguide/observer-component.html">
-            
-                    
-                    2.5. (@)observer
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.6" data-path="../refguide/action.html">
-            
-                <a href="../refguide/action.html">
-            
-                    
-                    2.6. action
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
         </li>
     
         <li class="chapter " data-level="1.3" >
@@ -252,7 +168,7 @@
                 <span>
             
                     
-                    3. Observable类型
+                    3. observable 相关
             
                 </span>
             
@@ -261,12 +177,38 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../refguide/object.html">
+        <li class="chapter " data-level="1.3.1" data-path="../refguide/observable.html">
+            
+                <a href="../refguide/observable.html">
+            
+                    
+                    3.1. observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../refguide/observable-decorator.html">
+            
+                <a href="../refguide/observable-decorator.html">
+            
+                    
+                    3.2. @observable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../refguide/object.html">
             
                 <a href="../refguide/object.html">
             
                     
-                    3.1. objects
+                    3.3. objects
             
                 </a>
             
@@ -274,12 +216,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../refguide/array.html">
+        <li class="chapter " data-level="1.3.4" data-path="../refguide/array.html">
             
                 <a href="../refguide/array.html">
             
                     
-                    3.2. arrays
+                    3.4. arrays
             
                 </a>
             
@@ -287,12 +229,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="../refguide/map.html">
+        <li class="chapter " data-level="1.3.5" data-path="../refguide/map.html">
             
                 <a href="../refguide/map.html">
             
                     
-                    3.3. maps
+                    3.5. maps
             
                 </a>
             
@@ -300,12 +242,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="../refguide/boxed.html">
+        <li class="chapter " data-level="1.3.6" data-path="../refguide/boxed.html">
             
                 <a href="../refguide/boxed.html">
             
                     
-                    3.4. boxed values
+                    3.6. boxed values
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../refguide/modifiers.html">
+            
+                <a href="../refguide/modifiers.html">
+            
+                    
+                    3.7 decorators
             
                 </a>
             
@@ -318,12 +273,26 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="react.html">
+        <li class="chapter " data-level="1.4" >
             
-                <a href="react.html">
+                <span>
             
                     
-                    4. 理解 MobX 对什么有反应
+                    4. 对 observables 作出响应
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../refguide/computed-decorator.html">
+            
+                <a href="../refguide/computed-decorator.html">
+            
+                    
+                    4.1. (@)computed
             
                 </a>
             
@@ -331,16 +300,131 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="decorators.html">
+        <li class="chapter " data-level="1.4.2" data-path="../refguide/autorun.html">
             
-                <a href="decorators.html">
+                <a href="../refguide/autorun.html">
             
                     
-                    5. 如何(不)使用装饰器
+                    4.2. autorun
             
                 </a>
             
 
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../refguide/when.html">
+            
+                <a href="../refguide/when.html">
+            
+                    
+                    4.3. when
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../refguide/reaction.html">
+            
+                <a href="../refguide/reaction.html">
+            
+                    
+                    4.4. reaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../refguide/observer-component.html">
+            
+                <a href="../refguide/observer-component.html">
+            
+                    
+                    4.5. (@)observer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="react.html">
+            
+                <a href="react.html">
+            
+                    
+                    4.6. 理解 MobX 对何作出响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    5. 改变 observables
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../refguide/action.html">
+            
+                <a href="../refguide/action.html">
+            
+                    
+                    5.1. action
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2" data-path="actions.html">
+            
+                <a href="actions.html">
+            
+                    
+                    5.2. async actions & flows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../refguide/object-api.html">
+            
+                <a href="../refguide/object-api.html">
+            
+                    
+                    5.3. Object api
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -349,7 +433,7 @@
                 <span>
             
                     
-                    6. 资源
+                    6. 工具函数
             
                 </span>
             
@@ -358,12 +442,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../faq/blogs.html">
+        <li class="chapter " data-level="1.6.1" data-path="../refguide/tojson.html">
             
-                <a href="../faq/blogs.html">
+                <a href="../refguide/tojson.html">
             
                     
-                    6.1. 教程、视频和博客
+                    6.1. toJS
             
                 </a>
             
@@ -371,12 +455,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="../faq/related.html">
+        <li class="chapter " data-level="1.6.2" data-path="../refguide/extend-observable.html">
             
-                <a href="../faq/related.html">
+                <a href="../refguide/extend-observable.html">
             
                     
-                    6.2. 相关项目
+                    6.2. extendObservable
             
                 </a>
             
@@ -384,12 +468,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="../faq/examples.html">
+        <li class="chapter " data-level="1.6.3" data-path="../refguide/extending.html">
             
-                <a href="../faq/examples.html">
+                <a href="../refguide/extending.html">
             
                     
-                    6.3. 案例项目
+                    6.3. createAtom
             
                 </a>
             
@@ -397,12 +481,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="../faq/boilerplates.html">
+        <li class="chapter " data-level="1.6.4" data-path="../refguide/observe.html">
             
-                <a href="../faq/boilerplates.html">
+                <a href="../refguide/observe.html">
             
                     
-                    6.4. 样板文件
+                    6.4. intercept & observe
             
                 </a>
             
@@ -410,12 +494,103 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="../faq/faq.html">
+        <li class="chapter " data-level="1.6.5" >
             
-                <a href="../faq/faq.html">
+                <a target="_blank" href="https://github.com/mobxjs/mobx-utils#frompromise">
             
                     
-                    6.5. 常见问题解答
+                    6.5. mobxUtils.fromPromise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <a target="_blank" href="https://github.com/mobxjs/mobx-utils#fromresource">
+            
+                    
+                    6.6. mobxUtis.fromResource
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" >
+            
+                <a target="_blank" href="https://github.com/mobxjs/mobx-utils#tostream">
+            
+                    
+                    6.7. mobxUtils.toStream
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" >
+            
+                <a target="_blank" href="https://github.com/mobxjs/mobx-utils#fromstream">
+            
+                    
+                    6.8. mobxUtils.fromStream
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" >
+            
+                <a target="_blank" href="https://github.com/mobxjs/mobx-utils#now">
+            
+                    
+                    6.9. mobxUtils.now
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../refguide/create-transformer.html">
+            
+                <a href="../refguide/create-transformer.html">
+            
+                    
+                    6.10. mobxUtils.createTransformer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../refguide/expr.html">
+            
+                <a href="../refguide/expr.html">
+            
+                    
+                    6.11. mobxUtils.expr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../refguide/api.html">
+            
+                <a href="../refguide/api.html">
+            
+                    
+                    6.12. complete api overview
             
                 </a>
             
@@ -430,124 +605,14 @@
     
         <li class="chapter " data-level="1.7" >
             
-                <span>
+                <a target="_blank" href="https://github.com/mobxjs/awesome-mobx#examples">
             
                     
-                    7. 贴士与技巧
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.7.1" data-path="pitfalls.html">
-            
-                <a href="pitfalls.html">
-            
-                    
-                    7.1. 常见陷阱与最佳实践
+                    7. 博客、 视频及相关项目
             
                 </a>
             
 
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.2" data-path="store.html">
-            
-                <a href="store.html">
-            
-                    
-                    7.2. 定义数据存储
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.7.3" data-path="actions.html">
-            
-                <a href="actions.html">
-            
-                    
-                    7.3. 编写异步 actions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.4" data-path="react-performance.html">
-            
-                <a href="react-performance.html">
-            
-                    
-                    7.4. 优化 React 组件
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.5" data-path="devtools.html">
-            
-                <a href="devtools.html">
-            
-                    
-                    7.5. 开发工具
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.6" data-path="trace.html">
-            
-                <a href="trace.html">
-            
-                    
-                    7.6. 使用 trace 进行调试
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.7" data-path="syntax.html">
-            
-                <a href="syntax.html">
-            
-                    
-                    7.7. ES5 / ES6 / TypeScript 语法
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.8" data-path="stateless-HMR.html">
-            
-                <a href="stateless-HMR.html">
-            
-                    
-                    7.8. 无状态组件和热加载
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
             
         </li>
     
@@ -556,7 +621,7 @@
                 <span>
             
                     
-                    8. 实用函数
+                    8. 贴士与技巧
             
                 </span>
             
@@ -565,12 +630,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../refguide/autorun-async.html">
+        <li class="chapter " data-level="1.8.1" data-path="../faq/faq.html">
             
-                <a href="../refguide/autorun-async.html">
+                <a href="../faq/faq.html">
             
                     
-                    8.1. autorunAsync
+                    8.1. 常见问题解答
             
                 </a>
             
@@ -578,12 +643,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="../refguide/extending.html">
+        <li class="chapter " data-level="1.8.2" data-path="pitfalls.html">
             
-                <a href="../refguide/extending.html">
+                <a href="pitfalls.html">
             
                     
-                    8.2. Atom & Reaction
+                    8.2. 常见陷阱与最佳实践
             
                 </a>
             
@@ -591,12 +656,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.3" data-path="../refguide/create-transformer.html">
+        <li class="chapter " data-level="1.8.3" data-path="decorators.html">
             
-                <a href="../refguide/create-transformer.html">
+                <a href="decorators.html">
             
                     
-                    8.3. createTransformer
+                    8.3. 如何(不)使用装饰器
             
                 </a>
             
@@ -604,12 +669,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.4" data-path="../refguide/expr.html">
+        <li class="chapter " data-level="1.8.4" data-path="trace.html">
             
-                <a href="../refguide/expr.html">
+                <a href="trace.html">
             
                     
-                    8.4. expr
+                    8.4. 使用 trace 进行调试
             
                 </a>
             
@@ -617,12 +682,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.5" data-path="../refguide/extend-observable.html">
+        <li class="chapter " data-level="1.8.5" data-path="store.html">
             
-                <a href="../refguide/extend-observable.html">
+                <a href="store.html">
             
                     
-                    8.5. extendObservable
+                    8.5. 定义数据存储
             
                 </a>
             
@@ -630,12 +695,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.6" data-path="../refguide/is-observable.html">
+        <li class="chapter " data-level="1.8.6" data-path="react-performance.html">
             
-                <a href="../refguide/is-observable.html">
+                <a href="react-performance.html">
             
                     
-                    8.6. isObservable
+                    8.6. 优化 React 组件
             
                 </a>
             
@@ -643,12 +708,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.7" data-path="../refguide/modifiers.html">
+        <li class="chapter " data-level="1.8.7" data-path="devtools.html">
             
-                <a href="../refguide/modifiers.html">
+                <a href="devtools.html">
             
                     
-                    8.7. modifiers
+                    8.7. 开发工具
             
                 </a>
             
@@ -656,90 +721,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.8" data-path="../refguide/observe.html">
-            
-                <a href="../refguide/observe.html">
-            
-                    
-                    8.8 intercept & observe
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.9" data-path="../refguide/reaction.html">
-            
-                <a href="../refguide/reaction.html">
-            
-                    
-                    8.9. reaction
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.10" data-path="../refguide/spy.html">
+        <li class="chapter " data-level="1.8.8" data-path="../refguide/spy.html">
             
                 <a href="../refguide/spy.html">
             
                     
-                    8.10. spy
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.11" data-path="../refguide/tojson.html">
-            
-                <a href="../refguide/tojson.html">
-            
-                    
-                    8.11. toJS
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.12" data-path="../refguide/transaction.html">
-            
-                <a href="../refguide/transaction.html">
-            
-                    
-                    8.12. transaction
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.13" data-path="../refguide/untracked.html">
-            
-                <a href="../refguide/untracked.html">
-            
-                    
-                    8.13. untracked
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.14" data-path="../refguide/when.html">
-            
-                <a href="../refguide/when.html">
-            
-                    
-                    8.14. when
+                    8.8. spy
             
                 </a>
             
@@ -795,7 +782,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >7.3. 编写异步 actions</a>
+        <a href=".." >5.2. async actions & flows</a>
     </h1>
 </div>
 
@@ -815,7 +802,7 @@
 &#x8FD9;&#x610F;&#x5473;&#x7740;&#x5982;&#x679C; action &#x4E2D;&#x5B58;&#x5728; <code>setTimeout</code>&#x3001;promise &#x7684; <code>then</code> &#x6216; <code>async</code> &#x8BED;&#x53E5;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E2D;&#x67D0;&#x4E9B;&#x72B6;&#x6001;&#x6539;&#x53D8;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E9B;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E5F;&#x5E94;&#x8BE5;&#x5305;&#x88C5;&#x5728; <code>action</code> &#x4E2D;&#x3002;&#x521B;&#x5EFA;&#x5F02;&#x6B65; action &#x6709;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;&#x3002;&#x4E0D;&#x80FD;&#x8BF4;&#x67D0;&#x79CD;&#x65B9;&#x5F0F;&#x4E00;&#x5B9A;&#x6BD4;&#x5176;&#x4ED6;&#x7684;&#x597D;&#xFF0C;&#x672C;&#x7AE0;&#x53EA;&#x662F;&#x5217;&#x51FA;&#x7F16;&#x5199;&#x5F02;&#x6B65;&#x4EE3;&#x7801;&#x7684;&#x51E0;&#x79CD;&#x4E0D;&#x540C;&#x65B9;&#x5F0F;&#x800C;&#x5DF2;&#x3002;
 &#x6211;&#x4EEC;&#x5148;&#x4ECE;&#x4E00;&#x4E2A;&#x57FA;&#x7840;&#x7684;&#x793A;&#x4F8B;&#x5F00;&#x59CB;:</p>
 <h3 id="promises"><a name="promises" class="plugin-anchor" href="#promises"><i class="fa fa-link" aria-hidden="true"></i></a>Promises</h3>
-<pre><code class="lang-javascript">mobx.useStrict(<span class="hljs-literal">true</span>) <span class="hljs-comment">// &#x4E0D;&#x5141;&#x8BB8;&#x5728;&#x52A8;&#x4F5C;&#x4E4B;&#x5916;&#x8FDB;&#x884C;&#x72B6;&#x6001;&#x4FEE;&#x6539;</span>
+<pre><code class="lang-javascript">mobx.configure({ enforceActions: <span class="hljs-literal">true</span> }) <span class="hljs-comment">// &#x4E0D;&#x5141;&#x8BB8;&#x5728;&#x52A8;&#x4F5C;&#x4E4B;&#x5916;&#x8FDB;&#x884C;&#x72B6;&#x6001;&#x4FEE;&#x6539;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Store</span> </span>{
     @observable githubProjects = []
@@ -839,8 +826,10 @@
 }
 </code></pre>
 <p>&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x56E0;&#x4E3A;&#x4F20;&#x7ED9; <code>fetchGithubProjectsSomehow</code> promise &#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E0D;&#x662F; <code>fetchProjects</code> &#x52A8;&#x4F5C;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x56E0;&#x4E3A;&#x52A8;&#x4F5C;&#x53EA;&#x4F1A;&#x5E94;&#x7528;&#x4E8E;&#x5F53;&#x524D;&#x6808;&#x3002;</p>
-<p>&#x9996;&#x9009;&#x7684;&#x7B80;&#x5355;&#x4FEE;&#x590D;&#x662F;&#x5C06;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x53D8;&#x6210;&#x52A8;&#x4F5C;&#x3002;(&#x6CE8;&#x610F;&#x7ED1;&#x5B9A;&#x5728;&#x8FD9;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x4EE5;&#x83B7;&#x53D6;&#x6B63;&#x786E;&#x7684; <code>this</code>!):</p>
-<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Store</span> </span>{
+<p>&#x9996;&#x9009;&#x7684;&#x7B80;&#x5355;&#x4FEE;&#x590D;&#x662F;&#x5C06;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x53D8;&#x6210;&#x52A8;&#x4F5C;&#x3002;(&#x6CE8;&#x610F;&#x4F7F;&#x7528; <code>action.bound</code> &#x7ED1;&#x5B9A;&#x5728;&#x8FD9;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x4EE5;&#x83B7;&#x53D6;&#x6B63;&#x786E;&#x7684; <code>this</code>!):</p>
+<pre><code class="lang-javascript">mobx.configure({ enforceActions: <span class="hljs-literal">true</span> })
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Store</span> </span>{
     @observable githubProjects = []
     @observable state = <span class="hljs-string">&quot;pending&quot;</span> <span class="hljs-comment">// &quot;pending&quot; / &quot;done&quot; / &quot;error&quot;</span>
 
@@ -852,20 +841,20 @@
 
     }
 
-    @action.bound <span class="hljs-comment">// &#x56DE;&#x8C03;&#x52A8;&#x4F5C;</span>
+    @action.bound
     fetchProjectsSuccess(projects) {
         <span class="hljs-keyword">const</span> filteredProjects = somePreprocessing(projects)
         <span class="hljs-keyword">this</span>.githubProjects = filteredProjects
         <span class="hljs-keyword">this</span>.state = <span class="hljs-string">&quot;done&quot;</span>
     }
-    @action.bound <span class="hljs-comment">// &#x56DE;&#x8C03;&#x52A8;&#x4F5C;</span>
+    @action.bound
         fetchProjectsError(error) {
             <span class="hljs-keyword">this</span>.state = <span class="hljs-string">&quot;error&quot;</span>
         }
     }
 </code></pre>
 <p>&#x5C3D;&#x7BA1;&#x8FD9;&#x5F88;&#x6574;&#x6D01;&#x6E05;&#x695A;&#xFF0C;&#x4F46;&#x5F02;&#x6B65;&#x6D41;&#x7A0B;&#x590D;&#x6742;&#x540E;&#x53EF;&#x80FD;&#x4F1A;&#x7565;&#x663E;&#x5570;&#x55E6;&#x3002;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x65B9;&#x6848;&#x662F;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>action</code> &#x5173;&#x952E;&#x5B57;&#x6765;&#x5305;&#x88C5; promises &#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;&#x63A8;&#x8350;&#x8FD9;&#x4E48;&#x505A;&#xFF0C;&#x4F46;&#x4E0D;&#x662F;&#x5F3A;&#x5236;&#x7684;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x7ED9;&#x5B83;&#x4EEC;&#x547D;&#x540D;:</p>
-<pre><code class="lang-javascript">mobx.useStrict(<span class="hljs-literal">true</span>) <span class="hljs-comment">// &#x4E0D;&#x5141;&#x8BB8;&#x5728;&#x52A8;&#x4F5C;&#x4E4B;&#x5916;&#x8FDB;&#x884C;&#x72B6;&#x6001;&#x4FEE;&#x6539;</span>
+<pre><code class="lang-javascript">mobx.configure({ enforceActions: <span class="hljs-literal">true</span> })
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Store</span> </span>{
     @observable githubProjects = []
@@ -894,7 +883,7 @@
 <p>&#x5185;&#x8054;&#x52A8;&#x4F5C;&#x7684;&#x7F3A;&#x70B9;&#x662F; TypeScript &#x65E0;&#x6CD5;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x7C7B;&#x578B;&#x63A8;&#x5BFC;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x5E94;&#x8BE5;&#x4E3A;&#x6240;&#x6709;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#x3002;
 &#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x53EA;&#x5728;&#x52A8;&#x4F5C;&#x4E2D;&#x8FD0;&#x884C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E2D;&#x72B6;&#x6001;&#x4FEE;&#x6539;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4E3A;&#x6574;&#x4E2A;&#x56DE;&#x8C03;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x52A8;&#x4F5C;&#x3002;
 &#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x7684;&#x4F18;&#x52BF;&#x662F;&#x5B83;&#x9F13;&#x52B1;&#x4F60;&#x4E0D;&#x8981;&#x5230;&#x5904;&#x5199; <code>action</code>&#xFF0C;&#x800C;&#x662F;&#x5728;&#x6574;&#x4E2A;&#x8FC7;&#x7A0B;&#x7ED3;&#x675F;&#x65F6;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x5730;&#x5BF9;&#x6240;&#x6709;&#x72B6;&#x6001;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF1A;</p>
-<pre><code class="lang-javascript">mobx.useStrict(<span class="hljs-literal">true</span>) <span class="hljs-comment">// &#x4E0D;&#x5141;&#x8BB8;&#x5728;&#x52A8;&#x4F5C;&#x4E4B;&#x5916;&#x8FDB;&#x884C;&#x72B6;&#x6001;&#x4FEE;&#x6539;</span>
+<pre><code class="lang-javascript">mobx.configure({ enforceActions: <span class="hljs-literal">true</span> })
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Store</span> </span>{
     @observable githubProjects = []
@@ -931,7 +920,7 @@
 &#x7ED3;&#x679C;&#x662F; <code>@action</code> &#x4EC5;&#x5E94;&#x7528;&#x4E8E;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x76F4;&#x5230;&#x7B2C;&#x4E00;&#x4E2A; <code>await</code> &#x3002;
 &#x5728;&#x6BCF;&#x4E2A; <code>await</code> &#x4E4B;&#x540E;&#xFF0C;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5F02;&#x6B65;&#x51FD;&#x6570;&#x5C06;&#x542F;&#x52A8;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x6BCF;&#x4E2A; <code>await</code> &#x4E4B;&#x540E;&#xFF0C;&#x72B6;&#x6001;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x5E94;&#x8BE5;&#x88AB;&#x5305;&#x88C5;&#x6210;&#x52A8;&#x4F5C;&#x3002;
 &#x8FD9;&#x6B63;&#x662F; <code>runInAction</code> &#x518D;&#x6B21;&#x6D3E;&#x4E0A;&#x7528;&#x573A;&#x7684;&#x5730;&#x65B9;:</p>
-<pre><code class="lang-javascript">mobx.useStrict(<span class="hljs-literal">true</span>) <span class="hljs-comment">// &#x4E0D;&#x5141;&#x8BB8;&#x5728;&#x52A8;&#x4F5C;&#x4E4B;&#x5916;&#x8FDB;&#x884C;&#x72B6;&#x6001;&#x4FEE;&#x6539;</span>
+<pre><code class="lang-javascript">mobx.configure({ enforceActions: <span class="hljs-literal">true</span> })
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Store</span> </span>{
     @observable githubProjects = []
@@ -957,36 +946,30 @@
     }
 }
 </code></pre>
-<h3 id="babel-plugin-mobx-deep-action"><a name="babel-plugin-mobx-deep-action" class="plugin-anchor" href="#babel-plugin-mobx-deep-action"><i class="fa fa-link" aria-hidden="true"></i></a>babel-plugin-mobx-deep-action</h3>
-<p>&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528; babel&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x63D2;&#x4EF6;&#x5728;&#x53EF;&#x4EE5;&#x8F6C;&#x8BD1;&#x671F;&#x95F4;&#x626B;&#x63CF; <code>@action</code> &#x65B9;&#x6CD5;&#x5E76;&#x81EA;&#x52A8;&#x3001;&#x6B63;&#x786E;&#x5730;&#x5305;&#x88C5;&#x52A8;&#x4F5C;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x53CA; await &#x8BED;&#x53E5;: <a href="https://github.com/mobxjs/babel-plugin-mobx-deep-action" target="_blank">mobx-deep-action</a>&#x3002;</p>
-<h3 id="generators--asyncaction"><a name="generators--asyncaction" class="plugin-anchor" href="#generators--asyncaction"><i class="fa fa-link" aria-hidden="true"></i></a>Generators &amp; asyncAction</h3>
-<p>&#x6700;&#x540E;&#xFF0C;&#x5728; <a href="https://github.com/mobxjs/mobx-utils" target="_blank"><code>mobx-utils</code> &#x5305;</a>&#x4E2D;&#x8FD8;&#x6709;&#x4E00;&#x4E2A; <code>asyncAction</code> &#x5DE5;&#x5177;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x5176;&#x5B9E;&#x662F;&#x4F7F;&#x7528; generators &#x6765;&#x81EA;&#x52A8;&#x5730;&#x5728;&#x52A8;&#x4F5C;&#x4E2D;&#x5305;&#x88C5; yield &#x8FC7;&#x7684; promises &#x3002;&#x4F18;&#x70B9;&#x662F;&#x5B83;&#x5728;&#x8BED;&#x6CD5;&#x4E0A;&#x5341;&#x5206;&#x63A5;&#x8FD1; async / await (&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x5173;&#x952E;&#x5B57;)&#xFF0C;&#x5E76;&#x4E14;&#x5F02;&#x6B65;&#x90E8;&#x5206;&#x4E0D;&#x9700;&#x8981;&#x624B;&#x52A8;&#x5305;&#x88C5;&#x6210;&#x52A8;&#x4F5C;&#xFF0C;&#x4ECE;&#x800C;&#x4EE3;&#x7801;&#x975E;&#x5E38;&#x6574;&#x6D01;&#x3002;
-&#x53EA;&#x8981;&#x786E;&#x4FDD;&#x6BCF;&#x4E2A; <code>yield</code> &#x8FD4;&#x56DE; promise &#x3002;</p>
-<p><code>asyncAction</code> &#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x88C5;&#x9970;&#x5668;&#x548C;&#x51FD;&#x6570;&#x4F7F;&#x7528; (&#x5C31;&#x50CF; <code>@action</code>)&#x3002;
-<code>asyncAction</code> &#x4E0E; MobX &#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x7ED3;&#x5408;&#x5F88;&#x597D;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x53EF;&#x4EE5;&#x5F88;&#x8F7B;&#x677E;&#x7684;&#x8FFD;&#x8E2A;&#x5F02;&#x6B65;&#x51FD;&#x6570;&#x7684;&#x8FDB;&#x7A0B;&#x3002;
-&#x60F3;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x8BE6;&#x60C5;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="https://github.com/mobxjs/mobx-utils#asyncaction" target="_blank">asyncAction</a> &#x7684;&#x6587;&#x6863;&#x3002;</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> {asyncAction} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;mobx-utils&quot;</span>
-
-mobx.useStrict(<span class="hljs-literal">true</span>) <span class="hljs-comment">// &#x4E0D;&#x5141;&#x8BB8;&#x5728;&#x52A8;&#x4F5C;&#x4E4B;&#x5916;&#x8FDB;&#x884C;&#x72B6;&#x6001;&#x4FEE;&#x6539;</span>
+<h3 id="flows"><a name="flows" class="plugin-anchor" href="#flows"><i class="fa fa-link" aria-hidden="true"></i></a>flows</h3>
+<p>&#x7136;&#x800C;&#xFF0C;&#x66F4;&#x597D;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x4F7F;&#x7528; <code>flow</code> &#x7684;&#x5185;&#x7F6E;&#x6982;&#x5FF5;&#x3002;&#x5B83;&#x4EEC;&#x4F7F;&#x7528;&#x751F;&#x6210;&#x5668;&#x3002;&#x4E00;&#x5F00;&#x59CB;&#x53EF;&#x80FD;&#x770B;&#x8D77;&#x6765;&#x5F88;&#x4E0D;&#x9002;&#x5E94;&#xFF0C;&#x4F46;&#x5B83;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x4E0E; <code>async</code> / <code>await</code> &#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;&#x53EA;&#x662F;&#x4F7F;&#x7528; <code>function *</code> &#x6765;&#x4EE3;&#x66FF; <code>async</code>&#xFF0C;&#x4F7F;&#x7528; <code>yield</code> &#x4EE3;&#x66FF; <code>await</code> &#x3002;
+&#x4F7F;&#x7528; <code>flow</code> &#x7684;&#x4F18;&#x70B9;&#x662F;&#x5B83;&#x5728;&#x8BED;&#x6CD5;&#x4E0A;&#x57FA;&#x672C;&#x4E0E; <code>async</code> / <code>await</code> &#x662F;&#x76F8;&#x540C;&#x7684; (&#x53EA;&#x662F;&#x5173;&#x952E;&#x5B57;&#x4E0D;&#x540C;)&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x9700;&#x8981;&#x624B;&#x52A8;&#x7528; <code>@action</code> &#x6765;&#x5305;&#x88C5;&#x5F02;&#x6B65;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x6837;&#x4EE3;&#x7801;&#x66F4;&#x7B80;&#x6D01;&#x3002;</p>
+<p><code>flow</code> &#x53EA;&#x80FD;&#x4F5C;&#x4E3A;&#x51FD;&#x6570;&#x4F7F;&#x7528;&#xFF0C;&#x4E0D;&#x80FD;&#x4F5C;&#x4E3A;&#x88C5;&#x9970;&#x5668;&#x4F7F;&#x7528;&#x3002;
+<code>flo</code> &#x53EF;&#x4EE5;&#x5F88;&#x597D;&#x7684;&#x4E0E; MobX &#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x96C6;&#x6210;&#xFF0C;&#x6240;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x8FFD;&#x8E2A; <code>async</code> &#x51FD;&#x6570;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+<pre><code class="lang-javascript">mobx.configure({ enforceActions: <span class="hljs-literal">true</span> })
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Store</span> </span>{
     @observable githubProjects = []
-    @observable state = <span class="hljs-string">&quot;pending&quot;</span> <span class="hljs-comment">// &quot;pending&quot; / &quot;done&quot; / &quot;error&quot;</span>
+    @observable state = <span class="hljs-string">&quot;pending&quot;</span>
 
-    @asyncAction
-    *fetchProjects() { <span class="hljs-comment">// &lt;- &#x6CE8;&#x610F;*&#x53F7;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A; generator &#x51FD;&#x6570;!</span>
+    fetchProjects = flow(<span class="hljs-function"><span class="hljs-keyword">function</span> * (<span class="hljs-params"></span>) </span>{ <span class="hljs-comment">// &lt;- &#x6CE8;&#x610F;*&#x53F7;&#xFF0C;&#x8FD9;&#x662F;&#x751F;&#x6210;&#x5668;&#x51FD;&#x6570;&#xFF01;</span>
         <span class="hljs-keyword">this</span>.githubProjects = []
         <span class="hljs-keyword">this</span>.state = <span class="hljs-string">&quot;pending&quot;</span>
         <span class="hljs-keyword">try</span> {
             <span class="hljs-keyword">const</span> projects = <span class="hljs-keyword">yield</span> fetchGithubProjectsSomehow() <span class="hljs-comment">// &#x7528; yield &#x4EE3;&#x66FF; await</span>
             <span class="hljs-keyword">const</span> filteredProjects = somePreprocessing(projects)
-            <span class="hljs-comment">// &#x5F02;&#x6B65;&#x4EE3;&#x7801;&#x5757;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x5305;&#x88C5;&#x6210;&#x52A8;&#x4F5C;</span>
+            <span class="hljs-comment">// &#x5F02;&#x6B65;&#x4EE3;&#x7801;&#x5757;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x5305;&#x88C5;&#x6210;&#x52A8;&#x4F5C;&#x5E76;&#x4FEE;&#x6539;&#x72B6;&#x6001;</span>
             <span class="hljs-keyword">this</span>.state = <span class="hljs-string">&quot;done&quot;</span>
             <span class="hljs-keyword">this</span>.githubProjects = filteredProjects
         } <span class="hljs-keyword">catch</span> (error) {
             <span class="hljs-keyword">this</span>.state = <span class="hljs-string">&quot;error&quot;</span>
         }
-    }
+    })
 }
 </code></pre>
 
@@ -1016,12 +999,12 @@ mobx.useStrict(<span class="hljs-literal">true</span>) <span class="hljs-comment
 
             
                 
-                <a href="store.html" class="navigation navigation-prev " aria-label="Previous page: 7.2. 定义数据存储">
+                <a href="../refguide/action.html" class="navigation navigation-prev " aria-label="Previous page: 5.1. action">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="react-performance.html" class="navigation navigation-next " aria-label="Next page: 7.4. 优化 React 组件">
+                <a href="../refguide/object-api.html" class="navigation navigation-next " aria-label="Next page: 5.3. Object api">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1032,7 +1015,7 @@ mobx.useStrict(<span class="hljs-literal">true</span>) <span class="hljs-comment
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"7.3. 编写异步 actions","level":"1.7.3","depth":2,"next":{"title":"7.4. 优化 React 组件","level":"1.7.4","depth":2,"path":"best/react-performance.md","ref":"best/react-performance.md","articles":[]},"previous":{"title":"7.2. 定义数据存储","level":"1.7.2","depth":2,"path":"best/store.md","ref":"best/store.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"best/actions.md","mtime":"2018-02-25T08:21:44.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-09T16:05:28.236Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.2. async actions & flows","level":"1.5.2","depth":2,"next":{"title":"5.3. Object api","level":"1.5.3","depth":2,"path":"refguide/object-api.md","ref":"refguide/object-api.md","articles":[]},"previous":{"title":"5.1. action","level":"1.5.1","depth":2,"path":"refguide/action.md","ref":"refguide/action.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"best/actions.md","mtime":"2018-04-07T15:35:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-07T15:51:17.236Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
