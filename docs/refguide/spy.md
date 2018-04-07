@@ -18,11 +18,10 @@ spy((event) => {
 
 | 事件 | 字段 | 嵌套的 |
 | --- | --- |--- |
-| action | name, target (作用域), arguments, fn (action 的原始函数 | 是 |
-| transaction | name, target (作用域) | 是 |
-| scheduled-reaction | object (Reaction 实例) | 否 |
-| reaction | object (Reaction 实例), fn (reaction 的原始函数) | 是
-| compute | object (ComputedValue 实例), target (作用域), fn (原始函数) | 否
+| action | name, object (作用域), arguments | yes |
+| scheduled-reaction | name | no |
+| reaction | name | yes
+| compute | name | no
 | error | message | 否 |
 | update (数组) | object (数组), index, newValue, oldValue | 是
 | update (映射) | object (observable map 实例), name, newValue, oldValue | 是

@@ -4,6 +4,10 @@
 
 #### 此文档与[官网文档](https://github.com/mobxjs/mobx)保持同步更新
 
+## 公告
+
+目前文档已同步至 MobX 4，仍想阅读 MobX 3 文档，请移步至[这里](https://github.com/SangKa/MobX-Docs-CN/tree/3.0.0/docs)
+
 ## 贡献
 
 欢迎大家共同来完善此文档，为国内 MobX 爱好者提供一个更好的学习环境

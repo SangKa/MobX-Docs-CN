@@ -44,19 +44,19 @@ todos.shift();
 * `observe(listener, fireImmediately? = false)` - 监听数组的变化。回调函数将接收表示数组拼接或数组更改的参数，它符合 [ES7 提议](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/observe)。它返回一个清理函数以用来停止监听器。
 * `clear()` - 从数组中删除所有项。
 * `replace(newItems)` - 用新项替换数组中所有已存在的项。
-* `find(predicate: (item, index, array) => boolean, thisArg?, fromIndex?)` - 基本上等同于 ES7 的 `Array.find` 提议，除了多了一个 `fromIndex` 参数。
-* `findIndex(predicate: (item, index, array) => boolean, thisArg?, fromIndex?)` - 基本上等同于 ES7 的 `Array.findIndex` 提议，除了多了一个 `fromIndex` 参数。
+* `find(predicate: (item, index, array) => boolean, thisArg?)` - 基本上等同于 ES7 的 `Array.find` 提议。
+* `findIndex(predicate: (item, index, array) => boolean, thisArg?)` - 基本上等同于 ES7 的 `Array.findIndex` 提议。
 * `remove(value)` - 通过值从数组中移除一个单个的项。如果项被找到并移除的话，返回 `true` 。
 * `peek()` - 和 `slice()` 类似， 返回一个有所有值的数组并且数组可以放心的传递给其它库。
 
 与 `slice` 相反，`peek` 不创建保护性拷贝。如果你确定是以只读方式使用数组，请在性能关键的应用中使用此方法。
 在性能关键的部分，还建议使用一个扁平的 `observable` 数组。
 
-## `observable.shallowArray(values)`
+## `observable.array(values, { deep: false })`
 
 任何分配给 observable 数组的值都会默认通过 [`observable`](observable.md) 来使其转变成可观察的。
 创建浅数组以禁用此行为，并按原样存储值。关于此机制的更多详情，请参见 [调节器](modifiers.md)。
 
-## 名称参数
+## `observable.array(values, { name: "my array" })`
 
-`observable.array` 和 `observable.shallowArray` 都接收第二个参数作为 `spy` 或者 MobX 开发者工具中的调试名称。
+`name` 选项用来给数组一个友好的调试名称，用于 `spy` 或者 MobX 开发者工具。

@@ -10,38 +10,79 @@
 * ES.next 2阶段特性。
 * 需要设置和编译，目前只有 Babel/Typescript 编译器支持。
 
-## 启用装饰器
+在 MobX 中使用装饰器有两种方式。
 
-如果想使用装饰器，请按照以下步骤操作。
+1. 开启编译器的实验性装饰器语法 (详细请参见下面)
+2. 不启用装饰器语法，而是利用 MobX 内置的工具 `decorate` 来对类和对象进行装饰。
+
+使用装饰器语法:
+
+```javascript
+import { observable, computed, action } from "mobx"
+
+class Timer {
+	@observable start = Date.now();
+	@observable current = Date.now();
+
+	@computed get elapsedTime() {
+		return (this.current - this.start) + "milliseconds"
+	}
+
+	@action tick() {
+		this.current = Date.now()
+	}
+}
+```
+
+使用 `decorate` 工具:
+
+```javascript
+import { observable, computed, action } from "mobx"
+
+class Timer {
+	start = Date.now();
+	current = Date.now();
+
+	get elapsedTime() {
+		return (this.current - this.start) + "milliseconds"
+	}
+
+	tick() {
+		this.current = Date.now()
+	}
+}
+decorate(Timer, {
+	start: observable,
+	current: observable,
+	elapsedTime: computed,
+	tick: action
+})
+```
+
+注意， `mobx-react` 中的 `observer` 函数既是装饰器又是函数，这意味着下面这些语法都可以正常运行:
+
+```javascript
+@observer
+class Timer extends React.Component {
+	/* ... */
+}
+
+const Timer = observer(class Timer extends React.Component {
+	/* ... */
+})
+
+const Timer = observer((props) => (
+	/* 渲染 */
+))
+```
+
+## 启用装饰器语法
+
+如果想使用装饰器，需要按照下列步骤。
 
 **TypeScript**
 
-启用 `tsconfig.json` 文件中的 `experimentalDecorators` 编译器选项，或者把 `--experimentalDecorators` 作为标识传给编译器。
-你必须将 `target` 选项配置成 `es5`+ (es5, es6, ...) 或通过 `--target` 标识。
-
-**Babel: 启用装饰器**
-
-安装装饰器支持: `npm i --save-dev babel-plugin-transform-decorators-legacy`。然后在 `.babelrc` 文件中启用它:
-
-```
-{
-  "presets": [
-    "es2015",
-    "stage-1"
-  ],
-  "plugins": ["transform-decorators-legacy"]
-}
-```
-
-请注意， `plugins` 的属性非常重要: `transform-decorators-legacy` 应该放在**最前面**。
-babel 设置有问题？请先查看这个 [issue](https://github.com/mobxjs/mobx/issues/105) 。
-
-当使用 react native 时，可以用下面的预设来代替 `transform-decorators-legacy`:
-```
-{
-  "presets": ["stage-2", "react-native-stage-0/decorator-support"]
-}
-```
+在 `tsconfig.json` 中启用编译器选项 `"experimentalDecorators": true` 。
 
 **Babel: 使用 `babel-preset-mobx`**
 
@@ -58,110 +99,28 @@ npm install --save-dev babel-preset-mobx
 }
 ```
 
-## 装饰器的局限性
+**Babel: 手动启用装饰器**
 
-* typescript target 配置最低限度必须是 es5
-* reflect-metadata https://github.com/mobxjs/mobx/issues/534
-* `create-react-app` 本身不支持装饰器。为了解决这个问题，可以使用 eject 或 [custom-react-scripts](https://www.npmjs.com/package/custom-react-scripts) ([博客](https://medium.com/@kitze/configure-create-react-app-without-ejecting-d8450e96196a#.n6xx12p5c))
-* Next.JS 目前还不支持装饰器，参见这个 [issue](https://github.com/zeit/next.js/issues/26)
+要启用装饰器的支持而不使用 mobx preset 的话，需要按照下列步骤。
+安装支持装饰器所需依赖: `npm i --save-dev babel-plugin-transform-decorators-legacy` 。
+并在 `.babelrc` 文件中启用:
 
-
-## 不使用装饰器创建 observable 属性
-
-不使用装饰器，可以用 `extendObservable` 来为对象引入 observable 属性。
-通常都是在构造函数中来完成这件事。
-下面的示例在构造函数/类中引入了 observable 属性、计算属性和动作:
-
-```javascript
-function Timer() {
-	extendObservable(this, {
-		start: Date.now(),
-		current: Date.now(),
-		get elapsedTime() {
-			return (this.current - this.start) + "milliseconds"
-		},
-        tick: action(function() {
-          	this.current = Date.now()
-        })
-	})
+```
+{
+  "presets": [
+    "es2015",
+    "stage-1"
+  ],
+  "plugins": ["transform-decorators-legacy"]
 }
 ```
 
-或者当使用类时:
+注意，插件的顺序很重要: `transform-decorators-legacy` 应该放在**首位**。
+babel 设置有问题？请先参考这个 [issue](https://github.com/mobxjs/mobx/issues/105) 。
 
-```javascript
-class Timer {
-	constructor() {
-		extendObservable(this, {
-			/* 参见上面 */
-		})
-	}
-}
-```
+对于 babel 7, 参见 [issue 1352](https://github.com/mobxjs/mobx/issues/1352) 来查看设置示例。
 
-## 使用装饰器创建 observable 属性
+## 装饰器语法 和 Create React App
 
-装饰器可以非常好的与类结合。
-当使用装饰器时，observables、计算值和动作可以通过使用装饰器简单地引入:
+* `create-react-app` 目前还没有内置的装饰器支持。要解决这个问题，你可以使用 eject 命令 或使用 [react-app-rewired](https://github.com/timarney/react-app-rewired/tree/master/packages/react-app-rewire-mobx)。
 
-```javascript
-class Timer {
-	@observable start = Date.now();
-	@observable current = Date.now();
-
-	@computed get elapsedTime() {
-		return (this.current - this.start) + "milliseconds"
-	}
-
-	@action tick() {
-		this.current = Date.now()
-	}
-}
-```
-
-## 创建 observer 组件
-
-mobx 包中的 `observer` 函数/装饰器用来将 react 组件转变为 observer 组件。
-这里需要记住的规则是 `@observer class ComponentName {}` 只是 `const ComponentName = observer(class { })` 的语法糖而已。
-所以下面 observer 组件的所有创建形式都是有效的:
-
-ES5 版本的无状态组件函数:
-
-```javascript
-const Timer = observer(function(props) {
-	return React.createElement("div", {}, props.timer.elapsedTime)
-})
-```
-
-ES6 版本的无状态组件函数:
-
-```javascript
-const Timer = observer(({ timer }) =>
-	<div>{ timer.elapsedTime }</div>
-)
-```
-
-ES5 版本的 React 组件:
-
-```javascript
-const Timer = observer(React.createClass({
-	/* ... */
-}))
-```
-
-ES6 版本的 React 组件:
-
-```javascript
-const Timer = observer(class Timer extends React.Component {
-	/* ... */
-})
-```
-
-ES.next 版本的使用装饰器的 React 组件:
-
-```javascript
-@observer
-class Timer extends React.Component {
-	/* ... */
-}
-```

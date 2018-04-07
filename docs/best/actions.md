@@ -7,7 +7,7 @@
 ### Promises
 
 ```javascript
-mobx.useStrict(true) // 不允许在动作之外进行状态修改
+mobx.configure({ enforceActions: true }) // 不允许在动作之外进行状态修改
 
 class Store {
 	@observable githubProjects = []
@@ -33,10 +33,12 @@ class Store {
 
 上面的示例会抛出异常，因为传给 `fetchGithubProjectsSomehow` promise 的回调函数不是 `fetchProjects` 动作的一部分，因为动作只会应用于当前栈。
 
-首选的简单修复是将回调函数变成动作。(注意绑定在这很重要，以获取正确的 `this`!):
+首选的简单修复是将回调函数变成动作。(注意使用 `action.bound` 绑定在这很重要，以获取正确的 `this`!):
 
 
 ```javascript
+mobx.configure({ enforceActions: true })
+
 class Store {
 	@observable githubProjects = []
 	@observable state = "pending" // "pending" / "done" / "error"
@@ -49,13 +51,13 @@ class Store {
 
 	}
 
-	@action.bound // 回调动作
+	@action.bound
 	fetchProjectsSuccess(projects) {
 		const filteredProjects = somePreprocessing(projects)
 		this.githubProjects = filteredProjects
 		this.state = "done"
 	}
-	@action.bound // 回调动作
+	@action.bound
 		fetchProjectsError(error) {
 			this.state = "error"
 		}
@@ -65,7 +67,7 @@ class Store {
 尽管这很整洁清楚，但异步流程复杂后可能会略显啰嗦。另外一种方案是你可以使用 `action` 关键字来包装 promises 回调函数。推荐这么做，但不是强制的，还需要给它们命名:
 
 ```javascript
-mobx.useStrict(true) // 不允许在动作之外进行状态修改
+mobx.configure({ enforceActions: true })
 
 class Store {
 	@observable githubProjects = []
@@ -98,7 +100,7 @@ class Store {
 这种模式的优势是它鼓励你不要到处写 `action`，而是在整个过程结束时尽可能多地对所有状态进行修改：
 
 ```javascript
-mobx.useStrict(true) // 不允许在动作之外进行状态修改
+mobx.configure({ enforceActions: true })
 
 class Store {
 	@observable githubProjects = []
@@ -140,7 +142,7 @@ class Store {
 这正是 `runInAction` 再次派上用场的地方:
 
 ```javascript
-mobx.useStrict(true) // 不允许在动作之外进行状态修改
+mobx.configure({ enforceActions: true })
 
 class Store {
 	@observable githubProjects = []
@@ -167,41 +169,33 @@ class Store {
 }
 ```
 
-### babel-plugin-mobx-deep-action
+### flows
 
-如果你使用 babel，有一个插件在可以转译期间扫描 `@action` 方法并自动、正确地包装动作中的所有回调函数及 await 语句: [mobx-deep-action](https://github.com/mobxjs/babel-plugin-mobx-deep-action)。
+然而，更好的方式是使用 `flow` 的内置概念。它们使用生成器。一开始可能看起来很不适应，但它的工作原理与 `async` / `await` 是一样的。只是使用 `function *` 来代替 `async`，使用 `yield` 代替 `await` 。
+使用 `flow` 的优点是它在语法上基本与 `async` / `await` 是相同的 (只是关键字不同)，并且不需要手动用 `@action` 来包装异步代码，这样代码更简洁。
 
-### Generators & asyncAction
-
-最后，在 [`mobx-utils` 包](https://github.com/mobxjs/mobx-utils)中还有一个 `asyncAction` 工具函数，它其实是使用 generators 来自动地在动作中包装 yield 过的 promises 。优点是它在语法上十分接近 async / await (使用不同的关键字)，并且异步部分不需要手动包装成动作，从而代码非常整洁。
-只要确保每个 `yield` 返回 promise 。
-
-`asyncAction` 可以作为装饰器和函数使用 (就像 `@action`)。
-`asyncAction` 与 MobX 开发者工具结合很好，所以它可以很轻松的追踪异步函数的进程。
-想了解更多详情，请参见 [asyncAction](https://github.com/mobxjs/mobx-utils#asyncaction) 的文档。
+`flow` 只能作为函数使用，不能作为装饰器使用。
+`flo` 可以很好的与 MobX 开发者工具集成，所以很容易追踪 `async` 函数的过程。
 
 ```javascript
-import {asyncAction} from "mobx-utils"
-
-mobx.useStrict(true) // 不允许在动作之外进行状态修改
+mobx.configure({ enforceActions: true })
 
 class Store {
 	@observable githubProjects = []
-	@observable state = "pending" // "pending" / "done" / "error"
+	@observable state = "pending"
 
-	@asyncAction
-	*fetchProjects() { // <- 注意*号，这是一个 generator 函数!
+	fetchProjects = flow(function * () { // <- 注意*号，这是生成器函数！
 		this.githubProjects = []
 		this.state = "pending"
 		try {
 			const projects = yield fetchGithubProjectsSomehow() // 用 yield 代替 await
 			const filteredProjects = somePreprocessing(projects)
-			// 异步代码块会被自动包装成动作
+			// 异步代码块会被自动包装成动作并修改状态
 			this.state = "done"
 			this.githubProjects = filteredProjects
 		} catch (error) {
 			this.state = "error"
 		}
-	}
+	})
 }
 ```

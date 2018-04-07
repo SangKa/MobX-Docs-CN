@@ -1,12 +1,67 @@
-# observable 调节器
+# 装饰器
 
-调节器可以作为装饰器或者组合 `extendObservable` 和 `observable.object` 使用，以改变特定属性的自动转换规则。
+MobX 有一组装饰器来定义 observable 属性的行为。
 
-* `observable.deep`: 任何 observable 都使用的默认的调节器。它把任何分配的、非原始数据类型的、非 observable 的值转换成 observable。
-* `observable.ref`: 禁用自动的 observable 转换，只是创建一个 observable 引用。
-* `observable.shallow`: 只能与集合组合使用。 将任何分配的集合转换为浅 observable (而不是深 observable)的集合。 换一种说法; 集合中的值将不会自动变为 observable。
+* `observable`: `observable.deep` 的别名
+* `observable.deep`: 任何 observable 都使用的默认的调节器。它将任何(尚未成为 observable )数组，映射或纯对象克隆并转换为 observable 对象，并将其赋值给给定属性
+* `observable.ref`: 禁用自动的 observable 转换，只是创建一个 observable 引用
+* `observable.shallow`: 只能与集合组合使用。 将任何分配的集合转换为 observable，但该集合的值将按原样处理
+* `observable.struct`: 就像 `ref`, 但会忽略结构上等于当前值的新值
 * `computed`: 创建一个衍生属性, 参见 [`computed`](computed-decorator.md)
+* `computed(options)`: 同 computed , 可设置选项
+* `computed.struct`: 与 `computed` 相同，但是只有当视图产生的值与之前的值结构上有不同时，才通知它的观察者
 * `action`: 创建一个动作, 参见 [`action`](action.md)
+* `action(name)`: 创建一个动作，重载了名称
+* `action.bound`: 创建一个动作, 并将 `this` 绑定到了实例
+
+装饰器可以使用 API `decorate`、`observable.object`、`extendObservable` 和 `observable` (创建对象时) 来指定对象成员的行为。
+如果没有传入装饰器，默认为对任意键值对使用 `observable.deep`，对 getters 使用 `computed` 。
+
+```javascript
+import {observable, autorun, action} from "mobx";
+
+var person = observable({
+	name: "John",
+	age: 42,
+	showAge: false,
+
+	get labelText() {
+		return this.showAge ? `${this.name} (age: ${this.age})` : this.name;
+	},
+
+    // 动作:
+    setAge(age) {
+        this.age = age;
+    }
+}, {
+    setAge: action
+    // 其他属性默认为 observables / computed
+});
+```
+
+```javascript
+class Person {
+	name = "John"
+	age = 42
+	showAge = false
+
+	get labelText() {
+		return this.showAge ? `${this.name} (age: ${this.age})` : this.name;
+	}
+
+    setAge(age) {
+        this.age = age;
+    }
+}
+// 使用 decorate 时，所有字段都应该指定 (毕竟，类里的非 observable 字段可能会更多)
+decorate(Person, {
+    name: observable,
+    age: observable,
+    showAge: observable,
+    labelText: computed,
+    setAge: action
+})
+```
 
 ## 深层可观察性
 
@@ -40,7 +95,9 @@ class Message {
 function Message() {
     extendObservable({
         message: "Hello world",
-        author: observable.ref(null)
+        author: null
+    }, {
+        author: observable.ref
     })
 }
 ```
@@ -60,54 +117,4 @@ class AuthorStore {
 ```
 在上面的示例中，使用普通的 author 数组分配给 `authors` 的话，会使用 observables 数组来更新 author，observables 数组包含原始的、非 observable 的 author 。
 
-注意这些方法可用于手动创建浅集合: `observable.shallowObject`、 `observable.shallowArray`、 `observable.shallowMap` 和 `extendShallowObservable`。
-
-## Action & Computed
-
-`action`、`action.bound`、`computed` 和 `computed.struct` 同样可以作为调节器使用。
-参见 [`computed`](computed-decorator.md) 和 [`action`](action.md)。
-
-```javascript
-const taskStore = observable({
-    tasks: observable.shallow([]),
-    taskCount: computed(function() {
-        return this.tasks.length
-    }),
-    clearTasks: action.bound(function() {
-        this.tasks.clear()
-    })
-})
-```
-
-## asStructure
-
-MobX 2 中有 `asStructure` 调节器，它在实践中极少被使用，或者只能在使用 `reference` / `shallow` 更适合(例如使用不可变数据)的情况下使用。
-计算属性和 reaction 的结构比较仍是可能的。
-
-## 调节器的效果
-
-```javascript
-class Store {
-    @observable/*.deep*/ collection1 = []
-
-    @observable.ref collection2 = []
-
-    @observable.shallow collection3 = []
-}
-
-const todos = [{ test: "value" }]
-const store = new Store()
-
-store.collection1 = todos;
-store.collection2 = todos;
-store.collection3 = todos;
-```
-
-完成这些分配后:
-
-1. `collection1 === todos` 是 false; todos 的内容会被克隆至一个新的 observable 数组。
-2. `collection1[0] === todos[0]` 是 false; 第一个 todo 是个普通对象，因此它被克隆至一个存储在数组中的 observable 对象。
-3. `collection2 === todos` 是 true; `todos` 保持不变， 而且是非 observable。 只有 `collection2` 属性本身是 observable 。
-4. `collection2[0] === todos[0]` 是 true; 理由同 3。
-5. `collection3 === todos` 是 false; collection3 是一个新的 observable 数组。
-6. `collection3[0] === todos[0]` 是 true; `collection3` 的值只是浅的转变成 observable，但数组的内容保持不变。
+注意， `{ deep: false }` 了作为选项传给 `observable`、`observable.object`、`observable.array`、`observable.map` 和 `extendObservable` 来创建浅集合。

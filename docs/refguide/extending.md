@@ -3,9 +3,11 @@
 ## Atoms
 
 在某些时候，你可能想要有更多的数据结构或其他可以在响应式计算中使用的东西(如流)。
-要实现这个其实非常容易，使用 `Atom` 类即可。
+要实现这个其实非常容易，使用 Atoms 的概念即可。
 Atom 可以用来通知 Mobx 某些 observable 数据源被观察或发生了改变。
 当数据源被使用或不再使用时，MobX 会通知 atom 。
+
+_提示: 在多数场景下，你可以避免去创建自己的 atoms，创建普通的 observavles 并使用工具 `onBecomeObserved` 或 `onBecomeUnobserved` 在 MobX 开始追踪 observable 时接收通知_
 
 下面的示例演示了如何创建一个 observable `Clock`，它可以用在响应式函数中，并且返回当前时间。
 这个 clock 只有当它被观察了才会运行。
@@ -13,7 +15,7 @@ Atom 可以用来通知 Mobx 某些 observable 数据源被观察或发生了改
 此示例演示了 Atom 类的完整API。
 
 ```javascript
-import {Atom, autorun} from "mobx";
+import {createAtom, autorun} from "mobx";
 
 class Clock {
 	atom;
@@ -22,7 +24,7 @@ class Clock {
 
 	constructor() {
 		// 创建一个 atom 用来和 MobX 核心算法交互
-		this.atom =	new Atom(
+		this.atom =	createAtom(
 			// 第一个参数: atom 的名字，用于调试
 			"Clock",
 			// 第二个参数(可选的): 当 atom 从未被观察到被观察时的回调函数
@@ -76,31 +78,4 @@ const disposer = autorun(() => console.log(clock.getTime()));
 disposer();
 
 // 停止输出。如果没有人使用同一个 `clock` 的话，clock 也将停止运行。
-```
-
-## Reactions(反应)
-
-`Reaction` 允许你创建你自己的 **自动运行器**。
-当函数应该再次执行时， Reaction 会追踪函数和信号，因为一个或多个依赖关系已更改。
-
-
-这是 `autorun` 如何使用 `Reaction` 来定义的:
-
-```typescript
-export function autorun(view: Lambda, scope?: any) {
-	if (scope)
-		view = view.bind(scope);
-
-	const reaction = new Reaction(view.name || "Autorun", function () {
-		this.track(view);
-	});
-
-	// 运行刚刚创建的 reaction 或将其列入计划表中
-	if (isComputingDerivation() || globalState.inTransaction > 0)
-		globalState.pendingReactions.push(reaction);
-	else
-		reaction.runReaction();
-
-	return reaction.getDisposer();
-}
 ```

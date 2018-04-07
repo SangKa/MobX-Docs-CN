@@ -45,8 +45,6 @@ Store 的主要职责是将**逻辑**和**状态**从组件中移至一个独立
 对于同构应用程序，你可能还希望使用正常默认值提供这个 store 的存根实现，以便所有组件按预期呈现。
 可以通过在应用中传递属性到组件树中或使用 `mobx-react` 包中的 `Provider` 和 `inject` 来分发 **UI 状态 store**。
 
-想了解 `modifiers.asStructure` 更多详情，请参见[这里](https://github.com/SangKa/mobx-docs-cn/blob/master/docs/refguide/modifiers.md#asstructure)
-
 store 示例 (使用 ES6 语法):
 
 ```javascript
@@ -57,11 +55,11 @@ export class UiState {
     @observable language = "en_US";
     @observable pendingRequestCount = 0;
 
-    // asStructure 确保不会通知观察者，除非尺寸对象以深度相等的方式改变
-    @observable windowDimensions = asStructure({
+    // .struct 确保不会通知观察者，除非尺寸对象以深度相等的方式改变
+    @observable.struct windowDimensions = {
         width: jquery(window).width(),
         height: jquery(window).height()
-    });
+    };
 
 	constructor() {
         jquery.resize(() => {

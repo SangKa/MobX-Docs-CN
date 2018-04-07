@@ -52,19 +52,27 @@ message.title = "Bar"
 
 这将如预期一样会作出反应，`.title` 属性会被 autorun 间接引用并且在之后发生了改变，所以这个改变是能检测到的。
 
-你可以通过在追踪函数内调用 `whyRun()` 方法来验证 MobX 在追踪什么。以上面的函数为例，输出结果如下:
+你可以通过在追踪函数内调用 [`trace()`](../reguide/trace) 方法来验证 MobX 在追踪什么。以上面的函数为例，输出结果如下:
 
 ```javascript
-autorun(() => {
+const disposer = autorun(() => {
     console.log(message.title)
-    whyRun()
+    trace()
 })
 
 // 输出:
-WhyRun? reaction 'Autorun@1':
- * Status: [running]
- * This reaction will re-run if any of the following observables changes:
-    ObservableObject@1.title
+// [mobx.trace] 'Autorun@2' tracing enabled
+
+message.title = "Hello"
+// [mobx.trace] 'Autorun@2' is invalidated due to a change in: 'ObservableObject@1.title'
+```
+
+还可以通过使用指定工具来获取内部的依赖 (或观察者):
+
+```javascript
+getDependencyTree(disposer) // 输出与 disposer 耦合的 reaction 的依赖树
+// { name: 'Autorun@4',
+//  dependencies: [ { name: 'ObservableObject@1.title' } ] }
 ```
 
 #### 错误的: 改变了非 observable 的引用
@@ -259,6 +267,24 @@ twitterUrls.set("Sara", "twitter.com/horsejs")
 可以通过使用 `twitterUrls.has("Sara")` 来先检查该项是否存在。
 所以对于动态键集合，总是使用 observable 映射。
 
+#### 正确的: 使用 MobX 工具来读/写对象
+
+MobX 4 之后哦还可以将 observable 对象当做动态集合使用，如果使用 MobX API 来进行读/更新操作，那么 MobX 可以追踪属性的变化。下面的代码同样可以进行反应:
+
+```javascript
+import { get, set, observable } from "mobx"
+
+const twitterUrls = observable.object({
+    "John": "twitter.com/johnny"
+})
+
+autorun(() => {
+    console.log(get(twitterUrls, "Sara")) // get 可以追踪还未创建的属性
+})
+set(twitterUrls, { "Sara" : "twitter.com/horsejs"})
+```
+
+想了解更多，请参见 [对象操作 API](https://mobx.js.org/refguide/api.html#direct-observable-manipulation) 。
 
 ## MobX 只追踪同步地访问数据
 

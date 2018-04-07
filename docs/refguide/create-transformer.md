@@ -1,5 +1,7 @@
 # createTransformer
 
+由 `mobx-utils` 包提供。
+
 `createTransformer<A, B>(transformation: (value: A) => B, onCleanup?: (result: B, value?: A) => void): (value: A) => B`
 
 `createTransformer` 将一个函数(此函数值 `A` 转换为值 `B`)转换为响应式且有记忆功能的函数。

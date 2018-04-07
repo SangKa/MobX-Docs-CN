@@ -10,7 +10,6 @@
 * `@action boundClassMethod = (args) => { body }`
 * `@action(name) boundClassMethod = (args) => { body }`
 * `@action.bound classMethod() {}`
-* `@action.bound(function() {})`
 
 任何应用都有动作。动作是任何用来修改状态的东西。
 使用MobX你可以在代码中显式地标记出动作所在的位置。
@@ -23,52 +22,21 @@
 建议对任何修改 observables 或具有副作用的函数使用 `(@)action` 。
 结合开发者工具的话，动作还能提供非常有用的调试信息。
 
-和 [ES 5.1 setters](http://www.ecma-international.org/ecma-262/5.1/#sec-11.1.5) 一起使用 `@action` 装饰器(例如 `@action set propertyName`) 还不支持，尽管 [计算属性的 setter 是自动地动作](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/computed-decorator.md#setters-for-computed-values)。
+不支持使用 setters 的 `@action` 装饰器，但是，[计算属性的 setters 是自动的动作](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/computed-decorator.md#setters-for-computed-values)。
 
-注意: 当启用**严格模式**时，需要强制使用 `action`，参见 [`useStrict`](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/api.md#usestrict)。
-
-想要获取更多 `action` 的详细介绍还可以参见 [MobX 2.2 发行说明](https://medium.com/p/45cdc73c7c8d/)。
-
-`contact-list` 项目中的两个 action 示例:
-
-```javascript
-@action  createRandomContact() {
-    this.pendingRequestCount++;
-    superagent
-        .get('https://randomuser.me/api/')
-        .set('Accept', 'application/json')
-        .end(action("createRandomContact-callback", (error, results) => {
-            // ^ Note: asynchronous callbacks are separate actions!
-            if (error)
-                console.error(error);
-            else {
-                const data = JSON.parse(results.text).results[0];
-                const contact = new Contact(this, data.dob, data.name, data.login.username, data.picture)
-                contact.addTag('random-user');
-                this.contacts.push(contact);
-                this.pendingRequestCount--;
-            }
-        }));
-}
-```
+注意: 在将 MobX 配置为需要通过动作来更改状态时，必须使用 `action` ，参见 [`useStrict`](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/api.md#configure)。
 
 ## 何时使用动作？
 
 应该永远只对**修改**状态的函数使用动作。
 只执行查找，过滤器等函数**不**应该被标记为动作，以允许 MobX 跟踪它们的调用。
 
-注意在上面的示例中，编写异步动作是非常直观的，只需将所有的回调函数标记为 `action` 即可。
-除此之外，MobX 中的异步过程并没有什么特别之处，异步更新只是一个在未来调用的异步动作。
-
-[**严格模式**](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/api.md#usestrict) 强制所有的状态修改都必须由动作来完成。
-这在大型、长期的代码库中是非常有用的最佳实践。当应用初始化时，简单地调用 `mobx.useStrict(true)`，对于任何不使用动作的状态修改，MobX 都会抛出异常。
-
-[编写异步动作](https://mobx.js.org/best/actions.html) 章节提供了几个关于如何组织异步动作的语法配方，组合使用 promises、async / await、generators 等等。阅读它以开拓思路！
+[“强制动作”](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/api.md#configure) 强制所有状态变更都必须通过动作来完成。在大型、长期的项目中，这是十分有用的最佳实践。
 
 ## 绑定的动作
 
 `action` 装饰器/函数遵循 javascript 中标准的绑定规则。
-但是，Mobx 3引入了 `action.bound` 来自动地将动作绑定到目标对象。
+但是，`action.bound` 可以用来自动地将动作绑定到目标对象。
 注意，与 `action` 不同的是，`(@)action.bound` 不需要一个name参数，名称将始终基于动作绑定的属性。
 
 示例:
@@ -84,19 +52,6 @@ class Ticker {
 }
 
 const ticker = new Ticker()
-setInterval(ticker.increment, 1000)
-```
-
-或
-
-```javascript
-const ticker = observable({
-	tick: 1,
-	increment: action.bound(function() {
-		this.tick++ // 绑定 'this'
-	})
-})
-
 setInterval(ticker.increment, 1000)
 ```
 

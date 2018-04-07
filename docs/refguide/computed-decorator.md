@@ -43,31 +43,39 @@ class OrderLine {
 }
 ```
 
-## `computed` 调节器
-
-如果你的环境不支持装饰器，请使用 `computed(expression)` 调节器组合 `extendObservable` / `observable` 以引入新的计算属性。
-
-从本质上来说，`@computed get propertyName() { }` 在构造函数中调用的 [`extendObservable(this, { propertyName: get func() { } })`](extend-observable.md) 的语法糖。
+要不使用 `decorate` 来引入:
 
 ```javascript
-import {extendObservable, computed} from "mobx";
+import {decorate, observable, computed} from "mobx";
 
 class OrderLine {
+    price = 0;
+    amount = 1;
     constructor(price) {
-        extendObservable(this, {
-            price: price,
-            amount: 1,
-            // 有效:
-            get total() {
-                return this.price * this.amount
-            },
-            // 同样有效:
-            total: computed(function() {
-                return this.price * this.amount
-            })
-        })
+        this.price = price;
+    }
+
+    get total() {
+        return this.price * this.amount;
     }
 }
+decorate(OrderLine, {
+    price: observable,
+    amount: observable,
+    total: computed
+})
+```
+
+`observable.object` 和 `extendObservable` 都会自动将 getter 属性推导成计算属性，所以下面这样就足够了:
+
+```javascript
+const orderLine = observable.object({
+    price: 0,
+    amount: 1,
+    get total() {
+        return this.price * this.amount
+    }
+})
 ```
 
 ## 计算值的 setter
@@ -75,15 +83,16 @@ class OrderLine {
 还可以为计算值定义 setter。注意这些 setters 不能用来直接改变计算属性的值，但是它们可以用来作“逆向”衍生。例如:
 
 ```javascript
-const box = observable({
-    length: 2,
-    get squared() {
-        return this.length * this.length;
+const orderLine = observable.object({
+    price: 0,
+    amount: 1,
+    get total() {
+        return this.price * this.amount
     },
-    set squared(value) {
-        this.length = Math.sqrt(value);
+    set total(total) {
+        this.price = total / this.amount // 从 total 中推导出 price
     }
-});
+})
 ```
 
 同样的
@@ -101,8 +110,6 @@ class Foo {
 ```
 
 _注意: 永远在 getter **之后** 定义 setter，一些 TypeScript 版本会知道声明了两个具有相同名称的属性。_
-
-_注意: setter 需要 MobX 2.5.1 或者更高版本_
 
 ## `computed(expression)` 函数
 
@@ -132,17 +139,14 @@ name.set("Dave");
 
 * `name`: 字符串, 在 spy 和 MobX 开发者工具中使用的调试名称
 * `context`: 在提供的表达式中使用的 `this`
-* `setter`: 要使用的setter函数。 没有 setter 的话无法为计算值分配新值。 如果传递给 `computed` 的第二个参数是一个函数，那么就把会这个函数作为 setter
-* `compareStructural`: 默认值是 `false`。 当为 true 时，表达式的输出在结果上与先前的值进行比较，然后通知任何观察者相关的更改。 这确保了计算的观察者不用重新评估返回的新结构是否等于原始结构。 这在使用点、矢量或颜色结构时非常有用。通过将 `equals` 选项指定为 `comparer.structural` 可以实现同样的行为。
-* `equals`: 默认值是 `comparer.default` 。它充当比较前一个值和后一个值的比较函数。如果这个函数认为前一个值和后一个值是相等的，那么观察者就不会重新评估。这在使用结构数据和来自其他库的类型时很有用。例如，一个 computed 的 [moment](https://momentjs.com/) 实例可以使用 `(a, b) => a.isSame(b)` 。此选项如果指定的话，会覆盖 `compareStructural` 选项。
+* `set`: 要使用的setter函数。 没有 setter 的话无法为计算值分配新值。 如果传递给 `computed` 的第二个参数是一个函数，那么就把会这个函数作为 setter
+* `equals`: 默认值是 `comparer.default` 。它充当比较前一个值和后一个值的比较函数。如果这个函数认为前一个值和后一个值是相等的，那么观察者就不会重新评估。这在使用结构数据和来自其他库的类型时很有用。例如，一个 computed 的 [moment](https://momentjs.com/) 实例可以使用 `(a, b) => a.isSame(b)` 。如果想要使用结构比较来确定新的值是否与上个值不同 (并作为结果通知观察者)，`comparer.deep` 十分便利。
+* `requiresReaction`: 对于非常昂贵的计算值，推荐设置成 `true` 。如果你尝试读取它的值，但某些观察者没有跟踪该值（在这种情况下，MobX 不会缓存该值），则会导致计算结果丢失，而不是进行昂贵的重新评估。
+* `keepAlive`: 如果没有任何人观察到，则不要使用此计算值。 _请注意，这很容易导致内存泄漏，因为它会导致此计算值使用的每个 observable ，并将计算值保存在内存中！_
 
 ## `@computed.struct` 用于比较结构
 
 `@computed` 装饰器不需要接收参数。如果你想创建一个能进行结构比较的计算属性时，请使用 `@computed.struct`。
-
-## `@computed.equals` 用于自定义比较
-
-如果你想创建一个使用自定义比较的计算属性，请使用 `@computed.equals(comparer)`。
 
 ## 内置比较器
 

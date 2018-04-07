@@ -228,29 +228,3 @@ const listStore = new ListStore();
 #### 开发模式下声明 propTypes 可能会引起不必要的渲染
 
 参见: https://github.com/mobxjs/mobx-react/issues/56
-
-#### 使用 Babel 时 `@observable` 属性延迟初始化
-
-这个问题只有当使用 Babel 作为编辑器，而不是 Typescript(装饰器支持更成熟) 时才会出现。
-Observable 属性不会进行初始化，直到第一次读/写此属性(在这一刻它们都会被初始化)。
-这导致了以下细微的bug:
-
-```javascript
-class Todo {
-    @observable done = true
-    @observable title = "test"
-}
-const todo = new Todo()
-
-"done" in todo // true
-todo.hasOwnProperty("done") // false
-Object.keys(todo) // []
-
-console.log(todo.title)
-"done" in todo // true
-todo.hasOwnProperty("done") // true
-Object.keys(todo) // ["done", "title"]
-```
-
-在实践中，很少会出现这样的问题，只有在读/写对象的任何属性**之前**使用像 `Object.assign(target, todo)` 或 `assert.deepEquals` 这样的一般方法时才会出现。
-如果你想确保此问题不会出现，在构造函数中初始化字段来替代字段声明，或者使用 `extendObservable` 来创建 observable 属性。

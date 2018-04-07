@@ -2,7 +2,7 @@
 
 <a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/react-write-custom-mobx-reactions-with-when-and-autorun">egghead.io 第9课: 自定义反应</a>
 
-`when(debugName?, predicate: () => boolean, effect: () => void, scope?)`
+`when(predicate: () => boolean, effect?: () => void, options?)`
 
 `when` 观察并运行给定的 `predicate`，直到返回true。
 一旦返回 true，给定的 `effect` 就会被执行，然后 autorunner(自动运行程序) 会被清理。
@@ -30,5 +30,15 @@ class MyResource {
 		// 清理
 	}
 }
+```
 
+## when-promise
+
+如果没提供 `effect` 函数，`when` 会返回一个 `Promise` 。它与 `async / await` 可以完美结合。
+
+```javascript
+async function() {
+	await when(() => that.isVisible)
+	// 等等..
+}
 ```

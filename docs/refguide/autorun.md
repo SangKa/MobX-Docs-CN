@@ -28,32 +28,49 @@ numbers.push(5);
 // 不会再输出任何值。`sum` 不会再重新计算。
 ```
 
-## 错误处理
+## 选项
+
+Reaction 接收第三个参数，它是一个参数对象，有如下可选的参数:
+
+* `fireImmediately`: 布尔值，用来标识效果函数是否在数据函数第一次运行后立即触发。默认值是 `false`，如果一个布尔值作为传给 `reaction` 的第三个参数，那么它会被解释为 `fireImmediately` 选项。
+* `delay`: 可用于对效果函数进行去抖动的数字(以毫秒为单位)。如果是 0(默认值) 的话，那么不会进行去抖。
+* `equals`: 默认值是 `comparer.default` 。如果指定的话，这个比较器函数被用来比较由 *数据* 函数产生的前一个值和后一个值。只有比较器函数返回 true *效果* 函数才会被调用。此选项如果指定的话，会覆盖 `compareStructural` 选项。
+* `name`: 字符串，用于在例如像 [`spy`](spy.md) 这样事件中用作此 reaction 的名称。
+* `onError`: 用来处理 reaction 的错误，而不是传播它们。
+* `scheduler`: 设置自定义调度器以决定如何调度 autorun 函数的重新运行
+
+## `delay` 选项
+
+```javascript
+autorun(() => {
+    // 假设 profile.asJson 返回的是 observable Json 表示，
+    // 每次变化时将其发送给服务器，但发送前至少要等300毫秒。
+    // 当发送后，profile.asJson 的最新值会被使用。
+	sendProfileToServer(profile.asJson);
+}, { delay: 300 });
+```
+
+## `onError` 选项
 
 在 autorun 和所有其他类型 reaction 中抛出的异常会被捕获并打印到控制台，但不会将异常传播回原始导致异常的代码。
 这是为了确保一个异常中的 reaction 不会阻止其他可能不相关的 reaction 的预定执行。
 这也允许 reaction 从异常中恢复; 抛出异常不会破坏 MobX的跟踪，因此如果除去异常的原因，reaction 的后续运行可能会再次正常完成。
 
-可以通过调用 reaction 的disposer的 `onError` 处理方法来覆盖 Reactions 的默认日志行为。
+可以通过提供 `onError` 选项来覆盖 Reactions 的默认日志行为。
 示例:
 
 ```javascript
-const age = observable(10)
+const age = observable.box(10)
+
 const dispose = autorun(() => {
     if (age.get() < 0)
         throw new Error("Age should not be negative")
     console.log("Age", age.get())
+}, {
+    onError(e) {
+        window.alert("Please enter a valid age")
+    }
 })
-
-age.set(18)  // 输出: Age 18
-age.set(-10) // 输出: Age should not be negative
-age.set(5)   // 已恢复; 输出: Age 5
-
-dispose.onError(e => {
-    window.alert("Please enter a valid age")
-})
-
-age.set(-5)  // 显示alert弹出框
 ```
 
-一个全局的 onError 处理方法可以通过 `extras.onReactionError(handler)` 来设置。这在测试或监控中很有用。
+一个全局的 onError 处理方法可以使用 `onReactionError(handler)` 来设置。这在测试或监控中很有用。

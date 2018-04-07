@@ -20,21 +20,16 @@ JavaScript 中的所有原始类型值都是不可变的，因此它们都是不
 * `intercept(interceptor)` - 可以用来在任何变化应用前将其拦截。参见 [observe & intercept](observe.md)。
 * `.observe(callback: (change) => void, fireImmediately = false): disposerFunction` - 注册一个观察者函数，每次存储值被替换时触发。返回一个函数以取消观察者。参见 [observe & intercept](observe.md)。`change` 参数是一个对象，其中包含 observable 的 `newValue` 和 `oldValue` 。
 
-### `observable.shallowBox(value)`
+### `observable.box(value, { deep: false })`
 
-`shallowBox` 创建一个基于 [`ref`](modifiers.md) 调节器的箱子。这意味着箱子里的任何(将来)值都不会自动地转换成 observable 。
-
-
-### `observable(primitiveValue)`
-
-当使用通用的 `observable(value)` 方法时， MobX 会为任何不能转换成 observable 的值自动创建一个 observable 箱子。
+创建一个基于 [`ref`](modifiers.md) 装饰器的箱子。这意味着箱子里的任何(将来)值都不会自动地转换成 observable 。
 
 ### 示例
 
 ```javascript
 import {observable} from "mobx";
 
-const cityName = observable("Vienna");
+const cityName = observable.box("Vienna");
 
 console.log(cityName.get());
 // 输出 'Vienna'
@@ -47,40 +42,6 @@ cityName.set("Amsterdam");
 // 输出 'Vienna -> Amsterdam'
 ```
 
-数组示例:
+## `observable.box(value, { name: "my array" })`
 
-```javascript
-import {observable} from "mobx";
-
-const myArray = ["Vienna"];
-const cityName = observable(myArray);
-
-console.log(cityName[0]);
-// 输出 'Vienna'
-
-cityName.observe(function(observedArray) {
-	if (observedArray.type === "update") {
-		console.log(observedArray.oldValue + "->" + observedArray.newValue);
-	} else if (observedArray.type === "splice") {
-		if (observedArray.addedCount > 0) {
-			console.log(observedArray.added + " added");
-		}
-		if (observedArray.removedCount > 0) {
-			console.log(observedArray.removed + " removed");
-		}
-	}
-});
-
-cityName[0] = "Amsterdam";
-// 输出 'Vienna -> Amsterdam'
-
-cityName[1] = "Cleveland";
-// 输出 'Cleveland added'
-
-cityName.splice(0, 1);
-// 输出 'Amsterdam removed'
-```
-
-## 名称参数
-
-`observable.box` 和 `observable.shallowBox` 都接收第二个参数作为 `spy` 或者 MobX 开发者工具中的调试名称。
+`name` 选项用来给数组一个友好的调试名称，用于 `spy` 或者 MobX 开发者工具。

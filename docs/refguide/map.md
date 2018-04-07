@@ -1,11 +1,10 @@
 # Observable 映射
 
-## `observable.map(values)`
+## `observable.map(values, options?)`
 
 `observable.map(values?)` - 创建一个动态键的 observable 映射。
 如果你不但想对一个特定项的更改做出反应，而且对添加或删除该项也做出反应的话，那么 observable 映射会非常有用。
 `observable.map(values)` 中的 values 可以是对象、 数组或者字符串键的 [ES6 map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)。
-与 ES6 map 不同的是，键只能是字符串。
 
 通过 ES6 Map 构造函数，你可以使用 `observable(new Map())` 或使用装饰器 `@observable map = new Map()` 的类属性来初始化 observable 映射 。
 
@@ -24,17 +23,18 @@
 
 以下函数不属于 ES6 规范，而是由 MobX 提供:
 
-* `toJS()` - 返回映射的浅的普通对象表示。(深复制使用 `mobx.toJS(map)`)。
+* `toJS()` - 将 observable 映射转换成普通映射。
+* `toJSON()`. 返回此映射的浅式普通对象表示。(想要深拷贝，请使用 `mobx.toJS(map)`)。
 * `intercept(interceptor)` - 可以用来在任何变化作用于映射前将其拦截。参见 [observe & intercept](observe.md)。
 * `observe(listener, fireImmediately?)` - 注册侦听器，在映射中的每个更改时触发，类似于为 [Object.observe](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe) 发出的事件。想了解更多详情，请参见 [observe & intercept](observe.md)。
 * `merge(values)` - 把提供对象的所有项拷贝到映射中。`values` 可以是普通对象、entries 数组或者 ES6 字符串键的映射。
 * `replace(values)` - 用提供值替换映射全部内容。是 `.clear().merge(values)` 的简写形式。
 
-## `observable.shallowMap(values)`
+## `observable.map(values, { deep: false })`
 
 任何分配给 observable 映射的值都会默认通过 [`observable`](observable.md) 来传递使其转变成可观察的。
-创建浅映射以禁用此行为，并按原样存储值。关于此机制的更多详情，请参见 [调节器](modifiers.md)。
+创建浅映射以禁用此行为，并按原样存储值。关于此机制的更多详情，请参见 [装饰器](modifiers.md)。
 
-## 名称参数
+## `observable.map(values, { name: "my map" })`
 
-`observable.map` 和 `observable.shallowMap` 都接收第二个参数作为 `spy` 或者 MobX 开发者工具中的调试名称。
+`name` 选项用来给数组一个友好的调试名称，用于 `spy` 或者 MobX 开发者工具。
