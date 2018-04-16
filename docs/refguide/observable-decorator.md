@@ -20,4 +20,4 @@ class OrderLine {
 }
 ```
 
-如果你的环境不支持装饰器或字段初始化器，使用 `decorate` 来代替 (想了解更多，参见 [装饰](../best/synax.md))。
+如果你的环境不支持装饰器或字段初始化器，使用 `decorate` 来代替 (想了解更多，参见 [装饰](./modifiers.md))。
