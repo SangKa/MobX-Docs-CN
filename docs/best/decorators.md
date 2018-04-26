@@ -93,7 +93,7 @@ npm install --save-dev babel-preset-mobx
 ```
 
 .babelrc:
-```
+```json
 {
   "presets": ["mobx"]
 }
@@ -105,7 +105,7 @@ npm install --save-dev babel-preset-mobx
 安装支持装饰器所需依赖: `npm i --save-dev babel-plugin-transform-decorators-legacy` 。
 并在 `.babelrc` 文件中启用:
 
-```
+```json
 {
   "presets": [
     "es2015",

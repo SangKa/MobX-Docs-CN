@@ -30,11 +30,9 @@ numbers.push(5);
 
 ## 选项
 
-Reaction 接收第三个参数，它是一个参数对象，有如下可选的参数:
+Autorun 接收第二个参数，它是一个参数对象，有如下可选的参数:
 
-* `fireImmediately`: 布尔值，用来标识效果函数是否在数据函数第一次运行后立即触发。默认值是 `false`，如果一个布尔值作为传给 `reaction` 的第三个参数，那么它会被解释为 `fireImmediately` 选项。
 * `delay`: 可用于对效果函数进行去抖动的数字(以毫秒为单位)。如果是 0(默认值) 的话，那么不会进行去抖。
-* `equals`: 默认值是 `comparer.default` 。如果指定的话，这个比较器函数被用来比较由 *数据* 函数产生的前一个值和后一个值。只有比较器函数返回 true *效果* 函数才会被调用。此选项如果指定的话，会覆盖 `compareStructural` 选项。
 * `name`: 字符串，用于在例如像 [`spy`](spy.md) 这样事件中用作此 reaction 的名称。
 * `onError`: 用来处理 reaction 的错误，而不是传播它们。
 * `scheduler`: 设置自定义调度器以决定如何调度 autorun 函数的重新运行

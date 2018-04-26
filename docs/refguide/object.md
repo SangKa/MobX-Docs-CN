@@ -23,7 +23,7 @@ var person = observable({
     // 动作:
     setAge(age) {
         this.age = age;
-    })
+    }
 }, {
     setAge: action
 });

@@ -24,7 +24,7 @@
 
 不支持使用 setters 的 `@action` 装饰器，但是，[计算属性的 setters 是自动的动作](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/computed-decorator.md#setters-for-computed-values)。
 
-注意: 在将 MobX 配置为需要通过动作来更改状态时，必须使用 `action` ，参见 [`useStrict`](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/api.md#configure)。
+注意: 在将 MobX 配置为需要通过动作来更改状态时，必须使用 `action` ，参见 [`enforceActions`](https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/api.md#configure)。
 
 ## 何时使用动作？
 

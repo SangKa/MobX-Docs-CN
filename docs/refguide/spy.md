@@ -6,7 +6,8 @@
 举例来说，`mobx-react-devtools` 中使用了 `spy`。
 
 侦察所有动作的示例用法:
-```
+
+```javascript
 spy((event) => {
     if (event.type === 'action') {
         console.log(`${event.name} with args: ${event.arguments}`)

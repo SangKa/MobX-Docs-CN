@@ -13,7 +13,9 @@ Observable 值可以是JS基本数据类型、引用类型、普通对象、类�
 1. 如果 **value** 是ES6的 `Map` : 会返回一个新的 [Observable Map](map.md)。如果你不只关注某个特定entry的更改，而且对添加或删除其他entry时也做出反应的话，那么 Observable maps 会非常有用
 1. 如果 **value** 是数组，会返回一个 [Observable Array](array.md)。
 1. 如果 **value** 是没有原型的对象，那么对象会被克隆并且所有的属性都会被转换成可观察的。参见 [Observable Object](object.md)。
-1. 如果 **value** 是有原型的对象，JavaSript原始数据类型或者函数，会返回一个 [Boxed Observable](boxed.md)。MobX 不会将一个有原型的对象自动转换成可观察的，因为这是它构造函数的职责。在构造函数中使用 `extendObservable` 或者在类定义中使用 `@observable`。
+
+1. 如果 **value** 是有原型的对象，JavaSript 原始数据类型或者函数，会返回一个 [Boxed Observable](boxed.md)。MobX 不会将一个有原型的对象自动转换成可观察的，因为这是它构造函数的职责。在构造函数中使用 `extendObservable` 或者在类定义中使用 `@observable`。
+1. 如果 **value** 是有原型的对象，JavaSript 原始数据类型或者函数，`observable` 会抛出。如果想要为这样的值创建一个独立的可观察引用，请使用 [Boxed Observable](boxed.md) observable 代替。MobX 不会将一个有原型的对象自动转换成可观察的，因为这是它构造函数的职责。在构造函数中使用 `extendObservable` 或在类定义上使用 `@observable` / `decorate` 。
 
 乍看之下，这些规则可能看上去很复杂，但实际上实践当中你会发现他们是非常直观的。
 
@@ -37,6 +39,6 @@ const person = observable({
 });
 person.firstName = "C.S.";
 
-const temperature = observable(20);
+const temperature = observable.box(20);
 temperature.set(25);
 ```

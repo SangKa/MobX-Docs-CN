@@ -48,7 +48,7 @@ import { observable } from "mobx"
 
 Observer 组件只会追踪在 render 方法中存取的数据。常见的错误的是从 observable 属性中提取数据并存储，这样的数据是不会被追踪的:
 
-```
+```javascript
 class User {
   @observable name
 }
@@ -71,7 +71,7 @@ class Profile extends React.Component {
 
 正确的方法通过不将 observables 的值存储在本地(显然，上面的示例很简单，但却是有意为之的)，或通过将其定义为计算属性:
 
-```
+```javascript
 class User {
   @observable name
 }
@@ -100,7 +100,7 @@ MobX 可以做许多事，但是它无法将原始类型值转变成 observable(
 所以如果像下面这样初始化的话，`Timer` 组件是不会作出任何反应的:
 
 ```javascript
-React.render(<Timer timerData={timerData.secondsPassed} />, document.body)
+ReactDom.render(<Timer timerData={timerData.secondsPassed} />, document.body)
 ```
 
 在这行代码中，只是 `secondsPassed` 的当前值传递给了 `Timer`，这个值是不可变值 `0` (JS中的所有原始类型值都是不可变的)。

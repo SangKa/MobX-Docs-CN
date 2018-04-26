@@ -261,7 +261,7 @@ Flows 是可以取消的，这意味着调用返回的 promise 的 `cancel()` �
 
 Flows 支持异步迭代器，这意味着可以使用异步 generators :
 
-```javscript
+```javascript
 async function* someNumbers() {
     yield Promise.resolve(1)
     yield Promise.resolve(2)
@@ -465,14 +465,109 @@ export class City {
 
 ### `configure`
 
-用法: `configure(options)`.
+用法: `configure(options)` 。
+对活动的 MobX 实例进行全局行为设置。
+使用它来改变 MobX 的整体表现。
 
-- **`enforceActions: boolean`**: **全局性**启用/禁用严格模式
+```javascript
+import { configure } from "mobx";
+
+configure({
+    // ...
+});
+```
+
+#### `arrayBuffer: number`
+
+如果没有最大长度的话，则将可观察数组的默认创建长度增加至 `arrayBuffer` 。
+
+可观察数组会在 `ObservableArray.prototype` 上惰性地创建数组项的 getters ，从第一项开始。
+还会继续在数组中创建项，直到数组长度为 `arrayBuffer` (如果项不存在的话) 。
+如果你清楚通用的最小数组长度，并且不想在主流程代码中创建这些 getters 的话，请使用 `arrayBuffer` 。
+还可以参见 `observable` 。
+
+#### `computedRequiresReaction: boolean`
+
+禁止访问任何未观察的计算值。
+如果想检查是否在没有响应式上下文中的使用计算属性的话，请使用它。
+
+```javascript
+configure({ computedRequiresReaction: true });
+```
+
+#### `disableErrorBoundaries: boolean`
+
+默认情况下，MobX 会捕获并重新抛出代码中发生的异常，从而确保某个异常中的反应 (reaction) 不会阻止其他可能无关的反应的预定执行。这意味着异常不会传播到原始代码中，因此将无法使用 try/catch 来捕获它们。
+
+有时你可能想要捕获这些错误，例如在单元测试反应时。此时可以使用 `disableErrorBoundaries` 来禁用此行为。
+
+```javascript
+configure({ disableErrorBoundaries: true });
+```
+
+请注意，使用此配置时，MobX 并不会回复错误。出于这个原因，你可能需要在每个异常之后使用 `_resetGlobalState` 。示例如下:
+
+```js
+configure({ disableErrorBoundaries: true })
+
+test('Throw if age is negative', () => {
+  expect(() => {
+    const age = observable.box(10)
+    autorun(() => { if (age.get() < 0) throw new Error('Age should not be negative') })
+    age.set(-1)
+  }).toThrow()
+  _resetGlobalState() // 每个异常过后都需要
+})
+```
+
+> 在 MobX 4 之前，`_resetGlobalState` 名为 `extras.resetGlobalState` 。
+
+#### `enforceActions: boolean`
+
+也被称为“严格模式”。
+
 在严格模式下，不允许在 [`action`](action.md) 外更改任何状态。
-还可以参见 `allowStateChanges`。
-- **`isolateGlobalState: boolean`**: 当同一环境中存在多个 MobX 实例时，用来隔离 MobX 的全局状态。当在页面中同时使用基于 MobX 库和MobX 时，这会非常有用。在库中调用 `configure({isolateGlobalState: true})` 会使库的响应式保持独立。此外，在全局作用域中有多个 MobX 实例时，MobX 不会抛出错误
-- **`disableErrorBoundaries: boolean`**: 使用它可以简化调试异常，并阻止 MobX 捕获并重新抛出代码中发生的异常
-- **`computedRequiresReaction: boolean`**: 禁止访问任何未观察的计算值。 如果想检查你否使用没有响应式上下文的计算属性，请使用它
+推荐在状态复杂的大型应用中使用严格模式。
+
+> 在 MobX 4 之前，需要通过 `useStrict(): void` 来启用此行为。
+
+```javascript
+configure({ enforceActions: true });
+```
+
+MobX 4.2 之后，还可以这样设定
+
+```javascript
+configure({ enforceActions: "strict" });
+```
+
+在松散 (`true`) 模式下，MobX 只会在可观察到的 observable 被修改时才会抛出，在“严格”模式下，它甚至会抛出未观察到的 observable 。
+
+#### `isolateGlobalState: boolean`
+
+当同一环境中有多个 MobX 实例时，将 MobX 的全局状态隔离。
+当使用 MobX 的同时还使用了使用 MobX 的封装库时，这是非常有用的。
+当在库中调用 `configure({isolateGlobalState：true})` 时，库内的响应性将保持独立。
+另外，MobX 不会抛出全局范围内有多个实例的错误。
+
+```javascript
+configure({ isolatedGlobalState: true });
+```
+
+#### `reactionScheduler: (f: () => void) => void`
+
+设置一个新函数，用来执行所有 MobX 的反应 (reactions) 。
+默认情况下，`reactionScheduler` 只会运行反应 `f` 而没有其他任何行为。
+这对于基本的调试或者减慢反应以使用应用的更新更加可视化来说是非常有用的。
+
+```javascript
+configure({
+    reactionScheduler: (f): void => {
+        console.log("Running an event after a delay:", f);
+        setTimeout(f, 100);
+    }
+});
+```
 
 ## 直接操控 Observable
 

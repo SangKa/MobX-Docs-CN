@@ -27,10 +27,11 @@ MobX 是由 Mendix、Coinbase、Facebook 开源和众多[个人赞助商](#backe
 
 # 安装
 
-* 安装: `npm install mobx --save`。 React 绑定库: `npm install mobx-react --save`。 要启用 ESNext 的装饰器 (可选), 参见下面。
+* 安装: 
+  `npm install mobx --save`。 React 绑定库: `npm install mobx-react --save`。 要启用 ESNext 的装饰器 (可选), 参见下面。
 * CDN:
-- https://unpkg.com/mobx/lib/mobx.umd.js
-- https://cdnjs.com/libraries/mobx
+  - https://unpkg.com/mobx/lib/mobx.umd.js
+  - https://cdnjs.com/libraries/mobx
 
 ## 入门指南
 
