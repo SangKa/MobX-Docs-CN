@@ -874,21 +874,23 @@ decorate(Timer, {
 <p>&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x5728; Babel &#x4E2D;&#x914D;&#x7F6E; MobX &#x7684;&#x65B9;&#x5F0F;&#x662F;&#x4F7F;&#x7528; <a href="https://github.com/zwhitchcox/babel-preset-mobx" target="_blank"><code>mobx</code></a> preset&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x66F4;&#x65B9;&#x4FBF;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x88C5;&#x9970;&#x5668;&#x53CA;&#x5176;&#x4ED6;&#x51E0;&#x4E2A;&#x7ECF;&#x5E38;&#x4E0E; mobx &#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x7684;&#x63D2;&#x4EF6;:</p>
 <pre><code>npm install --save-dev babel-preset-mobx
 </code></pre><p>.babelrc:</p>
-<pre><code>{
-  &quot;presets&quot;: [&quot;mobx&quot;]
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;presets&quot;</span>: [<span class="hljs-string">&quot;mobx&quot;</span>]
 }
-</code></pre><p><strong>Babel: &#x624B;&#x52A8;&#x542F;&#x7528;&#x88C5;&#x9970;&#x5668;</strong></p>
+</code></pre>
+<p><strong>Babel: &#x624B;&#x52A8;&#x542F;&#x7528;&#x88C5;&#x9970;&#x5668;</strong></p>
 <p>&#x8981;&#x542F;&#x7528;&#x88C5;&#x9970;&#x5668;&#x7684;&#x652F;&#x6301;&#x800C;&#x4E0D;&#x4F7F;&#x7528; mobx preset &#x7684;&#x8BDD;&#xFF0C;&#x9700;&#x8981;&#x6309;&#x7167;&#x4E0B;&#x5217;&#x6B65;&#x9AA4;&#x3002;
 &#x5B89;&#x88C5;&#x652F;&#x6301;&#x88C5;&#x9970;&#x5668;&#x6240;&#x9700;&#x4F9D;&#x8D56;: <code>npm i --save-dev babel-plugin-transform-decorators-legacy</code> &#x3002;
 &#x5E76;&#x5728; <code>.babelrc</code> &#x6587;&#x4EF6;&#x4E2D;&#x542F;&#x7528;:</p>
-<pre><code>{
-  &quot;presets&quot;: [
-    &quot;es2015&quot;,
-    &quot;stage-1&quot;
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;presets&quot;</span>: [
+    <span class="hljs-string">&quot;es2015&quot;</span>,
+    <span class="hljs-string">&quot;stage-1&quot;</span>
   ],
-  &quot;plugins&quot;: [&quot;transform-decorators-legacy&quot;]
+  <span class="hljs-string">&quot;plugins&quot;</span>: [<span class="hljs-string">&quot;transform-decorators-legacy&quot;</span>]
 }
-</code></pre><p>&#x6CE8;&#x610F;&#xFF0C;&#x63D2;&#x4EF6;&#x7684;&#x987A;&#x5E8F;&#x5F88;&#x91CD;&#x8981;: <code>transform-decorators-legacy</code> &#x5E94;&#x8BE5;&#x653E;&#x5728;<strong>&#x9996;&#x4F4D;</strong>&#x3002;
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x63D2;&#x4EF6;&#x7684;&#x987A;&#x5E8F;&#x5F88;&#x91CD;&#x8981;: <code>transform-decorators-legacy</code> &#x5E94;&#x8BE5;&#x653E;&#x5728;<strong>&#x9996;&#x4F4D;</strong>&#x3002;
 babel &#x8BBE;&#x7F6E;&#x6709;&#x95EE;&#x9898;&#xFF1F;&#x8BF7;&#x5148;&#x53C2;&#x8003;&#x8FD9;&#x4E2A; <a href="https://github.com/mobxjs/mobx/issues/105" target="_blank">issue</a> &#x3002;</p>
 <p>&#x5BF9;&#x4E8E; babel 7, &#x53C2;&#x89C1; <a href="https://github.com/mobxjs/mobx/issues/1352" target="_blank">issue 1352</a> &#x6765;&#x67E5;&#x770B;&#x8BBE;&#x7F6E;&#x793A;&#x4F8B;&#x3002;</p>
 <h2 id="&#x88C5;&#x9970;&#x5668;&#x8BED;&#x6CD5;-&#x548C;-create-react-app"><a name="&#x88C5;&#x9970;&#x5668;&#x8BED;&#x6CD5;-&#x548C;-create-react-app" class="plugin-anchor" href="#&#x88C5;&#x9970;&#x5668;&#x8BED;&#x6CD5;-&#x548C;-create-react-app"><i class="fa fa-link" aria-hidden="true"></i></a>&#x88C5;&#x9970;&#x5668;&#x8BED;&#x6CD5; &#x548C; Create React App</h2>
@@ -938,7 +940,7 @@ babel &#x8BBE;&#x7F6E;&#x6709;&#x95EE;&#x9898;&#xFF1F;&#x8BF7;&#x5148;&#x53C2;&#
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"8.3. 如何(不)使用装饰器","level":"1.8.3","depth":2,"next":{"title":"8.4. 使用 trace 进行调试","level":"1.8.4","depth":2,"path":"best/trace.md","ref":"best/trace.md","articles":[]},"previous":{"title":"8.2. 常见陷阱与最佳实践","level":"1.8.2","depth":2,"path":"best/pitfalls.md","ref":"best/pitfalls.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"best/decorators.md","mtime":"2018-04-07T15:39:39.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-24T10:33:18.138Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"8.3. 如何(不)使用装饰器","level":"1.8.3","depth":2,"next":{"title":"8.4. 使用 trace 进行调试","level":"1.8.4","depth":2,"path":"best/trace.md","ref":"best/trace.md","articles":[]},"previous":{"title":"8.2. 常见陷阱与最佳实践","level":"1.8.2","depth":2,"path":"best/pitfalls.md","ref":"best/pitfalls.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"best/decorators.md","mtime":"2018-04-26T10:53:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-26T10:55:42.209Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

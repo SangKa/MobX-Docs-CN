@@ -828,47 +828,49 @@
 &#x6240;&#x4EE5;&#x901A;&#x5E38;&#x4F60;&#x7684;&#x6240;&#x6709;&#x7EC4;&#x4EF6;&#x90FD;&#x5E94;&#x8BE5;&#x662F;&#x88C5;&#x9970;&#x4E86;&#x7684;&#x3002;&#x4F46;&#x522B;&#x62C5;&#x5FC3;&#xFF0C;&#x8FD9;&#x6837;&#x4E0D;&#x4F1A;&#x964D;&#x4F4E;&#x6548;&#x7387;&#xFF0C;&#x76F8;&#x53CD; <code>observer</code> &#x7EC4;&#x4EF6;&#x8D8A;&#x591A;&#xFF0C;&#x6E32;&#x67D3;&#x6548;&#x7387;&#x8D8A;&#x9AD8;&#x3002;</p>
 <h3 id="&#x4E0D;&#x8981;&#x62F7;&#x8D1D;-observables-&#x5C5E;&#x6027;&#x5E76;&#x5B58;&#x50A8;&#x5728;&#x672C;&#x5730;"><a name="&#x4E0D;&#x8981;&#x62F7;&#x8D1D;-observables-&#x5C5E;&#x6027;&#x5E76;&#x5B58;&#x50A8;&#x5728;&#x672C;&#x5730;" class="plugin-anchor" href="#&#x4E0D;&#x8981;&#x62F7;&#x8D1D;-observables-&#x5C5E;&#x6027;&#x5E76;&#x5B58;&#x50A8;&#x5728;&#x672C;&#x5730;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E0D;&#x8981;&#x62F7;&#x8D1D; observables &#x5C5E;&#x6027;&#x5E76;&#x5B58;&#x50A8;&#x5728;&#x672C;&#x5730;</h3>
 <p>Observer &#x7EC4;&#x4EF6;&#x53EA;&#x4F1A;&#x8FFD;&#x8E2A;&#x5728; render &#x65B9;&#x6CD5;&#x4E2D;&#x5B58;&#x53D6;&#x7684;&#x6570;&#x636E;&#x3002;&#x5E38;&#x89C1;&#x7684;&#x9519;&#x8BEF;&#x7684;&#x662F;&#x4ECE; observable &#x5C5E;&#x6027;&#x4E2D;&#x63D0;&#x53D6;&#x6570;&#x636E;&#x5E76;&#x5B58;&#x50A8;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x6570;&#x636E;&#x662F;&#x4E0D;&#x4F1A;&#x88AB;&#x8FFD;&#x8E2A;&#x7684;:</p>
-<pre><code>class User {
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
   @observable name
 }
 
-class Profile extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Profile</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
   name
 
   componentWillMount() {
-    // &#x9519;&#x8BEF;&#x7684;
-    // &#x8FD9;&#x4F1A;&#x95F4;&#x63A5;&#x5F15;&#x7528; user.name &#x5E76;&#x53EA;&#x62F7;&#x8D1D;&#x503C;&#x4E00;&#x6B21;&#xFF01;&#x672A;&#x6765;&#x7684;&#x66F4;&#x65B0;&#x4E0D;&#x4F1A;&#x88AB;&#x8FFD;&#x8E2A;&#xFF0C;&#x56E0;&#x4E3A;&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;&#x4E0D;&#x662F;&#x54CD;&#x5E94;&#x7684;
-    // &#x50CF;&#x8FD9;&#x6837;&#x7684;&#x8D4B;&#x503C;&#x4F1A;&#x521B;&#x5EFA;&#x5197;&#x4F59;&#x6570;&#x636E;
-    this.name = this.props.user.name
+    <span class="hljs-comment">// &#x9519;&#x8BEF;&#x7684;</span>
+    <span class="hljs-comment">// &#x8FD9;&#x4F1A;&#x95F4;&#x63A5;&#x5F15;&#x7528; user.name &#x5E76;&#x53EA;&#x62F7;&#x8D1D;&#x503C;&#x4E00;&#x6B21;&#xFF01;&#x672A;&#x6765;&#x7684;&#x66F4;&#x65B0;&#x4E0D;&#x4F1A;&#x88AB;&#x8FFD;&#x8E2A;&#xFF0C;&#x56E0;&#x4E3A;&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;&#x4E0D;&#x662F;&#x54CD;&#x5E94;&#x7684;</span>
+    <span class="hljs-comment">// &#x50CF;&#x8FD9;&#x6837;&#x7684;&#x8D4B;&#x503C;&#x4F1A;&#x521B;&#x5EFA;&#x5197;&#x4F59;&#x6570;&#x636E;</span>
+    <span class="hljs-keyword">this</span>.name = <span class="hljs-keyword">this</span>.props.user.name
   }
 
   render() {
-    return &lt;div&gt;{this.name}&lt;/div&gt;
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{this.name}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
   }
 }
-</code></pre><p>&#x6B63;&#x786E;&#x7684;&#x65B9;&#x6CD5;&#x901A;&#x8FC7;&#x4E0D;&#x5C06; observables &#x7684;&#x503C;&#x5B58;&#x50A8;&#x5728;&#x672C;&#x5730;(&#x663E;&#x7136;&#xFF0C;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x4F46;&#x5374;&#x662F;&#x6709;&#x610F;&#x4E3A;&#x4E4B;&#x7684;)&#xFF0C;&#x6216;&#x901A;&#x8FC7;&#x5C06;&#x5176;&#x5B9A;&#x4E49;&#x4E3A;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;:</p>
-<pre><code>class User {
+</code></pre>
+<p>&#x6B63;&#x786E;&#x7684;&#x65B9;&#x6CD5;&#x901A;&#x8FC7;&#x4E0D;&#x5C06; observables &#x7684;&#x503C;&#x5B58;&#x50A8;&#x5728;&#x672C;&#x5730;(&#x663E;&#x7136;&#xFF0C;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x4F46;&#x5374;&#x662F;&#x6709;&#x610F;&#x4E3A;&#x4E4B;&#x7684;)&#xFF0C;&#x6216;&#x901A;&#x8FC7;&#x5C06;&#x5176;&#x5B9A;&#x4E49;&#x4E3A;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;:</p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
   @observable name
 }
 
-class Profile extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Profile</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
   @computed get name() {
-    // &#x6B63;&#x786E;&#x7684;; &#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x4F1A;&#x8FFD;&#x8E2A; `user.name` &#x5C5E;&#x6027;
-    return this.props.user.name
+    <span class="hljs-comment">// &#x6B63;&#x786E;&#x7684;; &#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x4F1A;&#x8FFD;&#x8E2A; `user.name` &#x5C5E;&#x6027;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.props.user.name
   }
 
   render() {
-    return &lt;div&gt;{this.name}&lt;/div&gt;
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{this.name}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
   }
 }
-</code></pre><h3 id="render-&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E0D;&#x662F;-render-&#x65B9;&#x6CD5;&#x7684;&#x4E00;&#x90E8;&#x5206;"><a name="render-&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E0D;&#x662F;-render-&#x65B9;&#x6CD5;&#x7684;&#x4E00;&#x90E8;&#x5206;" class="plugin-anchor" href="#render-&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E0D;&#x662F;-render-&#x65B9;&#x6CD5;&#x7684;&#x4E00;&#x90E8;&#x5206;"><i class="fa fa-link" aria-hidden="true"></i></a>Render &#x56DE;&#x8C03;&#x51FD;&#x6570;<strong>&#x4E0D;&#x662F;</strong> render &#x65B9;&#x6CD5;&#x7684;&#x4E00;&#x90E8;&#x5206;</h3>
+</code></pre>
+<h3 id="render-&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E0D;&#x662F;-render-&#x65B9;&#x6CD5;&#x7684;&#x4E00;&#x90E8;&#x5206;"><a name="render-&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E0D;&#x662F;-render-&#x65B9;&#x6CD5;&#x7684;&#x4E00;&#x90E8;&#x5206;" class="plugin-anchor" href="#render-&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E0D;&#x662F;-render-&#x65B9;&#x6CD5;&#x7684;&#x4E00;&#x90E8;&#x5206;"><i class="fa fa-link" aria-hidden="true"></i></a>Render &#x56DE;&#x8C03;&#x51FD;&#x6570;<strong>&#x4E0D;&#x662F;</strong> render &#x65B9;&#x6CD5;&#x7684;&#x4E00;&#x90E8;&#x5206;</h3>
 <p>&#x56E0;&#x4E3A; <code>observer</code> &#x53EA;&#x4F5C;&#x7528;&#x4E8E;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x7684; <code>render</code> &#x51FD;&#x6570;&#xFF0C;&#x4F20;&#x9012;&#x4E00;&#x4E2A; render &#x56DE;&#x8C03;&#x51FD;&#x6570;&#x6216;&#x7EC4;&#x4EF6;&#x7ED9;&#x5B50;&#x7EC4;&#x4EF6;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x5730;&#x53D8;&#x6210;&#x54CD;&#x5E94;&#x7684;&#x3002;
 &#x60F3;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x8BE6;&#x60C5;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="https://github.com/SangKa/mobx-docs-cn/blob/master/docs/best/react.md#mobx-&#x53EA;&#x4F1A;&#x4E3A;-observer-&#x7EC4;&#x4EF6;&#x8FFD;&#x8E2A;&#x6570;&#x636E;&#x5B58;&#x53D6;&#x5982;&#x679C;&#x6570;&#x636E;&#x662F;&#x76F4;&#x63A5;&#x901A;&#x8FC7;-render-&#x8FDB;&#x884C;&#x5B58;&#x53D6;&#x7684;" target="_blank">MobX &#x4F1A;&#x5BF9;&#x4EC0;&#x4E48;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;</a> &#x6307;&#x5357;&#x3002;</p>
 <h3 id="&#x95F4;&#x63A5;&#x5F15;&#x7528;&#x503C;&#x5C3D;&#x53EF;&#x80FD;&#x665A;&#x7684;&#x4F7F;&#x7528;"><a name="&#x95F4;&#x63A5;&#x5F15;&#x7528;&#x503C;&#x5C3D;&#x53EF;&#x80FD;&#x665A;&#x7684;&#x4F7F;&#x7528;" class="plugin-anchor" href="#&#x95F4;&#x63A5;&#x5F15;&#x7528;&#x503C;&#x5C3D;&#x53EF;&#x80FD;&#x665A;&#x7684;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x95F4;&#x63A5;&#x5F15;&#x7528;&#x503C;&#x5C3D;&#x53EF;&#x80FD;&#x665A;&#x7684;&#x4F7F;&#x7528;</h3>
 <p>MobX &#x53EF;&#x4EE5;&#x505A;&#x8BB8;&#x591A;&#x4E8B;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x65E0;&#x6CD5;&#x5C06;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x503C;&#x8F6C;&#x53D8;&#x6210; observable(&#x5C3D;&#x7BA1;&#x53EF;&#x4EE5;&#x7528;&#x5BF9;&#x8C61;&#x6765;&#x5305;&#x88C5;&#x5B83;&#x4EEC;&#xFF0C;&#x53C2;&#x89C1; <a href="../refguide/boxed.html">boxed observables</a>)&#x3002;
 &#x6240;&#x4EE5;&#x8BF4;<strong>&#x503C;</strong>&#x4E0D;&#x662F; observable&#xFF0C;&#x800C;&#x5BF9;&#x8C61;&#x7684;<strong>&#x5C5E;&#x6027;</strong>&#x624D;&#x662F;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740; <code>@observer</code> &#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x5BF9;&#x95F4;&#x63A5;&#x5F15;&#x7528;&#x503C;&#x4F5C;&#x51FA;&#x53CD;&#x5E94;&#x3002;
 &#x6240;&#x4EE5;&#x5982;&#x679C;&#x50CF;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x521D;&#x59CB;&#x5316;&#x7684;&#x8BDD;&#xFF0C;<code>Timer</code> &#x7EC4;&#x4EF6;&#x662F;&#x4E0D;&#x4F1A;&#x4F5C;&#x51FA;&#x4EFB;&#x4F55;&#x53CD;&#x5E94;&#x7684;:</p>
-<pre><code class="lang-javascript">React.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Timer</span> <span class="hljs-attr">timerData</span>=<span class="hljs-string">{timerData.secondsPassed}</span> /&gt;</span>, document.body)
+<pre><code class="lang-javascript">ReactDom.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Timer</span> <span class="hljs-attr">timerData</span>=<span class="hljs-string">{timerData.secondsPassed}</span> /&gt;</span>, document.body)
 </span></code></pre>
 <p>&#x5728;&#x8FD9;&#x884C;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x53EA;&#x662F; <code>secondsPassed</code> &#x7684;&#x5F53;&#x524D;&#x503C;&#x4F20;&#x9012;&#x7ED9;&#x4E86; <code>Timer</code>&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x503C; <code>0</code> (JS&#x4E2D;&#x7684;&#x6240;&#x6709;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x503C;&#x90FD;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;)&#x3002;
 &#x8FD9;&#x4E2A;&#x503C;&#x6C38;&#x8FDC;&#x90FD;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#xFF0C;&#x6240;&#x4EE5; <code>Timer</code> &#x4E5F;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x66F4;&#x65B0;&#x3002;<code>secondsPassed</code> &#x5C5E;&#x6027;&#x5C06;&#x6765;&#x4F1A;&#x6539;&#x53D8;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x7EC4;&#x4EF6;<strong>&#x5185;</strong>&#x8BBF;&#x95EE;&#x5B83;&#x3002;
@@ -1013,7 +1015,7 @@ myComponent.displayName = <span class="hljs-string">&quot;MyComponent&quot;</spa
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"8.2. 常见陷阱与最佳实践","level":"1.8.2","depth":2,"next":{"title":"8.3. 如何(不)使用装饰器","level":"1.8.3","depth":2,"path":"best/decorators.md","ref":"best/decorators.md","articles":[]},"previous":{"title":"8.1. 常见问题解答","level":"1.8.1","depth":2,"path":"faq/faq.md","ref":"faq/faq.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"best/pitfalls.md","mtime":"2018-04-05T04:07:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-24T10:33:18.138Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"8.2. 常见陷阱与最佳实践","level":"1.8.2","depth":2,"next":{"title":"8.3. 如何(不)使用装饰器","level":"1.8.3","depth":2,"path":"best/decorators.md","ref":"best/decorators.md","articles":[]},"previous":{"title":"8.1. 常见问题解答","level":"1.8.1","depth":2,"path":"faq/faq.md","ref":"faq/faq.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"best/pitfalls.md","mtime":"2018-04-26T10:53:53.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-26T10:55:42.209Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
