@@ -2,7 +2,7 @@
 
 `extendObservable(target, properties, decorators?, options?)`
 
-ExtendObservable 用来想已存在的目标对象添加 observable 属性。
+ExtendObservable 用来向已存在的目标对象添加 observable 属性。
 属性映射中的所有键值对都会导致目标上的新的 observable 属性被初始化为给定值。
 属性映射中的任意 getters 都会转化成计算属性。
 
