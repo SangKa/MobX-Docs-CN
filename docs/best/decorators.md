@@ -2,50 +2,54 @@
 
 在MobX 中使用 ES.next 装饰器是可选的。本章节将解释如何(避免)使用它们。
 
-使用装饰器的优势:
+使用装饰器语法的优势:
+
 * 样板文件最小化，声明式代码。
 * 易于使用和阅读。大多数 MobX 用户都在使用。
 
-使用装饰器的劣势:
+使用装饰器语法的劣势:
+
 * ES.next 2阶段特性。
 * 需要设置和编译，目前只有 Babel/Typescript 编译器支持。
 
 在 MobX 中使用装饰器有两种方式。
 
-1. 开启编译器的实验性装饰器语法 (详细请参见下面)
-2. 不启用装饰器语法，而是利用 MobX 内置的工具 `decorate` 来对类和对象进行装饰。
+1.  开启编译器的实验性装饰器语法 (详细请参见下面)
+2.  不启用装饰器语法，而是利用 MobX 内置的工具 `decorate` 来对类和对象进行装饰。
 
 使用装饰器语法:
 
 ```javascript
-import { observable, computed, action } from "mobx"
+import { observable, computed, action } from "mobx";
 
 class Timer {
 	@observable start = Date.now();
-	@observable current = Date.now();
+  @observable current = Date.now();
 
-	@computed get elapsedTime() {
-		return (this.current - this.start) + "milliseconds"
-	}
+  @computed
+  get elapsedTime() {
+    return this.current - this.start + "milliseconds";
+  }
 
-	@action tick() {
-		this.current = Date.now()
-	}
+  @action
+  tick() {
+    this.current = Date.now();
+  }
 }
 ```
 
 使用 `decorate` 工具:
 
 ```javascript
-import { observable, computed, action } from "mobx"
+import { observable, computed, action } from "mobx";
 
 class Timer {
 	start = Date.now();
 	current = Date.now();
 
 	get elapsedTime() {
-		return (this.current - this.start) + "milliseconds"
-	}
+    return this.current - this.start + "milliseconds";
+  }
 
 	tick() {
 		this.current = Date.now()
@@ -93,6 +97,7 @@ npm install --save-dev babel-preset-mobx
 ```
 
 .babelrc:
+
 ```json
 {
   "presets": ["mobx"]
@@ -107,10 +112,7 @@ npm install --save-dev babel-preset-mobx
 
 ```json
 {
-  "presets": [
-    "es2015",
-    "stage-1"
-  ],
+	"presets": ["es2015", "stage-1"],
   "plugins": ["transform-decorators-legacy"]
 }
 ```
@@ -124,3 +126,21 @@ babel 设置有问题？请先参考这个 [issue](https://github.com/mobxjs/mob
 
 * `create-react-app` 目前还没有内置的装饰器支持。要解决这个问题，你可以使用 eject 命令 或使用 [react-app-rewired](https://github.com/timarney/react-app-rewired/tree/master/packages/react-app-rewire-mobx)。
 
+---
+
+## 免责声明: 装饰器语法的局限性:
+
+_当前编译器所实现的装饰器语法是有一些限制的，而且与实际的装饰器语法表现并非完全一致。
+此外，在所有编译器都实现第二阶段的提议之前，许多组合模式目前都无法与装饰器一起使用。
+由于这个原因，目前在 MobX 中对装饰器语法支持的范围进行了限定，以确保支持的特性在所有环境中始终保持一致。_
+
+MobX 社区并没有正式支持以下模式:
+
+* 重新定义继承树中的装饰类成员
+* 装饰静态类成员
+* 将 MobX 提供的装饰器与其他装饰器组合
+* 热更新 (HMR) / React-hot-loader 可能不能正常运行
+
+在第一次读/写到装饰属性之前，该属性在类实例上可能是不可见的。
+
+(注意: 不支持并不意味着不能运行，它的意义在于如果不能正常运行的话，在官方规范的推进之前，提出的 issues 是不会被处理的。)
