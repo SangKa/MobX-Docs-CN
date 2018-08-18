@@ -269,7 +269,7 @@ twitterUrls.set("Sara", "twitter.com/horsejs")
 
 #### 正确的: 使用 MobX 工具来读/写对象
 
-MobX 4 之后哦还可以将 observable 对象当做动态集合使用，如果使用 MobX API 来进行读/更新操作，那么 MobX 可以追踪属性的变化。下面的代码同样可以进行反应:
+MobX 4 之后还可以将 observable 对象当做动态集合使用，如果使用 MobX API 来进行读/更新操作，那么 MobX 可以追踪属性的变化。下面的代码同样可以进行反应:
 
 ```javascript
 import { get, set, observable } from "mobx"
@@ -298,7 +298,7 @@ autorun(() => {
 })
 message.author.name = "Chesterton"
 ```
-这将**会**作出反应。尽管 `author.name` 不是在 `autorun` 本身的代码块中进行间接引用的。
+这将**会**作出反应。尽管 `author.name` 不是在 `autorun` 本身的代码块中进行直接引用的。
 MobX 会追踪发生在 `upperCaseAuthorName` 函数里的间接引用，因为它是在 autorun 执行期间发生的。
 
 ----
