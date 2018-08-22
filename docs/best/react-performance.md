@@ -111,7 +111,7 @@ class Car {
 }
 ```
 
-这种方式允许 `GenericNameDisplayer` 渲染任何名称的组件，从而整个应用中复用。现在，还需要解决的是这些函数的放置问题: 示例中展示了三种可能性，你可以直接在 render 方法里创建函数 (被认为是最佳实践)，也可以将函数放置在组件中 (`getManufacturerNameTracked`)，或者将函数直接放在包含数据的对象之中 (`getModelTracked`)。
+这种方式允许 `GenericNameDisplayer` 渲染任何名称的组件，从而整个应用中复用。现在，还需要解决的是这些函数的放置问题: 示例中展示了三种可能性，你可以直接在 render 方法里创建函数 (这不是一个好的做法)，也可以将函数放置在组件中 (`getManufacturerNameTracked`)，或者将函数直接放在包含数据的对象之中 (`getModelTracked`)。
 
 ## 尽早绑定函数
 
