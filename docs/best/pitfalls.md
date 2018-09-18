@@ -24,7 +24,7 @@ import { observable } from "mobx"
 
 #### `Array.isArray(observable([1,2,3])) === false`
 
-在 ES5 中没有继承数组的可靠方法，因此 observabl e数组继承自对象。
+在 ES5 中没有继承数组的可靠方法，因此 observable 数组继承自对象。
 这意味着一般的库没有办法识别出 observable 数组就是普通数组(像 lodash，或 `Array.concat` 这样的内置操作符)。
 这个问题很容易解决，在把 observable 数组传递给其它库之前先调用 `observable.toJS()` 或 `observable.slice()` 将其转化为普通数组。
 只要外部库没有修改数组的意图，那么一切都将如预期一样的正常运作。
