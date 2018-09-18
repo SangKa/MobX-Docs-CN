@@ -38,3 +38,5 @@ extendObservable(matthew, {
 注意:  `observable.object(object)` 实际上是 `extendObservable({}, object)` 的别名。
 
 注意: 类似于 `extendObservable`，`decorate` 用来为对象引入 observable 属性。不同之处在于 `extendObservable` 被设计为直接在目标实例上引入属性，其中 `decorate` 将它们引入原型; 可以直接将它传递给构造函数 (类)，也可以将其作为其他人的原型。
+
+注意: 不能使用 `extendObservable` 来为 observable 数组或对象上引入新的属性。
