@@ -122,7 +122,7 @@ _注意: 永远在 getter **之后** 定义 setter，一些 TypeScript 版本会
 
 ```javascript
 import {observable, computed} from "mobx";
-var name = observable("John");
+var name = observable.box("John");
 
 var upperCaseName = computed(() =>
 	name.get().toUpperCase()
@@ -164,8 +164,8 @@ MobX 提供了三个内置 `comparer` (比较器) ，它们应该能满足绝大
 示例:
 
 ```javascript
-const x = observable(3)
-const y = observable(1)
+const x = observable.box(3)
+const y = observable.box(1)
 const divided = computed(() => {
     if (y.get() === 0)
         throw new Error("Division by zero")
