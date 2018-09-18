@@ -1,7 +1,22 @@
 # observable
 
-<a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/javascript-sync-the-ui-with-the-app-state-using-mobx-observable-and-observer-in-react">egghead.io 第1课: observable & observer</a>
-<a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px"  href="https://egghead.io/lessons/react-use-observable-objects-arrays-and-maps-to-store-state-in-mobx">egghead.io 第4课: observable 对象 & 映射</a>
+<details>
+    <summary style="color: white; background:green;padding:5px;margin:5px;border-radius:2px">egghead.io 第1课: observable & observer</summary>
+    <br>
+    <div style="padding:5px;">
+        <iframe style="border: none;" width=760 height=427  src="https://egghead.io/lessons/javascript-sync-the-ui-with-the-app-state-using-mobx-observable-and-observer-in-react/embed" />
+    </div>
+    <a style="font-style: italic;" href="https://egghead.io/lessons/javascript-sync-the-ui-with-the-app-state-using-mobx-observable-and-observer-in-react">在 egghead.io 上观看</a>
+</details>
+
+<details>
+    <summary style="color: white; background:green;padding:5px;margin:5px;border-radius:2px">egghead.io 第4课: observable 对象 & 映射</summary>
+    <br>
+    <div style="padding:5px;">
+        <iframe style="border: none;" width=760 height=427  src="https://egghead.io/lessons/react-use-observable-objects-arrays-and-maps-to-store-state-in-mobx/embed" />
+    </div>
+    <a style="font-style:italic;padding:5px;margin:5px;"  href="https://egghead.io/lessons/react-use-observable-objects-arrays-and-maps-to-store-state-in-mobx">在 egghead.io 上观看</a>
+</details>
 
 用法:
 * `observable(value)`
@@ -20,9 +35,10 @@ Observable 值可以是JS基本数据类型、引用类型、普通对象、类�
 乍看之下，这些规则可能看上去很复杂，但实际上实践当中你会发现他们是非常直观的。
 
 一些建议:
-* 要创建 **键是动态的对象** 时使用 [Observable Map](map.md)！对象上只有初始化时便存在的属性会转换成可观察的，尽管新添加的属性可以通过使用 extendObservable 转换成可观察的。
+
 * 要想使用 `@observable` 装饰器，首先要确保 在你的编译器(babel 或者 typescript)中 [装饰器是启用的](http://mobxjs.github.io/mobx/refguide/observable-decorator.html)。
 * 默认情况下将一个数据结构转换成可观察的是**有感染性的**，这意味着 `observable` 被自动应用于数据结构包含的任何值，或者将来会被该数据结构包含的值。这个行为可以通过使用 *modifiers* 来更改。
+* _[MobX 4 及以下版本]_ 要创建 **键是动态的对象** 时使用 [Observable Map](map.md)！对象上只有初始化时便存在的属性会转换成可观察的，尽管新添加的属性可以通过使用 extendObservable 转换成可观察的。
 
 一些示例:
 

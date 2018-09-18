@@ -1,7 +1,13 @@
 # MobX + React 开发者工具
 
-<a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx">egghead.io 第2课: 开发者工具</a>
-
+<details>
+    <summary style="color: white; background:green;padding:5px;margin:5px;border-radius:2px">egghead.io 第2课: 开发者工具</summary>
+    <br>
+    <div style="padding:5px;">
+        <iframe style="border: none;" width=760 height=427  src="https://egghead.io/lessons/react-analyze-react-components-with-mobx-react-devtools/embed" />
+    </div>
+    <a style="font-style:italic;padding:5px;margin:5px;"  href="https://egghead.io/lessons/react-analyze-react-components-with-mobx-react-devtools">在 egghead.io 上观看</a>
+</details>
 
 MobX 附带的开发者工具可以用来追踪应用的渲染行为和数据依赖关系。
 

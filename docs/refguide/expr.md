@@ -10,7 +10,7 @@
 
 ```javascript
 const TodoView = observer(({todo, editorState}) => {
-    const isSelected = mobx.expr(() => editorState.selection === todo);
+    const isSelected = mobxUtils.expr(() => editorState.selection === todo);
     return <div className={isSelected ? "todo todo-selected" : "todo"}>{todo.title}</div>;
 });
 ```

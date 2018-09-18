@@ -1,6 +1,14 @@
 # MobX 要点
 
 <a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx">egghead.io 第1课: observable & observer</a>
+<details>
+    <summary style="color: white; background:green;padding:5px;margin:5px;border-radius:2px">egghead.io 第1课: observable & observer</summary>
+    <br>
+    <div style="padding:5px;">
+        <iframe style="border: none;" width=760 height=427  src="https://egghead.io/lessons/javascript-sync-the-ui-with-the-app-state-using-mobx-observable-and-observer-in-react/embed" />
+    </div>
+    <a style="font-style:italic;padding:5px;margin:5px;" href="https://egghead.io/lessons/javascript-sync-the-ui-with-the-app-state-using-mobx-observable-and-observer-in-react">在 egghead.io 上观看</a>
+</details>
 
 到目前为止，这一切都可能听起来有点花哨，但使用 MobX 将一个应用变成响应式的可归纳为以下三个步骤:
 
@@ -34,12 +42,14 @@ import {observer} from 'mobx-react';
 @observer
 class TimerView extends React.Component {
     render() {
-        return (<button onClick={this.onReset.bind(this)}>
+        return (
+            <button onClick={this.onReset.bind(this)}>
                 Seconds passed: {this.props.appState.timer}
-            </button>);
+            </button>
+        );
     }
 
-    onReset () {
+    onReset() {
         this.props.appState.resetTimer();
     }
 };

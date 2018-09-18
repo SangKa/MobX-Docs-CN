@@ -1,6 +1,13 @@
 # when
 
-<a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/react-write-custom-mobx-reactions-with-when-and-autorun">egghead.io 第9课: 自定义反应</a>
+<details>
+    <summary style="color: white; background:green;padding:5px;margin:5px;border-radius:2px">egghead.io 第9课: 自定义反应</summary>
+    <br>
+    <div style="padding:5px;">
+        <iframe style="border: none;" width=760 height=427  src="https://egghead.io/lessons/react-write-custom-mobx-reactions-with-when-and-autorun/embed" />
+    </div>
+    <a style="font-style:italic;padding:5px;margin:5px;"  href="https://egghead.io/lessons/react-write-custom-mobx-reactions-with-when-and-autorun">在 egghead.io 上观看</a>
+</details>
 
 `when(predicate: () => boolean, effect?: () => void, options?)`
 

@@ -11,7 +11,6 @@
 **这里都是 MobX 中最重要的 API 。**
 
 > 理解了`observable`、 `computed`、 `reactions` 和 `actions`的话，说明对于 Mobx 已经足够精通了,在你的应用中使用它吧！
-
 ## 创建 observables
 
 ### `observable(value)`
@@ -40,9 +39,9 @@ MobX 不会自动带有原型的对象转变成 observable，因为那是 observ
 
 一些建议:
 
-* 要创建键是动态的对象时永远都使用 maps！对象上只有初始化时便存在的属性会转换成可观察的，尽管新添加的属性可以通过使用 `extendObservable` 转换成可观察的。
 * 要想使用 `@observable` 装饰器，首先要确保 在你的编译器(babel 或者 typescript)中 [装饰器是启用的](http://mobxjs.github.io/mobx/refguide/observable-decorator.html)。
 * 默认情况下将一个数据结构转换成可观察的是**有感染性的**，这意味着 `observable` 被自动应用于数据结构包含的任何值，或者将来会被该数据结构包含的值。这个行为可以通过使用 [*装饰器*](#decorators) 来更改。
+* _[MobX 4 及以下版本]_ 要创建键是动态的对象时永远都使用 maps！对象上只有初始化时便存在的属性会转换成可观察的，尽管新添加的属性可以通过使用 `extendObservable` 转换成可观察的。
 
 [&laquo;`observable`&raquo;](observable.md)  &mdash;  [&laquo;`@observable`&raquo;](observable-decorator.md)
 
@@ -168,6 +167,27 @@ decorate(TodoList, {
 })
 ```
 
+想要在单个属性上应用多个装饰器的话，你可以传入一个装饰器数组。多个装饰器应用的顺序是从从右至左。
+
+```javascript
+import { decorate, observable } from 'mobx'
+import { serializable, primitive } from 'serializr'
+import persist from 'mobx-persist'
+
+class Todo {
+    id = Math.random();
+    title = '';
+    finished = false;
+}
+
+decorate(Todo, {
+    title: [serializable(primitive), persist('object'), observable],
+    finished: [serializable(primitive), observable]
+})
+```
+
+注意: 并非所有的装饰器都可以在一起组合，此功能只会尽力而为。一些装饰器会直接影响实例，并且可以“隐藏”其他那些只更改原型的装饰器的效果。
+
 ## Computed values(计算值)
 
 用法:
@@ -183,10 +203,10 @@ decorate(TodoList, {
 还有各种选项可以控制 `computed` 的行为。包括:
 
 * **`equals: (value, value) => boolean`** 用来重载默认检测规则的比较函数。 内置比较器有: `comparer.identity`, `comparer.default`, `comparer.structural`
-* **`name: string`** 为计算属性提供调试名称
 * **`requiresReaction: boolean`** 在重新计算衍生属性之前，等待追踪的 observables 值发生变化
 * **`get: () => value)`** 重载计算属性的 getter
 * **`set: (value) => void`** 重载计算属性的 setter
+* **`keepAlive: boolean`** 设置为 true 以自动保持计算值活动，而不是在没有观察者时暂停。
 
 [&laquo;详情&raquo;](computed-decorator.md)
 
@@ -324,6 +344,8 @@ const res = await count() // 6
 
 `when` 返回清理器以尽早地取消操作。
 
+如果没有给 `when` 传递副作用函数的话，它将返回一个可以等待条件结束的 promise 。
+
 [&laquo;详情&raquo;](when.md).
 
 **options**
@@ -427,7 +449,6 @@ _有一些工具函数可以使得 observable 或者  计算值用起来更方�
 
 用法: `onBecomeObserved(observable, property?, listener: () => void): (() => void)` 和
 `onBecomeUnobserved(observable, property?, listener: () => void): (() => void)`
-
 这些函数都是与 MobX 的观察体系挂钩的，当 observables _开始_ / _停止_ 被观察时会收到通知。它可以用来执行一些延迟操作或网络资源获取。
 
 返回值为 _清理函数_，用来卸载 _监听器_ 。
@@ -522,36 +543,27 @@ test('Throw if age is negative', () => {
 
 > 在 MobX 4 之前，`_resetGlobalState` 名为 `extras.resetGlobalState` 。
 
-#### `enforceActions: boolean`
+#### `enforceActions`
 
 也被称为“严格模式”。
 
 在严格模式下，不允许在 [`action`](action.md) 外更改任何状态。
-推荐在状态复杂的大型应用中使用严格模式。
+可接收的值:
 
-> 在 MobX 4 之前，需要通过 `useStrict(): void` 来启用此行为。
-
-```javascript
-configure({ enforceActions: true });
-```
-
-MobX 4.2 之后，还可以这样设定
-
-```javascript
-configure({ enforceActions: "strict" });
-```
-
-在松散 (`true`) 模式下，MobX 只会在可观察到的 observable 被修改时才会抛出，在“严格”模式下，它甚至会抛出未观察到的 observable 。
+* `"never"` (默认): 可以在任意地方修改状态
+* `"observed"`: 在某处观察到的所有状态都需要通过动作进行更改。在正式应用中推荐此严格模式。
+* `"always"`: 状态始终需要通过动作来更新(实际上还包括创建)。
 
 #### `isolateGlobalState: boolean`
 
 当同一环境中有多个 MobX 实例时，将 MobX 的全局状态隔离。
 当使用 MobX 的同时还使用了使用 MobX 的封装库时，这是非常有用的。
 当在库中调用 `configure({isolateGlobalState：true})` 时，库内的响应性将保持独立。
-另外，MobX 不会抛出全局范围内有多个实例的错误。
+
+使用此选项，如果多个 MobX 实例正在使用的话，内部状态是会共享的。优点就是两个实例的 observables 可以协同运行，缺点是 MobX 的版本必须匹配。
 
 ```javascript
-configure({ isolatedGlobalState: true });
+configure({ isolateGlobalState: true });
 ```
 
 #### `reactionScheduler: (f: () => void) => void`
@@ -574,6 +586,7 @@ configure({
 现在有一个统一的工具 API 可以操控 observable 映射、对象和数组。这些 API 都是响应式的，这意味着如果使用 `set` 进行添加，使用 `values` 或 `keys` 进行迭代，即便是新属性的声明都可以被 MobX 检测到。
   * **`values(thing)`** 将集合中的所有值作为数组返回
   * **`keys(thing)`** 将集合中的所有键作为数组返回
+  * **`entries(thing)`** 返回集合中的所有项的键值对数组
   * **`set(thing, key, value)`** 或 **`set(thing, { key: value })`** 使用提供的键值对来更新给定的集合
   * **`remove(thing, key)`** 从集合中移除指定的项。用于数组拼接
   * **`has(thing, key)`** 如果集合中存在指定的 _observable_ 属性就返回 true
@@ -605,7 +618,6 @@ mobx-react-devtools 是个功能强大的包，它帮助你调查 React 组件�
 ### `spy`
 
 用法: `spy(listener)` 。
-注册全局侦查监听器可以监听所有 MobX 中发生的事件。
 它类似于将一个 `observe` 监听器一次性附加到**所有的** observables 上，而且还负责正在运行的动作和计算的通知。
 用于 `mobx-react-devtools` 。
 

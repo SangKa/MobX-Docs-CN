@@ -1,6 +1,13 @@
 # action (动作)
 
-<a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/react-use-mobx-actions-to-change-and-guard-state">egghead.io 第5课: actions</a>
+<details>
+    <summary style="color: white; background:green;padding:5px;margin:5px;border-radius:2px">egghead.io 第5课: actions</summary>
+    <br>
+    <div style="padding:5px;">
+        <iframe style="border: none;" width=760 height=427  src="https://egghead.io/lessons/react-use-mobx-actions-to-change-and-guard-state/embed" />
+    </div>
+    <a style="font-style:italic;padding:5px;margin:5px;"  href="https://egghead.io/lessons/react-use-mobx-actions-to-change-and-guard-state">在 egghead.io 上观看</a>
+</details>
 
 用法:
 * `action(fn)`

@@ -5,7 +5,7 @@
 
 > Github 仓库: [https://github.com/SangKa/mobx-docs-cn](https://github.com/SangKa/mobx-docs-cn)
 
-> 目前文档已同步至 MobX 4，仍想阅读 MobX 3 文档，请移步至[这里](https://github.com/SangKa/MobX-Docs-CN/tree/3.0.0/docs)
+> 目前文档已同步至 MobX 5，旧版文档链接: [MobX 4 (LTS)](https://github.com/SangKa/MobX-Docs-CN/tree/4.0.0/docs)、[MobX 3](https://github.com/SangKa/MobX-Docs-CN/tree/3.0.0/docs)
 
 <img src="mobx.png" alt="logo" height="120" align="right" />
 
@@ -27,16 +27,23 @@ MobX 是由 Mendix、Coinbase、Facebook 开源和众多[个人赞助商](#backe
 
 # 安装
 
-* 安装: 
-  `npm install mobx --save`。 React 绑定库: `npm install mobx-react --save`。 要启用 ESNext 的装饰器 (可选), 参见下面。
+* 安装: `npm install mobx --save`。 React 绑定库: `npm install mobx-react --save`。 要启用 ESNext 的装饰器 (可选), 参见下面。
 * CDN:
   - https://unpkg.com/mobx/lib/mobx.umd.js
   - https://cdnjs.com/libraries/mobx
 
+# 浏览器支持
+
+* MobX >=5 版本运行在任何[支持 ES6 proxy](https://kangax.github.io/compat-table/es6/#test-Proxy) 的浏览器。如果运行在像 IE11、Node.js 6 以下版本或依靠与较旧的 JavaScripCore 的安卓端的 React Native ([点击查看如何升级]](https://github.com/react-community/jsc-android-buildscripts#how-to-use-it-with-my-react-native-app))。
+* MobX 4 可以运行在任何支持 ES5 的浏览器上，而且也将进行持续地维护。MobX 4 和 5 的 API 是相同的，并且语义上也能达到相同的效果，只是 MobX 4 存在一些 [局限性](#mobx-4-vs-mobx-5)。
+
+_小贴士: MobX 5 包的主入口点附带 ES5 代码，以便向后兼容所有构建工具。但因为 MobX 5 只能运行在现代浏览器上，所以可以考虑使用速度最快、体积最小的 ES6 构建: `lib/mobx.es6.js` 。例如，通过设置 webpack 的别名: `resolve: { alias: { mobx: __dirname + "/node_modules/mobx/lib/mobx.es6.js" }}`_
+
 ## 入门指南
 
-* <i><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx">Egghead.io 课程</a></i>
+* <i><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx">egghead.io 课程</a></i>
 * [十分钟交互式的 MobX + React 教程](https://mobxjs.github.io/mobx/getting-started.html)
+* <img src="images/book.jpg" height="80px"/> 由 Pavan Podila 和 Michel Weststrate 撰写的 [MobX 书籍](https://books.google.nl/books?id=ALFmDwAAQBAJ&pg=PP1&lpg=PP1&dq=michel+weststrate+mobx+quick+start+guide:+supercharge+the+client+state+in+your+react+apps+with+mobx&source=bl&ots=D460fxti0F&sig=ivDGTxsPNwlOjLHrpKF1nweZFl8&hl=nl&sa=X&ved=2ahUKEwiwl8XO--ncAhWPmbQKHWOYBqIQ6AEwAnoECAkQAQ#v=onepage&q=michel%20weststrate%20mobx%20quick%20start%20guide%3A%20supercharge%20the%20client%20state%20in%20your%20react%20apps%20with%20mobx&f=false) (非常不喜欢xx深入的书名！)
 * [MobX 4官方文档和API概览](http://cn.mobx.js.org/refguide/api.html) ([MobX 3](https://github.com/mobxjs/mobx/blob/54557dc319b04e92e31cb87427bef194ec1c549c/docs/refguide/api.md), [MobX 2](https://github.com/mobxjs/mobx/blob/7c9e7c86e0c6ead141bb0539d33143d0e1f576dd/docs/refguide/api.md))
 * 视频:
   * [ReactNext 2016: 真实世界的 MobX](https://www.youtube.com/watch?v=Aws40KOx90U) - 40分钟 [幻灯片](https://docs.google.com/presentation/d/1DrI6Hc2xIPTLBkfNH8YczOcPXQTOaCIcDESdyVfG_bE/edit?usp=sharing)
@@ -60,7 +67,7 @@ _任何源自应用状态的东西都应该自动地获得。_
 
 React 和 MobX 是一对强力组合。React 通过提供机制把应用状态转换为可渲染组件树并对其进行渲染。而MobX提供机制来存储和更新应用状态供 React 使用。
 
-对于应用开发中的常见问题，React 和 MobX都提供了最优和独特的解决方案。React 提供了优化UI渲染的机制， 这种机制就是通过使用虚拟DOM来减少昂贵的DOM变化的数量。MobX 提供了优化应用状态与 React 组件同步的机制，这种机制就是使用响应式虚拟依赖状态图表，它只有在真正需要的时候才更新并且永远保持是最新的。
+对于应用开发中的常见问题，React 和 MobX 都提供了最优和独特的解决方案。React 提供了优化UI渲染的机制， 这种机制就是通过使用虚拟DOM来减少昂贵的DOM变化的数量。MobX 提供了优化应用状态与 React 组件同步的机制，这种机制就是使用响应式虚拟依赖状态图表，它只有在真正需要的时候才更新并且永远保持是最新的。
 
 ## 核心概念
 
@@ -247,9 +254,9 @@ MobX 是状态管理库中侵入性最小的之一。这使得 `MobX`的方法�
 
 MobX 构建应用中所有衍生的图形，以找到保持最新状态所需的重新计算的最少次数。“衍生一切”或许听上去开销很昂贵，但 MobX 构建虚拟衍生图以保持衍生与状态同步所需的重计算的数量最小化。
 
-事实上，在 Mendix 测试 MobX 时我们发现使用这个库跟踪代码中的关系通常会更有效，然后通过使用手写事件或基于容器组件的“智能”选择器来推送更改。
+事实上，在 Mendix 测试 MobX 时我们发现使用这个库跟踪代码中的关系通常会更有效，而不是通过使用手写事件或基于容器组件的“智能”选择器来推送更改。
 
-原因来说，是因为 MobX 会在数据上建立更细粒度的“监听器”，然后你可以通过程序来控制。
+简单来说，是因为 MobX 会在数据上建立更细粒度的“监听器”，而不是通过程序来控制。
 
 其次, MobX 看到衍生之间的因果关系，因此它可以为衍生排序，使得衍生不会运行多次或引入缺陷。
 
@@ -275,6 +282,7 @@ MobX 的灵感来自excel表格中的反应式编程原理。同样也受到像 
 
 ## 更多资源及文档
 
+* <img src="images/book.jpg" height="80px"/> 由 Pavan Podila 和 Michel Weststrate 撰写的 [MobX 书籍](https://books.google.nl/books?id=ALFmDwAAQBAJ&pg=PP1&lpg=PP1&dq=michel+weststrate+mobx+quick+start+guide:+supercharge+the+client+state+in+your+react+apps+with+mobx&source=bl&ots=D460fxti0F&sig=ivDGTxsPNwlOjLHrpKF1nweZFl8&hl=nl&sa=X&ved=2ahUKEwiwl8XO--ncAhWPmbQKHWOYBqIQ6AEwAnoECAkQAQ#v=onepage&q=michel%20weststrate%20mobx%20quick%20start%20guide%3A%20supercharge%20the%20client%20state%20in%20your%20react%20apps%20with%20mobx&f=false) (非常不喜欢xx深入的书名！)
 * [MobX 主页](http://mobxjs.github.io/mobx/faq/blogs.html)
 * [API概览](http://mobxjs.github.io/mobx/refguide/api.html)
 * [教程、博客和视频](http://mobxjs.github.io/mobx/faq/blogs.html)
@@ -298,7 +306,18 @@ MobX 的灵感来自excel表格中的反应式编程原理。同样也受到像 
 ## 贡献
 
 * 小的 pull requests 可以随意发起。但是新功能或者重大变更请先在 Github Issues 中讨论。
-* 使用 `npm test` 运行基本测试套件，`npm run coverage` 用来测试套件的覆盖率，`npm run perf` 用来测试性能。
+* 使用 `npm test` 运行基本测试套件，`npm run coverage` 用来测试套件的覆盖率，`npm run test:performance` 用来测试性能。
+
+## MobX 4 vs MobX 5
+
+MobX 4 和 MobX 5 的不同之处在于后者使用了 ES6 的 proxy 来追踪属性。因此，MobX 5 只能运行在支持 proxy 的浏览器上，而 MobX 4可以运行在任何支持 ES5 的环境中。
+
+MobX 4 的重要局限性:
+
+  * Observable 数组并非真正的数组，所以它们无法通过 `Array.isArray()` 的检查。最常见的处理方法是在传递给第三方库之前，你经常需要先对其进行 `.slice()` 操作，从而得到一个浅拷贝的真正数组。
+  * 向一个已存在的 observable 对象中添加属性不会被自动捕获。要么使用 observable 映射来替代，要么使用[工具函数](./refguide/object-api.md) 中方法来对想要动态添加属性的对象进行读/写/迭代。
+
+想要了解更多细节，请参见[常见问题](./best/pitfalls.md) 。
 
 ## Flow 支持
 

@@ -40,4 +40,4 @@ spy((event) => {
 
 Observable 值的间谍事件与传递给 `observe` 的事件相同。想了解更多，请参见 [intercept & observe](observe.md)。
 
-也可以发出你自己的间谍事件。参见 `extras.spyReport`、`extras.spyReportStart` 和 `extras.spyReportEnd` 。
+在打包生产版本时，`spy` API 将会成为空函数，从而实现最小化。

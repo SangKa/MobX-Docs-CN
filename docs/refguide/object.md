@@ -41,8 +41,6 @@ person.setAge(21);
 
 当使对象转变成 observable 时，需要记住一些事情:
 
-* 当通过 `observable` 传递对象时，只有在把对象转变 observable 时存在的属性才会是可观察的。
-稍后添加到对象的属性不会变为可观察的，除非使用 [`set`](object-api.md) 或 [`extendObservable`](extend-observable.md)。
 * 只有普通的对象可以转变成 observable 。对于非普通对象，构造函数负责初始化 observable 属性。
 要么使用 [`@observable`](observable.md) 注解，要么使用 [`extendObservable`](extend-observable.md) 函数。
 * 属性的 getter 会自动转变成衍生属性，就像 [`@computed`](computed-decorator) 所做的。
@@ -50,3 +48,5 @@ person.setAge(21);
 * 这些默认行为能应对95%的场景，但想要更细粒度的控制，比如哪些属性应该转变成可观察的和如何变成可观察的，请参见[装饰器](modifiers.md)。
 * 传入 `{ deep: false }` 作为第三个参数可以禁用属性值的自动转换
 * 传入 `{ name: "my object" }` 为本对象赋予友好的调试名称
+* _[MobX 4 及以下版本]_ 当通过 `observable` 传递对象时，只有在把对象转变 observable 时存在的属性才会是可观察的。
+稍后添加到对象的属性不会变为可观察的，除非使用 [`set`](object-api.md) 或 [`extendObservable`](extend-observable.md)。

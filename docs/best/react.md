@@ -223,8 +223,7 @@ message.likes.push("Jennifer");
 这将**不会**作出反应。只是因为 `likes` 数组本身并没有被 `autorun` 使用，只是引用了数组。
 所以相比之下，`messages.likes = ["Jennifer"]` 是会作出反应的，表达式没有修改数组，而是修改了 `likes` 属性本身。
 
-#### 错误的: 使用对象的非 observable 属性
-
+#### 使用对象的非 observable 属性
 
 ```javascript
 autorun(() => {
@@ -233,9 +232,25 @@ autorun(() => {
 message.postDate = new Date()
 ```
 
-这将**不会**作出反应。MobX 只能追踪 observable 属性。
+_MobX 4_
 
-#### 错误的: 使用 observable 对象还不存在的属性
+这将**不会**作出反应。MobX 只能追踪 observable 属性，上面的 `postDate` 还未被定义为 observable 属性。
+但是，仍然可以使用 MobX 提供的 `get` 和 `set` 方法来使其工作:
+
+```javascript
+autorun(() => {
+    console.log(get(message, "postDate"))
+})
+set(message, "postDate",  new Date())
+```
+
+_MobX 5_
+
+在 MobX 5 中是**会**作出反应的，因为 MobX 5 可以追踪还不存在的属性。
+注意，这只适用于由 `observable` 或 `observable.object` 创建出的对象。
+对于类实例上的新属性，还是无法自动将其变成 observable 的。
+
+#### [MobX 4 及以下版本] 错误的: 使用 observable 对象还不存在的属性
 
 ```javascript
 autorun(() => {

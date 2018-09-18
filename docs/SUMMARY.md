@@ -29,7 +29,7 @@
   * [6.3. createAtom](refguide/extending.md)
   * [6.4. intercept & observe](refguide/observe.md)
   * [6.5. mobxUtils.fromPromise](https://github.com/mobxjs/mobx-utils#frompromise)
-  * [6.6. mobxUtis.fromResource](https://github.com/mobxjs/mobx-utils#fromresource)
+  * [6.6. mobxUtils.fromResource](https://github.com/mobxjs/mobx-utils#fromresource)
   * [6.7. mobxUtils.toStream](https://github.com/mobxjs/mobx-utils#tostream)
   * [6.8. mobxUtils.fromStream](https://github.com/mobxjs/mobx-utils#fromstream)
   * [6.9. mobxUtils.now](https://github.com/mobxjs/mobx-utils#now)

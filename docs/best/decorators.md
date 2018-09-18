@@ -41,7 +41,7 @@ class Timer {
 使用 `decorate` 工具:
 
 ```javascript
-import { observable, computed, action } from "mobx";
+import { observable, computed, action, decorate } from "mobx";
 
 class Timer {
 	start = Date.now();
@@ -63,7 +63,29 @@ decorate(Timer, {
 })
 ```
 
-注意， `mobx-react` 中的 `observer` 函数既是装饰器又是函数，这意味着下面这些语法都可以正常运行:
+想要在单个属性上应用多个装饰器的话，你可以传入一个装饰器数组。多个装饰器应用的顺序是从从右至左。
+
+```javascript
+import { decorate, observable } from "mobx"
+import { serializable, primitive } from "serializr"
+import persist from "mobx-persist";
+
+class Todo {
+    id = Math.random();
+    title = "";
+    finished = false;
+}
+decorate(Todo, {
+    title: [serializable(primitive), persist("object"), observable],
+    finished: [serializable(primitive), observable]
+})
+```
+
+注意: 并非所有的装饰器都可以在一起组合，此功能只会尽力而为。一些装饰器会直接影响实例，并且可以“隐藏”其他那些只更改原型的装饰器的效果。
+
+---
+
+`mobx-react` 中的 `observer` 函数既是装饰器又是函数，这意味着下面这些语法都可以正常运行:
 
 ```javascript
 @observer

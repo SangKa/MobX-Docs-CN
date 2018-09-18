@@ -6,7 +6,10 @@
 
 ## 公告
 
-目前文档已同步至 MobX 4，仍想阅读 MobX 3 文档，请移步至[这里](https://github.com/SangKa/MobX-Docs-CN/tree/3.0.0/docs)
+目前文档已同步至 MobX 5，旧版文档请查看下面链接:
+
+  * [MobX 4 (LTS)](https://github.com/SangKa/MobX-Docs-CN/tree/4.0.0/docs)
+  * [MobX 3](https://github.com/SangKa/MobX-Docs-CN/tree/3.0.0/docs)
 
 ## 贡献
 

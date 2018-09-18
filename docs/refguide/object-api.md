@@ -4,6 +4,10 @@
 
   * **`values(thing)`** 将集合中的所有值作为数组返回
   * **`keys(thing)`** 将集合中的所有键作为数组返回
+  * **`entries(thing)`** 返回集合中的所有项的键值对数组
+
+使用 MobX 5 时, 实际上并不需要以下方法，但它们可以用来在 MobX 4 中来实现类似于 MobX 5 的行为:
+
   * **`set(thing, key, value)`** 或 **`set(thing, { key: value })`** 使用提供的键值对来更新给定的集合
   * **`remove(thing, key)`** 从集合中移除指定的项。用于数组拼接
   * **`has(thing, key)`** 如果集合中存在指定的 _observable_ 属性就返回 true

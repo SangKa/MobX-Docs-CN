@@ -24,6 +24,8 @@ import { observable } from "mobx"
 
 #### `Array.isArray(observable([1,2,3])) === false`
 
+_此限制只适用于 MobX 4 及以下版本_
+
 在 ES5 中没有继承数组的可靠方法，因此 observable 数组继承自对象。
 这意味着一般的库没有办法识别出 observable 数组就是普通数组(像 lodash，或 `Array.concat` 这样的内置操作符)。
 这个问题很容易解决，在把 observable 数组传递给其它库之前先调用 `observable.toJS()` 或 `observable.slice()` 将其转化为普通数组。
@@ -32,11 +34,15 @@ import { observable } from "mobx"
 
 #### `object.someNewProp = value` 不起作用
 
+_此限制只适用于 MobX 4 及以下版本_
+
+_在 MobX 5 中，此限制只适用于类实例及其它并非使用 `observable()` / `observable.object()` 创建的对象。_
+
 对于声明 observable 时未分配的属性，MobX observable **对象**  检测不到，也无法作出反应。
 因此 MobX observable 对象充当具有预定义键的记录。
 可以使用 `extendObservable(target, props)` 来为一个对象引入新的 observable 属性。
 但是像 `for .. in` 或 `Object.keys()` 这样的对象迭代不会自动地对这样的改变作出反应。
-如果你需要动态键对象，例如通过 id 来存储用户，可以使用 [`observable.map`](../refguide/map.md) 来创建 observable **映射**。
+如果你需要在 MobX 4 及以下版本中动态键对象，例如通过 id 来存储用户，可以使用 [`observable.map`](../refguide/map.md) 或 由[Object API](../refguide/object-api.md) 提供的工具函数来创建 observable **映射**。
 想了解更多详情，请参见 [MobX 会对什么作出反应?](react.md)。
 
 ### 在所有渲染 `@observable` 的组件上使用 `@observer`
@@ -117,6 +123,8 @@ ReactDom.render(<Timer timerData={timerData.secondsPassed} />, document.body)
 如果你胡乱使用的话，计算属性似乎效率不怎么高。但当使用 `observer`、 `autorun` 等并应用在项目中时，它们会变得非常高效。
 
 MobX 计算也会在事务期间自动地保持活动，参见 PR: [#452](https://github.com/mobxjs/mobx/pull/452) 和 [#489](https://github.com/mobxjs/mobx/pull/489)。
+
+要强制计算值保持活动, 可以使用 `keepAlive: true` 选项, 但这并不是说这会造成潜在的内存泄漏。
 
 #### 永远要清理 reaction
 
@@ -228,3 +236,51 @@ const listStore = new ListStore();
 #### 开发模式下声明 propTypes 可能会引起不必要的渲染
 
 参见: https://github.com/mobxjs/mobx-react/issues/56
+
+#### 不要对 `Observer` 过的 React 组件中(某些)生命周期方法装饰成 `action.bound`
+
+正如上面所提到的，所有使用了 observable 数据的 React 组件都可以标记成 `@observer` 。此外，如果在 React 组件的函数中修改任意 observable 数据的话，该函数应该标记成 `@action` 。另外，如果你想要 `this` 指向组件类的实例，你应该使用 `@action.bound` 。参考下面的类:
+
+```js
+class ExampleComponent extends React.Component {
+  @observable disposer // <--- 此值在 addActed 方法中处理
+  
+  @action.bound
+  addActed() {
+    this.dispose()
+  }
+  
+  @action.bound
+  componentDidMount() {
+    this.disposer = this.observe(....) //<-- 细节不用关心
+  }
+}
+```
+
+如果调用 `ExampleComponent` 的 `addActed()` 方法，`disposer` 会被调用。
+
+换句话说，考虑如下代码:
+
+```js
+class ExampleComponent extends React.Component {
+  @observable disposer // <--- 此值在 addActed 方法中处理
+  
+  @action.bound
+  componentWillUnmount() {
+    this.dispose()
+  }
+  
+  @action.bound
+  componentDidMount() {
+    this.disposer = this.observe(....) //<-- 细节不用关心
+  }
+}
+```
+
+在这里，`disposer` 永远不会被调用！原因是 mixin 使得 `ExampleComponent` 成为了 `observer` ，它修改了 `componentWillUnmount` 函数，使得 `this` 指向了某个目标之外的 `React.Component` 实例 (不知道是哪个)。要解决此问题，请声明 `componentWillUnmount()`，如下所示：
+
+```js
+componentWillUnmount() {
+  runInAction(() => this.dispose())
+}
+```
