@@ -510,7 +510,7 @@
                 <a target="_blank" href="https://github.com/mobxjs/mobx-utils#fromresource">
             
                     
-                    6.6. mobxUtis.fromResource
+                    6.6. mobxUtils.fromResource
             
                 </a>
             
@@ -797,6 +797,15 @@
                                 
                                 <h1 id="computed"><a name="computed" class="plugin-anchor" href="#computed"><i class="fa fa-link" aria-hidden="true"></i></a>(@)computed</h1>
 <p><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/lessons/javascript-derive-computed-values-and-manage-side-effects-with-mobx-reactions" target="_blank">egghead.io &#x7B2C;3&#x8BFE;: &#x8BA1;&#x7B97;&#x503C;</a></p>
+<details>
+    <summary style="color: white; background:green;padding:5px;margin:5px;border-radius:2px">egghead.io &#x7B2C;3&#x8BFE;: &#x8BA1;&#x7B97;&#x503C;</summary>
+    <br>
+    <div style="padding:5px;">
+        <iframe style="border: none;" width="760" height="427" src="https://egghead.io/lessons/javascript-derive-computed-values-and-manage-side-effects-with-mobx-reactions/embed">
+    </iframe></div>
+    <a style="font-style:italic;padding:5px;margin:5px;" href="https://egghead.io/lessons/javascript-derive-computed-values-and-manage-side-effects-with-mobx-reactions" target="_blank">&#x5728; egghead.io &#x4E0A;&#x89C2;&#x770B;</a>
+</details>
+
 <p>&#x8BA1;&#x7B97;&#x503C;(computed values)&#x662F;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x73B0;&#x6709;&#x7684;&#x72B6;&#x6001;&#x6216;&#x5176;&#x5B83;&#x8BA1;&#x7B97;&#x503C;&#x884D;&#x751F;&#x51FA;&#x7684;&#x503C;&#x3002;
 &#x6982;&#x5FF5;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x4EEC;&#x4E0E;excel&#x8868;&#x683C;&#x4E2D;&#x7684;&#x516C;&#x5F0F;&#x5341;&#x5206;&#x76F8;&#x4F3C;&#x3002;
 &#x4E0D;&#x8981;&#x4F4E;&#x4F30;&#x8BA1;&#x7B97;&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x6709;&#x52A9;&#x4E8E;&#x4F7F;&#x5B9E;&#x9645;&#x53EF;&#x4FEE;&#x6539;&#x7684;&#x72B6;&#x6001;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x5C0F;&#x3002;
@@ -890,7 +899,7 @@ decorate(OrderLine, {
 &#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#x7684; <code>computed</code> &#x4E0D;&#x5E38;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x201C;&#x5728;box&#x4E2D;&#x201D;&#x7684;&#x8BA1;&#x7B97;&#x503C;&#x65F6;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x662F;&#x6709;&#x7528;&#x7684;&#x3002;</p>
 <p>&#x793A;&#x4F8B;:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">import</span> {observable, computed} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;mobx&quot;</span>;
-<span class="hljs-keyword">var</span> name = observable(<span class="hljs-string">&quot;John&quot;</span>);
+<span class="hljs-keyword">var</span> name = observable.box(<span class="hljs-string">&quot;John&quot;</span>);
 
 <span class="hljs-keyword">var</span> upperCaseName = computed(() =&gt;
     name.get().toUpperCase()
@@ -925,8 +934,8 @@ name.set(<span class="hljs-string">&quot;Dave&quot;</span>);
 &#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x59CB;&#x7EC8;&#x629B;&#x51FA;&#x201C;&#x9519;&#x8BEF;&#x201D;&#xFF0C;&#x4EE5;&#x4FBF;&#x4FDD;&#x7559;&#x539F;&#x59CB;&#x5806;&#x6808;&#x8DDF;&#x8E2A;&#x3002; &#x4F8B;&#x5982;&#xFF1A;<code>throw new Error&#xFF08;&#x201C;Uhoh&#x201D;&#xFF09;</code>, &#x800C;&#x4E0D;&#x662F;<code>throw &quot;Uhoh&quot;</code>&#x3002;
 &#x629B;&#x51FA;&#x5F02;&#x5E38;&#x4E0D;&#x4F1A;&#x4E2D;&#x65AD;&#x8DDF;&#x8E2A;&#xFF0C;&#x6240;&#x6709;&#x8BA1;&#x7B97;&#x503C;&#x53EF;&#x4EE5;&#x4ECE;&#x5F02;&#x5E38;&#x4E2D;&#x6062;&#x590D;&#x3002;</p>
 <p>&#x793A;&#x4F8B;:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> x = observable(<span class="hljs-number">3</span>)
-<span class="hljs-keyword">const</span> y = observable(<span class="hljs-number">1</span>)
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> x = observable.box(<span class="hljs-number">3</span>)
+<span class="hljs-keyword">const</span> y = observable.box(<span class="hljs-number">1</span>)
 <span class="hljs-keyword">const</span> divided = computed(() =&gt; {
     <span class="hljs-keyword">if</span> (y.get() === <span class="hljs-number">0</span>)
         <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;Division by zero&quot;</span>)
@@ -981,7 +990,7 @@ divided.get() <span class="hljs-comment">// &#x5DF2;&#x6062;&#x590D;; &#x8FD4;&#
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.1. (@)computed","level":"1.4.1","depth":2,"next":{"title":"4.2. autorun","level":"1.4.2","depth":2,"path":"refguide/autorun.md","ref":"refguide/autorun.md","articles":[]},"previous":{"title":"4. 对 observables 作出响应","level":"1.4","depth":1,"ref":"","articles":[{"title":"4.1. (@)computed","level":"1.4.1","depth":2,"path":"refguide/computed-decorator.md","ref":"refguide/computed-decorator.md","articles":[]},{"title":"4.2. autorun","level":"1.4.2","depth":2,"path":"refguide/autorun.md","ref":"refguide/autorun.md","articles":[]},{"title":"4.3. when","level":"1.4.3","depth":2,"path":"refguide/when.md","ref":"refguide/when.md","articles":[]},{"title":"4.4. reaction","level":"1.4.4","depth":2,"path":"refguide/reaction.md","ref":"refguide/reaction.md","articles":[]},{"title":"4.5. (@)observer","level":"1.4.5","depth":2,"path":"refguide/observer-component.md","ref":"refguide/observer-component.md","articles":[]},{"title":"4.6. 理解 MobX 对何作出响应","level":"1.4.6","depth":2,"path":"best/react.md","ref":"best/react.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/computed-decorator.md","mtime":"2018-04-07T15:42:35.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-06-19T13:56:42.072Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.1. (@)computed","level":"1.4.1","depth":2,"next":{"title":"4.2. autorun","level":"1.4.2","depth":2,"path":"refguide/autorun.md","ref":"refguide/autorun.md","articles":[]},"previous":{"title":"4. 对 observables 作出响应","level":"1.4","depth":1,"ref":"","articles":[{"title":"4.1. (@)computed","level":"1.4.1","depth":2,"path":"refguide/computed-decorator.md","ref":"refguide/computed-decorator.md","articles":[]},{"title":"4.2. autorun","level":"1.4.2","depth":2,"path":"refguide/autorun.md","ref":"refguide/autorun.md","articles":[]},{"title":"4.3. when","level":"1.4.3","depth":2,"path":"refguide/when.md","ref":"refguide/when.md","articles":[]},{"title":"4.4. reaction","level":"1.4.4","depth":2,"path":"refguide/reaction.md","ref":"refguide/reaction.md","articles":[]},{"title":"4.5. (@)observer","level":"1.4.5","depth":2,"path":"refguide/observer-component.md","ref":"refguide/observer-component.md","articles":[]},{"title":"4.6. 理解 MobX 对何作出响应","level":"1.4.6","depth":2,"path":"best/react.md","ref":"best/react.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/computed-decorator.md","mtime":"2018-09-18T13:06:39.950Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-18T13:06:52.064Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -510,7 +510,7 @@
                 <a target="_blank" href="https://github.com/mobxjs/mobx-utils#fromresource">
             
                     
-                    6.6. mobxUtis.fromResource
+                    6.6. mobxUtils.fromResource
             
                 </a>
             
@@ -806,8 +806,8 @@
 <p><strong>&#x8FD9;&#x91CC;&#x90FD;&#x662F; MobX &#x4E2D;&#x6700;&#x91CD;&#x8981;&#x7684; API &#x3002;</strong></p>
 <blockquote>
 <p>&#x7406;&#x89E3;&#x4E86;<code>observable</code>&#x3001; <code>computed</code>&#x3001; <code>reactions</code> &#x548C; <code>actions</code>&#x7684;&#x8BDD;&#xFF0C;&#x8BF4;&#x660E;&#x5BF9;&#x4E8E; Mobx &#x5DF2;&#x7ECF;&#x8DB3;&#x591F;&#x7CBE;&#x901A;&#x4E86;,&#x5728;&#x4F60;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#x4F7F;&#x7528;&#x5B83;&#x5427;&#xFF01;</p>
-</blockquote>
 <h2 id="&#x521B;&#x5EFA;-observables"><a name="&#x521B;&#x5EFA;-observables" class="plugin-anchor" href="#&#x521B;&#x5EFA;-observables"><i class="fa fa-link" aria-hidden="true"></i></a>&#x521B;&#x5EFA; observables</h2>
+</blockquote>
 <h3 id="observablevalue"><a name="observablevalue" class="plugin-anchor" href="#observablevalue"><i class="fa fa-link" aria-hidden="true"></i></a><code>observable(value)</code></h3>
 <p>&#x7528;&#x6CD5;:</p>
 <ul>
@@ -833,9 +833,9 @@
 <p>&#x4E4D;&#x770B;&#x4E4B;&#x4E0B;&#xFF0C;&#x8FD9;&#x4E9B;&#x89C4;&#x5219;&#x53EF;&#x80FD;&#x770B;&#x4E0A;&#x53BB;&#x5F88;&#x590D;&#x6742;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#x5B9E;&#x8DF5;&#x5F53;&#x4E2D;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x4ED6;&#x4EEC;&#x662F;&#x975E;&#x5E38;&#x76F4;&#x89C2;&#x7684;&#x3002;</p>
 <p>&#x4E00;&#x4E9B;&#x5EFA;&#x8BAE;:</p>
 <ul>
-<li>&#x8981;&#x521B;&#x5EFA;&#x952E;&#x662F;&#x52A8;&#x6001;&#x7684;&#x5BF9;&#x8C61;&#x65F6;&#x6C38;&#x8FDC;&#x90FD;&#x4F7F;&#x7528; maps&#xFF01;&#x5BF9;&#x8C61;&#x4E0A;&#x53EA;&#x6709;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x4FBF;&#x5B58;&#x5728;&#x7684;&#x5C5E;&#x6027;&#x4F1A;&#x8F6C;&#x6362;&#x6210;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#xFF0C;&#x5C3D;&#x7BA1;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528; <code>extendObservable</code> &#x8F6C;&#x6362;&#x6210;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#x3002;</li>
 <li>&#x8981;&#x60F3;&#x4F7F;&#x7528; <code>@observable</code> &#x88C5;&#x9970;&#x5668;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x786E;&#x4FDD; &#x5728;&#x4F60;&#x7684;&#x7F16;&#x8BD1;&#x5668;(babel &#x6216;&#x8005; typescript)&#x4E2D; <a href="http://mobxjs.github.io/mobx/refguide/observable-decorator.html" target="_blank">&#x88C5;&#x9970;&#x5668;&#x662F;&#x542F;&#x7528;&#x7684;</a>&#x3002;</li>
 <li>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x5C06;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x8F6C;&#x6362;&#x6210;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#x662F;<strong>&#x6709;&#x611F;&#x67D3;&#x6027;&#x7684;</strong>&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740; <code>observable</code> &#x88AB;&#x81EA;&#x52A8;&#x5E94;&#x7528;&#x4E8E;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5305;&#x542B;&#x7684;&#x4EFB;&#x4F55;&#x503C;&#xFF0C;&#x6216;&#x8005;&#x5C06;&#x6765;&#x4F1A;&#x88AB;&#x8BE5;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5305;&#x542B;&#x7684;&#x503C;&#x3002;&#x8FD9;&#x4E2A;&#x884C;&#x4E3A;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528; <a href="#decorators"><em>&#x88C5;&#x9970;&#x5668;</em></a> &#x6765;&#x66F4;&#x6539;&#x3002;</li>
+<li><em>[MobX 4 &#x53CA;&#x4EE5;&#x4E0B;&#x7248;&#x672C;]</em> &#x8981;&#x521B;&#x5EFA;&#x952E;&#x662F;&#x52A8;&#x6001;&#x7684;&#x5BF9;&#x8C61;&#x65F6;&#x6C38;&#x8FDC;&#x90FD;&#x4F7F;&#x7528; maps&#xFF01;&#x5BF9;&#x8C61;&#x4E0A;&#x53EA;&#x6709;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x4FBF;&#x5B58;&#x5728;&#x7684;&#x5C5E;&#x6027;&#x4F1A;&#x8F6C;&#x6362;&#x6210;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#xFF0C;&#x5C3D;&#x7BA1;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528; <code>extendObservable</code> &#x8F6C;&#x6362;&#x6210;&#x53EF;&#x89C2;&#x5BDF;&#x7684;&#x3002;</li>
 </ul>
 <p><a href="observable.html">&#xAB;<code>observable</code>&#xBB;</a>  &#x2014;  <a href="observable-decorator.html">&#xAB;<code>@observable</code>&#xBB;</a></p>
 <h3 id="observable-property---value"><a name="observable-property---value" class="plugin-anchor" href="#observable-property---value"><i class="fa fa-link" aria-hidden="true"></i></a><code>@observable property =  value</code></h3>
@@ -922,6 +922,23 @@ decorate(TodoList, {
     addTodo: action.bound
 })
 </code></pre>
+<p>&#x60F3;&#x8981;&#x5728;&#x5355;&#x4E2A;&#x5C5E;&#x6027;&#x4E0A;&#x5E94;&#x7528;&#x591A;&#x4E2A;&#x88C5;&#x9970;&#x5668;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x88C5;&#x9970;&#x5668;&#x6570;&#x7EC4;&#x3002;&#x591A;&#x4E2A;&#x88C5;&#x9970;&#x5668;&#x5E94;&#x7528;&#x7684;&#x987A;&#x5E8F;&#x662F;&#x4ECE;&#x4ECE;&#x53F3;&#x81F3;&#x5DE6;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { decorate, observable } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;mobx&apos;</span>
+<span class="hljs-keyword">import</span> { serializable, primitive } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;serializr&apos;</span>
+<span class="hljs-keyword">import</span> persist <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;mobx-persist&apos;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Todo</span> </span>{
+    id = <span class="hljs-built_in">Math</span>.random();
+    title = <span class="hljs-string">&apos;&apos;</span>;
+    finished = <span class="hljs-literal">false</span>;
+}
+
+decorate(Todo, {
+    title: [serializable(primitive), persist(<span class="hljs-string">&apos;object&apos;</span>), observable],
+    finished: [serializable(primitive), observable]
+})
+</code></pre>
+<p>&#x6CE8;&#x610F;: &#x5E76;&#x975E;&#x6240;&#x6709;&#x7684;&#x88C5;&#x9970;&#x5668;&#x90FD;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x8D77;&#x7EC4;&#x5408;&#xFF0C;&#x6B64;&#x529F;&#x80FD;&#x53EA;&#x4F1A;&#x5C3D;&#x529B;&#x800C;&#x4E3A;&#x3002;&#x4E00;&#x4E9B;&#x88C5;&#x9970;&#x5668;&#x4F1A;&#x76F4;&#x63A5;&#x5F71;&#x54CD;&#x5B9E;&#x4F8B;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x201C;&#x9690;&#x85CF;&#x201D;&#x5176;&#x4ED6;&#x90A3;&#x4E9B;&#x53EA;&#x66F4;&#x6539;&#x539F;&#x578B;&#x7684;&#x88C5;&#x9970;&#x5668;&#x7684;&#x6548;&#x679C;&#x3002;</p>
 <h2 id="computed-values&#x8BA1;&#x7B97;&#x503C;"><a name="computed-values&#x8BA1;&#x7B97;&#x503C;" class="plugin-anchor" href="#computed-values&#x8BA1;&#x7B97;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>Computed values(&#x8BA1;&#x7B97;&#x503C;)</h2>
 <p>&#x7528;&#x6CD5;:</p>
 <ul>
@@ -936,10 +953,10 @@ decorate(TodoList, {
 <p>&#x8FD8;&#x6709;&#x5404;&#x79CD;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x63A7;&#x5236; <code>computed</code> &#x7684;&#x884C;&#x4E3A;&#x3002;&#x5305;&#x62EC;:</p>
 <ul>
 <li><strong><code>equals: (value, value) =&gt; boolean</code></strong> &#x7528;&#x6765;&#x91CD;&#x8F7D;&#x9ED8;&#x8BA4;&#x68C0;&#x6D4B;&#x89C4;&#x5219;&#x7684;&#x6BD4;&#x8F83;&#x51FD;&#x6570;&#x3002; &#x5185;&#x7F6E;&#x6BD4;&#x8F83;&#x5668;&#x6709;: <code>comparer.identity</code>, <code>comparer.default</code>, <code>comparer.structural</code></li>
-<li><strong><code>name: string</code></strong> &#x4E3A;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x63D0;&#x4F9B;&#x8C03;&#x8BD5;&#x540D;&#x79F0;</li>
 <li><strong><code>requiresReaction: boolean</code></strong> &#x5728;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x884D;&#x751F;&#x5C5E;&#x6027;&#x4E4B;&#x524D;&#xFF0C;&#x7B49;&#x5F85;&#x8FFD;&#x8E2A;&#x7684; observables &#x503C;&#x53D1;&#x751F;&#x53D8;&#x5316;</li>
 <li><strong><code>get: () =&gt; value)</code></strong> &#x91CD;&#x8F7D;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x7684; getter</li>
 <li><strong><code>set: (value) =&gt; void</code></strong> &#x91CD;&#x8F7D;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x7684; setter</li>
+<li><strong><code>keepAlive: boolean</code></strong> &#x8BBE;&#x7F6E;&#x4E3A; true &#x4EE5;&#x81EA;&#x52A8;&#x4FDD;&#x6301;&#x8BA1;&#x7B97;&#x503C;&#x6D3B;&#x52A8;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x6CA1;&#x6709;&#x89C2;&#x5BDF;&#x8005;&#x65F6;&#x6682;&#x505C;&#x3002;</li>
 </ul>
 <p><a href="computed-decorator.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
 <h2 id="actions&#x52A8;&#x4F5C;"><a name="actions&#x52A8;&#x4F5C;" class="plugin-anchor" href="#actions&#x52A8;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>Actions(&#x52A8;&#x4F5C;)</h2>
@@ -1048,6 +1065,7 @@ configure({ enforceActions: <span class="hljs-literal">true</span> });
 &#x4E00;&#x65E6;&#x8868;&#x8FBE;&#x5F0F;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x771F;&#x503C;&#xFF0C;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x4FBF;&#x4F1A;&#x7ACB;&#x5373;&#x8C03;&#x7528;&#xFF0C;&#x4F46;&#x53EA;&#x4F1A;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#x3002;</p>
 <p><strong>&#x6CE8;&#x610F;:</strong> <em>&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;</em> (&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;) &#x5176;&#x5B9E;&#x662F;&#x53EF;&#x9009;&#x7684;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x63D0;&#x4F9B;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x7684;&#x8BDD;&#xFF0C;&#x5C06;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x53EF;&#x53D6;&#x6D88;&#x7684; promise (&#x5373;&#x5177;&#x6709; <code>cancle()</code> &#x65B9;&#x6CD5;&#x7684; promise)</p>
 <p><code>when</code> &#x8FD4;&#x56DE;&#x6E05;&#x7406;&#x5668;&#x4EE5;&#x5C3D;&#x65E9;&#x5730;&#x53D6;&#x6D88;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7ED9; <code>when</code> &#x4F20;&#x9012;&#x526F;&#x4F5C;&#x7528;&#x51FD;&#x6570;&#x7684;&#x8BDD;&#xFF0C;&#x5B83;&#x5C06;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x7B49;&#x5F85;&#x6761;&#x4EF6;&#x7ED3;&#x675F;&#x7684; promise &#x3002;</p>
 <p><a href="when.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a>.</p>
 <p><strong>options</strong></p>
 <ul>
@@ -1119,8 +1137,8 @@ configure({ enforceActions: <span class="hljs-literal">true</span> });
 <p><a href="observe.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
 <h3 id="onbecomeobserved-&#x548C;-onbecomeunobserved"><a name="onbecomeobserved-&#x548C;-onbecomeunobserved" class="plugin-anchor" href="#onbecomeobserved-&#x548C;-onbecomeunobserved"><i class="fa fa-link" aria-hidden="true"></i></a><code>onBecomeObserved</code> &#x548C; <code>onBecomeUnobserved</code></h3>
 <p>&#x7528;&#x6CD5;: <code>onBecomeObserved(observable, property?, listener: () =&gt; void): (() =&gt; void)</code> &#x548C;
-<code>onBecomeUnobserved(observable, property?, listener: () =&gt; void): (() =&gt; void)</code></p>
-<p>&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x4E0E; MobX &#x7684;&#x89C2;&#x5BDF;&#x4F53;&#x7CFB;&#x6302;&#x94A9;&#x7684;&#xFF0C;&#x5F53; observables <em>&#x5F00;&#x59CB;</em> / <em>&#x505C;&#x6B62;</em> &#x88AB;&#x89C2;&#x5BDF;&#x65F6;&#x4F1A;&#x6536;&#x5230;&#x901A;&#x77E5;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6267;&#x884C;&#x4E00;&#x4E9B;&#x5EF6;&#x8FDF;&#x64CD;&#x4F5C;&#x6216;&#x7F51;&#x7EDC;&#x8D44;&#x6E90;&#x83B7;&#x53D6;&#x3002;</p>
+<code>onBecomeUnobserved(observable, property?, listener: () =&gt; void): (() =&gt; void)</code>
+&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x4E0E; MobX &#x7684;&#x89C2;&#x5BDF;&#x4F53;&#x7CFB;&#x6302;&#x94A9;&#x7684;&#xFF0C;&#x5F53; observables <em>&#x5F00;&#x59CB;</em> / <em>&#x505C;&#x6B62;</em> &#x88AB;&#x89C2;&#x5BDF;&#x65F6;&#x4F1A;&#x6536;&#x5230;&#x901A;&#x77E5;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6267;&#x884C;&#x4E00;&#x4E9B;&#x5EF6;&#x8FDF;&#x64CD;&#x4F5C;&#x6216;&#x7F51;&#x7EDC;&#x8D44;&#x6E90;&#x83B7;&#x53D6;&#x3002;</p>
 <p>&#x8FD4;&#x56DE;&#x503C;&#x4E3A; <em>&#x6E05;&#x7406;&#x51FD;&#x6570;</em>&#xFF0C;&#x7528;&#x6765;&#x5378;&#x8F7D; <em>&#x76D1;&#x542C;&#x5668;</em> &#x3002;</p>
 <pre><code class="lang-javascript">
 <span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">City</span> </span>{
@@ -1192,25 +1210,21 @@ test(<span class="hljs-string">&apos;Throw if age is negative&apos;</span>, () =
 <blockquote>
 <p>&#x5728; MobX 4 &#x4E4B;&#x524D;&#xFF0C;<code>_resetGlobalState</code> &#x540D;&#x4E3A; <code>extras.resetGlobalState</code> &#x3002;</p>
 </blockquote>
-<h4 id="enforceactions-boolean"><a name="enforceactions-boolean" class="plugin-anchor" href="#enforceactions-boolean"><i class="fa fa-link" aria-hidden="true"></i></a><code>enforceActions: boolean</code></h4>
+<h4 id="enforceactions"><a name="enforceactions" class="plugin-anchor" href="#enforceactions"><i class="fa fa-link" aria-hidden="true"></i></a><code>enforceActions</code></h4>
 <p>&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;&#x201C;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x201D;&#x3002;</p>
 <p>&#x5728;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x5728; <a href="action.html"><code>action</code></a> &#x5916;&#x66F4;&#x6539;&#x4EFB;&#x4F55;&#x72B6;&#x6001;&#x3002;
-&#x63A8;&#x8350;&#x5728;&#x72B6;&#x6001;&#x590D;&#x6742;&#x7684;&#x5927;&#x578B;&#x5E94;&#x7528;&#x4E2D;&#x4F7F;&#x7528;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x3002;</p>
-<blockquote>
-<p>&#x5728; MobX 4 &#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7; <code>useStrict(): void</code> &#x6765;&#x542F;&#x7528;&#x6B64;&#x884C;&#x4E3A;&#x3002;</p>
-</blockquote>
-<pre><code class="lang-javascript">configure({ enforceActions: <span class="hljs-literal">true</span> });
-</code></pre>
-<p>MobX 4.2 &#x4E4B;&#x540E;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x8BBE;&#x5B9A;</p>
-<pre><code class="lang-javascript">configure({ enforceActions: <span class="hljs-string">&quot;strict&quot;</span> });
-</code></pre>
-<p>&#x5728;&#x677E;&#x6563; (<code>true</code>) &#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;MobX &#x53EA;&#x4F1A;&#x5728;&#x53EF;&#x89C2;&#x5BDF;&#x5230;&#x7684; observable &#x88AB;&#x4FEE;&#x6539;&#x65F6;&#x624D;&#x4F1A;&#x629B;&#x51FA;&#xFF0C;&#x5728;&#x201C;&#x4E25;&#x683C;&#x201D;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x5B83;&#x751A;&#x81F3;&#x4F1A;&#x629B;&#x51FA;&#x672A;&#x89C2;&#x5BDF;&#x5230;&#x7684; observable &#x3002;</p>
+&#x53EF;&#x63A5;&#x6536;&#x7684;&#x503C;:</p>
+<ul>
+<li><code>&quot;never&quot;</code> (&#x9ED8;&#x8BA4;): &#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x5730;&#x65B9;&#x4FEE;&#x6539;&#x72B6;&#x6001;</li>
+<li><code>&quot;observed&quot;</code>: &#x5728;&#x67D0;&#x5904;&#x89C2;&#x5BDF;&#x5230;&#x7684;&#x6240;&#x6709;&#x72B6;&#x6001;&#x90FD;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x52A8;&#x4F5C;&#x8FDB;&#x884C;&#x66F4;&#x6539;&#x3002;&#x5728;&#x6B63;&#x5F0F;&#x5E94;&#x7528;&#x4E2D;&#x63A8;&#x8350;&#x6B64;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x3002;</li>
+<li><code>&quot;always&quot;</code>: &#x72B6;&#x6001;&#x59CB;&#x7EC8;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x52A8;&#x4F5C;&#x6765;&#x66F4;&#x65B0;(&#x5B9E;&#x9645;&#x4E0A;&#x8FD8;&#x5305;&#x62EC;&#x521B;&#x5EFA;)&#x3002;</li>
+</ul>
 <h4 id="isolateglobalstate-boolean"><a name="isolateglobalstate-boolean" class="plugin-anchor" href="#isolateglobalstate-boolean"><i class="fa fa-link" aria-hidden="true"></i></a><code>isolateGlobalState: boolean</code></h4>
 <p>&#x5F53;&#x540C;&#x4E00;&#x73AF;&#x5883;&#x4E2D;&#x6709;&#x591A;&#x4E2A; MobX &#x5B9E;&#x4F8B;&#x65F6;&#xFF0C;&#x5C06; MobX &#x7684;&#x5168;&#x5C40;&#x72B6;&#x6001;&#x9694;&#x79BB;&#x3002;
 &#x5F53;&#x4F7F;&#x7528; MobX &#x7684;&#x540C;&#x65F6;&#x8FD8;&#x4F7F;&#x7528;&#x4E86;&#x4F7F;&#x7528; MobX &#x7684;&#x5C01;&#x88C5;&#x5E93;&#x65F6;&#xFF0C;&#x8FD9;&#x662F;&#x975E;&#x5E38;&#x6709;&#x7528;&#x7684;&#x3002;
-&#x5F53;&#x5728;&#x5E93;&#x4E2D;&#x8C03;&#x7528; <code>configure({isolateGlobalState&#xFF1A;true})</code> &#x65F6;&#xFF0C;&#x5E93;&#x5185;&#x7684;&#x54CD;&#x5E94;&#x6027;&#x5C06;&#x4FDD;&#x6301;&#x72EC;&#x7ACB;&#x3002;
-&#x53E6;&#x5916;&#xFF0C;MobX &#x4E0D;&#x4F1A;&#x629B;&#x51FA;&#x5168;&#x5C40;&#x8303;&#x56F4;&#x5185;&#x6709;&#x591A;&#x4E2A;&#x5B9E;&#x4F8B;&#x7684;&#x9519;&#x8BEF;&#x3002;</p>
-<pre><code class="lang-javascript">configure({ isolatedGlobalState: <span class="hljs-literal">true</span> });
+&#x5F53;&#x5728;&#x5E93;&#x4E2D;&#x8C03;&#x7528; <code>configure({isolateGlobalState&#xFF1A;true})</code> &#x65F6;&#xFF0C;&#x5E93;&#x5185;&#x7684;&#x54CD;&#x5E94;&#x6027;&#x5C06;&#x4FDD;&#x6301;&#x72EC;&#x7ACB;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x6B64;&#x9009;&#x9879;&#xFF0C;&#x5982;&#x679C;&#x591A;&#x4E2A; MobX &#x5B9E;&#x4F8B;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x8BDD;&#xFF0C;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x662F;&#x4F1A;&#x5171;&#x4EAB;&#x7684;&#x3002;&#x4F18;&#x70B9;&#x5C31;&#x662F;&#x4E24;&#x4E2A;&#x5B9E;&#x4F8B;&#x7684; observables &#x53EF;&#x4EE5;&#x534F;&#x540C;&#x8FD0;&#x884C;&#xFF0C;&#x7F3A;&#x70B9;&#x662F; MobX &#x7684;&#x7248;&#x672C;&#x5FC5;&#x987B;&#x5339;&#x914D;&#x3002;</p>
+<pre><code class="lang-javascript">configure({ isolateGlobalState: <span class="hljs-literal">true</span> });
 </code></pre>
 <h4 id="reactionscheduler-f---void--void"><a name="reactionscheduler-f---void--void" class="plugin-anchor" href="#reactionscheduler-f---void--void"><i class="fa fa-link" aria-hidden="true"></i></a><code>reactionScheduler: (f: () =&gt; void) =&gt; void</code></h4>
 <p>&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x65B0;&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x6765;&#x6267;&#x884C;&#x6240;&#x6709; MobX &#x7684;&#x53CD;&#x5E94; (reactions) &#x3002;
@@ -1228,6 +1242,7 @@ test(<span class="hljs-string">&apos;Throw if age is negative&apos;</span>, () =
 <ul>
 <li><strong><code>values(thing)</code></strong> &#x5C06;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x503C;&#x4F5C;&#x4E3A;&#x6570;&#x7EC4;&#x8FD4;&#x56DE;</li>
 <li><strong><code>keys(thing)</code></strong> &#x5C06;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x952E;&#x4F5C;&#x4E3A;&#x6570;&#x7EC4;&#x8FD4;&#x56DE;</li>
+<li><strong><code>entries(thing)</code></strong> &#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x9879;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x6570;&#x7EC4;</li>
 <li><strong><code>set(thing, key, value)</code></strong> &#x6216; <strong><code>set(thing, { key: value })</code></strong> &#x4F7F;&#x7528;&#x63D0;&#x4F9B;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x6765;&#x66F4;&#x65B0;&#x7ED9;&#x5B9A;&#x7684;&#x96C6;&#x5408;</li>
 <li><strong><code>remove(thing, key)</code></strong> &#x4ECE;&#x96C6;&#x5408;&#x4E2D;&#x79FB;&#x9664;&#x6307;&#x5B9A;&#x7684;&#x9879;&#x3002;&#x7528;&#x4E8E;&#x6570;&#x7EC4;&#x62FC;&#x63A5;</li>
 <li><strong><code>has(thing, key)</code></strong> &#x5982;&#x679C;&#x96C6;&#x5408;&#x4E2D;&#x5B58;&#x5728;&#x6307;&#x5B9A;&#x7684; <em>observable</em> &#x5C5E;&#x6027;&#x5C31;&#x8FD4;&#x56DE; true</li>
@@ -1251,7 +1266,6 @@ test(<span class="hljs-string">&apos;Throw if age is negative&apos;</span>, () =
 <p><a href="../best/trace.html">&#xAB;trace&#xBB;</a></p>
 <h3 id="spy"><a name="spy" class="plugin-anchor" href="#spy"><i class="fa fa-link" aria-hidden="true"></i></a><code>spy</code></h3>
 <p>&#x7528;&#x6CD5;: <code>spy(listener)</code> &#x3002;
-&#x6CE8;&#x518C;&#x5168;&#x5C40;&#x4FA6;&#x67E5;&#x76D1;&#x542C;&#x5668;&#x53EF;&#x4EE5;&#x76D1;&#x542C;&#x6240;&#x6709; MobX &#x4E2D;&#x53D1;&#x751F;&#x7684;&#x4E8B;&#x4EF6;&#x3002;
 &#x5B83;&#x7C7B;&#x4F3C;&#x4E8E;&#x5C06;&#x4E00;&#x4E2A; <code>observe</code> &#x76D1;&#x542C;&#x5668;&#x4E00;&#x6B21;&#x6027;&#x9644;&#x52A0;&#x5230;<strong>&#x6240;&#x6709;&#x7684;</strong> observables &#x4E0A;&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x8D1F;&#x8D23;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x52A8;&#x4F5C;&#x548C;&#x8BA1;&#x7B97;&#x7684;&#x901A;&#x77E5;&#x3002;
 &#x7528;&#x4E8E; <code>mobx-react-devtools</code> &#x3002;</p>
 <p><a href="spy.html">&#xAB;&#x8BE6;&#x60C5;&#xBB;</a></p>
@@ -1369,7 +1383,7 @@ person.lastName = <span class="hljs-string">&quot;Chesterton&quot;</span>;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2. API概览","level":"1.2","depth":1,"next":{"title":"3. observable 相关","level":"1.3","depth":1,"ref":"","articles":[{"title":"3.1. observable","level":"1.3.1","depth":2,"path":"refguide/observable.md","ref":"refguide/observable.md","articles":[]},{"title":"3.2. @observable","level":"1.3.2","depth":2,"path":"refguide/observable-decorator.md","ref":"refguide/observable-decorator.md","articles":[]},{"title":"3.3. objects","level":"1.3.3","depth":2,"path":"refguide/object.md","ref":"refguide/object.md","articles":[]},{"title":"3.4. arrays","level":"1.3.4","depth":2,"path":"refguide/array.md","ref":"refguide/array.md","articles":[]},{"title":"3.5. maps","level":"1.3.5","depth":2,"path":"refguide/map.md","ref":"refguide/map.md","articles":[]},{"title":"3.6. boxed values","level":"1.3.6","depth":2,"path":"refguide/boxed.md","ref":"refguide/boxed.md","articles":[]},{"title":"3.7 decorators","level":"1.3.7","depth":2,"path":"refguide/modifiers.md","ref":"refguide/modifiers.md","articles":[]}]},"previous":{"title":"1.2. 概念与原则","level":"1.1.2","depth":2,"path":"intro/concepts.md","ref":"intro/concepts.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/api.md","mtime":"2018-04-26T10:54:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-06-19T13:56:42.072Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2. API概览","level":"1.2","depth":1,"next":{"title":"3. observable 相关","level":"1.3","depth":1,"ref":"","articles":[{"title":"3.1. observable","level":"1.3.1","depth":2,"path":"refguide/observable.md","ref":"refguide/observable.md","articles":[]},{"title":"3.2. @observable","level":"1.3.2","depth":2,"path":"refguide/observable-decorator.md","ref":"refguide/observable-decorator.md","articles":[]},{"title":"3.3. objects","level":"1.3.3","depth":2,"path":"refguide/object.md","ref":"refguide/object.md","articles":[]},{"title":"3.4. arrays","level":"1.3.4","depth":2,"path":"refguide/array.md","ref":"refguide/array.md","articles":[]},{"title":"3.5. maps","level":"1.3.5","depth":2,"path":"refguide/map.md","ref":"refguide/map.md","articles":[]},{"title":"3.6. boxed values","level":"1.3.6","depth":2,"path":"refguide/boxed.md","ref":"refguide/boxed.md","articles":[]},{"title":"3.7 decorators","level":"1.3.7","depth":2,"path":"refguide/modifiers.md","ref":"refguide/modifiers.md","articles":[]}]},"previous":{"title":"1.2. 概念与原则","level":"1.1.2","depth":2,"path":"intro/concepts.md","ref":"intro/concepts.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/api.md","mtime":"2018-09-18T13:06:39.945Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-18T13:06:52.064Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

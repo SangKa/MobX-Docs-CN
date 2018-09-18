@@ -512,7 +512,7 @@
                 <a target="_blank" href="https://github.com/mobxjs/mobx-utils#fromresource">
             
                     
-                    6.6. mobxUtis.fromResource
+                    6.6. mobxUtils.fromResource
             
                 </a>
             
@@ -798,7 +798,15 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="observer"><a name="observer" class="plugin-anchor" href="#observer"><i class="fa fa-link" aria-hidden="true"></i></a>@observer</h1>
-<p><a style="color: white; background:green;padding:5px;margin:5px;border-radius:2px" href="https://egghead.io/courses/manage-complex-state-in-react-apps-with-mobx" target="_blank">egghead.io &#x7B2C;1&#x8BFE;: observable &amp; observer</a></p>
+<details>
+    <summary style="color: white; background:green;padding:5px;margin:5px;border-radius:2px">egghead.io &#x7B2C;1&#x8BFE;: observable &amp; observer</summary>
+    <br>
+    <div style="padding:5px;">
+        <iframe style="border: none;" width="760" height="427" src="https://egghead.io/lessons/javascript-sync-the-ui-with-the-app-state-using-mobx-observable-and-observer-in-react/embed">
+    </iframe></div>
+    <a style="font-style:italic;padding:5px;margin:5px;" href="https://egghead.io/lessons/javascript-sync-the-ui-with-the-app-state-using-mobx-observable-and-observer-in-react" target="_blank">&#x5728; egghead.io &#x4E0A;&#x89C2;&#x770B;</a>
+</details>
+
 <p><code>observer</code> &#x51FD;&#x6570;/&#x88C5;&#x9970;&#x5668;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5C06; React &#x7EC4;&#x4EF6;&#x8F6C;&#x53D8;&#x6210;&#x54CD;&#x5E94;&#x5F0F;&#x7EC4;&#x4EF6;&#x3002;
 &#x5B83;&#x7528; <code>mobx.autorun</code> &#x5305;&#x88C5;&#x4E86;&#x7EC4;&#x4EF6;&#x7684; render &#x51FD;&#x6570;&#x4EE5;&#x786E;&#x4FDD;&#x4EFB;&#x4F55;&#x7EC4;&#x4EF6;&#x6E32;&#x67D3;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x53D8;&#x5316;&#x65F6;&#x90FD;&#x53EF;&#x4EE5;&#x5F3A;&#x5236;&#x5237;&#x65B0;&#x7EC4;&#x4EF6;&#x3002;
 <code>observer</code> &#x662F;&#x7531;&#x5355;&#x72EC;&#x7684; <code>mobx-react</code> &#x5305;&#x63D0;&#x4F9B;&#x7684;&#x3002;</p>
@@ -880,23 +888,23 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-n
 });
 
 <span class="hljs-keyword">const</span> App = () =&gt;
-  &lt;Provider colors={colors}&gt;
-     &lt;app stuff... /&gt;
-  &lt;/Provider&gt;;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">colors</span>=<span class="hljs-string">{colors}</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">app</span> <span class="hljs-attr">stuff...</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span>;
 
 const Button = inject(&quot;colors&quot;)(observer(({ colors, label, onClick }) =&gt;
-  &lt;button style={{
-      color: colors.foreground,
-      backgroundColor: colors.background
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span>
+      <span class="hljs-attr">color:</span> <span class="hljs-attr">colors.foreground</span>,
+      <span class="hljs-attr">backgroundColor:</span> <span class="hljs-attr">colors.background</span>
     }}
-    onClick={onClick}
-  &gt;{label}&lt;button&gt;
+    <span class="hljs-attr">onClick</span>=<span class="hljs-string">{onClick}</span>
+  &gt;</span>{label}<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 ));
 
 // &#x7A0D;&#x540E;..
 colors.foreground = &apos;blue&apos;;
 // &#x6240;&#x6709;button&#x90FD;&#x4F1A;&#x66F4;&#x65B0;
-</code></pre>
+</span></code></pre>
 <p>&#x66F4;&#x591A;&#x8D44;&#x6599;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1; <a href="https://github.com/mobxjs/mobx-react#provider-and-inject" target="_blank"><code>mobx-react</code> &#x6587;&#x6863;</a>&#x3002;</p>
 <h2 id="&#x4F55;&#x65F6;&#x4F7F;&#x7528;-observer"><a name="&#x4F55;&#x65F6;&#x4F7F;&#x7528;-observer" class="plugin-anchor" href="#&#x4F55;&#x65F6;&#x4F7F;&#x7528;-observer"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F55;&#x65F6;&#x4F7F;&#x7528; <code>observer</code>?</h2>
 <p>&#x7B80;&#x5355;&#x6765;&#x8BF4;: <em>&#x6240;&#x6709;&#x6E32;&#x67D3; observable &#x6570;&#x636E;&#x7684;&#x7EC4;&#x4EF6;</em>&#x3002;
@@ -996,7 +1004,7 @@ colors.foreground = &apos;blue&apos;;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.5. (@)observer","level":"1.4.5","depth":2,"next":{"title":"4.6. 理解 MobX 对何作出响应","level":"1.4.6","depth":2,"path":"best/react.md","ref":"best/react.md","articles":[]},"previous":{"title":"4.4. reaction","level":"1.4.4","depth":2,"path":"refguide/reaction.md","ref":"refguide/reaction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/observer-component.md","mtime":"2018-03-03T03:01:13.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-06-19T13:56:42.072Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.5. (@)observer","level":"1.4.5","depth":2,"next":{"title":"4.6. 理解 MobX 对何作出响应","level":"1.4.6","depth":2,"path":"best/react.md","ref":"best/react.md","articles":[]},"previous":{"title":"4.4. reaction","level":"1.4.4","depth":2,"path":"refguide/reaction.md","ref":"refguide/reaction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","edit-link","anchors","copy-code-button","github-buttons"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/SangKa/mobx-docs-cn"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"buttons":[{"user":"SangKa","repo":"MobX-Docs-CN","type":"star","size":"small","count":true},{"user":"SangKa","repo":"MobX-Docs-CN","type":"fork","size":"small","count":true}]},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"完善文档","base":"https://github.com/SangKa/mobx-docs-cn/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"MobX 中文文档","gitbook":"3.2.2"},"file":{"path":"refguide/observer-component.md","mtime":"2018-09-18T13:06:39.964Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-18T13:06:52.064Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
