@@ -33,7 +33,7 @@ Observable 值可以是JS基本数据类型、引用类型、普通对象、类�
     - 调用 [`decorate()`](#decorate)
     - 在类中使用 `extendObservable()` 来引入属性
 
-MobX 不会自动带有原型的对象转变成 observable，因为那是 observable 构造函数的职责。在构造函数中使用 `extendObservable` 或在类定义是使用 `@observable` 进行替代。
+MobX 不会自动将带有原型的对象转变成 observable，因为那是 observable 构造函数的职责。在构造函数中使用 `extendObservable` 或在类定义时使用 `@observable` 进行替代。
 
 乍看之下，这些规则可能看上去很复杂，但实际上实践当中你会发现他们是非常直观的。
 
