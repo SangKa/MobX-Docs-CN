@@ -204,7 +204,7 @@ decorate(Todo, {
 
 * **`equals: (value, value) => boolean`** 用来重载默认检测规则的比较函数。 内置比较器有: `comparer.identity`, `comparer.default`, `comparer.structural`
 * **`requiresReaction: boolean`** 在重新计算衍生属性之前，等待追踪的 observables 值发生变化
-* **`get: () => value)`** 重载计算属性的 getter
+* **`get: () => value`** 重载计算属性的 getter
 * **`set: (value) => void`** 重载计算属性的 setter
 * **`keepAlive: boolean`** 设置为 true 以自动保持计算值活动，而不是在没有观察者时暂停。
 
