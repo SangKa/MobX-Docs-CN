@@ -17,7 +17,19 @@
 其余情况都应该使用 `computed`。 Autoruns 是关于 _启动效果_ (initiating effects) 的 ，而不是产生新的值。
 如果字符串作为第一个参数传递给 `autorun` ，它将被用作调试名。
 
-传递给 autorun 的函数在调用后将接收一个参数，即当前 reaction(autorun)，可用于在执行期间清理 autorun。
+autorun的返回值是一个清理函数（disposer function），当你不需要 autorun 继续运行的时候，可以用这个清理函数来停止 autorun。传递给 autorun 的函数在调用时会被 autorun 传递唯一一个参数，即当前 reaction(autorun)，可用于在执行期间清理 autorun。这意味着有两种方式在需要的时候停止 autorun。
+
+```javascript
+const disposer = autorun( reaction => { /* do some stuff */ } );
+disposer();
+
+// 或者
+
+autorun( reaction => {
+  /* do some stuff */
+  reaction.dispose();
+} );
+```
 
 就像 [`@ observer` 装饰器/函数](./ observer-component.md)，`autorun` 只会观察在执行提供的函数时所使用的数据。
 
