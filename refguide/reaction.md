@@ -73,4 +73,22 @@ todos[0].title = "Make tea"
 // autorun 1: Make tea, find biscuit, explain reactions
 ```
 
+##补充
+
+清除reaction的两种方式:
+ - reaction调用其第二个函数中的第二个参数，可以用来在执行期间清理reaction
+ - 另外一种清除reaction的方式，就是直接调用reaction函数的引用，就可在需要任何时候清除reaction，见以下示例
+
+  ```JavaScript
+  const clearReaction = reaction(
+    () => {
+      // observable
+    }, () => {
+      // action
+    });
+
+   // clear reaction
+   clearReaction();
+  ```
+
 粗略地讲，reaction 是 `computed(expression).observe(action(sideEffect))` 或 `autorun(() => action(sideEffect)(expression)` 的语法糖。
