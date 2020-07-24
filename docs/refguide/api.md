@@ -27,7 +27,7 @@ Observable 值可以是JS基本数据类型、引用类型、普通对象、类�
 1. 如果 **value** 是[ES6 Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)的实例: 会返回一个新的 [Observable Map](map.md)。如果你不只关注某个特定entry的更改，而且对添加或删除其他entry时也做出反应的话，那么 Observable map 会非常有用。
 1. 如果 **value** 是数组，会返回一个 [Observable Array](array.md)。
 1. 如果 **value** 是没有原型的对象或它的原型是 `Object.prototype`，那么对象会被克隆并且所有的属性都会被转换成可观察的。参见 [Observable Object](object.md)。
-1. 如果 **value** 是有原型的对象，JavaSript 原始数据类型或者函数，值不会发生变化。如果你需要 [Boxed Observable](boxed.md)，你可以采用下列任意方式:
+1. 如果 **value** 是有原型的对象，JavaScript 原始数据类型或者函数，值不会发生变化。如果你需要 [Boxed Observable](boxed.md)，你可以采用下列任意方式:
     - 显式地调用 `observable.box(value)`
     - 在类定义时使用 `@observable`
     - 调用 [`decorate()`](#decorate)
