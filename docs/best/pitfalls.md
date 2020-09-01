@@ -174,18 +174,20 @@ class OrderLIne {
 
 ```javascript
 // 1 (显示设置 displayName)
-export const MyComponent = observer((props => <div>hi</div>))
+export const MyComponent = observer((props) => <div>hi</div>)
 myComponent.displayName = "MyComponent"
 
 // 2 (MobX 根据函数名推断出组件名)
-export const MyComponent = observer(function MyComponent(props) { return <div>hi</div> })
+export const MyComponent = observer(function MyComponent(props) {
+    return <div>hi</div>
+})
 
 // 3 (编译器根据变量名推断出组件名)
-const _MyComponent = observer((props => <div>hi</div>)) //
+const _MyComponent = (props) => <div>hi</div>
 export const MyComponent = observer(_MyComponent)
 
 // 4 (默认导出)
-const MyComponent = observer((props => <div>hi</div>))
+const MyComponent = (props) => <div>hi</div>
 export default observer(MyComponent)
 ```
 
