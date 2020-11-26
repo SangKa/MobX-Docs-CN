@@ -28,6 +28,9 @@ todos[2] = { title: 'Take a nap', completed: false };
 
 todos.shift();
 // 输出: 'Remaining: Make coffee, Take a nap'
+
+todos.replace(todos.filter(item => item.title !== "Spoil tea"));
+// 删除数组中的{ title: "Spoil tea", completed: true }对象
 ```
 
 由于 ES5 中的原生数组的局限性，`observable.array` 会创建一个人造数组(类数组对象)来代替真正的数组。
