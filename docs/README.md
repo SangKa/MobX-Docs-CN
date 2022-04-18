@@ -291,7 +291,7 @@ MobX 的灵感来自excel表格中的反应式编程原理。同样也受到像 
 
 ## 其它人都在说些什么...
 
-> Guise, #mobx isn't pubsub, or your grandpa's observer pattern. Nay, it is a carefully orchestrated observable dimensional portal fueled by the power cosmic. It doesn't do change detection, it's actually a level 20 psionic with soul knife, slashing your viewmodel into submission. (译者注: 这个赞美之词完全没能领会，谁能看懂可以帮忙翻译下 ^.^)
+> MobX绝不是只是发布订阅者模式、或爷爷辈老掉牙的观察者模式。它是一个精心编排可观察的、由宇宙力量推动的次元传送门。它不进行变更检测，它更像是一种满级的超能力，通过灵魂之刃将你的视图模型劈砍至投降。
 
 > 在一个独立的项目使用 mobx 几周后，感觉把它引入到团队中真是太棒了。工作时间减半，快乐加倍。
 
